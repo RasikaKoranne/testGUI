@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Templates|Template Usage" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Script Templates for Custom Database Table Objects</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Script Templates for Custom Database Table Objects</h3>
+            <p class="BodyText">The update process for data warehouse table objects stored in a custom database target can be generated via a SQL block or a Windows PowerShell script.&#160;In both cases, templates are utilized to build the update procedures to populate the tables.&#160; </p>
+            <p class="BodyText"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> provides PowerShell script templates that are designed to work for Table objects with a custom database target in a SQL Server or Oracle metadata repository.&#160;Refer to the custom database enablement packs provided by <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> for details about these PowerShell script templates. <br />Moreover, additional host script language types that can be applied to Templates can be defined in <span class="mc-variable WS_Branding.Product variable">RED</span> via the  <a href="../Host Script Languages/Host Script Languages.htm">Tools &gt; Host Script Languages</a> tool. User defined script templates can also be used for  building the update procedures of Table objects stored in a custom database target.&#160; </p>
+            <p class="BodyText">The <b>Properties</b> window for table objects that support script based update has an <b>Update Type</b> drop-down field, which enables you to select between <b>Procedure</b> or <b>Script</b> based type processing for the table's update procedures.&#160; </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">For new data warehouse table objects in a custom database target, the default <b>Update Type</b> is set to <b>Script</b>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Templates/Script Templates for Custom.png" />
+            </p>
+            <p class="BodyText">Selecting <b>Script</b> from the <b>Update Type</b> drop-down displays the <b>Update Script</b> drop-down which enables you to select a script to use from the list of available script templates. The same applies to the <b>Custom Type</b> drop-down field.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Templates/Script Templates for Custom_1.png" />
+            </p>
+            <p class="BodyText">Selecting the <b>(Build Script...)</b> option and then clicking the <b>Rebuild</b> or <b>OK</b> button opens the table <b>Update Build Options</b> window which enables you to define the <b>Script Connection</b> and <b>Template </b>to use. The same applies to the <b>Custom Script</b> processing.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Templates/Script Templates for Custom_2.png" />
+            </p>
+            <ul>
+                <li>Clicking the <b>Edit </b>button opens the selected update script template in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> <b>Script Editor </b>which enables you to edit the contents as required.</li>
+                <li>Clicking the <b>Regenerate </b>button regenerates the selected update script template without any prompts, unless you made changes that require further input.<br />The same applies to the <b>Custom Script</b> processing.<br /></li>
+            </ul>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If a script (e.g. update script, custom script, load script, export script, etc.) is modified, the update time for that script is reflected in the <b>Script Editor</b> and the ### MODIFIED ### notice is displayed in the table object's Properties window when an update script is selected.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Templates/Script Templates for Custom_3.png" />
+            </p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

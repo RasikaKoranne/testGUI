@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Promoting Between Environments|Applications" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Application Loading</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Application Loading</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Applications can only be loaded into the same relational database type from which they where created. (For example, an Oracle application can only be loaded into an Oracle database).</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Applications are loaded via the <span class="mc-variable WS_Branding.Product variable">RED</span> <b>Setup Administrator</b> utility. The normal process for implementing an application are as follows:</p>
+            <ol>
+                <li value="1">Run the <b>Setup Administrator</b> utility.</li>
+                <li value="2">Change the application directory to the application's location.</li>
+                <li value="3">Turn ON logging in the Setup Administrator utility using <b>Tools &gt; Start Logging</b>.</li>
+                <li value="4">Load the application via the Setup Administrator utility.</li>
+                <li value="5">Choose the level of metadata application. There are several levels, from load metadata only through to load metadata and apply changes to all tables.</li>
+                <li value="6">Resolve any connections and tablespaces/filegroups to those present in the target environment.</li>
+                <li value="7">Create/Re-create or Alter database tables, if selected in (5).</li>
+                <li value="8">Compile database procedures, if selected in (5).</li>
+                <li value="9">Turn OFF logging.</li>
+                <li value="10">Review the output in the Setup Administrator utility.</li>
+                <li value="11">Review the log file.</li>
+            </ol>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Some database operations, such as converting an existing non-partitioned table to a partitioned table, cannot be done using a deployment application. In these cases, some manual intervention may be required to update the target databases to match the new metadata.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Refer to the <span class="mc-variable WS_Branding.Product variable">RED</span>  Installation manual for more information about loading an application.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

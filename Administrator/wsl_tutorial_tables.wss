@@ -1,0 +1,264 @@
+_TABLE_
+
+Create table product(
+code                      numeric(6),
+description               varchar(64),
+prod_line                 varchar(24),
+prod_group                varchar(24),
+subgroup                  varchar(24))
+;
+
+_TABLE_
+
+Create table prod_subgroup(
+prod_group                varchar(24),
+subgroup                  varchar(24),
+subgroup_description      varchar(64))
+;
+
+_TABLE_
+
+Create table prod_group(
+prod_group                varchar(24),
+group_description         varchar(64))
+;
+
+_TABLE_
+
+Create table prod_line(
+prod_line                varchar(24),
+line_description         varchar(64))
+;
+
+Create table code_table(
+type                     varchar(24),
+code_value               varchar(24),
+description              varchar(64))
+;
+
+_TABLE_
+
+Create table order_line(
+order_number              numeric(12),
+order_line_no             numeric(4),
+product_code              numeric(6),
+unit_sale_price           numeric(9,3),
+quantity                  numeric(8),
+sales_value               numeric(13,2),
+tax                       numeric(9,2))
+;
+
+_TABLE_
+
+Create table order_header(
+order_number              numeric(12),
+order_date                datetime,
+customer_code             numeric(6),
+ship_date                 datetime)
+;
+
+_TABLE_
+
+Create table forecast(
+product_code              numeric(6),
+customer_code             numeric(6),
+forecast_quantity         numeric(8),
+forecast_sales_value      numeric(8,2),
+forecast_date             datetime)
+;
+
+_TABLE_
+
+Create table customer(
+code                      numeric(6),
+name                      varchar(45),
+address                   varchar(40),
+city                      varchar(30),
+state                     varchar(2))
+;
+
+_TABLE_
+
+Create table budget(
+product_code              numeric(6),
+customer_code             numeric(6),
+budget_quantity           numeric(8),
+budget_sales_value        numeric(8,2),
+budget_date               datetime)
+;
+
+_TABLE_
+
+Create table kpi(
+kpi_identifier            varchar(12),
+kpi_name         	  varchar(256))
+;
+
+_TABLE_
+
+Create table states(
+state_code                    varchar(2),
+state_name                    varchar(256),
+country                          varchar(256),
+continent                       varchar(256)
+)
+;
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Product code (SKU) that uniquely identifies the product.',
+N'user', N'dbo', N'table', N'product', N'column', N'code';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Description of the product. Normally unqiue.',
+N'user', N'dbo', N'table', N'product', N'column', N'description';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Product line to which the product belongs. Forms part of the product, subgroup, group, line hierarchy',
+N'user', N'dbo', N'table', N'product', N'column', N'prod_line';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Group to which the product belongs. Forms part of the product, subgroup, group hierarchy',
+N'user', N'dbo', N'table', N'product', N'column', N'prod_group';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Sub group category to which the product belongs. Forms part of the product, subgroup, group hierarchy',
+N'user', N'dbo', N'table', N'product', N'column', N'subgroup';
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Product group category. Combined with subgroup category to provide a unique entity',
+N'user', N'dbo', N'table', N'prod_subgroup', N'column', N'prod_group';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Sub group category. Part of a group.',
+N'user', N'dbo', N'table', N'prod_subgroup', N'column', N'subgroup';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Description of the subgroup category.',
+N'user', N'dbo', N'table', N'prod_subgroup', N'column', N'subgroup_description';
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Group category. Every product belongs to a group',
+N'user', N'dbo', N'table', N'prod_group', N'column', N'prod_group';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Description of the group category.',
+N'user', N'dbo', N'table', N'prod_group', N'column', N'group_description';
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Line category. Every product belongs to a product line',
+N'user', N'dbo', N'table', N'prod_line', N'column', N'prod_line';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Description of the product line category.',
+N'user', N'dbo', N'table', N'prod_line', N'column', N'line_description';
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Code type. Defines the type of code described',
+N'user', N'dbo', N'table', N'code_table', N'column', N'type';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Code value. The specific code values for a lookup type',
+N'user', N'dbo', N'table', N'code_table', N'column', N'code_value';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Description of the specified code for the specified type.',
+N'user', N'dbo', N'table', N'code_table', N'column', N'description';
+
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Every order has a unique generated order number. Link to the order_header table.',
+N'user', N'dbo', N'table', N'order_line', N'column', N'order_number';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Every sale of a product to a customer is assigned a unique line number within an order.',
+N'user', N'dbo', N'table', N'order_line', N'column', N'order_line_no';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Product sold to the customer specified in the order_header, as per the dates in the order_header.',
+N'user', N'dbo', N'table', N'order_line', N'column', N'product_code';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Standard sale price per unit of product in effect at the time of the order.',
+N'user', N'dbo', N'table', N'order_line', N'column', N'unit_sale_price';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Quantity of product sold (i.e. number of product units).',
+N'user', N'dbo', N'table', N'order_line', N'column', N'quantity';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The sales value is the sum of the quantity multiplied by the unit sale price in effect at the time of the order.',
+N'user', N'dbo', N'table', N'order_line', N'column', N'sales_value';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The tax component of the sales value.',
+N'user', N'dbo', N'table', N'order_line', N'column', N'tax';
+
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Every order has a unique generated order number. Cancelled orders are removed to the cancelled_orders table.',
+N'user', N'dbo', N'table', N'order_header', N'column', N'order_number';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Date that the order was placed. Order pricing is that pricing in effect on the order date.',
+N'user', N'dbo', N'table', N'order_header', N'column', N'order_date';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The code that relates to the customer who placed the order. Link to the customer table.',
+N'user', N'dbo', N'table', N'order_header', N'column', N'customer_code';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Date that the order was physicaly shipped to the customer.',
+N'user', N'dbo', N'table', N'order_header', N'column', N'ship_date';
+
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Code that relates to the product being forecasted. Link to the product table.',
+N'user', N'dbo', N'table', N'forecast', N'column', N'product_code';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The code that relates to the customer being forecasted. Link to the customer table.',
+N'user', N'dbo', N'table', N'forecast', N'column', N'customer_code';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The quantity of the specified product units forecasted to be sold to the customer.',
+N'user', N'dbo', N'table', N'forecast', N'column', N'forecast_quantity';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The total sales value of the forecasted sales of this product to this customer.',
+N'user', N'dbo', N'table', N'forecast', N'column', N'forecast_sales_value';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The week in which the forecasted sales are expected to occur (First day of the week).',
+N'user', N'dbo', N'table', N'forecast', N'column', N'forecast_date';
+
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Unique code to identify the customer. Forms a hierarchy with city and state.',
+N'user', N'dbo', N'table', N'customer', N'column', N'code';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The full name of the customer. Forms a hierarchy with city and state.',
+N'user', N'dbo', N'table', N'customer', N'column', N'name';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The physical shipping address of the customer.',
+N'user', N'dbo', N'table', N'customer', N'column', N'address';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The city in which the customer sells shipped product.Forms a hierarchy with code and state.',
+N'user', N'dbo', N'table', N'customer', N'column', N'city';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The state in which the customer sells shipped product. Forms a hierarchy with code and city.',
+N'user', N'dbo', N'table', N'customer', N'column', N'state';
+
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Code that relates to the product being budgeted for. Link to the product table.',
+N'user', N'dbo', N'table', N'budget', N'column', N'product_code';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The code that relates to the customer being budgeted for. Link to the customer table.',
+N'user', N'dbo', N'table', N'budget', N'column', N'customer_code';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The quantity of the specified product units budgeted to be sold to the customer.',
+N'user', N'dbo', N'table', N'budget', N'column', N'budget_quantity';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The total value of the budgeted sales of this product to this customer.',
+N'user', N'dbo', N'table', N'budget', N'column', N'budget_sales_value';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'The month in which the sales are budgeted for (First day of the month).',
+N'user', N'dbo', N'table', N'budget', N'column', N'budget_date';
+
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Unique identifier and descriptor for the key performance indicator (e.g. STAT01 through STAT99).',
+N'user', N'dbo', N'table', N'kpi', N'column', N'kpi_identifier';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Name and full description of the key performance indicator.',
+N'user', N'dbo', N'table', N'kpi', N'column', N'kpi_name';
+
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Code that uniquely identifies the state across all countries and regions.',
+N'user', N'dbo', N'table', N'states', N'column', N'state_code';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Name of the state.',
+N'user', N'dbo', N'table', N'states', N'column', N'state_name';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Country in which the state is found.',
+N'user', N'dbo', N'table', N'states', N'column', N'country';
+_SQL_
+execute sp_addextendedproperty N'Comment', N'Continental region in which the states country is found.',
+N'user', N'dbo', N'table', N'states', N'column', N'continent';

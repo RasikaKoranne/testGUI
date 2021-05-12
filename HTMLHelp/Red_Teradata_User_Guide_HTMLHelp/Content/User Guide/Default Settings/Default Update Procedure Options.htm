@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Default Settings|Settings - Options|Code Generation" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Default Update Procedure Options</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4 class="Heading4">Default Update Procedure Options</h4>
+            <p class="BodyText">This option enables you to set some <b>default update procedure </b>settings for specific object types. Not all options are relevant for all combinations of database, object type and build type.<br />The screen below shows an example of an <b>Oracle</b> repository's <b>Default Update Procedure Options</b> screen.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Default Settings/Default Update Procedure Options.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Process in Batch </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to select a column to drive data processing in a loop based on the distinct ordered values of the selected column.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Initial Load Insert</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to add an additional insert statement to the update procedure. If the target table is empty, the new insert statement is run in place of the standard generated code.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert Zero KeyRecord 
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"> Enables users to add an insert statement for an unknown record with an artificial key of zero. Only applicable to tables with an artificial key.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0"><col class="TableStyle-tablestyle-Column-Column1" /><col class="TableStyle-tablestyle-Column-Column2" /><tbody><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyB-Column1-Body1"><img src="../../Images/UserGuide_Images/Default Settings/Default Update Procedure Options_1.png" /></td><td class="TableStyle-tablestyle-BodyA-Column2-Body1"><b>Enable</b> <b>Parallel DML </b>- enables users to add all code required to the update procedure for enabling Oracle parallel inserts. This option is only available for <b>Oracle</b>.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Distinct Data Select</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to ensure duplicate rows are not added to the table.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Select Hint</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to enter a database-compliant hint to be used in the SELECT statement. Parameters $TABLE$ and $INDEXS is automatically replaced at procedure generation time.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Delete before Insert</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to delete statement to be added to the update procedure before any update or insert statement.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Truncate</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Performs a DDL operation to delete all records from a table, rather than a predicate based DML operation to delete individual rows. This option is automatically enabled when <b>Delete before Insert</b> is enabled, but can be deactivated separately.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Update Statement</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to include an update statement in the procedure to update changing rows in the table.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Update Changed Rows Only</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to use change detection to work out what rows require updating.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Update Hint </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to enter a default database hint to be used in the UPDATE statement. This option is available for <b>SQL Server</b> and <b>Oracle </b>only.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0"><col class="TableStyle-tablestyle-Column-Column1" /><col class="TableStyle-tablestyle-Column-Column2" /><tbody><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyB-Column1-Body1"><img src="../../Images/UserGuide_Images/Default Settings/Default Update Procedure Options_1.png" /> <img src="../../Images/UserGuide_Images/Default Settings/Default Update Procedure Options_2.png" /></td><td class="TableStyle-tablestyle-BodyA-Column2-Body1">Oracle default hint is APPEND. SQL Server default hint is TABLOCK.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Insert Statement</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"> Enables users to include an insert statement in the procedure to insert new rows in the table.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert New Rows Only</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to use change detection to work out what rows require inserting.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert Hint</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to enter a default database hint to be used in the INSERT statement. This option is available for <b>SQL Server</b> and <b>Oracle </b>only.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0"><col class="TableStyle-tablestyle-Column-Column1" /><col class="TableStyle-tablestyle-Column-Column2" /><tbody><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyB-Column1-Body1"><img src="../../Images/UserGuide_Images/Default Settings/Default Update Procedure Options_1.png" /> <img src="../../Images/UserGuide_Images/Default Settings/Default Update Procedure Options_2.png" /></td><td class="TableStyle-tablestyle-BodyA-Column2-Body1">Oracle default hint is APPEND. SQL Server default hint is TABLOCK.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Merge Statement</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to include a merge statement in the procedure to merge new/changed rows in the table.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Merge New/Changed Rows Only</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables users to use change detection to interpret which rows require merging.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Merge Hint </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Enables users to enter a default database hint to be used in the MERGE statement. This option is available for <b>SQL Server</b> and <b>Oracle </b>only.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0"><col class="TableStyle-tablestyle-Column-Column1" /><col class="TableStyle-tablestyle-Column-Column2" /><tbody><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyB-Column1-Body1"><img src="../../Images/UserGuide_Images/Default Settings/Default Update Procedure Options_1.png" /> <img src="../../Images/UserGuide_Images/Default Settings/Default Update Procedure Options_2.png" /></td><td class="TableStyle-tablestyle-BodyA-Column2-Body1">Oracle default hint is APPEND. SQL Server default hint is TABLOCK.</td></tr></tbody></table></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data_type_mapping_set name="Standard File to Oracle" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd">
+
+  <mapping_set_description>Standard File to Oracle data type mapping.
+Please do not edit this standard mapping file as any changes will be overwritten on upgrades.
+See the user guide for information on how to create custom mapping files.</mapping_set_description>
+
+  <mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+
+  <data_type_mapping match_data_type="boolean" output_data_type="integer">
+    <match_parameters>
+      <match_length>1</match_length>
+    </match_parameters>
+    <transform_code>"decode(UPPER(:%column_name), 'Y',1,'N',0,'T',1,'F',0,'1',1,'0',0, 0)"</transform_code>
+    <default_value>0</default_value>
+  </data_type_mapping>
+  
+  <data_type_mapping match_data_type="boolean" output_data_type="integer">
+    <match_parameters>
+      <match_length>2-3</match_length>
+    </match_parameters>
+    <transform_code>"decode(UPPER(:%column_name), 'YES',1,'NO',0, 0)"</transform_code>
+    <default_value>0</default_value>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="boolean" output_data_type="integer">
+    <match_parameters>
+      <match_length>4-5</match_length>
+    </match_parameters>
+    <transform_code>"decode(UPPER(:%column_name), 'TRUE',1,'FALSE',0, 0)"</transform_code>
+    <default_value>0</default_value>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="int" output_data_type="integer"/>
+
+  <data_type_mapping match_data_type="long" output_data_type="integer"/>
+  
+  <data_type_mapping match_data_type="decimal" output_data_type="number(13)">
+    <match_parameters>
+	  <match_precision>*-12</match_precision>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="number(%precision)">
+    <match_parameters>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+  
+  <data_type_mapping match_data_type="decimal" output_data_type="number(13,%scale)">
+    <match_parameters>
+	  <match_precision>*-12</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="number(%precision,%scale)"/>
+  
+  <data_type_mapping match_data_type="char" output_data_type="varchar2(64)">
+    <match_parameters>
+	  <match_length>2-63</match_length>
+    </match_parameters>
+  </data_type_mapping>
+  
+  <data_type_mapping match_data_type="char" output_data_type="varchar2(%length)">
+    <match_parameters>
+	  <match_length>255-*</match_length>
+    </match_parameters>
+	<transform_code>char(%length)</transform_code>
+  </data_type_mapping>
+  
+  <data_type_mapping match_data_type="char" output_data_type="varchar2(%length)">
+    <match_parameters>
+	  <match_length>64-*</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="char" output_data_type="char(%length)"/>
+  
+  <data_type_mapping match_data_type="varchar" output_data_type="varchar2(%length)">
+    <match_parameters>
+	  <match_length>255-*</match_length>
+	</match_parameters>
+	<transform_code>char(%length)</transform_code>
+  </data_type_mapping>
+  
+  <data_type_mapping match_data_type="varchar" output_data_type="varchar2(64)">
+    <match_parameters>
+	  <match_length>*-63</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="varchar2(%length)"/>
+
+  <data_type_mapping match_data_type="date" output_data_type="date">
+    <transform_code>date '%format'</transform_code>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="time" output_data_type="date"/>
+
+  <data_type_mapping match_data_type="datetime" output_data_type="date">
+    <transform_code>timestamp '%format'</transform_code>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="timestamp">
+    <transform_code>timestamp '%format'</transform_code>
+  </data_type_mapping>
+</data_type_mapping_set>

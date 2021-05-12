@@ -1,0 +1,74 @@
+###########################################################################################
+# Warehouse Index creation
+###########################################################################################
+_INDEX_ WS_HL_KEY_INDEX
+create index ws_hl_key_index 
+on ws_hie_link (hl_hie_key, hl_obj_key)
+TABLESPACE _METAINDEXSPACE_
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 );
+
+_INDEX_ WS_IC_KEY_INDEX
+create index ws_ic_key_index 
+on ws_index_col (ic_obj_key, ic_index_key)
+TABLESPACE _METAINDEXSPACE_
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 );
+
+_INDEX_ WS_IH_KEY_INDEX
+create index ws_ih_key_index 
+on ws_index_header (ih_obj_key, ih_index_key)
+TABLESPACE _METAINDEXSPACE_
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 );
+
+_INDEX_ WS_IH_KEY_NAME
+create index ws_ih_key_name 
+on ws_index_header (ih_index_name)
+TABLESPACE _METAINDEXSPACE_
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 );
+
+
+_INDEX_ WS_OV_KEY_OBJVER
+create index ws_ov_key_objver 
+on ws_obj_versions (ov_obj_key, ov_version_no)
+TABLESPACE _METAINDEXSPACE_
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 );
+
+_INDEX_ WS_WRK_ERROR_LOG_DEL
+create index ws_wrk_error_log_del on ws_wrk_error_log(wd_job_key, wd_sequence) NOLOGGING
+TABLESPACE _METAINDEXSPACE_ pctfree 0 
+STORAGE (PCTINCREASE 0 INITIAL 100K NEXT 100K);
+
+_INDEX_ WS_LAT_OBJ_KEY_INDEX
+Create Index ws_lat_obj_key_index on ws_language_trans(lat_obj_key)
+NOLOGGING
+TABLESPACE _METAINDEXSPACE_ pctfree 0 
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 );
+
+_INDEX_ WS_LAT_LANG_KEY_INDEX
+Create Index ws_lat_lang_key_index on ws_language_trans(lat_language_key)
+NOLOGGING
+TABLESPACE _METAINDEXSPACE_ pctfree 0 
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 );
+
+_INDEX_ WS_PL_KEY_INDEX
+CREATE INDEX ws_pl_key_index ON ws_pro_line( pl_obj_key )
+NOLOGGING
+TABLESPACE _METAINDEXSPACE_ pctfree 0 
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 );
+
+_INDEX_ WS_PLV_KEY_INDEX
+CREATE INDEX ws_plv_key_index ON ws_pro_line_v( pl_obj_key, pl_version_no )
+NOLOGGING
+TABLESPACE _METAINDEXSPACE_ pctfree 0 
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 ); 
+
+_INDEX_ WS_SL_KEY_INDEX
+CREATE INDEX ws_sl_key_index ON ws_scr_line( sl_obj_key )
+NOLOGGING
+TABLESPACE _METAINDEXSPACE_ pctfree 0 
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 );
+
+_INDEX_ WS_SLV_KEY_INDEX
+CREATE INDEX ws_slv_key_index ON ws_scr_line_v( sl_obj_key, sl_version_no )
+NOLOGGING
+TABLESPACE _METAINDEXSPACE_ pctfree 0 
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0 ); 

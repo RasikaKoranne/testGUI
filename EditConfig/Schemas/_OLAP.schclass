@@ -1,0 +1,190 @@
+//=======================================================================
+//================ Lex class support: OLAP ==============================
+//=======================================================================
+
+/// OLAP ///	
+lexClass:
+	parent:file = <*.xml>
+	name = c_XML
+	//caseSensitive = 0
+	txt:colorFG = 0x000000
+	DisplayName = 'Text'
+
+lexClass:  
+	name = c_XMLcomment
+	parent = c_XML
+	children = 0 // URL	
+	start:Tag = '<!--'
+	end:Tag = '-->'	
+	txt:colorFG = 0x008000 
+	Collapsable = 1
+	DisplayName = 'XML Comment'
+
+lexClass:
+    name = c_CompareSingleLineComment
+    parent = c_XML
+    start:tag ='--{{--', '--}}--'
+    end:tag = @EOL
+    txt:colorFG = 0x0000F0
+    
+lexClass:
+	name = c_XMLelement_start	
+	parent = c_XML
+	Token:tag = '<!', '</', '<'	
+	txt:colorFG = 0x804040
+	DisplayName = 'XML Element (start)'
+
+lexClass:
+	name = c_XMLelement_end	
+	parent = c_XML
+	Token:tag = '>'	
+	txt:colorFG = 0x804040
+	DisplayName = 'XML Element (end)'
+
+lexClass:
+	name = c_XMLelement	
+	parent = c_XML
+	previous:class = c_XMLelement_start
+	end:separators = '>'
+	txt:colorFG = 0x804040
+	DisplayName = 'XML Element'
+
+lexClass:
+	name = c_XMLelement_Methods	
+	ParseOnScreen = 0
+	parent = c_XMLelement	
+	previous:tag = '<', '</', '<!'
+	children = 0
+	Token:Tag = 'Discover', 'Execute'
+
+	Token:end:separators = ' ', '\t', '>', @EOL
+	txt:colorFG = 0x0000FF
+	DisplayName = 'XMLA Methods'
+ 
+lexClass:
+	name = c_XMLelement_Parameters	
+	ParseOnScreen = 0
+	parent = c_XMLelement	
+	previous:tag = '<', '</', '<!'
+	children = 0
+	Token:Tag = 'AllowOverwrite', 'ApplyCompression', 'Attribute', 'AttributeName', 'Attributes'
+	Token:Tag = 'Axes', 'AxesInfo', 'Axis', 'AxisInfo', 'BackupRemotePartitions', 'Binding'
+	Token:Tag = 'Bindings', 'CancelAssociated', 'Capability', 'Caption', 'Cell', 'CellData'
+	Token:Tag = 'CellInfo', 'CellOrdinal', 'Command', 'ConnectionID', 'ConnectionString'
+	Token:Tag = 'CrossProduct', 'Cube', 'CubeID', 'CubeInfo', 'CubeName', 'CustomRollup'
+	Token:Tag = 'CustomRollupProperties', 'Database', 'DatabaseID', 'DatabaseName', 'DataSource'
+	Token:Tag = 'DataSourceID', 'DataSourceType', 'DataSourceView', 'DbSchemaName', 'DbTableName'
+	Token:Tag = 'DeleteWithDescendants', 'Description', 'Dimension', 'DisplayInfo', 'Error'
+	Token:Tag = 'ErrorCode', 'ErrorConfiguration', 'Exception', 'File', 'Folder', 'Folders'
+	Token:Tag = 'HelpFile', 'HierarchyInfo', 'ID', 'Keys', 'Key', 'Language', 'LastDataUpdate'
+	Token:Tag = 'LastSchemaUpdate', 'LName', 'LNum', 'Location', 'Locations', 'Materialize'
+	Token:Tag = 'MeasureGroupID', 'Member', 'Members', 'Message', 'Messages', 'Mode'
+	Token:Tag = 'MoveWithDescendants', 'Name', 'New', 'Object', 'ObjectDefinition', 'OlapInfo'
+	Token:Tag = 'Optimization', 'Original', 'Parallel', 'Parameter', 'Parameters', 'ParentObject'
+	Token:Tag = 'PartitionID', 'Password', 'Properties', 'PropertyList', 'Queries', 'Query'
+	Token:Tag = 'RequestType', 'RestrictionList', 'Restrictions', 'results', 'return', 'root', 'row'
+	Token:Tag = 'Security', 'SessionID', 'SkippedLevels', 'Source', 'Sources', 'SPID', 'Steps'
+	Token:Tag = 'Storage', 'SynchronizeSecurity', 'TableNotification', 'TableNotifications'
+	Token:Tag = 'Target', 'Time', 'Translation', 'Translations', 'Tuple', 'Tuples', 'Type', 'UName'
+	Token:Tag = 'UnaryOperator', 'Value', 'Warning', 'Where', 'WritebackTableCreation'
+
+	Token:end:separators = ' ', '\t', '>', @EOL
+	txt:colorFG = 0x007FAE
+	DisplayName = 'XMLA Parameters'
+    
+lexClass:
+	name = c_XMLelement_Properties	
+	ParseOnScreen = 0
+	parent = c_XMLelement	
+	previous:tag = '<', '</', '<!'
+	children = 0
+	Token:Tag = 'AxisFormat', 'BeginRange', 'Catalog', 'CatalogLocation'
+	Token:Tag = 'ClientProcessID', 'CommitTimeout', 'Content', 'Cube', 'CustomData'
+	Token:Tag = 'DataSourceInfo', 'DBMSVersion', 'DbpropCatalogTerm'
+	Token:Tag = 'DbpropCatalogUsage', 'DbpropColumnDefinition'
+	Token:Tag = 'DbpropConcatNullBehavior', 'DbpropDataSourceReadOnly', 'DbpropGroupBy'
+	Token:Tag = 'DbpropHeterogeneousTables', 'DbpropIdentifierCase', 'DbpropInitMode'
+	Token:Tag = 'DbpropMaxIndexSize', 'DbpropMaxOpenChapters', 'DbpropMaxRowSize'
+	Token:Tag = 'DbpropMaxRowSizeIncludeBlob', 'DbpropMaxTablesInSelect'
+	Token:Tag = 'DbpropMsmdActivityID', 'DbpropMsmdAutoExists', 'DbpropMsmdCacheMode'
+	Token:Tag = 'DbpropMsmdCachePolicy', 'DbpropMsmdCacheRatio'
+	Token:Tag = 'DbpropMsmdCacheRatio2', 'DbpropMsmdCompareCaseNotSensitiveStringFlags'
+	Token:Tag = 'DbpropMsmdCompareCaseSensitiveStringFlags', 'DbpropMsmdDebugMode'
+	Token:Tag = 'DbpropMsmdDynamicDebugLimit', 'DbpropMsmdErrorMessageMode'
+	Token:Tag = 'DbpropMsmdFlattened2', 'DbpropMsmdMDXCompatibility'
+	Token:Tag = 'DbpropMsmdMDXUniqueNameStyle', 'DbpropMsmdOptimizeResponse'
+	Token:Tag = 'DbpropMsmdRequestID', 'DbpropMsmdSQLCompatibility'
+	Token:Tag = 'DbpropMsmdSubqueries', 'DbpropMsmdUseFormulaCache'
+	Token:Tag = 'DbpropMultiTableUpdate', 'DbpropNullCollation'
+	Token:Tag = 'DbpropOrderByColumnsInSelect', 'DbpropOutputParameterAvailable'
+	Token:Tag = 'DbpropPersistentIdType', 'DbpropPrepareAbortBehavior'
+	Token:Tag = 'DbpropPrepareCommitBehavior', 'DbpropProcedureTerm'
+	Token:Tag = 'DbpropQuotedIdentifierCase', 'DbpropSchemaUsage', 'DbpropSqlSupport'
+	Token:Tag = 'DbpropSubqueries', 'DbpropSupportedTxnDdl'
+	Token:Tag = 'DbpropSupportedTxnIsoLevels', 'DbpropSupportedTxnIsoRetain'
+	Token:Tag = 'DbpropTableTerm', 'Dialect', 'DisablePrefetchFacts', 'EffectiveRoles'
+	Token:Tag = 'EffectiveUserName', 'EndRange', 'ExecutionMode', 'ForceCommitTimeout'
+	Token:Tag = 'Format', 'ImpactAnalysis', 'LocaleIdentifier', 'MaximumRows'
+	Token:Tag = 'MdpropAggregateCellUpdate', 'MdpropAxes', 'MdpropFlatteningSupport'
+	Token:Tag = 'MdpropMdxCaseSupport', 'MdpropMdxDdlExtensions', 'MdpropMdxDescFlags'
+	Token:Tag = 'MdpropMdxDrillFunctions', 'MdpropMdxFormulas', 'MdpropMdxJoinCubes'
+	Token:Tag = 'MdpropMdxMemberFunctions', 'MdpropMdxNamedSets'
+	Token:Tag = 'MdpropMdxNonMeasureExpressions', 'MdpropMdxNumericFunctions'
+	Token:Tag = 'MdpropMdxObjQualification', 'MdpropMdxOuterReference'
+	Token:Tag = 'MdpropMdxQueryByProperty', 'MdpropMdxRangeRowset'
+	Token:Tag = 'MdpropMdxSetFunctions', 'MdpropMdxSlicer', 'MdpropMdxStringCompop'
+	Token:Tag = 'MdpropMdxSubqueries', 'MdpropNamedLevels', 'MdxMissingMemberMode'
+	Token:Tag = 'MDXSupport', 'MemoryLockingMode', 'NonEmptyThreshold', 'Password'
+	Token:Tag = 'ProviderName', 'ProviderType', 'ProviderVersion', 'ReadOnlySession'
+	Token:Tag = 'RealTimeOlap', 'ResponseEncoding', 'ReturnAffectedObjects'
+	Token:Tag = 'ReturnCellProperties', 'Roles', 'SafetyOptions', 'SecuredCellValue'
+	Token:Tag = 'ServerName', 'ShowHiddenCubes', 'SQLQueryMode', 'SQLSupport'
+	Token:Tag = 'SspropInitAppName', 'SspropInitPacketsize', 'SspropInitWsid'
+	Token:Tag = 'StateSupport', 'Timeout', 'TransactionDDL', 'UpdateIsolationLevel'
+	Token:Tag = 'Username', 'VisualMode'
+
+	Token:end:separators = ' ', '\t', '>', @EOL
+	txt:colorFG = 0x007FAE
+	DisplayName = 'XMLA Properties'
+    
+lexClass:
+	name = c_XMLelementName	
+	ParseOnScreen = 0
+	parent = c_XMLelement	
+	previous:tag = '<', '</', '<!'
+	children = 0
+	start:tag = @alpha
+	skip:tag = @digit
+	end:separators = @alpha:not
+	txt:colorFG = 0x840000
+	txt:italic = 1
+	DisplayName = 'XML Element Name'
+	
+lexClass:
+	name = c_XMLelementPropName	
+	ParseOnScreen = 0
+	parent = c_XMLelement, 
+	previous:tag = ' ', '\t', @EOL, '>'
+	children = 0
+	start:tag = @alpha
+	end:separators = ' ', '\t', '=', '>', @EOL
+	txt:colorFG = 0xFF9900
+	DisplayName = 'XML Element Property Name'
+	
+lexClass:
+	name = c_XMLelementPropValue_str1
+	ParseOnScreen = 0
+	parent = c_XMLelement
+	start:Tag = '"'
+	end:Tag = '"'
+	txt:colorFG = 0xDC009C
+	DisplayName = 'XML Element Property Value (double quote)'
+	
+lexClass:	
+	name = c_XMLelementPropValue_str2
+	ParseOnScreen = 0
+	parent = c_XMLelement
+	start:Tag ='\''
+	end:Tag ='\''
+	txt:colorFG = 0xDC009C
+	DisplayName = 'XML Element Property Value (single quote)'

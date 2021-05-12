@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CatapultAliasFile>
+    <Map Name="RED_DOCO_add_JDBC_drvrs" Link="Installation Guide/Adding JDBC drivers.htm" ResolvedId="4655" />
+    <Map Name="RED_DOCO_add_your_license" Link="Installation Guide/Adding Your License.htm" ResolvedId="3840" />
+    <Map Name="RED_DOCO_bckup_MD_b4_load_app" Link="Installation Guide/Backing Up the Metadata before Loading Applications.htm" ResolvedId="1590" />
+    <Map Name="RED_DOCO_BDA" Link="Installation Guide/BDA.htm" ResolvedId="4654" />
+    <Map Name="RED_DOCO_BDA_Dgrm_Ovr" Link="Installation Guide/BDA Diagram Overview.htm" ResolvedId="4593" />
+    <Map Name="RED_DOCO_change_lang_dir" Link="Installation Guide/Changing the Languages Directory.htm" ResolvedId="3897" />
+    <Map Name="RED_DOCO_change_app_dir" Link="Installation Guide/Changing the Application Directory.htm" ResolvedId="3891" />
+    <Map Name="RED_DOCO_check_your_ODBC_drv" Link="Installation Guide/Checking Odbc Drivers.htm" ResolvedId="3843" />
+    <Map Name="RED_DOCO_check_your_win_ver" Link="Installation Guide/Checking your Windows Version.htm" ResolvedId="3841" />
+    <Map Name="RED_DOCO_config_Krbrs_sec_use_BDA" Link="Installation Guide/Configuring Kerberos for a secure use with BDA.htm" ResolvedId="4697" />
+    <Map Name="RED_DOCO_Create_MD_Repo_ORA" Link="Installation Guide/Creating a Metadata Repository for Oracle.htm" ResolvedId="1544" />
+    <Map Name="RED_DOCO_Config_SQL_srvr_MD_conn" Link="Installation Guide/Configuring a SQL Server Metadata Connection.htm" ResolvedId="3818" />
+    <Map Name="RED_DOCO_Config_Tera_MD_conn" Link="Installation Guide/Configuring a Teradata.htm" ResolvedId="3820" />
+    <Map Name="RED_DOCO_create_lang_file" Link="Installation Guide/Creating a Language File.htm" ResolvedId="1978" />
+    <Map Name="RED_DOCO_Create_MD_Repo_SQL" Link="Installation Guide/Creating a Metadata Repository.htm" ResolvedId="1543" />
+    <Map Name="RED_DOCO_createNload_apps_CLI" Link="Installation Guide/Creating and Loading.htm" ResolvedId="2064" />
+    <Map Name="RED_DOCO_create_ODBC_conn" Link="Installation Guide/Creating an ODBC Connection.htm" ResolvedId="3922" />
+    <Map Name="RED_DOCO_create_ORA_ind_users" Link="Installation Guide/Creating Oracle Individual Users.htm" ResolvedId="4231" />
+    <Map Name="RED_DOCO_create_Tera_envrnmnt" Link="Installation Guide/Creating a Teradata Environment.htm" ResolvedId="1065" />
+    <Map Name="RED_DOCO_Config_ORA_MD_conn" Link="Installation Guide/Configuring an Oracle Metadata Conenction (DSN).htm" ResolvedId="3819" />
+    <Map Name="RED_DOCO_How_to_use_Install" Link="Installation Guide/Howtouse.htm" ResolvedId="3826" />
+    <Map Name="RED_DOCO_Dgrm_Ovr_red_schdlr_dbase_access" Link="Installation Guide/Diagram Overview of RED and Scheduler database access.htm" ResolvedId="4648" />
+    <Map Name="RED_DOCO_Install_Overview" Link="Installation Guide/Installation Guide.htm" ResolvedId="3815" />
+    <Map Name="RED_DOCO_how2setup_BDA" Link="Installation Guide/How to set up BDA.htm" ResolvedId="4582" />
+    <Map Name="RED_DOCO_Install_red_ORA" Link="Installation Guide/Installing RED for Oracle.htm" ResolvedId="3812" />
+    <Map Name="RED_DOCO_Install_red_SQL_srvr" Link="Installation Guide/Installing RED for SQL Server.htm" ResolvedId="3811" />
+    <Map Name="RED_DOCO_Install_win_schdlr" Link="Installation Guide/Installing a Windows Scheduler.htm" ResolvedId="4646" />
+    <Map Name="RED_DOCO_Install_unix_linux_schdlr" Link="Installation Guide/Installing a UNIX_Linux Scheduler.htm" ResolvedId="4647" />
+    <Map Name="RED_DOCO_Install_red_Tera" Link="Installation Guide/Installing RED for Teradata.htm" ResolvedId="3813" />
+    <Map Name="RED_DOCO_Install_WS_Red" Link="Installation Guide/Installing WhereScape Red.htm" ResolvedId="3810" />
+    <Map Name="RED_DOCO_languages" Link="Installation Guide/Languages.htm" ResolvedId="1977" />
+    <Map Name="RED_DOCO_load_languages" Link="Installation Guide/Loading Languages.htm" ResolvedId="1979" />
+    <Map Name="RED_DOCO_Install_WS_red_CLI" Link="Installation Guide/Installing WhereScape RED from the Command Line.htm" ResolvedId="4193" />
+    <Map Name="RED_DOCO_installNconfig_intro_ORA" Link="Installation Guide/Oracle Installation and Configuration Introduction.htm" ResolvedId="3920" />
+    <Map Name="RED_DOCO_installNconfig_intro_Tera" Link="Installation Guide/Teradataa_Installation and Configuration Introduction.htm" ResolvedId="3919" />
+    <Map Name="RED_DOCO_ORA_installNconfig" Link="Installation Guide/Oracle Installation and Configuration Introduction.htm" ResolvedId="3837" />
+    <Map Name="RED_DOCO_ORA_Dgrm_Ovr" Link="Installation Guide/Oracle Diagram Overview.htm" ResolvedId="4651" />
+    <Map Name="RED_DOCO_SQL_srvr_Dgrm_Ovr" Link="Installation Guide/SQL Server Diagram Overview.htm" ResolvedId="4650" />
+    <Map Name="RED_DOCO_SQL_srvr_quick_app" Link="Installation Guide/SQL Server Quick Application.htm" ResolvedId="1003" />
+    <Map Name="RED_DOCO_tst_bda_setup" Link="Installation Guide/Testing the BDA setup.htm" ResolvedId="4656" />
+    <Map Name="RED_DOCO_unix_schdlr_setup_4_Hadp_loads" Link="Installation Guide/Unix Scheduler setup for Hadoop loads using Oracle's Big Data Connectors.htm" ResolvedId="4201" />
+    <Map Name="RED_DOCO_tools" Link="Installation Guide/Tools.htm" ResolvedId="4262" />
+    <Map Name="RED_DOCO_test_odbc_src" Link="Installation Guide/Testing an ODBC Source.htm" ResolvedId="3827" />
+    <Map Name="RED_DOCO_Tera_Dgrm_Ovr" Link="Installation Guide/Teradata Diagram Overview.htm" ResolvedId="4649" />
+    <Map Name="RED_DOCO_InstallNConfig_intro_SQL" Link="Installation Guide/Installation and Configuration Introduction.htm" ResolvedId="3918" />
+    <Map Name="RED_DOCO_SQL_srvr_dbaseNlogin" Link="Installation Guide/SQL Server Database and Login Setup.htm" ResolvedId="4179" />
+    <Map Name="RED_DOCO_test_apps" Link="Installation Guide/Testing Applications.htm" ResolvedId="2057" />
+    <Map Name="RED_DOCO_Setup_adm_procs_ext_codes" Link="Installation Guide/Setup Administrator Process Exit Codes.htm" ResolvedId="4636" />
+    <Map Name="RED_DOCO_schdlr_installNconfig" Link="Installation Guide/Scheduler Installation and Configuration.htm" ResolvedId="4645" />
+    <Map Name="RED_DOCO_Preqsts_BDA" Link="Installation Guide/BDA_Prerequisites.htm" ResolvedId="4581" />
+    <Map Name="RED_DOCO_val_MD_Repo_CLI" Link="Installation Guide/Validating a Metadata Repository using the Command Line.htm" ResolvedId="-2147483648" />
+    <Map Name="RED_DOCO_red_overview" Link="User Guide/Overview.htm" ResolvedId="2760" />
+    <Map Name="RED_DOCO_Tera_installNconfig" Link="Installation Guide/Teradataa_Installation and Configuration Introduction.htm" ResolvedId="3836" />
+    <Map Name="RED_DOCO_SQL_srvr_login" Link="Installation Guide/SQL Server Database and Login Setup.htm" ResolvedId="3842" />
+    <Map Name="RED_DOCO_SQL_srvr_installNconfig" Link="Installation Guide/Installation and Configuration Introduction.htm" ResolvedId="3817" />
+    <Map Name="RED_DOCO_SQL_srvr_dbase" Link="Installation Guide/SQL Server Database and Login Setup.htm" ResolvedId="4180" />
+    <Map Name="RED_DOCO_start_stop_logging" Link="Installation Guide/Tools.htm" ResolvedId="4263" />
+    <Map Name="RED_DOCO_SQL_srvr_quick_start" Link="Installation Guide/SQL Server Quick Start.htm" ResolvedId="1098" />
+    <Map Name="RED_DOCO_Create_MD_Repo_Tera" Link="Installation Guide/Creating a Teradata Environment.htm" ResolvedId="1546" />
+    <Map Name="RED_DOCO_trblsht_adm" Link="Installation Guide/Troubleshooting.htm" ResolvedId="4601" />
+    <Map Name="RED_DOCO_xml_for_app_load" Link="Installation Guide/XML Files for Application Loads.htm" ResolvedId="2652" />
+    <Map Name="RED_DOCO_app_load_procs" Link="Installation Guide/Application Load Process.htm" ResolvedId="674" />
+    <Map Name="RED_DOCO_val_ora_user_priv" Link="Installation Guide/Validating Oracle User Privileges.htm" ResolvedId="-2147483648" />
+    <Map Name="RED_DOCO_app_hst_scrpt_lang" Link="User Guide/Host Script Languages/Applying Host Script Languages.htm" ResolvedId="4001" />
+    <Map Name="RED_DOCO_add_hst_scrpt_lang" Link="User Guide/Host Script Languages/Adding a Host Script Language Type.htm" ResolvedId="4000" />
+    <Map Name="RED_DOCO_def_hst_scrpt_lang" Link="User Guide/Host Script Languages/Defining Host Script Languages.htm" ResolvedId="4002" />
+    <Map Name="RED_DOCO_exprt_hst_scrpt_lang" Link="User Guide/Host Script Languages/Exporting Host Script Languages.htm" ResolvedId="4003" />
+    <Map Name="RED_DOCO_ldng_hst_scrpt_lang" Link="User Guide/Host Script Languages/Loading Host Languages.htm" ResolvedId="4004" />
+    <Map Name="RED_DOCO_hst_scrpt_lang" Link="User Guide/Host Script Languages/Host Script Languages.htm" ResolvedId="4005" />
+    <Map Name="RED_DOCO_exp_mid_pane_output" Link="User Guide/Objects and Windows/Export Middle Pane Output.htm" ResolvedId="3930" />
+    <Map Name="RED_DOCO_snd_cols_anthr_obj" Link="User Guide/Column Context Menu/Send_Col_Another Object.htm" ResolvedId="3950" />
+    <Map Name="RED_DOCO_schdlng_red_host_scrpt_3D" Link="User Guide/Scheduler/Scheduling a RED Host Script from 3D.htm" ResolvedId="3954" />
+    <Map Name="RED_DOCO_stop_linux_unix_schdlr" Link="User Guide/Scheduler/Stopping a Linux UNIX Scheduler.htm" ResolvedId="4010" />
+    <Map Name="RED_DOCO_repo_prvcy_stngs" Link="User Guide/Default Settings/Repository Privacy Settings.htm" ResolvedId="4051" />
+    <Map Name="RED_DOCO_ovr_create_ddl" Link="User Guide/Table Properties/Override Create DDL.htm" ResolvedId="4068" />
+    <Map Name="RED_DOCO_sync_col_with_dbase" Link="User Guide/Column Context Menu/Sync_Col_order_database.htm" ResolvedId="4074" />
+    <Map Name="RED_DOCO_def_opt_create_clause" Link="User Guide/Default Settings/Default Optional CREATE Clause.htm" ResolvedId="4077" />
+    <Map Name="RED_DOCO_trgt_loc" Link="User Guide/Default Settings/Target Location.htm" ResolvedId="4076" />
+    <Map Name="RED_DOCO_Had_using_ORA_big_dat_conn" Link="User Guide/Connections/Hadoop using Oracle's Big Data Connectors.htm" ResolvedId="4092" />
+    <Map Name="RED_DOCO_Hadoop" Link="User Guide/Connections/Hadoop.htm" ResolvedId="4090" />
+    <Map Name="RED_DOCO_tbl_stor_scr_grnplm" Link="User Guide/Table Properties/Table Storage Screen Greenplum.htm" ResolvedId="4152" />
+    <Map Name="RED_DOCO_tbl_stor_scr_Net" Link="User Guide/Table Properties/Table Storage Screen Netezza.htm" ResolvedId="4181" />
+    <Map Name="RED_DOCO_tbl_stor_scr_PDW" Link="User Guide/Table Properties/Table Storage Screen PDW.htm" ResolvedId="4182" />
+    <Map Name="RED_DOCO_crtng_ld_apps_frm_CLI" Link="User Guide/Promoting Between Environments/Creating_Loading App_Command Line.htm" ResolvedId="4191" />
+    <Map Name="RED_DOCO_ssis_ld_tbl_src_scrn" Link="User Guide/Loading Data/SSIS Load Table Source Screen.htm" ResolvedId="4195" />
+    <Map Name="RED_DOCO_Had_for_ORA_conn" Link="User Guide/Connections/Hadoop for Oracle Connectors.htm" ResolvedId="4198" />
+    <Map Name="RED_DOCO_file_scrpt_based_ld_src_scrns" Link="User Guide/Loading Data/File and Script based load source screens.htm" ResolvedId="4205" />
+    <Map Name="RED_DOCO_ORA_ind_user" Link="User Guide/Login Checks/Oracle Individual User.htm" ResolvedId="4234" />
+    <Map Name="RED_DOCO_dat_src_does_not_match_dw" Link="User Guide/Login Checks/Data Source not match the ODBC DSN.htm" ResolvedId="4235" />
+    <Map Name="RED_DOCO_more_one_conn_dw" Link="User Guide/Login Checks/More connection DWenabled .htm" ResolvedId="4236" />
+    <Map Name="RED_DOCO_file_att_ssis_exp" Link="User Guide/Exporting Data/File Attributes SSIS Exports.htm" ResolvedId="4246" />
+    <Map Name="RED_DOCO_reset_meta_dbase_conn" Link="User Guide/Connections/Reset Meta Database Connections.htm" ResolvedId="4268" />
+    <Map Name="RED_DOCO_bulk_tbl_storage_change" Link="User Guide/Table Properties/Bulk Table Storage Change.htm" ResolvedId="4401" />
+    <Map Name="RED_DOCO_obj_sub_types" Link="User Guide/Default Settings/Object Sub Types.htm" ResolvedId="4432" />
+    <Map Name="RED_DOCO_config_BDA_srvr" Link="User Guide/Connections/Configuring the BDA Server.htm" ResolvedId="4583" />
+    <Map Name="RED_DOCO_stats" Link="User Guide/Table Properties/Statistics Screen.htm" ResolvedId="4596" />
+    <Map Name="RED_DOCO_man_crtd_scrpts" Link="User Guide/Procedures and Scripts/Manually Created Scripts.htm" ResolvedId="4620" />
+    <Map Name="RED_DOCO_apache_sq_ld" Link="User Guide/Loading Data/Apache Sqoop Load.htm" ResolvedId="4637" />
+    <Map Name="RED_DOCO_select_job_report_flds" Link="User Guide/Scheduler/Select Job Report Fields.htm" ResolvedId="4660" />
+    <Map Name="RED_DOCO_schdlr_tools" Link="User Guide/Scheduler/Tools.htm" ResolvedId="4661" />
+    <Map Name="RED_DOCO_auto" Link="User Guide/Scheduler/Auto Menu.htm" ResolvedId="4662" />
+    <Map Name="RED_DOCO_show_dpndncs_diagram" Link="User Guide/Scheduler/Show Dependencies Diagram.htm" ResolvedId="4665" />
+    <Map Name="RED_DOCO_conn_stngs_BDA" Link="User Guide/Connections/Connection settings for BDA.htm" ResolvedId="4670" />
+    <Map Name="RED_DOCO_config_your_dbase" Link="User Guide/Connections/Configuring your database.htm" ResolvedId="4671" />
+    <Map Name="RED_DOCO_MS_anal_srvr_tab_mode" Link="User Guide/Connections/Microsoft Analysis Server_Tabular Mode.htm" ResolvedId="4692" />
+    <Map Name="RED_DOCO_tblr_mdls" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Tabular Models.htm" ResolvedId="4702" />
+    <Map Name="RED_DOCO_dfng_dat_src_trg_tblr_mdls" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/DefDataSource_Targets_TabularModels.htm" ResolvedId="4703" />
+    <Map Name="RED_DOCO_dfng_tblr_mdl" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Def Tblr Mdl.htm" ResolvedId="4704" />
+    <Map Name="RED_DOCO_tblr_mdl_msrs" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Tabular Model Measures.htm" ResolvedId="4708" />
+    <Map Name="RED_DOCO_tblr_mdl_calc_cols" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Tabular Model Calculated Columns.htm" ResolvedId="4709" />
+    <Map Name="RED_DOCO_eff_abrtng_job" Link="User Guide/Scheduler/Effects of Aborting a Job.htm" ResolvedId="4739" />
+    <Map Name="RED_DOCO_conn_brws_props" Link="User Guide/Connections/Connection Browse Properties.htm" ResolvedId="4740" />
+    <Map Name="RED_DOCO_obj_typ_icon" Link="User Guide/Default Settings/Object Type Icon.htm" ResolvedId="4766" />
+    <Map Name="RED_DOCO_list_proj_mem_for_objs" Link="User Guide/Organizing Objects/List Project Memberships for Objects.htm" ResolvedId="4757" />
+    <Map Name="RED_DOCO_tbl_stor_scr_tabular" Link="User Guide/Table Properties/Table Storage Screen Tabular.htm" ResolvedId="4788" />
+    <Map Name="RED_DOCO_temps" Link="User Guide/Templates/Templates.htm" ResolvedId="4812" />
+    <Map Name="RED_DOCO_temp_props" Link="User Guide/Templates/Template Properties.htm" ResolvedId="4814" />
+    <Map Name="RED_DOCO_custm_objs" Link="User Guide/Templates/Script Temp Custom Dbase Tbl Objs.htm" ResolvedId="4826" />
+</CatapultAliasFile>

@@ -1,0 +1,8 @@
+4;1;wsl_hive_block_insert
+4;2;wsl_hive_utility_dml
+4;3;wsl_common_powershellscript_stub
+4;4;wsl_teradata_unixscript_tpt_reset
+4;5;wsl_teradata_powershellscript_tpt_reset
+4;6;wsl_teradata_utility_tpt
+4;7;wsl_teradata_proc_stage
+4;8;wsl_teradata_utility_dml

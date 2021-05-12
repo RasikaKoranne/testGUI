@@ -1,0 +1,260 @@
+_SQL_
+delete from budget;
+_SQL_
+delete from forecast;
+_SQL_
+delete from customer;
+_SQL_
+delete from product;
+_SQL_
+delete from prod_line;
+_SQL_
+delete from prod_group;
+_SQL_
+delete from prod_subgroup;
+_SQL_
+delete from order_header;
+_SQL_
+delete from order_line;
+_SQL_
+delete from kpi;
+_SQL_
+delete from code_table;
+_SQL_
+delete from states;
+_SQL_
+insert into budget values ('1002','228','185','409.92',CONVERT(DATETIME,'20100602',112));
+_SQL_
+insert into budget values ('1008','228','80','978.58',CONVERT(DATETIME,'20100602',112));
+_SQL_
+insert into budget values ('1003','227','62','572.42',CONVERT(DATETIME,'20110430',112));
+_SQL_
+insert into budget values ('1007','227','98','766.17',CONVERT(DATETIME,'20110430',112));
+_SQL_
+insert into budget values ('1004','226','40','218.00',CONVERT(DATETIME,'20111105',112));
+_SQL_
+insert into budget values ('1006','226','40','618.00',CONVERT(DATETIME,'20111105',112));
+_SQL_
+insert into budget values ('1009','225','74','940.24',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into budget values ('1002','225','74','163.97',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into budget values ('1006','225','40','618.00',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into budget values ('1007','225','98','766.17',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into budget values ('1004','225','74','402.54',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into budget values ('1003','224','15','134.85',CONVERT(DATETIME,'20111115',112));
+_SQL_
+insert into budget values ('1008','224','15','177.34',CONVERT(DATETIME,'20111115',112));
+_SQL_
+insert into budget values ('1001','224','15','159.50',CONVERT(DATETIME,'20111115',112));
+_SQL_
+insert into budget values ('1001','223','74','812.46',CONVERT(DATETIME,'20100813',112));
+_SQL_
+insert into budget values ('1009','223','29','369.17',CONVERT(DATETIME,'20100813',112));
+_SQL_
+insert into budget values ('1007','223','80','622.52',CONVERT(DATETIME,'20100813',112));
+_SQL_
+insert into budget values ('1003','223','29','269.70',CONVERT(DATETIME,'20100813',112));
+_SQL_
+insert into forecast values ('1002','228','161','358.06',CONVERT(DATETIME,'20100602',112));
+_SQL_
+insert into forecast values ('1008','228','70','854.78',CONVERT(DATETIME,'20100602',112));
+_SQL_
+insert into forecast values ('1003','227','54','500.00',CONVERT(DATETIME,'20110430',112));
+_SQL_
+insert into forecast values ('1007','227','86','669.25',CONVERT(DATETIME,'20110430',112));
+_SQL_
+insert into forecast values ('1004','226','40','218.00',CONVERT(DATETIME,'20111105',112));
+_SQL_
+insert into forecast values ('1006','226','40','618.00',CONVERT(DATETIME,'20111105',112));
+_SQL_
+insert into forecast values ('1009','225','65','821.29',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into forecast values ('1002','225','65','143.23',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into forecast values ('1006','225','40','618.00',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into forecast values ('1007','225','86','669.25',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into forecast values ('1004','225','65','351.61',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into forecast values ('1003','224','11','105.46',CONVERT(DATETIME,'20111115',112));
+_SQL_
+insert into forecast values ('1008','224','11','138.69',CONVERT(DATETIME,'20111115',112));
+_SQL_
+insert into forecast values ('1001','224','11','124.74',CONVERT(DATETIME,'20111115',112));
+_SQL_
+insert into forecast values ('1001','223','65','709.68',CONVERT(DATETIME,'20100813',112));
+_SQL_
+insert into forecast values ('1009','223','23','288.72',CONVERT(DATETIME,'20100813',112));
+_SQL_
+insert into forecast values ('1007','223','70','543.76',CONVERT(DATETIME,'20100813',112));
+_SQL_
+insert into forecast values ('1003','223','23','210.92',CONVERT(DATETIME,'20100813',112));
+_SQL_
+insert into customer values ('223','THE TOY BUS','NEAR BURCLEAR','WESTPORT','SI');
+_SQL_
+insert into customer values ('224','DOLLS AND DIGGERS','345 THE TERRACE','WELLINGTON','NI');
+_SQL_
+insert into customer values ('225','THE TOY BOX','346 QuEEN STREET','SYDNEY','NW');
+_SQL_
+insert into customer values ('226','MAD ABOUT GAMES','43 HORAREKA ST','MT. EDEN','BB');
+_SQL_
+insert into customer values ('227','HOUSE OF FUN','41 VICTORIA ST','DEVONPORT','NZ');
+_SQL_
+insert into customer values ('228','JOHN AND JOES TOYS','3700 PARNELL RISE','BEAVERTON','OR');
+_SQL_
+insert into order_header values ('100001',CONVERT(DATETIME,'20100518',112),'228',CONVERT(DATETIME,'20100602',112));
+_SQL_
+insert into order_header values ('100002',CONVERT(DATETIME,'20110424',112),'227',CONVERT(DATETIME,'20110430',112));
+_SQL_
+insert into order_header values ('100003',CONVERT(DATETIME,'20111027',112),'226',CONVERT(DATETIME,'20111105',112));
+_SQL_
+insert into order_header values ('100004',CONVERT(DATETIME,'20120529',112),'225',CONVERT(DATETIME,'20120404',112));
+_SQL_
+insert into order_header values ('100005',CONVERT(DATETIME,'20111107',112),'224',CONVERT(DATETIME,'20111115',112));
+_SQL_
+insert into order_header values ('100006',CONVERT(DATETIME,'20110216',112),'223',CONVERT(DATETIME,'20110220',112));
+_SQL_
+insert into order_header values ('100007',CONVERT(DATETIME,'20120129',112),'225',CONVERT(DATETIME,'20120130',112));
+_SQL_
+insert into order_header values ('100008',CONVERT(DATETIME,'20111117',112),'224',CONVERT(DATETIME,'20111120',112));
+_SQL_
+insert into order_header values ('100009',CONVERT(DATETIME,'20110219',112),'224',CONVERT(DATETIME,'20110223',112));
+_SQL_
+insert into order_line values ('100009','1','1001','11.000','60','660.00','73.33');
+_SQL_
+insert into order_line values ('100008','1','1003','9.300','10','93.00','10.33');
+_SQL_
+insert into order_line values ('100007','1','1009','12.730','60','763.80','84.87');
+_SQL_
+insert into order_line values ('100006','1','1001','11.000','60','660.00','73.33');
+_SQL_
+insert into order_line values ('100005','1','1003','9.300','10','93.00','10.33');
+_SQL_
+insert into order_line values ('100004','1','1009','12.730','60','763.80','84.87');
+_SQL_
+insert into order_line values ('100003','1','1004','5.450','40','218.00','24.22');
+_SQL_
+insert into order_line values ('100002','1','1003','9.300','50','465.00','51.67');
+_SQL_
+insert into order_line values ('100001','1','1002','2.220','150','333.00','37.00');
+_SQL_
+insert into order_line values ('100006','2','1009','12.730','20','254.60','28.29');
+_SQL_
+insert into order_line values ('100005','2','1001','11.000','10','110.00','12.22');
+_SQL_
+insert into order_line values ('100004','2','1002','2.220','60','133.20','14.80');
+_SQL_
+insert into order_line values ('100003','2','1006','15.450','40','618.00','68.67');
+_SQL_
+insert into order_line values ('100002','2','1007','7.780','80','622.40','69.16');
+_SQL_
+insert into order_line values ('100001','2','1008','12.230','65','794.95','88.33');
+_SQL_
+insert into order_line values ('100006','3','1003','9.300','20','186.00','20.67');
+_SQL_
+insert into order_line values ('100005','3','1008','12.230','10','122.30','13.59');
+_SQL_
+insert into order_line values ('100004','3','1004','5.450','60','327.00','36.33');
+_SQL_
+insert into order_line values ('100004','4','1006','15.450','40','618.00','68.67');
+_SQL_
+insert into order_line values ('100004','5','1007','7.780','80','622.40','69.16');
+_SQL_
+insert into order_line values ('100006','4','1007','7.780','65','505.70','56.19');
+_SQL_
+insert into prod_line values ('Edu','Educational toys and equipment');
+_SQL_
+insert into prod_line values ('Toy','General toys');
+_SQL_
+insert into prod_group values ('Talking','Talking toys');
+_SQL_
+insert into prod_group values ('Balls','All types and sizes of balls');
+_SQL_
+insert into prod_group values ('Clubs','Clubs, bats and other hitting devices');
+_SQL_
+insert into prod_group values ('Blocks','Building and stacking blocks');
+_SQL_
+insert into prod_group values ('Equipment','Machinery, tools and other equipment');
+_SQL_
+insert into prod_subgroup values ('Equipment','Tools','Tools and tool cases');
+_SQL_
+insert into prod_subgroup values ('Blocks','Plastic','Plastic building blocks');
+_SQL_
+insert into prod_subgroup values ('Clubs','Golf','Golf clubs');
+_SQL_
+insert into prod_subgroup values ('Balls','Golf','Golf balls');
+_SQL_
+insert into prod_subgroup values ('Talking','Jar','Talking utensils');
+_SQL_
+insert into prod_subgroup values ('Blocks','Foam','Foam building blocks');
+_SQL_
+insert into prod_subgroup values ('Equipment','Tractor','Tractors and Diggers');
+_SQL_
+insert into prod_subgroup values ('Balls','Large','Large balls');
+_SQL_
+insert into code_table values ('sg','Tools','Tools and tool cases');
+_SQL_
+insert into code_table values ('sg','Plastic','Plastic building blocks');
+_SQL_
+insert into code_table values ('sg','Golf','Golf equipment');
+_SQL_
+insert into code_table values ('pg','Talking','Talking toys');
+_SQL_
+insert into code_table values ('sg','Jar','Talking utensils');
+_SQL_
+insert into code_table values ('sg','Foam','Foam building blocks');
+_SQL_
+insert into code_table values ('sg','Tractor','Tractors and Diggers');
+_SQL_
+insert into code_table values ('sg','Large','Large balls');
+_SQL_
+insert into code_table values ('pg','Balls','All types and sizes of balls');
+_SQL_
+insert into code_table values ('pg','Clubs','Clubs, bats and other hitting devices');
+_SQL_
+insert into code_table values ('pg','Blocks','Building and stacking blocks');
+_SQL_
+insert into code_table values ('pg','Equipment','Machinery, tools and other equipment');
+_SQL_
+insert into code_table values ('pl','Edu','Educational toys and equipment');
+_SQL_
+insert into code_table values ('pl','Toy','General toys');
+_SQL_
+insert into product values ('01001','Stripped ball','Toy','Balls','Large');
+_SQL_
+insert into product values ('01002','Front loader tractor','Toy','Equipment','Tractor');
+_SQL_
+insert into product values ('01003','Building blocks','Edu','Blocks','Foam');
+_SQL_
+insert into product values ('01004','Talking cookie jar','Toy','Talking','Jar');
+_SQL_
+insert into product values ('01005','yellow golf ball','Toy','Balls','Golf');
+_SQL_
+insert into product values ('01006','red golf ball','Toy','Balls','Golf');
+_SQL_
+insert into product values ('01007','blue gold club','Toy','Clubs','Golf');
+_SQL_
+insert into product values ('01008','plastic building blocks"','Edu','Blocks','Plastic');
+_SQL_
+insert into product values ('01009','tool case','Toy','Equipment','Tools');
+_SQL_
+insert into kpi values ('Activity','Active customers');
+_SQL_
+insert into kpi values ('Sales','Customer sales');
+_SQL_
+insert into states values ('SI','South Island','New Zealand','Oceania');
+_SQL_
+insert into states values ('NI','North Island','New Zealand','Oceania');
+_SQL_
+insert into states values ('BB','Big Bay','New Zealand','Oceania');
+_SQL_
+insert into states values ('NZ','New Zealand','New Zealand','Oceania');
+_SQL_
+insert into states values ('OR','Oregon','United States of America','North America');
+_SQL_
+insert into states values ('NW','New South Wales','Australia','Oceania');

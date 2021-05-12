@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Extended Properties" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Extended Properties Lookup</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/olh.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Extended Properties Lookup</h2>
+            <p>&#160;</p>
+            <p class="p_2">Extended properties can be accessed in the following four ways:</p>
+            <p>&#160;</p>
+            <p><b>1. All template driven code generation</b>
+            </p>
+            <p>Template engine reference examples using pebble syntax:</p>
+            <p>&#160;</p>
+            <p>
+                <meta charset="utf-8" />
+            </p>
+            <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;" id="docs-internal-guid-cab8aee6-7fff-d043-d39e-bbda14db7645"><span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre; white-space: pre-wrap;">table.extendedPropertyValuesByName[“&lt;propertyName&gt;”]</span>
+            </p>
+            <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre; white-space: pre-wrap;">table.loadInfo.sourceConnection.extendedPropertyValuesByName[“&lt;propertyName&gt;”]</span>
+            </p>
+            <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre; white-space: pre-wrap;">table.target.connection.extendedPropertyValuesByName[“&lt;propertyName&gt;”]</span>
+            </p>
+            <p>&#160;</p>
+            <p><b>2. Automatic token replacement at run-time in Windows scripts</b>
+            </p>
+            <p>The automatic token replacement applies to Windows based scripts only. Each token is assessed at run-time immediately before executing a script in the same way parameters are replaced:</p>
+            <p>&#160;</p>
+            <p>
+                <meta charset="utf-8" />
+            </p>
+            <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;" id="docs-internal-guid-954c2fb4-7fff-c51a-8400-271de96adb8e"><span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre; white-space: pre-wrap;">Token format: $WSL_EXT_&lt;propertyName&gt;$</span>
+            </p>
+            <p>&#160;</p>
+            <p>In the token replacement process, the first non-empty Extended Property value found is replaced in this order of preference:</p>
+            <ol>
+                <li value="1">Table or Export Object</li>
+                <li value="2">Associated Source Connection</li>
+                <li value="3">Associated Target Connection</li>
+            </ol>
+            <p>If the Extended Property was found without any value set then an empty string is returned.</p>
+            <p>If the Extended Property was not found in the associated objects the token is left unchanged.</p>
+            <p>&#160;</p>
+            <p><b>3. Calling the WslMetadataServiceClient.dll at run-time from Windows scripts</b>
+            </p>
+            <p>This is an advanced feature and not recommended for general use as it puts a reliance on loading this DLL at run-time from Windows scripts.</p>
+            <p>Below, an example on the PowerShell code block inside a RED PowerShell Script:</p>
+            <p>&#160;</p>
+            <p><code>Add-Type -Path "${env:WSL_BINDIR}WslMetadataServiceClient.dll"
+</code>
+            </p>
+            <p><code>			$repo = New-Object WslMetadataServiceClient.Repo("${env:WSL_META_DSN}", 'SQLServer', </code>
+            </p>
+            <p><code>"${env:WSL_META_USER}", "${env:WSL_META_PWD}", "${env:WSL_META_SCHEMA}", </code>
+            </p>
+            <p><code>"_${env:WSL_META_DSN_ARCH}")
+				</code>
+            </p>
+            <p><code>$repo.objectsByName[“&lt;objectName&gt;”].extendedPropertyValuesByName["&lt;propertyName&gt;"]</code>
+            </p>
+            <p>&#160;</p>
+            <p><b>4. WhereScape Database Enablement Packs</b>
+            </p>
+            <p>WhereScape provides Database Enablement Packs for many target platforms, each pack includes a utility template with extended property lookup functions as well as a PowerShell and Python functions to call at run-time. For more information please contact your <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>representative. </p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Views" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Compound Views, Facts and Dimensions</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Compound Views, Facts and Dimensions</h2>
+            <p>A compound view is used to join tables and views together for presentation to users. They simplify user access, particularly if multiple dimension history tables need to be accessed in a single query.</p>
+            <p>The process for creating a compound view is as follows:</p>
+            <ol>
+                <li value="1">Double click the <b>View</b> group object in the left pane.</li>
+                <li value="2">Browse to the Data Warehouse in the right pane.</li>
+                <li value="3">Drag an existing one-to-one view from the right pane into the middle pane.<ul><li>The <b>Add New Metadata object</b> window displays and defaults the object type to a View table.</li><li>Change the view name as required, and click <b>ADD</b>.</li></ul></li>
+                <li value="4">The View <b>Properties</b> window displays.A 'Where' clause could be entered, but this can be done later using the 'Where' clause builder. The table locking mode can also be changed at this point. The default is lock for access, all other Teradata locking modes are available for use. Change the table type to be a <b>dimension view</b> or <b>fact view</b> (as appropriate) if a star schema presentation layer is being built.</li>
+                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                    <col class="TableStyle-note-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-note-Head-Header1">
+                            <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-note-Body-Body1">
+                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">.You have to create <b>fact</b> and <b>dimension</b> views to use <b>Analysis Services Cubes</b>.&#160;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <li value="5">
+                    <p>Select the <b>Distinct Data Select</b> check-box if you want the view to return only distinct values.</p>
+                </li>
+                <li value="6">
+                    <p>Click <b>OK</b> and then <b>Finish</b>, not creating the view for now.</p>
+                </li>
+                <li value="7">
+                    <p>Add additional columns from other existing one-to-one views from the right pane into the center pane.</p>
+                </li>
+            </ol>
+            <h3>Join the source objects</h3>
+            <p>If columns from more than one table or view have been added, then we have to define the joins between the source objects. This is achieved by right-clicking on the view name and selecting <b>Build From/Where</b> clause from the pop up menu.</p>
+            <p>To join tables, select the tables in the left box and click either the <b>Outer Join</b> or <b>Simple Join</b> button. Column lists for both tables will appear at the bottom of the dialog box. Select the column (or one of the columns) that allows the two tables to be joined. If an outer join is being used, the column for the master table must be chosen first. If there are multiple columns joining two tables then this action must be repeated for each column. Continue to perform all joins between all tables. The example below only has two tables with one join column so is a relatively simple case. An additional option is available to allow either an ANSI standard join or a 'Where clause' based join. The ANSI standard join is chosen in most situations. See the example screen in the following section.</p>
+            <p>
+                <img src="../../Images/Teradata_images/Views/src_tbl_map.png" />
+            </p>
+            <h4>Simple Join</h4>
+            <p>A simple join joins the two tables, and only returns rows where data is matched in both tables. So for example if table A has 100 rows and table B has a subset of 24 rows. If all the rows in table B can be joined to table A then 24 rows will be returned. The other 76 rows from table A will not be returned.</p>
+            <h4>Outer Join</h4>
+            <p>An outer join joins the two tables, and returns all rows in the master table regardless of whether or not they are found in the second table. So if the example above was executed with table A as the master table then 100 rows would be returned. 76 of those rows would have null values for the table B columns. In the example screen above the table 'load_order_line' has had its column chosen and the column for the table 'load_order_header' is currently being chosen. This will result in the statement as shown in the 'Where' clause edit window. The results of this select are that a row will be added containing order_line information regardless of whether or not an order_header exists.</p>
+            <p>As the join columns are selected the 'Where' statement is built up in the large edit window on the right. Once all joins have been made the contents of this window can be changed if the join statement is not correct.</p>
+            <p>Once satisfied with the 'Where' statement click <b>OK</b> to proceed to the next step. As indicated in its description this statement is the 'Where' clause that will be applied to the select statement of the cursor to allow the joining of the various source tables. It can of course be edited in the procedure that is generated if not correct.</p>
+            <p>You have the choice between 'Where' statement joins and ANSI standard joins.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">'Where' joins are not available if using outer joins in Teradata.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>The example below shows the result of an ANSI standard join which takes place in the 'From' statement.</p>
+            <p>
+                <img src="../../Images/Teradata_images/Views/compound_views_2.PNG" />
+            </p>
+            <p>Create the view</p>
+            <p>Once the view has been defined in the metadata we need to physically create the view in the database. This is achieved by using the right-clicking on the view name and selecting Create (ReCreate) from the pop up menu.</p>
+            <p>The output from the creation are visible in the output windows. The following example shows a successful creation.</p>
+            <p>
+                <img src="../../Images/Teradata_images/Views/compound_views_3.png" />
+            </p>
+            <p>The contents of this window are a message to the effect that the view was created followed by a copy of the actual database create statement.</p>
+            <p>If the view was not created then ascertain and fix the problem. A common problem is a 'Duplicate column' where a column has been accidentally added twice. The best way of finding such a column is to double click on the list heading <b>Col name</b>. This will sort the column names into alphabetic order. Another double click on the heading will sort the columns back into their create order. Column ordering can be changed by altering the column order value against a column's properties.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">Double clicking on the heading of a column in a list sorts the list into alphabetical order based on the column chosen.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

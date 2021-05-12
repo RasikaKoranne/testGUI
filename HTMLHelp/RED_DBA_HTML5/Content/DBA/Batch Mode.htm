@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="apple-touch-icon" sizes="1607x1607" href="../../Skins/Favicons/RED icon.png" />
+        <link rel="shortcut icon" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" /><title>Batch Mode</title>
+        <link href="../resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <h1 class="Heading1">Batch Mode</h1>
+        <p>SQL Admin in batch mode can be called from a script file. This is useful when a user wants to do an ODBC extract from a table in a database to a file, which is then subsequently loaded into the data warehouse.</p>
+        <p>Call SQL Admin with Parameters below. </p>
+        <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../resources/tablestyles/tablestyle.css');" cellspacing="0">
+            <col class="TableStyle-tablestyle-Column-Column1" />
+            <col class="TableStyle-tablestyle-Column-Column2" />
+            <col class="TableStyle-tablestyle-Column-Column2" />
+            <col class="TableStyle-tablestyle-Column-Column2" />
+            <thead>
+                <tr class="TableStyle-tablestyle-Head-Header1">
+                    <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Switch</th>
+                    <th class="TableStyle-tablestyle-HeadF-Column2-Header1">Parameter</th>
+                    <th class="TableStyle-tablestyle-HeadF-Column2-Header1">Function</th>
+                    <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /A
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1"> </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Interactive Auto flag
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Should not be used if batch mode is required. Interactive use only.
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /B
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1"> </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Batch mode flag
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Set this flag to run in batch mode.
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /X
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1"> </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Append to output file flag
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Appends data to the specified output file. If not present then the file is created or over-written.
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /Z
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1"> </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Output file in Unicode format flag
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        By default output to a file is in ASCII mode. Set this flag for UNICODE
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /O
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        ODBC Source
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Used to specify the ODBC source. 
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        This source must be present on the system where SQL Admin is being run from.
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /U
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Username 
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        The username for the ODBC source.
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        &#160;
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /P
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Password 
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        The password for the ODBC source
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        &#160;
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /F
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        File name
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Output result file name
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        If specified SQL Admin will output the results to this file name
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /D
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Delimiter
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        The delimiter character(s) to be used to separate the columns in a row.
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        &#160;
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /M
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Maxrows
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Specifies the maximum number of rows to output. 
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        If not specified then the maximum value of 999,999,999 is used.
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /R
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Replace
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Replacement character
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Delimiter characters found in the actual data will be replaced with this character(s) if specified.
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /S
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Sql command to run
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        The SQL command to be executed. 
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        If multiple commands they smust be separated by a semi-colon and a space. E.g. “select * from a; select * from b” 
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /C
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Sql script file to run
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        The name of a file containing the SQL Command(s) to run. 
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        If multiple commands they should be separated by a semi-colon.
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /V
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Prefix string before each field 
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        The pre-fix string
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        If desired a pre-fix string can be specified. This string is pre-pended to each column in the results.
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /W
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Postfix string after each field
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        The post-fix string
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        If desired a post-fix string can be specified. This string is appended to each column in the results.
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        /L
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Log file to create
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        Log file name
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        If specified the log file will be created with the following string in it.
+                        nnnn rows outputted
+                    </td>
+                </tr>
+                <tr class="TableStyle-tablestyle-Body-Body1">
+                    <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+                        /T
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyC-Column2-Body1">
+                        Row terminator
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyC-Column2-Body1">
+                        Marks the end of each row
+                    </td>
+                    <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        &#160;
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>General Usage Notes</h2>
+        <p>The SQL Admin executable is called dba.exe and is located in the WhereScape program directory. </p>
+        <p>The switches /A and /B indicate either interactive or batch mode. Only one or the other should be used. </p>
+        <p>The option /S denotes a command to run. The option /C denotes a script from which to read the command(s) to run. Only one or the other should be used. </p>
+        <p>Where a switch has a parameter, that parameter can optionally be enclosed in quotes. Some parameters must be enclosed in quotes. For example a pipe delimiter must be entered as /D “|” to prevent the command line interpreter from processing the pipe. Also if you wish to have a space as a delimiter or replacement value it must be in quotes. e.g. /R “ “. </p>
+        <p><b>Example:</b>
+        </p>
+        <p><code>D:\PMS\Release\Dba.exe /B /O DataWarehouse2005 /Usa /Pwsl /F"D:\Pms\Temp\Wayner.txt" /D"|" /S"Select * from load_product"</code> </p>
+        <h2>Return Values: 
+        </h2>
+        <ul>
+            <li value="1"><b>0</b> – success or at least we think so. </li>
+            <li value="2"><b>1</b> – Warning: No data was returned from the command. The output file will be empty. </li>
+            <li value="3"><b>2</b> – Warning: The number of rows returned was limited to the value set by the M switch. More data was available. </li>
+            <li value="4"><b>3</b> – The specified script file as specified with the /C switch could not be found or was empty </li>
+            <li value="5"><b>5</b> – The specified output file as specified with the /F switch could not be created or opened. </li>
+            <li value="6"><b>7</b> – The ODBC Connection failed. </li>
+            <li value="7"><b>9</b> – The SQL Statement(s) failed to execute correctly.</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Flat File Load - Source Screen</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Flat File Load - Source Screen</h3>
+            <p class="BodyText">The fields for the<b> Flat File Source Screen </b>are described below.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1"> If the file has been <a href="../../User Guide/Loading Data/Flat File Loads.htm">dragged and dropped</a>  into the load table (middle pane) then some of the fields on this tab are automatically populated.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <img src="../../Images/Teradata_images/Loading Data/Flat File Loads Source Screen.PNG" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Load Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Method of loading data into the table. The available options are dependent on the <b>Source Connection</b>. Defaults to the 'Default Load Type' of the <b>Source Connection</b>. Can be specified via the <b>Properties</b> window.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Connection</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Connection to the data source (database or file system). Can be specified via the <b>Properties</b> window.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Load Script Template</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Available for script loads only and only if there is a valid template available. Select the template to use when generating a load script, or select (None) to use RED's built-in load script generator. Only templates with the correct Type and Target DB will appear in this drop-down list. For more information on templates, refer to <a href="../../User Guide/Templates/Templates.htm">Templates</a>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source File Details</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Source File identification and definition information.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Directory</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The full path (absolute path) of the folder/directory containing the Source File on the Windows or UNIX/Linux system.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source File Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The name of the source file containing the data to be loaded.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source File Field Delimiter</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional character that separates the fields within each record of the Source File. The delimiter identifies the end of each field. Common field delimiters are tab, comma, colon, semi-colon, pipe, tilde. If no field delimiter is specified the record is regarded as fixed-width.&#160;<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If an ASCII character value is used this field may show as an unprintable character. To enter a special character enter the uppercase string CHAR with the ASCII value in brackets (e.g. CHAR(9) ).</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Fixed Width File Format</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Source File format to be set for TPT loads of Fixed width files. This option is only available for TPT Flat File or Script based loads from Windows and UNIX/Linux connections.<br />The default option for all Fixed width files is <b>Text</b>. To change the file format, select from <b>Text</b>, <b>Binary</b>, <b>Formatted</b> or <b>Unformatted</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source File Record Terminator</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional string to identify how each line/record in the Source File is ended/terminated/delineated. The system default is used when not specified. On UNIX/Linux systems, end-of-line is typically line-feed (ASCII 10). On Windows systems, end-of-line is typically carriage-return (ASCII 13) and line-feed (ASCII 10).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source File has Field Headings/Labels</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates whether the first line of the Source File contains a heading/label for each field, which is not regarded as data so it should not be loaded.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trigger File Details</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional Trigger File identification and definition information. If a Trigger File is specified, the Source File will not be loaded until the Trigger File is available.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trigger File Path</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The purpose of the trigger file is to indicate that the copying/loading of the main file has completed and that it is now safe to load the file. Secondly the trigger file may contain control sums to validate the contents of the main load file. This field should contain the full path name to the directory in which a trigger file is located on the Windows or UNIX systems. If this field and/or the <b>Trigger Name</b> field is populated then the scheduler will look for this file rather than the actual load file.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trigger File Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Refers to the name of the file that is used as a trigger to indicate that the main load file is available. A trigger file typically contains check sums. If the trigger file exists then this is the file that is used in the Wait Seconds, and Action on wait expire processing. (see notes under Trigger Path above).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trigger File Field Delimiter</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If the trigger file provides control information then the delimiter identifies the field separation, e.g, or <b>\n</b> for a return. The data found will be loaded into parameter values whose names will be prefixed by the prefix specified and numbered <b>0</b> to <b>n</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trigger Parameter Name Prefix</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If a trigger file and delimiter have been specified then the contents of the trigger file are loaded into parameters. The parameters will be prefixed by the contents of this field and suffixed by an underscore and the parameter number. These parameters can be viewed under <b>Tools/Parameters</b> from the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> menu bar. The checking of these parameters can be achieved by generating a <b>Post Load procedure</b>. An example set of parameters may be budget_0, budget_1 and budget_2 where there are 3 values in the trigger file and the prefix is set to 'budget'.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Load Configuration</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Configuration settings to control the load processing.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Check existence of Source File</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field controls whether the load process checks if the file exists before performing the load. This check can only be disabled when doing script-based TPT Loads from Windows and UNIX/Linux connections, which can improve the use of built-in TPT functionality to wait for the arrival of the file.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Wait for Source File or Trigger File</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Controls whether the load process waits for the file to arrive when it is NOT available to load. Enabling this allows the wait-related properties to be specified. When a Trigger File is specified the load waits for it rather than the Source File. Expand to set the Wait Limit and the Action when Wait Limit Reached.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Wait Limit (in seconds)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maximum duration to wait when no file is available, which is specified in seconds e.g. 1800 seconds to wait up to 30 minutes. A value of 0 equates to no wait. If the wait time expires and the specified file cannot be found, then the load will exit with the status defined in Action, e.g, <b>Default Action = Error</b></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Action when Wait Limit Reached</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Action to take when the Wait Limit has been reached and no file is available. The specified action impacts any remaining tasks in the currently running job. When 'Success' or 'Warning' is specified, the WhereScape RED Scheduler will continue to run any dependent tasks in the running job. In contrast, specifying the 'Error' or 'Fatal Error' actions will cause the scheduler to stop/fail the job and hold any remaining tasks when the "Wait Limit" is reached.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">File Load Routine</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+File Loader utility/mechanism used to load the Source File. Select <b>MultiLoad</b>, <b>FastLoad</b>, <b>Load TPT</b>, <b>Update TPT</b> or <b>Stream TPT</b>. If the 'No Load' option is specified the file does not load. This can be useful for a Script Load that has "File Actions".
+<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The MultiLoad and FastLoad options are only available, if the <b>Enable Legacy File Load Routine</b> option is set in the Tools&gt;Options&gt;Code Generation&gt;General.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">MultiLoad/FastLoad Options</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+If <b>MultiLoad</b> or <b>FastLoad</b> is selected, optional comma-delimited list of TPT Operator Attributes. e.g. INTEGER DataBlockSize =2048.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Character Set
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Teradata-compliant Character Set Name to use when loading, such as ASCII, UTF8, UTF16.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">TPT HadoopHost</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Field that identifies the Hadoop host to the TPT load routine. This is set to the <b>TPT HadoopHost</b> property of the Hadoop connection if specified there. If this not specified in the connection, the field will display the UNIX/Linux Host name property of the Hadoop Connection.
+
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">TPT Job Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Job name for TPT. If this is not set it will default to Load Name.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">TPT Build Command Options</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"> 
+
+Additional options included as part of the TBuild call.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">TPT LogView Command Options</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Additional options included as part of the TLogView call. For example, adding <b>"-f '*'"</b> can be added to prove greater diagnostics.
+
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">TPT Shared Memory Size</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Shared memory size can be specified in bytes, kilobytes or megabytes. Examples include <b>2091752, 2048K, 2M.
+</b></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">TPT Load Routine Minimum Sessions</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Optional minimum number of TPT sessions [1-99]. The default is one instance.
+
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Set Load Routine Maximum Sessions</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Enables the <b>Load Routine Maximum sessions</b> property.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Load Read Instances </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Optional number of TPT read instances [1-99]. The default is one instance.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Load Write Instances</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Optional number of TPT write instances [1-99]. The default is one instance.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Only Load Latest File</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Controls whether only the latest file (or all matching files) is loaded when the "Source File Name" includes a wildcard and multiple matching files are available.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Script Load supports File Name Wildcards</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+This option is only available for <b>Update TPT</b> or <b>Stream TPT</b> load routines.
+It controls whether the RED generated script supports loading multiple files based on a file name wildcard. When enabled and the "Source File name" contains a wildcard, the RED generated script will loop to load each matching file while preserving the contents of the load table as each file is loaded. In addition the "Archived Source Path" and/or "Archived Source File Name" properties must be specified to allow each successfully loaded file to be archived before loading a subsequent file.
+When doing <b>Hadoop Native TPT loads</b> where the file load routine is <b>Update TPT</b>, users can load multiple files from a Hadoop connection by adding * to the <b>Source File Name</b>. e. g. <b>hadoop_customer.csv*
+</b></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Fail when incomplete load</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Controls whether the load reports failure when ALL the rows in the file are not loaded. The specified exit status impacts any remaining tasks in the currently running job. When fail is specified, The <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Scheduler will stop/fail the job and hold any remaining tasks when the load fails. In contrast when fail is disabled, the scheduler will continue to run any dependent tasks in the running job.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Validate using Header/Trailer Data</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Controls whether a RED-generated Post-Load procedure validates the integrity of the Source File and the load processing using control totals &amp;/or counts ("check sums") from the FIRST and/of LAST line(s) of the Source File. When enabled, any subsequently RED-generated Post-Load procedure for this table will used the HEADER and/or TRAILER rows as a source of validation information. Alternatively, A Trigger File can be used for the same validation purpose.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Populate Audit Log with File Actions</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Controls whether details of any "File Actions" processing are recorded in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Audit Log.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Populate Detail Log when Successful</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Controls whether additional details from the Teradata "File Load Routine" are recorded in the WhereScape RED Error/Detail Log when the load processing is successful.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert into dss_load_file Table</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"> 
+
+Populate the metadata table dss_load_file.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Archived File Details</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional Archived file identification and definition information. Once a file has been successfully loaded or processed, it can be optionally archived by moving it and/or renaming it.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Compress Source File when Archive</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optionally compresses the successfully loaded Source File if it is archived.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Archived Source File Path</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional full path (absolute path) of the folder/directory to MOVE the successfully loaded Source File on the Windows or UNIX/Linux system.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Archived Source File Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional new name to RENAME the successfully loaded Source File to. By default, the original file name is used it is optional to rename it. However, the in-built variable $SEQUENCE$ can be used to include a unique sequence number in the new name. Likewise, the in-built variables $YYYY$, $MM$, $DD$, $HH$, $MI$ and/or $SS$ can be used to include the number of the current year, month, day, hour, minute and/or second respectively. The date/time components can be used separately or can be combined together using one set of enclosing $ such as $YYYYMMDD$.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Archived Trigger File Path</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional full path (absolute path) of the folder/directory to MOVE the successfully processed Trigger File on the Windows or UNIX/Linux system.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Archived Trigger File Name</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Optional new name to RENAME the successfully processed Trigger File to. By default, the original file name is used it is optional to rename it. However, the in-built variable $SEQUENCE$ can be used to include a unique sequence number in the new name. Likewise, the in-built variables $YYYY$, $MM$, $DD$, $HH$, $MI$ and/or $SS$ can be used to include the number of the current year, month, day, hour, minute and/or second respectively. The date/time components can be used separately or can be combined together using one set of enclosing $ such as $YYYYMMDD$.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">&#160;</p>
+        </div>
+    </body>
+</html>

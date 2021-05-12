@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Data Vaults|Building Data Vault Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Creating the Hub, Link and Satellite Tables</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Creating the Hub, Link and Satellite Tables</h3>
+            <p class="BodyText">After successfully creating and populating the <b>Data Vault Stage</b> table, you can now create the <b>Hub</b>,<b> Link</b> and <b>Satellite</b> tables. The <b>Hub</b>, <b>Link</b> and <b>Change</b> hash keys information stored in the <b>Data Vault Stage</b> table is used by the Wizard for building these <b>Data Vault</b> objects.&#160; </p>
+            <h4 class="Heading4">Creating the Hub table</h4>
+            <p class="BodyText">The following describe the steps for creating a Hub table:</p>
+            <ol>
+                <li value="1">Browse to the Data Warehouse connection (click <b>Browse &gt;Data Warehouse</b>) to create the Hub table.</li>
+                <li value="2">Double-click the <b>Hub</b> object group in the left pane, the middle pane displays a list of existing Hub tables.</li>
+                <li value="3">Click the source <b>Data Vault Stage</b> table from the right pane and drag it to the middle pane.</li>
+                <li value="4">The Hub table creation Wizard appears and prompts you to select the Hash Keys to use from the <b>Available Columns </b>pane. The columns that comprise the selected Hash Key are displayed under the <b>Selected Columns</b> pane—these are the columns that will be populated by the Wizard in the new <b>Hub</b> table.&#160;&#160; <p><img src="../../Images/UserGuide_Images/Data Vaults/Hub Link and Satellite Creation.png" /></p></li>
+                <li value="5">Select the Hash Keys you want to use from the <b>Available Columns </b>pane to see the columns that will be included in your Hub table under the <b>Selected Columns</b> pane. Click <b>OK</b> to continue.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">In addition to the Hash Keys, you have the option to use attribute columns to create the Hub table. Select the <b>Show attribute columns</b> check box below the <b>Available Columns</b> pane to display and select the attribute columns that will be populated by the Wizard in the new Hub table.</td></tr></tbody></table><p><img src="../../Images/UserGuide_Images/Data Vaults/Hb Lnk Sat Creat Att Cols.png" /></p></li>
+                <li value="6">The <b>Add a New Metadata Object</b> screen appears and classifies the new object as a Hub table. It provides a default name based on the source <b>Data Vault Stage</b> table name. Accept the name or enter a new name for the Hub table and click <b>ADD</b> to continue.<p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Hub Link and.png" /></p></li>
+                <li value="7">Click <b>OK</b> in the <b>Table Properties</b> screen to finish defining the meta data for the Hub table. The new Hub table is added to the <b>Hub</b> objects list in the left pane and the columns included in the table are listed in the middle pane. <p><img src="../../Images/UserGuide_Images/Data Vaults/Click the OK button on the.png" /></p></li>
+                <li class="ListNumber" value="8">Right-click the new Hub table you defined in the left pane and select <b>Create (ReCreate)</b> from the context menu to create the table. The <b>Results</b> pane displays confirmation that the Hub table was successfully created.<p><img src="../../Images/UserGuide_Images/Data Vaults/Right click the new Hub table.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><p>For Teradata users, click <b>Yes</b> on the Primary Index prompt and then specify <b>code</b> in the <b>Primary Index Columns</b> field of the table <b>Properties</b> screen. </p></td></tr></tbody></table><p>&#160;</p><p>After the new Hub table is defined and created, clicking the <b>Rebuild</b> button in the table <b>Properties</b> screen launches the Wizard for generating the update procedure to populate the table. This Wizard utilizes a template to create the procedure. </p><p>The detailed steps for using this Wizard is described in <a href="Generating Update Procedures for Hub, Link and Satellite Tables.htm">Generating Update Procedures for the Hub, Link and Satellite Tables</a>.</p><p>Once you have run the generated update procedures, you can view the generated Hub Hash keys, by right-clicking the new <b>Hub</b> table you created in the left pane and then selecting <b>Display Data</b> from the context menu:</p><p><img src="../../Images/UserGuide_Images/Data Vaults/Once you have run the generated.png" /></p></li>
+            </ol>
+            <h4 class="Heading4">Creating the Link table</h4>
+            <p class="BodyText">The steps for creating the Link table is similar to the steps used in creating the Hub table:</p>
+            <ol>
+                <li value="1">Browse to the Data Warehouse connection to create the Link table.</li>
+                <li value="2">Double-click the <b>Link</b> object group in the left pane, the middle pane displays a list of existing Link tables.</li>
+                <li value="3">Click the source <b>Data Vault Stage</b> table from the right pane and drag it to the middle pane.</li>
+                <li value="4">The Link table creation Wizard appears and prompts you to select the Hash Key to use from the <b>Available Columns </b>pane. The columns that comprise the selected Hash Key are displayed under the <b>Selected Columns</b> pane—these are the columns that will be populated by the Wizard in the new <b>Link</b> table.&#160;&#160; <p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Link table.png" /></p></li>
+                <li value="5">Select the Hash Key you want to use from the <b>Available Columns </b>pane to see the columns that will be included in your Link table under the <b>Selected Columns </b>pane. Click <b>OK</b> to continue.</li>
+                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                    <col class="TableStyle-note-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-note-Head-Header1">
+                            <th class="TableStyle-note-HeadD-Column1-Header1">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-note-Body-Body1">
+                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">In addition to the Hash Keys, you have the option to use attribute columns to create the Link table. Select the <b>Show attribute columns</b> check box below the <b>Available Columns</b> pane to display and select the attribute columns that will be populated by the Wizard in the new Link table.</td>
+                        </tr>
+                    </tbody>
+                    <ol>
+                        <li>&#160;</li>
+                    </ol>
+                </table>
+                <p>
+                    <p>
+                        <img src="../../Images/UserGuide_Images/Data Vaults/Hb Lnk Sat Creat Att Cols_2.png" />
+                    </p>
+                </p>
+                <li value="6">The <b>Add a New Metadata Object</b> screen appears and classifies the new object as a Link table. It provides a default name based on the source <b>Data Vault Stage</b> table name.&#160; Accept the name or enter a new name for the Link table and click <b>ADD</b> to continue.<p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Link table_1.png" /></p></li>
+                <li value="7">Click <b>OK</b> in the table <b>Properties</b> screen to finish defining the meta data for the Link table.&#160;The new Link table is added to the <b>Link</b> objects list in the left pane and the columns included in the table are listed in the middle pane. <p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Link table_2.png" /></p></li>
+                <li value="8">Right-click the new Link table you defined in the left pane and select <b>Create (ReCreate)</b> from the context menu to create the table. The <b>Results</b> pane displays confirmation that the Link table was successfully created.<p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Link table_3.png" /></p><p>&#160;</p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><p>For Teradata users, click <b>Yes</b> in the Primary Index prompt and then specify <b>code</b> in the <b>Primary Index Columns</b> field of the table <b>Properties</b> screen. </p></td></tr></tbody></table><p>&#160;</p><p>After the new Link table is defined and created, clicking the <b>Rebuild</b> button in the table <b>Properties</b> screen launches the Wizard for generating the update procedure to populate the table. This Wizard utilizes a template to create the procedure. </p><p>The detailed steps for using this Wizard is described in <a href="Generating Update Procedures for Hub, Link and Satellite Tables.htm">Generating Update Procedures for the Hub, Link and Satellite Tables</a>.</p><p>Once you have run the generated update procedures, you can view the generated Link Hash keys, by right-clicking the new Link table you created in the left pane and then selecting <b>Display Data</b> from the context menu:</p><p><img src="../../Images/UserGuide_Images/Data Vaults/Once you have run the generated_1.png" /></p></li>
+            </ol>
+            <h4 class="Heading4">Creating the Satellite table</h4>
+            <p class="BodyText">The following describe the steps for creating a Satellite table:</p>
+            <ol>
+                <li value="1">Browse to the Data Warehouse connection to create the Satellite tables.</li>
+                <li value="2">Double-click the <b>Satellite</b> object group in the left pane, the middle pane displays a list of existing Satellite tables.</li>
+                <li value="3">Click the source <b>Data Vault Stage</b> table from the right pane and drag it to the middle pane.</li>
+                <li value="4">The Satellite table creation Wizard appears and prompts you to select the Hash Key to use from the<b> Available Hash Keys </b>pane. The columns that comprise the selected Hash Key are displayed under the <b>Selected Columns</b> pane—these are the columns that will be populated by the Wizard in the new Satellite table.&#160;&#160; <p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Satellite table.png" /><br /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><p> The <span style="font-weight: bold;font-style: normal;">‘MAS Key: ma_sequence_key'</span>or <span style="font-weight: bold;font-style: normal;">'MAS Key: natural_key_name'</span> under the Available Column <span style="font-weight: bold;font-style: normal;">Change Hash Key</span> shows that a Multi-Active Sequence or Natural Key is linked to a change hash key.</p><p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Satellite table changes in key.png" /></p></td></tr></tbody><ol><li>&#160;</li></ol></table></li>
+                <li value="5">Select the Hash Key you want to use from the <b>Available Hash Keys</b> pane to see the columns that will be included in your Satellite table under the <b>Selected Columns</b> pane. Click<b> OK </b>to continue.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><ol><li style="color: #d7454b;" value="1">In addition to the Hash Keys, you have the option to use attribute columns to create the Satellite table. Select the <b>Show attribute columns</b> check box below the <b>Available Columns</b> pane to display and select the attribute columns that will be populated by the Wizard in the new Satellite table.</li><li style="color: #d7454b;" value="2"> Selecting the <b>Include hub/link key source columns</b> check box will include the hub hash key source column when the Satellite table is created. </li></ol></td></tr></tbody><ol><li>&#160;</li></ol></table><p><img src="../../Images/UserGuide_Images/Data Vaults/Hb Lnk Sat Creat Att Cols_3.png" /></p></li>
+                <li value="6">The <b>Add a New Metadata Object</b> screen appears and classifies the new object as a Satellite table. It provides a default name based on the source <b>Data Vault Stage</b> table name.&#160; Accept the name or enter a new name for the Satellite table and click <b>ADD</b> to continue.<p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Satellite table_1.png" /></p></li>
+                <li value="7">Click <b>OK</b> in the table <b>Properties</b> screen to finish defining the meta data for the Satellite table.&#160;The new Satellite table is added to the <b>Satellite</b> objects list in the left pane and the columns included in the table are listed in the middle pane. <p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Satellite table_2.png" /></p></li>
+                <li value="8">Right-click the new Satellite table you defined in the left pane and select <b>Create (ReCreate)</b> from the context menu to create the table. The <b>Results</b> pane displays confirmation that the Satellite table was successfully created.<p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Satellite table_3.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><p>For Teradata users, click <b>Yes</b> on the Primary Index prompt and then specify <b>code</b> on the <b>Primary Index Columns</b> field of the table <b>Properties</b> screen. </p></td></tr></tbody></table><p>&#160;</p><p>After the new Satellite table is defined and created, clicking the <b>Rebuild</b> button in the <b>Table Properties</b> screen launches the Wizard for generating the update procedure to populate the table. This Wizard utilizes a template to create the procedure. </p><p>The detailed steps for using this Wizard is described in <a href="Generating Update Procedures for Hub, Link and Satellite Tables.htm">Generating Update Procedures for the Hub, Link and Satellite Tables</a>.</p><p>Once you have run the generated update procedures, you can view the generated Satellite Hash keys, by right-clicking the new Satellite table you created in the left pane and then selecting <b>Display Data</b> from the context menu:</p><p><img src="../../Images/UserGuide_Images/Data Vaults/Creating the Satellite table_4.png" /></p></li>
+            </ol>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

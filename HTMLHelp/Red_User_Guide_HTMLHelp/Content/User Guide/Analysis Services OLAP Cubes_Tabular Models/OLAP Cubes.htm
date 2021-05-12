@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes/Tabular Models" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Cubes</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>OLAP Cubes</h2>
+            <p class="BodyText">A <b>cube </b>is a set of related measures and dimensions that is used to analyze data.</p>
+            <ul>
+                <li value="1">A <b>measure </b>is a transactional value or measurement that a user may want to aggregate. The source of measures are usually columns in one or more source tables. Measures are grouped into <b>measure groups</b>.</li>
+                <li value="2">A <b>dimension </b>is a group of attributes that represent an area of interest related to the measures in the cube and which are used to analyze the measures in the cube. For example, a customer dimension might include the attributes:<ul><li value="3">Customer Name</li><li value="4">Customer Gender</li><li value="5">Customer City</li></ul></li>
+            </ul>
+            <p class="BodyText">These enable measures in the cube to be analyzed by Customer Name, Customer Gender, and Customer City. The source of attributes are usually columns in one or more source tables. The attributes within each dimension can be organized into hierarchies to provide paths for analysis.</p>
+            <p class="BodyText">A cube is then augmented with <b>calculations</b>, key performance indicators (generally known as <b>KPIs</b>), <b>actions</b>, <b>partitions</b>, <b>perspectives</b>, and <b>translations</b>.</p>
+            <p class="BodyText">The information required to build and support an Analysis Services cube and its surrounding structure is reasonably complex and diverse. In attempting to automate the building of Analysis Services cubes, <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> has simplified and restricted many of the functions available to the cube designer. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> includes most of the commonly used capabilities and the components that logically fit into the methodology incorporated within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>.</p>
+            <p class="BodyText"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> broadly provides functionality to manage all of the above, except for perspectives and translations. These can be created outside of <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>, scripted in xmla and executed from within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. Features of cubes that are not supported in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> can be added to the cube via the Microsoft tools. These altered cubes can still be processed through the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> scheduler, and the cube should be documented within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> to explain the post creation phases required.</p>
+            <p class="BodyText">As a general rule, once a cube or a component of a cube is created on the Analysis Services server it cannot be altered through <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. The OLAP object can be dropped and recreated easily using <span class="mc-variable WS_Branding.Product variable">RED</span>. New OLAP objects defined in <span class="mc-variable WS_Branding.Product variable">RED</span> (e.g. additional calculations or measures) can be added by recreating the cube.</p>
+            <p id="linespace" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+            <hr width="100%" size="0" align="center" data-mc-conditions="Outputs.Exclude_In_Print" />
+            <p id="spacing" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+        </div>
+    </body>
+</html>

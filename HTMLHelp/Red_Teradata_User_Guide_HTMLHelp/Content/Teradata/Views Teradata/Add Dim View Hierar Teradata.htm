@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Views|Compound Views, Facts and Dimensions" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Adding a Dimension View Hierarchy</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>Adding a Dimension View Hierarchy</h3>
+            <p>Any number of hierarchies can be created against a dimension view. There is no restriction on the form of the hierarchy. To add a new hierarchy, position on the dimension view in the left pane and using the right-click menu, select <b>Hierarchies&gt;Add Hierarchy</b>. The following window appears.<p><img src="../../Images/Teradata_images/Views/add_dim_view_hier_1.png" /></p></p>
+            <ol>
+                <li value="1">Enter a meaningful name for the hierarchy.</li>
+                <li value="2">Enter a meaningful description for the hierarchy. This description is carried through into the Hierarchy Description field of any OLAP Dimensions that are built from the original Dimension object.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><p>The description text is automatically set to "Added at dimension creation for cube support" but this can be edited to match the user's intended description.</p></td></tr></tbody></table></li>
+            </ol>
+            <p>The hierarchy is built with the highest level at the top; for example a customer dimension view may have state at the highest level, then <b>city</b>, then <b>address</b> and finally code at the lowest level.</p>
+            <p>To enter the hierarchy elements, select them in the required order, from the left pane and click <b>&gt;</b> to add them to the right column. Once all the hierarchy elements have been added, click <b>OK</b>.</p>
+            <p>A hierarchy and its elements can be edited by listing the hierarchies associated with a dimension and using the right-click menu options available in the middle pane.<p><img src="../../Images/Teradata_images/Views/add_dim_hierarchy_2.png" /></p></p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

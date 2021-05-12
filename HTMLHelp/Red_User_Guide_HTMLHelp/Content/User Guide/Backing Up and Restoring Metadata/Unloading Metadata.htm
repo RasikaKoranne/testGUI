@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Backing Up and Restoring Metadata" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Unloading Metadata</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Unloading Metadata</h2>
+            <p class="BodyText"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> provides a generic unload utility for backing up the metadata. The advantage of this backup is that it is database, and database version independent. It can be used to backup the metadata regardless of the version of the database client running on the PC. It is possible to transport the metadata from one database platform to another using unload and load. For example, the metadata from a SQL Server unload can be loaded into an Oracle database.</p>
+            <p class="BodyText">After performing a cross platform unload and load:</p>
+            <ul>
+                <li>Transformations must be altered manually to use the correct syntax for the new database.</li>
+                <li>Generated procedures regenerated.</li>
+                <li>Modified and custom procedures must be changed to use the procedure language of the new database platform.</li>
+            </ul>
+            <h3>Performing an Unload</h3>
+            <p class="BodyText">An unload can be performed within the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> tool by selecting the <b>Backup &gt; Unload the Metadata to Disk </b>menu option.</p>
+            <p class="BodyText">A popup window asks for confirmation to proceed with the unload. Click <b>Yes</b>.&#160; </p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Backing Up and Restoring Metadata/Unloading Metadata.png" />
+            </p>
+            <p class="BodyText">An additional pop-up window asks for the folder where the metadata will be exported. Select a directory and then click <b>Save</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Backing Up and Restoring Metadata/Unloading Metadata_1.png" />
+            </p>
+            <p class="BodyText"> Enter a comment for the unload and click <b>OK</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Backing Up and Restoring Metadata/Unloading Metadata_2.png" />
+            </p>
+            <p class="BodyText">Finally, click <b>Yes</b> or No on the include version history dialog:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Backing Up and Restoring Metadata/Unloading Metadata_3.png" />
+            </p>
+            <p class="BodyText">This either includes or excludes version history metadata in the unload.</p>
+            <p class="BodyText">The unload starts and  a progress bar is displayed to show the status.</p>
+            <p class="BodyText">&#160;</p>
+        </div>
+    </body>
+</html>

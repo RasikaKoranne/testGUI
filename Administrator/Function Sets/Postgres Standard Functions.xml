@@ -1,0 +1,1840 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<database_function_set name="Default Postgres" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Database%20Function%20Set.xsd">
+
+  <database>Postgres</database>
+
+  <meta_version>1</meta_version>
+
+  <functional_groups>
+    <functional_group name="String">
+      <functions>
+        <function name="Concat-two strings">
+          <description>Returns the string resulting from concatenating the strings in order. e.g. 'foo' | | 'bar' returns 'foobar'. </description>
+          <syntax>string | | string</syntax>
+          <model>string | | string</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Concat-one non-string">
+          <description>Returns the string resulting from concatenating a string with a non-string, in order. e.g. 'Value: ' | | 25 returns 'Value: 25'.</description>
+          <syntax>string | | non-string  or non-string | | string</syntax>
+          <model>string | | non-string</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Concat-all">
+          <description>Returns the string resulting from concatenating all arguments, in order. NULL arguments are ignored. \r\ne.g. concat('Value: ', 25, NULL, 2) returns 'Value: 252'.</description>
+          <syntax>concat(str "any" [, str "any" [, ...] ])</syntax>
+          <model>concat(str "any" [, str "any" [, ...] ])</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Concat-separators">
+          <description>Returns the string resulting from concatenating all arguments, except the first argument, in order, with separators. \r\nThe first argument is used as the separator. NULL arguments are ignored. e.g. concat(',', 'Value: ', 25, NULL, 2) returns 'Value: ,25,2'.</description>
+          <syntax>concat_ws(sep_text, str "any" [, str "any" [, ...] ])</syntax>
+          <model>concat_ws(sep_text, str "any" [, str "any" [, ...] ])</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Length">
+          <description>Returns the length of the string. e.g. length('jose') returns 4.</description>
+          <syntax>length(string)</syntax>
+          <model>length(string)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Length-bit">
+          <description>Returns the number of bits in the string. e.g. bit_length('jose') returns 32.</description>
+          <syntax>bit_length(string)</syntax>
+          <model>bit_length(string)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Length-char">
+          <description>Returns the number of characters in the string. e.g. char_length('jose') returns 4.</description>
+          <syntax>char_length(string)</syntax>
+          <model>char_length(string)</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Length-octet">
+          <description>Returns the number of bytes in the string. e.g. octet_length('jose') returns 4.</description>
+          <syntax>octet_length(string)</syntax>
+          <model>octet_length(string)</model>
+          <default_column_start>13</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Length-encoding">
+          <description>Returns the number characters in the string in the given encoding. \r\nThe string must be valid in this encoding. e.g. length('jose', 'UTF8') returns 4.</description>
+          <syntax>length(string bytea, encoding name)</syntax>
+          <model>length(string bytea, encoding name)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Lower">
+          <description>Returns the string resulting from converting all characters of the string to lower case \r\ne.g. lower('fOoBaR') returns 'foobar'.</description>
+          <syntax>lower(string)</syntax>
+          <model>lower(string)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Upper">
+          <description>Returns the string resulting from converting all characters in the string to upper case \r\ne.g. upper('fOoBaR') returns 'FOOBAR'.</description>
+          <syntax>upper(string)</syntax>
+          <model>upper(string)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="InitCap">
+          <description>Returns the string resulting from converting the first letter of each word to upper case and the rest to lower case. \r\nWords are sequences of alphanumeric characters separated by non-alphanumeric characters. e.g. initcap('hi THERE') returns 'Hi There'. </description>
+          <syntax>initcap(string)</syntax>
+          <model>initcap(string)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Overlay">
+          <description>Returns the string resulting from replacing a substring with another. \r\ne.g. overlay('Txxxxas' placing 'hom' from 2 for 4) returns 'Thomas'.</description>
+          <syntax>overlay(string placing string from int [for int])</syntax>
+          <model>overlay(string placing string from int [for int])</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Position">
+          <description>Returns the location of the specified substring. \r\ne.g. position('ba' in 'Foobar') returns 4.</description>
+          <syntax>position(substring in string)</syntax>
+          <model>position(substring in string)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Strpos">
+          <description>Returns the location of the specified substring (same as position(substring in string), but note the reversed argument order). \r\ne.g. strpos('high', 'ig') returns 2.</description>
+          <syntax>strpos(string, substring)</syntax>
+          <model>strpos(string, substring)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Substring-from position">
+          <description>Returns the substring of a string from a start position for a count, a specified number of characters. \r\ne.g. substring('Thomas' from 2 for 3) returns 'hom'.</description>
+          <syntax>substring(string [from int] [for int])</syntax>
+          <model>substring(string [from int] [for int])</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Substring-from pattern">
+          <description>Returns the substring of a string matching a POSIX regular expression. \r\ne.g substring('Thomas' from '...$') returns 'mas'.</description>
+          <syntax>substring(string from pattern)</syntax>
+          <model>substring(string from pattern)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Substring-from pattern for escape">
+          <description>Returns the substring of a string matching a SQL regular expression. \r\ne.g. substring('Thomas'  from '%#"o_a#"_' for '#') returns 'oma'.</description>
+          <syntax>substring(string from pattern for escape)</syntax>
+          <model>substring(string from pattern for escape)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Substring-from count">
+          <description>Returns the substring of a string from a start position for a count, a specified number of characters. \r\ne.g. substr('alphabet', 3, 2) returns 'ph'.</description>
+          <syntax>substr(string, from [,count])</syntax>
+          <model>substr(string, from [,count])</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Trim">
+          <description>Returns the string resulting from trimming the specified characters (a space by default) from the start/end/both ends of the string. \r\ne.g. trim(both 'x' from 'xbarxx') returns 'bar'.</description>
+          <syntax>trim([leading | trailing | both] [characters] from string)</syntax>
+          <model>trim([leading | trailing | both] [characters] from string)</model>
+          <default_column_start>51</default_column_start>
+          <default_column_end>57</default_column_end>
+        </function>
+        <function name="BTrim">
+          <description>Returns the string resulting from trimming the specified characters (a space by default) from both ends of the string. \r\ne.g. btrim('xyxtomyyx', 'xy') returns 'tom'. </description>
+          <syntax>btrim(string text  [, characters text])</syntax>
+          <model>btrim(string text  [, characters text])</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="LTrim ">
+          <description>Returns the string resulting from trimming the specified characters (a space by default) from the start of the string. \r\ne.g. ltrim('zzzytom', 'xyz') returns 'tom'.</description>
+          <syntax>ltrim(string text [, characters text])</syntax>
+          <model>ltrim(string text [, characters text])</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Rtrim">
+          <description>Returns the string resulting from trimming the specified characters (a space by default) from the end of the string. \r\ne.g rtrim('tomxzxx', 'xyz') returns 'tom'. </description>
+          <syntax>rtrim(string text [,characters text])</syntax>
+          <model>rtrim(string text [,characters text])</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Ascii">
+          <description>Returns the ASCII code of the first character of the argument. For UTF8 returns the Unicode code of the character. \r\nFor other multibyte encodings, the argument must be an ASCII character. e.g. ascii('x') returns 120.</description>
+          <syntax>ascii(string)</syntax>
+          <model>ascii(string)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Character">
+          <description>Returns the Character with the given code. For UTF8 the argument is treated as a Unicode code point. For other multibyte encodings the argument must designate an ASCII character. \r\nThe NULL (0) character is not allowed because text data types cannot store such bytes. e.g chr(65) returns 'A'.</description>
+          <syntax>chr(int)</syntax>
+          <model>chr(int)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Convert-src to dest">
+          <description>Returns the string resulting from converting the string to dest_encoding. The original encoding is specified by src_encoding. The string must be valid in this encoding. \r\ne.g convert('text_in_utf8', 'UTF8', 'LATIN1') returns 'text_in_utf8' represented in Latin-1 encoding.</description>
+          <syntax>convert(string bytea, src_encoding name, dest_encoding name)</syntax>
+          <model>convert(string bytea, src_encoding name, dest_encoding name)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="Convert-from src">
+          <description>Returns the string resulting from converting the string to the database encoding. The original encoding is specified by src_encoding. \r\nThe string must be valid in this encoding. e.g. convert_from('text_in_utf8', 'UTF8') returns 'text_in_utf8' represented in the current database encoding.</description>
+          <syntax>convert_from(string bytea, src_encoding name)</syntax>
+          <model>convert_from(string bytea, src_encoding name)</model>
+          <default_column_start>13</default_column_start>
+          <default_column_end>25</default_column_end>
+        </function>
+        <function name="Convert-to dest">
+          <description>Returns the string resulting from converting the string to dest_encoding.\r\ne.g. convert_to('some text', 'UTF8') returns 'some text' represented in the UTF8 encoding.</description>
+          <syntax>convert_to(string text, dest_encoding name)</syntax>
+          <model>convert_to(string text, dest_encoding name)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Decode">
+          <description>Returns the result of decoding binary data from textual representation in string. Supported formats are: base64, hex, escape. \r\ne.g. decode('MTIzAAE=', 'base64') returns \x313233001.</description>
+          <syntax>decode(string text, format text)</syntax>
+          <model>decode(string text, format text)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Encode">
+          <description>Returns the result of encoding binary data into a textual representation. Escape converts zero bytes and high-bit-set bytes to octal sequences (\nnn) and double backslashes \r\ne.g. encode(E'123\\000\\001', 'base64') returns MTIzAAE=.</description>
+          <syntax>encode(data bytea, format text)</syntax>
+          <model>encode(data bytea, format text)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Format">
+          <description>Returns the result of formating a string. \r\ne.g format('Hello %s, %1$s', 'World') returns 'Hello World, World'.</description>
+          <syntax>format(formatstr text [, str "any" [, ...] ])</syntax>
+          <model>format(formatstr text [, str "any" [, ...] ])</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Left">
+          <description>Returns the first n characters in the string. When n is negative, returns all but last |n| characters. \r\ne.g. left('abcde', 2) results in 'ab' and left('abcde', -2) returns 'abc'.</description>
+          <syntax>left(str text, n int)</syntax>
+          <model>left(str text, n int)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Right">
+          <description>Returns the last n characters in the string. When n is negative, returns all but first |n| characters. \r\ne.g. right('abcde', 2) returns 'de'.</description>
+          <syntax>right(str text, n int)</syntax>
+          <model>right(str text, n int)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="LPad">
+          <description>Returns the string resulting from filling up the string to the specified length by prepending the fill characters (a space by default).\r\n If the string is already longer than the specified length, then it is truncated (on the right). e.g. lpad('hi', 5,'xy') returns 'xyxhi'.</description>
+          <syntax>lpad(string text, length int [, fill text])</syntax>
+          <model>lpad(string text, length int [, fill text])</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Rpad">
+          <description>Returns the string resulting from filling up the string to the specified length by appending the fill characters (a space by default). \r\nIf the string is already longer than the specified length then it is truncated. (on the left). e.g. rpad('hi', 5, 'xy') returns 'hixyx'.</description>
+          <syntax>rpad(string text, length int[, fill text])</syntax>
+          <model>rpad(string text, length int[, fill text])</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="MD5">
+          <description>Returns the MD5 hash of the string, returning the result in hexadecimal. \r\ne.g. md5('abc') returns 900150983cd24fb0 d6963f7d28e17f72. </description>
+          <syntax>md5(string)</syntax>
+          <model>md5(string)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Client Encoding">
+          <description>Returns the current client encoding name.\r\ne.g. SQL_ASCII</description>
+          <syntax>pg_client_encoding()</syntax>
+          <model>pg_client_encoding()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Quote Identifier">
+          <description>Returns the given string suitably quoted to be used as an identifier in a SQL statement string. \r\nEmbedded quotes are properly doubled. e.g. quote_ident('Foo bar') returns "Foo bar". </description>
+          <syntax>quote_ident(string_text)</syntax>
+          <model>quote_ident(string_text)</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>23</default_column_end>
+        </function>
+        <function name="Quote Literal-string">
+          <description>Returns the given string suitably quoted to be used as a string literal in a SQL statement string. \r\ne.g. quote_literal(E'O\ 'Reilly') returns 'O' 'Reilly'.</description>
+          <syntax>quote_literal(string text)</syntax>
+          <model>quote_literal(string text)</model>
+          <default_column_start>14</default_column_start>
+          <default_column_end>25</default_column_end>
+        </function>
+        <function name="Quote Literal-any">
+          <description>Returns the result after Coercing the given value to text and then quoting it as a literal; or, if the argument is null, returning NULL.\r\ne.g. quote_nullable(42.5) returns '42.5'.</description>
+          <syntax>quote_literal(value any element)</syntax>
+          <model>quote_literal(value any element)</model>
+          <default_column_start>14</default_column_start>
+          <default_column_end>31</default_column_end>
+        </function>
+        <function name="Regexp_matches">
+          <description>Returns all captured substrings resulting from matching a POSIX regular expression against the string. \r\ne.g. regexp_matches('foobarbequebaz', '(bar)(beque)') returns {bar,beque}.</description>
+          <syntax>regexp_matches(string text, pattern text [, flags text])</syntax>
+          <model>regexp_matches(string text, pattern text [, flags text])</model>
+          <default_column_start>15</default_column_start>
+          <default_column_end>26</default_column_end>
+        </function>
+        <function name="Regexp_replace">
+          <description>Returns the string resulting from replacing substring(s) matching a POSIX regular expression. \r\ne.g. regexp_replace('Thomas', '.[mN]a.', 'M') returns 'ThM'.</description>
+          <syntax>regexp_replace(string text, pattern text, replacement text [, flags text])</syntax>
+          <model>regexp_replace(string text, pattern text, replacement text [, flags text])</model>
+          <default_column_start>15</default_column_start>
+          <default_column_end>26</default_column_end>
+        </function>
+        <function name="Regexp_split_to_array">
+          <description>Returns the result of splitting the string using a POSIX regular expression as the delimiter. \r\ne.g. regexp_split_to_array('hello world', E'\\s+') returns {hello,world}.</description>
+          <syntax>regexp_split_to_array(stringtext, pattern text [, flagstext ])</syntax>
+          <model>regexp_split_to_array(stringtext, pattern text [, flagstext ])</model>
+          <default_column_start>22</default_column_start>
+          <default_column_end>32</default_column_end>
+        </function>
+        <function name="Regexp_split_to_table">
+          <description>Returns the result of splitting the string using a POSIX regular expression as the delimiter. \r\ne.g. regexp_split_to_table('hello world', E'\\s+') returns 'hello' 'world' (2 rows). </description>
+          <syntax>regexp_split_to_table(stringtext, pattern text [, flagstext])</syntax>
+          <model>regexp_split_to_table(stringtext, pattern text [, flagstext])</model>
+          <default_column_start>22</default_column_start>
+          <default_column_end>32</default_column_end>
+        </function>
+        <function name="Repeat">
+          <description>Returns the string resulting from repeating the string the specified number of times. \r\ne.g. repeat('Pg', 4) returns 'PgPgPgPg'.</description>
+          <syntax>repeat(string text, numberint)</syntax>
+          <model>repeat(string text, numberint)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Replace">
+          <description>Returns the string resulting from replacing all occurrences in the string of substring (from) with substring (to). \r\ne.g. replace('abcdefabcdef', 'cd', 'XX') returns 'abXXefabXXef'.</description>
+          <syntax>replace(string text, fromtext, to text)</syntax>
+          <model>replace(string text, fromtext, to text)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Reverse">
+          <description>Returns the string resulting from reversing the string. \r\ne.g. reverse('abcde') returns 'edcba'.</description>
+          <syntax>reverse(str)</syntax>
+          <model>reverse(str)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>11</default_column_end>
+        </function>
+        <function name="Split_part">
+          <description>Returns the string resulting from splitting the string using the delimiter and returning the given field (counting from one). \r\ne.g. split_part('abc~@~def~@~ghi', '~@~', 2) returns 'def'.</description>
+          <syntax>split_part(string text, delimiter text, field int)</syntax>
+          <model>split_part(string text, delimiter text, field int)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="To_Ascii">
+          <description>Returns the result of converting a string to ASCII from another encoding (only supports conversion from LATIN1, LATIN2, LATIN9, and WIN1250encodings). \r\ne.g to_ascii('Karel') results in Karel.</description>
+          <syntax>to_ascii(string text [,encoding text])</syntax>
+          <model>to_ascii(string text [,encoding text])</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="To_Hex">
+          <description>Returns the result of converting a  number to its equivalent hexadecimal representation. \r\ne.g. to_hex(2147483647) returns 7fffffff.</description>
+          <syntax>to_hex(number int or bigint)</syntax>
+          <model>to_hex(number int or bigint)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>27</default_column_end>
+        </function>
+        <function name="Translate">
+          <description>Any character in string that matches a character in the from set is replaced by the corresponding character in the to set. If from is longer than to, occurrences of the extra characters in from are removed. \r\ne.g. translate('12345', '143', 'ax') returns a2x5.</description>
+          <syntax>translate(string text, from text, to text)</syntax>
+          <model>translate(string text, from text, to text)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Mathematical">
+      <functions>
+        <function name="Abs">
+          <description>Returns the absolute value of a number. \r\ne.g. abs(-17.4) returns 17.4</description>
+          <syntax>abs(x)</syntax>
+          <model>abs(x)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+        <function name="Cbrt">
+          <description>Returns the cube root of a number.\r\n e.g. cbrt( 27.0) returns 3</description>
+          <syntax>cbrt(dp)</syntax>
+          <model>cbrt(dp)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Ceil">
+          <description>Returns the largest integer for the argument. \r\ne.g. ceil(-42.8) returns -42 and ceil(42.8) returns 43</description>
+          <syntax>ceil(dp or numeric)</syntax>
+          <model>ceil(dp or numeric)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Ceiling">
+          <description>Returns the largest integer for the argument. (alias for ceil) \r\ne.g. ceiling(-42.8) returns -42 and ceiling(42.8) returns 43</description>
+          <syntax>ceiling(dp or numeric)</syntax>
+          <model>ceiling(dp or numeric)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Degrees">
+          <description>Converts the value of A from radians to degrees.\r\ne.g. degrees(0.5) returns 28.6478897565412</description>
+          <syntax>degrees(dp)</syntax>
+          <model>degrees(dp)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Div ">
+          <description>Returns the integer quotient ot y / x. \r\ne.g. div(9,4) returns 2</description>
+          <syntax>div(y numeric, x numeric)</syntax>
+          <model>div(y numeric, x numeric)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Exp">
+          <description>Returns the exponential result. \r\ne.g exp(1.0) returns 2.71828182845905</description>
+          <syntax>exp(dp or numeric)</syntax>
+          <model>exp(dp or numeric)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Floor">
+          <description>Returns the largest integer not greater than the argument.\r\ne.g. floor(-42.8) returns -43</description>
+          <syntax>floor(dp or numeric)</syntax>
+          <model>floor(dp or numeric)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Ln">
+          <description>Returns the natural logarithm of a number.\r\ne.g. ln(2.0) returns 0.693147180559945</description>
+          <syntax>ln(dp or numeric)</syntax>
+          <model>ln(dp or numeric)</model>
+          <default_column_start>3</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Log">
+          <description>Returns the base 10 logarithm of a number. \r\ne.g. log(100.0) returns 2</description>
+          <syntax>log(dp or numeric)</syntax>
+          <model>log(dp or numeric)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Logb">
+          <description>Returns the base b logarithm of a number. \r\ne.g. log(2.0, 64.0) returns 6.0000000000</description>
+          <syntax>log(b numeric, x numeric)</syntax>
+          <model>log(b numeric, x numeric)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Mod">
+          <description>Returns the remainder resulting from dividing y by x. \r\ne.g. mod(9,4) returns 1</description>
+          <syntax>mod(y, x)</syntax>
+          <model>mod(y, x)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+        <function name="Pi">
+          <description>Returns the value of pi. 3.14159265358979</description>
+          <syntax>pi()</syntax>
+          <model>pi()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Power-dp">
+          <description>Returns the value of a raised to the power of b. \r\ne.g power(9.0, 3.0) returns 729</description>
+          <syntax>power(a dp, b dp)</syntax>
+          <model>power(a dp, b dp)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Power-numeric">
+          <description>Returns the value of a raised to the power of b. \r\ne.g power(9.0, 3.0) returns 729</description>
+          <syntax>power(a numeric, b numeric)</syntax>
+          <model>power(a numeric, b numeric)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Radians">
+          <description>Converts the value of A from degrees to radians. \r\ne.g. radians(45.0) returns 0.785398163397448</description>
+          <syntax>radians(dp)</syntax>
+          <model>radians(dp)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Random">
+          <description>Returns a random value in the range 0.0 &lt;= x &lt; 1.0</description>
+          <syntax>random()</syntax>
+          <model>random()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Round-to integer">
+          <description>Rounds to the nearest integer. \r\ne.g. round(42.4) returns 42</description>
+          <syntax>round(dp or numeric)</syntax>
+          <model>round(dp or numeric)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Round-to decimal">
+          <description>Rounds to s decimal places. \r\ne.g. round(42.4382, 2) returns 42.44</description>
+          <syntax>round(v numeric, s int)</syntax>
+          <model>round(v numeric, s int)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Setseed">
+          <description>Sets seed for subsequent random() calls (value between -1.0 and 1.0, inclusive). \r\ne.g. setseed(0.54823) </description>
+          <syntax>setseed(dp)</syntax>
+          <model>setseed(dp)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Sign">
+          <description>Returns the sign of the argument (-1, 0, +1). \r\ne.g. sign(-8.4) returns -1</description>
+          <syntax>sign(dp or numeric)</syntax>
+          <model>sign(dp or numeric)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Sqrt">
+          <description>Returns the square root of A. \r\ne.g sqrt(2.0) returns 1.4142135623731</description>
+          <syntax>sqrt(dp or numeric)</syntax>
+          <model>sqrt(dp or numeric)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Trunc-to zero">
+          <description>Truncates toward zero. \r\ne.g. trunc(42.8) returns 42</description>
+          <syntax>trunc(dp or numeric)</syntax>
+          <model>trunc(dp or numeric)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Trunc-to decimal">
+          <description>Truncates to s decimal places. \r\ne.g. trunc(42.4382, 2) returns 42.43</description>
+          <syntax>trunc(v numeric, s int)</syntax>
+          <model>trunc(v numeric, s int)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Width_bucket-numeric">
+          <description>Returns the bucket to which operand would be assigned in an equidepth histogram with count buckets, in the range b1 to b2. \r\ne.g. width_bucket(5.35, 0.024, 10.06, 5) returns 3</description>
+          <syntax>width_bucket(op numeric, b1 numeric, b2 numeric, count int)</syntax>
+          <model>width_bucket(op numeric, b1 numeric, b2 numeric, count int)</model>
+          <default_column_start>13</default_column_start>
+          <default_column_end>23</default_column_end>
+        </function>
+        <function name="Width_bucket-dp">
+          <description>Returns the bucket to which operand would be assigned in an equidepth histogram with count buckets, in the range b1 to b2. \r\ne.g. width_bucket(5.35, 0.024, 10.06, 5) returns 3</description>
+          <syntax>width_bucket(op dp, b1 dp, b2 dp, count int)</syntax>
+          <model>width_bucket(op dp, b1 dp, b2 dp, count int)</model>
+          <default_column_start>13</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Cos">
+          <description>Returns the cosine of x.</description>
+          <syntax>cos(x)</syntax>
+          <model>cos(x)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+        <function name="Cot">
+          <description>Returns the cotangent of x.</description>
+          <syntax>cot(x)</syntax>
+          <model>cot(x)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+        <function name="Sin">
+          <description>Returns the sine of x.</description>
+          <syntax>sin(x)</syntax>
+          <model>sin(x)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+        <function name="Tan">
+          <description>Returns the tangent of x.</description>
+          <syntax>tan(x)</syntax>
+          <model>tan(x)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+        <function name="Acos">
+          <description>Returns the inverse cosine of x.</description>
+          <syntax>acos(x)</syntax>
+          <model>acos(x)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="Asin">
+          <description>Returns the inverse sine of x.</description>
+          <syntax>asin(x)</syntax>
+          <model>asin(x)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="Atan">
+          <description>Returns the inverse tangent of x.</description>
+          <syntax>atan(x)</syntax>
+          <model>atan(x)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="Atan2">
+          <description>Returns the inverse tangent of y/x.</description>
+          <syntax>atan2(y, x)</syntax>
+          <model>atan2(y, x)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Arithmetic Operators">
+      <functions>
+        <function name="Plus">
+          <description>Gives the result of adding A and B. \r\ne.g 2 + 3 returns 5.</description>
+          <syntax>A + B</syntax>
+          <model>A + B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="Minus">
+          <description>Gives the result of subtracting B from A. \r\ne.g. 2 - 3 returns -1.</description>
+          <syntax>A - B</syntax>
+          <model>A - B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="*">
+          <description>Gives the result of multiplying A and B. \r\ne.g. 2 * 3 returns 6.</description>
+          <syntax>A * B</syntax>
+          <model>A * B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="Divide">
+          <description>Gives the result of dividing A by B. (integer division truncates the result). \r\ne.g. 4 / 2 returns 2.</description>
+          <syntax>A / B</syntax>
+          <model>A / B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="%">
+          <description>Gives the remainder resulting from dividing A by B. \r\ne.g. 5 % 4 returns 1.</description>
+          <syntax>A % B</syntax>
+          <model>A % B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="^">
+          <description>Gives the result of exponentiation, the raising of A to any given power B. \r\ne.g. 2.0 ^ 3.0 returns 8.</description>
+          <syntax>A ^ B</syntax>
+          <model>A ^ B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="|/">
+          <description>Gives the square root of a number A. \r\ne.g. |/ 25.0 returns 5.</description>
+          <syntax>|/ A</syntax>
+          <model>|/ A</model>
+          <default_column_start>3</default_column_start>
+          <default_column_end>4</default_column_end>
+        </function>
+        <function name="||/ ">
+          <description>Gives the cube root of a number A. \r\ne.g. ||/ 27.0 returns 3.</description>
+          <syntax>||/ A</syntax>
+          <model>||/ A</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+        <function name="!">
+          <description>Gives the factorial of a number A.\r\ne.g. 5 ! returns 120.</description>
+          <syntax>A !</syntax>
+          <model>A !</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="!!">
+          <description>Gives the factorial of a number A. (prefix operator) \r\ne.g. !! 5 returns 120.</description>
+          <syntax>!! A</syntax>
+          <model>!! A</model>
+          <default_column_start>3</default_column_start>
+          <default_column_end>4</default_column_end>
+        </function>
+        <function name="@">
+          <description>Gives the absolute value of a number. \r\ne.g. @ -5.0 returns 5. </description>
+          <syntax>@ A</syntax>
+          <model>@ A</model>
+          <default_column_start>2</default_column_start>
+          <default_column_end>3</default_column_end>
+        </function>
+        <function name="&amp;">
+          <description>Gives the result of bitwise AND of A and B. (works only on integral data types) \r\ne.g. 91 &amp; 15 returns 11.</description>
+          <syntax>A &amp; B</syntax>
+          <model>A &amp; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="|">
+          <description>Gives the result of bitwise OR of A and B. (works only on integral data types) \r\ne.g. 32 &amp; 3 returns 35.</description>
+          <syntax>A | B</syntax>
+          <model>A | B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="#">
+          <description>Gives the result of bitwise XOR of A and B. (works only on integral data types) \r\ne.g. 17 # 5  returns 20.</description>
+          <syntax>A # B</syntax>
+          <model>A # B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="~">
+          <description>Gives the result of bitwise NOT of A. (works only on integral data types) \r\ne.g. ~ 1 returns -2.</description>
+          <syntax>~ A</syntax>
+          <model>~ A</model>
+          <default_column_start>2</default_column_start>
+          <default_column_end>3</default_column_end>
+        </function>
+        <function name="&lt;&lt;">
+          <description>Gives the result of bitwise shift left. (works only on integral data types) \r\ne.g. 1 &lt;&lt; 4 returns 16.</description>
+          <syntax>A &lt;&lt; B</syntax>
+          <model>A &lt;&lt; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name=">>">
+          <description>Gives the result of bitwise shift right. (works only on integral data types) \r\ne.g. 8 &gt;&gt; 2 returns 2.</description>
+          <syntax>A &gt;&gt; B</syntax>
+          <model>A &gt;&gt; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Date/Time">
+      <functions>
+        <function name="Age-two arguments">
+          <description>Subtracts arguments, producing a "symbolic" result that uses years and months. \r\ne.g. age(timestamp '2001-04-10', timestamp '1957-06-13') returns 43 years 9 mons 27 days.</description>
+          <syntax>age(timestamp, timestamp)</syntax>
+          <model>age(timestamp, timestamp)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Age-from current date">
+          <description>Subtracts argument from the current_date (at midnight). \r\ne.g. age(timestamp '1957-06-13') returns 43 years 8 mons 3 days.</description>
+          <syntax>age(timestamp)</syntax>
+          <model>age(timestamp)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Clock_timestamp">
+          <description>Returns the current date and time (changes during statement execution).</description>
+          <syntax>clock_timestamp()</syntax>
+          <model>clock_timestamp()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Current_timestamp">
+          <description>Current date and time (start of current transaction).</description>
+          <syntax>current_timestamp</syntax>
+          <model>current_timestamp</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Current_date">
+          <description>Returns the current date.</description>
+          <syntax>current_date</syntax>
+          <model>current_date</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Current_time">
+          <description>Returns the current time of day.</description>
+          <syntax>current_time</syntax>
+          <model>current_time</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Date_part-timestamp">
+          <description>Returns the subfield. (Same as extract). \r\ne.g. date_part('hour', timestamp '2001-02-16 20:38:40') returns 20.</description>
+          <syntax>date_part(text, timestamp)</syntax>
+          <model>date_part(text, timestamp)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Date_part-interval">
+          <description>Returns the subfield. (Same as extract). \r\ne.g. date_part('month', interval '2 years 3 months') returns 3.</description>
+          <syntax>date_part(text, interval)</syntax>
+          <model>date_part(text, interval)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Date_trunc">
+          <description>Truncates the date  to the specified precision. \r\ne.g. date_trunc('hour', timestamp '2001-02-16 20:38:40') returns 2001-02-16 20:00:00.</description>
+          <syntax>date_trunc(text, timestamp)</syntax>
+          <model>date_trunc(text, timestamp)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Extract-timestamp">
+          <description>Returns the subfield. \r\ne.g. extract(hour from timestamp '2001-02-16 20:38:40') returns 20.</description>
+          <syntax>extract(field from timestamp)</syntax>
+          <model>extract(field from timestamp)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>28</default_column_end>
+        </function>
+        <function name="Extract-interval">
+          <description>Returns the subfield. \r\ne.g. extract(month from interval '2 years 3 months') returns 3.</description>
+          <syntax>extract(field from interval)</syntax>
+          <model>extract(field from interval)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>27</default_column_end>
+        </function>
+        <function name="Isfinite-date">
+          <description>Tests for finite date (not +/-infinity). \r\ne.g isfinite(date '2001-02-16') returns true.</description>
+          <syntax>isfinite(date)</syntax>
+          <model>isfinite(date)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Isfinite-timestamp">
+          <description>Tests for finite time stamp (not +/-infinity). \r\ne.g. isfinite(timestamp '2001-02-16 21:28:30') returns true.</description>
+          <syntax>isfinite(timestamp)</syntax>
+          <model>isfinite(timestamp)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Isfinite-interval">
+          <description>Tests for finite interval. \r\ne.g. isfinite(interval '4 hours') returns true.</description>
+          <syntax>isfinite(interval)</syntax>
+          <model>isfinite(interval)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Justify_days">
+          <description>Adjusts interval so 30-day time periods are represented as months. \r\ne.g. justify_days(interval '35 days') returns 1 mon 5 days.</description>
+          <syntax>justify_days(interval)</syntax>
+          <model>justify_days(interval)</model>
+          <default_column_start>13</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Jusify_hours">
+          <description>Adjusts interval so 24-hour time periods are represented as days. \r\ne.g. justify_hours(interval '27 hours') returns 1 day 03:00:00.</description>
+          <syntax>justify_hours(interval)</syntax>
+          <model>justify_hours(interval)</model>
+          <default_column_start>14</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Justify_interval">
+          <description>Adjusts interval using justify_days and justify_hours, with additional sign adjustments. \r\ne.g. justify_interval(interval '1 mon -1 hour') returns 29 days 23:00:00.</description>
+          <syntax>justify_interval(interval)</syntax>
+          <model>justify_interval(interval)</model>
+          <default_column_start>17</default_column_start>
+          <default_column_end>25</default_column_end>
+        </function>
+        <function name="Localtime">
+          <description>Returns the current time of day.</description>
+          <syntax>localtime</syntax>
+          <model>localtime</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Localtimestamp">
+          <description>Returns the current date and time (start of current transaction).</description>
+          <syntax>localtimestamp</syntax>
+          <model>localtimestamp</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Now">
+          <description>Returns the current date and time (start of current transaction).</description>
+          <syntax>now()</syntax>
+          <model>now()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Statement_timestamp">
+          <description>Returns the current date and time (start of current transaction).</description>
+          <syntax>statement_timestamp()</syntax>
+          <model>statement_timestamp()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Timeofday">
+          <description>Returns the current date and time (like clock_timestamp, but as a text string).</description>
+          <syntax>timeofday()</syntax>
+          <model>timeofday()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Transaction_timestamp">
+          <description>Returns the current date and time (start of current transaction).</description>
+          <syntax>transaction_timestamp()</syntax>
+          <model>transaction_timestamp()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Date/Time Operators">
+      <functions>
+        <function name="Plus-date">
+          <description>e.g. date '2001-09-28' + integer '7' returns date '2001-10-05';  date '2001-09-28' + interval '1 hour' returns timestamp '2001-09-28 01:00:00'; date '2001-09-28' + time '03:00' returns timestamp '2001-09-28 03:00:00'; interval '1 day' + interval '1 hour' returns interval '1 day 01:00:00'; timestamp '2001-09-28 01:00' + interval '23 hours' returns timestamp '2001-09-28 01:00' + interval '23 hours'; time '01:00' + interval '3 hours' returns time '04:00:00'</description>
+          <syntax>(plus)</syntax>
+          <model> +</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="Minus-date">
+          <description>e.g. - interval '23 hours' returns interval '-23:00:00'; date '2001-10-01' - date '2001-09-28' returns integer '3' (days); date '2001-10-01' - integer '7' returns date '2001-09-24'; date '2001-09-28' - interval '1 hour' returns timestamp '2001-09-27 23:00:00'; time '05:00' - time '03:00' returns interval '02:00:00'; time '05:00' - interval '2 hours' returns time '03:00:00'; timestamp '2001-09-28 23:00' - interval '23 hours' returns timestamp '2001-09-28 00:00:00'; interval '1 day' - interval '1 hour' returns interval '1 day -01:00:00'; timestamp '2001-09-29 03:00' - timestamp '2001-09-27 12:00' returns interval '1 day 15:00:00'</description>
+          <syntax>-</syntax>
+          <model>- </model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="*-date">
+          <description>e.g. 900 * interval '1 second' returns interval '00:15:00'; 21 * interval '1 day' returns interval '21 days'; double precision '3.5' * interval '1 hour' returns interval '03:30:00'</description>
+          <syntax>*</syntax>
+          <model>*</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Divide-date">
+          <description>interval '1 hour' / double precision '1.5' returns interval '00:40:00'</description>
+          <syntax>(divide)</syntax>
+          <model>(divide)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Logical Operators">
+      <functions>
+        <function name="AND">
+          <description>TRUE if both A and B are TRUE, otherwise FALSE. NULL if A or B is NULL.</description>
+          <syntax>A AND B</syntax>
+          <model>A AND B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="OR">
+          <description>TRUE if either A or B or both are TRUE; FALSE OR NULL is NULL; otherwise FALSE</description>
+          <syntax>A OR B</syntax>
+          <model>A OR B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="NOT">
+          <description>TRUE if A is FALSE or NULL if A is NULL. Otherwise FALSE.</description>
+          <syntax>NOT A</syntax>
+          <model>NOT A</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Relational Operators">
+      <functions>
+        <function name="&lt;">
+          <description>NULL if A or B is NULL, TRUE if expression A is less than expression B otherwise FALSE</description>
+          <syntax>A &lt; B</syntax>
+          <model>A &lt; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name=">">
+          <description>NULL if A or B is NULL, TRUE if expression A is greater than expression B otherwise FALSE</description>
+          <syntax>A &gt; B</syntax>
+          <model>A &gt; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="&lt;=">
+          <description>NULL if A or B is NULL, TRUE if expression A is less than or equal to expression B otherwise FALSE</description>
+          <syntax>A &lt;= B</syntax>
+          <model>A &lt;= B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name=">=">
+          <description>NULL if A or B is NULL, TRUE if expression A is greater than or equal to expression B otherwise FALSE</description>
+          <syntax>A &gt;= B</syntax>
+          <model>A &gt;= B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="Equal">
+          <description>TRUE if expression A is equal to expression B otherwise FALSE</description>
+          <syntax>A = B</syntax>
+          <model>A = B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="&lt;> ">
+          <description>NULL if A or B is NULL, TRUE if expression A is NOT equal to expression B otherwise FALSE</description>
+          <syntax>A &lt;&gt; B</syntax>
+          <model>A &lt;&gt; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="!=">
+          <description>a synonym for the &lt;&gt; operator. NULL if A or B is NULL, TRUE if expression A is NOT equal to expression B otherwise FALSE</description>
+          <syntax>A != B</syntax>
+          <model>A != B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>1</default_column_end>
+        </function>
+        <function name="LIKE">
+          <description>TRUE if the string matches the supplied pattern.\r\ne.g. 'abc' LIKE 'abc' returns true; 'abc' LIKE 'a%' returns true; 'abc' LIKE '_b_' returns true; 'abc' LIKE 'c' returns false.</description>
+          <syntax>string LIKE pattern</syntax>
+          <model>string LIKE pattern</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="SIMILAR TO">
+          <description>TRUE if the string matches the supplied pattern.\r\ne.g. 'abc' SIMILAR TO 'abc' returns true; 'abc' SIMILAR TO 'a' returns false; 'abc' SIMILAR TO '%(b|d)%' returns true; 'abc' SIMILAR TO '(b|c)%' returns false.  </description>
+          <syntax>string SIMILAR TO pattern</syntax>
+          <model>string SIMILAR TO pattern</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="~matches">
+          <description>Matches regular expression, case sensitive. A regular expression is a character sequence that is an abbreviated definition of a set of strings. A string is said to match a regular expression if it is a member of the regular set described by the regular expression. Unlike LIKE patterns, a regular expression is allowed to match anywhere within a string, unless the regular expression is explicitly anchored to the beginning or end of the string. \r\ne.g. 'abc' ~ 'abc' returns true; 'abc' ~ '^a' returns true; 'abc' ~ '(b|d)' returns true; 'abc' ~ '^(b|c)' returns false. </description>
+          <syntax>string ~ pattern</syntax>
+          <model>string ~ pattern</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="~*">
+          <description>Matches regular expression, case insensitive. </description>
+          <syntax>string ~* pattern</syntax>
+          <model>string ~* pattern</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="!~">
+          <description>Does not match the regular expression, case sensitive.</description>
+          <syntax>string !~ pattern</syntax>
+          <model>string !~ pattern</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="!~*">
+          <description>Does not match the regular expression, case insensitive.</description>
+          <syntax>string !~* pattern</syntax>
+          <model>string !~* pattern</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Binary String">
+      <functions>
+        <function name="Concat-two Binary Strings">
+          <description>Returns the string resulting from concatenating the strings in order. \r\ne.g. E'\\\\Post'::bytea || E'\\047gres\\000'::bytea returns \\Post'gres\000</description>
+          <syntax>string | | string</syntax>
+          <model>string | | string</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="Length-octet - Binary String">
+          <description>Returns the number of bytes in the binary string.\r\ne.g. octet_length(E'jo\\000se'::bytea) returns 5.</description>
+          <syntax>octet_length(string)</syntax>
+          <model>octet_length(string)</model>
+          <default_column_start>13</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Overlay - Binary String">
+          <description>Returns the string resulting from replacing a substring with another. \r\ne.g. overlay(E'Th\\000omas'::bytea placing E'\\002\\003'::bytea from 2 for 3) returns T\\002\\003mas.</description>
+          <syntax>overlay(string placing string from int [for int])</syntax>
+          <model>overlay(string placing string from int [for int])</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Position - Binary String">
+          <description>Returns the location of the specified substring. \r\ne.g. position(E'\\000om'::bytea in E'Th\\000omas'::bytea) returns 3.</description>
+          <syntax>position(substring in string)</syntax>
+          <model>position(substring in string)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Substring-from position - Binary String">
+          <description>Returns the substring of a string from a start position for a count, a specified number of characters. \r\ne.g. substring(E'Th\\000omas'::bytea from 2 for 3) returns h\000o.</description>
+          <syntax>substring(string [from int] [for int])</syntax>
+          <model>substring(string [from int] [for int])</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Trim-both - Binary String">
+          <description>Returns the string resulting from trimming the specified characters (a space by default) from both ends of the string. \r\ne.g.  trim(E'\\000'::bytea from E'\\000Tom\\000'::bytea) returns Tom.</description>
+          <syntax>trim([both] bytes from string)</syntax>
+          <model>trim([both] bytes from string)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>28</default_column_end>
+        </function>
+        <function name="Btrim - Binary String">
+          <description>Returns the string resulting from trimming the specified characters (a space by default) from both ends of the string. \r\ne.g. btrim(E'\\000trim\\000'::bytea, E'\\000'::bytea) returns trim.</description>
+          <syntax>btrim(string bytea, bytes bytea)</syntax>
+          <model>btrim(string bytea, bytes bytea)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Decode - Binary String">
+          <description>Returns the result of decoding binary data from textual representation in string. Supported formats are: base64, hex, escape. \r\ne.g.  decode(E'123\\000456', 'escape') returns 123\000456.</description>
+          <syntax>decode(string text, format text)</syntax>
+          <model>decode(string text, format text)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Encode - Binary String">
+          <description>Returns the result of encoding binary data into a textual representation. Supported formats are: base64, hex, escape. \r\ne.g. encode(E'123\\000456'::bytea, 'escape') returns 123\000456.</description>
+          <syntax>encode(data bytea, format text)</syntax>
+          <model>encode(data bytea, format text)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Get_bit - Binary String">
+          <description>Extract bit from string.\r\ne.g. get_bit(E'Th\\000omas'::bytea, 45) returns 1.</description>
+          <syntax>get_bit(string, offset)</syntax>
+          <model>get_bit(string, offset)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Get_byte - Binary String">
+          <description>Extract byte from string. \r\ne.g. get_byte(E'Th\\000omas'::bytea, 4) returns 109.</description>
+          <syntax>get_byte(string, offset)</syntax>
+          <model>get_byte(string, offset)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Length - Binary String">
+          <description>Returns the length of the binary string. \r\ne.g. length(E'jo\\000se'::bytea) returns 5.</description>
+          <syntax>length(string)</syntax>
+          <model>length(string)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="MD5 - Binary String">
+          <description>Returns the MD5 hash of the string, returning the result in hexadecimal. \r\ne.g.  md5(E'Th\\000omas'::bytea) returns 8ab2d3c9689aaf18 b4958c334c82d8b1.</description>
+          <syntax>md5(string)</syntax>
+          <model>md5(string)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Set_bit">
+          <description>Set bit in string. \r\ne.g. set_bit(E'Th\\000omas'::bytea, 45, 0) returns Th\000omAs.</description>
+          <syntax>set_bit(string, offset, newvalue)</syntax>
+          <model>set_bit(string, offset, newvalue)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Set_byte">
+          <description>Set byte in string. \r\ne.g. set_byte(E'Th\\000omas'::bytea, 4, 64) returns Th\000o@as.</description>
+          <syntax>set_byte(string, offset, newvalue)</syntax>
+          <model>set_byte(string, offset, newvalue)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Bit String Operators">
+      <functions>
+        <function name="Concat-two Bit Strings">
+          <description>Returns the string resulting from concatenating the bit strings in order. \r\ne.g. B'10001' || B'011' returns 10001011</description>
+          <syntax>bitstring | | bitstring</syntax>
+          <model>bitstring | | bitstring</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+        <function name="&amp; - Bit String">
+          <description>Gives the result of bitwise AND of A and B. \r\ne.g. B'10001' &amp; B'01101' returns 00001</description>
+          <syntax>bitstring &amp; bitstring</syntax>
+          <model>bitstring &amp; bitstring</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+        <function name="| - Bit String">
+          <description>Gives the result of bitwise OR of A and B. \r\ne.g. B'10001' | B'01101' returns 11101</description>
+          <syntax>bitstring | bitstring</syntax>
+          <model>bitstring | bitstring</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+        <function name="# - Bit String">
+          <description>Gives the result of bitwise XOR of A and B. \r\ne.g. B'10001' # B'01101' returns 11100</description>
+          <syntax>bitstring # bitstring</syntax>
+          <model>bitstring # bitstring</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+        <function name="~ - Bit String">
+          <description>Gives the result of bitwise NOT of A. \r\ne.g. ~ B'10001' returns 01110</description>
+          <syntax>~ bitstring</syntax>
+          <model>~ bitstring</model>
+          <default_column_start>2</default_column_start>
+          <default_column_end>11</default_column_end>
+        </function>
+        <function name="&lt;&lt; - Bit String">
+          <description>Gives the result of bitwise shift left.\r\ne.g. B'10001' &lt;&lt; 3 returns 01000</description>
+          <syntax>bitstring &lt;&lt; integer</syntax>
+          <model>bitstring &lt;&lt; integer</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+        <function name=">> - Bit String">
+          <description>Gives the result of bitwise shift right. \r\ne.g. B'10001' &gt;&gt; 2 returns 00100</description>
+          <syntax>bitstring &gt;&gt; integer</syntax>
+          <model>bitstring &gt;&gt; integer</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Conditional">
+      <functions>
+        <function name="Case">
+          <description>CASE expression WHEN a THEN resulta WHEN b then resultb ELSE other END \r\ne.g. CASE a WHEN 1 THEN 'one' WHEN 2 THEN 'two' ELSE 'other' END</description>
+          <syntax>CASE expression WHEN a THEN resulta WHEN b then resultb ELSE other END</syntax>
+          <model>CASE expression WHEN a THEN resulta WHEN b then resultb ELSE other END</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Coalesce">
+          <description>The Coalesce function returns the first of its arguments that is not null. Null is only returned if all arguments are null. \r\ne.g. SELECT COALESCE(description, short_description, '(none)') returns description if it is not null, else short_description if it is not null, otherwise (none).</description>
+          <syntax>COALESCE(value [, ...])</syntax>
+          <model>COALESCE(value [, ...])</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Nullif">
+          <description>The NULLIF function returns a null value if value1 equals value2; otherwise it returns value1. \r\nThis can be used to perform the inverse operation of the COALESCE function.</description>
+          <syntax>NULLIF(value, '(none)') </syntax>
+          <model>NULLIF(value, '(none)') </model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Greatest">
+          <description>The GREATEST function selects the largest value from a list of any number of expressions. The expressions must be convertible to a common data type, which will be the type of the result. \r\nNULL values in the list are ignored. The result will be NULL only if all the expressions evaluate to NULL.</description>
+          <syntax>GREATEST(value [, ...])</syntax>
+          <model>GREATEST(value [, ...])</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Least">
+          <description>The LEAST function selects the smallest value from a list of any number of expressions. The expressions must be convertible to a common data type, which will be the type of the result. \r\nNULLL values in the list are ignored. The result will be NULL only if all the expressions evaluate to NULL.</description>
+          <syntax>LEAST(value [, ...])</syntax>
+          <model>LEAST(value [, ...])</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>11</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Enum Support">
+      <functions>
+        <function name="Enum_first">
+          <description>Returns the first value of the input enum type. \r\ne.g. if the variable rainbow is defined as ENUM('red', 'orange', 'yellow', 'green', 'blue', 'purple') then enum_first(null::rainbow) returns red.</description>
+          <syntax>enum_first(anyenum)</syntax>
+          <model>enum_first(anyenum)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Enum_last">
+          <description>Returns the last value of the input enum type. \r\ne.g. if the variable rainbow is defined as ENUM('red', 'orange', 'yellow', 'green', 'blue', 'purple') then enum_last(null::rainbow) returns purple.</description>
+          <syntax>enum_last(anyenum)</syntax>
+          <model>enum_last(anyenum)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Enum_range">
+          <description>Returns all the values of the input enum type in an ordered array. \r\ne.g. if the variable rainbow is defined as ENUM('red', 'orange', 'yellow', 'green', 'blue', 'purple') then enum_range(null::rainbow) returns {red,orange,yellow,green,blue,purple}.</description>
+          <syntax>enum_range(anyenum)</syntax>
+          <model>enum_range(anyenum)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Enum_range-two enums">
+          <description>Returns the range between the two given enum values, as an ordered array. The values must be of the same enum type. \r\nIf the first parameter is null, the result will start with the first value of the enum type. If the second parameter is null, the result will end with the last value of the enum type. e.g. if the variable rainbow is defined as ENUM('red', 'orange', 'yellow', 'green', 'blue', 'purple') then enum_range('orange'::rainbow,'green'::rainbow) returns (orange,yellow,green); enum_range(NULL,'green'::rainbow) returns {red,orange,yellow,green}; enum_range('orange'::rainbow,NULL} returns {orange,yellow,green,blue,purple}</description>
+          <syntax>enum_range(anyenum,anyenum)</syntax>
+          <model>enum_range(anyenum,anyenum)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="JSON Functions">
+      <functions>
+        <function name="Array_to_json">
+          <description>Returns the array as JSON. A PostgreSQL multidimentional array becomes a JSON array of arrays. Line feeds will be added between dimension 1 elements if pretty_bool is true. \r\ne.g. array_to_json('{{1,5}, {99,100}}'::int[]) returns [[1,5],[99,100]]</description>
+          <syntax>array_to_json(anyarray [, pretty_bool])</syntax>
+          <model>array_to_json(anyarray [, pretty_bool])</model>
+          <default_column_start>14</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Row_to_json">
+          <description>Returns the row as JSON. Line feeds will be added between level 1 elements if pretty_bool is true. \r\ne.g. row_to_json(row(1,'foo')) returns {"f1":1,"f2":"foo"}</description>
+          <syntax>row_to_json(record [, pretty_bool])</syntax>
+          <model>row_to_json(record [, pretty_bool])</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Sequence ">
+      <functions>
+        <function name="Currval">
+          <description>Returns the value most recently obtained with nextval for the specified sequence.</description>
+          <syntax>currval(regclass)</syntax>
+          <model>currval(regclass)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Lastval">
+          <description>Returns the  value most recently obtained with nextval for any sequence</description>
+          <syntax>lastval()</syntax>
+          <model>lastval()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Nextval">
+          <description>Advance sequence and return new value</description>
+          <syntax>nextval(regclass)</syntax>
+          <model>nextval(regclass)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Setval">
+          <description>Set sequence's current value</description>
+          <syntax>setval(regclass, bigint)</syntax>
+          <model>setval(regclass, bigint)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Setval-boolean">
+          <description>Set sequence's current value and is_called flag</description>
+          <syntax>setval(regclass, bigint, boolean)</syntax>
+          <model>setval(regclass, bigint, boolean)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Array Operators">
+      <functions>
+        <function name="Equal - Array">
+          <description>Returns true if array A equals array B. \r\ne.g. ARRAY[1.1,2.1,3.1]::int[] = ARRAY[1,2,3] returns true.</description>
+          <syntax>Array A = Array B</syntax>
+          <model>Array A = Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="&lt;> - Array">
+          <description>Array A is not equal to Array B. \r\ne.g. ARRAY[1,2,3] &lt;&gt; ARRAY[1,2,4] returns true.</description>
+          <syntax>Array A &lt;&gt; Array B</syntax>
+          <model>Array A &lt;&gt; Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="&lt; - Array">
+          <description>Array A is less than Array B. \r\ne.g. ARRAY[1,2,3] &lt; ARRAY[1,2,4] returns true.</description>
+          <syntax>Array A &lt; Array B</syntax>
+          <model>Array A &lt; Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="> - Array">
+          <description>Array A is greater than Array B. \r\ne.g. ARRAY[1,4,3] &gt; ARRAY[1,2,4] returns true.</description>
+          <syntax>Array A &gt; Array B</syntax>
+          <model>Array A &gt; Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="&lt;= - Array">
+          <description>Array A is less than or equal to Array B. \r\ne.g. ARRAY[1,2,3] &lt;= ARRAY[1,2,3] returns true.</description>
+          <syntax>Array A &lt;= Array B</syntax>
+          <model>Array A &lt;= Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name=">= - Array">
+          <description>Array A is greater than or equal to Array B. \r\ne.g. ARRAY[1,4,3] &gt;= ARRAY[1,4,3] returns true.</description>
+          <syntax>Array A &gt;= Array B</syntax>
+          <model>Array A &gt;= Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Contains">
+          <description>Array A contains Array B. \r\neg. ARRAY[1,4,3] @&gt; ARRAY[3,1] returns true.</description>
+          <syntax>Array A @&gt; Array B</syntax>
+          <model>Array A @&gt; Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Contained by">
+          <description>Array A is contained by Array B. \r\ne.g. ARRAY[2,7] &lt;@ ARRAY[1,7,4,2,6] returns true.</description>
+          <syntax>Array A &lt;@ Array B</syntax>
+          <model>Array A &lt;@ Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="&amp;&amp;">
+          <description>Array A overlaps Array B; they have elements in common. \r\ne.g. ARRAY[1,4,3] &amp;&amp; ARRAY[2,1] returns true.</description>
+          <syntax>Array A &amp;&amp; Array B</syntax>
+          <model>Array A &amp;&amp; Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="||-array to array">
+          <description>Array to array concatenation. \r\ne.g. ARRAY[1,2,3] || ARRAY[4,5,6] returns {1,2,3,4,5,6}.</description>
+          <syntax>Array A || Array B</syntax>
+          <model>Array A || Array B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="||-element to array">
+          <description>Element to array concatenation. \r\ne.g. 3 || ARRAY[4,5,6] returns {3,4,5,6}.</description>
+          <syntax>Element || Array</syntax>
+          <model>Element || Array</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="||-array to element">
+          <description>Array to element concatenation. \r\ne.g. ARRAY[4,5,6] || 7 returns {4,5,6,7}.</description>
+          <syntax>Array || Element</syntax>
+          <model>Array || Element</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Array Functions">
+      <functions>
+        <function name="Array_append">
+          <description>Append an element to the end of an array. \r\ne.g. array_append(ARRAY[1,2], 3) returns {1,2,3}.</description>
+          <syntax>array_append(anyarray, anyelement)</syntax>
+          <model>array_append(anyarray, anyelement)</model>
+          <default_column_start>13</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Array_cat">
+          <description>Concatenate two arrays. \r\ne.g. array_cat(ARRAY[1,2,3], ARRAY[4,5]) returns {1,2,3,4,5}.</description>
+          <syntax>array_cat(anyarray, anyarray)</syntax>
+          <model>array_cat(anyarray, anyarray)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Array_ndims">
+          <description>Returns the number of dimensions of the array. \r\ne.g. array_ndims(ARRAY[[1,2,3], [4,5,6]]) returns 2.</description>
+          <syntax>array_ndims(anyarray)</syntax>
+          <model>array_ndims(anyarray)</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="Array_dims">
+          <description>Returns a text representation of the array's dimensions. \r\ne.g. array_dims(ARRAY[[1,2,3], [4,5,6]]) returns [1:2][1:3].</description>
+          <syntax>array_dims(anyarray)</syntax>
+          <model>array_dims(anyarray)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Array_fill">
+          <description>Returns an array initialized with the supplied value and dimensions, optionally with lower bounds other than 1. \r\ne.g.  array_fill(7, ARRAY[3], ARRAY[2]) returns [2:4]={7,7,7}.</description>
+          <syntax>array_fill(anyelement, int[], [, int[]])</syntax>
+          <model>array_fill(anyelement, int[], [, int[]])</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Array_length">
+          <description>Returns the length of the requested array dimension. \r\ne.g. array_length(array[1,2,3], 1) returns 3.</description>
+          <syntax>array_length(anyarray, int)</syntax>
+          <model>array_length(anyarray, int)</model>
+          <default_column_start>13</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Array_lower">
+          <description>Returns the lower bound of the requested array dimension. \r\ne.g. array_lower('[0:2]={1,2,3}'::int[], 1) returns 0.</description>
+          <syntax>array_lower(anyarray, int)</syntax>
+          <model>array_lower(anyarray, int)</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="Array_prepend">
+          <description>Append an element to the beginning of an array. \r\ne.g. array_prepend(1, ARRAY[2,3]) returns {1,2,3}.</description>
+          <syntax>array_prepend(anyelement, anyarray)</syntax>
+          <model>array_prepend(anyelement, anyarray)</model>
+          <default_column_start>14</default_column_start>
+          <default_column_end>24</default_column_end>
+        </function>
+        <function name="Array_to_string">
+          <description>Concatenates array elements using supplied delimiter and optional null string. \r\ne.g. array_to_string(ARRAY[1, 2, 3, NULL, 5], ',', '*') returns 1,2,3,*,5.</description>
+          <syntax>array_to_string(anyarray, text [, text])</syntax>
+          <model>array_to_string(anyarray, text [, text])</model>
+          <default_column_start>16</default_column_start>
+          <default_column_end>24</default_column_end>
+        </function>
+        <function name="Array_upper">
+          <description>Returns the upper bound of the requested array dimension. \r\ne.g. array_upper(ARRAY[1,8,3,7], 1) returns 4.</description>
+          <syntax>array_upper(anyarray, int)</syntax>
+          <model>array_upper(anyarray, int)</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="String_to_array">
+          <description>Splits a string into array elements using supplied delimiter and optional null string. \r\ne.g. string_to_array('xx~^~yy~^~zz', '~^~', 'yy') returns {xx,NULL,zz}.</description>
+          <syntax>string_to_array(text, text [, text])</syntax>
+          <model>string_to_array(text, text [, text])</model>
+          <default_column_start>16</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="Unnest">
+          <description>Expands an array to a set of rows.</description>
+          <syntax>unnest(anyarray)</syntax>
+          <model>unnest(anyarray)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Array Comparisons">
+      <functions>
+        <function name="IN - Array">
+          <description>The right-hand side is a parenthesized list of scalar expressions. The result is "true" if the left-hand expression's result is equal to any of the right-hand expressions. \r\nNote that if the left-hand expression yields null, or if there are no equal right-hand values and at least one right-hand expression yields null, the result of the IN construct will be null, not false.</description>
+          <syntax>expression IN (value [, ...])</syntax>
+          <model>expression IN (value [, ...])</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="NOT IN - Array">
+          <description>The right-hand side is a parenthesized list of scalar expressions. The result is "true" if the left-hand expression's result is unequal to all of the right-hand expressions. \r\nNote that if the left-hand expression yields null, or if there are no equal right-hand values and at least one right-hand expression yields null, the result of the NOT IN construct will be null, not true as one might naively expect.</description>
+          <syntax>expression NOT IN (value [, ...])</syntax>
+          <model>expression NOT IN (value [, ...])</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="ANY - Array">
+          <description>The right-hand side is a parenthesized expression, which must yield an array value. \r\nThe left-hand expression is evaluated and compared to each element of the array using the given operator, which must yield a Boolean result. The result of ANY is "true" if any true result is obtained. The result is "false" if no true result is found (including the case where the array has zero elements).</description>
+          <syntax>expression operator ANY (array expression)</syntax>
+          <model>expression operator ANY (array expression)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="SOME - Array">
+          <description>SOME is a synonym for ANY.</description>
+          <syntax>expression operator SOME (array expression)</syntax>
+          <model>expression operator SOME (array expression)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="ALL - Array">
+          <description>The right-hand side is a parenthesized expression, which must yield an array value. \r\nThe left-hand expression is evaluated and compared to each element of the array using the given operator, which must yield a Boolean result. The result of ALL is "true" if all comparisons yield true (including the case where the array has zero elements). The result is "false" if any false result is found.</description>
+          <syntax>expression operator ALL (array expression)</syntax>
+          <model>expression operator ALL (array expression)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Aggregate">
+      <functions>
+        <function name="Array_agg">
+          <description>Input values, including nulls are concatenated into an array.</description>
+          <syntax>array_agg(expression)</syntax>
+          <model>array_agg(expression)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="Average">
+          <description>The average (arithmetic mean) of all the input values. </description>
+          <syntax>avg(expression)</syntax>
+          <model>avg(expression)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Bitwise AND">
+          <description>The bitwise AND of all non-null input values, or null if none. </description>
+          <syntax>bit_and(expression)</syntax>
+          <model>bit_and(expression)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Bitwise OR">
+          <description>The bitwise OR of all non-null input values, or null if none.</description>
+          <syntax>bit_or(expression)</syntax>
+          <model>bit_or(expression)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Boolean AND">
+          <description>True if all input values are true, otherwise false.</description>
+          <syntax>bool_and(expression)</syntax>
+          <model>bool_and(expression)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Boolean OR">
+          <description>True if at least one input value is true, otherwise false.</description>
+          <syntax>bool_or(expression)</syntax>
+          <model>bool_or(expression)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Count">
+          <description>Number of input rows.</description>
+          <syntax>count(*)</syntax>
+          <model>count(*)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Count-expression">
+          <description>Number of input rows for which the value of expression is not null.</description>
+          <syntax>count(expression)</syntax>
+          <model>count(expression)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Every">
+          <description>Equivalent to bool_and; true if all input values are true, otherwise false.</description>
+          <syntax>every(expression)</syntax>
+          <model>every(expression)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Max">
+          <description>Maximum value of expression across all input values.</description>
+          <syntax>max(expression)</syntax>
+          <model>max(expression)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Min">
+          <description>Minimum value of expression across all input values.</description>
+          <syntax>min(expression)</syntax>
+          <model>min(expression)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="String_agg">
+          <description>Input values concatenated into a string, separated by a delimiter.</description>
+          <syntax>string_agg(expression, delimiter)</syntax>
+          <model>string_agg(expression, delimiter)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Sum">
+          <description>Sum of expression across all input values.</description>
+          <syntax>sum(expression)</syntax>
+          <model>sum(expression)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Xmlagg">
+          <description>Concatenation of XML values.</description>
+          <syntax>xmlagg(expression)</syntax>
+          <model>xmlagg(expression)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Corr">
+          <description>Correlation coefficient.</description>
+          <syntax>corr(Y, X)</syntax>
+          <model>corr(Y, X)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="Covar_pop">
+          <description>Population covariance.</description>
+          <syntax>covar_pop(Y, X)</syntax>
+          <model>covar_pop(Y, X)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>11</default_column_end>
+        </function>
+        <function name="Covar_samp">
+          <description>Sample covariance.</description>
+          <syntax>covar_samp(Y, X)</syntax>
+          <model>covar_samp(Y, X)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Regr_avgx">
+          <description>Average of the independent variable (sum(X)/N).</description>
+          <syntax>regr_avgx(Y, X)</syntax>
+          <model>regr_avgx(Y, X)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>11</default_column_end>
+        </function>
+        <function name="Regr_avgy">
+          <description>Average of the dependent variable (sum(Y)/N).</description>
+          <syntax>regr_avgy(Y, X)</syntax>
+          <model>regr_avgy(Y, X)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>11</default_column_end>
+        </function>
+        <function name="Regr_count">
+          <description>Number of input rows in which both expressions are nonnull.</description>
+          <syntax>regr_count(Y, X)</syntax>
+          <model>regr_count(Y, X)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Regr_intercept">
+          <description>y-intercept of the least-squares-fit linear equation determined by the (X, Y) pairs.</description>
+          <syntax>regr_intercept(Y, X)</syntax>
+          <model>regr_intercept(Y, X)</model>
+          <default_column_start>15</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Regr_r2">
+          <description>Square of the correlation coefficient.</description>
+          <syntax>regr_r2(Y, X)</syntax>
+          <model>regr_r2(Y, X)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+        <function name="Regr_slope">
+          <description>Slope of the least-squares-fit linear equation determined by the (X, Y) pairs.</description>
+          <syntax>regr_slope(Y, X)</syntax>
+          <model>regr_slope(Y, X)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Regr_sxx">
+          <description>sum(X^2) - sum(X)^2/N ("sum of squares" of the independent variable)</description>
+          <syntax>regr_sxx(Y, X)</syntax>
+          <model>regr_sxx(Y, X)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Regr_sxy">
+          <description>sum(X*Y) - sum(X) * sum(Y)/N ("sum of products" of independent times dependent variable)</description>
+          <syntax>regr_sxy(Y, X)</syntax>
+          <model>regr_sxy(Y, X)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Regr_syy">
+          <description>sum(Y^2) - sum(Y)^2/N ("sum of squares" of the dependent variable)</description>
+          <syntax>regr_syy(Y, X)</syntax>
+          <model>regr_syy(Y, X)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Stddev">
+          <description>Historical alias for stddev_samp.</description>
+          <syntax>stddev(expression)</syntax>
+          <model>stddev(expression)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Stddev_pop">
+          <description>Population standard deviation of the input values.</description>
+          <syntax>stddev_pop(expression)</syntax>
+          <model>stddev_pop(expression)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Stddev_samp">
+          <description>Sample standard deviation of the input values.</description>
+          <syntax>stddev_samp(expression)</syntax>
+          <model>stddev_samp(expression)</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Variance">
+          <description>Historical alias for var_samp</description>
+          <syntax>variance(expression)</syntax>
+          <model>variance(expression)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Var_pop">
+          <description>Population variance of the input values (square of the population standard deviation).</description>
+          <syntax>var_pop(expression)</syntax>
+          <model>var_pop(expression)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Var_samp">
+          <description>Sample variance of the input values (square of the sample standard deviation).</description>
+          <syntax>var_samp(expression)</syntax>
+          <model>var_samp(expression)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Subquery">
+      <functions>
+        <function name="EXISTS">
+          <description>Executed to determine whether at least one row is returned.</description>
+          <syntax>EXISTS(subquery)</syntax>
+          <model>EXISTS(subquery)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="IN">
+          <description>The right-hand side is a parenthesized subquery, which must return exactly one column. The left-hand expression is evaluated and compared to each row of the subquery result.  The result of IN is true if any equal subquery row is found.</description>
+          <syntax>expression IN (subquery)</syntax>
+          <model>expression IN (subquery)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="NOT IN">
+          <description>The right-hand side is a parenthesized subquery, which must return exactly one column. The left-hand expression is evaluated and compared to each row of the subquery result.  The result of NOT is true if only unequal subquery rows are found.</description>
+          <syntax>expression NOT IN (subquery)</syntax>
+          <model>expression NOT IN (subquery)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="ANY">
+          <description>The right-hand side is a parenthesized subquery, which must return exactly one column. The left-hand expression is evaluated and compared to each row of the subquery result using the given operator, yielding a boolean result. \r\nThe result of ANY is true if any true result is obtained. The result is false if no true result is found.</description>
+          <syntax>expression operator ANY (subquery)</syntax>
+          <model>expression operator ANY (subquery)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="SOME">
+          <description>SOME is a synonym for ANY.</description>
+          <syntax>expression operator SOME (subquery)</syntax>
+          <model>expression operator SOME (subquery)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="ALL">
+          <description>The right-hand side is a parenthesized subquery, which must return exactly one column. \r\nThe left-hand expression is evaluated and compared to each row of the subquery result using the given operator, which must yield a Boolean result. The result of ALL is "true" if all rows yield true (including the case where the subquery returns no rows). The result is "false" if any false result is found. The result is NULL if the comparison does not return false for any row, and it returns NULL for at least one row.</description>
+          <syntax>expression operator ALL (subquery)</syntax>
+          <model>expression operator ALL (subquery)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Row-wise Comparison">
+          <description>The left-hand side is a row constructor. The right-hand side is a parenthesized subquery, which must return exactly as many columns as there are expressions in the left-hand row. \r\nFurthermore, the subquery cannot return more than one row. (If it returns zero rows, the result is taken to be null.) The left-hand side is evaluated and compared row-wise to the single subquery result row.</description>
+          <syntax>row_constructor operator (subquery)</syntax>
+          <model>row_constructor operator (subquery)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+  </functional_groups>
+
+</database_function_set>

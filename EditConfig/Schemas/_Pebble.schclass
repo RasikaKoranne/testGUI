@@ -1,0 +1,174 @@
+//=======================================================================
+//================ Lex class support: Pebble ============================
+//=======================================================================
+
+lexClass:
+    parent:file = <*.peb>
+    name = c_Pebble
+    caseSensitive = 0
+    txt:colorFG = 0x000000
+
+lexClass:
+    name = c_CompareSingleLineComment
+    parent = c_Pebble
+    start:tag = '--<<--', '-->>--'
+    end:tag = @EOL
+    txt:colorFG = 0x0000F0
+
+lexClass:
+    name = c_MultilineComment
+    parent = c_Pebble
+    children = 0
+    start:Tag = '{#-', '{#'
+    end:Tag = '#}'
+    Collapsable = 1
+    CollapsedText = '{#-#}'
+    txt:colorFG = 0x008000
+
+lexClass:
+    name = c_Pebble_ControlFlow
+    parent = c_Pebble
+    start:Tag = '{%-', '{%'
+    end:Tag = '%}'
+    txt:colorFG = 0x0000FF
+    
+lexClass:
+    name = c_Pebble_Expression
+    parent = c_Pebble
+    start:Tag = '{{-', '{{'
+    end:Tag = '}}'
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_CharacterConstant
+    parent = c_Pebble_ControlFlow, c_Pebble_Expression
+    children = 0
+    start:Tag = '\''
+    end:Tag = '\''
+    txt:colorFG = 0xDC009C
+    
+lexClass:
+    name = c_StringConstant
+    parent = c_Pebble_ControlFlow, c_Pebble_Expression
+    children = 0
+    start:Tag = '"'
+    end:Tag = '"'
+    txt:colorFG = 0xDC009C
+   
+lexClass:
+    name = c_Pebble_Tags
+    caseSensitive = 0
+    parent = c_Pebble_ControlFlow
+    Token:Tag = 'as', 'autoescape', 'block', 'cache', 'extends', 'fetch', 'filter', 'from', 'flush'
+    Token:Tag =  'for', 'if', 'else', 'elseif', 'import', 'in', 'include', 'parallel', 'set', 'verbatim'
+    Token:Tag =  'where', 'macro'
+    Token:Tag = 'endautoescape', 'endblock', 'endcache', 'endfilter', 'endfrom', 'endfor', 'endif'
+    Token:Tag = 'endparallel', 'endverbatim', 'endmacro'
+    Token:Tag = 'counter', 'declare', 'error', 'indent', 'br', 'list', 'map', 'placebottom', 'endplacebottom', 'get'
+    token:start:separators = ' ', '\t', '%', '{', '-'
+    token:end:separators = ' ', '\t', '%'
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_Pebble_Filters
+    caseSensitive = 0
+    parent = c_Pebble_ControlFlow, c_Pebble_Expression
+    Token:Tag = 'abs', 'capitalize', 'escape', 'first', 'last', 'lower', 'lines', 'raw', 'reverse'
+    Token:Tag = 'rsort', 'sort', 'title', 'trim', 'upper', 'urlencode'
+    token:start:separators = '|', ' ', '\t', @EOL
+    token:end:separators = ' ', '\t', '|', ')', '%', @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_Pebble_FiltersWithArgs
+    caseSensitive = 0
+    parent = c_Pebble_ControlFlow, c_Pebble_Expression
+    Token:Tag = 'abbreviate', 'date', 'default', 'join', 'numberformat', 'replace', 'slice'
+    token:start:separators = '|', ' ', '\t', @EOL
+    token:end:separators = '('
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+    
+lexClass:
+    name = c_Pebble_FiltersWithNumericReturnValue
+    caseSensitive = 0
+    parent = c_Pebble_ControlFlow
+    Token:Tag = 'length'
+    token:start:separators = '|', ' ', '\t', @EOL
+    token:end:separators = ' ', '\t', '|', '%', '/', '*', '-', '+', '==', '!=', '>', '<', '>=', '<=', @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+    
+lexClass:
+    name = c_Pebble_Functions
+    caseSensitive = 0
+    parent = c_Pebble_ControlFlow, c_Pebble_Expression
+    Token:Tag = 'block', 'i18n', 'max', 'min', 'parent', 'range'
+    Token:Tag = 'bool', 'codepoint', 'combineLists', 'double', 'int', 'endsWithIgnoreCase', 'strIsEquals', 'replaceEnd', 'replaceStart', 'startsWithIgnoreCase'
+    token:start:separators = ' ', '\t', '-', '{', '%'
+    token:end:separators = '('
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_NumericConstant
+    parent = c_Pebble_ControlFlow, c_Pebble_Expression
+    children = 0
+    previous:tag = ' ', '\t', '~', '-', '+', '.', '&', '=', ',', '(', @EOL
+    start:Tag = @DIGIT
+    skip:Tag = @DIGIT, '.'
+    end:separators = ' ', '\t', '{', ']', ')', @EOL
+    txt:colorFG = 0x6400C8
+
+lexClass:
+    name = c_MiscValues
+    parent = c_Pebble_ControlFlow, c_Pebble_Expression
+    Token:Tag = 'null', 'true', 'false'
+    token:start:separators = ' ', '\t'
+    token:end:separators = ' ', '\t', ')', ',', '}', '%', @EOL
+    txt:colorFG = 0x6400C8
+
+lexClass:
+    name = c_Collection1
+    parent = c_Pebble_Expression
+    children = 0
+    start:Tag = '['
+    end:Tag = ']'
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_Collection2
+    parent = c_Pebble_Expression
+    children = 0
+    start:Tag = '{'
+    end:Tag = '}'
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_Pebble_Tests
+    parent = c_Pebble_ControlFlow
+    Token:Tag = 'empty', 'even', 'map', 'odd', 'iterable', 'not'
+    Token:Tag = 'boolean', 'instanceof', 'number', 'string'
+    token:start:separators = ' ', '\t'
+    token:end:separators = ' ', '\t', '(', ')', ',', '}', '%', @EOL
+    txt:colorFG = 0x6400C8
+    txt:Bold = 1
+
+lexClass:
+    name = c_Pebble_Operators1
+    parent = c_Pebble_ControlFlow, c_Pebble_Expression
+    Token:Tag = '.', '|', '%', '/', '*', '-', '+', '==', '!=', '>', '<', '>=', '<=', ':', '?'
+    Token:Tag = 'is', 'and', 'or', 'contains', 'equals'
+    token:start:separators = ' ', '\t'
+    token:end:separators = ' ', '\t'
+    txt:colorFG = 0x6400C8
+    txt:Bold = 1
+    
+lexClass:
+    name = c_Pebble_Operators2
+    parent = c_Pebble_ControlFlow, c_Pebble_Expression
+    Token:Tag = '(', ')'
+    txt:colorFG = 0x6400C8
+    txt:Bold = 1

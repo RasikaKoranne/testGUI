@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<database_function_set name="Default Hive" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Database%20Function%20Set.xsd">
+
+  <database>Hive</database>
+
+  <meta_version>1</meta_version>
+
+  <functional_groups>
+    <functional_group name="String">
+      <functions>
+        <function name="Ascii">
+          <description>Returns the numeric value of the first character of str</description>
+          <syntax>ascii(string str)</syntax>
+          <model>ascii(string str)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Concat">
+          <description>Returns the string or bytes resulting from concatenating the strings or bytes passed in as parameters in order. e.g. concat('foo', 'bar') results in 'foobar'. Note that this function can take any number of input strings.</description>
+          <syntax>concat(string|binary A, string|binary B...)</syntax>
+          <model>concat(string|binary A, string|binary B...)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Context_ngrams">
+          <description>"Returns the top-k contextual N-grams from a set of tokenized sentences, given a string of ""context"". \r\nSee StatisticsAndDataMining for more information."</description>
+          <syntax>context_ngrams(array&lt;array&lt;string&gt;&gt;, array&lt;string&gt;, int K, int pf)</syntax>
+          <model>context_ngrams(array&lt;array&lt;string&gt;&gt;, array&lt;string&gt;, int K, int pf)</model>
+          <default_column_start>15</default_column_start>
+          <default_column_end>35</default_column_end>
+        </function>
+        <function name="Concat_ws">
+          <description>Like concat() above, but with custom separator SEP.</description>
+          <syntax>concat_ws(string SEP, string A, string B...)</syntax>
+          <model>concat_ws(string SEP, string A, string B...)</model>
+          <default_column_start>22</default_column_start>
+          <default_column_end>30</default_column_end>
+        </function>
+        <function name="Concat_ws array">
+          <description>Like concat_ws() above, but taking an array of strings. (as of Hive 0.9.0)</description>
+          <syntax>concat_ws(string SEP, array&lt;string&gt;)</syntax>
+          <model>concat_ws(string SEP, array&lt;string&gt;)</model>
+          <default_column_start>21</default_column_start>
+          <default_column_end>35</default_column_end>
+        </function>
+        <function name="Find_in_set">
+          <description>Returns the first occurance of str in strList where strList is a comma-delimited string. Returns null if either argument is null. Returns 0 if the first argument contains any commas. e.g. find_in_set('ab', 'abc,b,ab,c,def') returns 3</description>
+          <syntax>find_in_set(string str, string strList)</syntax>
+          <model>find_in_set(string str, string strList)</model>
+          <default_column_start>23</default_column_start>
+          <default_column_end>38</default_column_end>
+        </function>
+        <function name="Format_number">
+          <description>Formats the number X to a format like '#,###,###.##', rounded to D decimal places, and returns the result as a string. \r\nIf D is 0, the result has no decimal point or fractional part. (as of Hive 0.10.0)</description>
+          <syntax>format_number(number x, int d)</syntax>
+          <model>format_number(number x, int d)</model>
+          <default_column_start>14</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Get_json_object">
+          <description>Extract json object from a json string based on json path specified, and return json string of the extracted json object. It will return null if the input json string is invalid. NOTE: The json path can only have the characters [0-9a-z_], i.e., no upper-ca</description>
+          <syntax>get_json_object(string json_string, string path)</syntax>
+          <model>get_json_object(string json_string, string path)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="In_file">
+          <description>Returns true if the string str appears as an entire line in filename.</description>
+          <syntax>in_file(string str, string filename)</syntax>
+          <model>in_file(string str, string filename)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Instr">
+          <description>Returns the position of the first occurence of substr in str</description>
+          <syntax>instr(string str, string substr)</syntax>
+          <model>instr(string str, string substr)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Length">
+          <description>Returns the length of the string</description>
+          <syntax>length(string A)</syntax>
+          <model>length(string A)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Locate">
+          <description>Returns the position of the first occurrence of substr in str after position pos</description>
+          <syntax>locate(string substr, string str[, int pos])</syntax>
+          <model>locate(string substr, string str[, int pos])</model>
+          <default_column_start>21</default_column_start>
+          <default_column_end>32</default_column_end>
+        </function>
+        <function name="Lower">
+          <description>Returns the string resulting from converting all characters of B to lower case e.g. lower('fOoBaR') results in 'foobar'</description>
+          <syntax>lower(string A)</syntax>
+          <model>lower(string A)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Lpad">
+          <description>Returns str, left-padded with pad to a length of len</description>
+          <syntax>lpad(string str, int len, string pad)</syntax>
+          <model>lpad(string str, int len, string pad)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Ltrim">
+          <description>Returns the string resulting from trimming spaces from the beginning(left hand side) of A e.g. ltrim(' foobar ') results in 'foobar '</description>
+          <syntax>ltrim(string A)</syntax>
+          <model>ltrim(string A)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Ngrams">
+          <description>Returns the top-k N-grams from a set of tokenized sentences, such as those returned by the sentences() UDAF. See StatisticsAndDataMining for more information.</description>
+          <syntax>ngrams(array&lt;array&lt;string&gt;&gt;, int N, int K, int pf)</syntax>
+          <model>ngrams(array&lt;array&lt;string&gt;&gt;, int N, int K, int pf)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Parse_url">
+          <description>Returns the specified part from the URL. Valid values for partToExtract include HOST, PATH, QUERY, REF, PROTOCOL, AUTHORITY, FILE, and USERINFO. e.g. parse_url('http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1', 'HOST') returns 'facebook.com'. Also a value</description>
+          <syntax>parse_url(string urlString, string partToExtract [, string keyToExtract])</syntax>
+          <model>parse_url(string urlString, string partToExtract [, string keyToExtract])</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Printf">
+          <description>Returns the input formatted according do printf-style format strings (as of Hive 0.9.0)</description>
+          <syntax>printf(String format, Obj... args)</syntax>
+          <model>printf(String format, Obj... args)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Regexp_extract">
+          <description>Returns the string extracted using the pattern. e.g. regexp_extract('foothebar', 'foo(.*?)(bar)', 2) returns 'bar.' Note that some care is necessary in using predefined character classes: using '\s' as the second argument will match the letter s; 's' is ne</description>
+          <syntax>regexp_extract(string subject, string pattern, int index)</syntax>
+          <model>regexp_extract(string subject, string pattern, int index)</model>
+          <default_column_start>15</default_column_start>
+          <default_column_end>29</default_column_end>
+        </function>
+        <function name="Regexp_replace">
+          <description>"Returns the string resulting from replacing all substrings in INITIAL_STRING that match the java regular expression syntax defined in PATTERN with instances of REPLACEMENT, e.g. regexp_replace(""foobar"", ""oo|ar"", """") returns 'fb.' Note that some care</description>
+          <syntax>regexp_replace(string INITIAL_STRING, string PATTERN, string REPLACEMENT)</syntax>
+          <model>regexp_replace(string INITIAL_STRING, string PATTERN, string REPLACEMENT)</model>
+          <default_column_start>15</default_column_start>
+          <default_column_end>36</default_column_end>
+        </function>
+        <function name="Repeat">
+          <description>Repeat str n times</description>
+          <syntax>repeat(string str, int n)</syntax>
+          <model>repeat(string str, int n)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Reverse">
+          <description>Returns the reversed string</description>
+          <syntax>reverse(string A)</syntax>
+          <model>reverse(string A)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Rpad">
+          <description>Returns str, right-padded with pad to a length of len</description>
+          <syntax>rpad(string str, int len, string pad)</syntax>
+          <model>rpad(string str, int len, string pad)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Rtrim">
+          <description>Returns the string resulting from trimming spaces from the end(right hand side) of A e.g. rtrim(' foobar ') results in ' foobar'</description>
+          <syntax>rtrim(string A)</syntax>
+          <model>rtrim(string A)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Sentences">
+          <description>"Tokenizes a string of natural language text into words and sentences, where each sentence is broken at the appropriate sentence boundary and returned as an array of words. The 'lang' and 'locale' are optional arguments. e.g. sentences('Hello there! How ar</description>
+          <syntax>sentences(string str, string lang, string locale)</syntax>
+          <model>sentences(string str, string lang, string locale)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="Space">
+          <description>Return a string of n spaces</description>
+          <syntax>space(int n)</syntax>
+          <model>space(int n)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Split">
+          <description>Split str around pat (pat is a regular expression)</description>
+          <syntax>split(string str, string pat)</syntax>
+          <model>split(string str, string pat)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Str_to_map">
+          <description>Splits text into key-value pairs using two delimiters. Delimiter1 separates text into K-V pairs, and Delimiter2 splits each K-V pair. Default delimiters are ',' for delimiter1 and '=' for delimiter2.</description>
+          <syntax>str_to_map(text[, delimiter1, delimiter2])</syntax>
+          <model>str_to_map(text[, delimiter1, delimiter2])</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Substr">
+          <description>Returns the substring or slice of the byte array of A starting from start position till the end of string A e.g. substr('foobar', 4) results in 'bar' (see [http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr])</description>
+          <syntax>substr(string|binary A, int start)</syntax>
+          <model>substr(string|binary A, int start)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Substr - length">
+          <description>Returns the substring or slice of the byte array of A starting from start position with length len e.g. substr('foobar', 4, 1) results in 'b' (see [http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr])</description>
+          <syntax>substr(string|binary A, int start, int len)</syntax>
+          <model>substr(string|binary A, int start, int len) </model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Translate">
+          <description>Translates the input string by replacing the characters present in the from string with the corresponding characters in the to string. This is similar to the translate function in PostgreSQL. If any of the parameters to this UDF are NULL, the result is NUL</description>
+          <syntax>translate(string input, string from, string to)</syntax>
+          <model>translate(string input, string from, string to)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Trim">
+          <description>Returns the string resulting from trimming spaces from both ends of A e.g. trim(' foobar ') results in 'foobar'</description>
+          <syntax>trim(string A)</syntax>
+          <model>trim(string A)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Upper">
+          <description>Returns the string resulting from converting all characters of A to upper case e.g. upper('fOoBaR') results in 'FOOBAR'</description>
+          <syntax>upper(string A)</syntax>
+          <model>upper(string A)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Mathematical">
+      <functions>
+        <function name="Round - integer">
+          <description>Returns the rounded BIGINT value of the double</description>
+          <syntax>round(double a)</syntax>
+          <model>round(double a)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Round - double">
+          <description>Returns the double rounded to d decimal places</description>
+          <syntax>round(double a, int d)</syntax>
+          <model>round(double a, int d)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Floor">
+          <description>Returns the maximum BIGINT value that is equal or less than the double</description>
+          <syntax>floor(double a)</syntax>
+          <model>floor(double a)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Ceiling">
+          <description>Returns the minimum BIGINT value that is equal or greater than the double</description>
+          <syntax> ceiling(double a)</syntax>
+          <model>ceiling(double a)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Rand">
+          <description>Returns a random number (that changes from row to row) that is distributed uniformly from 0 to 1. Specifiying the seed will make sure the generated random number sequence is deterministic.</description>
+          <syntax>rand(), rand(int seed)</syntax>
+          <model>rand()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Exp">
+          <description>Returns ea where e is the base of the natural logarithm</description>
+          <syntax>exp(double a)</syntax>
+          <model>exp(double a)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Logarithm natural (ln)">
+          <description>Returns the natural logarithm of the argument</description>
+          <syntax>ln(double a)</syntax>
+          <model>ln(double a)</model>
+          <default_column_start>3</default_column_start>
+          <default_column_end>11</default_column_end>
+        </function>
+        <function name="Log Base 10">
+          <description>Returns the base-10 logarithm of the argument</description>
+          <syntax>log10(double a)</syntax>
+          <model>log10(double a)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Log Base 2">
+          <description>Returns the base-2 logarithm of the argument</description>
+          <syntax>log2(double a)</syntax>
+          <model>log2(double a)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Logarithm Base (log)">
+          <description>"Return the base ""base"" logarithm of the argument"</description>
+          <syntax>log(double base, double a)</syntax>
+          <model>log(double base, double a)</model>
+          <default_column_start>17</default_column_start>
+          <default_column_end>25</default_column_end>
+        </function>
+        <function name="Pow">
+          <description>Return ap</description>
+          <syntax>pow(double a, double p), power(double a, double p)</syntax>
+          <model>pow(double a, double p)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Sqrt">
+          <description>Returns the square root of a</description>
+          <syntax>sqrt(double a)</syntax>
+          <model>sqrt(double a)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Bin">
+          <description>Returns the number in binary format (see [http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_bin])</description>
+          <syntax>bin(BIGINT a)</syntax>
+          <model>bin(BIGINT a)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Hex">
+          <description>If the argument is an int, hex returns the number as a string in hex format. Otherwise if the number is a string, it converts each character into its hex representation and returns the resulting string. (see [http://dev.mysql.com/doc/refman/5.0/en/string-f</description>
+          <syntax>hex(BIGINT a) hex(string a)</syntax>
+          <model>hex(BIGINT a)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Unhex">
+          <description>Inverse of hex. Interprets each pair of characters as a hexidecimal number and converts to the character represented by the number.</description>
+          <syntax>unhex(string a)</syntax>
+          <model>unhex(string a)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Conv">
+          <description>Converts a number from a given base to another (see [http://dev.mysql.com/doc/refman/5.0/en/mathematical-functions.html#function_conv])</description>
+          <syntax>conv(BIGINT num, int from_base, int to_base), conv(STRING num, int from_base, int to_base)</syntax>
+          <model>conv(BIGINT num, int from_base, int to_base)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Abs">
+          <description>Returns the absolute value</description>
+          <syntax>abs(double a)</syntax>
+          <model>abs(double a)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Pmod">
+          <description>Returns the positive value of a mod b</description>
+          <syntax>pmod(int a, int b) pmod(double a, double b)</syntax>
+          <model>pmod(int a, int b)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="Sin">
+          <description>Returns the sine of a (a is in radians)</description>
+          <syntax>sin(double a)</syntax>
+          <model>sin(double a)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Asin">
+          <description>Returns the arc sin of x if -1&lt;=a&lt;=1 or null otherwise</description>
+          <syntax>asin(double a)</syntax>
+          <model>asin(double a)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Cos">
+          <description>Returns the cosine of a (a is in radians)</description>
+          <syntax>cos(double a)</syntax>
+          <model>cos(double a)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Acos">
+          <description>Returns the arc cosine of x if -1&lt;=a&lt;=1 or null otherwise</description>
+          <syntax>acos(double a)</syntax>
+          <model>acos(double a)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Tan">
+          <description>Returns the tangent of a (a is in radians)</description>
+          <syntax>tan(double a)</syntax>
+          <model>tan(double a)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Atan">
+          <description>Returns the arctangent of a</description>
+          <syntax>atan(double a)</syntax>
+          <model>atan(double a)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Degrees">
+          <description>Converts value of a from radians to degrees</description>
+          <syntax>degrees(double a)</syntax>
+          <model>degrees(double a)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Radians">
+          <description>Converts value of a from degrees to radians</description>
+          <syntax>radians(double a)</syntax>
+          <model>radians(double a)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Positive">
+          <description>Returns a</description>
+          <syntax>positive(int a), positive(double a)</syntax>
+          <model>positive(int a)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Negative">
+          <description>Returns -a</description>
+          <syntax>negative(int a), negative(double a)</syntax>
+          <model>negative(int a)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Sign">
+          <description>Returns the sign of a as '1.0' or '-1.0'</description>
+          <syntax>sign(double a)</syntax>
+          <model>sign(double a)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="E">
+          <description>Returns the value of e</description>
+          <syntax>e()</syntax>
+          <model>e()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Pi">
+          <description>Returns the value of pi</description>
+          <syntax>pi()</syntax>
+          <model>pi()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Conversion">
+      <functions>
+        <function name="Binary">
+          <description>Casts the parameter into a binary</description>
+          <syntax>binary(string|binary)</syntax>
+          <model>binary(string|binary)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="Cast">
+          <description>Converts the results of the expression expr to &lt;type&gt; e.g. cast('1' as BIGINT) will convert the string '1' to it integral representation. A null is returned if the conversion does not succeed.</description>
+          <syntax>cast(expr as &lt;type&gt;)</syntax>
+          <model>cast(expr as &lt;type&gt;)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Date">
+      <functions>
+        <function name="From_unixtime">
+          <description>"Converts the number of seconds from unix epoch (1970-01-01 00:00:00 UTC) to a string representing the timestamp of that moment in the current system time zone in the format of ""1970-01-01 00:00:00"""</description>
+          <syntax>from_unixtime(bigint unixtime[, string format])</syntax>
+          <model>from_unixtime(bigint unixtime[, string format])</model>
+          <default_column_start>14</default_column_start>
+          <default_column_end>29</default_column_end>
+        </function>
+        <function name="Current timestamp">
+          <description>Gets current time stamp using the default time zone.</description>
+          <syntax>unix_timestamp()</syntax>
+          <model>unix_timestamp()</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Unix_timestamp date">
+          <description>Converts time string in format yyyy-MM-dd HH:mm:ss to Unix time stamp, return 0 if fail: unix_timestamp('2009-03-20 11:30:01') = 1237573801</description>
+          <syntax>unix_timestamp(string date)</syntax>
+          <model>unix_timestamp(string date)</model>
+          <default_column_start>15</default_column_start>
+          <default_column_end>26</default_column_end>
+        </function>
+        <function name="Unix_timestamp patterns">
+          <description>Convert time string with given pattern (see [http://java.sun.com/j2se/1.4.2/docs/api/java/text/SimpleDateFormat.html]) to Unix time stamp, return 0 if fail: unix_timestamp('2009-03-20', 'yyyy-MM-dd') = 1237532400</description>
+          <syntax>unix_timestamp(string date, string pattern)</syntax>
+          <model>unix_timestamp(string date, string pattern)</model>
+          <default_column_start>15</default_column_start>
+          <default_column_end>26</default_column_end>
+        </function>
+        <function name="To_date">
+          <description>"Returns the date part of a timestamp string: to_date(""1970-01-01 00:00:00"") = ""1970-01-01"""</description>
+          <syntax>to_date(string timestamp)</syntax>
+          <model>to_date(string timestamp)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>24</default_column_end>
+        </function>
+        <function name="Year">
+          <description>"Returns the year part of a date or a timestamp string: year(""1970-01-01 00:00:00"") = 1970, year(""1970-01-01"") = 1970"</description>
+          <syntax>year(string date)</syntax>
+          <model>year(string date)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Month">
+          <description>"Returns the month part of a date or a timestamp string: month(""1970-11-01 00:00:00"") = 11, month(""1970-11-01"") = 11"</description>
+          <syntax>month(string date)</syntax>
+          <model>month(string date)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>17</default_column_end>
+        </function>
+        <function name="Day">
+          <description>"Return the day part of a date or a timestamp string: day(""1970-11-01 00:00:00"") = 1, day(""1970-11-01"") = 1"</description>
+          <syntax>day(string date) dayofmonth(date)</syntax>
+          <model>day(string date)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Hour">
+          <description>Returns the hour of the timestamp: hour('2009-07-30 12:58:59') = 12, hour('12:58:59') = 12</description>
+          <syntax>hour(string date)</syntax>
+          <model>hour(string date)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>16</default_column_end>
+        </function>
+        <function name="Minute">
+          <description>Returns the minute of the timestamp</description>
+          <syntax>minute(string date)</syntax>
+          <model>minute(string date)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Second">
+          <description>Returns the second of the timestamp</description>
+          <syntax>second(string date)</syntax>
+          <model>second(string date)</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Weekofyear">
+          <description>"Return the week number of a timestamp string: weekofyear(""1970-11-01 00:00:00"") = 44, weekofyear(""1970-11-01"") = 44"</description>
+          <syntax>weekofyear(string date)</syntax>
+          <model>weekofyear(string date)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Datediff">
+          <description>Return the number of days from startdate to enddate: datediff('2009-03-01', '2009-02-27') = 2</description>
+          <syntax>datediff(string enddate, string startdate)</syntax>
+          <model>datediff(string enddate, string startdate)</model>
+          <default_column_start>24</default_column_start>
+          <default_column_end>41</default_column_end>
+        </function>
+        <function name="Date_add">
+          <description>Add a number of days to startdate: date_add('2008-12-31', 1) = '2009-01-01'</description>
+          <syntax>date_add(string startdate, int days)</syntax>
+          <model>date_add(string startdate, int days)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>25</default_column_end>
+        </function>
+        <function name="Date_sub">
+          <description>Subtract a number of days to startdate: date_sub('2008-12-31', 1) = '2008-12-30'</description>
+          <syntax>date_sub(string startdate, int days)</syntax>
+          <model>date_sub(string startdate, int days)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>25</default_column_end>
+        </function>
+        <function name="From_utc_timestamp">
+          <description>Assumes given timestamp ist UTC and converts to given timezone (as of Hive 0.8.0)</description>
+          <syntax>from_utc_timestamp(timestamp, string timezone)</syntax>
+          <model>from_utc_timestamp(timestamp, string timezone)</model>
+          <default_column_start>19</default_column_start>
+          <default_column_end>28</default_column_end>
+        </function>
+        <function name="To_utc_timestamp">
+          <description>Assumes given timestamp is in given timezone and converts to UTC (as of Hive 0.8.0)</description>
+          <syntax>to_utc_timestamp(timestamp, string timezone)</syntax>
+          <model>to_utc_timestamp(timestamp, string timezone)</model>
+          <default_column_start>17</default_column_start>
+          <default_column_end>26</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Conditional">
+      <functions>
+        <function name="If">
+          <description>Return valueTrue when testCondition is true, returns valueFalseOrNull otherwise</description>
+          <syntax>if(boolean testCondition, T valueTrue, T valueFalseOrNull)</syntax>
+          <model>if(boolean testCondition, T valueTrue, T valueFalseOrNull)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Coalesce">
+          <description>Return the first v that is not NULL, or NULL if all v's are NULL</description>
+          <syntax>COALESCE(T v1, T v2, ...)</syntax>
+          <model>COALESCE(T v1, T v2, ...)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>13</default_column_end>
+        </function>
+        <function name="Case">
+          <description>When a = b, returns c; when a = d, return e; else return f</description>
+          <syntax>CASE a WHEN b THEN c [WHEN d THEN e]* [ELSE f] END</syntax>
+          <model>CASE a WHEN b THEN c [WHEN d THEN e]* [ELSE f] END</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Case logical">
+          <description>When a = true, returns b; when c = true, return d; else return e</description>
+          <syntax>CASE WHEN a THEN b [WHEN c THEN d]* [ELSE e] END</syntax>
+          <model>CASE WHEN a THEN b [WHEN c THEN d]* [ELSE e] END</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Aggregate">
+      <functions>
+        <function name="Count">
+          <description>count(*) - Returns the total number of retrieved rows, including rows containing NULL values; count(expr) - Returns the number of rows for which the supplied expression is non-NULL; count(DISTINCT expr[, expr]) - Returns the number of rows for which the su</description>
+          <syntax>count(*), count(expr), count(DISTINCT expr[, expr_.])</syntax>
+          <model>count(*)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Sum">
+          <description>Returns the sum of the elements in the group or the sum of the distinct values of the column in the group</description>
+          <syntax>sum(col), sum(DISTINCT col)</syntax>
+          <model>sum(col)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Avg">
+          <description>Returns the average of the elements in the group or the average of the distinct values of the column in the group</description>
+          <syntax>avg(col), avg(DISTINCT col)</syntax>
+          <model>avg(col)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>6</default_column_end>
+        </function>
+        <function name="Min">
+          <description>Returns the minimum of the column in the group</description>
+          <syntax>min(col)</syntax>
+          <model>min(col)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Max">
+          <description>Returns the maximum value of the column in the group</description>
+          <syntax>max(col)</syntax>
+          <model>max(col)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>7</default_column_end>
+        </function>
+        <function name="Variance">
+          <description>Returns the variance of a numeric column in the group</description>
+          <syntax>variance(col), var_pop(col)</syntax>
+          <model>variance(col)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Var_samp">
+          <description>Returns the unbiased sample variance of a numeric column in the group</description>
+          <syntax>var_samp(col)</syntax>
+          <model>var_samp(col)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Stddev_pop">
+          <description>Returns the standard deviation of a numeric column in the group</description>
+          <syntax>stddev_pop(col)</syntax>
+          <model>stddev_pop(col)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Stddev_samp">
+          <description>Returns the unbiased sample standard deviation of a numeric column in the group</description>
+          <syntax>stddev_samp(col)</syntax>
+          <model>stddev_samp(col)</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Covar_pop">
+          <description>Returns the population covariance of a pair of numeric columns in the group</description>
+          <syntax>covar_pop(col1, col2)</syntax>
+          <model>covar_pop(col1, col2)</model>
+          <default_column_start>10</default_column_start>
+          <default_column_end>14</default_column_end>
+        </function>
+        <function name="Covar_samp">
+          <description>Returns the sample covariance of a pair of a numeric columns in the group</description>
+          <syntax>covar_samp(col1, col2)</syntax>
+          <model>covar_samp(col1, col2)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+        <function name="Corr">
+          <description>Returns the Pearson coefficient of correlation of a pair of a numeric columns in the group</description>
+          <syntax>corr(col1, col2)</syntax>
+          <model>corr(col1, col2)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+        <function name="Percentile">
+          <description>Returns the exact pth percentile of a column in the group (does not work with floating point types). p must be between 0 and 1. NOTE: A true percentile can only be computed for integer values. Use PERCENTILE_APPROX if your input is non-integral.</description>
+          <syntax>percentile(BIGINT col, p)</syntax>
+          <model>percentile(BIGINT col, p)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Percentile - array">
+          <description>Returns the exact percentiles p1, p2, ... of a column in the group (does not work with floating point types). pi must be between 0 and 1. NOTE: A true percentile can only be computed for integer values. Use PERCENTILE_APPROX if your input is non-integral.</description>
+          <syntax>percentile(BIGINT col, array(p1 [, p2]...))</syntax>
+          <model>percentile(BIGINT col, array(p1 [, p2]...))</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Percentile_approx">
+          <description>Returns an approximate pth percentile of a numeric column (including floating point types) in the group. The B parameter controls approximation accuracy at the cost of memory. Higher values yield better approximations, and the default is 10,000. When the n</description>
+          <syntax>percentile_approx(DOUBLE col, p [, B])</syntax>
+          <model>percentile_approx(DOUBLE col, p [, B])</model>
+          <default_column_start>18</default_column_start>
+          <default_column_end>28</default_column_end>
+        </function>
+        <function name="Percentile_approx - array">
+          <description>Accepts and returns an array of percentile values instead of a single one. Returns an approximate pth percentile of a numeric column (including floating point types) in the group. The B parameter controls approximation accuracy at the cost of memory. Highe</description>
+          <syntax>percentile_approx(DOUBLE col, array(p1 [, p2]...) [, B])</syntax>
+          <model>percentile_approx(DOUBLE col, array(p1 [, p2]...) [, B])</model>
+          <default_column_start>18</default_column_start>
+          <default_column_end>28</default_column_end>
+        </function>
+        <function name="Histogram_numeric">
+          <description>Computes a histogram of a numeric column in the group using b non-uniformly spaced bins. The output is an array of size b of double-valued (x,y) coordinates that represent the bin centers and heights</description>
+          <syntax>histogram_numeric(col, b)</syntax>
+          <model>histogram_numeric(col, b)</model>
+          <default_column_start>18</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Collect_set">
+          <description>Returns a set of objects with duplicate elements eliminated</description>
+          <syntax>collect_set(col)</syntax>
+          <model>collect_set(col)</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Collection">
+      <functions>
+        <function name="Size of Map">
+          <description>Returns the number of elements in the map type</description>
+          <syntax>size(Map&lt;K.V&gt;)</syntax>
+          <model>size(Map&lt;K.V&gt;)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Size of Array">
+          <description>Returns the number of elements in the array type</description>
+          <syntax>size(Array&lt;T&gt;)</syntax>
+          <model>size(Array&lt;T&gt;)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Map_keys">
+          <description>Returns an unordered array containing the keys of the input map</description>
+          <syntax>map_keys(Map&lt;K.V&gt;)</syntax>
+          <model>map_keys(Map&lt;K.V&gt;)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Map_values">
+          <description>Returns an unordered array containing the values of the input map</description>
+          <syntax>map_values(Map&lt;K.V&gt;)</syntax>
+          <model>map_values(Map&lt;K.V&gt;)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Array_contains">
+          <description>Returns TRUE if the array contains value</description>
+          <syntax>array_contains(Array&lt;T&gt;, value)</syntax>
+          <model>array_contains(Array&lt;T&gt;, value)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Sort_array">
+          <description>Sorts the input array in ascending order according to the natural ordering of the array elements and returns it (as of version 0.9.0)</description>
+          <syntax>sort_array(Array&lt;T&gt;)</syntax>
+          <model>sort_array(Array&lt;T&gt;)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Miscelaneous">
+      <functions>
+        <function name="Java_method">
+          <description>Synonym for reflect (as of Hive 0.9.0)</description>
+          <syntax>java_method(class, method[, arg1[, arg2..]])</syntax>
+          <model>java_method(class, method[, arg1[, arg2..]])</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Reflect">
+          <description>Use this UDF to call Java methods by matching the argument signature (uses reflection). (as of Hive 0.7.0)</description>
+          <syntax>reflect(class, method[, arg1[, arg2..]])</syntax>
+          <model>reflect(class, method[, arg1[, arg2..]])</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Hash">
+          <description>Returns a hash value of the arguments (as of Hive 0.4)</description>
+          <syntax>hash(a1[, a2...])</syntax>
+          <model>hash(a1[, a2...])</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Inline">
+          <description>Explodes an array of structs into a table (as of Hive 0.10)</description>
+          <syntax>inline(ARRAY&lt;STRUCT[,STRUCT]&gt;)</syntax>
+          <model>inline(ARRAY&lt;STRUCT[,STRUCT]&gt;)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Complex">
+      <functions>
+        <function name="map">
+          <description>Creates a map with the given key/value pairs</description>
+          <syntax>map</syntax>
+          <model>(key1, value1, key2, value2, ...)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="struct">
+          <description>Creates a struct with the given field values. Struct field names will be col1, col2, ...</description>
+          <syntax>struct</syntax>
+          <model>(val1, val2, val3, ...)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="names_struct">
+          <description>Creates a struct with the given field names and values. (as of Hive 0.8.0)</description>
+          <syntax>named_struct</syntax>
+          <model>(name1, val1, name2, val2, ...)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="array">
+          <description>Creates an array with the given elements</description>
+          <syntax>array</syntax>
+          <model>(val1, val2, ...)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Create_union">
+          <description>Creates a union type with the value that is being pointed to by the tag parameter</description>
+          <syntax>create_union</syntax>
+          <model>(tag, val1, val2, ...)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Complex Operators">
+      <functions>
+        <function name="Array element">
+          <description>Returns the nth element in the array A. The first element has index 0 e.g. if A is an array comprising of ['foo', 'bar'] then A[0] returns 'foo' and A[1] returns 'bar'</description>
+          <syntax>A[n]</syntax>
+          <model>A[n]</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Map value">
+          <description>Returns the value corresponding to the key in the map e.g. if M is a map comprising of {'f' -&gt; 'foo', 'b' -&gt; 'bar', 'all' -&gt; 'foobar'} then M['all'] returns 'foobar'</description>
+          <syntax>M[key]</syntax>
+          <model>M[key]</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Struct field">
+          <description>Returns the x field of S. e.g for struct foobar {int foo, int bar} foobar.foo returns the integer stored in the foo field of the struct.</description>
+          <syntax>S.x</syntax>
+          <model>S.x</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Relational Operators">
+      <functions>
+        <function name="equal">
+          <description>TRUE if expression A is equal to expression B otherwise FALSE</description>
+          <syntax>A = B</syntax>
+          <model>A = B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="&lt;=>">
+          <description>Returns same result with EQUAL(=) operator for non-null operands, but returns TRUE if both are NULL, FALSE if one of the them is NULL (as of version 0.9.0)</description>
+          <syntax>A &lt;=&gt; B</syntax>
+          <model>A &lt;=&gt; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="&lt;>">
+          <description>NULL if A or B is NULL, TRUE if expression A is NOT equal to expression B otherwise FALSE</description>
+          <syntax>A &lt;&gt; B</syntax>
+          <model>A &lt;&gt; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="!=">
+          <description>a synonym for the &lt;&gt; operator. NULL if A or B is NULL, TRUE if expression A is NOT equal to expression B otherwise FALSE</description>
+          <syntax>A != B</syntax>
+          <model>A != B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="&lt;">
+          <description>NULL if A or B is NULL, TRUE if expression A is less than expression B otherwise FALSE</description>
+          <syntax>A &lt; B</syntax>
+          <model>A &lt; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="&lt;=">
+          <description>NULL if A or B is NULL, TRUE if expression A is less than or equal to expression B otherwise FALSE</description>
+          <syntax>A &lt;= B</syntax>
+          <model>A &lt;= B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name=">">
+          <description>NULL if A or B is NULL, TRUE if expression A is greater than expression B otherwise FALSE</description>
+          <syntax>A &gt; B</syntax>
+          <model>A &gt; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name=">=">
+          <description>NULL if A or B is NULL, TRUE if expression A is greater than or equal to expression B otherwise FALSE</description>
+          <syntax>A &gt;= B</syntax>
+          <model>A &gt;= B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="NOT">
+          <description>NULL if A, B or C is NULL, TRUE if A is greater than or equal to B AND A less than or equal to C otherwise FALSE. This can be inverted by using the NOT keyword. (as of version 0.9.0)</description>
+          <syntax>A [NOT] BETWEEN B AND C</syntax>
+          <model>A [NOT] BETWEEN B AND C</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="IS NULL">
+          <description>TRUE if expression A evaluates to NULL otherwise FALSE</description>
+          <syntax>A IS NULL</syntax>
+          <model>A IS NULL</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="IS NOT NULL">
+          <description>FALSE if expression A evaluates to NULL otherwise TRUE</description>
+          <syntax>A IS NOT NULL</syntax>
+          <model>A IS NOT NULL</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="LIKE">
+          <description>NULL if A or B is NULL, TRUE if string A matches the SQL simple regular expression B, otherwise FALSE. The comparison is done character by character. The _ character in B matches any character in A(similar to . in posix regular expressions) while the % cha</description>
+          <syntax>A LIKE B</syntax>
+          <model>A LIKE B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="RLIKE">
+          <description>NULL if A or B is NULL, TRUE if string A matches the Java regular expression B(See Java regular expressions syntax), otherwise FALSE e.g. 'foobar' rlike 'foo' evaluates to FALSE where as 'foobar' rlike '^f.*r$' evaluates to TRUE</description>
+          <syntax>A RLIKE B</syntax>
+          <model>A RLIKE B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="REGEXP">
+          <description>NULL if A or B is NULL, TRUE if string A matches the Java regular expression B(See Java regular expressions syntax), otherwise FALSE e.g. 'foobar' rlike 'foo' evaluates to FALSE where as 'foobar' rlike '^f.*r$' evaluates to TRUE</description>
+          <syntax>A REGEXP B</syntax>
+          <model>A REGEXP B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Logical Operators">
+      <functions>
+        <function name="AND">
+          <description>TRUE if both A and B are TRUE, otherwise FALSE. NULL if A or B is NULL</description>
+          <syntax>A AND B</syntax>
+          <model>A AND B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="&amp;&amp;">
+          <description>Same as A AND B</description>
+          <syntax>A &amp;&amp; B</syntax>
+          <model>A &amp;&amp; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="OR">
+          <description>TRUE if either A or B or both are TRUE; FALSE OR NULL is NULL; otherwise FALSE</description>
+          <syntax>A OR B</syntax>
+          <model>A OR B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="||">
+          <description>TRUE if either A or B or both are TRUE; FALSE OR NULL is NULL; otherwise FALSE</description>
+          <syntax>A || B</syntax>
+          <model>A || B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="NNOT">
+          <description>TRUE if A is FALSE or NULL if A is NULL. Otherwise FALSE.</description>
+          <syntax>NOT A</syntax>
+          <model>NOT A</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="!">
+          <description>TRUE if A is FALSE or NULL if A is NULL. Otherwise FALSE.</description>
+          <syntax>! A</syntax>
+          <model>! A</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Arithmetic Operators">
+      <functions>
+        <function name="plus">
+          <description>Gives the result of adding A and B. The type of the result is the same as the common parent(in the type hierarchy) of the types of the operands. e.g. since every integer is a float, therefore float is a containing type of integer so the + operator on a flo</description>
+          <syntax>A + B</syntax>
+          <model>A + B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="minus">
+          <description>Gives the result of subtracting B from A. The type of the result is the same as the common parent(in the type hierarchy) of the types of the operands.</description>
+          <syntax>A - B</syntax>
+          <model>A - B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="*">
+          <description>Gives the result of multiplying A and B. The type of the result is the same as the common parent(in the type hierarchy) of the types of the operands. Note that if the multiplication causing overflow, you will have to cast one of the operators to a type hig</description>
+          <syntax>A * B</syntax>
+          <model>A * B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="divide">
+          <description>Gives the result of dividing B from A. The result is a double type.</description>
+          <syntax>A / B</syntax>
+          <model>A / B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="%">
+          <description>Gives the reminder resulting from dividing A by B. The type of the result is the same as the common parent(in the type hierarchy) of the types of the operands.</description>
+          <syntax>A % B</syntax>
+          <model>A % B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="&amp;">
+          <description>Gives the result of bitwise AND of A and B. The type of the result is the same as the common parent(in the type hierarchy) of the types of the operands.</description>
+          <syntax>A &amp; B</syntax>
+          <model>A &amp; B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="|">
+          <description>Gives the result of bitwise OR of A and B. The type of the result is the same as the common parent(in the type hierarchy) of the types of the operands.</description>
+          <syntax>A | B</syntax>
+          <model>A | B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="^">
+          <description>Gives the result of bitwise XOR of A and B. The type of the result is the same as the common parent(in the type hierarchy) of the types of the operands.</description>
+          <syntax>A ^ B</syntax>
+          <model>A ^ B</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="~">
+          <description>Gives the result of bitwise NOT of A. The type of the result is the same as the type of A.</description>
+          <syntax>~A</syntax>
+          <model>~A</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+  </functional_groups>
+
+</database_function_set>

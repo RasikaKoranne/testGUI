@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CatapultAliasFile>
+    <Map Name="RED_DOCO_app_load_procs" Link="Installation Guide/Application Load Process.htm" ResolvedId="674" />
+    <Map Name="RED_DOCO_scrpt_testing" Link="User Guide/Procedures and Scripts/Script Testing.htm" ResolvedId="533" />
+    <Map Name="RED_DOCO_clr_SQL_srvr" Link="User Guide/Callable Routines/Clear_SQl Server.htm" ResolvedId="3544" />
+    <Map Name="RED_DOCO_API_Tera" Link="User Guide/Callable Routines/API_Teradata.htm" ResolvedId="3482" />
+    <Map Name="RED_DOCO_mntng_hst_scrpt_lang" Link="User Guide/Host Script Languages/Maintaining Host Script Languages.htm" ResolvedId="11166" />
+    <Map Name="RED_DOCO_disp_hide_inact_projs_grps" Link="User Guide/Organizing Objects/Displaying Hiding Inactive Projects Groups.htm" ResolvedId="5318" />
+    <Map Name="RED_DOCO_conn_trgt_stngs_cust_dbase" Link="User Guide/Connections/Connect_Target Settings_CustomDB.htm" ResolvedId="5301" />
+    <Map Name="RED_DOCO_conn_trgt_stngs" Link="User Guide/Connections/Connection Target Settings.htm" ResolvedId="5297" />
+    <Map Name="RED_DOCO_tbl_stor_Cust" Link="User Guide/Table Properties/Table Storage Screen - Custom Database.htm" ResolvedId="5303" />
+    <Map Name="RED_DOCO_OLAP_cube_actns" Link="User Guide/Objects and Windows/OLAP Cubes.htm" ResolvedId="1146" />
+    <Map Name="RED_DOCO_rstrng_DB_bckups" Link="User Guide/Backing Up and Restoring Metadata/Restoring DB Backups.htm" ResolvedId="599" />
+    <Map Name="RED_DOCO_callable_rtns_ws_job_create" Link="User Guide/Callable Routines/Ws_Job_Create.htm" ResolvedId="990" />
+    <Map Name="RED_DOCO_callable_rtns_ws_job_createwait" Link="User Guide/Callable Routines/Ws_Job_CreateWait.htm" ResolvedId="1059" />
+    <Map Name="RED_DOCO_callable_rtns_ws_job_dpn" Link="User Guide/Callable Routines/Ws_Job_Dependency.htm" ResolvedId="1062" />
+    <Map Name="RED_DOCO_callable_rtns_ws_job_rel" Link="User Guide/Callable Routines/Ws_Job_Release.htm" ResolvedId="851" />
+    <Map Name="RED_DOCO__ws_job_rstrt" Link="User Guide/Callable Routines/Ws_Job_Restart.htm" ResolvedId="582" />
+    <Map Name="RED_DOCO_ws_job_schd" Link="User Guide/Callable Routines/Ws_Job_Schedule.htm" ResolvedId="996" />
+    <Map Name="RED_DOCO_callable_rtns_ws_job_stat" Link="User Guide/Callable Routines/Ws_Job_Status.htm" ResolvedId="1200" />
+    <Map Name="RED_DOCO_callable_rtns_ws_ld_change" Link="User Guide/Callable Routines/Ws_Load_Change.htm" ResolvedId="900" />
+    <Map Name="RED_DOCO_callable_rtns_ws_main_indx" Link="User Guide/Callable Routines/Ws_Maintain_Indexes.htm" ResolvedId="301" />
+    <Map Name="RED_DOCO_callable_rtns_ver_clr" Link="User Guide/Callable Routines/Ws_Version_Clear.htm" ResolvedId="1075" />
+    <Map Name="RED_DOCO_add_col" Link="User Guide/Column Context Menu/Add Column.htm" ResolvedId="2934" />
+    <Map Name="RED_DOCO_chg_cols" Link="User Guide/Column Context Menu/Change Column s.htm" ResolvedId="2909" />
+    <Map Name="RED_DOCO_col_cont_mnu" Link="User Guide/Column Context Menu/Column Context Menu.htm" ResolvedId="2920" />
+    <Map Name="RED_DOCO_del_col" Link="User Guide/Column Context Menu/Delete Column.htm" ResolvedId="2940" />
+    <Map Name="RED_DOCO_dup_col" Link="User Guide/Column Context Menu/Duplicate Column.htm" ResolvedId="2937" />
+    <Map Name="RED_DOCO_impact" Link="User Guide/Column Context Menu/Impact.htm" ResolvedId="2946" />
+    <Map Name="RED_DOCO_properties" Link="User Guide/Column Context Menu/Properties.htm" ResolvedId="2922" />
+    <Map Name="RED_DOCO_respce_ord_nmbr" Link="User Guide/Column Context Menu/Re space Order Number.htm" ResolvedId="2943" />
+    <Map Name="RED_DOCO_snd_cols_anthr_obj" Link="User Guide/Column Context Menu/Send_Col_Another Object.htm" ResolvedId="3950" />
+    <Map Name="RED_DOCO_sync_col_with_dbase" Link="User Guide/Column Context Menu/Sync_Col_order_database.htm" ResolvedId="4074" />
+    <Map Name="RED_DOCO_brws_conn" Link="User Guide/Connections/Browsing a Connection.htm" ResolvedId="2442" />
+    <Map Name="RED_DOCO_chng_conn_props" Link="User Guide/Connections/Chng_Connect_Properties.htm" ResolvedId="2443" />
+    <Map Name="RED_DOCO_config_BDA_srvr" Link="User Guide/Connections/Configuring the BDA Server.htm" ResolvedId="4583" />
+    <Map Name="RED_DOCO_config_your_dbase" Link="User Guide/Connections/Configuring your database.htm" ResolvedId="4671" />
+    <Map Name="RED_DOCO_conn_brws_props" Link="User Guide/Connections/Connection Browse Properties.htm" ResolvedId="4740" />
+    <Map Name="RED_DOCO_conn_ext_props" Link="User Guide/Connections/Connection Extended Properties.htm" ResolvedId="5086" />
+    <Map Name="RED_DOCO_conn_stngs_BDA" Link="User Guide/Connections/Connection settings for BDA.htm" ResolvedId="4670" />
+    <Map Name="RED_DOCO_conn_types" Link="User Guide/Connections/Connection Types.htm" ResolvedId="2384" />
+    <Map Name="RED_DOCO_conn" Link="User Guide/Connections/Connections.htm" ResolvedId="134" />
+    <Map Name="RED_DOCO_crtng_dbase_link" Link="User Guide/Connections/Creating a Database Link.htm" ResolvedId="2444" />
+    <Map Name="RED_DOCO_conn_dw_meta" Link="User Guide/Connections/Database Data Warehouse Metadata.htm" ResolvedId="2439" />
+    <Map Name="RED_DOCO_dbase" Link="User Guide/Connections/Database.htm" ResolvedId="4186" />
+    <Map Name="RED_DOCO_Had_for_ORA_conn" Link="User Guide/Connections/Hadoop for Oracle Connectors.htm" ResolvedId="4198" />
+    <Map Name="RED_DOCO_Had_using_ORA_big_dat_conn" Link="User Guide/Connections/Hadoop using Oracle's Big Data Connectors.htm" ResolvedId="4092" />
+    <Map Name="RED_DOCO_Hadoop" Link="User Guide/Connections/Hadoop.htm" ResolvedId="4090" />
+    <Map Name="RED_DOCO_MS_anal_srvr_2005_OLAP_cubes" Link="User Guide/Connections/Microsoft Analysis Server 2005_OLAPCubes.htm" ResolvedId="4710" />
+    <Map Name="RED_DOCO_MS_anal_srvr" Link="User Guide/Connections/Microsoft Analysis Server.htm" ResolvedId="2391" />
+    <Map Name="RED_DOCO_MS_anal_srvr_tab_mode" Link="User Guide/Connections/Microsoft Analysis Server_Tabular Mode.htm" ResolvedId="4692" />
+    <Map Name="RED_DOCO_ODBC" Link="User Guide/Connections/ODBC.htm" ResolvedId="2410" />
+    <Map Name="RED_DOCO_reset_meta_dbase_conn" Link="User Guide/Connections/Reset Meta Database Connections.htm" ResolvedId="4268" />
+    <Map Name="RED_DOCO_unix" Link="User Guide/Connections/UNIX.htm" ResolvedId="2394" />
+    <Map Name="RED_DOCO_win" Link="User Guide/Connections/Windows.htm" ResolvedId="2388" />
+    <Map Name="RED_DOCO_bldng_ds_obj" Link="User Guide/Data Store Objects/Build Data Store Obj.htm" ResolvedId="1596" />
+    <Map Name="RED_DOCO_ds_art_keys" Link="User Guide/Data Store Objects/Data Store Artificial Keys.htm" ResolvedId="1597" />
+    <Map Name="RED_DOCO_ds_col_props" Link="User Guide/Data Store Objects/Data Store Col Props.htm" ResolvedId="1598" />
+    <Map Name="RED_DOCO_ds_obj_col_trans" Link="User Guide/Data Store Objects/Data Store Obj Col Transforms.htm" ResolvedId="1599" />
+    <Map Name="RED_DOCO_ds_objs" Link="User Guide/Data Store Objects/Data Store Objects.htm" ResolvedId="1593" />
+    <Map Name="RED_DOCO_gen_ds_upd_procs" Link="User Guide/Data Store Objects/Gen Data Store Upd Proc.htm" ResolvedId="1595" />
+    <Map Name="RED_DOCO_copy_dat_typ_map" Link="User Guide/Data Type Mappings/Copying a Data Type Mapping Set.htm" ResolvedId="2901" />
+    <Map Name="RED_DOCO_crt_new_dat_typ_map" Link="User Guide/Data Type Mappings/Creating a New Data Type Mapping Set.htm" ResolvedId="2897" />
+    <Map Name="RED_DOCO_cust_dat_typ_map_exmple" Link="User Guide/Data Type Mappings/Custom Data Type Mapping Set Examples.htm" ResolvedId="2905" />
+    <Map Name="RED_DOCO_dat_typ_map" Link="User Guide/Data Type Mappings/Data Type Mappings.htm" ResolvedId="2891" />
+    <Map Name="RED_DOCO_del_dat_typ_map" Link="User Guide/Data Type Mappings/Deleting a Data Type Mapping Set.htm" ResolvedId="2906" />
+    <Map Name="RED_DOCO__edit_dat_map" Link="User Guide/Data Type Mappings/Editing a Data Type Mapping Set.htm" ResolvedId="2894" />
+    <Map Name="RED_DOCO__exp_cust_dat_typ_map_set" Link="User Guide/Data Type Mappings/Exporting Custom Data Type Mapping Sets.htm" ResolvedId="3112" />
+    <Map Name="RED_DOCO_ldng_cust_dat_typ_map" Link="User Guide/Data Type Mappings/Loading Custom Data Type Mapping Sets.htm" ResolvedId="3111" />
+    <Map Name="RED_DOCO_maint_dat_typ_map" Link="User Guide/Data Type Mappings/Maintaining Data Type Mapping Sets.htm" ResolvedId="3110" />
+    <Map Name="RED_DOCO_bldng_dv_objs" Link="User Guide/Data Vaults/Building Data Vault Objects.htm" ResolvedId="5011" />
+    <Map Name="RED_DOCO_chg_dv_hk_func" Link="User Guide/Data Vaults/Changing the Data Vault Hash.htm" ResolvedId="5156" />
+    <Map Name="RED_DOCO_crting_dv_stage" Link="User Guide/Data Vaults/Creating Data Vault Stage.htm" ResolvedId="5015" />
+    <Map Name="RED_DOCO_load_tables" Link="User Guide/Data Vaults/Creating Load Tables.htm" ResolvedId="5012" />
+    <Map Name="RED_DOCO_crtng_hub_lnk_sat_tbls" Link="User Guide/Data Vaults/Creating the Hub, Link and Satellite Tables.htm" ResolvedId="5029" />
+    <Map Name="RED_DOCO_dv_funcs_feats" Link="User Guide/Data Vaults/Data Vault Functions and Features.htm" ResolvedId="4991" />
+    <Map Name="RED_DOCO_dv_settings" Link="User Guide/Data Vaults/Data Vault Settings.htm" ResolvedId="5003" />
+    <Map Name="RED_DOCO_dv_stage_tbl" Link="User Guide/Data Vaults/Data Vault Stage Table.htm" ResolvedId="4995" />
+    <Map Name="RED_DOCO_dv_temp" Link="User Guide/Data Vaults/Data Vault Templates.htm" ResolvedId="4999" />
+    <Map Name="RED_DOCO_dvs" Link="User Guide/Data Vaults/Data Vaults.htm" ResolvedId="4990" />
+    <Map Name="RED_DOCO_gen_upd_procs_hub_link_sat_tbls" Link="User Guide/Data Vaults/Generating Update Procedures for Hub, Link and Satellite Tables.htm" ResolvedId="5044" />
+    <Map Name="RED_DOCO_gen_upd_procs_dv_stage_tbl" Link="User Guide/Data Vaults/Generating Update Procedures for the Data Vault Stage Table.htm" ResolvedId="5023" />
+    <Map Name="RED_DOCO_hash_key_gen_wiz" Link="User Guide/Data Vaults/Hash Key Generation Wizard.htm" ResolvedId="4997" />
+    <Map Name="RED_DOCO_hub_lnk_sat_creation" Link="User Guide/Data Vaults/Hub Link and Satellite Creation.htm" ResolvedId="5000" />
+    <Map Name="RED_DOCO_load_tbl_meta_cols" Link="User Guide/Data Vaults/Load Table Meta Data Columns .htm" ResolvedId="4992" />
+    <Map Name="RED_DOCO_maint_hash_key_cols" Link="User Guide/Data Vaults/Maintain Hash Key Columns.htm" ResolvedId="5009" />
+    <Map Name="RED_DOCO_tbl_col_props" Link="User Guide/Data Vaults/Table Column Properties.htm" ResolvedId="5006" />
+    <Map Name="RED_DOCO_copying_dbase_func_set" Link="User Guide/Database Functions/Copying a Database Function Set.htm" ResolvedId="3069" />
+    <Map Name="RED_DOCO_crtng_new_dbase_func_set" Link="User Guide/Database Functions/Creating a New Database Function Set.htm" ResolvedId="3068" />
+    <Map Name="RED_DOCO_dbase_functions" Link="User Guide/Database Functions/Database Functions.htm" ResolvedId="3053" />
+    <Map Name="RED_DOCO_deleting_dbase_func_set" Link="User Guide/Database Functions/Deleting a Database Function Set.htm" ResolvedId="3071" />
+    <Map Name="RED_DOCO_edt_dbase_fucn_set" Link="User Guide/Database Functions/Editing a Database Function Set.htm" ResolvedId="3070" />
+    <Map Name="RED_DOCO_exp_dbase_func_sets" Link="User Guide/Database Functions/Exporting Database Function Sets.htm" ResolvedId="3057" />
+    <Map Name="RED_DOCO_ldng_dbase_func_sets" Link="User Guide/Database Functions/Loading Database Function Sets.htm" ResolvedId="3056" />
+    <Map Name="RED_DOCO_maint_dbase_func_sets" Link="User Guide/Database Functions/Maintaining Database Function Sets.htm" ResolvedId="3055" />
+    <Map Name="RED_DOCO_avail_load_types" Link="User Guide/Default Settings/Available Load Types.htm" ResolvedId="5262" />
+    <Map Name="RED_DOCO_case_convrsn" Link="User Guide/Default Settings/Case Conversion.htm" ResolvedId="2518" />
+    <Map Name="RED_DOCO_chckout_chkin" Link="User Guide/Default Settings/Check Out and Check In.htm" ResolvedId="2532" />
+    <Map Name="RED_DOCO_code_editor" Link="User Guide/Default Settings/Code Editor.htm" ResolvedId="3460" />
+    <Map Name="RED_DOCO_code_gen" Link="User Guide/Default Settings/Code Generation.htm" ResolvedId="2534" />
+    <Map Name="RED_DOCO_common" Link="User Guide/Default Settings/Common.htm" ResolvedId="2582" />
+    <Map Name="RED_DOCO_comm_other" Link="User Guide/Default Settings/Common_Other.htm" ResolvedId="3148" />
+    <Map Name="RED_DOCO_cnfrm_prompts" Link="User Guide/Default Settings/Confirmation Prompts.htm" ResolvedId="2585" />
+    <Map Name="RED_DOCO_curr_repo" Link="User Guide/Default Settings/Current Repository.htm" ResolvedId="2583" />
+    <Map Name="RED_DOCO_curr_repo_look_feel" Link="User Guide/Default Settings/current_repo_Look and Feel.htm" ResolvedId="2588" />
+    <Map Name="RED_DOCO_def_opt_create_clause" Link="User Guide/Default Settings/Default Optional CREATE Clause.htm" ResolvedId="4077" />
+    <Map Name="RED_DOCO_def_settings" Link="User Guide/Default Settings/Default Settings.htm" ResolvedId="2496" />
+    <Map Name="RED_DOCO_def_upd_proc_options" Link="User Guide/Default Settings/Default Update Procedure Options.htm" ResolvedId="3137" />
+    <Map Name="RED_DOCO_diagrams" Link="User Guide/Default Settings/Diagrams.htm" ResolvedId="3143" />
+    <Map Name="RED_DOCO_documentation" Link="User Guide/Default Settings/Documentation.htm" ResolvedId="2540" />
+    <Map Name="RED_DOCO_cols_cust_targets" Link="User Guide/Default Settings/DSS Columns for Custom Targets.htm" ResolvedId="5087" />
+    <Map Name="RED_DOCO__DSS_cols" Link="User Guide/Default Settings/DSS Columns.htm" ResolvedId="2529" />
+    <Map Name="RED_DOCO_DSS_tbls_cols" Link="User Guide/Default Settings/DSS Tables and Columns.htm" ResolvedId="2505" />
+    <Map Name="RED_DOCO_DSS_tbls" Link="User Guide/Default Settings/DSS Tables.htm" ResolvedId="2528" />
+    <Map Name="RED_DOCO_general" Link="User Guide/Default Settings/General.htm" ResolvedId="2612" />
+    <Map Name="RED_DOCO_gen_cod_stats" Link="User Guide/Default Settings/Generated Code Statistics.htm" ResolvedId="2613" />
+    <Map Name="RED_DOCO_glb_nmng_convs" Link="User Guide/Default Settings/Global Naming Conventions.htm" ResolvedId="2504" />
+    <Map Name="RED_DOCO__glb_nmng_indxs" Link="User Guide/Default Settings/Global Naming of Indexes.htm" ResolvedId="2520" />
+    <Map Name="RED_DOCO_glb_nam_key_cols" Link="User Guide/Default Settings/Global Naming of Key Columns.htm" ResolvedId="2521" />
+    <Map Name="RED_DOCO__glb_nmng_procs" Link="User Guide/Default Settings/Global Naming of Procedures.htm" ResolvedId="2522" />
+    <Map Name="RED_DOCO_glb_nam_src_maps" Link="User Guide/Default Settings/Global Naming of Source Mappings.htm" ResolvedId="5211" />
+    <Map Name="RED_DOCO_glb_nam_tbls" Link="User Guide/Default Settings/Global Naming of Tables.htm" ResolvedId="2519" />
+    <Map Name="RED_DOCO_index_typ" Link="User Guide/Default Settings/Index Type.htm" ResolvedId="3140" />
+    <Map Name="RED_DOCO_lang_options" Link="User Guide/Default Settings/Language Options.htm" ResolvedId="2607" />
+    <Map Name="RED_DOCO_loc_nam_convs" Link="User Guide/Default Settings/Local Naming Conventions.htm" ResolvedId="2586" />
+    <Map Name="RED_DOCO_loc_nam_indxs" Link="User Guide/Default Settings/Local Naming of Indexes.htm" ResolvedId="3147" />
+    <Map Name="RED_DOCO_loc_nam_key_cols" Link="User Guide/Default Settings/Local Naming of Key Columns.htm" ResolvedId="3146" />
+    <Map Name="RED_DOCO_loc_nam_src_map" Link="User Guide/Default Settings/Local Naming of Source Mapping.htm" ResolvedId="5283" />
+    <Map Name="RED_DOCO_loc_naming_of_tbls" Link="User Guide/Default Settings/Local Naming of Tables.htm" ResolvedId="3145" />
+    <Map Name="RED_DOCO_loc_paths" Link="User Guide/Default Settings/Local Paths.htm" ResolvedId="2587" />
+    <Map Name="RED_DOCO_loc_nmng_convs_gen" Link="User Guide/Default Settings/LocalName_General.htm" ResolvedId="3144" />
+    <Map Name="RED_DOCO_look_feel" Link="User Guide/Default Settings/Look and Feel.htm" ResolvedId="3142" />
+    <Map Name="RED_DOCO_look_feel_gen" Link="User Guide/Default Settings/LookFeel_General.htm" ResolvedId="2584" />
+    <Map Name="RED_DOCO_meta_vers" Link="User Guide/Default Settings/Metadata Versioning.htm" ResolvedId="2538" />
+    <Map Name="RED_DOCO_obj_end_usr_setting" Link="User Guide/Default Settings/Object End User Setting.htm" ResolvedId="2510" />
+    <Map Name="RED_DOCO_obj_sub_types" Link="User Guide/Default Settings/Object Sub Types.htm" ResolvedId="4432" />
+    <Map Name="RED_DOCO_obj_typ_avail" Link="User Guide/Default Settings/Object Type Availability.htm" ResolvedId="2507" />
+    <Map Name="RED_DOCO_obj_typ_col" Link="User Guide/Default Settings/Object Type Color.htm" ResolvedId="2511" />
+    <Map Name="RED_DOCO_obj_typ_icon" Link="User Guide/Default Settings/Object Type Icon.htm" ResolvedId="4766" />
+    <Map Name="RED_DOCO_obj_typ_names" Link="User Guide/Default Settings/Object Type Names.htm" ResolvedId="2508" />
+    <Map Name="RED_DOCO_obj_typ_ordr" Link="User Guide/Default Settings/Object Type Ordering.htm" ResolvedId="2509" />
+    <Map Name="RED_DOCO_obj_typs" Link="User Guide/Default Settings/Object Types.htm" ResolvedId="2502" />
+    <Map Name="RED_DOCO_def_stngs_other" Link="User Guide/Default Settings/Other.htm" ResolvedId="2542" />
+    <Map Name="RED_DOCO_def_stngs_output" Link="User Guide/Default Settings/Outputs.htm" ResolvedId="3937" />
+    <Map Name="RED_DOCO_prop_grids" Link="User Guide/Default Settings/Property Grids.htm" ResolvedId="3462" />
+    <Map Name="RED_DOCO_repo_ident" Link="User Guide/Default Settings/Repository Identification.htm" ResolvedId="2500" />
+    <Map Name="RED_DOCO_repo_prvcy_stngs" Link="User Guide/Default Settings/Repository Privacy Settings.htm" ResolvedId="4051" />
+    <Map Name="RED_DOCO_settings_optns" Link="User Guide/Default Settings/Settings Options.htm" ResolvedId="2498" />
+    <Map Name="RED_DOCO_stats" Link="User Guide/Default Settings/Statistics.htm" ResolvedId="4596" />
+    <Map Name="RED_DOCO_strge" Link="User Guide/Default Settings/Storage.htm" ResolvedId="2536" />
+    <Map Name="RED_DOCO_tbl_strge" Link="User Guide/Default Settings/Table Storage.htm" ResolvedId="3139" />
+    <Map Name="RED_DOCO_trgt_loc" Link="User Guide/Default Settings/Target Location.htm" ResolvedId="4076" />
+    <Map Name="RED_DOCO_trgt_usage" Link="User Guide/Default Settings/Target Usage.htm" ResolvedId="5256" />
+    <Map Name="RED_DOCO_user_prefs" Link="User Guide/Default Settings/User Preferences.htm" ResolvedId="2499" />
+    <Map Name="RED_DOCO_add_dim_hrchy" Link="User Guide/Dimensions/Adding a Dim Hierarchy.htm" ResolvedId="871" />
+    <Map Name="RED_DOCO_bldng_dim" Link="User Guide/Dimensions/Building a Dimension.htm" ResolvedId="456" />
+    <Map Name="RED_DOCO__crtng_snowflake" Link="User Guide/Dimensions/Creating a Snowflake.htm" ResolvedId="1043" />
+    <Map Name="RED_DOCO_dim_ini_bld" Link="User Guide/Dimensions/Dim Initial Build.htm" ResolvedId="517" />
+    <Map Name="RED_DOCO_dim__col_props" Link="User Guide/Dimensions/Dim Col Properties.htm" ResolvedId="567" />
+    <Map Name="RED_DOCO_dim_col_trans" Link="User Guide/Dimensions/Dim Col Transforms.htm" ResolvedId="999" />
+    <Map Name="RED_DOCO_dim_art_key" Link="User Guide/Dimensions/Dim Artificial Keys.htm" ResolvedId="515" />
+    <Map Name="RED_DOCO_dim_hrchs" Link="User Guide/Dimensions/Dim Hierarchies.htm" ResolvedId="870" />
+    <Map Name="RED_DOCO_dim_lang_map" Link="User Guide/Dimensions/Dim Lang Mapping.htm" ResolvedId="1972" />
+    <Map Name="RED_DOCO_dim_overview" Link="User Guide/Dimensions/Dim Overview.htm" ResolvedId="753" />
+    <Map Name="RED_DOCO_dims" Link="User Guide/Dimensions/Dimensions.htm" ResolvedId="137" />
+    <Map Name="RED_DOCO_gen_dim_upd_procs" Link="User Guide/Dimensions/Gen Dim Update Proc.htm" ResolvedId="457" />
+    <Map Name="RED_DOCO_snowflake" Link="User Guide/Dimensions/Snowflake.htm" ResolvedId="1041" />
+    <Map Name="RED_DOCO_batch_doc_crtn" Link="User Guide/Documentation and Diagrams/Batch Documentation Creation.htm" ResolvedId="1690" />
+    <Map Name="RED_DOCO_crtng_job_frm_diag" Link="User Guide/Documentation and Diagrams/Creating a Job from a Diagram.htm" ResolvedId="3158" />
+    <Map Name="RED_DOCO_crtng_proj_frm_diag" Link="User Guide/Documentation and Diagrams/Creating a Project from a Diagram.htm" ResolvedId="3160" />
+    <Map Name="RED_DOCO_crtng_app_frm_diag" Link="User Guide/Documentation and Diagrams/Creating an Application from a Diagram.htm" ResolvedId="3159" />
+    <Map Name="RED_DOCO_crtng_doc" Link="User Guide/Documentation and Diagrams/Creating Documentation.htm" ResolvedId="521" />
+    <Map Name="RED_DOCO_dep_diag" Link="User Guide/Documentation and Diagrams/Dependency Diagram.htm" ResolvedId="1674" />
+    <Map Name="RED_DOCO_diags" Link="User Guide/Documentation and Diagrams/Diagrams.htm" ResolvedId="526" />
+    <Map Name="RED_DOCO_doc_diags" Link="User Guide/Documentation and Diagrams/Documentation and Diagrams.htm" ResolvedId="145" />
+    <Map Name="RED_DOCO_imp_diag" Link="User Guide/Documentation and Diagrams/Impact Diagram.htm" ResolvedId="1672" />
+    <Map Name="RED_DOCO_joins_diag" Link="User Guide/Documentation and Diagrams/Joins Diagram.htm" ResolvedId="1671" />
+    <Map Name="RED_DOCO_links_diag" Link="User Guide/Documentation and Diagrams/Links Diagram.htm" ResolvedId="1673" />
+    <Map Name="RED_DOCO_query_tool_access" Link="User Guide/Documentation and Diagrams/Query Tool Access.htm" ResolvedId="520" />
+    <Map Name="RED_DOCO_read_doc" Link="User Guide/Documentation and Diagrams/Reading the Documentaion.htm" ResolvedId="522" />
+    <Map Name="RED_DOCO_src_diag" Link="User Guide/Documentation and Diagrams/Source Diagram.htm" ResolvedId="1670" />
+    <Map Name="RED_DOCO_types_diags" Link="User Guide/Documentation and Diagrams/Types of Diagrams.htm" ResolvedId="3150" />
+    <Map Name="RED_DOCO_wrkng_with_diags" Link="User Guide/Documentation and Diagrams/Working with Diagrams.htm" ResolvedId="3157" />
+    <Map Name="RED_DOCO_bldng_edw_3NF_tbl" Link="User Guide/EDW 3NF Tables/Building an EDW 3NF Table.htm" ResolvedId="1564" />
+    <Map Name="RED_DOCO_edw_3NF_tbl_art_keys" Link="User Guide/EDW 3NF Tables/EDW 3NF Table Artificial Keys.htm" ResolvedId="1567" />
+    <Map Name="RED_DOCO_edw_3NF_tbl_col_props" Link="User Guide/EDW 3NF Tables/EDW 3NF Table Col Props.htm" ResolvedId="1568" />
+    <Map Name="RED_DOCO_edw_3NF_tbl_col_trans" Link="User Guide/EDW 3NF Tables/EDW 3NF Tbl Col Transforms.htm" ResolvedId="1565" />
+    <Map Name="RED_DOCO_edw_3NF_tbl_ovrvw" Link="User Guide/EDW 3NF Tables/EDW 3NF Table Overview.htm" ResolvedId="1563" />
+    <Map Name="RED_DOCO_edw_3NF_tbls" Link="User Guide/EDW 3NF Tables/EDW 3NF Tables.htm" ResolvedId="1562" />
+    <Map Name="RED_DOCO_gen_edw_3NF_upd_proc" Link="User Guide/EDW 3NF Tables/Gen the EDW 3NF Upd Proc.htm" ResolvedId="1566" />
+    <Map Name="RED_DOCO_exp_obj" Link="User Guide/Exporting Data/Building an Export Object.htm" ResolvedId="1118" />
+    <Map Name="RED_DOCO_exp_col_props" Link="User Guide/Exporting Data/Export Column Properties.htm" ResolvedId="1342" />
+    <Map Name="RED_DOCO_exp_data" Link="User Guide/Exporting Data/Exporting Data.htm" ResolvedId="1119" />
+    <Map Name="RED_DOCO_file_att_ssis_exp" Link="User Guide/Exporting Data/File Attributes SSIS Exports.htm" ResolvedId="4246" />
+    <Map Name="RED_DOCO_file_att" Link="User Guide/Exporting Data/File Attributes.htm" ResolvedId="1120" />
+    <Map Name="RED_DOCO_scrpt_based_exp" Link="User Guide/Exporting Data/Script based Exports.htm" ResolvedId="1122" />
+    <Map Name="RED_DOCO_crtng_ext_prop_def" Link="User Guide/Extended Properties/Creating an Extended Property Definition.htm" ResolvedId="5083" />
+    <Map Name="RED_DOCO_defng_ext_props" Link="User Guide/Extended Properties/Defining Extended Properties.htm" ResolvedId="5131" />
+    <Map Name="RED_DOCO_exprtng_ext_props" Link="User Guide/Extended Properties/Exporting Extended Properties.htm" ResolvedId="5119" />
+    <Map Name="RED_DOCO_ext_prop_dat_mgrtn_btwn_repos" Link="User Guide/Extended Properties/Extended Properties Data Migration Between Repositories.htm" ResolvedId="5138" />
+    <Map Name="RED_DOCO_ext_props_lookup" Link="User Guide/Extended Properties/Extended Properties Lookup.htm" ResolvedId="5139" />
+    <Map Name="RED_DOCO_ext_props_val_assgnmnt" Link="User Guide/Extended Properties/Extended Properties Value Assignment.htm" ResolvedId="5133" />
+    <Map Name="RED_DOCO_ext_props" Link="User Guide/Extended Properties/Extended Properties.htm" ResolvedId="5080" />
+    <Map Name="RED_DOCO_ldng_ext_props" Link="User Guide/Extended Properties/Loading Extended Properties.htm" ResolvedId="5110" />
+    <Map Name="RED_DOCO_mntng_ext_prop_defs" Link="User Guide/Extended Properties/Maintaining Extended Property Definitions.htm" ResolvedId="5082" />
+    <Map Name="RED_DOCO_setup_ext_prop_vals_conn" Link="User Guide/Extended Properties/Setting Up Extended Property Values for a Connection.htm" ResolvedId="5136" />
+    <Map Name="RED_DOCO_set_up_ext_prop_vals_obj" Link="User Guide/Extended Properties/Setting Up Extended Property Values for an Object.htm" ResolvedId="5137" />
+    <Map Name="RED_DOCO_crtng_prtnd_fact_tbl_DB2" Link="User Guide/Fact Tables/Creating a Partnd Fact Table DB2.htm" ResolvedId="1439" />
+    <Map Name="RED_DOCO_crtng_prtnd_fact_tbl_ORA" Link="User Guide/Fact Tables/Creating a Partnd Fact Table Oracle.htm" ResolvedId="869" />
+    <Map Name="RED_DOCO_crtng_prtnd_fact_tbl_SQL" Link="User Guide/Fact Tables/Creating a Partnd Fact Table SQL Srvr.htm" ResolvedId="1050" />
+    <Map Name="RED_DOCO_crtng_det_fact_tbls" Link="User Guide/Fact Tables/Creating Detail Fact Tables.htm" ResolvedId="200" />
+    <Map Name="RED_DOCO_crtng_kpi_fact_tbls" Link="User Guide/Fact Tables/Creating KPI Fact Tables.htm" ResolvedId="210" />
+    <Map Name="RED_DOCO_crtng_rollup_fact_tbls" Link="User Guide/Fact Tables/Creating Rollup Fact Tables.htm" ResolvedId="201" />
+    <Map Name="RED_DOCO_crtng_slow_chng_fact_tbls" Link="User Guide/Fact Tables/Creating Slwly Chgng Fact Tbls.htm" ResolvedId="865" />
+    <Map Name="RED_DOCO_crtng_snap_fact_tbls" Link="User Guide/Fact Tables/Creating Snapshot Fact Tables.htm" ResolvedId="468" />
+    <Map Name="RED_DOCO_crtng_kpi_dim" Link="User Guide/Fact Tables/Creating the KPI Dimension.htm" ResolvedId="706" />
+    <Map Name="RED_DOCO_det_fact_tbls" Link="User Guide/Fact Tables/Detail Fact Tables.htm" ResolvedId="195" />
+    <Map Name="RED_DOCO_fact_tbl_col_props" Link="User Guide/Fact Tables/Fact Table Column Properties.htm" ResolvedId="570" />
+    <Map Name="RED_DOCO_fact_tbl_col_trans" Link="User Guide/Fact Tables/Fact Table Col Transforms.htm" ResolvedId="3101" />
+    <Map Name="RED_DOCO_fact_tbl_lang_map" Link="User Guide/Fact Tables/Fact Table Language Mapping.htm" ResolvedId="2632" />
+    <Map Name="RED_DOCO_fact_tbls" Link="User Guide/Fact Tables/Fact Tables.htm" ResolvedId="138" />
+    <Map Name="RED_DOCO_gen_det_fact_upd_proc" Link="User Guide/Fact Tables/Gen the Det Fact Upd Proc.htm" ResolvedId="2976" />
+    <Map Name="RED_DOCO_gen_kpi_fact_upd_proc" Link="User Guide/Fact Tables/Gen the KPI Fact Upd Proc.htm" ResolvedId="2984" />
+    <Map Name="RED_DOCO_gen_prtnd_fact_upd_proc" Link="User Guide/Fact Tables/Gen the Partnd Fact Upd Proc.htm" ResolvedId="2994" />
+    <Map Name="RED_DOCO_gen_rollup_fact_upd_proc" Link="User Guide/Fact Tables/Gen the Rollup Fact Upd Proc.htm" ResolvedId="2977" />
+    <Map Name="RED_DOCO_gen_snap_fact_upd_proc" Link="User Guide/Fact Tables/Gen the Snapshot Fact Upd Proc.htm" ResolvedId="2991" />
+    <Map Name="RED_DOCO_kpi_fact_tbls" Link="User Guide/Fact Tables/KPI Fact Tables.htm" ResolvedId="197" />
+    <Map Name="RED_DOCO_kpi_setup" Link="User Guide/Fact Tables/KPI Setup.htm" ResolvedId="214" />
+    <Map Name="RED_DOCO_prtnd_fact_tbls" Link="User Guide/Fact Tables/Partitioned Fact Tables.htm" ResolvedId="868" />
+    <Map Name="RED_DOCO_rollup_comb_fact_tbls" Link="User Guide/Fact Tables/Rollup or Combined Fact Tables.htm" ResolvedId="196" />
+    <Map Name="RED_DOCO_setup_kpi_fact_tbls" Link="User Guide/Fact Tables/Setup of KPI Fact Tables.htm" ResolvedId="213" />
+    <Map Name="RED_DOCO_slow_chng_fact_tbls" Link="User Guide/Fact Tables/Slowly Changing Fact Tables.htm" ResolvedId="864" />
+    <Map Name="RED_DOCO_snap_fact_tbls" Link="User Guide/Fact Tables/Snapshot Fact Tables.htm" ResolvedId="198" />
+    <Map Name="RED_DOCO_index_def" Link="User Guide/Indexes/Index Definition.htm" ResolvedId="368" />
+    <Map Name="RED_DOCO_indexes" Link="User Guide/Indexes/Indexes.htm" ResolvedId="142" />
+    <Map Name="RED_DOCO_intgrtng_host_scrpts" Link="User Guide/Integrating into existing Warehouse/Integrating Host Scripts.htm" ResolvedId="449" />
+    <Map Name="RED_DOCO_intgrtng_procs" Link="User Guide/Integrating into existing Warehouse/Integrating Procedures.htm" ResolvedId="445" />
+    <Map Name="RED_DOCO_intgrtng_sel_tbl_type" Link="User Guide/Integrating into existing Warehouse/Integrating Select a Tbl Type.htm" ResolvedId="443" />
+    <Map Name="RED_DOCO_intgrtng_views" Link="User Guide/Integrating into existing Warehouse/Integrating Views.htm" ResolvedId="519" />
+    <Map Name="RED_DOCO_intgrtng_ws_red_into_exstng_wrehse" Link="User Guide/Integrating into existing Warehouse/Integrate WS RED in Exstng Warehse.htm" ResolvedId="421" />
+    <Map Name="RED_DOCO_intgrtng_qstns" Link="User Guide/Integrating into existing Warehouse/Integrating, Questions.htm" ResolvedId="444" />
+    <Map Name="RED_DOCO_intgrtng_ws_tbls" Link="User Guide/Integrating into existing Warehouse/Integrating, WS Tables.htm" ResolvedId="584" />
+    <Map Name="RED_DOCO_intgrtng" Link="User Guide/Integrating into existing Warehouse/Integrating.htm" ResolvedId="423" />
+    <Map Name="RED_DOCO_rbldng" Link="User Guide/Integrating into existing Warehouse/Rebuilding.htm" ResolvedId="422" />
+    <Map Name="RED_DOCO_apache_sq_ld" Link="User Guide/Loading Data/Apache Sqoop Load.htm" ResolvedId="4637" />
+    <Map Name="RED_DOCO_chng_ld_conn_schema" Link="User Guide/Loading Data/Changing Load Connection and Schema.htm" ResolvedId="438" />
+    <Map Name="RED_DOCO_chsng_best_ld_method" Link="User Guide/Loading Data/Choosing the Best Load Method.htm" ResolvedId="1554" />
+    <Map Name="RED_DOCO_conv" Link="User Guide/Loading Data/Conversion.htm" ResolvedId="1538" />
+    <Map Name="RED_DOCO_dat_typ_maps" Link="User Guide/Loading Data/Data Type Mappings.htm" ResolvedId="2161" />
+    <Map Name="RED_DOCO_dbase_link_ld_props" Link="User Guide/Loading Data/Database Link Load - Properties.htm" ResolvedId="258" />
+    <Map Name="RED_DOCO_dbase_link_ld_src_map" Link="User Guide/Loading Data/Database Link Load - Source Mapping.htm" ResolvedId="268" />
+    <Map Name="RED_DOCO_dbase_link_ld" Link="User Guide/Loading Data/Database Link Load.htm" ResolvedId="434" />
+    <Map Name="RED_DOCO_ext_ld" Link="User Guide/Loading Data/External Load.htm" ResolvedId="259" />
+    <Map Name="RED_DOCO_file_act_exmpl" Link="User Guide/Loading Data/File Action Example.htm" ResolvedId="1535" />
+    <Map Name="RED_DOCO_file_actns" Link="User Guide/Loading Data/File Actions.htm" ResolvedId="1534" />
+    <Map Name="RED_DOCO_file_scrpt_based_ld_src_scrns" Link="User Guide/Loading Data/File and Script based load source screens.htm" ResolvedId="4205" />
+    <Map Name="RED_DOCO_flat_file_ld_src_scrn" Link="User Guide/Loading Data/Flat File Load Source Screen.htm" ResolvedId="260" />
+    <Map Name="RED_DOCO_flat_file_ld" Link="User Guide/Loading Data/Flat File Loads.htm" ResolvedId="277" />
+    <Map Name="RED_DOCO_hand_miss_src_cols" Link="User Guide/Loading Data/Handling Missing Source Columns.htm" ResolvedId="684" />
+    <Map Name="RED_DOCO_ld_drag_drop" Link="User Guide/Loading Data/Load Drag and Drop.htm" ResolvedId="461" />
+    <Map Name="RED_DOCO_ld_tbl_src_map_scrn_exmpls" Link="User Guide/Loading Data/Load Table Src Map Scn Exmpls.htm" ResolvedId="266" />
+    <Map Name="RED_DOCO_ld_tbl_trans" Link="User Guide/Loading Data/Load Table Transformations.htm" ResolvedId="437" />
+    <Map Name="RED_DOCO_ldng_dat_red_ld_tbls_ssis" Link="User Guide/Loading Data/Loading data into RED load tables using SSIS.htm" ResolvedId="2159" />
+    <Map Name="RED_DOCO_ldng_dat" Link="User Guide/Loading Data/Loading Data.htm" ResolvedId="135" />
+    <Map Name="RED_DOCO_nat_ODBC_based_ld_src_map" Link="User Guide/Loading Data/Native ODBC Based Load - Source Screen.htm" ResolvedId="1116" />
+    <Map Name="RED_DOCO_nativeodbc_based_ld" Link="User Guide/Loading Data/Native ODBC Based Load.htm" ResolvedId="1115" />
+    <Map Name="RED_DOCO_ODBC_based_ld" Link="User Guide/Loading Data/ODBC Based Load.htm" ResolvedId="435" />
+    <Map Name="RED_DOCO_post_ld_procs" Link="User Guide/Loading Data/Post-Load Procedures.htm" ResolvedId="351" />
+    <Map Name="RED_DOCO_rem_view_ext_ORA_dbases_only" Link="User Guide/Loading Data/Remote View Extract - Oracle Databases Only.htm" ResolvedId="426" />
+    <Map Name="RED_DOCO_scrpt_based_load" Link="User Guide/Loading Data/Script based load.htm" ResolvedId="436" />
+    <Map Name="RED_DOCO_ssis_ld_tbl_src_scrn" Link="User Guide/Loading Data/SSIS Load Table Source Screen.htm" ResolvedId="4195" />
+    <Map Name="RED_DOCO_ssis_ldr" Link="User Guide/Loading Data/SSIS Loader.htm" ResolvedId="2158" />
+    <Map Name="RED_DOCO_trblshtng" Link="User Guide/Loading Data/Troubleshooting.htm" ResolvedId="2160" />
+    <Map Name="RED_DOCO_xml_file_load" Link="User Guide/Loading Data/XML File load.htm" ResolvedId="958" />
+    <Map Name="RED_DOCO_dat_src_does_not_match_dw" Link="User Guide/Login Checks/Data Source not match the ODBC DSN.htm" ResolvedId="4235" />
+    <Map Name="RED_DOCO_log_chcks" Link="User Guide/Login Checks/Login Checks.htm" ResolvedId="2734" />
+    <Map Name="RED_DOCO_more_one_conn_dw" Link="User Guide/Login Checks/More connection DWenabled .htm" ResolvedId="4236" />
+    <Map Name="RED_DOCO_ORA_ind_user" Link="User Guide/Login Checks/Oracle Individual User.htm" ResolvedId="4234" />
+    <Map Name="RED_DOCO_add_src_map_objs" Link="User Guide/Multi Source Processing/Adding Source Mapping to Objects.htm" ResolvedId="5176" />
+    <Map Name="RED_DOCO_drag_drop_mult_src_proc" Link="User Guide/Multi Source Processing/Drag and Drop.htm" ResolvedId="1571" />
+    <Map Name="RED_DOCO_exec_upd_procs_schdlr" Link="User Guide/Multi Source Processing/Executing Update Procedures via Scheduler.htm" ResolvedId="5276" />
+    <Map Name="RED_DOCO_gen_upd_procs_src_map_objs" Link="User Guide/Multi Source Processing/Update Procedures_SourceMappingObjects.htm" ResolvedId="5194" />
+    <Map Name="RED_DOCO_glb_nmng_src_map" Link="User Guide/Multi Source Processing/Global Naming of Source Mappings.htm" ResolvedId="5173" />
+    <Map Name="RED_DOCO_indpndnt_exe_upd_procs" Link="User Guide/Multi Source Processing/Independent Execution of Update Procedures.htm" ResolvedId="5175" />
+    <Map Name="RED_DOCO_maint_src_col_maps" Link="User Guide/Multi Source Processing/Maintaining Source Column Mappings.htm" ResolvedId="5188" />
+    <Map Name="RED_DOCO_multi_src_funcs_feats" Link="User Guide/Multi Source Processing/Multi Source Functions and Features.htm" ResolvedId="5168" />
+    <Map Name="RED_DOCO_multi_src_procs" Link="User Guide/Multi Source Processing/Multi Source Processing.htm" ResolvedId="5167" />
+    <Map Name="RED_DOCO_rvrt_non_src_map_obj" Link="User Guide/Multi Source Processing/Reverting to Non Source Mapping Object.htm" ResolvedId="5195" />
+    <Map Name="RED_DOCO_src_map_obj" Link="User Guide/Multi Source Processing/Source Mapping Object.htm" ResolvedId="5169" />
+    <Map Name="RED_DOCO_src_map_tool" Link="User Guide/Multi Source Processing/Source Mapping Tool.htm" ResolvedId="5171" />
+    <Map Name="RED_DOCO_tbl_col_props_multi_src" Link="User Guide/Multi Source Processing/Table Column Properties.htm" ResolvedId="5205" />
+    <Map Name="RED_DOCO_agg_tbls" Link="User Guide/Objects and Windows/Aggregate Tables.htm" ResolvedId="1583" />
+    <Map Name="RED_DOCO_connections" Link="User Guide/Objects and Windows/Connections.htm" ResolvedId="1584" />
+    <Map Name="RED_DOCO_ds_tbls" Link="User Guide/Objects and Windows/Data Store Tables.htm" ResolvedId="1585" />
+    <Map Name="RED_DOCO_dbase_err_messages" Link="User Guide/Objects and Windows/Database Error Messages.htm" ResolvedId="1667" />
+    <Map Name="RED_DOCO_dim_tbls" Link="User Guide/Objects and Windows/Dimension Tables.htm" ResolvedId="1587" />
+    <Map Name="RED_DOCO_3NF_tbls" Link="User Guide/Objects and Windows/EDW 3NF Tables.htm" ResolvedId="1588" />
+    <Map Name="RED_DOCO_exp_mid_pane_output" Link="User Guide/Objects and Windows/Export Middle Pane Output.htm" ResolvedId="3930" />
+    <Map Name="RED_DOCO_exports" Link="User Guide/Objects and Windows/Exports.htm" ResolvedId="1590" />
+    <Map Name="RED_DOCO_fact_tables" Link="User Guide/Objects and Windows/Fact Tables.htm" ResolvedId="1591" />
+    <Map Name="RED_DOCO_find_funct" Link="User Guide/Objects and Windows/Find Function.htm" ResolvedId="4907" />
+    <Map Name="RED_DOCO_indxs" Link="User Guide/Objects and Windows/Indexes.htm" ResolvedId="15933" />
+    <Map Name="RED_DOCO_checkin_checkout" Link="User Guide/Objects and Windows/Object Check-Outs and Check-Ins.htm" ResolvedId="4625" />
+    <Map Name="RED_DOCO_obj_types" Link="User Guide/Objects and Windows/Object Types.htm" ResolvedId="628" />
+    <Map Name="RED_DOCO_objs_and_wins" Link="User Guide/Objects and Windows/Objects and Windows.htm" ResolvedId="627" />
+    <Map Name="RED_DOCO_OLA_cubes" Link="User Guide/Objects and Windows/OLAP Cubes.htm" ResolvedId="15988" />
+    <Map Name="RED_DOCO_OLAP_dims" Link="User Guide/Objects and Windows/OLAP Dimensions.htm" ResolvedId="15999" />
+    <Map Name="RED_DOCO_re_create_dialog" Link="User Guide/Objects and Windows/Re-create Dialog.htm" ResolvedId="4868" />
+    <Map Name="RED_DOCO_scripts" Link="User Guide/Objects and Windows/Scripts.htm" ResolvedId="1602" />
+    <Map Name="RED_DOCO_src_mapping" Link="User Guide/Objects and Windows/Source Mapping.htm" ResolvedId="1603" />
+    <Map Name="RED_DOCO_stage_tbls" Link="User Guide/Objects and Windows/Stage Tables.htm" ResolvedId="16044" />
+    <Map Name="RED_DOCO_wrkng_with_objs" Link="User Guide/Objects and Windows/Working with Objects.htm" ResolvedId="637" />
+    <Map Name="RED_DOCO_add_objs_to_projs" Link="User Guide/Organizing Objects/Adding Objects to Projects.htm" ResolvedId="1655" />
+    <Map Name="RED_DOCO_add_projs_to_grps" Link="User Guide/Organizing Objects/Adding Projects to Groups.htm" ResolvedId="1656" />
+    <Map Name="RED_DOCO_bld_apps_projs_grps" Link="User Guide/Organizing Objects/Building Applications from Projects or Groups.htm" ResolvedId="1608" />
+    <Map Name="RED_DOCO_list_proj_mem_for_objs" Link="User Guide/Organizing Objects/List Project Memberships for Objects.htm" ResolvedId="4757" />
+    <Map Name="RED_DOCO_movng_proj_within_grps" Link="User Guide/Organizing Objects/Moving Projects within Groups.htm" ResolvedId="2081" />
+    <Map Name="RED_DOCO_orgnzng_objs" Link="User Guide/Organizing Objects/Organizing Objects.htm" ResolvedId="629" />
+    <Map Name="RED_DOCO_rmvng_objs_fr_projs" Link="User Guide/Organizing Objects/Removing Objects from Projects.htm" ResolvedId="1658" />
+    <Map Name="RED_DOCO_remv_proj_fr_grps" Link="User Guide/Organizing Objects/Removing Projects from Groups.htm" ResolvedId="1657" />
+    <Map Name="RED_DOCO_usng_proj_obj_maint" Link="User Guide/Organizing Objects/Using Project Object Maintenance.htm" ResolvedId="1659" />
+    <Map Name="RED_DOCO_proc_syntax" Link="User Guide/Procedures and Scripts/Procedure Syntax.htm" ResolvedId="535" />
+    <Map Name="RED_DOCO_schdlg_scrpts" Link="User Guide/Procedures and Scripts/Scheduling Scripts.htm" ResolvedId="3807" />
+    <Map Name="RED_DOCO_scrpt_edtng" Link="User Guide/Procedures and Scripts/Script Editing.htm" ResolvedId="532" />
+    <Map Name="RED_DOCO_scrpt_gen_Unix_ORA" Link="User Guide/Procedures and Scripts/Script Generation UNIX Oracle.htm" ResolvedId="962" />
+    <Map Name="RED_DOCO_all_col_trans" Link="User Guide/Reports/All Column Transformations.htm" ResolvedId="2173" />
+    <Map Name="RED_DOCO_col_rpts" Link="User Guide/Reports/Column Reports.htm" ResolvedId="2166" />
+    <Map Name="RED_DOCO_col_trk_bck" Link="User Guide/Reports/Column Track Back.htm" ResolvedId="2175" />
+    <Map Name="RED_DOCO_col_trk_fwd" Link="User Guide/Reports/Column Track Forward.htm" ResolvedId="2637" />
+    <Map Name="RED_DOCO_cols_without_comms" Link="User Guide/Reports/Columns without Comments.htm" ResolvedId="2172" />
+    <Map Name="RED_DOCO_cust_procs" Link="User Guide/Reports/Custom Procedures.htm" ResolvedId="2181" />
+    <Map Name="RED_DOCO_dim_fact_matrix" Link="User Guide/Reports/Dimension Fact Matrix.htm" ResolvedId="2163" />
+    <Map Name="RED_DOCO_dim_views_spec" Link="User Guide/Reports/Dimension Views of a Specified.htm" ResolvedId="2165" />
+    <Map Name="RED_DOCO_exp_obj_conn" Link="User Guide/Reports/Export Objects by Connection.htm" ResolvedId="3468" />
+    <Map Name="RED_DOCO_ext_src_tbl_files" Link="User Guide/Reports/External Source Table files.htm" ResolvedId="2179" />
+    <Map Name="RED_DOCO_fragmntn" Link="User Guide/Reports/Fragmentation.htm" ResolvedId="2641" />
+    <Map Name="RED_DOCO_indx_rpts" Link="User Guide/Reports/Index Reports.htm" ResolvedId="2169" />
+    <Map Name="RED_DOCO_job_prfrmnce_hist" Link="User Guide/Reports/Job Performance History.htm" ResolvedId="2191" />
+    <Map Name="RED_DOCO_job_rpts" Link="User Guide/Reports/Job Reports.htm" ResolvedId="2171" />
+    <Map Name="RED_DOCO_jobs_with_obj" Link="User Guide/Reports/Jobs with an Object.htm" ResolvedId="2188" />
+    <Map Name="RED_DOCO_ld_tbls_conn" Link="User Guide/Reports/Load Tables by Connection.htm" ResolvedId="2177" />
+    <Map Name="RED_DOCO_ld_imp_objs" Link="User Guide/Reports/Loaded or Imported Objects.htm" ResolvedId="2186" />
+    <Map Name="RED_DOCO_mod_indxs" Link="User Guide/Reports/Modified Indexes.htm" ResolvedId="2182" />
+    <Map Name="RED_DOCO_mod_objs_excl_indxs" Link="User Guide/Reports/Modified Objects excluding indexes.htm" ResolvedId="2184" />
+    <Map Name="RED_DOCO_obj_prfrmce_hist" Link="User Guide/Reports/Object Performance History.htm" ResolvedId="2190" />
+    <Map Name="RED_DOCO_OLAP_dim_cube_matrix" Link="User Guide/Reports/OLAP Dimension Cube Matrix.htm" ResolvedId="2164" />
+    <Map Name="RED_DOCO_oprtnl_rprts" Link="User Guide/Reports/Operational Reports.htm" ResolvedId="2640" />
+    <Map Name="RED_DOCO_proc_rprts" Link="User Guide/Reports/Procedure Reports.htm" ResolvedId="2168" />
+    <Map Name="RED_DOCO_reusable_col_trans" Link="User Guide/Reports/Re Usable Column Transformations.htm" ResolvedId="2174" />
+    <Map Name="RED_DOCO_recs_failed_dim" Link="User Guide/Reports/Records that failed a Dimension.htm" ResolvedId="2178" />
+    <Map Name="RED_DOCO_reports" Link="User Guide/Reports/Reports.htm" ResolvedId="2193" />
+    <Map Name="RED_DOCO_tbl_rprts" Link="User Guide/Reports/Table Reports.htm" ResolvedId="2167" />
+    <Map Name="RED_DOCO_tbls_without_comms" Link="User Guide/Reports/Tables without Comments.htm" ResolvedId="2176" />
+    <Map Name="RED_DOCO_task_prfrmnce_hist" Link="User Guide/Reports/Task Performance History.htm" ResolvedId="2192" />
+    <Map Name="RED_DOCO_tasks_of_job" Link="User Guide/Reports/Tasks of a Job.htm" ResolvedId="2189" />
+    <Map Name="RED_DOCO_imp_data_mdl" Link="User Guide/Retrofitting/Importing a Data Model.htm" ResolvedId="1371" />
+    <Map Name="RED_DOCO_migrtng_dw_dbase_pltfrm" Link="User Guide/Retrofitting/Migrating the Data Warehouse Database Platform.htm" ResolvedId="1372" />
+    <Map Name="RED_DOCO_retrgtng_src_tbls" Link="User Guide/Retrofitting/Re Targeting Source Tables.htm" ResolvedId="1385" />
+    <Map Name="RED_DOCO_retro_col_props_scrn" Link="User Guide/Retrofitting/Retro Column Properties Screen.htm" ResolvedId="1374" />
+    <Map Name="RED_DOCO_retro_col_props" Link="User Guide/Retrofitting/Retro Column Properties.htm" ResolvedId="1375" />
+    <Map Name="RED_DOCO_retro_col_trans" Link="User Guide/Retrofitting/Retro Column Transformations.htm" ResolvedId="3135" />
+    <Map Name="RED_DOCO_retrofitting" Link="User Guide/Retrofitting/Retrofitting.htm" ResolvedId="1361" />
+    <Map Name="RED_DOCO_abrt_job" Link="User Guide/Scheduler/Aborting a Job.htm" ResolvedId="3016" />
+    <Map Name="RED_DOCO_auto" Link="User Guide/Scheduler/Auto Menu.htm" ResolvedId="4662" />
+    <Map Name="RED_DOCO_crtng_job" Link="User Guide/Scheduler/Creating a Job.htm" ResolvedId="3184" />
+    <Map Name="RED_DOCO_crtng_app_fr_job" Link="User Guide/Scheduler/Creating an Application from a Job.htm" ResolvedId="3171" />
+    <Map Name="RED_DOCO_dbase_mntrng" Link="User Guide/Scheduler/Database Monitoring.htm" ResolvedId="846" />
+    <Map Name="RED_DOCO_del_job" Link="User Guide/Scheduler/Deleting a Job.htm" ResolvedId="3008" />
+    <Map Name="RED_DOCO_del_job_logs" Link="User Guide/Scheduler/Deleting Job Logs.htm" ResolvedId="885" />
+    <Map Name="RED_DOCO_edtng_job" Link="User Guide/Scheduler/Editing a Job.htm" ResolvedId="379" />
+    <Map Name="RED_DOCO_edtng_task_dpndncs" Link="User Guide/Scheduler/Editing Task Dependencies.htm" ResolvedId="3012" />
+    <Map Name="RED_DOCO_edtng_tasks_job" Link="User Guide/Scheduler/Editing Tasks in a Job.htm" ResolvedId="3011" />
+    <Map Name="RED_DOCO_eff_abrtng_job" Link="User Guide/Scheduler/Effects of Aborting a Job.htm" ResolvedId="4739" />
+    <Map Name="RED_DOCO_hltng_job" Link="User Guide/Scheduler/Halting a Job.htm" ResolvedId="3015" />
+    <Map Name="RED_DOCO_insrtng_copy_job" Link="User Guide/Scheduler/Inserting a Copy of a Job.htm" ResolvedId="3013" />
+    <Map Name="RED_DOCO_job_mntrng" Link="User Guide/Scheduler/Job Monitoring.htm" ResolvedId="847" />
+    <Map Name="RED_DOCO_mntrng_dbase_jobs" Link="User Guide/Scheduler/Monitoring the Database and Jobs.htm" ResolvedId="845" />
+    <Map Name="RED_DOCO_reset_cols_job_task" Link="User Guide/Scheduler/Reset Columns in Job and Task.htm" ResolvedId="2871" />
+    <Map Name="RED_DOCO_rstrtng_job" Link="User Guide/Scheduler/Restarting a Job.htm" ResolvedId="3017" />
+    <Map Name="RED_DOCO_schdlr_options" Link="User Guide/Scheduler/Scheduler Options.htm" ResolvedId="369" />
+    <Map Name="RED_DOCO_schdlr_states" Link="User Guide/Scheduler/Scheduler States.htm" ResolvedId="370" />
+    <Map Name="RED_DOCO_schdlr" Link="User Guide/Scheduler/Scheduler.htm" ResolvedId="140" />
+    <Map Name="RED_DOCO_schdlng_job" Link="User Guide/Scheduler/Scheduling a Job.htm" ResolvedId="371" />
+    <Map Name="RED_DOCO_schdlng_red_host_scrpt_3D" Link="User Guide/Scheduler/Scheduling a RED Host Script from 3D.htm" ResolvedId="3954" />
+    <Map Name="RED_DOCO_select_job_report_flds" Link="User Guide/Scheduler/Select Job Report Fields.htm" ResolvedId="4660" />
+    <Map Name="RED_DOCO_show_dpndncs_diagram" Link="User Guide/Scheduler/Show Dependencies Diagram.htm" ResolvedId="4665" />
+    <Map Name="RED_DOCO_SQL_to_rtrn_schdlr_stat" Link="User Guide/Scheduler/SQL to return Scheduler Status.htm" ResolvedId="2379" />
+    <Map Name="RED_DOCO_stnd_alone_schdlr_maint" Link="User Guide/Scheduler/Stand Alone Scheduler Maintenance.htm" ResolvedId="586" />
+    <Map Name="RED_DOCO_start_job" Link="User Guide/Scheduler/Starting a Job.htm" ResolvedId="3014" />
+    <Map Name="RED_DOCO_stop_linux_unix_schdlr" Link="User Guide/Scheduler/Stopping a Linux UNIX Scheduler.htm" ResolvedId="4010" />
+    <Map Name="RED_DOCO_schdlr_tools" Link="User Guide/Scheduler/Tools.htm" ResolvedId="4661" />
+    <Map Name="RED_DOCO_wrkng_jobs" Link="User Guide/Scheduler/Working with Jobs.htm" ResolvedId="3002" />
+    <Map Name="RED_DOCO_bldng_stg_tbl" Link="User Guide/Staging/Building the Stage Table.htm" ResolvedId="540" />
+    <Map Name="RED_DOCO_gen_stg_upd_procs" Link="User Guide/Staging/Gen the Stage Update Proc.htm" ResolvedId="542" />
+    <Map Name="RED_DOCO_set_mrg_proc" Link="User Guide/Staging/Set Merge Procedure.htm" ResolvedId="2787" />
+    <Map Name="RED_DOCO_stg_tbl_col_prop" Link="User Guide/Staging/Stage Table Col Props.htm" ResolvedId="569" />
+    <Map Name="RED_DOCO_stg_tbl_col_trans" Link="User Guide/Staging/Stage Table Col Transforms.htm" ResolvedId="998" />
+    <Map Name="RED_DOCO_staging" Link="User Guide/Staging/Staging.htm" ResolvedId="136" />
+    <Map Name="RED_DOCO_tuning_staging_upd_procs" Link="User Guide/Staging/Tuning  Stage Update Proc.htm" ResolvedId="518" />
+    <Map Name="RED_DOCO_def_col_comms" Link="User Guide/Table and Column Comments/Defining Column Comments.htm" ResolvedId="5219" />
+    <Map Name="RED_DOCO_def_tbl_comms" Link="User Guide/Table and Column Comments/Defining Table Comments.htm" ResolvedId="5216" />
+    <Map Name="RED_DOCO_exp_col_comms" Link="User Guide/Table and Column Comments/Exporting Column Comments.htm" ResolvedId="5220" />
+    <Map Name="RED_DOCO_exp_tbl_comms" Link="User Guide/Table and Column Comments/Exporting Table Comments.htm" ResolvedId="5217" />
+    <Map Name="RED_DOCO_imp_comms_ext_src" Link="User Guide/Table and Column Comments/Importing Comments from an External Source.htm" ResolvedId="5222" />
+    <Map Name="RED_DOCO_ldng_col_comments" Link="User Guide/Table and Column Comments/Loading Column Comments.htm" ResolvedId="5221" />
+    <Map Name="RED_DOCO_ldng_tbl_comments" Link="User Guide/Table and Column Comments/Loading Table Comments.htm" ResolvedId="5218" />
+    <Map Name="RED_DOCO_tbl_col_comments" Link="User Guide/Table and Column Comments/Table and Column Comments.htm" ResolvedId="5215" />
+    <Map Name="RED_DOCO_view_imp_exp" Link="User Guide/Table and Column Comments/Viewing the Import Export.htm" ResolvedId="5223" />
+    <Map Name="RED_DOCO_bulk_tbl_storage_change" Link="User Guide/Table Properties/Bulk Table Storage Change.htm" ResolvedId="4401" />
+    <Map Name="RED_DOCO_dist_tbls_multi_SQL_srvr_dbase" Link="User Guide/Table Properties/Distributing Tables across Multiple SQL Server Databases.htm" ResolvedId="4943" />
+    <Map Name="RED_DOCO_doc_flds_scr" Link="User Guide/Table Properties/Documentation Fields Screen.htm" ResolvedId="1422" />
+    <Map Name="RED_DOCO_doc_flds" Link="User Guide/Table Properties/Documentation Fields.htm" ResolvedId="1316" />
+    <Map Name="RED_DOCO_notes" Link="User Guide/Table Properties/Notes.htm" ResolvedId="1311" />
+    <Map Name="RED_DOCO_ovr_create_ddl" Link="User Guide/Table Properties/Override Create DDL.htm" ResolvedId="4068" />
+    <Map Name="RED_DOCO_props" Link="User Guide/Table Properties/Properties.htm" ResolvedId="4881" />
+    <Map Name="RED_DOCO_rbld_upd_procs" Link="User Guide/Table Properties/Rebuilding Update Procedures.htm" ResolvedId="5066" />
+    <Map Name="RED_DOCO_setup_multi_SQL_dbase" Link="User Guide/Table Properties/Setting up Multiple SQL Databases.htm" ResolvedId="4944" />
+    <Map Name="RED_DOCO_tbl_props_src" Link="User Guide/Table Properties/Source.htm" ResolvedId="4884" />
+    <Map Name="RED_DOCO_stats_DB2" Link="User Guide/Table Properties/Statistics in DB2.htm" ResolvedId="1442" />
+    <Map Name="RED_DOCO_stats_scr" Link="User Guide/Table Properties/Statistics Screen.htm" ResolvedId="1443" />
+    <Map Name="RED_DOCO_storage" Link="User Guide/Table Properties/Storage.htm" ResolvedId="269" />
+    <Map Name="RED_DOCO_tbl_ext_props" Link="User Guide/Table Properties/Table Extended Properties.htm" ResolvedId="5084" />
+    <Map Name="RED_DOCO_tbl_props" Link="User Guide/Table Properties/Table Properties.htm" ResolvedId="1421" />
+    <Map Name="RED_DOCO_tbl_stor_scr_DB2" Link="User Guide/Table Properties/Table Storage Screen DB2.htm" ResolvedId="1418" />
+    <Map Name="RED_DOCO_tbl_stor_scr_grnplm" Link="User Guide/Table Properties/Table Storage Screen Greenplum.htm" ResolvedId="4152" />
+    <Map Name="RED_DOCO_tbl_stor_scr_Net" Link="User Guide/Table Properties/Table Storage Screen Netezza.htm" ResolvedId="4181" />
+    <Map Name="RED_DOCO_tbl_stor_scr_ORA" Link="User Guide/Table Properties/Table Storage Screen Oracle.htm" ResolvedId="271" />
+    <Map Name="RED_DOCO_tbl_stor_scr_PDW" Link="User Guide/Table Properties/Table Storage Screen PDW.htm" ResolvedId="4182" />
+    <Map Name="RED_DOCO_tbl_stor_scr_SQL_srvr" Link="User Guide/Table Properties/Table Storage Screen SQL Server.htm" ResolvedId="1417" />
+    <Map Name="RED_DOCO_tbl_stor_scr_tabular" Link="User Guide/Table Properties/Table Storage Screen Tabular.htm" ResolvedId="4788" />
+    <Map Name="RED_DOCO_eval_api_outline_temp" Link="User Guide/Templates/Evaltng API Outline Temp.htm" ResolvedId="4900" />
+    <Map Name="RED_DOCO_scrpt_temps_cust_dbase_tbl_objs" Link="User Guide/Templates/Script Temp Custom Dbase Tbl Objs.htm" ResolvedId="5126" />
+    <Map Name="RED_DOCO_temp_editor" Link="User Guide/Templates/Template Editor.htm" ResolvedId="4897" />
+    <Map Name="RED_DOCO_temp_props" Link="User Guide/Templates/Template Properties.htm" ResolvedId="4814" />
+    <Map Name="RED_DOCO_temp_usage" Link="User Guide/Templates/Template Usage.htm" ResolvedId="4898" />
+    <Map Name="RED_DOCO_temps" Link="User Guide/Templates/Templates.htm" ResolvedId="4812" />
+    <Map Name="RED_DOCO_win_ps_temps" Link="User Guide/Templates/Windows PowerShell Templates.htm" ResolvedId="4936" />
+    <Map Name="RED_DOCO_aftr_ld_trans" Link="User Guide/Transformations/After Load Transforms.htm" ResolvedId="350" />
+    <Map Name="RED_DOCO_app_changes_dpndnt_trans" Link="User Guide/Transformations/Apply Chngs to Dep Transforms.htm" ResolvedId="1098" />
+    <Map Name="RED_DOCO_chng_reusable_trans" Link="User Guide/Transformations/Changing Reusable Transform.htm" ResolvedId="1099" />
+    <Map Name="RED_DOCO_col_trans_props" Link="User Guide/Transformations/Col Transform Props.htm" ResolvedId="1096" />
+    <Map Name="RED_DOCO_col_trans" Link="User Guide/Transformations/Column Transformations.htm" ResolvedId="1094" />
+    <Map Name="RED_DOCO_com_reusable_trans" Link="User Guide/Transformations/Comp Reusable Transform.htm" ResolvedId="1100" />
+    <Map Name="RED_DOCO_crtng_new_reusable_trans" Link="User Guide/Transformations/Create New Reusable Transform.htm" ResolvedId="1092" />
+    <Map Name="RED_DOCO_dbase_funcs" Link="User Guide/Transformations/Database Functions.htm" ResolvedId="1108" />
+    <Map Name="RED_DOCO_dbase_lnk_during_ld_trans" Link="User Guide/Transformations/Dbase Link Load Transforms.htm" ResolvedId="345" />
+    <Map Name="RED_DOCO_def_trans_mdl" Link="User Guide/Transformations/Define the Transform Model.htm" ResolvedId="1101" />
+    <Map Name="RED_DOCO_ent_reusable_trans_meta" Link="User Guide/Transformations/Enter Reusable Transform Meta.htm" ResolvedId="1102" />
+    <Map Name="RED_DOCO_file_drng_ld_trans" Link="User Guide/Transformations/File During Load Transforms.htm" ResolvedId="349" />
+    <Map Name="RED_DOCO_ld_tbl_col_trans" Link="User Guide/Transformations/Load Tbl Col Transforms.htm" ResolvedId="1109" />
+    <Map Name="RED_DOCO_reusable_trans" Link="User Guide/Transformations/Re-usable Transforms.htm" ResolvedId="1106" />
+    <Map Name="RED_DOCO_spcfy_nam_trans" Link="User Guide/Transformations/Specify Name of Transform.htm" ResolvedId="1104" />
+    <Map Name="RED_DOCO_trans" Link="User Guide/Transformations/Transformations.htm" ResolvedId="1105" />
+    <Map Name="RED_DOCO_using_reusable_trans" Link="User Guide/Transformations/Using Reusable Transforms.htm" ResolvedId="1107" />
+    <Map Name="RED_DOCO_comp_meta_indxs_dbase" Link="User Guide/Validate/Comp Meta Indexes to Dbase.htm" ResolvedId="2208" />
+    <Map Name="RED_DOCO_comp_meta_repo_to_another" Link="User Guide/Validate/Comp Meta Repository to another.htm" ResolvedId="2207" />
+    <Map Name="RED_DOCO_list_dbase_tbls_meta" Link="User Guide/Validate/List Dbase Tbls not in Meta.htm" ResolvedId="2204" />
+    <Map Name="RED_DOCO_list_dup_bus_key_cols" Link="User Guide/Validate/List Dupli Buss Key Cols.htm" ResolvedId="2210" />
+    <Map Name="RED_DOCO_list_meta_tbl_not_in_dbase" Link="User Guide/Validate/List Meta Tbls not in Dbase.htm" ResolvedId="2203" />
+    <Map Name="RED_DOCO_list_procs_not_rel_tbl" Link="User Guide/Validate/List Proces not rel to Tbl.htm" ResolvedId="2206" />
+    <Map Name="RED_DOCO_list_tbls_no_rel_procs_scripts" Link="User Guide/Validate/List Tbls with no rel Procs or Scrpts.htm" ResolvedId="2205" />
+    <Map Name="RED_DOCO_qry_dw_objs" Link="User Guide/Validate/Query Data Warehouse Objects.htm" ResolvedId="2211" />
+    <Map Name="RED_DOCO_vldt_indx_stat" Link="User Guide/Validate/Validate Index Status.htm" ResolvedId="2201" />
+    <Map Name="RED_DOCO_vldt_load_tbl_stat" Link="User Guide/Validate/Validate Load Table Status.htm" ResolvedId="2200" />
+    <Map Name="RED_DOCO_vldt_meta" Link="User Guide/Validate/Validate Meta data.htm" ResolvedId="2197" />
+    <Map Name="RED_DOCO_vldt_proc_stat" Link="User Guide/Validate/Validate Procedure Status.htm" ResolvedId="2202" />
+    <Map Name="RED_DOCO_vldt_tbl_create_status" Link="User Guide/Validate/Validate Table Create Status.htm" ResolvedId="2199" />
+    <Map Name="RED_DOCO_vldt_wrkflw_dat" Link="User Guide/Validate/Validate Workflow Data.htm" ResolvedId="2198" />
+    <Map Name="RED_DOCO_vldt" Link="User Guide/Validate/Validate.htm" ResolvedId="2196" />
+    <Map Name="RED_DOCO_cust_view" Link="User Guide/Views/Creating a Custom View.htm" ResolvedId="1001" />
+    <Map Name="RED_DOCO_crtng_dim_view" Link="User Guide/Views/Creating a Dimension View.htm" ResolvedId="994" />
+    <Map Name="RED_DOCO_dim_view_lang_map" Link="User Guide/Views/Dimension View Language Mapping.htm" ResolvedId="2000" />
+    <Map Name="RED_DOCO_non_dim_obj_views" Link="User Guide/Views/Non Dimension Object Views.htm" ResolvedId="995" />
+    <Map Name="RED_DOCO_view_aliases" Link="User Guide/Views/View Aliases.htm" ResolvedId="3454" />
+    <Map Name="RED_DOCO_view_col_remap" Link="User Guide/Views/View Column Re mapping.htm" ResolvedId="1336" />
+    <Map Name="RED_DOCO_views" Link="User Guide/Views/Views.htm" ResolvedId="993" />
+    <Map Name="RED_DOCO_bldr_win" Link="User Guide/Windows_Panes/Builder Window.htm" ResolvedId="641" />
+    <Map Name="RED_DOCO_data_store_tbls" Link="User Guide/Windows_Panes/Stage Tables.htm" ResolvedId="1810" />
+    <Map Name="RED_DOCO_diag_win" Link="User Guide/Windows_Panes/Diagram Window.htm" ResolvedId="747" />
+    <Map Name="RED_DOCO_proc_edtr_win" Link="User Guide/Windows_Panes/Procedure Editor Window.htm" ResolvedId="643" />
+    <Map Name="RED_DOCO_sched_win" Link="User Guide/Windows_Panes/Scheduler Window.htm" ResolvedId="642" />
+    <Map Name="RED_DOCO_wins_panes" Link="User Guide/Windows_Panes/Windows and Panes.htm" ResolvedId="630" />
+    <Map Name="RED_DOCO_adm_v_views" Link="User Guide/Ws_admin_v Views/Ws_admin_v Views.htm" ResolvedId="2845" />
+    <Map Name="RED_DOCO_adm_v_audit" Link="User Guide/Ws_admin_v Views/Ws_admin_v_audit.htm" ResolvedId="2846" />
+    <Map Name="RED_DOCO_adm_v_dim_col" Link="User Guide/Ws_admin_v Views/Ws_admin_v_dim_col.htm" ResolvedId="2847" />
+    <Map Name="RED_DOCO_adm_v_error" Link="User Guide/Ws_admin_v Views/Ws_admin_v_error.htm" ResolvedId="2848" />
+    <Map Name="RED_DOCO_adm_v_fact_col" Link="User Guide/Ws_admin_v Views/Ws_admin_v_fact_col.htm" ResolvedId="2849" />
+    <Map Name="RED_DOCO_adm_v_fact_join" Link="User Guide/Ws_admin_v Views/Ws_admin_v_fact_join.htm" ResolvedId="2850" />
+    <Map Name="RED_DOCO_adm_v_sched" Link="User Guide/Ws_admin_v Views/Ws_admin_v_sched.htm" ResolvedId="2851" />
+    <Map Name="RED_DOCO_adm_v_task" Link="User Guide/Ws_admin_v Views/Ws_admin_v_task.htm" ResolvedId="2852" />
+    <Map Name="RED_DOCO_callable_rtns_load_change_SQL_srvr" Link="User Guide/Callable Routines/Load_Change_SQL Server.htm" ResolvedId="3536" />
+    <Map Name="RED_DOCO_callable_rtns_load_change_Tera" Link="User Guide/Callable Routines/Load_Change_Teradata.htm" ResolvedId="3537" />
+    <Map Name="RED_DOCO_callable_rtns_logs_date_DB2" Link="User Guide/Callable Routines/Logs_By_Date_DB2.htm" ResolvedId="3507" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamwrite" Link="User Guide/Callable Routines/WsParameterWrite.htm" ResolvedId="299" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamwrite_DB2" Link="User Guide/Callable Routines/WsParameterWrite_DB2.htm" ResolvedId="3565" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamwrite_ORA" Link="User Guide/Callable Routines/WsParameterWrite_Oracle.htm" ResolvedId="3564" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamwrite_SQL_srvr" Link="User Guide/Callable Routines/WsParameterWrite_SQL Server.htm" ResolvedId="3562" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamwrite_Tera" Link="User Guide/Callable Routines/WsParameterWrite_Teradata.htm" ResolvedId="3563" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkaudit" Link="User Guide/Callable Routines/WsWrkAudit.htm" ResolvedId="297" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamreadG_Tera" Link="User Guide/Callable Routines/WsParameterReadG_Teradata.htm" ResolvedId="3554" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamreadG_SQL_srvr" Link="User Guide/Callable Routines/WsParameterReadG_SQL Server.htm" ResolvedId="3557" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamreadG_ORA" Link="User Guide/Callable Routines/WsParameterReadG_Oracle.htm" ResolvedId="3555" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamreadF" Link="User Guide/Callable Routines/WsParameterReadF.htm" ResolvedId="3552" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamreadF_SQL_srvr" Link="User Guide/Callable Routines/WsParameterReadF_SQL Server.htm" ResolvedId="3553" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamreadG" Link="User Guide/Callable Routines/WsParameterReadG.htm" ResolvedId="978" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamreadG_DB2" Link="User Guide/Callable Routines/WsParameterReadG_DB2.htm" ResolvedId="3556" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkaudit_DB2" Link="User Guide/Callable Routines/WsWrkAudit_DB2.htm" ResolvedId="3569" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkauditbulk_Tera" Link="User Guide/Callable Routines/WsWrkAuditBulk_Teradata.htm" ResolvedId="3571" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerror" Link="User Guide/Callable Routines/WsWrkError.htm" ResolvedId="298" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerror_DB2" Link="User Guide/Callable Routines/WsWrkError_DB2.htm" ResolvedId="3577" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerror_ORA" Link="User Guide/Callable Routines/WsWrkError_Oracle.htm" ResolvedId="3576" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkauditbulk_SQL_srvr" Link="User Guide/Callable Routines/WsWrkAuditBulk_SQL Server.htm" ResolvedId="3570" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkauditbulk_ORA" Link="User Guide/Callable Routines/WsWrkAuditBulk_Oracle.htm" ResolvedId="3572" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkauditbulk_DB2" Link="User Guide/Callable Routines/WsWrkAuditBulk_DB2.htm" ResolvedId="3573" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkaudit_ORA" Link="User Guide/Callable Routines/WsWrkAudit_Oracle.htm" ResolvedId="3568" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkaudit_SQL_srvr" Link="User Guide/Callable Routines/WsWrkAudit_SQL Server.htm" ResolvedId="3566" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkaudit_Tera" Link="User Guide/Callable Routines/WsWrkAudit_Teradata.htm" ResolvedId="3567" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkauditbulk" Link="User Guide/Callable Routines/WsWrkAuditBulk.htm" ResolvedId="303" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamread_Tera" Link="User Guide/Callable Routines/WsParameterRead_Teradata.htm" ResolvedId="3549" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamread_SQL" Link="User Guide/Callable Routines/WsParameterRead_SQL.htm" ResolvedId="3548" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamread_ORA" Link="User Guide/Callable Routines/WsParameterRead_Oracle.htm" ResolvedId="3550" />
+    <Map Name="RED_DOCO_callable_rtns_logs_date_ORA" Link="User Guide/Callable Routines/Logs_By_Date_Oracle.htm" ResolvedId="3506" />
+    <Map Name="RED_DOCO_callable_rtns_logs_date_SQL_srvr" Link="User Guide/Callable Routines/Logs_By_Date_SQL Server.htm" ResolvedId="3504" />
+    <Map Name="RED_DOCO_callable_rtns_logs_date_Tera" Link="User Guide/Callable Routines/Logs_By_Date_Teradata.htm" ResolvedId="3505" />
+    <Map Name="RED_DOCO_callable_rtns_names_qlfr" Link="User Guide/Callable Routines/Names Qualifier.htm" ResolvedId="3474" />
+    <Map Name="RED_DOCO_callable_rtns_job_stat_SQL_srvr" Link="User Guide/Callable Routines/Job_Status_SQL Server.htm" ResolvedId="3532" />
+    <Map Name="RED_DOCO_callable_rtns_job_stat_Tera" Link="User Guide/Callable Routines/Job_Status_Teradata.htm" ResolvedId="3533" />
+    <Map Name="RED_DOCO_callable_rtns_load_change_DB2" Link="User Guide/Callable Routines/Load_Change_DB2.htm" ResolvedId="3539" />
+    <Map Name="RED_DOCO_callable_rtns_load_change_ORA" Link="User Guide/Callable Routines/Load_Change_Oracle.htm" ResolvedId="3538" />
+    <Map Name="RED_DOCO_callable_rtns_per_RDBMS" Link="User Guide/Callable Routines/Callable Routines per RDBMS.htm" ResolvedId="3473" />
+    <Map Name="RED_DOCO_callable_rtns_sched_DB2" Link="User Guide/Callable Routines/Schedule_DB2.htm" ResolvedId="3531" />
+    <Map Name="RED_DOCO_callable_rtns_sched_ORA" Link="User Guide/Callable Routines/Schedule_Oracle.htm" ResolvedId="3530" />
+    <Map Name="RED_DOCO_callable_rtns_ws_job_clr_logs" Link="User Guide/Callable Routines/Ws_Job_Clear_Logs.htm" ResolvedId="899" />
+    <Map Name="RED_DOCO_callable_rtns_ws_job_clr_logs_date" Link="User Guide/Callable Routines/Ws_Job_Clear_Logs_By_Date.htm" ResolvedId="1040" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamread" Link="User Guide/Callable Routines/WsParameterRead.htm" ResolvedId="300" />
+    <Map Name="RED_DOCO_callable_rtns_wsparamread_DB2" Link="User Guide/Callable Routines/WsParameterRead_DB2.htm" ResolvedId="3551" />
+    <Map Name="RED_DOCO_callable_rtns_ws_job_clr_archive" Link="User Guide/Callable Routines/Ws_Job_Clear_Archive.htm" ResolvedId="1077" />
+    <Map Name="RED_DOCO_callable_rtns_ws_job_abrt" Link="User Guide/Callable Routines/Ws_Job_Abort.htm" ResolvedId="3490" />
+    <Map Name="RED_DOCO_callable_rtns_sched_SQL_srvr" Link="User Guide/Callable Routines/Schedule_SQL Server.htm" ResolvedId="3528" />
+    <Map Name="RED_DOCO_callable_rtns_sched_Tera" Link="User Guide/Callable Routines/Schedule_Teradata.htm" ResolvedId="3529" />
+    <Map Name="RED_DOCO_callable_rtns_ws_api_glos" Link="User Guide/Callable Routines/Ws_Api_Glossary.htm" ResolvedId="724" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerror_SQL_srvr" Link="User Guide/Callable Routines/WsWrkError_SQL Server.htm" ResolvedId="3574" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerror_Tera" Link="User Guide/Callable Routines/WsWrkError_Teradata.htm" ResolvedId="3575" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerrorbulk" Link="User Guide/Callable Routines/WsWrkErrorBulk.htm" ResolvedId="302" />
+    <Map Name="RED_DOCO_callable_rtns_ws_conn_rplc" Link="User Guide/Callable Routines/Ws_Connect_Replace.htm" ResolvedId="1033" />
+    <Map Name="RED_DOCO_callable_rtns_job_stat_ORA" Link="User Guide/Callable Routines/Job_Status_Oracle.htm" ResolvedId="3534" />
+    <Map Name="RED_DOCO_callable_rtns_job_stat_DB2" Link="User Guide/Callable Routines/Job_Status_DB2.htm" ResolvedId="3535" />
+    <Map Name="RED_DOCO_callable_rtns_job_restart_Tera" Link="User Guide/Callable Routines/Job_Restart_Teradata.htm" ResolvedId="3525" />
+    <Map Name="RED_DOCO_callable_rtns_job_restart_ORA" Link="User Guide/Callable Routines/Job_Restart_Oracle.htm" ResolvedId="3526" />
+    <Map Name="RED_DOCO_callable_rtns_job_restart_DB2" Link="User Guide/Callable Routines/Job_Restart_DB2.htm" ResolvedId="3527" />
+    <Map Name="RED_DOCO_callable_rtns_job_rel_Tera" Link="User Guide/Callable Routines/Job_Release_Teradata.htm" ResolvedId="3521" />
+    <Map Name="RED_DOCO_callable_rtns_job_rel_SQL_srvr" Link="User Guide/Callable Routines/Job_Release_SQL Server.htm" ResolvedId="3520" />
+    <Map Name="RED_DOCO_callable_rtns_job_rel_ORA" Link="User Guide/Callable Routines/Job_Release_Oracle.htm" ResolvedId="3522" />
+    <Map Name="RED_DOCO_callable_rtns_job_rel_DB2" Link="User Guide/Callable Routines/Job_Release_DB2.htm" ResolvedId="3523" />
+    <Map Name="RED_DOCO_callable_rtns_job_dep_Tera" Link="User Guide/Callable Routines/Job_Dependency_Teradata.htm" ResolvedId="3517" />
+    <Map Name="RED_DOCO_callable_rtns_job_dep_SQL_srver" Link="User Guide/Callable Routines/Job_Dependency_SQL Server.htm" ResolvedId="3516" />
+    <Map Name="RED_DOCO_callable_rtns_job_dep_ORA" Link="User Guide/Callable Routines/Job_Dependency_Oracle.htm" ResolvedId="3518" />
+    <Map Name="RED_DOCO_callable_rtns_job_dep_DB2" Link="User Guide/Callable Routines/Job_Dependency_DB2.htm" ResolvedId="3519" />
+    <Map Name="RED_DOCO_callable_rtns_job_create_Tera" Link="User Guide/Callable Routines/Job_Create_Teradata.htm" ResolvedId="3509" />
+    <Map Name="RED_DOCO_callable_rtns_job_create_SQL_srvr" Link="User Guide/Callable Routines/Job_Create_SQL Server.htm" ResolvedId="3508" />
+    <Map Name="RED_DOCO_callable_rtns_job_create_ORA" Link="User Guide/Callable Routines/Job_Create_Oracle.htm" ResolvedId="3510" />
+    <Map Name="RED_DOCO_callable_rtns_job_create_DB2" Link="User Guide/Callable Routines/Job_Create_DB2.htm" ResolvedId="3511" />
+    <Map Name="RED_DOCO_callable_rtns_invctn_via_ODBC" Link="User Guide/Callable Routines/Invocation via ODBC.htm" ResolvedId="3479" />
+    <Map Name="RED_DOCO_callable_rtns_invctn_via_CLI" Link="User Guide/Callable Routines/Invocation _Command-Line.htm" ResolvedId="3480" />
+    <Map Name="RED_DOCO_callable_rtns_invctn_named_params" Link="User Guide/Callable Routines/Invocation_Named Parameters.htm" ResolvedId="3478" />
+    <Map Name="RED_DOCO_callable_rtns_intro" Link="User Guide/Callable Routines/Intro_Callable Routines.htm" ResolvedId="1205" />
+    <Map Name="RED_DOCO_callable_rtns_indexes_Tera" Link="User Guide/Callable Routines/Indexes_Teradata.htm" ResolvedId="3541" />
+    <Map Name="RED_DOCO_callable_rtns_indexes_SQL_srvr" Link="User Guide/Callable Routines/Indexes_SQL Server.htm" ResolvedId="3540" />
+    <Map Name="RED_DOCO_callable_rtns_indexes_ORA" Link="User Guide/Callable Routines/Indexes_Oracle.htm" ResolvedId="3542" />
+    <Map Name="RED_DOCO_callable_rtns_indexes_DB2" Link="User Guide/Callable Routines/Indexes_DB2.htm" ResolvedId="3543" />
+    <Map Name="RED_DOCO_callable_rtns_invctn" Link="User Guide/Callable Routines/Callable Routines Invocation.htm" ResolvedId="3476" />
+    <Map Name="RED_DOCO_callable_rtns_createwait_Tera" Link="User Guide/Callable Routines/CreateWait_Teradata.htm" ResolvedId="3513" />
+    <Map Name="RED_DOCO_callable_rtns_createwait_SQL_srvr" Link="User Guide/Callable Routines/CreateWait_SQL Server.htm" ResolvedId="3512" />
+    <Map Name="RED_DOCO_callable_rtns_createwait_ORA" Link="User Guide/Callable Routines/CreateWait_Oracle.htm" ResolvedId="3514" />
+    <Map Name="RED_DOCO_callable_rtns_createwait_DB2" Link="User Guide/Callable Routines/CreateWait_DB2.htm" ResolvedId="3515" />
+    <Map Name="RED_DOCO_callable_rtns_conn_Tera" Link="User Guide/Callable Routines/Connect_Teradata.htm" ResolvedId="3487" />
+    <Map Name="RED_DOCO_callable_rtns_conn_SQL_srvr" Link="User Guide/Callable Routines/Connect_SQL Server.htm" ResolvedId="3486" />
+    <Map Name="RED_DOCO_callable_rtns_conn_ORA" Link="User Guide/Callable Routines/Connect_Oracle.htm" ResolvedId="3488" />
+    <Map Name="RED_DOCO_callable_rtns_conn_DB2" Link="User Guide/Callable Routines/Connect_DB2.htm" ResolvedId="3489" />
+    <Map Name="RED_DOCO_callable_rtns_cmn_input" Link="User Guide/Callable Routines/Common Input.htm" ResolvedId="3475" />
+    <Map Name="RED_DOCO_callable_rtns_clr_Tera" Link="User Guide/Callable Routines/Clear_Teradata.htm" ResolvedId="3545" />
+    <Map Name="RED_DOCO_callable_rtns_clr_ORA" Link="User Guide/Callable Routines/Clear_Oracle.htm" ResolvedId="3546" />
+    <Map Name="RED_DOCO_callable_rtns_clr_logs_Tera" Link="User Guide/Callable Routines/Clear_Logs_Teradata.htm" ResolvedId="3501" />
+    <Map Name="RED_DOCO_callable_rtns_clr_logs_SQL_srvr" Link="User Guide/Callable Routines/Clear_Logs_SQL Server.htm" ResolvedId="3500" />
+    <Map Name="RED_DOCO_callable_rtns_clr_logs_ORA" Link="User Guide/Callable Routines/Clear_Logs_Oracle.htm" ResolvedId="3502" />
+    <Map Name="RED_DOCO_callable_rtns_clr_logs_DB2" Link="User Guide/Callable Routines/Clear_Logs_DB2.htm" ResolvedId="3503" />
+    <Map Name="RED_DOCO_callable_rtns_clr_DB2" Link="User Guide/Callable Routines/Clear_DB2.htm" ResolvedId="3547" />
+    <Map Name="RED_DOCO_callable_rtns_API" Link="User Guide/Callable Routines/Callable Routines API.htm" ResolvedId="3472" />
+    <Map Name="RED_DOCO_callable_rtns" Link="User Guide/Callable Routines/Callable Routines.htm" ResolvedId="296" />
+    <Map Name="RED_DOCO_callable_rtns_job_restart_SQL_srvr" Link="User Guide/Callable Routines/Job_Restart_SQL Server.htm" ResolvedId="3524" />
+    <Map Name="RED_DOCO_abrt_DB2" Link="User Guide/Callable Routines/Abort_DB2.htm" ResolvedId="3494" />
+    <Map Name="RED_DOCO_abrt_ORA" Link="User Guide/Callable Routines/Abort_Oracle.htm" ResolvedId="3493" />
+    <Map Name="RED_DOCO_abrt_SQL" Link="User Guide/Callable Routines/Abort_SQL.htm" ResolvedId="3491" />
+    <Map Name="RED_DOCO_alt_invctn_methods" Link="User Guide/Callable Routines/Alt_Invocation Methods.htm" ResolvedId="3477" />
+    <Map Name="RED_DOCO_abrt_Tera" Link="User Guide/Callable Routines/Abort_Teradata.htm" ResolvedId="3492" />
+    <Map Name="RED_DOCO_API_DB2" Link="User Guide/Callable Routines/API_DB2.htm" ResolvedId="3484" />
+    <Map Name="RED_DOCO_API_ORA" Link="User Guide/Callable Routines/API_Oracle.htm" ResolvedId="3483" />
+    <Map Name="RED_DOCO_API_SQL_srvr" Link="User Guide/Callable Routines/API_SQL Server.htm" ResolvedId="3481" />
+    <Map Name="RED_DOCO_dfng_tblr_mdl" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Def Tblr Mdl.htm" ResolvedId="4704" />
+    <Map Name="RED_DOCO_dfng_dat_src_trg_tblr_mdls" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/DefDatSrc_Targets_TblrMdls.htm" ResolvedId="4703" />
+    <Map Name="RED_DOCO_OLAP_cube_calcs" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Calculations.htm" ResolvedId="1766" />
+    <Map Name="RED_DOCO_OLAP_cube_dims" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Dimensions.htm" ResolvedId="1769" />
+    <Map Name="RED_DOCO_OLAP_cube_KPIs" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Key Perfor Indctrs.htm" ResolvedId="1767" />
+    <Map Name="RED_DOCO_OLAP_crtng_OLAP_cube_anlys_srvcs_srvr" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Crting_OLAPCube_Analys Sers Srvr.htm" ResolvedId="1773" />
+    <Map Name="RED_DOCO_OLAP_chng_OLAP_cubes" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Changing OLAP Cubes.htm" ResolvedId="1779" />
+    <Map Name="RED_DOCO_OLAP_cube_msr_grp_dims" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Msr Grp Dims.htm" ResolvedId="1770" />
+    <Map Name="RED_DOCO_OLAP_cube_msr_grp_prcsng_prtns" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Msre Grp Proc_Prtns.htm" ResolvedId="1764" />
+    <Map Name="RED_DOCO_OLAP_cube_msr_grp_prtns" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Msre Grp Prtns.htm" ResolvedId="2065" />
+    <Map Name="RED_DOCO_OLAP_dim_attr_reltnshps" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Dim Attr Rels.htm" ResolvedId="1776" />
+    <Map Name="RED_DOCO_OLAP_dim_attrs" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Dimension Attributes.htm" ResolvedId="1775" />
+    <Map Name="RED_DOCO_OLAP_dim_hierarchies" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Dimension Hierarchies.htm" ResolvedId="1777" />
+    <Map Name="RED_DOCO_OLAP_dim_objs" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Dimension Objects.htm" ResolvedId="1771" />
+    <Map Name="RED_DOCO_OLAP_dfng_OLAP_cube" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Defining an OLAP Cube.htm" ResolvedId="1761" />
+    <Map Name="RED_DOCO_OLAP_dfng_dat_src_OLAP_cube" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/DefDatSrc for OLAP Cube.htm" ResolvedId="3464" />
+    <Map Name="RED_DOCO_OLAP_cubes" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cubes.htm" ResolvedId="1760" />
+    <Map Name="RED_DOCO_OLAP_cube_msr_grps" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Measure Groups.htm" ResolvedId="1763" />
+    <Map Name="RED_DOCO_OLAP_cube_msrs" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Measures.htm" ResolvedId="1765" />
+    <Map Name="RED_DOCO_OLAP_cube_objs" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Objects.htm" ResolvedId="1772" />
+    <Map Name="RED_DOCO_OLAP_cube_props" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Properties.htm" ResolvedId="1762" />
+    <Map Name="RED_DOCO_load_unload" Link="User Guide/Backing Up and Restoring Metadata/Loading an Unload.htm" ResolvedId="1428" />
+    <Map Name="RED_DOCO_dsgn_intro" Link="User Guide/Design Introduction.htm" ResolvedId="510" />
+    <Map Name="RED_DOCO_OLAP_dim_ovrvw" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Dimension Overview.htm" ResolvedId="1774" />
+    <Map Name="RED_DOCO_OLAP_dim_usr_def_hrchy_lvls" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Dim UserDef Hierar Lvls.htm" ResolvedId="1778" />
+    <Map Name="RED_DOCO_tblr_mdl_calc_cols" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Tblr Model Calc Columns.htm" ResolvedId="4709" />
+    <Map Name="RED_DOCO_tblr_mdl_msrs" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Tabular Model Measures.htm" ResolvedId="4708" />
+    <Map Name="RED_DOCO_tblr_mdls" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Tabular Models.htm" ResolvedId="4702" />
+    <Map Name="RED_DOCO_vldtng_src_load_tbls" Link="User Guide/Altering Metadata/Validating Source Load Tables.htm" ResolvedId="638" />
+    <Map Name="RED_DOCO_vldtng_tbls" Link="User Guide/Altering Metadata/Validating Tables.htm" ResolvedId="606" />
+    <Map Name="RED_DOCO_vldtng_procs" Link="User Guide/Altering Metadata/Validating Procedures.htm" ResolvedId="623" />
+    <Map Name="RED_DOCO_vldtng_indxs" Link="User Guide/Altering Metadata/Validating Indexes.htm" ResolvedId="624" />
+    <Map Name="RED_DOCO_tutorial" Link="User Guide/Tutorial.htm" ResolvedId="1604" />
+    <Map Name="RED_DOCO_unldng_meta" Link="User Guide/Backing Up and Restoring Metadata/Unloading Metadata.htm" ResolvedId="1427" />
+    <Map Name="RED_DOCO_upgdng_red" Link="User Guide/Upgrading RED.htm" ResolvedId="2704" />
+    <Map Name="RED_DOCO_recmplng_procs" Link="User Guide/Altering Metadata/Recompiling Procedures.htm" ResolvedId="1136" />
+    <Map Name="RED_DOCO_red_overview" Link="User Guide/Overview.htm" ResolvedId="2760" />
+    <Map Name="RED_DOCO_params" Link="User Guide/Parameters.htm" ResolvedId="2497" />
+    <Map Name="RED_DOCO_OLAP_inspctng_mdfyng_adv_cube_props" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Inspctng_Mod Adv Cube_prop.htm" ResolvedId="1781" />
+    <Map Name="RED_DOCO_OLAP_retrftng_OLAP_obj" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Retrofit OLAP Object.htm" ResolvedId="1991" />
+    <Map Name="RED_DOCO_custm_objs" Link="User Guide/Custom Objects.htm" ResolvedId="4826" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerrorbulk_DB2" Link="User Guide/Callable Routines/WsWrkErrorBulk_DB2.htm" ResolvedId="3581" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerrorbulk_ORA" Link="User Guide/Callable Routines/WsWrkErrorBulk_Oracle.htm" ResolvedId="3580" />
+    <Map Name="RED_DOCO_callable_rtns_wswrktask_Tera" Link="User Guide/Callable Routines/WsWrkTask_Teradata.htm" ResolvedId="3583" />
+    <Map Name="RED_DOCO_callable_rtns_wswrktask_SQL_srvr" Link="User Guide/Callable Routines/WsWrkTask_SQL Server.htm" ResolvedId="3582" />
+    <Map Name="RED_DOCO_callable_rtns_wswrktask_ORA" Link="User Guide/Callable Routines/WsWrkTask_Oracle.htm" ResolvedId="3584" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerrorbulk_SQL_srvr" Link="User Guide/Callable Routines/WsWrkErrorBulk_SQL Server.htm" ResolvedId="3578" />
+    <Map Name="RED_DOCO_callable_rtns_wswrkerrorbulk_Tera" Link="User Guide/Callable Routines/WsWrkErrorBulk_Teradata.htm" ResolvedId="3579" />
+    <Map Name="RED_DOCO_callable_rtns_wswrktask" Link="User Guide/Callable Routines/WsWrkTask.htm" ResolvedId="936" />
+    <Map Name="RED_DOCO_callable_rtns_wswrktask_DB2" Link="User Guide/Callable Routines/WsWrkTask_DB2.htm" ResolvedId="3585" />
+    <Map Name="RED_DOCO_agg" Link="User Guide/Aggregation/Aggregation.htm" ResolvedId="139" />
+    <Map Name="RED_DOCO_agg_def_look_bck_days" Link="User Guide/Aggregation/Chng_Aggrgts Def Lk Bck Days.htm" ResolvedId="1327" />
+    <Map Name="RED_DOCO_agg_smry_tbl" Link="User Guide/Aggregation/Crtng an Aggrgt Sum Table.htm" ResolvedId="1000" />
+    <Map Name="RED_DOCO_agg_tbl" Link="User Guide/Aggregation/Creating an Aggregate Table.htm" ResolvedId="364" />
+    <Map Name="RED_DOCO_altrng_tbls" Link="User Guide/Altering Metadata/Altering Tables.htm" ResolvedId="605" />
+    <Map Name="RED_DOCO_anlys_srvcs_OLAP_cubes_tblr_models" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/Anlys Serv OLAP Cubes_Tblr Mdls.htm" ResolvedId="1697" />
+    <Map Name="RED_DOCO_altrng_meta" Link="User Guide/Altering Metadata/Altering Metadata.htm" ResolvedId="597" />
+    <Map Name="RED_DOCO_agg_tbl_col_props" Link="User Guide/Aggregation/Aggregate Tbl Col Props.htm" ResolvedId="3103" />
+    <Map Name="RED_DOCO_agg_tbl_col_trnsfrmtns" Link="User Guide/Aggregation/Aggregate Tbl Col Transforms.htm" ResolvedId="3104" />
+    <Map Name="RED_DOCO_add_rltnshp" Link="User Guide/Relationship Maintenance/Add Relationship.htm" ResolvedId="16455" />
+    <Map Name="RED_DOCO_archve_ORA" Link="User Guide/Callable Routines/Archive_Oracle.htm" ResolvedId="3497" />
+    <Map Name="RED_DOCO_archve_SQL_srvr" Link="User Guide/Callable Routines/Archive_SQL Server.htm" ResolvedId="3495" />
+    <Map Name="RED_DOCO_archve_Tera" Link="User Guide/Callable Routines/Archive_Teradata.htm" ResolvedId="3496" />
+    <Map Name="RED_DOCO_archve_DB2" Link="User Guide/Callable Routines/Archive_DB2.htm" ResolvedId="3498" />
+    <Map Name="RED_DOCO_apps" Link="User Guide/Promoting Between Environments/Applications.htm" ResolvedId="603" />
+    <Map Name="RED_DOCO_app_crtn" Link="User Guide/Promoting Between Environments/Application Creation.htm" ResolvedId="611" />
+    <Map Name="RED_DOCO_app_ldng" Link="User Guide/Promoting Between Environments/Application Loading.htm" ResolvedId="612" />
+    <Map Name="RED_DOCO_bckng_up_rstrng_meta" Link="User Guide/Backing Up and Restoring Metadata/BackUp_Restoring Metadata.htm" ResolvedId="595" />
+    <Map Name="RED_DOCO_bckng_usng_DB_routines" Link="User Guide/Backing Up and Restoring Metadata/Backup using DB Routines.htm" ResolvedId="598" />
+    <Map Name="RED_DOCO_crtng_ld_apps_frm_CLI" Link="User Guide/Promoting Between Environments/Creating_Loading App_Command Line.htm" ResolvedId="4191" />
+    <Map Name="RED_DOCO_obj_rpts" Link="User Guide/Reports/Object Reports.htm" ResolvedId="2170" />
+    <Map Name="RED_DOCO_objs_schdlr_job" Link="User Guide/Reports/Objects by Scheduler Job.htm" ResolvedId="2187" />
+    <Map Name="RED_DOCO_objs_chkd_out" Link="User Guide/Reports/Objects Checked out.htm" ResolvedId="2185" />
+    <Map Name="RED_DOCO_objs_ext_props" Link="User Guide/Reports/Objects with Extended Properties.htm" ResolvedId="5163" />
+    <Map Name="RED_DOCO_objs_proj_matrix" Link="User Guide/Reports/Objects Project Matrix.htm" ResolvedId="2183" />
+    <Map Name="RED_DOCO_prmtng_bet_envi" Link="User Guide/Promoting Between Environments/Promoting Between Environments.htm" ResolvedId="1356" />
+    <Map Name="RED_DOCO_rltnshp_maint" Link="User Guide/Relationship Maintenance/Relationship Maintenance.htm" ResolvedId="2380" />
+    <Map Name="RED_DOCO_scrpt_gen_win_ORA" Link="User Guide/Procedures and Scripts/Script Generation (Windows_Oracle).htm" ResolvedId="963" />
+    <Map Name="RED_DOCO_scrpt_gen_win_SQL_srvr" Link="User Guide/Procedures and Scripts/Script Generation (Windows_SQL Server).htm" ResolvedId="970" />
+    <Map Name="RED_DOCO_scrpt_syntax" Link="User Guide/Procedures and Scripts/Script Syntax.htm" ResolvedId="536" />
+    <Map Name="RED_DOCO_scrpt_gen_win_DB2" Link="User Guide/Procedures and Scripts/Script Generation (Windows_DB2).htm" ResolvedId="1405" />
+    <Map Name="RED_DOCO_scrpt_envr_vars" Link="User Guide/Procedures and Scripts/Script Environment Variables.htm" ResolvedId="4872" />
+    <Map Name="RED_DOCO_scrpt_gen" Link="User Guide/Procedures and Scripts/Script Generation.htm" ResolvedId="547" />
+    <Map Name="RED_DOCO_proc_running" Link="User Guide/Procedures and Scripts/Procedure Running.htm" ResolvedId="534" />
+    <Map Name="RED_DOCO_procs_gen" Link="User Guide/Procedures and Scripts/Procedure Generation.htm" ResolvedId="546" />
+    <Map Name="RED_DOCO_procs_ldng_svng" Link="User Guide/Procedures and Scripts/Procedure Loading and Saving.htm" ResolvedId="588" />
+    <Map Name="RED_DOCO_proc_props" Link="User Guide/Procedures and Scripts/Procedure Properties.htm" ResolvedId="688" />
+    <Map Name="RED_DOCO_proc_compltn" Link="User Guide/Procedures and Scripts/Procedure Compilation.htm" ResolvedId="531" />
+    <Map Name="RED_DOCO_proc_comp" Link="User Guide/Procedures and Scripts/Procedure Comparisons.htm" ResolvedId="589" />
+    <Map Name="RED_DOCO_proc_edtng" Link="User Guide/Procedures and Scripts/Procedure Editing.htm" ResolvedId="530" />
+    <Map Name="RED_DOCO_procs_scrpts" Link="User Guide/Procedures and Scripts/Procedures and Scripts.htm" ResolvedId="141" />
+    <Map Name="RED_DOCO_gen_rlntshp" Link="User Guide/Relationship Maintenance/Generate Relationships.htm" ResolvedId="16477" />
+    <Map Name="RED_DOCO_imp_lang_files" Link="User Guide/Promoting Between Environments/Importing Language Files.htm" ResolvedId="1971" />
+    <Map Name="RED_DOCO_imprtng_obj_meta" Link="User Guide/Promoting Between Environments/Importing Object Metadata.htm" ResolvedId="600" />
+    <Map Name="RED_DOCO_del_rltnshp" Link="User Guide/Relationship Maintenance/Delete Relationship.htm" ResolvedId="16466" />
+    <Map Name="RED_DOCO_dw_testing" Link="User Guide/Promoting Between Environments/Data Warehouse Testing.htm" ResolvedId="1641" />
+    <Map Name="RED_DOCO_calling_batch_file" Link="User Guide/Procedures and Scripts/Calling a Batch File from a Script.htm" ResolvedId="2695" />
+    <Map Name="RED_DOCO_list_rltnshps" Link="User Guide/Relationship Maintenance/List Relationships.htm" ResolvedId="16488" />
+    <Map Name="RED_DOCO_mod_procs" Link="User Guide/Reports/Modified Procedures.htm" ResolvedId="2180" />
+    <Map Name="RED_DOCO_mod_rltnshp" Link="User Guide/Relationship Maintenance/Modify Relationship.htm" ResolvedId="16499" />
+    <Map Name="RED_DOCO_man_crtd_scrpts" Link="User Guide/Procedures and Scripts/Manually Created Scripts.htm" ResolvedId="4620" />
+    <Map Name="RED_DOCO_OLAP_cube_actions" Link="User Guide/Analysis Services OLAP Cubes_Tabular Models/OLAP Cube Actions.htm" ResolvedId="1768" />
+    <Map Name="RED_DOCO_ds_obj_ovrvw" Link="User Guide/Data Store Objects/Data Store Obj Overview.htm" ResolvedId="1594" />
+    <Map Name="RED_DOCO_win_ps_scrpts" Link="User Guide/Procedures and Scripts/Windows PowerShell Scripts.htm" ResolvedId="4967" />
+    <Map Name="RED_DOCO_ld_dat_flat_files_ssis" Link="User Guide/Loading Data/Loading Data from Flat Files using SSIS.htm" ResolvedId="4173" />
+    <Map Name="RED_DOCO_schma_diag" Link="User Guide/Documentation and Diagrams/Schema Diagram.htm" ResolvedId="1669" />
+    <Map Name="RED_DOCO_obj_chk_outs_chk_ins" Link="User Guide/Objects and Windows/Object Check-Outs and Check-Ins.htm" ResolvedId="15955" />
+    <Map Name="RED_DOCO_Not_Supported_Feature" Link="User Guide/Not Supported Feature.htm" ResolvedId="934" />
+    <Map Name="RED_DOCO_data_vault" Link="User Guide/Default Settings/Data Vault.htm" ResolvedId="5306" />
+    <Map Name="RED_DOCO_maint_proj_groups" Link="User Guide/Organizing Objects/Maintain Project Group.htm" ResolvedId="5313" />
+    <Map Name="RED_DOCO_tbl_stor_scrn_tera" Link="User Guide/Table Properties/Table Storage Screen Teradata.htm" ResolvedId="2642" />
+    <Map Name="RED_DOCO_manage_unsprtd_chars_names" Link="User Guide/Default Settings/Managing chars in column names.htm" ResolvedId="5001" />
+    <Map Name="RED_DOCO_wld_card_load" Link="User Guide/Loading Data/File Wild Card Load.htm" ResolvedId="514" />
+    <Map Name="RED_DOCO_add_hst_scrpt_lang" Link="User Guide/Host Script Languages/Adding a Host Script Language Type.htm" ResolvedId="4000" />
+    <Map Name="RED_DOCO_app_hst_scrpt_lang" Link="User Guide/Host Script Languages/Applying Host Script Languages.htm" ResolvedId="4001" />
+    <Map Name="RED_DOCO_def_hst_scrpt_lang" Link="User Guide/Host Script Languages/Defining Host Script Languages.htm" ResolvedId="4002" />
+    <Map Name="RED_DOCO_exprt_hst_scrpt_lang" Link="User Guide/Host Script Languages/Exporting Host Script Languages.htm" ResolvedId="4003" />
+    <Map Name="RED_DOCO_ldng_hst_scrpt_lang" Link="User Guide/Host Script Languages/Loading Host Languages.htm" ResolvedId="4004" />
+    <Map Name="RED_DOCO_hst_scrpt_lang" Link="User Guide/Host Script Languages/Host Script Languages.htm" ResolvedId="4005" />
+    <Map Name="RED_DOCO_mul_src_obj_list" Link="User Guide/Multi Source Processing/Listing Source Mapping Objects.htm" ResolvedId="16506" />
+    <Map Name="RED_DOCO_conn_temp_defs" Link="User Guide/Connections/Connection Template Defaults.htm" ResolvedId="5319" />
+    <Map Name="RED_DOCO_bld_apps_obj_grps" Link="User Guide/Organizing Objects/Building Applications from Object Groups.htm" ResolvedId="1607" />
+    <Map Name="RED_DOCO_bld_jobs_obj_grps" Link="User Guide/Organizing Objects/Building Scheduler Jobs from Object Groups.htm" ResolvedId="1609" />
+    <Map Name="RED_DOCO_bld_jobs_projs_grps" Link="User Guide/Organizing Objects/Building Scheduler Jobs from Projects or Groups.htm" ResolvedId="1610" />
+    <Map Name="RED_DOCO_Setup_wiz_Overview" Link="Setup Wizard/Setup Wizard Overview.htm" ResolvedId="16500" />
+    <Map Name="RED_DOCO_Setup_wiz_Install_metada" Link="Setup Wizard/Installing the RED Metadata.htm" ResolvedId="16501" />
+    <Map Name="RED_DOCO_Setup_wiz_Install_prereq" Link="Setup Wizard/Installation Prerequisites.htm" ResolvedId="16502" />
+    <Map Name="RED_DOCO_Setup_wiz_Typical_install" Link="Setup Wizard/Typical Installation.htm" ResolvedId="16503" />
+    <Map Name="RED_DOCO_Setup_wiz_Typ_install_new" Link="Setup Wizard/Typical Installation New Repo.htm" ResolvedId="16504" />
+    <Map Name="RED_DOCO_Setup_wiz_Typ_install_exist" Link="Setup Wizard/Typical Installation Existing Repo.htm" ResolvedId="16505" />
+    <Map Name="RED_DOCO_Setup_wiz_Custom_install" Link="Setup Wizard/Custom Installation.htm" ResolvedId="16507" />
+    <Map Name="RED_DOCO_Setup_wiz_Cust_install_new" Link="Setup Wizard/Custom Installation New Repo.htm" ResolvedId="16508" />
+    <Map Name="RED_DOCO_Setup_wiz_Cust_install_exist" Link="Setup Wizard/Custom Installation Existing Repo.htm" ResolvedId="16509" />
+    <Map Name="RED_DOCO_Setup_wiz_Replay_install" Link="Setup Wizard/Replay Installation.htm" ResolvedId="16510" />
+    <Map Name="RED_DOCO_Setup_wiz_Rep_install_new" Link="Setup Wizard/Replay Installation New Repo.htm" ResolvedId="16511" />
+    <Map Name="RED_DOCO_Setup_wiz_Rep_install_exist" Link="Setup Wizard/Replay Installation Existing Repo.htm" ResolvedId="16512" />
+    <Map Name="RED_DOCO_MD_Val_Overview" Link="Metadata Validate/RED Metadata Validate Overview.htm" ResolvedId="16513" />
+    <Map Name="RED_DOCO_Val_RED_MD" Link="Metadata Validate/Validating the RED Metadata.htm" ResolvedId="16514" />
+    <Map Name="RED_DOCO_MD_Val_prereq" Link="Metadata Validate/Validation Prerequisites.htm" ResolvedId="16515" />
+    <Map Name="RED_DOCO_MD_Val_Curr_Repo" Link="Metadata Validate/Current Repository Validation.htm" ResolvedId="16516" />
+    <Map Name="RED_DOC_MD_Val_Conn_Repo" Link="Metadata Validate/Connect to Repository Validation.htm" ResolvedId="16517" />
+    <Map Name="RED_DOCO_MD_Val_Upg_Req" Link="Metadata Validate/Metadata Upgrade Required.htm" ResolvedId="16518" />
+    <Map Name="RED_DOCO_MD_Val_Upg_Not_Req" Link="Metadata Validate/Metadata Upgrade Not Required.htm" ResolvedId="16519" />
+    <Map Name="RED_DOCO_License_Mgmt_Overview" Link="License Management/RED License Management Overview.htm" ResolvedId="16520" />
+    <Map Name="RED_DOCO_Lic_Mgmt_Manage_RED_Lics" Link="License Management/Managing the RED Licenses.htm" ResolvedId="16521" />
+    <Map Name="RED_DOCO_Lic_Mgmt_prereq" Link="License Management/License Prerequisites.htm" ResolvedId="16522" />
+    <Map Name="RED_DOCO_Lic_Mgmt_instl_lic" Link="License Management/Installing a License.htm" ResolvedId="16523" />
+    <Map Name="RED_DOCO_App_Dep_Overview" Link="Application Deployment/RED Application Deployment Overview.htm" ResolvedId="16524" />
+    <Map Name="RED_DOCO_App_Dep_prereq" Link="Application Deployment/Application Deployment Prerequisites.htm" ResolvedId="16526" />
+    <Map Name="RED_DOCO_App_Dep_using" Link="Application Deployment/Using RED Application Deployment.htm" ResolvedId="16527" />
+    <Map Name="RED_DOCO_App_Dep_creating" Link="Application Deployment/Creating a New Application.htm" ResolvedId="16528" />
+    <Map Name="RED_DOCO_App_Dep_deplyng" Link="Application Deployment/Deploying an Application.htm" ResolvedId="16529" />
+    <Map Name="RED_DOCO_App_Dep_listing" Link="Application Deployment/Listing Deployed Applications.htm" ResolvedId="16530" />
+    <Map Name="RED_DOCO_xml_for_app_load" Link="Installation Guide/XML Files for Application Loads.htm" ResolvedId="2652" />
+    <Map Name="RED_DOCO_batch_mode" Link="User Guide/UI Configurations/UI Configurations.htm" ResolvedId="1032" />
+</CatapultAliasFile>

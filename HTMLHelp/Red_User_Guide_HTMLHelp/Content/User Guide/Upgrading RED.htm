@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-toc-path="" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" /><title>Upgrading RED</title>
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h1 class="Heading1">Upgrading <span class="mc-variable WS_Branding.Product variable">RED</span></h1>
+            <h2 data-mc-conditions="Outputs.Only for RED User Guide"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> Versions</h2>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> has a four part version number normally shown as xx.xx.xx.xx. An example of this may be 6.0.6.0. The first number represents the major release. The second number represents the metadata repository version. The third and fourth numbers relate to application specific releases.<br />From the example above we see that the current version is version 6 of <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. We are on version 6.0 of the metadata repository.</p>
+            <h2 data-mc-conditions="Outputs.Only for RED User Guide">Metadata Changes</h2>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">A change from a 6.0.. release to a 6.5.. release would indicate a change in the metadata tables. All metadata changes are non destructive. They simply add new columns or new meta tables. In this way they can be applied without harming an existing metadata repository. The impact of a metadata change is that the associated applications (namely the <span class="mc-variable WS_Branding.Product variable">RED</span> executable, the Scheduler, security module etc.) will need to be at the same metadata version. Therefore a 6.0.6.0 version of <span class="mc-variable WS_Branding.Product variable">RED</span> may not successfully run against a version 6.5 metadata repository.&#160; </p>
+            <h2 data-mc-conditions="Outputs.Only for RED User Guide">Application changes</h2>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">The final two numbers in the version represent application releases. Applications are deemed to be all of the executable images supplied with <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> as well as the UNIX scheduler scripts and the stored procedures. Application changes reflect enhancements and bug fixes. A change in the first number indicates a major enhancement in one of the application components.</p>
+            <h2 class="SpecialBold_1" data-mc-conditions="Outputs.Only for RED User Guide">Upgrading <span class="mc-variable WS_Branding.Product variable">RED</span></h2>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">Upgrading <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> consists of the following steps:</p>
+            <ol>
+                <li value="1" data-mc-conditions="Outputs.Only for RED User Guide">Allow any active jobs to complete. Halting active jobs will allow running tasks to complete with no new tasks starting. Aborting active jobs will kill any running tasks and stop running jobs.</li>
+                <li value="2" data-mc-conditions="Outputs.Only for RED User Guide">Stop all schedulers. Windows schedulers can be stopped with <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>'s Setup Administrator. To stop a UNIX or Linux scheduler, kill the active scheduler process and comment their crontab entries (to stop the scheduler re-starting itself).</li>
+                <li value="3" data-mc-conditions="Outputs.Only for RED User Guide">Close any <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> programs that are running on your machine.</li>
+                <li value="4" data-mc-conditions="Outputs.Only for RED User Guide">Install the new version of <span class="mc-variable WS_Branding.Product variable">RED</span> on your machine.</li>
+                <li value="5" data-mc-conditions="Outputs.Only for RED User Guide">Back up your metadata. </li>
+                <li value="6" data-mc-conditions="Outputs.Only for RED User Guide">In <span class="mc-variable WS_Branding.Product variable">RED</span> Setup Administrator, select the Validate Metadata Repository option. This function may re-compile existing or create new metadata procedures; metadata tables may be altered or new tables created. <br />When performing an upgrade of <span class="mc-variable WS_Branding.Product variable">RED</span>:<ul><li data-mc-conditions="Outputs.Only for RED User Guide">Click<b> OK</b> when prompted to validate metadata tables.</li><li data-mc-conditions="Outputs.Only for RED User Guide">Click<b> Yes</b> when prompted to re-create metadata views.</li><li data-mc-conditions="Outputs.Only for RED User Guide">Click <b>Yes</b> when prompted to re-compile metadata procedures.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">Warning</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader" data-mc-conditions="Outputs.Only for RED User Guide">If the above steps are not all completed during an upgrade the metadata may be left in an inconsistent state.</td></tr></tbody></table></li></ul></li>
+                <li class="ListNumber" value="7" data-mc-conditions="Outputs.Only for RED User Guide">For <b>Oracle</b> metadata updates see the note below on <b>recompiling Oracle invalid procedures</b> during a <span class="mc-variable WS_Branding.Product variable">RED</span> upgrade.</li>
+                <li value="8" data-mc-conditions="Outputs.Only for RED User Guide">Back up your metadata again (just in case).</li>
+                <li value="9" data-mc-conditions="Outputs.Only for RED User Guide">If using a UNIX or Linux scheduler and this is a major application enhancement then rename the wsl/bin directory to say wsl/bin_versionxxxxxx. Create a new bin directory and ftp over the files under the unix directory (see the main install instructions). Change the protections on the files (chmod 750 *.sh).&#160; </li>
+                <li value="10" data-mc-conditions="Outputs.Only for RED User Guide">Restart all schedulers. Windows schedulers can be restarted with <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>'s Setup Administrator. For any UNIX or Linux schedulers, uncomment any commented out crontab entries - this is enough to restart the schedulers.</li>
+                <li value="11" data-mc-conditions="Outputs.Only for RED User Guide">Restart any halted or aborted jobs.</li>
+            </ol>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ol>
+                                <li style="color: #d7454b;" value="1" data-mc-conditions="Outputs.Only for RED User Guide">There are different versions of the scripts for each database and for UNIX versus Linux. You should also be looking in the sub directory with the highest version number.<br /> <img src="../Images/Install_Images/RED_oracleapp.png" />When using a UNIX/Linux scheduler for Oracle, It is recommended that users copy the new meta_backup_680.sh file to use Datapump's expdb/impd instead the deprecated exp/imp tools. This version uses the data pump export executables expdp/impdp. It assumes that the scheduler and the Oracle database reside on the same server.</li>
+                                <li style="color: #d7454b;" value="2" data-mc-conditions="Outputs.Only for RED User Guide">Metadata tables do not change between minor releases, but metadata procedure often and usually do change.</li>
+                                <li style="color: #d7454b;" value="3" data-mc-conditions="Outputs.Only for RED User Guide"><span class="mc-variable WS_Branding.Product variable">RED</span> will not let you sign into an old repository version, using a newer version of <span class="mc-variable WS_Branding.Product variable">RED</span>.</li>
+                                <li style="color: #d7454b;" value="4" data-mc-conditions="Outputs.Only for RED User Guide"><span class="mc-variable WS_Branding.Product variable">RED</span> will let you sign into a new repository version, using an older version of <span class="mc-variable WS_Branding.Product variable">RED</span>, but it will warn you that this may potentially cause issues.</li>
+                                <li style="color: #d7454b;" value="5" data-mc-conditions="Outputs.Only for RED User Guide">It is very important when using the Windows scheduler to have the installed <span class="mc-variable WS_Branding.Product variable">RED</span> version on the scheduler server EXACTLY matching the stored procedures.</li>
+                                <li style="color: #d7454b;" value="6" data-mc-conditions="Outputs.Only for RED User Guide">Side by side installations are possible (two versions in two directories on the same machine), but be careful with schedulers. If you install the new version of <span class="mc-variable WS_Branding.Product variable">RED</span> in a new directory, you will have to remove and reinstall all windows schedulers in order for the scheduler(s) to use the new version of <span class="mc-variable WS_Branding.Product variable">RED</span>. </li>
+                                <li style="color: #d7454b;" value="7" data-mc-conditions="Outputs.Only for RED User Guide">As a general rule, the UNIX and Linux scheduler scripts, metadata tables/procedures and <span class="mc-variable WS_Branding.Product variable">RED</span> front end should all be in sync.</li>
+                                <li style="color: #d7454b;" value="8" data-mc-conditions="Outputs.Only for RED User Guide">If the scripts for the UNIX or Linux scheduler have changed, you should replace files in your old and new shell scripts in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> Program Files directory and see if any have changed.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 data-mc-conditions="Outputs.Only for RED User Guide">Oracle invalid procedures:</h3>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">When validating an Oracle Metadata Repository, tick the <b>Recompile any invalid procedures</b> check-box to have any invalid user procedures recompiled during a metadata validate.</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">
+                <img src="../Images/UserGuide_Images/Upgrading RED/Upgrading RED_1.png" />
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Connections|Connection Types|Extensible Source Connection" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Browse Scripts</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Browse Scripts</h2>
+            <p>For Extensible Source Connections the <b>Browse Connection</b> action is performed by a Scripted Browse Workflow. The Browse Script executed for this action is selected through the Extensible Source Connection’s Properties under the <b>Connection Browse Script</b> setting.</p>
+            <p>Browse Scripts are created like any other script in the RED metadata with the following restrictions:</p>
+            <ul>
+                <li>Only Windows based scripts are supported by the Scripted Browse Workflow.</li>
+                <li>The Scripted Browse Workflow expects two lines of output:<ul><li><p>First line is the success code: 1,-1, or -2</p></li><li><p>Second line is the entire minimised JSON output (line feeds must be removed)</p></li><li><p>The output JSON must conform to a predefined structure</p></li></ul></li>
+            </ul>
+            <p>The predefined structure for the output JSON is best demonstrated by creating the <a href="Extensible Source Connections.htm#Create">example</a> for Extensible Source Connection set and performing the ‘Browse Action’. </p>
+            <p>The example Browse Script saves the output JSON to the user’s temp directory as <i>ouput.json</i> for review. This output should be reviewed together with the <a href="#Browse">Output JSON Mapping</a> section in order to understand how the structure relates to the UI.</p>
+            <p>The example Browse Script can be created by adding a new PowerShell (64-bit) script object to RED and selecting <b>Tools-&gt;Create Example Browse Script</b> from the empty script editor window. This example is intended to be used in conjunction with the matching set of UI Configuration examples.</p>
+            <h4><a name="Browse"></a>Browse Script Output JSON Attribute Mappings</h4>
+            <p>This table shows the expected attribute structure for the Output JSON produced by Browse Scripts and the mappings of those attributes to the RED UI.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 321px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 332px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 561px;" />
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="background-color: #d3d3d3;">Node/Attribute</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" style="background-color: #d3d3d3;"><strong>Value Type</strong>
+                        </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" style="background-color: #d3d3d3;"><strong>Description</strong>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">.."treeViewLayout"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING := "Tabular"
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Layout mode of the Browser Tree View
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">.."treeViewIcons"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">&#160;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Node containing the Browser Tree View icon settings
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|.."schema"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Icon file name for the Schema Node in the Browser Tree View, not currently used
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|.."table"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Icon file name for the Table Node in the Browser Tree View, not currently used
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">.."&lt;Schema Node Label&gt;"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">Set &lt;Schema Node Label&gt; as STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Displayed in the Browser Tree View as Schema/Folder node containing an array of Objects
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">.."&lt;Table Node Label&gt;"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">Set &lt;Table Node Label&gt; as STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Displayed in the Browser Tree View as an Object node containing an Object
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|.."name"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The name of the source object used to create the Load Table Name in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|.."description"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Description field in Load Table Properties tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|.."rowCount"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">NUMERIC
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Displayed in the Browser Tree View as the object's row count or size.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|.."columns"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">&#160;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Node containing the array of one or more columns for the object.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."name"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Column Name in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."dataType"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Data type used in RED Data Type Mapping
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."dataTypeLength"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">NUMERIC|NULL
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Data type length used in RED Data Type Mapping
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."dataTypeScale"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">NUMERIC|NULL
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Data type scale used in RED Data Type Mapping
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."dataTypePrecision"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">NUMERIC|NULL
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Data type precision used in RED Data Type Mapping
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."nullAllowed"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">BOOLEAN := TRUE|FALSE
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Null Values Allowed field in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."defaultValue"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Default Value in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."description"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Column Description in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."displayName"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Business Display Name in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."format"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Format field in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."additive"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">BOOLEAN := TRUE|FALSE
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Additive field in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."numeric"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">BOOLEAN := TRUE|FALSE
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Format field in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."attribute"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">BOOLEAN := TRUE|FALSE
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Attribute field in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."sourceTable"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Source Table field in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."sourceColumn"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Source Column field in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."transform"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Transformation field in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."transformType"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to the Transformation Type field in the Column's properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."uiConfigColumnProperties"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">&#160;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Node containing the array (if any) of field value pairs to map to any Configured Column UI fields.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|."a_configured_column_UI_field"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING|NUMERIC
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to "a_configured_column_UI_field" field in the Column's Properties in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|.."loadInfo"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">&#160;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Node containing the object level mappings to the Load Properties Source tab in RED.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."fileLoaderOptions"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Loader Options field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."fileParsed"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">BOOLEAN := TRUE|FALSE 
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to an internal metadata flag for the Load Table in RED, not currently displayed in the UI
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."overrideLoadSQL"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Loader Options field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."overrideSourceColumns"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Override Source Columns field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."selectDistinctValues"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">BOOLEAN := TRUE|FALSE 
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Select Distinct Values field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."sourceFile"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">&#160;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Node containing the Source File Details
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."charSet"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to an internal metadata field for the Load Table in RED, not currently displayed in the UI
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."escapeEncoding"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to an internal metadata field for the Load Table in RED, not currently displayed in the UI
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."fieldDelimiter"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Source File Field Delimiter field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."fieldEnclosure"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Source File Field Enclosure Delimiter field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."headerLine"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Source File has Headings/Labels field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."name"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Source File Name field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."nonStringNullEncoding"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Loader Options field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."nullEncoding"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Loader Options field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."path"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Source File path field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|..|.."recordDelimiter"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING 
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Source File Record Terminator field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."sourceSchema"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING 
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Source Schema field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."sourceTables"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING 
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Source Table(s) field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."useOverrideSourceColumns"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">BOOLEAN := TRUE|FALSE 
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Override Source Column/Transformations field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|..|.."whereAndGroupByClauses"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">STRING
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Maps to Where and Group By Clauses field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">..|.."uiConfigLoadTableProperties"
+</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">&#160;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Node containing the array (if any) of field value pairs to map to any Configured Load Table UI fields.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">..|..|.."a_configured_load_table_UI_field"
+</td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1">STRING|NUMERIC
+</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Maps to "a_configured_load_table_UI_field" field in Load Table Properties Source tab in RED
+</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Scripted Browse Workflow</h4>
+            <p>The Scripted Browse Workflow performs the following steps when browsing an Extensible Source Connection:</p>
+            <ol>
+                <li value="1">Prepares the Browse Script and run-time files for execution against the associated Windows Script Connection.</li>
+                <li value="2">Executes the Script and if a success code of 1 is returned:<ol><li value="1">Reads the second line of output.</li><li value="2">Checks if the output is valid JSON.</li><li value="3">Checks if the output has the expected attribute structure.</li><li value="4">Reads the structure into the Source Browser Tree for the purpose of creating Load Tables from the items displayed.</li><li value="5">Deletes all temporary files created during the Scripted Browse Workflow.</li></ol></li>
+                <li value="3">Or - if the script returns a failure code (-1,-2) then the temporary files are preserved for debugging and the output is not loaded into the Source Browser Tree.</li>
+            </ol>
+            <p>Any object displayed in the Source Browser Tree can be dragged into RED as a Load Table Object as normal and any valid metadata set in the output JSON structure is carried across to RED for that object.</p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

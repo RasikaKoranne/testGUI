@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Dimensions" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Building a Dimension</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Building a Dimension</h2>
+            <p>Dimensions are often sourced from one table in the base application. In many cases, there are also codes that require description lookups to complete the de-normalization of the dimensional data. </p>
+            <p>The process for building a dimension is the same for most other tables and begins with the drag and drop of the Load table that contains the bulk of the dimensional information.</p>
+            <h3>Drag and Drop</h3>
+            <ol>
+                <li value="1">Create a dimension target by double-clicking on the <b>Dimension group</b> in the left pane. </li>
+                <li value="2">The middle pane displays a list of all existing dimensions. When this list is displayed in the middle pane, the pane is identified as a target for new dimension tables.</li>
+                <li value="3">Browse to the Data Warehouse via the <b>Browse &gt; Data Warehouse</b> menu option. </li>
+                <li value="4">Drag the Load table, that contains the bulk of the dimensional columns, into the middle pane. </li>
+                <li value="5">Drop the table anywhere in the pane.</li>
+                <li value="6">The new object window appears and classifies the new object as a Dimension and provides a default name based on the Load table name. Either accept this name or enter another name and then click <b>OK</b> to proceed.</li>
+            </ol>
+            <h3>Dimension Type</h3>
+            <p>A dialog appears as shown below. There are four choices for the default generation of the Dimension table and its update procedure. </p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Building a Dimension.png" />
+            </p>
+            <ul>
+                <li>The first choice being a <b>Normal</b> dimension where a dimensional record is updated and changed whenever any of the non business key information changes. </li>
+                <li>The second choice is a <b>Slowly Changing</b> dimension where new dimension records are created when certain identified columns in the dimension change. <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">For custom database targets, you can set the initial default values for the DSS columns that are used in the procedure generation for slowly changing dimensions. Refer to <a href="../Default Settings/DSS Columns for Custom Targets.htm">DSS Columns for Custom Targets</a> for details.</td></tr></tbody></table></li>
+                <li>The third choice is a <b>Previous values</b> dimension, which enables the storing of the last values of selected fields in secondary columns. </li>
+                <li>The fourth choice is a <b>Date Ranged</b> dimension, which supports source systems that provide start and end dates.</li>
+            </ul>
+            <p>With any dimension, we identify a <b>Business Key</b> that uniquely identifies the dimension records. </p>
+            <p>For example in the case of the product dimension, the product<b> code </b>is deemed to be the business key. The code uniquely identifies each product within the dimension. The product may also have a name or description and various other attributes that distinguish it (e.g. size, shape, color, etc.). </p>
+            <p>A common question when handling dimensions is what to do when the name or description changes:</p>
+            <ul>
+                <li>Do we want to track our fact table records based only on the product code? or </li>
+                <li>Do we also want to track records based on different descriptions?</li>
+            </ul>
+            <p>An example :</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">code
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1">description
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1">product_group
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">sub_group
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+                        1235
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1">
+                        15oz can of brussel sprouts
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1">
+                        canned goods
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        sprouts
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>This product has been sold for many years and we consequently have a very good history of sales and the performance of the product in the market. The company does a '20% extra for free' promotion for 3 months during which time it increases the size of the can to 18oz. The description is also changed to be '15 + 3oz can of brussel sprouts'. At the end of the promotion, the product is reverted to its original size and the description changed back to its original name.</p>
+            <p>The question is, do we want to track the sales of the product when it had a different description (slowly changing) , or should the description of the product simply change to reflect its current name (normal). For this scenario a previous value dimension would not provide much advantage, so it is not discussed.</p>
+            <p>The decision is not a simple one and the advantages and disadvantages of each of the two choices is discussed below.</p>
+            <h4>Slowly Changing</h4>
+            <ul>
+                <li>Allows the most comprehensive analysis capabilities when just using the product dimension.</li>
+                <li>Complicates the analysis. Does not allow a continuous analysis of the product called '15oz can of brussel sprouts' when the description is used. This analysis is however still available through the code which has not changed.</li>
+                <li>Adds considerable additional processing requirements to the building of the fact tables that utilize this dimension.</li>
+                <li>May track data quality improvements rather than real business change.</li>
+            </ul>
+            <h4>Normal</h4>
+            <ul>
+                <li>Does not allow specific analysis of the product during its size change. Note, however that this analysis will probably be available through the combination of a 'promotion' dimension.</li>
+                <li>Provides a continuous analysis history for the product called '15oz can of brussel sprouts'. An analysis via description and code will produce the same results.</li>
+                <li>Simplifies analysis from an end user's perspective.</li>
+            </ul>
+            <p>As mentioned above, the choice is never a simple one. Even among experienced data warehouse practitioners, there will be a variety of opinions. The decision must be based on the business requirements. In many cases keeping the analysis simple is the best choice, at least in the early stages of a data warehouse development. <br />Slowly changing dimensions do have a place, but there is nearly always an alternate method that provides equal or better results. In the example above, a promotion dimension coupled with the product dimension could provide the same analysis results whilst still keeping product only analysis simple and easy to understand.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">Do not over complicate the design of an analysis area. Keep it simple and avoid the unnecessary use of slowly changing dimensions.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Previous Values Dimension Type</h4>
+            <p>If you selected a 'Previous values' dimension type then the following questions will be asked. If one of the other two types where chosen then proceed directly to <b>Dimension Properties</b>.</p>
+            <p>The following dialog appears:</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Previous Values Dimension.png" />
+            </p>
+            <p>It requests the definition of each column that will be managed by storing the previous value in a separate additional column. Note that the business key cannot be used in this manner, as a change to the business key will result in a new record.</p>
+            <p>Select the columns to be managed and click <b>OK</b>. </p>
+            <p>The following dialog appears for each column that has been selected. </p>
+            <p>Either accept the name of the additional column or enter a new name.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/It requests the definition.png" />
+            </p>
+            <h3>Dimension Properties</h3>
+            <p>Once the dimension type is chosen, the <b>Properties</b> screen appears. <br />Change the storage options if required.<br />If prototyping, and the dimension is simple (i.e. one source table) then it is possible to create, load and update the dimension in a couple of steps. <br />If you wish to do this select the <b>(Build Procedure...)</b> option from the <b>Update Procedure</b> drop-down, and answer <b>Create and Load</b> to the next question.</p>
+            <p>
+                <img src="../../Images/Teradata_images/Loading Data/Build Dim.png" />
+            </p>
+            <h3>Create and Load</h3>
+            <p>The following window appears after the <b>Properties</b> screen and asks if you want to create the dimension table in the database and execute the update procedure.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/It requests the definition_1.png" />
+            </p>
+            <p>If you are satisfied with the columns that will be used and do not wish to add additional columns you can click the <b>Create and Load</b> button. </p>
+            <p>In this case it would be normal practice to select the <b>(Build Procedure...)</b> option from the 'Update Procedure' drop-down box in the previous <b>Properties</b> window. </p>
+            <p>If no procedure has been selected then select the <b>Create</b> button as no update will happen in any event.</p>
+            <p>If <b>Create</b> or <b>Create and Load</b> is selected and a new procedure creation was chosen, proceed directly to the <a href="Gen Dim Update Proc.htm">Generating the Dimension Update Procedure</a> section.</p>
+            <p>If you have additional columns to add or columns to delete, click <b>Close </b>and proceed as follows below.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                        It is possible to create and load the table via the Scheduler by selecting this option from the drop-down list on the <b>Create and Load</b> button:
+                        <p><img src="../../Images/UserGuide_Images/Dimensions/It requests the definition_2_346x178.png" style="width: 346;height: 178;" /></p></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Deleting and Changing columns</h3>
+            <p>The columns defined for the dimension is displayed in the middle pane. </p>
+            <p>It is possible to delete any unwanted columns by highlighting a column name or a group of names and choosing the <b>Delete</b> key.</p>
+            <p>The name of a column can also be changed by selecting the column and using the right-click menu to edit its properties. Any new name must conform to the database naming standards. Good practice is to use alphanumerics and the underscore character. </p>
+            <p>Refer to the <a href="Dim Col Properties.htm">Column Properties</a> for a more detailed description of the various fields.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">When prototyping, and in the initial stages of an analysis area build it is best not to remove columns, nor to change their names to any great extent. This type of activity is best left until after end users have used the data and provided feedback.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Adding additional columns</h3>
+            <p>With the columns of the dimension table displayed in the middle pane, this pane is considered a drop target for additional columns.</p>
+            <p>It is a simple matter therefore to select columns from other tables and to drag these columns into the middle pane. </p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Adding additional columns.png" />
+            </p>
+            <p>The source table shows where each column was dragged from. </p>
+            <p>In the example above, the description column is acquired from the load_product, load_prod_group and load_prod_subgroup tables. To create the dimension table, these columns must be assigned unique names. For this example the last two columns have been renamed to group_description and subgroup_description.</p>
+            <p>There are a number of columns that do not have a source table. These columns have been added by <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> and are added depending on earlier choices. </p>
+            <p>A description of these columns follows:</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Column Name
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        dim_product_key
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        The unique identifier (artificial key) for the dimension. This key is used in the joins to the fact table. It is generated via a sequence (Oracle) or identity (SQL Server) associated with the table, except for the date dimension where it has the form YYYYMMDD
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        dss_start_date
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Used for slowly changing dimensions. This column provides a date time stamp when the dimension record came into existence. It is used to ascertain which dimension record should be used when multiple are available.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        dss_end_date
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Used for slowly changing dimensions. This column provides a date time stamp when the dimension record ceased to be the current record. It is used to ascertain which dimension record should be used when multiple are available.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        dss_current_flag
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Used for slowly changing dimensions. This flag identifies the current record where multiple versions exist.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        dss_source_system_key
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Added to support dimensions that cannot be fully conformed, and the inclusion of subsequent source systems. See the ancillary settings section for more details.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        dss_version
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Used for slowly changing dimensions. This column contains the version number of a dimension record. Numbered from 1 upwards with the highest number being the latest or current version. It forms part of the unique constraint for the business key of a slowly changing dimension.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        dss_update_time
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Indicates when the record was last updated in the data warehouse.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+                        dss_create_time
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        Indicates when the record was first created in the data warehouse
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Manually adding previous value columns</h4>
+            <p>If a <b>Previous Value</b> type of dimension is chosen, or in fact if the dimension is converted to this type, it is possible to manually add any required columns that were not defined as part of the create. The steps are:</p>
+            <ol>
+                <li value="1">Add a new column by dragging in the column that is to have a previous value stored.</li>
+                <li value="2">Change the name to a unique name. Typically by adding the prefix 'prev_' to the column name<b>.</b></li>
+                <li value="3">Change the source table, to be that of the dimension we are building.</li>
+                <li value="4">Set the Key Type to 4.</li>
+                <li value="5">Having performed these actions <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> will detect the column and build the appropriate code during the procedure generation phase.</li>
+            </ol>
+            <h4>Creating the table</h4>
+            <p>Once the dimension has been defined in the metadata we need to physically create the table in the database. </p>
+            <ol>
+                <li value="1">To do this, right-click on the dimension name and choose <b>Create (ReCreate)</b> from the pop-up menu.</li>
+                <li value="2">The <b>Results</b> pane show the results of the creation. It displays a message to the effect that the dimension table was created. A copy of the actual database create statement, the sequence create statement (Oracle only), and if defined the results of any index create statements will be listed. For the initial create no indexes will be defined.</li>
+                <li value="3">If the table was not created then ascertain and fix the problem. A common problem is a 'Duplicate column' where a column has the same name in two of the source tables. </li>
+                <li value="4">The best way to find such a column is to double-click on the list heading <b>Col name</b>; which will sort the column names into alphabetical order. <br />Another double-click on the heading will sort the columns back into their create order.&#160; </li>
+            </ol>
+            <p>For <b>Oracle</b> data warehouses, the sequence created as part of the table create is normally called <b>table_name_seq</b> unless the default has been overridden. If this sequence already exists, a warning is issued. This sequence is used in the assigning of a unique artificial key to the dimension. To change a sequence name while creating a dimension table, go to the <b>Storage</b> tab and change the <b>Artificial Key Sequence Name </b>field to the required sequence name. Refer to <a href="../Table Properties/Table Storage Screen Oracle.htm">Table Storage Screen - Oracle</a> for details.</p>
+            <p><b>SQL Server </b>makes use of an identity attribute on the artificial key column.</p>
+            <p>The next section covers the <a href="Gen Dim Update Proc.htm">Generating the Dimension Update Procedure</a>.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

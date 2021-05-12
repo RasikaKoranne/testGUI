@@ -1,0 +1,215 @@
+//=======================================================================
+//================ Lex class support: Bash ==============================
+//=======================================================================
+
+lexClass:
+    parent:file = <*.sh>
+    name = c_Bash
+    caseSensitive = 0
+    txt:colorFG = 0x000000
+
+lexClass:
+    name = c_CompareSingleLineComment
+    parent = c_Bash
+    start:tag = '#<<--', '#>>--'
+    end:tag = @EOL
+    txt:colorFG = 0x0000F0
+
+lexClass:
+    name = c_MultilineComment
+    parent = c_Bash
+    children = 0
+    start:Tag = ': \''
+    end:Tag = '\''
+    Collapsable = 1
+    CollapsedText = ': \'...\''
+    txt:colorFG = 0x008000
+
+lexClass:
+    name = c_SingleLineComment
+    parent = c_Bash
+    caseSensitive = 0
+    start:tag = '#'
+    end:separators = @EOL
+    txt:colorFG = 0x008F00
+
+lexClass:
+    name = c_IntegerOperators
+    caseSensitive = 0
+    parent = c_Bash
+    Token:Tag = '-eq', '-ne', '-gt', '-ge', '-lt', '-le', '<=', '>=' //, '<', '>'
+    token:start:separators = ' '
+    token:end:separators = ' '
+    txt:colorFG = 0x804040
+    txt:Bold = 1
+
+lexClass:
+    name = c_StringOperators
+    caseSensitive = 0
+    parent = c_Bash
+    Token:Tag = '=', '==', '!=', '<', '>', '\<', '\>', '-z', '-n'
+    token:start:separators = ' '
+    token:end:separators = ' '
+    txt:colorFG = 0x804040
+    txt:Bold = 1
+
+lexClass:
+    name = c_Conditional
+    caseSensitive = 0
+    parent = c_Bash
+    Token:Tag = '-a', '-b', '-c', '-d', '-e', '-f', '-g', '-h', '-k', '-p', '-r', '-s', '-t', '-u'
+    Token:Tag = '-w', '-G', '-L', '-N', '-O', '-S', '-ef', '-nt', '-ot', '-o', '-v', '-R', '-z', '-n'
+    token:start:separators = ' '
+    token:end:separators = ' '
+    txt:colorFG = 0x804040
+    txt:Bold = 1
+
+lexClass:
+    name = c_CharacterConstant
+    parent = c_Bash
+    children = 0
+    start:Tag = '\''
+    skip:Tag = '\\\'', '\"'
+    end:Tag = '\''
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_StringConstant
+    parent = c_Bash
+    start:Tag = '"'
+    skip:Tag = '\\\'', '\"'
+    end:Tag = '"'
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_Backtick
+    parent = c_Bash
+    children = 0
+    start:Tag = '`'
+    end:Tag = '`'
+    txt:colorFG = 0x007FAE
+
+lexClass:
+    name = c_NumericConstant
+    parent = c_Bash
+    children = 0
+    previous:tag = ' ', '\t', '~', '-', '+', '.', '&', '=', @EOL
+    start:Tag = @DIGIT
+    skip:Tag = @DIGIT, '.'
+    end:separators = ' ', '\t', @EOL
+    txt:colorFG = 0x6400C8
+
+lexClass:
+    name = c_Bash_Keywords
+    caseSensitive = 0
+    parent = c_Bash
+    Token:Tag = 'case', 'do', 'done', 'elif', 'else', 'esac', 'fi', 'for', 'function', 'if', 'in'
+    Token:Tag = 'select', 'then', 'time', 'until', 'while'
+    token:start:separators = ' ', '\t', @EOL
+    token:end:separators = ' ', '\t', @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_Bash_BuiltInCommands
+    caseSensitive = 0
+    parent = c_Bash
+    Token:Tag = 'alias', 'bg', 'bind', 'break', 'builtin', 'caller', 'cd', 'command', 'compgen'
+    Token:Tag = 'complete', 'compopt', 'continue', 'declare', 'dirs', 'disown', 'echo', 'enable', 'eval'
+    Token:Tag = 'exec', 'exit', 'export', 'fc', 'fg', 'getopts', 'hash', 'help', 'history', 'jobs'
+    Token:Tag = 'kill', 'let', 'local', 'logout', 'mapfile', 'popd', 'printf', 'pushd', 'pwd', 'read'
+    Token:Tag = 'readarray', 'readonly', 'return', 'set', 'shift', 'shopt', 'source', 'suspend', 'test'
+    Token:Tag = 'times', 'trap', 'type', 'typeset', 'ulimit', 'umask', 'unalias', 'unset', 'wait'
+	Token:Tag = 'mkdir', 'rm', 'cat', 'cp', 'ls', 'mv'
+    token:start:separators = ' ', '\t', @EOL
+    token:end:separators = ' ', '\t', @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_Bash_Path
+    parent = c_Bash
+    start:tag = '/', '\"'
+    end:separators = '\"', '$', @EOL
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_Bash_Variable1
+    parent = c_Bash, c_Bash_Path, c_StringConstant
+    children = 0
+    start:tag = '${'
+    end:tag = '}'
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_Bash_Variable2
+    parent = c_Bash, c_Bash_Path, c_StringConstant
+    children = 0
+    previous:tag = ' ', '\t', @SPECS, @ALPHA, @EOL
+    start:tag = '$'
+    skip:tag = @ALPHA, @DIGIT, '_'
+    end:separators = ' ', '\t', @SPECS, @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_Bash_SpecialVariables1
+    caseSensitive = 0
+    parent = c_Bash
+    Token:Tag = '$!', '$#', '$$', '$*', '$-', '$?', '$@', '$_'
+    Token:Tag = '$0', '$1', '$2', '$3', '$4', '$5', '$6', '$7', '$8', '$9'
+    token:start:separators = ' ', '\t', '='
+    token:end:separators = ' ', '\t', '.', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_Bash_SpecialVariables2
+    caseSensitive = 0
+    parent = c_Bash
+    Token:Tag = 'auto_resume', 'BASH', 'BASHOPTS', 'BASHPID', 'BASH_ALIASES', 'BASH_ARGC', 'BASH_ARGV'
+    Token:Tag = 'BASH_CMDS', 'BASH_COMMAND', 'BASH_COMPAT', 'BASH_ENV', 'BASH_EXECUTION_STRING'
+    Token:Tag = 'BASH_LINENO', 'BASH_REMATCH', 'BASH_SOURCE', 'BASH_SUBSHELL', 'BASH_VERSINFO'
+    Token:Tag = 'BASH_VERSION', 'BASH_XTRACEFD', 'bell-style', 'bind-tty-special-chars', 'CDPATH'
+    Token:Tag = 'CHILD_MAX', 'colored-stats', 'COLUMNS', 'comment-begin', 'completion-display-width'
+    Token:Tag = 'completion-ignore-case', 'completion-map-case', 'completion-prefix-display-length'
+    Token:Tag = 'completion-query-items', 'COMPREPLY', 'COMP_CWORD', 'COMP_KEY', 'COMP_LINE'
+    Token:Tag = 'COMP_POINT', 'COMP_TYPE', 'COMP_WORDBREAKS', 'COMP_WORDS', 'convert-meta', 'COPROC'
+    Token:Tag = 'DIRSTACK', 'disable-completion', 'editing-mode', 'EMACS', 'enable-keypad', 'ENV', 'EUID'
+    Token:Tag = 'expand-tilde', 'FCEDIT', 'FIGNORE', 'FUNCNAME', 'FUNCNEST', 'GLOBIGNORE', 'GROUPS'
+    Token:Tag = 'histchars', 'HISTCMD', 'HISTCONTROL', 'HISTFILE', 'HISTFILESIZE', 'HISTIGNORE'
+    Token:Tag = 'history-preserve-point', 'history-size', 'HISTSIZE', 'HISTTIMEFORMAT', 'HOME'
+    Token:Tag = 'horizontal-scroll-mode', 'HOSTFILE', 'HOSTNAME', 'HOSTTYPE', 'IFS', 'IGNOREEOF'
+    Token:Tag = 'input-meta', 'INPUTRC', 'isearch-terminators', 'keymap', 'LANG', 'LC_ALL', 'LC_COLLATE'
+    Token:Tag = 'LC_CTYPE', 'LC_MESSAGES', 'LC_MESSAGES', 'LC_NUMERIC', 'LINENO', 'LINES', 'MACHTYPE'
+    Token:Tag = 'MAIL', 'MAILCHECK', 'MAILPATH', 'MAPFILE', 'mark-modified-lines'
+    Token:Tag = 'mark-symlinked-directories', 'match-hidden-files', 'menu-complete-display-prefix'
+    Token:Tag = 'meta-flag', 'OLDPWD', 'OPTARG', 'OPTERR', 'OPTIND', 'OSTYPE', 'output-meta'
+    Token:Tag = 'page-completions', 'PATH', 'PIPESTATUS', 'POSIXLY_CORRECT', 'PPID', 'PROMPT_COMMAND'
+    Token:Tag = 'PROMPT_DIRTRIM', 'PS1', 'PS2', 'PS3', 'PS4', 'PWD', 'RANDOM', 'READLINE_LINE'
+    Token:Tag = 'READLINE_POINT', 'REPLY', 'revert-all-at-newline', 'SECONDS', 'SHELL', 'SHELLOPTS'
+    Token:Tag = 'SHLVL', 'show-all-if-ambiguous', 'show-all-if-unmodified', 'show-mode-in-prompt'
+    Token:Tag = 'skip-completed-text', 'TEXTDOMAIN', 'TEXTDOMAINDIR', 'TIMEFORMAT', 'TMOUT', 'TMPDIR'
+    Token:Tag = 'UID', 'USER', 'visible-stats'
+    token:start:separators = ' ', '\t', '$'
+    token:end:separators = ' ', '\t', '=', '}', '.', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = ArithmeticOperators
+    parent = c_Bash
+    Token:Tag = '+', '-', '*', '/', '**', '%', '+=', '-=', '*=', '/=', '%=' //, '='
+    txt:colorFG = 0x6400C8
+    txt:Bold = 1
+
+lexClass:
+    name = BitwiseOperators
+    parent = c_Bash
+    Token:Tag = '<<', '>>', '>>=', '&', '&=', '|', '|=', '~', '^', '^='
+    txt:colorFG = 0x6400C8
+    txt:Bold = 1
+
+lexClass:
+    name = LogicalOperators
+    parent = c_Bash
+    Token:Tag = '!', '&&', '||', ','
+    txt:colorFG = 0x6400C8
+    txt:Bold = 1

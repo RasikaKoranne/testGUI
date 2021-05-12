@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes/Tabular Models|OLAP Cubes" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Defining an OLAP Cube</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">OLAP Defining an OLAP Cube</h3>
+            <p class="BodyText">OLAP Cubes can be created from fact, fact view or aggregate objects. A single cube can contain dates from multiple source star schemas, each defined with a measure group. An OLAP Cube consists of many parts namely, measure groups, measures, calculations, actions, dimensions, dimension hierarchies, dimension attributes and dimension attribute relationships. </p>
+            <p class="BodyText">It is strongly recommended that drag and drop is used to create an OLAP Cube in order that all the components are set up correctly. OLAP Cubes can utilize a hierarchical structure in the dimensions to facilitate user queries. Therefore, each dimension present in an OLAP Cube must have either a hierarchy of levels or attributes and relationships. The hierarchies are defined against the underlying dimensional attributes which can be inherited from the source dimension metadata. Individual attributes can be added to the dimension after the OLAP Cube or OLAP Dimension metadata has been created.</p>
+            <h4 class="Heading4">Building a New OLAP Cube</h4>
+            <p class="BodyText">To create an OLAP Cube proceed as follows:</p>
+            <ol>
+                <li value="1">Double-click on the <b>OLAP Cube object group</b> to make the middle pane a cube drop target.</li>
+                <li value="2">Select the <b>data warehouse connection</b> to browse in the source pane. The connection can be selected by right-clicking the Data Warehouse connection in the Object list pane and choosing <b>Browse Source System</b>.</li>
+                <li value="3">Drag a <b>Fact</b> table from the source pane into the target pane.</li>
+                <li value="4">Set the cube name in the <b>Add a New Metadata Object</b> window and then click <b>ADD</b>.<p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Defining an OLAP Cube.png" /><br /></p></li>
+                <li value="5">A prompt is displayed for any OLAP Dimensions that do not already exist that are required for this cube (based on the fact table metadata). Set the dimension name in the <b>Add a New Metadata Object</b> window and then click <b>ADD</b>. <p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Defining an OLAP Cube_1.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If you wish to include Attribute Relationships in Analysis Services for this dimension, click the <b>Include Attribute relationships</b> check box.</td></tr></tbody></table></li>
+                <li value="6">The following window appears, prompting you to select the attributes to be included in the <b>Customer</b> OLAP dimension. <p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Defining an OLAP Cube_2.png" /></p><p>The attributes available for selection are in the left column. To select an attribute, click the attribute in the left column and click <b>&gt;</b>. This moves the attribute to the right column.</p><p>To de-select an attribute, click the attribute in the right column and then click <b>&lt;</b>. This moves the attribute to the left column. </p><p>Repeat Step 5 for each dimension as required.</p></li>
+                <li value="7">A window appears with a list of the fields that are to be added as measures. Remove any columns that are not measures. A measure is a column that uses the sum, count, min or max of the column. Calculations can be chosen if required at this point. A date dimension must be present along with a hierarchy to enable the definition of these calculated members.<p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Defining an OLAP Cube_3.png" /><br /></p></li>
+                <li value="8">During cube creation, the <b>Adding Cube Measures</b> window is displayed. In this window the following options are provided:<ul><li value="1">Measure, provides a list of measures that can be aggregated (e.g. using Sum, Count, Min, Max or Distinct Count). By default, <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> shows all attributes in the Fact table that are defined as numeric and additive. Attributes that should not be considered measures can be removed using the <b>Remove</b> button.</li><li value="2"><b>Calculated Member</b> options enable you to add some predefined date based calculated member definitions to be built against the cube. The standard calculations:<ul><li value="1">Month to date</li><li value="2">Year to date</li><li value="3">Moving Quarter</li><li value="4">Moving Year</li><li value="5">Same Month Previous Year</li><li value="6">Previous Year to date</li></ul></li></ul><p>These defines a calculated measure based on the associated drop-down boxes. There are two different ways that <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> implements these calculations which is dictated by the <b>Use OLAP functions</b> check box:</p><ul><li value="1">Using OLAP Functions - implements the calculations using MDX Expressions within the cube using date based MDX functions. These calculations are efficiently executed by Analysis Services.</li><li value="2">Without using OLAP functions - implements the calculations using an MDX Filter function built over date dimension attributes. This option leverages the flags from the relational date dimension and ensures that a query using the calculations in the Cube matches an equivalent query against the star schema and is particularly useful if non-standard date periods are used.</li></ul></li>
+                <li value="9">The cube and dimensions is created in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata and the cube measures is displayed.</li>
+            </ol>
+            <h4>Setting Cube Properties</h4>
+            <p class="BodyText">The properties of the cube must be completed before we can create the cube in the Analysis services database. Most of the elements in the properties screen has default values, but each of the following columns probably need to be completed.</p>
+            <ol>
+                <li value="1">The <b>Connection </b>to the Analysis services server must be defined within the cube properties. This connection is a connection object. If no such connection exists then a new connection of type must be created and configured. SQL Server 2005 or 2008 Analysis Services use a connection type of "Analysis Server 2005+". This connection name must then be chosen in the cubes properties.</li>
+                <li value="2">A <b>Cube Database Name</b> must be selected. A new database name can be created by selecting <b>(Define New Cube Database...)</b> from the drop-down list. This database name is the database that the cubes will reside on the Analysis services server.</li>
+                <li value="3">The <b>Data Source Connection</b> must be defined and the three derived values shown under this connection must be present. If there is nothing in the three fields below the data source connection then the connection object will need to be modified. The provider type is normally MSDAORA. if the data warehouse is an Oracle database or SQLOLEDB if the data warehouse is SQL Server. The Server is either the SQL Server database server, or the Oracle TNS name. The database is the data warehouse database name.</li>
+            </ol>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Dimensions" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Dimension Get Key Function</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Dimension Get Key Function</h2>
+            <p>When <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> generated a new procedure to support the update of a Dimension, it also generates a <b>Get Key</b> function (procedure in SQL Server and DB2). This function is also generated when Dimension Views are created and can be generated for retro-fitted Dimensions.</p>
+            <p>The <b>Get Key</b> function is used to return an artificial key when supplied a business key. The normal syntax is to call the function passing the business key and be returned a status indicating the result of the lookup. </p>
+            <p>In a successful lookup the artificial key for the dimension record is also returned. If the lookup fails because the business key is not found in the Dimension, then an appropriate status is returned, and the artificial key is set to 0.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ul>
+                                <li style="color: #d7454b;">Two parameters exist on the generated <b>Get Key</b> function that allow manipulation of the process. It is possible to automatically add a new Dimension record when a match is not made. It is also possible to record the lookup failure in the detail/error log. By default, both these options are disabled.</li>
+                                <li style="color: #d7454b;">The <b>Get Key</b> function is not available for Dimension objects that are stored in custom database targets. </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Modifying the 'Get Key' function</h3>
+            <p>There may be a situation where a Dimension record can have multiple business keys.&#160; </p>
+            <p><b>For example:</b> <br />You may be able to look up a 'factory' based on the factory code, the name of the factory or its address. The generated <b>Get Key</b> function only supports the primary business key which in this case may be the factory code. However, we may have a fact record that only contains the factory name. In such a case, we need to modify the <b>Get Key</b> function or add a second function. The advantages of adding a second function are that any code generated in the future that uses this Dimension works without modification. The disadvantages are the multiple points of maintenance required when changing the Dimension. Both options are discussed below:</p>
+            <h4>Adding a second 'Get Key' function for a dimension</h4>
+            <p>Choose a name similar to the existing function. If say we have a 'get_dim_factory_key' function, then we may choose a name like 'get_factory_name_key'. Proceed to create and populate the function as follows:</p>
+            <p>Right-click the <b>Procedure</b> group in the left pane and select <b>New Object</b> to create a new procedure. Enter the name and click <b>ADD</b>.</p>
+            <ol>
+                <li value="1">A Properties window is displayed. Change the type to <b>Function</b> for Oracle, leave as a <b>Procedure</b> for SQL Server. Enter a description under the <b>Purpose</b> column and click the <b>UPDATE</b> button.</li>
+                <li value="2">Expand the <b>Procedure</b> group in the left pane and double-click the new object just created. This opens the procedure editor window.</li>
+                <li value="3">Select the <b>Tools &gt; View Procedure or Template</b> menu option. </li>
+                <li value="4">Select the existing <b>Get Key</b> function from the procedure drop-down. A new window appears on the right, showing the existing <b>Get Key</b> function.</li>
+                <li value="5">Click in the existing function window. Right-click and choose <b>Select All</b> and then right-click again to select <b>Copy</b>.</li>
+                <li value="6">Click in the main editor window and paste the existing function into the window. The existing function window can now be closed if desired.</li>
+                <li value="7">Using the menu option <b>Edit &gt; Replace</b>, change all occurrences of the old function name to the new name.</li>
+                <li value="8">Change the various occurrences of the business key name and variable to match the new one and test it all.</li>
+            </ol>
+            <p>Once a new <b>Get Key</b> function has been produced, it is necessary to modify the Stage update procedure to utilize the new function.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">An alternative approach is to create a Dimension View, specifically to generate a different kind of get key function. Then use this view's surrogate key in the Stage table instead of the Dimension table's surrogate key. This approach avoids modifying the staging table procedure.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Extending the 'Get Key' function</h4>
+            <p>If you want to keep all the information for the lookup of dimension keys in one location, then extend the functionality of the existing <b>Get Key</b> function. The normal practice in this case is to include all potential business keys as parameters. Multiple select statements can be employed to select the keys based on the appropriate business key. To choose the correct statement either use Nulls in the unused business keys or include an additional parameter to indicate which business key is being passed.</p>
+            <p>If this method is used, then any Stage update procedures must be modified to handle the new calling syntax.</p>
+        </div>
+    </body>
+</html>

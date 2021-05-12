@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Connections|Connection Target Settings" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Connection Target Settings for Custom Database</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>Connection Target Settings for Custom Database</h3>
+            <p>The <b>Target Settings</b> tab for custom database connections provide additional fields for defining default DDL templates to use for the creation of tables, indexes and views in custom database targets.<br /><br /></p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"> Please ensure that you have installed the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> supplied templates or created your own templates, before configuring the settings below. <br /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/connection_target_settings_custom_dbase.png" />
+            </p>
+            <h4>
+                <br />Target Connection Settings</h4>
+            <p>In addition to the standard settings described in the previous section, the following settings are available for custom database connections:<br /></p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');margin-left: 0;margin-right: auto;" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Field</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Display Data SQL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The generic syntax of a Display Data SQL statement which should use <span class="mc-variable WS_Branding.Product variable">RED</span> placeholder parameters (e.g. $OBJECT$, $MAXDISPLAYDATA$).<br /><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The $MAXDISPLAYDATA$ parameter is derived from the <b>User Preferences &gt; Common &gt; Look and Feel &gt; General &gt; Maximum rows returned for Display Data</b> setting.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Row Count SQL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"> The generic syntax of a Row Count SQL statement which should use <span class="mc-variable WS_Branding.Product variable">RED</span> placeholder parameters (e.g. $OBJECT$).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Bulk Table Row Count SQL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The SQL statement used to return the table name, schema name and row count of all tables for the connection.<br />For example: <b>SELECT table_name, schema_name, row_count FROM information_schema.tables</b>.<br />The variable $DATABASE$ can be used. <br /><br />The SQL&#160;statement defined in this field is used in the <a href="Connection Browse Properties.htm">Browser Connection screen</a> if the <b>Include Rowcount</b> option is enabled. <p><img src="../../Images/UserGuide_Images/Connections/Browse_Conn_scrn_rwcnt.png" /></p><br /><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><ul><li style="color: #d7454b;">The <b>Include Rowcount</b> option in the Browser Connection screen for Custom database connections  is only available, if this field has been defined.</li><li style="color: #d7454b;">If the <b>Include Rowcount</b> option is enabled for a Custom database connection, then the SQL statement defined in this field is used to return the list of tables, schema and row counts as the source of the row counts; instead of the SQL statement defined internally in <span class="mc-variable WS_Branding.Product variable">RED</span>.</li><li style="color: #d7454b;">The SELECT statement must follow the order "table_name, schema_name, row_count" as shown in the example above.</li></ul></td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Table Create DDL Template </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default Template used for generating DDL for new Tables created on targets of this connection.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">This template is used in the validation done for custom database targets during Application Load Processing performed in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> Setup Administrator. <br />Refer to Compile New and Changed Procedures in the <span class="mc-variable WS_Branding.Product variable">RED</span> Installation Guide for details.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default View Create DDL Template </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default Template used for generating DDL for new Views created on targets of this connection</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Table/Column Information SQL Block</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The SQL Block Procedure used to query Table/Columns information; should use <span class="mc-variable WS_Branding.Product variable">RED</span> placeholder parameters (e.g. $DATABASE$, $SCHEMA$, $OBJECT$).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Table Alter DDL Template </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default Template used for generating DDL to alter existing Tables created on targets of this connection</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Drop Table SQL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The generic syntax of a Drop Table SQL statement which should use RED placeholder parameters (e.g. $OBJECT$).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Drop View SQL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The generic syntax of a Drop View SQL statement which should use RED placeholder parameters (e.g. $OBJECT$).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Truncate SQL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The generic syntax of a Truncate SQL statement which should use RED placeholder parameters (e.g. $OBJECT$).<br /></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Index Create DDL Template 
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default Template used for generating DDL for new Indexes created on targets of this connection.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Index Drop DDL Template </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default Template used for generating DDL to drop existing Indexes created on targets of this connection.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Enable Automatic Creation of Indexes</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><span class="mc-variable WS_Branding.Product variable">RED</span>'s default behavior is to create indexes when creating new objects.<br /></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Pre-Load Action</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default Pre-Load Action to use for Load tables created on targets of this connection. Options include:<br /><ul><li>Truncate</li><li>Execute Pre-load SQL</li><li>Both Truncate and Execute Pre-Load SQL</li><li>No action</li></ul>
+
+If <b>Execute Pre-Load SQL</b> is selected, then the SQL statement to execute before the load takes place must be entered—refer to Pre-Load Action in <a href="../Loading Data/Database Link Load - Properties.htm">Database Link Load Properties Screen</a> for details.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Default Update Script Connection </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">The default Script Connection for new Update Scripts in tables created using this connection.
+This setting is only displayed in connections which have a target database type for which Update Script functionality is enabled, e.g. Custom database type.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <p> The following can be used as RED placeholder parameters:
+<br />$OBJECT$
+<br />$DATABASE$
+<br />$SCHEMA$
+<br />$TABLE$
+ </p>
+                            <p>The DDL settings defined in the Table Properties &gt; <a href="../Table Properties/Storage.htm">Storage</a> tab overrides the DDL settings defined in the <b>Target Settings</b> tab for custom database connections above.<br /></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <h4 class="SpecialBold_1">Target Table Location [For target enabled licenses]</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Add new Target Location </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">This option enables you to add new database/schema locations for objects in this connection. <br />For Greenplum, Netezza and PDW schema target locations setup, refer to <a href="Database.htm">Database source system - Local/Linked Servers</a> or <a href="ODBC.htm">ODBC</a> connection topics, depending on the connection type chosen for the database source.
+
+                        <ol><li value="1">Click the <b>Add</b> button to add the required target schemas for this connection.</li><li value="2">Give the new target a name and then enter the target's schema.</li><li value="3">Default schema location(s) for <b>New Tables</b> can also be set from the <b>Tools &gt; Options</b> menu. Refer to <a href="../Default Settings/Target Location.htm">Settings &gt; Storage  &gt; Target Location</a> for details.</li></ol>For more details on setting specific SQL Server and Oracle on a table by table level refer to <a href="../Table Properties/Storage.htm">Table Storage Properties</a> for SQL Server and Oracle specific examples.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The database and schema names for <b>Custom</b> database connections are used as follows<code>:  
+&lt;database&gt;.&lt;schema&gt;.object name
+</code><br />Leave database name blank if not required. Leave schema name blank to use the default schema.<br /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

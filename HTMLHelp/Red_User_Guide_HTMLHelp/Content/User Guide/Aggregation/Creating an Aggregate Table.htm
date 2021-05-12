@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Aggregation" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Creating an Aggregate Table</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Creating an Aggregate Table</h2>
+            <ol>
+                <li value="1">In the left pane double-click on the <b>aggregate</b> group to list the aggregates in the middle pane and set aggregates as the drop target.</li>
+                <li value="2">From the Data Warehouse browse (right) pane drag a fact table into the middle pane and enter the aggregate name. Click <b>ADD</b>.<p><img src="../../Images/UserGuide_Images/Aggregation/Creating an Aggregate Table.png" /><br /></p></li>
+                <li value="3">The aggregate properties are displayed. Click <b>OK</b>.<p><img src="../../Images/UserGuide_Images/Aggregation/Creating an Aggregate Table_1.png" /><br /></p></li>
+                <li value="4">The list of columns in the Aggregate is displayed in the middle pane:<p><img src="../../Images/UserGuide_Images/Aggregation/Creating an Aggregate Table_2.png" /></p></li>
+                <li value="5">Remove any columns that will not make sense at an aggregated level. For example, dss_fact_table_key, any business keys, any non-additive facts, any measures that relate to detail (e.g. unit price) and any dimension keys not required:<p><img src="../../Images/UserGuide_Images/Aggregation/Creating an Aggregate Table_3.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">All aggregate table columns (other than dss columns) should always have a source table specified, even if a column transformation is in use.</td></tr></tbody></table></li>
+                <li value="6">Create the aggregate table in the database by right-clicking on the aggregate and selecting <b>Create(ReCreate)</b>.</li>
+                <li value="7">Create a procedure to update the aggregate by right-clicking on the aggregate, selecting <b>Properties</b> and selecting <b>(Build Procedure...)</b> in the Update Procedure field.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">WhereScape RED generated update procedures for aggregates are incremental. Incremental updates are based on a date dimension key and number of look back days. The aggregate update process looks at any records that have been updated in the fact table in the last 7 days (by default)..</td></tr></tbody></table><p>To support this, a date dimension key must be selected. The columns chosen must be in both the source fact table and the aggregate. Select this column and click <b>OK</b>.</p><p><img src="../../Images/UserGuide_Images/Aggregation/Creating an Aggregate Table_4.png" /><br /></p></li>
+                <li value="8">Update the table by right-clicking and choosing <b>Execute Update Procedure.</b><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Any column transformations added to a measure column of an aggregate table must always include an aggregate function, usually <b>SUM</b>. For example, an ISNULL added to forecast_quantity should be entered as: SUM(ISNULL(forecast_quantity,0)).</td></tr></tbody></table><p><img src="../../Images/UserGuide_Images/Aggregation/Creating an Aggregate Table_5.png" style="height: 306px;width: 477px;" class="img_1" /></p><ul><li><b>Oracle</b>: When the procedure runs it first removes the materialized view, then updates any changes from the fact table into the aggregate. It then re-establishes the materialized view, enabling query rewrite.</li><li><b>DB2: </b>When the procedure runs it first removes the materialized query table, then updates any changes from the fact table into the aggregate. It then re-establishes the materialized query table, enabling query rewrite.</li></ul></li>
+            </ol>
+        </div>
+    </body>
+</html>

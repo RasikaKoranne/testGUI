@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Staging" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Generating the Permanent Stage Table Update Procedure</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Generating the Permanent Stage Table Update Procedure</h2>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span class="mc-variable WS_Branding.Product variable">RED</span> version 8.1.1.0 and above no longer supports the Permanent Stage table object sub type. However, users that have existing Permanent Stage table objects in their data warehouse can retain and continue to use them. </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Generating a Procedure</h3>
+            <ol>
+                <li value="1">To generate a procedure, right-click on the stage table in the left pane and select <b>Properties</b>. </li>
+                <li value="2">From the <b>Update Procedure</b> drop-down list, select <b>(Build Procedure...)</b>. </li>
+                <li value="3">Click <b>OK</b> to update the properties and start the process of generating the new procedure.</li>
+                <li value="4">A series of prompts are displayed during the procedure generation to join the tables and link the dimensions.</li>
+            </ol>
+            <h3>Procedure Type</h3>
+            <p class="BodyText">The first dialog box asks for the type of procedure that is to be generated. An example of this follows:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Staging/Procedure Type.png" />
+            </p>
+            <p>A number of different types of procedure generation are available. Each type is discussed below. A check box appears at the bottom of the dialog, if advanced procedure building features are enabled in the <b>Tools&gt;Options</b> screen. This check box enables the editing of the 'Where' clause when no table joining is being performed, and hence the 'Where' clause would not be exposed.</p>
+            <h4>Set based procedure</h4>
+            <p class="BodyText">A set based procedure performs one SQL statement to join all the dimensions and source tables together and then insert this data into the stage table. This is normally the fastest method of building the stage table. It is also the least flexible method and is easily prone to incorrect syntax. Caution and experience must be used with this option to ensure that all source transactions are processed and that they are processed correctly. This option is only recommended for the experienced practitioner where performance is the overriding requirement. Particular care must be taken with regards to <b>NULL</b> values in the business keys that are used to make the table joins. The generated code deliberately does not handle such null values.</p>
+            <h4>Set Merge Procedure</h4>
+            <p class="BodyText">This option is to allow the merging of two or more identical tables. The tables to be merged must have exactly the same number of columns and column names. If necessary additional blank columns could be added to one or other of the tables to make them identical. To use this procedure you must simply have the tables to be merged mentioned at least once in the <b>Source Table</b> field of a columns properties. Refer to <a href="../../User Guide/Staging/Set Merge Procedure.htm">Set Merge Procedure</a> for details.</p>
+            <h4>Set Distinct</h4>
+            <p>Essentially the same as Set, except for the DISTINCT key word being added to the SELECT statement. This option therefore removes duplicate rows.</p>
+            <h4>Set Minus</h4>
+            <p>The Set Minus option can be used to determine change data or for programmatic referential integrity checking. This option works in a similar way to Set Merge. It generates SQL code in this form: <i>SELECT ... FROM source_table1 {where} MINUS SELECT ... FROM source_table2 {where}</i>. It requires exactly two source tables to be specified. All source columns must exist in both source tables.</p>
+            <h3>Business Key definition</h3>
+            <p>A dialog will appear asking for the business key that will uniquely identify each permanent stage record.</p>
+            <p>The source table from which the permanent stage is derived would normally have some form of unique constraint applied. In most cases this will be the business key.</p>
+            <p>In the example below <b>order_number</b> and <b>order_line_no</b> are selected as the business key.</p>
+            <p>
+                <img src="../../Images/Teradata_images/Staging/Perm Stage Upd BK Cols.png" />
+            </p>
+            <p>A business key can be made up of multiple columns, but it must provide a unique identifier. Where multiple columns uniquely and separately identify the permanent stage, choose one to act as the primary business key. For example a source table may have a unique constraint on both a product code and a product description. Therefore the description as well as the code must be unique. It is of course possible to combine the two columns, but the normal practice would be to choose the code as the business key.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <p style="color: #d7454b;"><b>NULL VALUES:</b> None of the columns chosen as the business key should ever contain a NULL value. See the note at the start of the Staging chapter.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <p>The <b>Include delete before insert</b> option will display an additional wizard for building the 'Where' clause of the delete statement; at the start of the update procedure.</p>
+            <p>
+                <img src="../../Images/Teradata_images/Staging/Perm Stage Upd Del Stm.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <p style="color: #d7454b;">If a business key is specified, the generated procedure includes both the update and insert statement; otherwise only an insert statement is supplied.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Source table joins</h3>
+            <p>If multiple source tables are present then the definition of the joins between the various tables is required.</p>
+            <p>The joining of the tables will provide part of the construct of the set based update in the update procedure.</p>
+            <p>Only two tables may be joined at a time. To join two tables select the two tables in the left box and click either the outer join or simple join button. Column lists for both tables will appear at the bottom of the dialog box.</p>
+            <p>Select the column (or one of the columns) that allows the two tables to be joined. If an outer join is being used, the column for the master table must be chosen first. If there are multiple columns joining two tables then this action must be repeated for each column. Continue to perform all joins between all tables.</p>
+            <p>The example below only has two tables with one join column so is a relatively simple case. An additional option is available to allow either an ANSI standard join or a 'Where' clause based join. The ANSI standard join should be chosen in most situations. See the example screen in the subsections below.</p>
+            <p>
+                <img src="../../Images/Teradata_images/Staging/Perm Stage Src Tbl Map.png" />
+            </p>
+            <h4>Simple Join</h4>
+            <p>A simple join joins the two tables, and only returns rows where data is matched in both tables. So for example if table A has 100 rows and table B has a subset of 24 rows. If all the rows in table B can be joined to table A then 24 rows will be returned. The other 76 rows from table A will not be returned.</p>
+            <h4>Outer Join</h4>
+            <p>An outer join joins the two tables, and returns all rows in the master table regardless of whether or not they are found in the second table. Therefore,  if the example above was executed with table A as the master table, then 100 rows would be returned. 76 of those rows would have null values for the table B columns. In the example screen above the table 'load_order_line' has had its column chosen and the column for the table 'load_order_header' is currently being chosen. This will result in the statement as shown in the 'Where' clause edit window. The results of this select are that a row will be added containing order_line information, regardless of whether or not an order_header exists.</p>
+            <p>As the join columns are selected, the 'Where' statement is built up in the large edit window on the right. Once all joins have been made, the contents of this window can be changed if the join statement is not correct.</p>
+            <p>Once satisfied with the 'Where' statement click <b>OK</b> to proceed to the next step. As indicated in its description, this statement is the 'Where' clause that will be applied to the select statement of the cursor to allow the joining of the various source tables. It can of course be edited in the procedure that is generated if not correct.</p>
+            <p>You have the choice between 'Where' statement joins and ANSI standard joins.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <p style="color: #d7454b;">'Where' joins are not available if using outer joins in Teradata.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>The example below shows the result of an ANSI standard join which takes place in the 'From' statement.</p>
+            <p>
+                <img src="../../Images/Teradata_images/Staging/Perm Stage Src Tbl Map2.png" />
+            </p>
+            <h3>Building and Compiling the Procedure</h3>
+            <ul>
+                <li>Once the above questions are completed the procedure is built and compiled automatically.</li>
+                <li>If the compile fails an error will be displayed along with the first few lines of error messages.</li>
+                <li>Compilation failures typically occur when the physical creation of the table was not done.</li>
+                <li>If the compile fails for some other reason the best approach is to use the procedure editor to edit and compile the procedure.</li>
+                <li>The procedure editor will highlight all the errors within the context of the procedure.</li>
+                <li>Once the procedure has been successfully compiled it can either be executed interactively or passed to the scheduler.</li>
+            </ul>
+        </div>
+    </body>
+</html>

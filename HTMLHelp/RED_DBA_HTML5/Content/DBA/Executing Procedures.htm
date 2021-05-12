@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Statements|Executing ">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="apple-touch-icon" sizes="1607x1607" href="../../Skins/Favicons/RED icon.png" />
+        <link rel="shortcut icon" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" /><title>Executing Procedures</title>
+        <link href="../resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <h3 class="Heading3">Executing Procedures</h3>
+        <p class="BodyText">A database stored procedure can be executed from the edit pane. The syntax required is however not intuitive. Stored procedures will be considered either Functions (returning a value) or Procedures (where no value is returned). </p>
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+            <col class="TableStyle-note-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-note-Head-Header1">
+                    <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-note-Body-Body1">
+                    <td class="TableStyle-note-BodyA-Column1-Body1">Procedures may return values in their parameter list.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Functions</h4>
+        <p class="BodyText">The syntax for calling a database stored procedure function is:</p>
+        <p class="BodyText">{? = call <i>function</i>(<i>p1</i>,<i>p2</i>,<i>p3</i>)};</p>
+        <p class="BodyText">Where '<i>function</i>' is the name of the database stored procedure. '<i>p1</i>', '<i>p2</i>' and '<i>p3</i>' are the parameters of the stored procedure.</p>
+        <h4>Procedures</h4>
+        <p class="BodyText">The syntax for calling a database stored procedure is:</p>
+        <p class="BodyText">{call <i>procedure</i>(<i>p1</i>,<i>p2</i>,<i>p3</i>)};</p>
+        <p class="BodyText">Where '<i>procedure</i>' is the name of the database stored procedure. '<i>p1</i>', '<i>p2</i>' and '<i>p3</i>' are the parameters of the stored procedure.</p>
+        <h4>Parameters</h4>
+        <p class="BodyText">The parameters can be either numeric, character strings, or returned values. A number would normally be entered directly. A character string enclosed in single quotes and a returned value is represented by a question mark (<b>?</b>). </p>
+        <h4>Examples:</h4>
+        <p class="BodyText">A procedure called get_address has four parameters. The first parameter is a customer number, the second a name, the third a returned address, and the fourth a returned city name. The call may look as follows:</p>
+        <p class="BodyText">{call get_address(1,'Joe Bloggs',?,?)};</p>
+        <p class="BodyText">A function called get_customer_id has two parameters. The first parameter is a name and the second an address. The call may look as follows:</p>
+        <p class="BodyText">{? = call get_customer_id('Joe Bloggs','The Hermitage')};</p>
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+            <col class="TableStyle-tip-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-tip-Head-Header1">
+                    <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-tip-Body-Body1">
+                    <td class="TableStyle-tip-BodyA-Column1-Body1"> Some ODBC drivers do not support this functionality. For the Oracle database the <b>Microsoft for Oracle</b> ODBC driver does support the calling of stored procedures. Other ODBC drivers can corrupt the client layer when such commands are issued, resulting in an application crash.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

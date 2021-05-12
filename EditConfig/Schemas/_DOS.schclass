@@ -1,0 +1,203 @@
+//=======================================================================
+//================ Lex class support: DOS ===============================
+//=======================================================================
+
+lexClass:
+    parent:file = <*.bat>
+    name = c_DOS
+    caseSensitive = 0
+    txt:colorFG = 0x000000
+
+lexClass:
+    name = c_CompareSingleLineComment
+    parent = c_DOS
+    start:tag = 'REM <<--', 'REM >>--'
+    end:tag = @EOL
+    txt:colorFG = 0x0000F0
+
+lexClass:
+    name = c_SingleLineComment
+    parent = c_DOS
+    caseSensitive = 0
+    start:tag = 'REM', '::'
+    end:tag = @EOL
+    txt:colorFG = 0x008F00
+
+lexClass:
+    name = c_DOS_Label_Set
+    caseSensitive = 0
+    parent = c_DOS
+    start:Tag = ':'
+    end:Tag = ' ', '\t', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_DOS_Label_Use
+    caseSensitive = 0
+    parent = c_DOS
+    previous:tag = 'GOTO '
+    start:tag = @ALPHA, @DIGIT, '_', ' '
+    end:tag = ' ', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_LogicalOperators
+    caseSensitive = 0
+    parent = c_DOS
+    Token:Tag = '==', 'EQU', 'NEQ', 'LSS', 'LEQ', 'GTR', 'GEQ'
+    token:start:separators = ' ', '\t', '%', '!', '"'
+    token:end:separators = ' ', '\t', '%', '!', '^', '"'
+    txt:colorFG = 0x804040
+    txt:Bold = 1
+
+lexClass:
+    name = c_FOR_IN
+    parent = c_DOS
+    start:Tag = '(`', '("', '(\''
+    end:Tag = '`)', '")', '\')'
+    txt:colorFG = 0x6400C8
+
+lexClass:
+    name = c_CharacterConstant
+    parent = c_DOS, c_FOR_IN
+    start:Tag = '\''
+	skip:Tag = '^\''
+    end:Tag = '\'', '`', '!\'', '%\''
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_StringConstant
+    parent = c_DOS, c_FOR_IN
+    start:Tag = '"'
+	skip:Tag = '^"'
+    end:Tag = '"', '`', '!"', '%"'
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_DOS_Keywords
+    caseSensitive = 0
+    parent = c_DOS, c_FOR_IN
+    Token:Tag = 'ACCOUNTS', 'ARP', 'ASSOC', 'AT', 'ATTRIB', 'BREAK', 'CACLS'
+    Token:Tag = 'CALL', 'CD', 'CHCP', 'CHDIR', 'CHKDSK', 'CHOICE', 'CLS', 'CMD'
+    Token:Tag = 'CMDEXTVERSION', 'COLOR', 'COM', 'COMP', 'COMPACT', 'COMPUTER', 'CON'
+    Token:Tag = 'CONFIG', 'CONTINUE', 'CONVERT', 'COPY', 'DATE', 'DEFINED', 'DEL'
+    Token:Tag = 'DELIMS', 'DIR', 'DISKCOMP', 'DISKCOPY', 'DISKPERF', 'DNSSTAT', 'DO'
+    Token:Tag = 'DOSKEY', 'ELSE', 'ENABLEEXTENSIONS', 'ENABLEDELAYEDEXPANSION'
+    Token:Tag = 'ENDLOCAL', 'EOL', 'ERASE', 'ERRORLEVEL', 'EXIST', 'EXISTS', 'EXIT'
+    Token:Tag = 'EXPAND', 'FC', 'FILE', 'FIND' 'FINDSTR', 'FINGER', 'FOR', 'FORMAT'
+    Token:Tag = 'FTP', 'FTYPE', 'GLOBAL', 'GOTO' 'GRAFTABL', 'GROUP', 'HELP', 'HIGH'
+    Token:Tag = 'HOSTNAME', 'IF', 'IN', 'INSTSRV' 'IPCONFIG', 'KEYB', 'KILL', 'LABEL'
+    Token:Tag = 'LOCAL', 'LOCALGROUP', 'LOW', 'MAX', 'MD', 'MIN', 'MKDIR', 'MODE'
+    Token:Tag = 'MORE', 'MOVE', 'NAME', 'NBTSTAT', 'NET', 'NETSTAT', 'NETSVC', 'NORMAL'
+    Token:Tag = 'NOT', 'NSLOOKUP', 'NTBACKUP', 'NUL', 'OFF', 'ON', 'OTHER', 'PATH'
+    Token:Tag = 'PAUSE', 'PERMS', 'PING', 'PMON', 'POPD', 'PRINT', 'PROMPT', 'PULIST'
+    Token:Tag = 'PUSHD', 'PVIEW', 'PVIEWER', 'RD', 'RDISK', 'REALTIME', 'RECOVER'
+    Token:Tag = 'REGBACK', 'REGREST', 'REM', 'REN', 'RENAME', 'REPLACE', 'RESTORE'
+    Token:Tag = 'RKILL', 'RMDIR', 'ROUTE', 'SCANREG', 'SCLIST', 'SCOPY', 'SEND'
+    Token:Tag = 'SEPARATE', 'SESSION', 'SET', 'SETLOCAL', 'SHARE', 'SHARED', 'SHIFT'
+    Token:Tag = 'SHOWDISK', 'SHOWGRPS', 'SHUTDOWN', 'SKIP', 'SOON', 'SORT', 'SRVCHECK'
+    Token:Tag = 'START', 'STATISTICS', 'STOP', 'SUBST', 'TELNET', 'TIME', 'TIMETHIS'
+    Token:Tag = 'TITLE', 'TLIST', 'TLOGVIEW', 'TOKENS', 'TRACERT', 'TREE', 'TYPE', 'USE'
+    Token:Tag = 'USER', 'USRSTAT', 'VER', 'VERIFY', 'VIEW', 'VOL', 'WAIT', 'XCOPY'
+    token:start:separators = ' ', '\t', '(', '|', '{', '[', ';', '@', ',', '<', '>', '/', '?', '`', '\'', '"', @EOL
+    token:end:separators = ' ', '\t', ')', '|', '}', ']', ';', ',', '<', '>', '/', '?', '`', '\'', '"', @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_Echo
+    parent = c_DOS
+    caseSensitive = 0
+    start:tag = 'ECHO'
+    end:separators = @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_NumericConstant
+    parent = c_DOS, c_Echo
+    children = 0
+    previous:tag = ' ', '\t', '~', '-', '+', '.', '&', '=', @EOL
+    start:Tag = @DIGIT
+    skip:Tag = @DIGIT, '.'
+    end:separators = ' ', '\t', @EOL
+    txt:colorFG = 0x6400C8
+
+lexClass:
+    name = c_DOS_VariableLoop
+    parent = c_DOS, c_Echo, c_FOR_IN
+    children = 0
+    start:Tag = '%%'
+    end:Tag = ' ', '\t', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_DOS_Variable
+    parent = c_DOS, c_Echo, c_StringConstant, c_CharacterConstant, c_FOR_IN, c_AssignmentValue
+    children = 0
+    start:Tag = '%'
+    end:Tag = '%', ' ', '\t', @EOL
+    end:separators = @SPECS, @ALPHA, @DIGIT, @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_DOS_VariableDelayed
+    parent = c_DOS, c_Echo, c_StringConstant, c_CharacterConstant, c_FOR_IN, c_AssignmentValue
+    children = 0
+    start:Tag = '!'
+    end:Tag = '!', ' ', '\t', @EOL
+    end:separators = @SPECS, @ALPHA, @DIGIT, @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_AssignmentValue
+    parent = c_DOS, c_Echo
+    previous:tag = '='
+    start:Tag = @SPECS, @ALPHA
+    skip:Tag = @DIGIT
+    end:separators = ')', @EOL
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_EchoOutput
+    parent = c_Echo
+    children = 0
+    start:Tag = ' ', '\t', '\'', '"', @ALPHA
+    end:separators = '%', '!', '-', '+', '>', @EOL
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_DOS_SpecialValues
+    caseSensitive = 0
+    parent = c_DOS, c_FOR_IN
+    previous:class = c_DOS_Keywords, c_DOS_SpecialValues
+    Token:Tag = '-A', '-N', '-Y', '-YE', '-c', '-r', '-s', '/+', '/-C', '/A', '/ACTIVE'
+    Token:Tag = '/ADD', '/ALL', '/B', '/C', '/c', '/CLOSE', '/COMMENT', '/COUNTRYCODE', '/D'
+    Token:Tag = '/DELETE', '/DOMAIN', '/E', '/EVERY', '/EXENAME', '/EXPIRES', '/F'
+    Token:Tag = '/FS', '/FULLNAME', '/G', '/H', '/HC', '/HIGH', '/HISTORY', '/HOLD'
+    Token:Tag = '/HOME', '/HOMEDIR', '/I', '/INSERT', '/INTERACTIVE', '/K', '/KILL'
+    Token:Tag = '/L', '/LB', '/LISTSIZE', '/LOW', '/M', '/MACROS', '/MACROFILE', '/MAX'
+    Token:Tag = '/MAXPWAGE', '/MIN', '/MINPWLEN', '/MINPWAGE', '/N', '/NETWORK', '/NEXT'
+    Token:Tag = '/NORMAL', '/O', '/OVERSTRIKE', '/P', '/PASSWORDCHG', '/PASSWORDREQ'
+    Token:Tag = '/PERSISTENT', '/PROFILEPATH', '/Q', '/R', '/REALTIME', '/RELEASE'
+    Token:Tag = '/REMARK', '/S', '/SCRIPTPATH', '/SET', '/T', '/TAPE', '/TIMES', '/U'
+    Token:Tag = '/UNIQUEPW', '/UNLIMITED', '/USERCOMMENT', '/USERS', '/V', '/VIEW', '/W'
+    Token:Tag = '/WAIT', '/WORKSTATIONS', '/X', '/Y', '/YES', '/Z', '/continue', '/list'
+    Token:Tag = '/pause', '/query', '/start', '/stop', '$D', '$T', '$G', '$N', '$P'
+    Token:Tag = '$S', '$_', ':EOF', '-l'
+    token:start:separators = ' ', '\t'
+    token:end:separators = ' ', '\t', ':', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = ArithmeticOperators
+    parent = c_DOS, c_Echo
+    Token:Tag = '<', '>', '=', '.', '+', '-', '*', '/', '(', ')', ',', '[', ']'
+    txt:colorFG = 0x6400C8
+    txt:Bold = 1
+
+lexClass:
+    name = c_EscapeChar
+    parent = c_DOS
+    token:Tag = '^','^"','^\''
+    txt:colorFG = 0x000000

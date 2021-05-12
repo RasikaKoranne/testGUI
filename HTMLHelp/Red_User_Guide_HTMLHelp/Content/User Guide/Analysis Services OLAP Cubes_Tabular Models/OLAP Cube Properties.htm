@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes/Tabular Models|OLAP Cubes|OLAP Cube Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Cube Properties</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4>OLAP Cube Properties</h4>
+            <p class="BodyText">The properties associated with a cube are described below. These properties relate both to the cube environment and to the cube itself. <br /></p>
+            <p class="BodyText">There are seven tabs in the cube <b>Properties</b> screen. The first is the main properties, the second the processing and partitioning options and the rest are for documentation stored in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata and displayed in the generated <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> documentation. </p>
+            <p class="BodyText">In order to see the cube properties, right-click the cube name and then select <b>Properties</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Cube Objects.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Internal Cube Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This is the name by which the cube is known within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. This name is limited to 64 characters in length and may contain only alphanumeric characters and underscores.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Cube Publish Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This is the name of the cube in the Analysis Services server. It is not constrained in its content except for the limitations imposed on it by Analysis Services.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Cube Description</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A description of the cube. This is used both in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> documentation and is also stored against the cube in Analysis Services.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Cube Database Connection</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field enables the selection of one of the existing connections defined within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. The connection must be of type 'Microsoft Analysis Server 2005+'. If no such connection exists then a new connection object must be created. This connection object is used to point to the Analysis Services server.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Cube Database Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">An Analysis Services server must have databases associated with it. Each database can contain one or more cubes, dimensions, data sources etc. Select the name of an existing database on the server from the drop-down list. <br />To create a new Database name, select <b>(Define New Cube Database)</b> from the drop-down list and the displayed window enables you to register the name within the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata. Once registered, the name can then be selected as the database.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Source Connection</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">In Analysis Services the data source is the location of the data to be used to build the cube. It also defines the path for any drill through operations. This field provides a drop-down of the existing connections. The Data Warehouse connection must be chosen.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Source Provider Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field essentially defines what type of database the Data Warehouse is. The three options are:<ul><li>MSDAORA where the data source is an Oracle database </li><li>OLESQLDB where the data source is a SQL Server database, or </li><li>MSDASQL to define an ODBC source </li></ul>The MSDASQL provider type could be used for either Oracle or SQL Server data warehouses, but performance may be compromised. This field is Read-Only in the Properties screen. Its value is set in the properties of the data source connection.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Source Server</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The data source server is also a read only field being sourced from the properties of the data source connection. For SQL Server, it defines the server on which the data warehouse database runs. For Oracle, it is the TNS names entry for the database.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Source Database</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The data source database is also a read only field being sourced from the properties of the data source connection. For SQL Server, it defines the database in which the data warehouse runs. For Oracle, it is also the database name.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Post Create XML/A Script</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This is an XML/A script that is run on the cube database when the cube is created. This script enables Analysis Services features to be added to the cube or cube database that have been built outside of <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>—for example security roles that have been defined for the cube can be recreated from the script, when the cube is created (or recreated).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Post Update XML/A Script</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This is an XML/A script that is run on the cube database, when the cube is updated or processed via the scheduler. This script enables Analysis Services features to be added to the cube or cube database that have been built outside of <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>—for example security roles that have been defined for the cube can be recreated from the script when the cube is updated or processed.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Processing Mode</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Gets or sets the index and aggregation settings for cube processing. The value indicates whether processed data is available after all required data aggregation has been completed (Regular) or immediately after the data has been loaded (Lazy Aggregations). This setting is used as the default for new measure groups and partitions created for the cube.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Processing Priority</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Gets or sets the processing priority for the cube.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Partition Processing Mode</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       
+                       This option determines how partitions are updated, when a cube is updated.
+
+                        <p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/Post Update XML A Script.png" /></p><ul><li value="1"><b>All Partitions - Sequential</b> updates each cube partition sequentially.</li><li value="2"><b>All Partitions - Parallel</b> all the cube partitions are updated in parallel.</li><li value="3"><b>Measure Group Partitions - Parallel</b> processes each measure group sequentially with all partitions of that same measure group being updated in parallel.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Process Cube Dimensions</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Determines whether to process the OLAP Dimensions related to the cube, as part of the processing of the cube. The options are to process the <b>enabled dimensions </b>only, to process <b>no dimensions</b>, or to process <b>all the dimensions</b>.<br />Processing of specific Dimensions with the Cube can be enabled or deactivated via the <b>Process Cube Dimension With Cube </b>check box of each Dimension's Properties screen. Refer to <a href="OLAP Cube Dimensions.htm">OLAP Cube Dimensions</a> for details.
+                        <p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/Post Update XML A Script_1.png" /></p></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Process Selected Cube Dimensions in Parallel</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Select this check box to enable all dimensions within the cube to be updated in parallel, instead of being updated sequentially.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Storage Mode</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field enables two options; MOLAP (Multidimensional OLAP) or ROLAP (Relational OLAP). At the cube properties level, setting this field determines the defaults for the Storage Mode field ,on its related Measure Groups and partitions.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Measure</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the measure used to resolve MDX expressions if a measure is not explicitly referenced in the expression. If no default measure is specified an arbitrary measure is used as the default measure.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Estimated Rows</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the estimated number of rows in the Fact tables. Enter the size of the fact or source table if known, otherwise leave as zero.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Visible</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                       Indicates whether the cube is visible to client applications.
+                        <ul><li value="1">ROLAP stands for Relational Online Analytical Processing.</li><li value="2">ROLAP is an alternative to the MOLAP (Multidimensional OLAP) technology. While both ROLAP and MOLAP analytic tools are designed to allow analysis of data&#160; using&#160; a multidimensional data model, ROLAP differs significantly in that it does not require the pre-computation and storage of information. Instead, ROLAP tools access the data in a relational database and generate SQL queries to calculate information at the appropriate level when an end user requests it. With ROLAP, it is possible to create additional database tables (summary tables or aggregations) which summarize the data at any desired combination of dimensions.</li><li value="3">While ROLAP uses a relational database source, generally the database must be carefully designed for ROLAP use. A database which was designed for OLTP will not function well as a ROLAP database. Therefore, ROLAP still involves creating an additional copy of the data. However, since it is a database, a variety of technologies can be used to populate the database.</li></ul></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Language Mapping</h5>
+            <p class="BodyText">The OLAP Cube Properties screen has a tab called <b>Language Mapping</b>. </p>
+            <p class="BodyText">Select the language from the drop-down list and then enter the translations for the <b>Cube Publish Name</b> and the <b>Cube</b><b>Description </b>in the chosen language.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/Language Mapping.png" />
+            </p>
+            <p class="BodyText">Refer to <a href="../Default Settings/Language Options.htm">Language Options</a> for details on how to add languages for translation.</p>
+            <p id="linespace" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+            <hr width="100%" size="0" align="center" data-mc-conditions="Outputs.Exclude_In_Print" />
+            <p id="spacing" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+        </div>
+    </body>
+</html>

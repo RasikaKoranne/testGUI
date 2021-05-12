@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Fact Tables|KPI Fact Tables|Setup of KPI Fact Tables" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>KPI Setup</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4>KPI Setup</h4>
+            <h5>KPI Dimension</h5>
+            <p>The KPI dimension provides a means of selecting a specific KPI. This dimension needs to be built in advance of the KPI fact table. It does not need to be populated, as the KPI fact table will add entries to this table as required. A key and some form of unique identifier for the KPI is required, e.g. they may be numbered or given short names.&#160; </p>
+            <h5>Create the KPI Fact Table</h5>
+            <p>Right-click the KPI table and select <b>Create/Recreate</b> to physically create the table in the database.</p>
+            <h5>Defining column types and default values</h5>
+            <ol>
+                <li value="1">List all the columns for the KPI fact table.&#160; </li>
+                <li value="2">Amend the properties for each column. The column types can be one of the following:</li>
+            </ol>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Type
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Dimension Key
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Any dimension that is not the time or KPI dimension
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Time Dimension Key
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Time dimension key
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        KPI Dimension Key
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        KPI dimension key
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Month-to-date Measure
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Used to identify the normal KPI measures. These are calculated to populate the KPI during each run.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Year-to-date Measure
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Used to identify year-to-date measures for the KPI. Optionally calculated or derived from existing rows and measures in the KPI fact table.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Last year same month Measure
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Used to identify measures for same month last year comparisons.&#160; Derived from existing rows and measures in the KPI fact table.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Previous year-to-date Measure
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Used to identify previous year-to-date measures. Derived from existing rows and measures in the KPI fact table.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Fact Table Key
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Not normally used
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Date
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Not normally used
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Attribute
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Not normally used
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+                        Measure
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        Not normally used
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="linespace">&#160;</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">If an <b>Attribute</b> or <b>Measure</b> column is specified then this column will just be set to its default value. In this way an update_time column can be set by making its default value <b>sysdate</b>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ListNumber">For each column set a default value.&#160; </p>
+            <ul>
+                <li>For measures and dimension keys this would normally be zero (0). Nulls can be represented as two single quotation marks, i.e. ' '</li>
+                <li><b>sysdate</b> can be used for a default date value</li>
+                <li>These default values populate the columns where and when no other information is available. For example if a KPI only makes use of 4 of the 6 dimensions available then the remaining 2 dimensions will be set to their default values.</li>
+            </ul>
+            <h5>Create the 'Update' procedure</h5>
+            <p>Right-click the KPI fact table name and select <b>Properties</b>. In the Properties window, set the update procedure list to the <b>(Build Procedure...)</b> option. Click <b>OK</b> to initiate a series of window prompts to create a procedure used to update the kpi fact table.</p>
+            <p>The first two dialogs ask for parameter names to define the start and end periods for which the KPIs will be updated. The default naming convention is fact_table_name_START and fact_table_name_END. Accept these default names if possible. These two parameters need to be created, and  need to be updated once the KPIs have been defined and tested. Under normal operation these parameters should probably be set daily from the daily_time_roll procedure.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Fact Tables/KPI Fact Tables_1.png" />
+            </p>
+            <p>The date dimension and column for rollup is required. Normally this would be cal_month or fin_month. </p>
+            <p>This is based on the assumption that most KPIs are monthly or annual. Subsequently a rollup year and date will be required from the same date dimension.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Fact Tables/KPI Fact Tables_2.png" />
+            </p>
+            <p>The KPI dimension is required. Also the identifier column (not the key) that uniquely identifies the KPI. This would normally be a number or short name (max 64 chars).&#160; </p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Fact Tables/KPI Fact Tables_3.png" />
+            </p>
+            <p>The procedure is then created and compiled.&#160; </p>
+            <h5>Define each KPI</h5>
+            <p>Once the procedure has successfully compiled, we are ready to start setting up each of the KPIs. Right-click the KPI table name to get the pop-up menu. </p>
+            <p>This menu is similar to the other fact table menus except for the additional options to display and add KPIs. A display of the KPIs will list any KPIs that are currently defined. The result set is as appears below:</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Fact Tables/KPI Fact Tables_4.png" />
+            </p>
+            <p>The ‘Id’ is the same unique identifier that will be found in the kpi dimension. The <b>Name</b> is a name entered in the properties of the KPI and does not relate to the dimension in any way. The <b>Active</b> option indicates if the KPI will be processed when the <b>Update</b> or <b>Process</b> menu options are selected. Each KPI can be defined as a SQL Statement, a Procedural Block or a Procedure. The current method used to update the KPI is one of these three and is displayed under <b>Method</b>. The description is a comment or Description field entered in the Properties of the KPI and in no way relates in the KPI dimension.&#160; </p>
+            <p>Right-click anywhere in the List window to access the KPI add option. Clicking the right mouse button while positioned over the ‘Id’ opens a pop-up menu which provide options to copy, modify, delete, add and view the KPI statement.</p>
+            <p>When the add KPI option is selected, a Properties screen appears as shown below. The id and name fields are required. If the <b>Active</b> check box is selected ,the procedure is enabled for update.</p>
+            <p>The <b>Select Columns</b> button enables the selection of the columns that this KPI will update during the month to date update pass. The date and KPI dimensions will be updated for you so are not provided as choices. The only choices provided are the ‘Month to date measures’ and the other ‘Dimensions’. Select those measures and dimensions that will be updated. All non-selected measures and dimensions will be set to their default values. The resultant choice is shown in the <b>Update Columns</b> window. This window should only be updated via the <b>Select Columns</b> button.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Fact Tables/KPI Fact Tables_5.png" />
+            </p>
+            <p>Once these initial values are defined, the <b>Statement</b> tabs can be selected to define the update SQL statement. If a procedural block or procedure is required for the update (i.e. too complex for a single SQL statement), then select the <b>Procedural Block</b> tab.</p>
+            <h5>The KPI Statement</h5>
+            <p>The <b>Statement</b> tabs present edit windows that enable the input of a SELECT statement that will return the values for the columns being updated. </p>
+            <p>They must return the values for the columns selected in the <b>Properties</b> tab in the order shown in the <b>Update Columns</b> window. An example of a completed KPI statement follows:</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Fact Tables/The KPI Statement.png">
+                </img>
+            </p>
+            <p>The first two lines are comments inserted (when modifying) to provide a reminder of the columns and order required by the select statement. Anything prior to the initial SELECT statement is ignored.</p>
+            <p>The statement must make use of at least one of the variables provided to select the appropriate period. This variable is replaced with the values for the period being updated at run time. These values are derived from the start and end parameters defined for the KPI fact table.</p>
+            <p>In order to group by the non-selected columns and any attributes, etc. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> must be able to break this statement into its component Select, From, Where, Group By, and Having components (where present).&#160;If a complex statement is used that has more than one of these key words then the primary one must be in UPPER case. For example if a sub query is being used then the main SELECT and FROM key words must be in upper case and must be the only occurrence of these key words in uppercase. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> checks and issues a warning if it is unable to resolve the main key words.</p>
+            <p>To test a statement, right-click the KPI Id and select <b>View Statement</b>. This provides a window with the full statement with the default columns inserted and the parameters converted. This statement can be cut and run in SQL Admin (shipped with <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>) or in a database specific utility for testing.</p>
+            <h6>Procedural Block</h6>
+            <p>The <b>Procedural Block</b> tab presents an edit window that enables the input of an Oracle anonymous block. If there is anything in this window it is actioned, instead of the statement. A button in the lower right allows a rudimentary template block to be built.&#160; If used, this block must do the actual insert statement rather than just the select. It must also handle ALL dimension, month to date measure and non standard columns. In addition, it will need to put default values in columns not actively being updated. The KPI dimension and date dimension keys must also be updated. The output from a ‘View Statement’ option for another KPI gives an indication of what the block must do. The same month last year, year to date and previous year to date measures are still handled automatically. The same $KPI_ variables as shown above the statement edit window can and must be used.</p>
+            <h6>Procedure</h6>
+            <p>If for some reason it is not possible to implement the KPI in either the statement or procedural block then a procedure may be created. The name of such a procedure can be entered in the window at the bottom of the <b>Procedural Block</b> tab. If any value is present in this window, then the procedure takes precedence over both the statement and block.&#160; </p>
+            <p>This procedure must adhere to the standard set of parameters as with all other procedures to be executed by the scheduler. It must undertake the same tasks as defined above in the <b>Procedural Block</b> section, and as with those tasks it does not need to set the year to date, last year same month and previous year to date values.</p>
+            <h6>Copying KPIs</h6>
+            <p>Right-click the KPI Id and select <b>Insert Copy</b> to insert an exact duplicate of the KPI. This copy can then have its Id and Name changed along with its statement to create a new KPI. This is particularly useful when only small differences exist between a number of KPIs.</p>
+            <h6>Testing/Development</h6>
+            <p>During testing it would be normal to DISABLE all KPIs except the one currently being developed. In this way the update or process options will only utilize that KPI. As mentioned above the ‘View Statement’ option of the KPI popup menu displays, and allows the cutting of, the statement that will be executed to acquire the KPI information. This statement can be tested in SQL*Plus or some other environment if problems are encountered.</p>
+        </div>
+    </body>
+</html>

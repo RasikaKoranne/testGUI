@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins_HTML5___Top_Navigation" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-has-content-body="True" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="print">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>ODBC</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Fluid/Stylesheets/foundation.6.2.3.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Fluid/Stylesheets/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Fluid/Stylesheets/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Fluid/Stylesheets/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.6.2.3_custom.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-right" role="navigation" id="offCanvas" data-off-canvas="" data-position="right" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-right is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" role="banner" data-mc-ignore="true"><a class="skip-to-content fluid-skip showOnFocus" href="#">Skip To Main Content</a>
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="menu-icon-container relative clearfix">
+                                    <div class="central-account-wrapper">
+                                        <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                            <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                                <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="menu-icon" aria-label="Show Navigation Panel" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="title-bar-layout outer-row">
+                                <div class="logo-wrapper"><a class="logo" href="../../external_help/About.htm" alt="Logo"></a>
+                                </div>
+                                <div class="navigation-wrapper nocontent">
+                                    <ul class="navigation clearfix" role="navigation" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="3" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                        <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="central-account-wrapper">
+                                    <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                        <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                            <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-search-wrapper">
+                                    <div class="nav-search row">
+                                        <form class="search" action="#">
+                                            <div class="search-bar search-bar-container needs-pie">
+                                                <input class="search-field needs-pie" type="search" aria-label="Search Field" placeholder="Search" />
+                                                <div class="search-filter-wrapper"><span class="invisible-label" id="search-filters-label">Filter: </span>
+                                                    <div class="search-filter" aria-haspopup="true" aria-controls="sf-content" aria-expanded="false" aria-label="Search Filter" title="All Files" role="button" tabindex="0">
+                                                    </div>
+                                                    <div class="search-filter-content" id="sf-content">
+                                                        <ul>
+                                                            <li>
+                                                                <button class="mc-dropdown-item" aria-labelledby="search-filters-label filterSelectorLabel-00001"><span id="filterSelectorLabel-00001">All Files</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="search-submit-wrapper" dir="ltr">
+                                                    <div class="search-submit" title="Search" role="button" tabindex="0"><span class="invisible-label">Submit Search</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="main-section">
+                        <div class="row outer-row sidenav-layout">
+                            <nav class="sidenav-wrapper">
+                                <div class="sidenav-container">
+                                    <ul class="off-canvas-accordion vertical menu sidenav" data-accordion-menu="" data-mc-css-tree-node-expanded="is-accordion-submenu-parent" data-mc-css-tree-node-collapsed="is-accordion-submenu-parent" data-mc-css-sub-menu="vertical menu accordion-menu is-accordion-submenu nested" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="False" data-mc-include-back="False" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.accordionMenu" data-mc-toc="True" data-mc-side-nav-menu="True">
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="body-container">
+                                <div data-mc-content-body="True">
+                                    <div role="main" id="mc-main-content">
+                                        <h3 class="Heading3">ODBC</h3>
+                                        <p class="BodyText">This connection type is via an ODBC link. Most data movement is performed using the ODBC connection. </p>
+                                        <p class="Note">
+                                            <img src="../../Images/UserGuide_Images/Connections/Connection Types_1.png" /> Oracle can perform <b>ODBC loads</b> using <b>Direct Path OCI</b> and <b>standard (single row inserts)</b> via the scheduler.&#160;</p>
+                                        <p class="BodyText">ODBC loads&#160;can have a number of source databases:</p>
+                                        <ul>
+                                            <li>SQL Server</li>
+                                            <li>Oracle</li>
+                                            <li>DB2 for Linux, UNIX and Windows (the DB2 RED can build a warehouse in)</li>
+                                            <li>Teradata</li>
+                                            <li>Greenplum</li>
+                                            <li>Netezza</li>
+                                            <li>PDW</li>
+                                            <li>Hive</li>
+                                            <li>Sybase</li>
+                                            <li>MySQL</li>
+                                            <li>DB2/400 (the DB2 that runs on AS/400 machines - quite different to above)</li>
+                                            <li>MS Access</li>
+                                            <li>Excel</li>
+                                        </ul>
+                                        <p class="BodyText">The connection object Properties window has the following fields:</p>
+                                        <h4 class="SpecialBold_1">General</h4>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                                            <col class="TableStyle-tablestyle-Column-Column1" />
+                                            <col class="TableStyle-tablestyle-Column-Column2" />
+                                            <thead>
+                                                <tr class="TableStyle-tablestyle-Head-Header1">
+                                                    <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                                                    <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Name</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name used to label the connection within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. Typically for SQL Server, Oracle and DB2 this is <b>Data Warehouse</b>.<br />For target databases like Greenplum, Netezza or PDW the Data Warehouse connection can be renamed to <b>Repository.</b></td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Type</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates the connection source type or the connection method, such as Database, ODBC, Windows, Unix.
+ Select the <b>ODBC</b> connection type.</td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database Type</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><![CDATA[
+                        ]]>Type of database such as DB2, Greenplum, Hive, Netezza, Oracle, SQL Server, Teradata. Default is <b>(local)</b>.
+    <![CDATA[                        ]]></td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        ODBC Data Source Name (DSN)
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><![CDATA[
+                       ]]>ODBC Data Source Name (DSN) as defined in the Windows 32-bit <b>ODBC Data Source Administrator</b>. 
+    <![CDATA[
+                        ]]><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The ODBC Source Name defined in <span class="mc-variable WS_Branding.Product variable">RED</span> must be the same on all machines that use the corresponding connection. 
+    </td></tr></tbody></table></td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyB-Column1-Body1"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Metadata Connection Indicator</td>
+                                                    <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        Distinguishes the special connection that identifies the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> data warehouse/metadata repository. This option must be enabled for <b>Data Warehouse/Metadata Repository</b> type connections.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">There must only be one data warehouse/metadata connection in a <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span class="mc-variable WS_Branding.Product variable">RED</span> repository.
+    </td></tr></tbody></table></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h4 class="SpecialBold_1">ODBC</h4>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                                            <col class="TableStyle-tablestyle-Column-Column1" />
+                                            <col class="TableStyle-tablestyle-Column-Column2" />
+                                            <thead>
+                                                <tr class="TableStyle-tablestyle-Head-Header1">
+                                                    <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                                                    <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database ID</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Source Database Identifier (e.g. Oracle SID or TNS Name, Teradata TDPID) or Database Name (e.g. as in DB2 or SQL Server).
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Work Directory</td>
+                                                    <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Windows directory used by <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> to create temporary files for minimal logged extracts. The directory must exist and allow write access. There must be a different work directory for each <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Scheduler running on the same machine to avoid file conflicts. Typically <b>C:\Temp </b>or a <b>sub-directory of C:\Temp</b> is used.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h4 class="SpecialBold_1">Credentials</h4>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                            <col class="TableStyle-note-Column-Column1" />
+                                            <thead>
+                                                <tr class="TableStyle-note-Head-Header1">
+                                                    <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-note-Body-Body1">
+                                                    <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If the source database does not support windows authentication, a username and password must be specified in the User ID and User Password fields below.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                                            <col class="TableStyle-tablestyle-Column-Column1" />
+                                            <col class="TableStyle-tablestyle-Column-Column2" />
+                                            <thead>
+                                                <tr class="TableStyle-tablestyle-Head-Header1">
+                                                    <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                                                    <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Extract User ID</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><![CDATA[
+                       ]]>Database User that has access to SELECT from the source system tables to extract data.
+    <![CDATA[                        ]]></td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Extract User Password</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Database Password to use with the Extract User ID to login to the source system to extract data.</td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Administrator User ID</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Leave blank.</td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Administrator User Password</td>
+                                                    <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Leave blank.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h4 class="SpecialBold_1">Other</h4>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                                            <col class="TableStyle-tablestyle-Column-Column1" />
+                                            <col class="TableStyle-tablestyle-Column-Column2" />
+                                            <thead>
+                                                <tr class="TableStyle-tablestyle-Head-Header1">
+                                                    <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                                                    <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Schema for Browsing</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional comma-delimited list of schemas for the browser pane filter. Enter the schema(s) you want the connection to browse by default on the right browser pane.
+
+    <![CDATA[                    ]]></td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Type</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+         The default <b>Load Type</b> for new Load tables created using this connection. Select the desired default load type from <b>Native ODBC, Integration Services load </b>or <b>ODBC load</b>.
+                        
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+        The available options in this drop-down list is configured from Tools &gt; Options &gt; <a href="../Default Settings/Available Load Types.htm">Available Load Types</a>.
+    </td></tr></tbody></table></td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Script Connection</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Script Connection</b> to use when a <b>Script based load</b> type is defined for a Load table object that is <b>sourced</b> from this connection.
+    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Script Template</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Script Template</b> to use when a <b>Script based load</b> type is defined for a Load table object that is <b>sourced</b> from this connection.
+    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">SSIS Connection String (OLEDB)</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Connection string to be used by Microsoft SQL Server Integration Services (SSIS) to connect to the data source or destination. For details on how to use the wizard to build an SSIS Connection String, refer to <a href="../../Teradata/Loading Data Teradata/Loading Data into RED Load Tables using SSIS Teradata.htm">Loading Data into RED Load Tables using SSIS</a>.
+                       
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+        A connection string is typically composed of multiple property name/value pairs that are semi-colon delimited.
+    </td></tr></tbody></table></td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">SSIS Connection String (SQLPDW)</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                                                        <table style="width: 100%;">
+                                                            <col style="width: 120px;" />
+                                                            <col />
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <img src="../../Images/UserGuide_Images/Connections/Connection Types_5.png" />
+                                                                    </td>
+                                                                    <td><b>PDW Database type connections only:</b> Connection string to be used by Microsoft SQL Integration Services (SSIS) to connect to the data source or destination using the SQL Server Parallel Data Warehouse Connection Manager. 
+The <b>SSIS Connection String (SQLPDW)</b> is used when the target is PDW and it must be set in order to process PDW loads.</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                                            <col class="TableStyle-note-Column-Column1" />
+                                                            <thead>
+                                                                <tr class="TableStyle-note-Head-Header1">
+                                                                    <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="TableStyle-note-Body-Body1">
+                                                                    <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+        A connection string is typically composed of multiple property name/value pairs that are semi-colon delimited.
+    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Staging database</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                                                        <table style="width: 100%;">
+                                                            <col style="width: 120px;" />
+                                                            <col />
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <img src="../../Images/UserGuide_Images/Connections/Connection Types_5.png" />
+                                                                    </td>
+                                                                    <td><b>PDW Database type connections only:</b> The staging database to be used by Microsoft SQL Server Integration Services (SSIS) for loading to PDW.</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Type Mapping Set</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        Mapping Set to use when converting from a source database data type to a destination database data type. Setting this field to <b>(Default)</b> makes <span class="mc-variable WS_Branding.Product variable">RED</span> automatically select the relevant mapping set, otherwise you can choose one of the standard mapping sets from the drop-down list or create a new set.
+    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">When Connection is an OLAP Data Source</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        This section of fields is only relevant and will only be visible from a <b>Data warehouse</b> connection (where the Data warehouse field is enabled). These fields are required so that the data warehouse can be used as a source for the Analysis Services cubes.
+    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">MSAS Connection String</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+         Connection string to be used by Microsoft Analysis Services (MSAS) to connect to the data warehouse. For details on how to use the wizard to build the OLAP connection string, refer to <a href="../Analysis Services OLAP Cubes_Tabular Models/DefDatSrc for OLAP Cube.htm">OLAP Defining Data Source for the OLAP Cube</a>.
+                        
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+        A connection string is typically composed of multiple property name/value pairs that are semi-colon delimited.
+    </td></tr></tbody></table></td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Provider/Driver</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        Name of the Connection Provider/Driver to use to connect to the data warehouse database, when it is used as the data source for OLAP cubes.
+        <table style="width: 100%;margin-left: 0;margin-right: auto;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/UserGuide_Images/Connections/Connection Types.png" /></td><td> set to <b>SQLOLEDB</b>.<br /></td></tr><tr><td><img src="../../Images/UserGuide_Images/Connections/Connection Types_1.png" /></td><td>set to <b>MSDAORA</b>.</td></tr><tr><td><img src="../../Images/UserGuide_Images/Connections/Connection Types_2.png" /></td><td>set to <b>IBMDADB2</b>. </td></tr></tbody></table></td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Warehouse Server</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        Data Warehouse Server Name, which is used when the data warehouse is used as the data source for OLAP cubes.
+    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Data Warehouse Database ID</td>
+                                                    <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+        Data Warehouse Database Identifier (e.g. Oracle SID or TNS Name, Teradata TDPID) or Database Name (e.g. as in DB2 or SQL Server), which is used when the data warehouse is used as the data source for OLAP cubes.
+    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="BodyText">&#160;</p>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                                            <col class="TableStyle-tip-Column-Column1" />
+                                            <thead>
+                                                <tr class="TableStyle-tip-Head-Header1">
+                                                    <th class="TableStyle-tip-HeadD-Column1-Header1">Tip:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-tip-Body-Body1">
+                                                    <td class="TableStyle-tip-BodyA-Column1-Body1">Once the connection has been set up, you can right-click the connection in the middle pane or double click the connection name from the left pane to view or edit the connection's <b>Properties</b>.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>&#160;</p>
+                                        <p>
+           Below are two examples of a <b>Native ODBC</b> Load. </p>
+                                        <p class="BodyText">If the source database supports windows authentication, it is not necessary to specify a username and password: </p>
+                                        <p class="SubHeading1">
+                                            <img src="../../Images/UserGuide_Images/Connections/Native ODBC Connection.png" />
+                                        </p>
+                                        <p class="BodyText">If the source database does not support windows authentication, a username and password must be specified: </p>
+                                        <p class="BodyText">
+                                            <img src="../../Images/UserGuide_Images/Connections/Native ODBC Connection_2.png" />
+                                        </p>
+                                        <p>&#160;</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><a data-close="true"></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

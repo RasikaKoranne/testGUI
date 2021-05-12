@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Procedures and Scripts" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Procedure Comparisons</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Procedure Comparisons</h2>
+            <p class="BodyText">A procedure can be compared to either an earlier version, or to the currently running code as compiled/stored in the database. The menu option <b>Tools &gt; Compare to Compiled Source</b> enables the comparison of the procedure being edited with the code currently compiled and running in the database. If a viewer window is open (see the procedure editing section) then the <b>Tools &gt; Compare to Viewer</b> menu option compares the contents of the viewer window with the current code. Therefore to compare against an older version, we first load the viewer window with the older version and perform a <b>Compare to Viewer</b>.</p>
+            <p class="BodyText">The comparison highlight the differences, as shown in the example below:</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Procedure Comparisons_Teradata.png" data-mc-conditions="Outputs.Only Teradata User Manual" />
+            </p>
+            <p class="BodyText">
+                <MadCap:conditionalText data-mc-conditions="Outputs.Only Teradata User Manual">In this example, the line SET v_step = 200; has been removed from the current code in the edit window and the remaining three lines have been inserted.</MadCap:conditionalText>
+            </p>
+            <p class="BodyText">Once the comparison has been completed, you can either remove the compare comments or accept the compare changes. The menu option <b>Tools &gt; Remove Compare Comments</b> removes the added blue comments and code. The menu option <b>Tools &gt; Accept Compare Changes</b> implements the changes highlighted. <MadCap:conditionalText data-mc-conditions="Outputs.Only Teradata User Manual">For the above example, the line 'SET v_step = 200;' would be deleted and the following three lines added.</MadCap:conditionalText></p>
+        </div>
+    </body>
+</html>

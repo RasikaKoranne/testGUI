@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes|OLAP Cube Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Cube Measure Group Partitions</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>OLAP Cube Measure Group Partitions</h3>
+            <p class="BodyText">The Measure Group Partition's properties are shown by right-clicking the Measure Group Partition displayed in the middle pane and then selecting <b>Properties</b>. The partition's properties associated with a measure group are described below.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Cube Measure Group Partitions.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Cube Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The name of the cube that the partition belongs.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Source</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The data source for the partitions. This will be inherited from the cube and cannot be changed. You cannot have partitions with different data sources or different fact tables in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. If you need to support either scenario, then the partition must be created directly within Analysis Services. In such a case, it can still be managed in terms of processing through <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1"> Fact Table</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The fact table that the data is derived from. This is inherited from the cube and cannot be changed. See the notes above under data source.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Update Buttons</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The Update Buttons: <b>Update &lt;-</b> and <b>Update -&gt;</b> are used to move from the current Measure Group Partition to the previous and next Measure Group Partition respectively for the current Measure Group. The alternative is to exit the Measure Group Partition and choose the next Measure Group Partition Properties screen.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Partition Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Where only one partition exists, it is normally given the same name as the cube. If manually creating then a unique name must be assigned for each partition. If auto partitioning is chosen, then <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> uses the cube name plus the level value to make the partition name.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Partition Description</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A description of the partition for documentation purposes.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Slice Formula</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                      This field defines the range of data stored in the partition. It is a very simplified version of what can be done in Analysis Services. If a more complex partitioning algorithm is required then the partition must be created in Analysis Services. The format for the formula is as follows:
+                        <br />The brackets must surround each name and a full stop must separate the three parts of the formula.<br />For example, a cube that is partitioned by year on its date dimension would have the following formula for the 2003 year: <br />[dim_date].[cal_year].[2003]</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Aggregation Prefix</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">By default, any cube aggregation is prefixed with the partition name. An alternate name can be entered here. Refer to Analysis Services for details.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Filter Statement </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Not implemented.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Storage Mode</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field has two options; MOLAP (Multidimensional OLAP) or ROLAP.(Relational OLAP). This determines how the OLAP cube is processed. The default value is inherited from the value set at the Measure Group level.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Partition Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The partition can be either Local or Remote. Local means that the partition resides on the same Analysis Services server as the cube. If Remote is chosen then a server must be specified where the partition will be located.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Remote Server</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If a Remote partition then the name of the remote Analysis Services server must be entered here.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Processing Method</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">A partition is either enabled for processing or disabled. This field can be set to Always process or Never process. If left as default and in automatic mode, then <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>  deactivates the processing, once the partition has been aged out.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="SubHeading1"> </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="apple-touch-icon" sizes="1607x1607" href="../../Skins/Favicons/RED icon.png" />
+        <link rel="shortcut icon" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/RED-icon_16x16px.png" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" /><title>Parameters and Options</title>
+        <link href="../resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <h1>Parameters and Options</h1>
+        <p>When the new connection button is pressed Sql Admin will display the logon screen. By default this screen has all fields set to blank. </p>
+        <p>
+            <img src="../Images/DBA/Parameters and Options.png" />
+        </p>
+        <p>It is possible to set a default connection by selecting the <b>Tools/Options</b> menu option. When this menu option is chosen the following screen will appear. </p>
+        <p>
+            <img src="../Images/DBA/Parameters and Options_1.png" />
+        </p>
+        <p>Listed in the top left hand box are all the currently defined connections. Double clicking on one of the listed connections makes that connection the default connection. A connection can be deleted by selecting the delete button when a connection is highlighted, or edited by selecting the <b>Edit</b> button.</p>
+        <h2>Adding a Connection Profile</h2>
+        <p>To add a new connection profile click the <b>Add </b>button. Enter a name for the connection in the <b>Connection Profile Name</b> field. Often entering the same name as that of the ODBC Data Source is a good idea, but any name can be used. Next select an <b>ODBC Source Name</b> from the drop down list of ODBC Data Sources. </p>
+        <p>If desired a default user name can be entered. If present this will populate the appropriate field in the logon screen.</p>
+        <h2>Maximum rows returned from a query</h2>
+        <p>This field defines the maximum number of rows that will be returned from any sql statement or action that results in a database query. The action taken when this maximum number of rows is reached depends on the value in the next option. This maximum number of rows can also be set for the current session, and hence override the default value, by selecting the menu option <b>Sql/Set Max. Rows Returned</b>. The default value is 100 rows, or whatever value has been set for the profile. </p>
+        <h2>Halt query after max. rows returned</h2>
+        <p>If this field is set to <b>Y</b> (yes) then the query is aborted after the maximum number of rows have been returned. A line is placed in the result set to indicate that the query was aborted. </p>
+        <p>If this field is set to <b>N</b> (no) then a dialog appears after the maximum number of rows have been returned. This dialog requests an action from the user. An example of the dialog appears below.</p>
+        <p>
+            <img src="../Images/DBA/Parameters and Options_2.png" />
+        </p>
+        <p>The default action is to abort the query. In such a case a warning is placed in the row following the data set to indicate that the query was aborted. The Continue button will retrieve the entire result set.</p>
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+            <col class="TableStyle-note-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-note-Head-Header1">
+                    <th class="TableStyle-note-HeadD-Column1-Header1">Warning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-note-Body-Body1">
+                    <td class="TableStyle-note-BodyA-Column1-Body1">The data returned from a database query is loaded into the memory of the PC. Returning large data sets may take a large amount of time, and may fail due to memory limitations. Returning more than 1000 rows is not recommended.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The choice provided in this option can be changed by selecting the <b>Sql/Auto Quit on Max Rows</b> menu option. This menu option is a toggle and a tick will appear next to the menu option when the auto quit (Halt) is enabled. The default is to provide the pop-up menu where no profile is being used (i.e. no Auto Quit).</p>
+        <h3>Provide History of SQL commands</h3>
+        <p>If this field is set to <b>Y </b>(yes) the history toolbars are displayed. When set to <b>N</b> (no) the history toolbars are not displayed. The display of these toolbars can be toggled via the <b>View/History Bars</b> menu option. The default is <b>Y</b> where no profile is being used.</p>
+        <h3>Include Synonyms in Table display</h3>
+        <p>The right hand table pane does not normally display synonyms (for those databases that support the concept). By setting this option to <b>Y</b> synonyms are displayed as part of the table tree view. The default is <b>N</b> where no profile is being used.</p>
+        <h3>Include System tables in Table display</h3>
+        <p>System tables and views can be included in the table pane tree display by setting this field to <b>Y</b>. If this field is set to <b>N</b> then system tables and views are not included in the display. The default is <b>Y</b> where no profile is being used.</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

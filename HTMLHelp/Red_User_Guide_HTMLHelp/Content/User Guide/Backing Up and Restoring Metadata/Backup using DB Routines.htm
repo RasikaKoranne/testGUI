@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Backing Up and Restoring Metadata" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Backup using DB Routines</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Backup using DB Routines</h2>
+            <p>The backup of the metadata repository can be undertaken as a separate exercise from the general backup of the data warehouse. The metadata backup does not backup any of the actual data warehouse tables. It only saves the table definitions, index definitions, procedures etc., so is not normally large.</p>
+            <p>The backup includes any tables that begin with "dss_". In this way, key metadata tables such as dss_parameter, dss_source_system and dss_fact_table are included in the backup. These tables are required if the restored metadata is to function correctly.</p>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">It is recommended that the metadata is backed up at least daily when possible. There are two methods for backing up the meta repository. These are through a scheduled UNIX task, and through the main <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> tool.</p>
+            <h3 data-mc-conditions="Outputs.Only for RED User Guide">UNIX Backups</h3>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">Where the data warehouse database is running on a UNIX server, it is possible to schedule a regular backup of the metadata. The UNIX scripts shipped with <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> include a script called from cron to perform daily backup of the metadata. These backups are in turn compressed and saved for 60 days by default. Refer to the <span class="mc-variable WS_Branding.Product variable">RED</span> Installation Guide for details on these scripts and their setup.&#160; </p>
+            <h3 data-mc-conditions="Outputs.Only for RED User Guide">Windows Backups</h3>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">Two main methods of Windows backup exist within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. The first is a database independent backup, which is designed purely for moving the meta repository, and should not be used for regular backups. The other method is the database specific backup. See the following sections for the appropriate database.</p>
+            <h3 data-mc-conditions="Outputs.Only for RED User Guide">Oracle Windows Backups</h3>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">An Oracle export based backup can be taken from the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> tool by selecting the <b>Backup &gt; Export the metadata (Oracle Export) </b>menu option. This option assumes that the Oracle Client on the PC is the same version as that of the Oracle database where the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> meta repository is stored. The backup may not work if the versions differ.</p>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">When executed, this menu option attempts to locate the Oracle export utility. This utility is normally called 'exp' and resides in the Oracle bin directory. If <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> cannot locate this utility or it has not been loaded onto the PC, then the export does not proceed, and an error message is displayed.&#160; </p>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">A pop-up window asks for a file name for the export. A directory should be chosen, and a name entered. When the <b>Save</b> button is clicked, the export will start. The following files are created (where 'file' is the name of the chosen file). A dialog box appears to show the results of the backup.&#160; </p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        File name
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Purpose
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                       file.bat
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Windows command file containing the export command.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                       file.dbl
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                       Command file for the re-creation of any database links.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        file.drp
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Command file for dropping all metadata tables. (Used in the restore prior to a reload).
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        file.exp
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Oracle export file.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        file.log
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Log file of the export.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        file.par
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Parameter file for the export. Contains an entry for each meta table to be exported.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        file.pro
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        A file containing each procedure stored in the metadata.&#160; 
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        file.seq
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Command file to re-create the sequences used by both the metadata and the data warehouse tables.
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">If problems are encountered with the backup, it may be possible to manually run the generated .bat script file to ascertain what has gone wrong.</p>
+            <h3 data-mc-conditions="Outputs.Only for RED User Guide">SQL Server Windows Backups</h3>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">A SQL Server bcp based backup can be taken from the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> tool by selecting the <b>Backup &gt; Export the metadata (Sql server bcp) </b>menu option. This option assumes that the SQL Server bcp utility is available on the PC.</p>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">When executed, this menu option attempts to locate the SQL Server bcp utility. This utility is normally called 'bcp' and resides in the SQL Server bin directory. If <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> cannot locate this utility or it has not been loaded onto the PC, then the export does not proceed, and an error message is displayed.&#160; </p>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">A pop-up window asks for a directory name for the export—a directory must be chosen or created. The export starts when the <b>Save</b> button is clicked. The following files are created. A window appears to show the results of the backup.&#160; </p>
+            <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        File name
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Purpose
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        wsl_bcp_out.bat
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Windows batch file used to run all the bcp table exports
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        wsl_bcp_out.err
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Errors from the bcp export of each table
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        wsl_bcp_out.log
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Log file of the bcp table exports
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        *.bcp
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Each metadata table is stored with a .bcp extension. This is the export of each table.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        wsl_bcp.par
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Parameter file for the export. Contains an entry for each meta table to be exported.&#160; Unused by SQL Server.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        wsl_bcp.drp
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Command file for dropping all metadata tables. (Used in the restore prior to a reload).
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        wsl_bcp.pro
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        A file containing each procedure stored in the metadata.&#160; 
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        wsl_bcp.seq
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Unused by SQL Server.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        wsl_bcp.dbl
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Command file for the rebuild of all the linked servers. Used during the restore.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        wsl_bcp.bld
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Basis of the command file that will be used to restore the metadata. This file is modified to include the target directory prior to restore.
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">If problems are encountered with the backup, it may be possible to manually run the generated .bat script file to ascertain what has gone wrong.</p>
+            <h3 data-mc-conditions="Outputs.Only for RED User Guide">DB2 Windows Backups</h3>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">A DB2 IMPORT based backup can be taken from the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> tool by selecting the <b>Backup &gt; Export the metadata (DB2 export) </b>menu option. This option assumes that the IBM DB2 EXPORT command is available on the PC.</p>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">When executed, this menu option attempts to locate the SQL Server bcp utility. This utility is normally called <b>bcp</b> and resides in the SQL Server bin directory. If <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> cannot locate this utility or it has not been loaded onto the PC, then the export does not proceed and an error message is displayed.&#160; </p>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">A pop-up window asks for a directory name for the export. A directory should be chosen or created. When the <b>Save</b> button is clicked, the export will start. The following files are created. A dialog box appears to show the results of the backup.&#160; </p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        File name
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Purpose
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        RED.bat
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">                      Windows batch file used to run the DB2 EXPORT for each metadata table.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        RED.cmd
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Control file for the export. Contains an entry for each meta table to be exported.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        RED.log
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Log file of the EXPORT.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        RED.pro
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        A file containing each procedure stored in the metadata.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        *.ixf
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Each metadata table is stored in a file with a ixf extension. This is the export of each table.
+                    </td>
+                    </tr>
+                    <tr style="height: 17pt;" class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        restore.drp
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Command file for dropping all metadata tables. (Used in the restore prior to a reload).
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        restore.lst
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Basis of the command file that will be used to restore the metadata. This file is modified to include the target directory prior to restore.
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">If problems are encountered with the backup, it may be possible to manually run the generated RED.bat script file to ascertain what has gone wrong.</p>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">&#160;</p>
+        </div>
+    </body>
+</html>

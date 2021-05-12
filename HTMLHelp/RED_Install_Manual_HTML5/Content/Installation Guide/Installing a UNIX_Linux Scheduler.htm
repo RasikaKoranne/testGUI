@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins_HTML5___Top_Navigation" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-has-content-body="True" data-mc-toc-path="Installation|Scheduler Installation and Configuration" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="print">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" /><title>Installing a UNIX/Linux Scheduler</title>
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/foundation.6.2.3.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/foundation.6.2.3_custom.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-right" role="navigation" id="offCanvas" data-off-canvas="" data-position="right" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-right is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" role="banner" data-mc-ignore="true"><a class="skip-to-content fluid-skip showOnFocus" href="#">Skip To Main Content</a>
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="menu-icon-container relative clearfix">
+                                    <div class="central-account-wrapper">
+                                        <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                            <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                                <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="menu-icon" aria-label="Show Navigation Panel" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="title-bar-layout outer-row">
+                                <div class="logo-wrapper"><a class="logo" href="../external_help/About.htm" alt="Logo"></a>
+                                </div>
+                                <div class="navigation-wrapper nocontent">
+                                    <ul class="navigation clearfix" role="navigation" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="3" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                        <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="central-account-wrapper">
+                                    <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                        <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                            <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-search-wrapper">
+                                    <div class="nav-search row">
+                                        <form class="search" action="#">
+                                            <div class="search-bar search-bar-container needs-pie">
+                                                <input class="search-field needs-pie" type="search" aria-label="Search Field" placeholder="Search" />
+                                                <div class="search-filter-wrapper"><span class="invisible-label" id="search-filters-label">Filter: </span>
+                                                    <div class="search-filter" aria-haspopup="true" aria-controls="sf-content" aria-expanded="false" aria-label="Search Filter" title="All Files" role="button" tabindex="0">
+                                                    </div>
+                                                    <div class="search-filter-content" id="sf-content">
+                                                        <ul>
+                                                            <li>
+                                                                <button class="mc-dropdown-item" aria-labelledby="search-filters-label filterSelectorLabel-00001"><span id="filterSelectorLabel-00001">All Files</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="search-submit-wrapper" dir="ltr">
+                                                    <div class="search-submit" title="Search" role="button" tabindex="0"><span class="invisible-label">Submit Search</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="main-section">
+                        <div class="row outer-row sidenav-layout">
+                            <nav class="sidenav-wrapper">
+                                <div class="sidenav-container">
+                                    <ul class="off-canvas-accordion vertical menu sidenav" data-accordion-menu="" data-mc-css-tree-node-expanded="is-accordion-submenu-parent" data-mc-css-tree-node-collapsed="is-accordion-submenu-parent" data-mc-css-sub-menu="vertical menu accordion-menu is-accordion-submenu nested" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="False" data-mc-include-back="False" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.accordionMenu" data-mc-toc="True" data-mc-side-nav-menu="True">
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="body-container">
+                                <div data-mc-content-body="True">
+                                    <div class="nocontent">
+                                        <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+                                        </div>
+                                    </div>
+                                    <div role="main" id="mc-main-content">
+                                        <h2 class="Major_Section_Heading">Installing a UNIX/Linux Scheduler</h2>
+                                        <p>The Unix scheduler must be manually installed and maintained.</p>
+                                        <p>The scheduler consists of a series of shell scripts that are controlled by the cron process. The bulk of the work undertaken by the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> scheduler takes place in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> procedures within the database. To obviate the need to provide a port to each Unix platform this series of shell scripts are used. They should run with no modification on all Unix platforms and have been tested under Unix offerings from Sun, HP, IBM and Linux.</p>
+                                        <p>The Unix scheduler can process every type of load except for ODBC loads, Native ODBC loads and XML loads. It cannot process OLAP Cubes.</p>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                            <col class="TableStyle-note-Column-Column1" />
+                                            <thead>
+                                                <tr class="TableStyle-note-Head-Header1">
+                                                    <th class="TableStyle-note-HeadD-Column1-Header1">Warning:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-note-Body-Body1">
+                                                    <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">For UNIX/Linux scheduler processing, the <b>Encrypt User</b> and <b>Password</b> options in <span class="mc-variable WS_Branding.Product variable">RED</span>'s Repository Privacy Settings cannot be used. Encrypt options are only supported when using a Windows scheduler.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h3>Installation</h3>
+                                        <p>The installation of the Unix scheduler needs to be undertaken by someone familiar with the Unix environment and the running of database processes from Unix. The tasks that need to be undertaken are:</p>
+                                        <ol style="font-weight: normal;">
+                                            <li value="1">
+                                                <p><b>Unix User and Shell</b>
+                                                </p>
+                                                <p style="font-weight: normal;">Acquire a Unix user name that has access to cron and the database data warehouse environment. A reasonable quantity of disk space is also required if the automated backups of the metadata repository are used. The user should log on to Unix without passing through a menu system if possible. Log on to the user.</p>
+                                                <p style="font-weight: normal;">This user will need to have a .profile file in "/home/&lt;user&gt;/.profile" otherwise ws_sched_check_600.sh will not work. If this file doesn't exist it will need to be created.</p>
+                                                <p style="font-weight: normal;">The <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> scheduler consists of several shell scripts. By default, some of these shell scripts will run in the Bourne shell and some will run in the Korn shell. If Linux is being used, then the Bash shell is used exclusively.</p>
+                                                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                                    <col class="TableStyle-note-Column-Column1" />
+                                                    <thead>
+                                                        <tr class="TableStyle-note-Head-Header1">
+                                                            <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="TableStyle-note-Body-Body1">
+                                                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">During setup, it is recommended that the Korn shell be used as the default shell for the user installing the scheduler (or Bash if running Linux).</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                            <li value="2">
+                                                <p><span style="font-weight: bold;">Create directories</span>
+                                                </p>
+                                                <p style="font-weight: normal;">Create the following directories (if not already present) to be used by the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> scheduler.</p>
+                                                <p style="font-weight: normal;">If the directory names are not appropriate and others must be used, then it will be necessary to alter the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> supplied scripts.</p>
+                                                <ul style="list-style-type: circle;">
+                                                    <li>
+                        wsl	(top level directory for <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> directories)
+                    </li>
+                                                    <li>
+                        wsl/bin	(used to store the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> scripts)
+                    </li>
+                                                    <li>
+                        wsl/sched (used for the scheduler job and log files)
+                    </li>
+                                                    <li>
+                       wsl/sched/job (used for the scheduler job files)
+                    </li>
+                                                    <li>
+                        wsl/sched/joblog (used for the scheduler job logs)
+                    </li>
+                                                    <li>
+                        wsl/sched/log (used for the scheduler logs)
+                    </li>
+                                                    <li>
+                        wsl/export	(used for the automated exports of the metadata)
+                    </li>
+                                                    <li>
+                        wsl/expback	(used to hold compressed copies of the metadata exports)
+                    </li>
+                                                    <li>
+                        wsl/log	(used for export and archive logs)
+<p>&#160;</p><p><img src="../Images/Install_Images/RED_oracleapp.png" /> <b>Oracle only directories</b></p><ul style="font-weight: normal;list-style-type: circle;"><li>wsl/mon		(used for the monitoring process)</li><li>wsl/mon/db	(used for database monitoring scripts and control files)</li><li>wsl/mon/job	(used for job monitoring scripts)</li><li>wsl/mon/log	(used for monitoring log files)</li></ul></li>
+                                                </ul>
+                                            </li>
+                                            <li value="3"><b>Copy supplied Unix files</b><![CDATA[
+                
+                ]]><br />FTP the scheduler files shipped with <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> to the wsl/bin directory on the Unix system (use ASCII mode). All files must be copied over.
+                <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> ships with several different versions of the Unix files for the scheduler. The appropriate version of the files must be copied to the server. The following lists the files shipped:
+                <br /><img src="../Images/Install_Images/RED_oracleapp.png" /><ul style="font-weight: normal;list-style-type: circle;"><li>
+                        ...\<span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>\Oracle\Unix\Version_nnn\...
+                    </li><li>
+                        ...\<span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>\Oracle\Linux\Version_nnn\...
+                    </li></ul><p><img src="../Images/Install_Images/RED_teredataapp.png" /></p><ul style="list-style-type: circle;"><li><p style="font-weight: normal;">...\<span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>\Teradata\Unix\Version_nnn\...</p></li><li><p style="font-weight: normal;">...\<span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>\Teradata\Linux\Version_nnn\...</p></li></ul><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><p>There may be several different versions of the scheduler files for a given database and platform (Unix or Linux). These are identified by version numbers nnn. 
+For example, there may be three different folders in:</p><p>
+...\<span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>\Oracle\Linux\: Version_010, Version_410 and Version_560.</p><p>
+
+...\<span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>\Teradata\Linux\: Version_560 and Version_600.
+
+</p><p>The highest version number script less than or equal to the version of <span class="mc-variable WS_Branding.Product variable">RED</span> in use should always be used. 
+</p><p>In the table that follows, the nnn in file names refers to the version number of the script. Some scripts will have 010, some will have 411, others 560 or 680, etc.
+</p></td></tr></tbody></table><p style="font-weight: normal;">A definition of the files follows:</p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0"><col class="TableStyle-tablestyle-Column-Column1" /><col class="TableStyle-tablestyle-Column-Column2" /><thead><tr class="TableStyle-tablestyle-Head-Header1"><th class="TableStyle-tablestyle-HeadE-Column1-Header1">File</th><th class="TableStyle-tablestyle-HeadD-Column2-Header1">Purpose</th></tr></thead><tbody><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1"><p style="font-weight: normal;">oraenv (for Oracle)</p><p style="font-weight: normal;">tdenv (for Teradata)
+</p></td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">Contains the template of a script for setting environmental variables. This needs to reside in the home directory of the Unix user and must be tailored for the database user and environment.  It may be renamed to reflect the actual environment. 
+<ul><li>e.g.  oraenv_SID_user for Oracle
+</li><li>e.g.  tdenv_TDPID_user for Teradata
+</li></ul></td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">crontab</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">Contains the template of the required cron commands. This file needs to be modified to include the HOME directory of the Unix user, and the name of the environment file. It is then used to update the crontab tables.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_start_nnn.sh	</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">Script to start the scheduler. This script is normally called by the ws_sched_check_nnn.sh script and is passed the database environment file name as a parameter.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_sched_check_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">Script to check that the scheduler is running. This script is normally executed by cron every 20 minutes. If the scheduler is found to be absent it attempts to start a new iteration. By default, the scheduler will terminate if its database is shut down. This script will therefore start the scheduler after a system start-up or a database start-up.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_sched_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">The actual scheduler script. This script looks for new scheduler jobs every x seconds. The default is every 30 seconds. This script must be modified to change the default behavior. It calls the ws_job_wait_010.sh script to perform the actual checking and initiating of a job. It terminates when ws_job_wait_010.sh returns an error and relies upon cron for a restart.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_sched_status_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script is called by ws_sched_nnn.sh to update the scheduler status in the scheduler metadata. It's a wrapper of the metadata database procedure ws_sched_status (i.e. it calls the database procedure ws_sched_status and returns its results to the calling script).</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_job_wait_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script performs the bulk of the work. It is called by ws_sched_nnn.sh on a regular basis. It checks for any job waiting to run. If it locates a job that is ready to run it will create and start a script in the $HOME/wsl/sched/job directory for each thread of that job. These job threads in turn perform the actual processing and log their results to $HOME/wsl/sched/joblog. Under normal operation it is not necessary to check or inspect these files.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_job_check_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script is called to check the status of running jobs. It is called by ws_sched_nnn.sh on a regular basis (the interval is defined in ws_sched_nnn.sh). It checks that any job running in the scheduler is actually running in the Unix environment. If a job is not found under Unix, then it is aborted in the scheduler. This scenario can occur as the result of a database or machine crash. If a job abort is required, the results are logged to $HOME/wsl/sched/log/job_check_'env file name'.log. Under normal operation it is not necessary to check or inspect this file.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">cleanup_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script is normally executed by cron and cleans up files created by the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> scheduler. It deletes old versions of the jobs, job logs, and backups. It will also delete any temporary scripts created in the running of host scripts or file loads from within the scheduler. The location of these temporary scripts is defined within the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Unix Connection object. The default value in the cleanup script is /tmp and this must be altered if a different temporary directory is used for a Connection.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyG-Column1-Body1" colspan="2"><img src="../Images/Install_Images/RED_oracleapp.png" /> <b>Oracle only files</b></td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">meta_backup_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script is normally called by the cron process once or maybe more times a day to perform an automated export backup of the metadata tables. It creates a number of command files and a database export in the $HOME/wsl/export directory named with the date/time of the export.<p><![CDATA[				]]><img src="../Images/Install_Images/RED_oracleapp.png" /> It is recommended that users copy the new meta_backup_680.sh file to use Datapump's expdb instead the deprecated exp tool. This version uses the data pump export executable expdp.
+				It assumes that the scheduler and the Oracle database reside on the same server.</p></td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">meta_archive_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script is normally called by cron once a day to compress and tar the files in the $HOME/wsl/export directory and relocate them to the $HOME/wsl/expback directory. This action is performed purely to save on disk space usage.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">meta_restore_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script can be executed to restore from a meta repository backup. It will overwrite any existing metadata. It can be used to restore to a schema/database/user other than the one from which the backup was taken. It does not however restore the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> procedures. If a full recovery or a new user create is required, then the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> metadata install would normally be performed before actioning this restore. If the restore is from an export that has been moved to the expback directory, you will need to uncompress the export and move it and associated files back to the export directory.<p><img src="../Images/Install_Images/RED_oracleapp.png" /> It is recommended that users copy the new meta_restore_680.sh file to use Datapump's impd instead the deprecated imp tool. This version uses the data pump import executable impdp.</p>It assumes that the scheduler and the Oracle database reside on the same server.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyG-Column1-Body1" colspan="2"><img src="../Images/Install_Images/RED_oracleapp.png" /> <b>Oracle only files</b></td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_mon_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">The main monitoring script. This script in turn calls the database and job monitoring scripts to perform the monitoring. By default, the monitor process checks the jobs every 15 minutes and the database every 60 minutes. This script can be edited to change the frequency of the checks if required. Also, a log level of 9 can be set to produce debug logging.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_mon_db_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script checks the database status and if necessary, calls the notify script to notify of a database down. Also checks to see if the criteria for database monitoring has changed and if changed calls the refresh script.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_mon_notify_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script checks that notifications are valid for the day/time and if valid sends a notification.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_mon_refresh_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script refreshes the scripts and command files stored in the mon/db directory. These scripts and command files are used to ascertain the action should the database be unavailable.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_mon_jobs_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script performs the checking of jobs for which monitoring is defined. If a job has a notification required, then this script will issue the notification.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">ws_mon_start_nnn.sh</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">This script starts the monitor process.</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyB-Column1-Body1">ws_mon_check_nnn.sh</td><td class="TableStyle-tablestyle-BodyA-Column2-Body1">This script checks that the monitor process is running. If not running, the script will start the monitor process. This script is normally called via cron every 30 minutes.</td></tr></tbody></table></li>
+                                            <li value="4">
+                                                <p>Set permissions:</p>
+                                                <p style="font-weight: normal;">Change the permissions on the copied scripts so that they are executable (e.g. chmod 750 $HOME/wsl/bin/*.sh).</p>
+                                            </li>
+                                            <li value="5">
+                                                <p> Create an environment file (see below for relevant Oracle or Teradata  environment file instructions).</p>
+                                                <p style="font-weight: normal;">
+                                                    <img src="../Images/Install_Images/RED_oracleapp.png" /> Using the <b>environment file (oraenv)</b> as a template and adhering to the variable names within, create an environment file for the database environment and user under which the scheduler is to run.</p>
+                                                <p style="font-weight: normal;">This file should be located in the $HOME directory. It may be called anything, but a meaningful name may be oraenv_SID_user for a given Oracle scheduler.</p>
+                                                <p style="font-weight: normal;">Check the users .profile and database environment file to see the normal settings. For Oracle, check to see if the TNS_ADMIN variable is in use and if so, include it in the environment file.</p>
+                                                <p style="font-weight: normal;">Make the following replacements in the environment file: </p>
+                                                <ul style="list-style-type: circle;">
+                                                    <li>
+                        Replace all occurrences of _HOME_ with the full pathname of your home directory.
+                    </li>
+                                                    <li>
+                       Replace _USER_ with the data warehouse database user name.
+                    </li>
+                                                    <li>
+                        Replace _PASSWORD_ with the data warehouse database user password.
+                    </li>
+                                                    <li>
+                        Replace all occurrences of _SID_ with the SID of the data warehouse database.
+                    </li>
+                                                    <li>
+                        Replace all occurrences of _ORAHOME_ with the full pathname of the Oracle home directory.
+                    </li>
+                                                </ul>
+                                                <p style="font-weight: normal;">
+                                                    <img src="../Images/Install_Images/RED_teredataapp.png" /> Using the <b>environment file (tdenv)</b> as a template and adhering to the variable names within, create an environment file for the database environment and user under which the scheduler is to run.</p>
+                                                <p style="font-weight: normal;">The environment file must be copied to the $HOME directory of the user selected in Step (1). It may be called anything, but a meaningful name may be tdenv_TDPID_user for a given Teradata scheduler.</p>
+                                                <p style="font-weight: normal;">Check the users .profile and database environment file to see the normal settings.</p>
+                                                <ul style="list-style-type: circle;">
+                                                    <li>
+                        Replace all occurrences of _HOME_ with the full pathname of your home directory.
+                    </li>
+                                                    <li>
+                        Replace all occurrences of _TDPID_ with the host name of the data warehouse database server, used by the scheduler as the database server name for Teradata load and unload utilities.
+                    </li>
+                                                    <li>
+                        Replace all occurrences of _BTEQDB_ with the host name or IP address of the data warehouse database server, used by the scheduler as the database server name/address for reading and writing <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Metadata in Teradata (may be set to the same value as _TDPID_).
+                    </li>
+                                                    <li>
+                        Replace _USER_ with the data warehouse database user name.
+                    </li>
+                                                    <li>
+                        Replace _PASSWORD_ with the data warehouse database user password.
+                    </li>
+                                                    <li>
+                       If using a Teradata Wallet String, comment out the first Password line and comment back in the second line containing _WALLETSTRING_. Replace all occurrences of _WALLETSTRING_ with the data warehouse user wallet string.
+                    </li>
+                                                    <li>
+                                                        <p style="font-weight: normal;">Replace all occurrences of _METABASE_ with the user or database where the metadata resides</p>
+                                                    </li>
+                                                    <li>
+                                                        <p style="font-weight: normal;">Replace all occurrences of _WORKDIR_ with the name of the directory that will be used as the work directory by default (e.g. /tmp/ )</p>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li value="6">
+                                                <p><b>Setup crontab</b>
+                                                </p>
+                                                <p style="font-weight: normal;">Ascertain if there are any existing crontab entries, and if so save them to a file for re-inclusion later. (e.g. crontab –l      crontab –l &gt;/tmp/my_crontab ).</p>
+                                                <p style="font-weight: normal;">Edit the crontab file and perform the following changes. Also check all entries and make sure you are happy with the times and actions:</p>
+                                                <ul style="list-style-type: circle;">
+                                                    <li>
+                        Change all occurrences of _HOME_ with the full pathname of the Unix users home directory.
+                    </li>
+                                                    <li>
+                        Change all occurrences of the environment file name (oraenv or tdenv) to the name of the file created in step (4).
+                    </li>
+                                                    <li>
+                        Remove comment markers from the beginning of the second line of code (the line containing this:   ws_sched_check_nnn.sh).
+                    </li>
+                                                    <li>
+                        Include any existing crontab entries as recorded above.
+                    </li>
+                                                </ul>
+                                            </li>
+                                            <li value="7">
+                                                <p><b>Initialize crontab entries</b>
+                                                </p>
+                                                <ul style="list-style-type: circle;">
+                                                    <li>
+                        Load the crontab file into cron (e.g. crontab crontab ).
+                    </li>
+                                                    <li>
+                        Perform a crontab list to ensure it all looks OK (e.g. crontab –l ).
+                    </li>
+                                                </ul>
+                                            </li>
+                                            <li value="8">
+                                                <p><b>Start Scheduler</b>
+                                                </p>
+                                                <p style="font-weight: normal;">Manually start the scheduler by issuing the ws_sched_check_nnn.sh script with the environment file name from step (4) as the parameter (e.g. ws_sched_check_010.sh oraenv ) / (e.g. ws_sched_check_600.sh tdenv ) / .</p>
+                                                <p style="font-weight: normal;">If the scheduler is not running it will be started. Execute the script a few more times to ensure that only one copy of the scheduler is started. Check that the scheduler is running by executing a 'ps –ef' statement and checking that the ws_sched_nnn.sh process is present.</p>
+                                            </li>
+                                            <li value="9"><b>Start the Monitor process</b>
+                                                <p>
+                                                    <img src="../Images/Install_Images/RED_oracleapp.png" /> <b>Oracle only</b>.</p>
+                                                <p style="font-weight: normal;">Manually start the monitor by issuing the ws_mon_check_010.sh script with the environment file name from step (4) as the parameter (e.g. ws_mon_check_010.sh oraenv ). If the monitor is not running it will be started. Execute the script a few more times to ensure that only one copy of the scheduler is started. Check that the monitor is running by executing a 'ps –ef' statement and checking that the ws_mon_010.sh process is present.</p>
+                                            </li>
+                                            <li value="10">
+                                                <p><b>Test the Scheduler</b>
+                                                </p>
+                                                <p style="font-weight: normal;">Run a job from <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> and ensure that it works. In the event of the job not starting or going into and remaining in a pending state, then the following investigations should be undertaken:
+</p>
+                                                <ul style="list-style-type: circle;">
+                                                    <li>Ensure all <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> procedures are compiled. Use the Validate metadata option in the Setup Administrator to confirm that all procedures are valid.
+                    </li>
+                                                    <li>Review the job logs in $HOME/wsl/sched/joblog.
+                    </li>
+                                                    <li>Review the logs in $HOME/wsl/sched/log.
+                    </li>
+                                                    <li>Isolate the name of the job and locate the relevant files for this job in $HOME/wsl/sched/job and $HOME/wsl/sched/joblog if they exist. Mail these files together with the files in $HOME/wsl/sched/log to support@<span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>.com. It may be necessary to remove password references from the file(s) in $HOME/wsl/sched/job.
+                    </li>
+                                                </ul>
+                                                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                                    <col class="TableStyle-note-Column-Column1" />
+                                                    <thead>
+                                                        <tr class="TableStyle-note-Head-Header1">
+                                                            <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="TableStyle-note-Body-Body1">
+                                                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">It is possible to stop a Linux/UNIX Scheduler from within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. Refer to the <span style="font-style: italic;" class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span style="font-style: italic;" class="mc-variable WS_Branding.Product variable">RED</span><i> User Guide</i> or <i>See the Teradata </i><span style="font-style: italic;" class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span style="font-style: italic;" class="mc-variable WS_Branding.Product variable">RED</span><i> User Guide</i> for further details.</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><a data-close="true"></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

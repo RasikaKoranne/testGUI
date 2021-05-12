@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Dimensions" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Generating the Dimension Update Procedure</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Generating the Dimension Update Procedure</h2>
+            <p>Once a dimension has been defined in the meta data and created in the database, an update procedure can be generated to handle the joining of any tables and the update of the dimension records.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ul>
+                                <li style="color: #d7454b;">You can also generate an update procedure via a template, refer to <a href="../Table Properties/Rebuilding Update Procedures.htm">Rebuilding Update Procedures</a> for details.</li>
+                                <li style="color: #d7454b;">If the dimension is created in a custom database target, then an additional processing option is available—PowerShell script-based processing. Refer to <a href="../Templates/Script Temp Custom Dbase Tbl Objs.htm">Script Templates for Custom Database Table Objects</a> for details.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>The zero key row</h3>
+            <p><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> by default, inserts a record into the dimension with an artificial key value of zero. This record is used to link any fact records that do not have valid dimension joins. </p>
+            <p>The values of the various columns in this record are acquired from the contents of the field <b>Zero Key Value</b> which is set in the Properties screen of each dimension column.&#160; </p>
+            <h4>Generating a Procedure</h4>
+            <ol>
+                <li value="1">To generate a procedure, right-click on the dimension name to edit the properties for the dimension. </li>
+                <li value="2">From the <b>Update Procedure</b> drop-down list select <b>(Build Procedure...)</b>. </li>
+                <li value="3">Click <b>OK</b> to update the properties and start the process of generating the new procedure.</li>
+                <li value="4">A <b>Procedure Build Type</b> dialog appears, allowing you to select between a <b>Cursor</b> and<b> Set</b> procedure build types from the drop-down list. </li>
+            </ol>
+            <p>A <b>Set</b> based procedure performs one SQL statement to join all the source tables together and then insert this data into the Dimension. This is normally the fastest method of populating a table.</p>
+            <p>See below in this section for different options using the <b>Cursor</b> procedure building type.</p>
+            <p>&#160;</p>
+            <h4>Set Based Procedure Building types</h4>
+            <ol>
+                <li value="1">Select <b>Set</b> from the drop-down menu.</li>
+                <li value="2">The following window appears to enter the Update Procedure Build Options.</li>
+                <li value="3">Click on the <b>ellipsis</b> button on the top rightmost corner to select the <b>Business Key Columns </b>for the dimension.</li>
+            </ol>
+            <h4>Processing tab</h4>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Generating the Dimension Update.png" />
+            </p>
+            <h4 class="Heading4">Business key</h4>
+            <p>A business key can be made up of multiple columns, but it must provide a unique identifier. Where multiple columns uniquely and separately identify the dimension, choose one to act as the primary business key. </p>
+            <p>For example, a source table may have a unique constraint on both a product code and a product description. Therefore, the description as well as the code must be unique. It is of course possible to combine the two columns, but the normal practice would be to choose the code as the business key. </p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Business key.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tips:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">
+                            <ul>
+                                <li style="color: #70abaf;">Use the column name ascending/descending buttons to sort column names. To revert to the meta column order, click on the meta column order button.</li>
+                                <li style="color: #70abaf;"><b>NULL Values </b>- none of the columns chosen as the business key should ever contain a NULL value. See the note at the start of the Dimensions chapter. </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="Heading4">Parameters</h4>
+            <p>If <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> parameters exist in the metadata, the following window is displayed. Any parameters selected in this window (by moving them to the right pane), are included in the generated update procedure as variables. </p>
+            <p>The procedure includes code to retrieve the value of the parameter at run time and store it in the declared variable.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Business key_1.png" />
+            </p>
+            <p>The variables can also be used in column transformations and in the from/where clause for the update procedure. Some databases have a 30 character limit for variable names. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> ensures the variables added for any parameters are less than 30 characters long by creating variable names in the form v_ followed by the first 28 characters of the parameter name.</p>
+            <p>For example, a parameter called MINIMUM_ORDER_NUMBER_SINCE_LAST_SOURCE_LOAD will be available as the variable v_MINIMUM_ORDER_NUMBER_SINCE_L.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tips</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">
+                            <ul>
+                                <li style="color: #70abaf;"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> parameters should be unique within the first 28 characters to avoid conflicting variables names.</li>
+                                <li style="color: #70abaf;">If the desired parameter doesn't exist in the metadata yet, a new parameter can be added by clicking on the <b>Add New</b> button on the bottom leftmost corner of the Select Parameters dialog.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Refer to <a href="../Parameters.htm">Parameters</a> for more information about <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Parameters.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Enable Parallel DML </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>Oracle Only</b> - Adds all the code required to the update procedure to enable Oracle parallel inserts. The default for this option is not set.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert Zero Key Record</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This option enables you to include the zero key (unknown record) for tables with an artificial key. The default for this field is set.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Initial Load insert</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This option adds an additional insert statement to the update procedure that runs if the target Dimension Object is empty. The benefit of this is improved performance inserting into an empty table without performing any checks to see if rows already exist. The default for this field is FALSE (i.e. an initial insert statement is not added to the procedure).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Process by Batch</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field enables the user to select a column to break up the data being processed in a loop based on the distinct values in the field. The update procedure loops on this field and performs the delete, update and/or insert for each value. If the field chosen is a date datatype (date, datetime or timestamp), then the user is able to specify yearly, monthly, daily or column level looping. The default for this field is False (do not do batch processing).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Batch Processing Field</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables selecting a field to batch process on. If you select a date field you will have the ability to process by date part. If you select a join field to process by you can choose and attribute of that related table to group by.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Explicit Lock</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables locking of the table to avoid concurrent transactions. Double click the <b>Lock Clause</b> field to open a window that enables you to create the lock clause to insert.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Delete before insert</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This option enables a delete statement to be added to the update procedure before any update or insert statement. This is a particularly useful option for purging old data and for updates based on a source system batch number. The default for this field is No which automatically grays out the <b>Issue Warning if a Delete Occurs</b> and the<b> Delete Where Clause fields.</b><ul><li><b>Issue Warning if a Delete occurs </b>- sets the procedure to a warning state if deletes occur.</li><li><b>Delete Where Clause </b>- The delete where clause is appended to the generated delete statement to constrain the rows deleted.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Process Method</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables selecting whether the table should be updated using an Insert/Update statement or a Merge statement.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Table Locking</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables a locking request modifier to be specified for each source table. The specified locking request modifier is applied to each source table during generated update procedures. By default this is set to 'ACCESS' which locks each row being accessed, a blank entry will result in no locking clause in the generated procedure. This option may also be presented in a separate dialog</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Insert Statement</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The Include Insert Statement option includes an insert statement in the procedure to insert new rows in the Dimension. If this option is set, the <b>Insert New Rows Only</b> option is available. If this option is turned off, the update procedure will not contain an insert statement. The default for this field is set (i.e. an insert statement is included).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert New Rows only</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The insert new rows only option uses change detection to work out what rows require inserting.
+                        <p><ul><li><b>New Row Identification Method</b> - Method used to identify that the records in the source are not currently recorded in the target table.</li></ul></p></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert Hint </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enter a database hint to be used in the INSERT statement. This is an Oracle and SQL Server only option. Defaults can be configured in <b>Tools &gt;</b> <b>Options &gt; Default Update Procedure Options</b>.
+                        <table style="width: 100%;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/Install_Images/RED_SQLserver.png" /></td><td>Default is TABLOCK.
+</td></tr><tr><td><img src="../../Images/Install_Images/RED_oracleapp.png" /></td><td>Default is APPEND.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert New Rows Only</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Uses change detection to work out what rows require inserting.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Row Identification Method</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Method used to identify that records in source are not currently recorded in the target table.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Existing Data Selection Hint</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database-compliant hint to be used for the existing data select statement.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Update Statement</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Includes an update statement in the procedure to update changing rows in the Data Store. If this option is chosen, then the Update Changed rows only option is available.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Hint</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enter a database hint to be used in the INCLUDE statement. This is an Oracle and SQL Server only option. Defaults can be configured in <b>Tools &gt;</b> <b>Options &gt; Default Update Procedure Options</b>.
+                        <table style="width: 100%;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/Install_Images/RED_SQLserver.png" /></td><td>Default is TABLOCK.
+</td></tr><tr><td><img src="../../Images/Install_Images/RED_oracleapp.png" /></td><td>Default is APPEND.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Update Changed Rows Only</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Uses change detection to work out what rows require updating. Choosing this option, enables the <b>Change Row identification Method</b>.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Change Row Identification Method</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Method used to identify that records in source have changed from what is currently recorded in the target table.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Existing Data Selection Hint</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database-compliant hint to be used for the existing data select statement.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Merge Hint</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Enter a database hint to be used in the MERGE statement. This is an Oracle and SQL Server only option. Defaults can be configured in <b>Tools &gt; Options &gt; Default Update Procedure Options</b>.
+                        <table style="width: 100%;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/Install_Images/RED_SQLserver.png" /></td><td>Default is TABLOCK.
+</td></tr><tr><td><img src="../../Images/Install_Images/RED_oracleapp.png" /></td><td>Default is APPEND.</td></tr></tbody></table></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="Heading4">Source tab</h4>
+            <p>If only one source table was used, adding the <b>Business Key</b> and checking the above fields is enough to proceed, otherwise use the <b>Source</b> tab to <b>Join</b> the relevant tables.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Source tab.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Distinct Data Select</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Ensures duplicate rows are not added to the Dimension. This is achieved by the word DISTINCT being added to the source select in the update procedure. The default for this field is not set.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Join</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The From clause, including Source Join information. See example below for Joining multiple source tables.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Where Clause</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The Where Clause. Use as a filter to extract only the necessary records that fulfill a specified criteria.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Group By</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">The Group by clause. Use in collaboration with the SELECT statement to arrange identical data into groups.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <h4>Joining multiple source tables</h4>
+            <p><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> provides a wizard that enables you to graphically generate the join clause for an object with multiple source tables. The <b>Source Join</b> wizard enables you to specify the primary (driving) table and the source tables to join. A graphical representation of the tables and the join criteria is displayed by the wizard which you can manipulate to change the defined joins.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Staging/Source Join Wizard.png" />
+            </p>
+            <p>&#160;</p>
+            <p>The <b>Source&#160;Join</b> wizard guides you in generating the Join Clause through the following steps:</p>
+            <ol>
+                <li value="1">Choose Primary Table<p>The first source table encountered is the default primary (driving) table which can be changed before any joins are defined. </p></li>
+                <li value="2">Choose Tables to Join<p>Once the primary table is set, the remaining source tables are listed in this drop down. Select a table to join and then click <b>Add</b>. The two tables are added to pane 4 and the basis for the join is displayed in pane 3.</p></li>
+                <li value="3">Defined Joins<p>The join type defaults to <b>Inner</b> join but this can be changed from the drop down.</p></li>
+                <li value="4">Join criteria of selected join<p>The column(s) used to join the two tables can be joined manually by clicking the corresponding  join column connection point from the left-hand table and then dragging the line that appears to the connection point of the required column in the table on the right.</p><p>Alternatively, if a column with a matching or similar name exists in the left hand table(s) then a context menu is provided on the columns on the right-hand table. You can right click on the column to display the context menu and then select a column from the list.</p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0"><col class="TableStyle-tip-Column-Column1" /><thead><tr class="TableStyle-tip-Head-Header1"><th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th></tr></thead><tbody><tr class="TableStyle-tip-Body-Body1"><td class="TableStyle-tip-BodyA-Column1-Body1">
+                       
+ To aid manual column join, you can expand or collapse columns in the left-hand tables and toggle between natural and alphabetic column ordering.                    </td></tr></tbody></table></li>
+                <li value="5">Once the join column(s) for the table pair are defined, then any additional source tables can be added from the drop-down list on step 2 and the above column mapping process repeat to join this table.<br />This process is repeated until all source tables are joined.</li>
+                <li value="6">Clicking the <b>Next</b> button or the <b>Join query</b> tab progresses to the join editor window, where custom joins, database functions, etc. can be added.<p><img src="../../Images/UserGuide_Images/Staging/Source Join Wizard_2.png" /></p></li>
+            </ol>
+            <p>
+                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                    <col class="TableStyle-note-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-note-Head-Header1">
+                            <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-note-Body-Body1">
+                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                                <p>If <span class="mc-variable WS_Branding.Product variable">RED</span> is unable to parse a join statement, the user cannot navigate back to the <b>Define joins</b> tab and the following warning is displayed:</p>
+                                <p>
+                                    <img src="../../Images/UserGuide_Images/Staging/discardchanges.png" /><![CDATA[                   ]]></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h4 class="Heading4">Change Detection tab</h4>
+            <p>For Slowly Changing Dimension columns. If the dimension was defined as a Slowly Changing Dimension, the <b>Change Detection</b> tab is displayed in the table <b>Update Build Options </b>screen.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">For custom database targets, you can set the initial default values for the DSS columns that are used in the procedure generation for slowly changing dimensions. <br />Please refer to the section <a href="../Default Settings/DSS Columns for Custom Targets.htm">DSS Columns for Custom Targets</a> for details. The default values set are populated in the corresponding fields of the <b>Change Detection</b> tab. </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>A change detection field(s) must be selected for this Dimension type.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 146px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Change Detection Fields</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Click  the ellipsis button to select the change detection fields that are required for the dimension</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Null Support</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If the Add Null support is selected, the change detect column management caters for null values in any change detect columns. If this option is not selected and null values are present, errors may occur running the update procedure. The default for this value is ON (i.e. null values are catered for). </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Update Current Records Only</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The update current record only option only applies changes to non-change detect columns on the current record. If this option is not selected, all past (non-current) rows will also be updated to reflect changes to non-change detect columns. The default for this value is ON (i.e. only the current record is updated).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Reset Dates to Initial Values</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Resets dss_start date and dss_end_date date values to original values.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Start Date for Initial Member</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The start date for initial member field contains the start date for the first version of a particular business key. The value should be specified in an appropriate form, taking into account the default date format in the databases. The date may need to be explicitly cast to the current data type. The default value provided is usually cast to the correct database and can be treated as a template. The default for this field is 1 January 1900.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">End Date for Current Member</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The end date for current member field contains the end date for the current version (the row with a current flag of Y and the maximum version number) of a particular business key. The value must be specified in an appropriate form, taking into account the default date format in the databases. The date may need to be explicitly cast to the current data type. The default value provided is usually cast to the correct database and can be treated as a template. The default for this field is 31 December 2999.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Start Date for New Member Entry</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The start date for new member entry field contains the start date for any subsequent rows added to the history table (not the first row for a particular business key i.e. not version 1). The value must be specified in an appropriate form, taking into account the default date format in the databases. The date may need to be explicitly cast to the current data type. The default value provided is usually cast to the correct database and can be treated as a template. The default for this field is the current date and time.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">End Date for Expiring Member Entry</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">The end date for the expiring member entry field contains the end date for any rows updated no longer to no longer be the current row in the history table (i.e. rows that are replaced by a new current row). The value must be specified in an appropriate form, taking into account the default date format in the databases. The date may need to be explicitly cast to the current data type. The default value provided is usually cast to the correct database and can be treated as a template. The default for this field is the current date and time less an arbitrary small amount (for SQL Server this is 0.00000005 of a day, or about 4 thousandth of a second).</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="Heading3">Cursor procedure building types</h3>
+            <h4 class="Heading4">Source Join / Lookup</h4>
+            <p>If columns from multiple source tables were used to create the Dimension with a <b>Cursor</b> Procedure building type, the window below prompt users to Define the Primary Dimension source table. </p>
+            <p>The fields need to be joined in the Source Join field.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Cursor procedure building.png" />
+            </p>
+            <p>The choice provided is either to create a join that combines all the information from the various tables into one large select statement, or to do a series of lookups.</p>
+            <p>The normal process would be to join the tables to create one large select statement. There are however situations where this is not desirable or possible. When a large number of tables are involved then a join is slower than a series of lookups. In some situations, we may not have all the information to do an initial join. A series of lookups may be required to build up the information.</p>
+            <p>For complex situations, it is necessary to edit and enhance the generated procedure code.</p>
+            <p>If Lookup is chosen, then the primary table for the Dimension must be chosen. The philosophy here is that a series of lookups is conducted against the secondary tables using information from this primary table.</p>
+            <h4 class="Heading4">Lookup</h4>
+            <p>If multiple source tables were used to build the Dimension, then an option would have appeared in an earlier window to choose between a join or a lookup. </p>
+            <p>If <b>Lookup</b> was chosen, then a window appears prompting for the joins between the primary table and each secondary (lookup) table.</p>
+            <p>The load_product table is the main table and a lookup is being performed on the load_prod_line table. Columns are selected from the drop-down column list for each table and then the <b>Add Join</b> button clicked to add these two columns to the 'Where' clause as shown in the bottom box. </p>
+            <p>This 'Where' clause may be edited and goes to form a <b>lookup</b> select statement within the main cursor loop of the update procedure. <br />In this example the 'Where' clause has had the second line manually added to identify the type of lookup in the code table.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Cursor procedure building_1.png" />
+            </p>
+            <p>Multiple lookups can occur on the same table. Where we have a generic code table, for example, we may do multiple lookups to get descriptions. </p>
+            <p>The check-box <b>Multiple Lookups Required on This Table</b> results in repeated lookups against the second table until all columns sourced from this table have been utilized in the lookup statements. </p>
+            <p>If the <b>Multiple Lookup</b> check-box is selected, then the following window appears to enable selection of the columns that are to be retrieved by the lookup.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Cursor procedure building_2.png" />
+            </p>
+            <h4 class="Heading4">Business Key</h4>
+            <p>Define the <b>Business Key</b> Columns by adding one or more business key columns in the right pane of the <b>Define Dimension Business Key Columns</b> window.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Business Key_1_1.png">
+                </img>
+            </p>
+            <h5>Allow Where Clause Editing</h5>
+            <ul>
+                <li><b>Not Exists Select </b>- if this check-box is selected, it adds additional code to the main select statement. This code excludes every row in the source table that has not changed in the Dimension table and can result in faster execution of the update procedure for large Dimensions.</li>
+                <li><b>Add a hierarchy for Cubes</b> - this check-box opens another window that enables the definition of a simple hierarchy structure. This is useful if the hierarchy of the Dimension is known and the Dimension is used in the creation of Analysis services cubes. Hierarchies may be defined now or later when required. They may also be defined or modified after the dimension has been created. </li>
+            </ul>
+            <h4 class="Heading4">Slowly Changing columns</h4>
+            <p>If the Dimension was defined as a slowly changing dimension, then the following additional window appears. </p>
+            <p>The first requests the selection of the columns to be managed as Slowly Changing Dimension columns. </p>
+            <p>Select the required columns and then click <b>OK</b> to proceed. </p>
+            <p>In the example below, the customer name is to be managed as a Slowly Changing column in a customer Dimension.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Slowly Changing columns.png">
+                </img>
+            </p>
+            <p>The advantages and disadvantages of Slowly Changing Dimensions are discussed earlier in this chapter, but as a general rule try to minimize their usage, as they invariably complicate the processing and end user queries.</p>
+            <p>The following window appears if one or more columns are chosen for management.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Slowly Changing columns_1.png">
+                </img>
+            </p>
+            <p>NULL values are the enemy of a successful data warehouse. They result in unreliable query results and can often lead to a lack of confidence in the data. </p>
+            <p>If a column is considered important enough to be managed as a Slowly Changing column, then it should not normally contain null values. It is often best to ensure that a Null cannot occur by using a IsNull() (SQL Server), Nvl() (Oracle) or Coalesce() (DB2) transformation when loading the column. </p>
+            <p>If however, this situation is unavoidable then answering <b>Yes</b> to this question results in additional code to test for Nulls, during the update of the Dimension records. </p>
+            <p>If <b>No</b> is answered and Nulls are encountered then a unique constraint violation occurs during the Dimension update.</p>
+            <h5>Building and Compiling the Procedure</h5>
+            <ul>
+                <li>Once the above questions are completed the procedure is built and compiled automatically. </li>
+                <li>If the compile fails an error is displayed along with the first few lines of error messages. Compile fails typically occur when the physical creation of the table was not done. </li>
+                <li>If the compile fails for some other reason, the best approach is to use the Procedure editor to edit and compile the procedure. The procedure editor highlights all the errors within the context of the procedure.</li>
+                <li>Once the procedure has been successfully compiled, it can either be executed interactively or passed to the <span class="mc-variable WS_Branding.Product variable">RED</span> Scheduler.</li>
+            </ul>
+            <h5>Indexes</h5>
+            <p>By default, a number of indexes is created to support the Dimension. These indexes is added once the procedure has been built. </p>
+            <p>An example of the type of indexes created is as follows:</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Dimensions/Slowly Changing columns_2.png">
+                </img>
+            </p>
+            <p>This example shows three indexes created:</p>
+            <ol>
+                <li value="1">A primary key constraint placed on the artificial key for the Dimension.</li>
+                <li value="2">A unique index placed on the business key for the Dimension.</li>
+                <li value="3">A unique index placed on the business key and a Slowly Changing column from the Dimension.</li>
+            </ol>
+            <p>This third index is only created when a <b>Slowly Changing</b> Dimension is chosen.</p>
+            <p>Additional indexes can be added, or these indexes changed. Refer to <a href="../Indexes/Indexes.htm">Indexes</a> for details.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

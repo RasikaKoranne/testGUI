@@ -1,0 +1,142 @@
+_SQL_ ws_obj_object_seq 
+create sequence ws_obj_object_seq;
+_SQL_ ws_obj_project_seq 
+create sequence ws_obj_project_seq;
+_SQL_ ws_load_col_seq 
+create sequence ws_load_col_seq increment by 10;
+_SQL_ ws_fact_col_seq 
+create sequence ws_fact_col_seq increment by 10;
+_SQL_ ws_dim_col_seq 
+create sequence ws_dim_col_seq increment by 10;
+_SQL_ ws_stage_col_seq 
+create sequence ws_stage_col_seq increment by 10;
+_SQL_ ws_user_adm_seq 
+create sequence ws_user_adm_seq;
+_SQL_ ws_user_login_seq 
+create sequence ws_user_login_seq;
+_SQL_ ws_job_seq 
+create sequence ws_job_seq;
+_SQL_ ws_index_seq 
+create sequence ws_index_seq;
+_SQL_ ws_task_seq 
+create sequence ws_task_seq;
+_SQL_ ws_fact_kpi_seq 
+create sequence ws_fact_kpi_seq; 
+_SQL_ ws_agg_col_seq
+create sequence ws_agg_col_seq increment by 10;
+_SQL_ ws_script_seq
+create sequence ws_script_seq increment by 1;
+_SQL_ ws_version_seq
+create sequence ws_version_seq increment by 1;
+_SQL_ ws_wrk_job_dependency_seq
+create sequence ws_wrk_job_dependency_seq increment by 1;
+_SQL_ ws_file_seq
+create sequence ws_file_seq increment by 1 cache 2;
+_SQL_ ws_hierarchy_seq
+create sequence ws_hierarchy_seq increment by 1;
+_SQL_ ws_sec_policy_seq
+create sequence ws_sec_policy_seq increment by 1;
+_SQL_ ws_sec_role_seq
+create sequence ws_sec_role_seq increment by 1;
+_SQL_ ws_sec_pol_line_seq
+create sequence ws_sec_pol_line_seq increment by 1;
+_SQL_ ws_sec_pol_table_seq
+create sequence ws_sec_pol_table_seq increment by 1;
+_SQL_ ws_cube_db_seq
+create sequence ws_cube_db_seq increment by 1;
+_SQL_ ws_cube_src_seq
+create sequence ws_cube_src_seq increment by 1;
+_SQL_ ws_cube_dim_seq
+create sequence ws_cube_dim_seq increment by 1;
+_SQL_ ws_cube_measure_seq
+create sequence ws_cube_measure_seq increment by 1;
+_SQL_ ws_cube_part_seq
+create sequence ws_cube_part_seq increment by 1;
+_SQL_ ws_cube_drill_seq
+create sequence ws_cube_drill_seq increment by 1;
+_SQL_ ws_cube_hie_seq
+create sequence ws_cube_hie_seq increment by 1;
+_SQL_ ws_audit_log_seq
+create sequence ws_audit_log_seq increment by 1;
+_SQL_ ws_error_log_seq
+create sequence ws_error_log_seq increment by 1;
+_SQL_ ws_export_col_seq
+create sequence ws_export_col_seq increment by 1;
+_SQL_ ws_join_col_seq
+create sequence ws_join_col_seq increment by 1;
+_SQL_ ws_view_col_seq
+create sequence ws_view_col_seq increment by 1;
+_SQL_ ws_view_repl_seq
+create sequence ws_view_repl_seq increment by 1;
+_SQL_ ws_retro_col_seq
+create sequence ws_retro_col_seq increment by 1;
+_SQL_ ws_table_join_seq
+create sequence ws_table_join_seq increment by 1;
+_SQL_ ws_tran_model_seq
+create sequence ws_tran_model_seq increment by 1;
+_SQL_ ws_ods_col_seq 
+create sequence ws_ods_col_seq increment by 10;
+_SQL_ ws_normal_col_seq 
+create sequence ws_normal_col_seq increment by 10;
+_SQL_ ws_meta_wizard_set_seq 
+create sequence ws_meta_wizard_set_seq increment by 1;
+_SQL_ ws_meta_wizard_type_seq 
+create sequence ws_meta_wizard_type_seq increment by 1;
+_SQL_ ws_meta_wizard_name_seq 
+create sequence ws_meta_wizard_name_seq increment by 1;
+_SQL_ ws_oca_seq 
+create sequence ws_oca_seq increment by 1;
+_SQL_ ws_ocad_seq 
+create sequence ws_ocad_seq increment by 1;
+_SQL_ ws_ocap_seq 
+create sequence ws_ocap_seq increment by 1;
+_SQL_ ws_occ_seq 
+create sequence ws_occ_seq increment by 1;
+_SQL_ ws_ocd_seq 
+create sequence ws_ocd_seq increment by 1;
+_SQL_ ws_ock_seq 
+create sequence ws_ock_seq increment by 1;
+_SQL_ ws_oda_seq 
+create sequence ws_oda_seq increment by 1;
+_SQL_ ws_odar_seq 
+create sequence ws_odar_seq increment by 1;
+_SQL_ ws_odas_seq 
+create sequence ws_odas_seq increment by 1;
+_SQL_ ws_odb_seq 
+create sequence ws_odb_seq increment by 1;
+_SQL_ ws_odh_seq 
+create sequence ws_odh_seq increment by 1;
+_SQL_ ws_odhl_seq 
+create sequence ws_odhl_seq increment by 1;
+_SQL_ ws_om_seq 
+create sequence ws_om_seq increment by 1;
+_SQL_ ws_omm_seq 
+create sequence ws_omm_seq increment by 1;
+_SQL_ ws_omp_seq 
+create sequence ws_omp_seq increment by 1;
+_SQL_ ws_op_seq 
+create sequence ws_op_seq increment by 1;
+_SQL_ ws_os_seq 
+create sequence ws_os_seq increment by 1;
+_SQL_ ws_ot_seq 
+create sequence ws_ot_seq increment by 1;
+_SQL_ ws_la_seq 
+create sequence ws_la_seq increment by 1;
+_SQL_ ws_lat_seq 
+create sequence ws_lat_seq increment by 1;
+_SQL_ ws_uw_seq 
+create sequence ws_uw_seq;
+_SQL_ ws_dbc_target_seq 
+create sequence ws_dbc_target_seq increment by 1;
+_SQL_ ws_meta_db_functions_seq
+create sequence ws_meta_db_functions_seq increment by 1;
+_SQL_ ws_ext_prop_def_seq
+create sequence ws_ext_prop_def_seq increment by 1;
+_SQL_ ws_source_mapping_tab_seq
+create sequence ws_source_mapping_tab_seq increment by 1;
+_SQL_ ws_red_api_audit_log_seq
+create sequence ws_red_api_audit_log_seq increment by 1;
+_SQL_ ws_script_language_seq
+create sequence ws_script_language_seq increment by 1;
+_SQL_ ws_ui_config_seq
+create sequence ws_ui_config_seq increment by 1;

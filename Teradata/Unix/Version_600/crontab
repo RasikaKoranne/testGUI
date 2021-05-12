@@ -1,0 +1,12 @@
+#
+## each day cleanup log files etc.
+##
+######00 18 * * * _HOME_/wsl/bin/cleanup_600.sh tdenv >/dev/null 2>&1
+#
+## check and if required start the scheduler
+##
+######0,20,40 * * * * _HOME_/wsl/bin/ws_sched_check_600.sh tdenv >>_HOME_/wsl/sched/log/sched_tdenv.log 2>&1
+#
+## check and if required start the monitor
+##
+######0,30 * * * * _HOME_/wsl/bin/ws_mon_check_600.sh tdenv >>_HOME_/wsl/sched/log/mon_tdenv.log 2>&1

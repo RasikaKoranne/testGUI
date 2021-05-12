@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Fact Tables|Rollup or Combined Fact Tables" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Generating the Rollup Fact Update Procedure</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>Generating the Rollup Fact Update Procedure</h3>
+            <p class="BodyText">Once a rollup fact table has been defined in the metadata and created in the database, an update procedure can be generated to handle the update of the fact table.</p>
+            <p class="Note"><b>Note:</b> You can also generate an update procedure via a template, refer to <a href="../Table Properties/Rebuilding Update Procedures.htm">Rebuilding Update Procedures</a> for details.</p>
+            <h3 class="SpecialBold_1">Generating a Procedure</h3>
+            <ol>
+                <li value="1">To generate a procedure, right-click on the fact table in the left pane and select <b>Properties</b> to edit the properties for the fact table. </li>
+                <li value="2">Click the <b>Rebuild</b> button to start the process of generating the new procedure.</li>
+                <li value="3">A series of prompts are displayed during the procedure generation based on the type of load information.</li>
+            </ol>
+            <h4 class="Heading4">Define Rollup date dimension and column</h4>
+            <p class="BodyText">The first dialog displayed when generating a detail fact table update procedure is the define rollup date dimension and column window:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Fact Tables/Generating the Rollup Fact Update Procedure_1.png" />
+            </p>
+            <p class="BodyText"><span class="mc-variable WS_Branding.Product variable">RED</span> needs to know which date is driving the rollup and to which level of detail we wish to set as our base. </p>
+            <p class="BodyText">In this example, we have chosen <b>dim_ship_date</b> as our date dimension and <b>ship_cal_month</b> as our rollup column to set the level to summarize all transactions. Click <b>OK</b>.</p>
+            <p class="BodyText"><span class="mc-variable WS_Branding.Product variable">RED</span> also needs to understand which date field in the actuals should be used to base the rollup; we have chosen <b>dim_ship_date_key</b> and click <b>OK</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Fact Tables/Generating the Rollup Fact Update Procedure_2.png" />
+            </p>
+            <p class="BodyText">Once again, select the date dimension key and click <b>OK</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Fact Tables/Generating the Rollup Fact Update Procedure_3.png" />
+            </p>
+            <p id="linespace" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+            <hr width="100%" size="0" align="center" data-mc-conditions="Outputs.Exclude_In_Print" />
+            <p id="spacing" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+        </div>
+    </body>
+</html>

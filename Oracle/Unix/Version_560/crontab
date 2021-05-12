@@ -1,0 +1,22 @@
+## backup of the meta data
+## workdays backup at end of day
+## on the weekends at 7:00pm
+##
+00 20 * * 1-5 _HOME_/wsl/bin/meta_backup_680.sh oraenv >/dev/null 2>&1
+00 19 * * 0,6 _HOME_/wsl/bin/meta_backup_680.sh oraenv >/dev/null 2>&1
+##
+## each day archive (tar) the meta backups and compress
+##
+00 22 * * * _HOME_/wsl/bin/meta_archive_010.sh >/dev/null 2>&1
+##
+## each day cleanup log files etc.
+##
+00 18 * * * _HOME_/wsl/bin/cleanup_010.sh oraenv >/dev/null 2>&1
+#
+## check and if required start the scheduler
+##
+0,20,40 * * * * _HOME_/wsl/bin/ws_sched_check_560.sh oraenv >>_HOME_/wsl/sched/log/sched_oraenv.log 2>&1
+#
+## check and if required start the monitor
+##
+0,30 * * * * _HOME_/wsl/bin/ws_mon_check_010.sh oraenv >>_HOME_/wsl/sched/log/mon_oraenv.log 2>&1

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Dimensions" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Dimensions Overview</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Dimensions Overview</h2>
+            <p class="BodyText">A dimension table is normally defined, for our purposes, as a table that enables us to constrain queries on the fact table.<br />A dimension is built from the Data Warehouse connection. Unless you are doing a retro-fit of an existing system, dimensions are typically built from one or more load tables.</p>
+            <p class="BodyText">The normal steps for creating a dimension are defined below and are covered in this chapter. The steps are:</p>
+            <ul>
+                <li>Identify the source transactional data that will constitute the dimension. If the data is sourced from multiple tables, ascertain if a join between the source tables is possible, or if a series of lookups would be a better option.</li>
+                <li>Using the 'drag and drop' functionality, drag the load table that is the primary source of information for the dimension into a dimension target. Refer to <a href="Building a Dimension.htm">Building a Dimension</a> for details.</li>
+                <li>If only one table is being sourced and most of the columns are to be used (or if prototyping) you can select the auto create option to build and load the dimension and skip the next 4 steps. Refer to <a href="Building a Dimension.htm">Building a Dimension</a> for details.</li>
+                <li>Add columns from other load tables if required. Refer to <a href="Building a Dimension.htm">Building a Dimension</a> for details.</li>
+                <li>Create the dimension table in the database. Refer to <a href="Building a Dimension.htm">Building a Dimension</a> for details.</li>
+                <li>Build the update procedure. Refer to <a href="Gen Dim Update Proc.htm">Generating the Dimension Update Procedure</a> for details.</li>
+                <li>Run the update procedure and analyze the results. Refer to <a href="Dim Initial Build.htm">Dimension Initial Build</a> for details.</li>
+                <li>Modify the update procedure as required. Refer to <a href="Dim Initial Build.htm">Dimension Initial Build</a> for details.</li>
+            </ul>
+            <h3>Dimension Keys</h3>
+            <p class="BodyText">Dimensions have two types of keys that we will refer to frequently. These are the <b>Business Key</b> and the <b>Artificial Key</b>. <br />A definition of these two key types follows:</p>
+            <h3>Business Key</h3>
+            <p class="BodyText">The business key is the column or columns that uniquely identify a record within the dimension. Where the dimension maps back to a single or a main table in the source system, it is usually possible to ascertain the business key by looking at the unique keys for that source table. Some people refer to the business key as the <b>natural key</b>. Examples of business keys are:</p>
+            <ul>
+                <li>The product SKU in a product dimension</li>
+                <li>The customer code in a customer dimension</li>
+                <li>The calendar date in a date dimension</li>
+                <li>The 24 hour time in a time dimension (i.e. HHMM) (e.g.1710)</li>
+                <li>The airport short code in an airport dimension.</li>
+            </ul>
+            <p class="BodyText">It is assumed that business keys will never be NULL. If a null value is possible in a business key then the generated code will need to be modified to handle the null value by assigning some default value. <br /></p>
+            <p class="BodyText">For example the 'Where' clause in a dimension update may become:</p>
+            <p class="BodyText">SQL Server: Where isnull(business_key,'N/A') = isnull(v_LoadRec.business_key,'N/A')</p>
+            <p class="BodyText">Oracle: Where nvl(business_key,'N/A') = nvl(v_LoadRec.business_key,'N/A')</p>
+            <p class="BodyText">DB2: Where coalesce(business_key,'N/A') = coalesce(v_LoadRec.business_key,'N/A')</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Business keys are assumed to never be Null. If they could be null it is best to transform them to some value prior to dimension or stage table update. If this is not done, an unmodified update will probably fail with a duplicate key error on the business key index.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Artificial Key</h3>
+            <p class="BodyText">The artificial key is the unique identifier that is used to join a dimension record to a Fact table. When joining dimensions to Fact tables it would be possible to perform the join using the business key. For Fact tables with a large number of records this however would result in slow query times and very large indexes. As query time is one of our key drivers in data warehouse implementations, the best answer is to always use some form of artificial key. A price is paid in the additional processing required to build the Fact table rows, but this is offset by the reduced query times and index sizes. We can also make use of database specific features such as bitmap indexes in Oracle.</p>
+            <p class="BodyText">The artificial key is an integer and is built sequentially from 1 upwards. </p>
+            <p class="BodyText">Refer to <a href="Dim Artificial Keys.htm">Dimension Artificial Keys</a> for a more detailed explanation. An artificial key is sometimes referred to as a <b>surrogate key</b>.</p>
+            <p class="BodyText">&#160;</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Templates|Template Editor|Pebble Syntax" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Pebble Template Functions</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/syntax.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4>Pebble Template Functions</h4>
+            <h5>block</h5>
+            <p>The block function is used to render the contents of a block tag more than once.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">block </span><span style="color: #dc009c;">"testBlock"</span> <span style="color: #ff0000;">%}</span>Some content</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endblock </span><span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">block</span>(<span style="color: #dc009c;">"testBlock"</span>) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>Some contentSome content</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>max</h5>
+            <p>The max function will return the largest of it's numerical arguments.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">max</span>(5, 3) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>5</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>min</h5>
+            <p>The min function will return the smallest of it's numerical arguments.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">min</span>(5, 3) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">&#160;</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>3</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>parent</h5>
+            <p>The parent function is used inside of a block to render the content that the parent template would have rendered inside of the block had the current template not overriden it.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">block </span><span style="color: #dc009c;">"${blockName}" </span><span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">parent</span>() <span style="color: #ff0000;">}}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endblock </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>range</h5>
+            <p>The range function will return a list containing an arithmetic progression of numbers.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">range</span>(3, 6) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>[3, 4, 5, 6]</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>range with step</h5>
+            <p>The range function will return a list containing an arithmetic progression of numbers.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">range</span>(2, 10, 2) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>[2, 4, 6, 8, 10]</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>bool</h5>
+            <p>The bool function will return a boolean from parsing a value.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">bool</span>("T") <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>true</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example 2</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">bool</span>(0) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>false</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>codepoint</h5>
+            <p>The codepoint function will return the character for the specified Unicode code point.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">codepoint</span>(34) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>"</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>combine lists</h5>
+            <p>The <code>combineLists </code>function will return a merged list of the two arguments.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>listA = [ <span style="color: #dc009c;">"a"</span>, <span style="color: #dc009c;">"b"</span>, <span style="color: #dc009c;">"c"</span> ] <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>listB = [ <span style="color: #dc009c;">"d"</span>, <span style="color: #dc009c;">"c"</span>, <span style="color: #dc009c;">"e"</span> ] <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">combineLists</span>(false, listA, listB) <span style="color: #ff0000;">}}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">combineLists</span>(true, listA, listB) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>[a, b, c, d, c, e][a, b, c, d, e]</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>double</h5>
+            <p>The double function will return an int for the provided Number argument or attempt to parse a String into a double.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">double</span>(3.145) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>3.145</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example 2</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">double</span>(<span style="color: #dc009c;">"3.145"</span>) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>3.145</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>int</h5>
+            <p>The int function will return an int for the provided Number argument or attempt to parse a String into an int.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">int</span>(3.145) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>3</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example 2</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">int</span>(<span style="color: #dc009c;">"3.145"</span>) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>3</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>replace start</h5>
+            <p>The <code>replaceStart </code>function will return a String where <b>str</b> will be checked if it starts with <b>match</b> and if so be replaced with <b>replace</b>.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">replaceStart</span>(<span style="color: #dc009c;">"prefix"</span>, <span style="color: #dc009c;">"pre"</span>, <span style="color: #dc009c;">"suf"</span>, <span style="color: #0000ff;">false</span>) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>suffix</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>replace end</h5>
+            <p>The <code>replaceEnd </code>function will return a String where <b>str</b> will be checked if it ends with <b>match</b> and if so be replaced with <b>replace</b>.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">replaceEnd</span>(<span style="color: #dc009c;">"completion"</span>, <span style="color: #dc009c;">"ion"</span>, <span style="color: #dc009c;">"ed"</span>, <span style="color: #0000ff;">false</span>) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>completed</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>str is equals</h5>
+            <p>The strIsEquals function will return a boolean for whether the provided String arguments are equal. Safely handles null values.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">strIsEquals</span>(<span style="color: #dc009c;">"a"</span>, <span style="color: #dc009c;">"A"</span>, <span style="color: #0000ff;">true</span>) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>true</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example 2</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">strIsEquals</span>(<span style="color: #dc009c;">"a"</span>, <span style="color: #0000ff;">null</span>) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>false</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>starts with ignore case</h5>
+            <p>The <code>startsWithIgnoreCase </code>function will return a boolean for whether the provided <b>str</b> begins with <b>match</b> while ignoring casing.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">startsWithIgnoreCase</span>(<span style="color: #dc009c;">"SuperMan"</span>, <span style="color: #dc009c;">"super"</span>) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>true</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>ends with ignore case</h5>
+            <p>The <code>endsWithIgnoreCase </code>function will return a boolean for whether the provided <b>str</b> ends with <b>match</b> while ignoring casing.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{{</span> <span style="color: #007fae;">endsWithIgnoreCase</span>(<span style="color: #dc009c;">"SuperMan"</span>, <span style="color: #dc009c;">"man"</span>) <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>true</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="linespace" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+            <p id="linespace" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+            <hr width="100%" size="0" align="center" data-mc-conditions="Outputs.Exclude_In_Print" />
+            <p id="spacing" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+        </div>
+    </body>
+</html>

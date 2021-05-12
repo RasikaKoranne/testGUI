@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data_type_mapping_set name="Standard Oracle to Netezza" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd">
+
+  <mapping_set_description>Standard Oracle to Netezza data type mapping.</mapping_set_description>
+
+  <mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+
+  <data_type_mapping match_data_type="number" output_data_type="byteint">
+    <match_parameters>
+      <match_precision>1-2</match_precision>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="number" output_data_type="smallint">
+    <match_parameters>
+      <match_precision>3-4</match_precision>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="number" output_data_type="integer">
+    <match_parameters>
+      <match_precision>5-9</match_precision>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="number" output_data_type="bigint">
+    <match_parameters>
+      <match_precision>10-18</match_precision>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="number" output_data_type="numeric(%precision)">
+    <match_parameters>
+      <match_precision>19-*</match_precision>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="number" output_data_type="numeric(%precision,%scale)">
+    <match_parameters>
+      <match_scale>1-*</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="binary_float" output_data_type="float"/>
+
+  <data_type_mapping match_data_type="binary_double" output_data_type="float"/>
+
+  <data_type_mapping match_data_type="float" output_data_type="float"/>
+
+  <data_type_mapping match_data_type="date" output_data_type="timestamp"/>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="timestamp"/>
+
+  <data_type_mapping match_data_type="timestamp with time zone" output_data_type="timestamp"/>
+
+  <data_type_mapping match_data_type="timestamp with local time z" output_data_type="timestamp"/>
+
+  <data_type_mapping match_data_type="interval year to month" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval day to second" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="varchar2" output_data_type="varchar(%precision)"/>
+
+  <data_type_mapping match_data_type="nvarchar2" output_data_type="nvarchar(%precision)"/>
+
+  <data_type_mapping match_data_type="rowid" output_data_type="char(18)"/>
+
+  <data_type_mapping match_data_type="urowid" output_data_type="char(18)"/>
+
+</data_type_mapping_set>

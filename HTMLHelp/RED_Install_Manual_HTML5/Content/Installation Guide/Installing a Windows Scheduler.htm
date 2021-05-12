@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins_HTML5___Top_Navigation" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-has-content-body="True" data-mc-toc-path="Installation|Scheduler Installation and Configuration" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="print">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" /><title>Installing a Windows Scheduler</title>
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/foundation.6.2.3.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/foundation.6.2.3_custom.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-right" role="navigation" id="offCanvas" data-off-canvas="" data-position="right" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-right is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" role="banner" data-mc-ignore="true"><a class="skip-to-content fluid-skip showOnFocus" href="#">Skip To Main Content</a>
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="menu-icon-container relative clearfix">
+                                    <div class="central-account-wrapper">
+                                        <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                            <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                                <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="menu-icon" aria-label="Show Navigation Panel" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="title-bar-layout outer-row">
+                                <div class="logo-wrapper"><a class="logo" href="../external_help/About.htm" alt="Logo"></a>
+                                </div>
+                                <div class="navigation-wrapper nocontent">
+                                    <ul class="navigation clearfix" role="navigation" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="3" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                        <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="central-account-wrapper">
+                                    <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                        <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                            <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-search-wrapper">
+                                    <div class="nav-search row">
+                                        <form class="search" action="#">
+                                            <div class="search-bar search-bar-container needs-pie">
+                                                <input class="search-field needs-pie" type="search" aria-label="Search Field" placeholder="Search" />
+                                                <div class="search-filter-wrapper"><span class="invisible-label" id="search-filters-label">Filter: </span>
+                                                    <div class="search-filter" aria-haspopup="true" aria-controls="sf-content" aria-expanded="false" aria-label="Search Filter" title="All Files" role="button" tabindex="0">
+                                                    </div>
+                                                    <div class="search-filter-content" id="sf-content">
+                                                        <ul>
+                                                            <li>
+                                                                <button class="mc-dropdown-item" aria-labelledby="search-filters-label filterSelectorLabel-00001"><span id="filterSelectorLabel-00001">All Files</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="search-submit-wrapper" dir="ltr">
+                                                    <div class="search-submit" title="Search" role="button" tabindex="0"><span class="invisible-label">Submit Search</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="main-section">
+                        <div class="row outer-row sidenav-layout">
+                            <nav class="sidenav-wrapper">
+                                <div class="sidenav-container">
+                                    <ul class="off-canvas-accordion vertical menu sidenav" data-accordion-menu="" data-mc-css-tree-node-expanded="is-accordion-submenu-parent" data-mc-css-tree-node-collapsed="is-accordion-submenu-parent" data-mc-css-sub-menu="vertical menu accordion-menu is-accordion-submenu nested" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="False" data-mc-include-back="False" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.accordionMenu" data-mc-toc="True" data-mc-side-nav-menu="True">
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="body-container">
+                                <div data-mc-content-body="True">
+                                    <div class="nocontent">
+                                        <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+                                        </div>
+                                    </div>
+                                    <div role="main" id="mc-main-content">
+                                        <h2 class="Major_Section_Heading">Installing a Windows Scheduler</h2>
+                                        <ol>
+                                            <li value="1">In <span style="font-weight: bold;" class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><b>'s Setup Administrator</b>, click the <b>Scheduler</b> tab in the left pane and then click <b>Install Scheduler</b>.<p><img src="../Images/Install_Images/RED_installscheduler.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><ul><li style="color: #d7454b;">To install or maintain the Scheduler, you need to run RED's Setup Administrator as an Administrator.</li><li style="color: #d7454b;">A Windows scheduler must be run as either the system service account or as a user with administrator privileges in Windows.</li></ul></td></tr></tbody></table></li>
+                                            <li value="2">
+                                                <p>The <b>Windows Scheduler Definition</b> window appears. (The windows below show SQL Server, Oracle and Teradata scheduler definition examples).</p>
+                                                <p>For configuration settings specific to each database, please see the field description below:</p>
+                                                <table style="width: 100%;margin-left: 0;margin-right: auto;">
+                                                    <col />
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <p>
+                                                                    <img src="../Images/Install_Images/RED_SQLserver.png" /> Example:</p>
+                                                                <p>
+                                                                    <img src="../Images/Install_Images/RED_SQLserverexample_718x374.png" style="width: 718;height: 374;" />
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>
+                                                                    <img src="../Images/Install_Images/RED_oracleapp.png" /> Example:</p>
+                                                                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                                                    <col class="TableStyle-note-Column-Column1" />
+                                                                    <thead>
+                                                                        <tr class="TableStyle-note-Head-Header1">
+                                                                            <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr class="TableStyle-note-Body-Body1">
+                                                                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> Windows scheduler for Oracle requires the Oracle client 11.2 or later software. The Oracle client software must be a close version match to the Oracle Database version—that is, the same major release or one release either side.</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <p>
+                                                                    <img src="../Images/Install_Images/RED_oracleexample_766x341.png" style="width: 766;height: 341;" />
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>
+                                                                    <img src="../Images/Install_Images/RED_teredataapp.png" /> Example:</p>
+                                                                <p>
+                                                                    <img src="../Images/Install_Images/RED_teradataexample_768x399.png" style="width: 768;height: 399;" />
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </ol>
+                                        <h3 class="NoTocEntry">Unique Identifier</h3>
+                                        <p>Each scheduler requires a unique name, this unique name is the name by which the service is referenced.</p>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;">
+                                            <col style="width: 159px;" />
+                                            <col />
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_SQLserver.png" />
+                                                    </td>
+                                                    <td>Possibly the database name and user, e.g. WslWarehouse_sa</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_oracleapp.png" />
+                                                    </td>
+                                                    <td>Possibly the SID and user, e.g. ORCL_dssdemo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_teredataapp.png" />
+                                                    </td>
+                                                    <td>Possibly the environment name and metadata owner, e.g. prod_dssdemo</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h3 class="NoTocEntry">Scheduler Name</h3>
+                                        <p>When scheduling a job with <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> it is possible to assign the job to a specific scheduler. Each scheduler should therefore have a unique name. The default name is WIN0001. Most users change this to be the scheduler machine's name followed by a number, e.g.: DWHP01, where DWHP is the name of the windows scheduler server.</p>
+                                        <h3 class="NoTocEntry">Service Display Name</h3>
+                                        <p>This field displays the name that the scheduler will appear under when viewed through the Windows services. It is a combination of the string '<span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>' and the unique identifier.</p>
+                                        <h3 class="NoTocEntry">Service Logged on Under User</h3>
+                                        <p>This is the name of the Windows local user account that the scheduler service will use when logging on. The default setting is System Account, also known as the Local System service account. To set the scheduler to use a Windows domain user account with a password, use the Service Account option from the right-click menu. If a domain user account is specified then the contents of this field (on the Windows Scheduler Definition dialog) are ignored.</p>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                            <col class="TableStyle-note-Column-Column1" />
+                                            <thead>
+                                                <tr class="TableStyle-note-Head-Header1">
+                                                    <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-note-Body-Body1">
+                                                    <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">A domain user account requires the log on as a service privilege, in order for it to work. This is assigned automatically when setting the log on account, using the Services console in Windows.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h3 class="NoTocEntry">Work Directory</h3>
+                                        <p>The directory used to store some temporary files created by the scheduler.</p>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                                            <col class="TableStyle-tip-Column-Column1" />
+                                            <thead>
+                                                <tr class="TableStyle-tip-Head-Header1">
+                                                    <th class="TableStyle-tip-HeadD-Column1-Header1">Tips:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-tip-Body-Body1">
+                                                    <td class="TableStyle-tip-BodyA-Column1-Body1">
+                        
+                        Two schedulers must not use the same work directory.                        
+                       Setting Log Level 9 creates an additional detailed log file for each thread of each job that is run.
+                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h3 class="NoTocEntry">Log File</h3>
+                                        <p>The full path for this scheduler to write a log file. The log file contains information on the scheduler service, it does not contain information about individual job tasks run by the scheduler. This file may become large if log level 9 is set.</p>
+                                        <h3 class="NoTocEntry">Poll Interval</h3>
+                                        <p>This defines the frequency of the scheduler polling the database, looking for work. The default is 30 seconds. If set to a very low interval such as 1, then the impact on the database may be noticeable.</p>
+                                        <h3 class="NoTocEntry">Log Level</h3>
+                                        <p>This defines the level of detail written to the log file by the scheduler service. This should be left at the default level unless requested by <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> Support.</p>
+                                        <p>The following logging levels are available:</p>
+                                        <ul>
+                                            <li>0 = log no information</li>
+                                            <li>1 = log fatal errors only</li>
+                                            <li>2 = log major events (default)</li>
+                                            <li>3 = log major events and write ODBC Load statistics to the audit log in the database</li>
+                                            <li>9 = full debug information</li>
+                                        </ul>
+                                        <h3 class="NoTocEntry">Direct Path Load or Odbc Load</h3>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;">
+                                            <col />
+                                            <col />
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_SQLserver.png" />
+                                                        <br />
+                                                        <img src="../Images/Install_Images/RED_teredataapp.png" /> <br /></td>
+                                                    <td>This should always be ODBC sql load for SQL Server and Teradata schedulers.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_oracleapp.png" />
+                                                    </td>
+                                                    <td>When using an Oracle repository, this option determines the method used by the scheduler to insert data; when using the ODBC Load type.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p><b>Odbc sql load:</b> When this option is selected, the scheduler always load data using the standard ODBC driver method.</p>
+                                        <p><b>Direct Path load:</b> When this option is selected, the scheduler attempts to load data using the Oracle Direct Path method, via the OCI library. If it is unable to use the Direct Path method, the scheduler will revert to using the standard ODBC driver method.</p>
+                                        <p><b>Direct Path</b> ODBC loads are considerably faster and so this option should be set to <b>Direct Path load</b> in most situations.</p>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                            <col class="TableStyle-note-Column-Column1" />
+                                            <thead>
+                                                <tr class="TableStyle-note-Head-Header1">
+                                                    <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-note-Body-Body1">
+                                                    <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Once a scheduler service has been created, this option cannot be changed. To change the scheduler from <b>Odbc sql load</b> to <b>Direct Path load</b> or vice versa, create a new scheduler service and remove the old one.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h3 class="NoTocEntry">TNS Service</h3>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;">
+                                            <col style="width: 158px;" />
+                                            <col />
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_SQLserver.png" /> <img src="../Images/Install_Images/RED_teredataapp.png" /> </td>
+                                                    <td>This is not required for SQL Server or Teradata schedulers.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_oracleapp.png" />
+                                                    </td>
+                                                    <td>If you select the Direct Path load option from the Direct Path load or ODBC drop-down-list, enter the database server as defined in the tnsnames.ora file on this field. Normally this will be the same name as entered for the 'server' in an ODBC source definition.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h3 class="NoTocEntry">ODBC Connection</h3>
+                                        <p>The ODBC connection field requires the ODBC source name that provides a connection to the data warehouse system. The scheduler uses ODBC to connect to the data warehouse.</p>
+                                        <h3 class="NoTocEntry">Database User Id</h3>
+                                        <p>For Windows Authentication, leave this field empty. For SQL Server Authentication, enter a database username.</p>
+                                        <h3 class="NoTocEntry">Database Password</h3>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;">
+                                            <col />
+                                            <col />
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_SQLserver.png" />
+                                                    </td>
+                                                    <td>For Windows Authentication, leave this field empty. For SQL Server Authentication, enter the password for the database username entered in the <b>Database User Id</b> field.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_oracleapp.png" />
+                                                    </td>
+                                                    <td>The password for the User the Scheduler will use when connecting to the data warehouse database.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_teredataapp.png" />
+                                                    </td>
+                                                    <td>The password or Teradata Wallet String for the User the Scheduler will use when connecting to the data warehouse Teradata database.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h3 class="NoTocEntry">Metadata Database (Teradata)</h3>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;">
+                                            <col style="width: 218px;" />
+                                            <col />
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_SQLserver.png" /> <img src="../Images/Install_Images/RED_oracleapp.png" /></td>
+                                                    <td>This is not set for SQL Server/Oracle schedulers.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../Images/Install_Images/RED_teredataapp.png" />
+                                                    </td>
+                                                    <td>The Database Name or User Name where the metadata repository is stored. This must be entered for Teradata.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                            <col class="TableStyle-note-Column-Column1" />
+                                            <thead>
+                                                <tr class="TableStyle-note-Head-Header1">
+                                                    <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-note-Body-Body1">
+                                                    <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">A Windows scheduler must be run as either the system service account or as a user with administrator privileges in windows.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;">
+                                            <col />
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <p>
+                                                            <img src="../Images/Install_Images/RED_oracleapp.png" /> Error Messages:</p>
+                                                        <p>The following error message may appear as the scheduler starts. In such an event, the scheduler will not function until the problem is resolved.</p>
+                                                        <p>
+                                                            <img src="../Images/Install_Images/RED_oracleerrormessage.png" />
+                                                        </p>
+                                                        <p>This error may be the result of an old version of the Oracle Call Interface (OCI) dynamic link library (dll) being in the path. The <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> scheduler requires Oracle client 11.2 or above. This situation can occur when an Oracle product, such as Discoverer is installed. Discoverer may install an older version of the oci.dll file. If it does, its location will be put in the Windows path in front of the 11.2+ client version.</p>
+                                                        <p>A work-around is to copy an 11.2 or later version of the oci.dll file into the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> program directory. To see if an oci.dll is valid, right-click  the file and select properties and then version. A valid oci.dll will have version 11.2 or later.</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><a data-close="true"></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

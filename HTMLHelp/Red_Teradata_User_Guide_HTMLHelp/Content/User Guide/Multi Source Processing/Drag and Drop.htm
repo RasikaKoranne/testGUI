@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Multi Source Processing|Adding Source Mapping to Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Drag and Drop</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/olh.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>Drag and Drop</h3>
+            <p class="p_2">The common approach to create source mappings is to select the source table that contains the columns that you want to add and then drag this table into the target table. </p>
+            <p class="p_3">This process creates two source mapping objects, the first one contains the original source mapping of the target table and second one is for the additional columns from the source table selected in the <b>Browser</b> pane.</p>
+            <p>You can drag additional source tables to create additional source mappings objects until you have all the source data required for your target table. </p>
+            <ol>
+                <li class="li_1" value="1">Click the target table from the <b>Objects</b> list in the left pane. <p>The middle pane displays the properties of the selected target table, the pane is identified as a target for new Source Mapping objects.</p></li>
+                <li value="2">Browse to the Data Warehouse via the <b>Browse &gt; Source Table</b> menu option. </li>
+                <li value="3">Click the source table that contains the columns you want to include as sources from the <b>Browser</b> pane, and drag it to the middle pane.</li>
+                <li value="4">Click the <b>Add Source Mapping</b> button in the <b>Resolve Table Drag/Drop</b> prompt. <p><img src="../../Images/UserGuide_Images/Multi Soruce Processing/add_new_src_mapping_object_full.png" /></p></li>
+                <li value="5">The new Source Mapping objects are created and displayed under the target table in the <b>Objects</b> list pane. <p>The middle pane displays the Source Mapping tool which provides a graphical representation of the mapped columns between the second source table and the target table. The columns from the source table that exists in the target table are automatically mapped. </p><p><img src="../../Images/UserGuide_Images/Multi Soruce Processing/src_mapping_tool_new_cols_to_target_table.png" /></p></li>
+                <li value="6">To map the additional source columns that does not exist in the target table, click the connection point of the source column you want to map and drag the line that appears to the connection point of the <b>Add New Column</b> row in the target table.<p><img src="../../Images/UserGuide_Images/Multi Soruce Processing/map_additional_src_column_to_target_table.png" /></p></li>
+                <li value="7">Repeat the same steps to map all the other source columns to the target table. <p><img src="../../Images/UserGuide_Images/Multi Soruce Processing/add_src_column_to_targettable_complete.png" /></p></li>
+                <li value="8">Click <b>Save Changes</b> to save the defined source mappings.</li>
+                <li value="9">Right-click the target table from the <b>Objects</b> list in the left pane and select <b>Create(ReCreate)</b> from the context menu to recreate the table. The <b>Results</b> pane displays confirmation that the target table was successfully recreated.<p><img src="../../Images/UserGuide_Images/Multi Soruce Processing/recreate_target_table_results.png" /></p><p>Once the target table is defined and created, you need to generate the update procedure for each source mapping object to populate the target table. The update procedure is created using a template—refer to <a href="Update Procedures_SourceMappingObjects.htm">Generating Update Procedures for Source Mapping Objects</a> for details.</p><p>&#160;</p></li>
+            </ol>
+        </div>
+    </body>
+</html>

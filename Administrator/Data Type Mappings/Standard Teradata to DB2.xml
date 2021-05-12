@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data_type_mapping_set name="Standard Teradata to DB2" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd">
+
+  <mapping_set_description>Standard Teradata to DB2 data type mapping.
+Please do not edit this standard mapping file as any changes will be overwritten on upgrades.
+See the user guide for information on how to create custom mapping files.</mapping_set_description>
+
+  <mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="decimal(%precision)">
+    <match_parameters>
+      <match_precision>*-31</match_precision>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="decimal(31)">
+    <match_parameters>
+      <match_precision>32-*</match_precision>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="decimal(31,31)">
+    <match_parameters>
+      <match_scale>32-*</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="decimal(31,%scale)">
+    <match_parameters>
+      <match_precision>32-*</match_precision>
+      <match_scale>*-31</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="decimal(%precision,%scale)"/>
+
+  <data_type_mapping match_data_type="byteint" output_data_type="smallint"/>
+
+  <data_type_mapping match_data_type="smallint" output_data_type="smallint"/>
+
+  <data_type_mapping match_data_type="integer" output_data_type="integer"/>
+
+  <data_type_mapping match_data_type="bigint" output_data_type="bigint"/>
+
+  <data_type_mapping match_data_type="float" output_data_type="double"/>
+
+  <data_type_mapping match_data_type="char" output_data_type="char(%length)">
+    <match_parameters>
+      <match_length>*-254</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="char" output_data_type="char(254)">
+    <match_parameters>
+      <match_length>255-*</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="varchar(%length)">
+    <match_parameters>
+      <match_length>*-8000</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="clob">
+    <match_parameters>
+      <match_length>8001-*</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="long varchar" output_data_type="clob"/>
+
+  <data_type_mapping match_data_type="date" output_data_type="timestamp"/>
+
+  <data_type_mapping match_data_type="time" output_data_type="time"/>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="timestamp"/>
+
+  <data_type_mapping match_data_type="time with timezone" output_data_type="time"/>
+
+  <data_type_mapping match_data_type="timestamp with timezone" output_data_type="timestamp"/>
+
+  <data_type_mapping match_data_type="interval year" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval year to month" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval month" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval day" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval day to hour" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval day to minute" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval day to second" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval hour" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval hour to minute" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval hour to second" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval minute" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval minute to second" output_data_type="varchar(20)"/>
+
+  <data_type_mapping match_data_type="interval second" output_data_type="varchar(20)"/>
+
+</data_type_mapping_set>

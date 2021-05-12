@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Gather Statistics" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Define Statistics</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Define Statistics</h2>
+            <p>In a multiple database environment it is required not to have the database name hard-coded into the COLLECT STATS command.</p>
+            <p>When tables are deployed to a new environment using <span class="mc-variable WS_Branding.Product variable">RED</span>, these hard coded database names are not translated to the database names in the target environment in the COLLECT STATS commands.</p>
+            <p><span class="mc-variable WS_Branding.Product variable">RED</span> can automatically add the Database Name (storage location) prefix to the table_name in the COLLECT STATS DDL.</p>
+            <ol>
+                <li value="1">Right click any table object in the left pane to <b>Gather Statistics</b>.</li>
+                <li value="2">Select <b>Gather Statics</b> from the context menu and then select <b>Define Statistics</b>from the menu options.</li>
+                <li value="3">In the <b>Define Statistics Collection</b> window, enter the "COLLECT STATS dbname.tablename COLUMN(column_name, ....);" command by using $OBJECT$ COLUMN (table_name).<p><img src="../../Images/Teradata_images/Gather Statistics/Define Stats Collection.png" /></p></li>
+                <li value="4">Click <b>Execute</b> if adding the DDL statement for the first time. </li>
+                <p>
+                    <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                        <col class="TableStyle-note-Column-Column1" />
+                        <thead>
+                            <tr class="TableStyle-note-Head-Header1">
+                                <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-note-Body-Body1">
+                                <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">When the DDL is executed, <span class="mc-variable WS_Branding.Product variable">RED</span> substitutes the Database name from the Storage Properties of the object. This improves the portability of objects between environments.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <li value="5">Click <b>OK</b> in the <b>Define Statistics Collection</b> window to close it.</li>
+                <li value="6">Right-click the table in the left pane and then select <b>Refresh Full Statistics</b> to manually refresh the statistics for the table.</li>
+                <li value="7">To automate gathering statistics on a table, users can add a statistics task to a job to be processed by the Scheduler. For details about adding statistics tasks to jobs, refer to Editing Tasks in a Job.</li>
+            </ol>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

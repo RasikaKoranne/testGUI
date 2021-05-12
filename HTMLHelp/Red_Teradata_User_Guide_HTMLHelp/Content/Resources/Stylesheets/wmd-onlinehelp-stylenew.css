@@ -1,0 +1,408 @@
+/*<meta />*/
+
+@namespace MadCap url(http://www.madcapsoftware.com/Schemas/MadCap.xsd);
+
+p
+{
+	font-family: Arial;
+	font-size: 10pt;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	color: #424246;
+}
+
+h1
+{
+	border-bottom-width: 1pt;
+	margin-top: 14pt;
+	text-transform: none;
+	text-align: left;
+	margin-bottom: 6pt;
+	font-style: normal;
+	color: #d7454b;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 17pt;
+}
+
+h2
+{
+	font-style: normal;
+	margin-bottom: 6pt;
+	margin-top: 14pt;
+	color: #3f4043;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 15pt;
+}
+
+h3
+{
+	font-style: normal;
+	margin-bottom: 6pt;
+	margin-top: 12pt;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: Arial;
+	font-weight: bold;
+	color: #424246;
+	font-size: 14pt;
+}
+
+body
+{
+	font-family: Arial;
+	color: #424246;
+}
+
+select
+{
+	font-weight: bold;
+	font-style: normal;
+	font-size: 12pt;
+	font-family: Arial;
+}
+
+b
+{
+	font-size: 10pt;
+	font-family: Arial;
+	font-weight: bold;
+	color: #424246;
+}
+
+li
+{
+	font-size: 10pt;
+	font-family: Arial;
+	padding-right: 10px;
+	padding-left: 0px;
+	list-style-image: none;
+	padding-top: 1pt;
+	color: #424246;
+}
+
+p.Concept
+{
+	color: #c52026;
+}
+
+p.Note_Bold
+{
+	font-weight: bold;
+	color: #d7454b;
+}
+
+p.Note_Normal
+{
+	color: #d7454b;
+}
+
+a
+{
+	color: #0f7ea3;
+	font-weight: bold;
+}
+
+a:link
+{
+	color: #0f7ea3;
+}
+
+a:active
+{
+	color: #0f7ea3;
+}
+
+MadCap|conceptLink
+{
+	color: #424246;
+}
+
+MadCap|xref
+{
+	mc-format: '{b}{h1}{/b}';
+	font-weight: bold;
+	font-style: normal;
+	color: #424246;
+}
+
+MadCap|keywordLink
+{
+	color: #424246;
+	text-decoration: underline;
+	font-weight: bold;
+	font-style: normal;
+	font-family: Arial;
+}
+
+p#tip
+{
+	font-weight: bold;
+	color: #14a19c;
+}
+
+hr
+{
+	border-bottom-color: #dbd9d6;
+}
+
+p#spacing
+{
+	font-size: 2pt;
+}
+
+p#linespace
+{
+	font-size: 5pt;
+	margin-top: 0px;
+	margin-bottom: 0pt;
+}
+
+MadCap|xref.paratext
+{
+	mc-format: '{b}{paratext}{/b}';
+	font-weight: bold;
+	font-style: normal;
+	font-family: Arial;
+}
+
+li#tablelist
+{
+	font-family: Arial;
+	font-size: 10pt;
+	padding-bottom: 2pt;
+	padding-top: 0pt;
+}
+
+p#imagename
+{
+	margin-top: 6.12pt;
+	margin-bottom: 6.12pt;
+	font-size: 11pt;
+	font-weight: bold;
+	font-style: italic;
+	font-family: Georgia;
+	color: #70abaf;
+}
+
+div
+{
+	color: #4c4f54;
+}
+
+div.ContentRow	/*This is a custom responsive layout row style (div class) in your stylesheet. To provide your own description for this style: (1) Open the stylesheet; (2) Find and select the div class with this name; and (3) In the Comment field, replace this text with your own. For more information on adding comments to styles, see the online Help.*/
+{
+	mc-grid-row: true;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.ContentRow::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.ContentRow::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.ContentRow > div
+{
+	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+div.ContentRow > div:nth-child(1)
+{
+	width: 58.333%;
+	margin-left: 0%;
+}
+
+div.ContentRow > div:nth-child(2)
+{
+	width: 33.333%;
+	margin-left: 8.3333%;
+}
+
+MadCap|breadcrumbsProxy
+{
+	font-size: 9pt;
+}
+
+h4
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #0f7ea3;
+	padding-top: 5px;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 3px;
+	font-family: Arial;
+	font-size: 13pt;
+}
+
+h5
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	color: #3f4043;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 12pt;
+	margin-top: 7.5pt;
+	margin-bottom: 3.5pt;
+}
+
+h6
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #4c4f54;
+	font-family: Arial;
+	font-size: 12pt;
+	font-weight: bold;
+	padding-bottom: 0pt;
+	margin-bottom: 2pt;
+	margin-top: 12pt;
+}
+
+ul
+{
+	margin-top: 2pt;
+}
+
+MadCap|dropDown
+{
+	mc-closed-image: url('../Images/Bullet1.png');
+	mc-open-image: url('../Images/DropDownOpen.png');
+}
+
+MadCap|dropDownHead
+{
+	font: Arial;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+	font-style: oblique;
+	list-style-image: none;
+	margin-bottom: 5px;
+	margin-top: 7px;
+	color: #0f7ea3;
+}
+
+img
+{
+	mc-thumbnail-max-height: auto;
+}
+
+MadCap|popup
+{
+	font-family: Arial;
+	color: #424246;
+}
+
+MadCap|popupHead
+{
+	font-weight: bold;
+	font-style: normal;
+	font-family: Arial;
+	text-decoration: underline;
+	color: #424246;
+	background-color: #ffffff;
+}
+
+MadCap|xref.RelLinkPageNumber
+{
+	color: #424246;
+	font-family: Arial;
+	text-decoration: underline;
+}
+
+@media only screen and (max-width: 1279px)
+{
+	div.ContentRow > div:nth-child(1)
+	{
+		width: 66.66667%;
+		margin-left: 0%;
+	}
+
+	div.ContentRow > div:nth-child(2)
+	{
+		width: 33.33333%;
+		margin-left: 0%;
+	}
+}
+
+@media only screen and (max-width: 767px)
+{
+	div.ContentRow > div:nth-child(1)
+	{
+		width: 100%;
+		margin-left: 0%;
+	}
+
+	div.ContentRow > div:nth-child(2)
+	{
+		width: 100%;
+		margin-left: 0%;
+	}
+}
+
+p.footerstyle
+{
+	color: #ffffff;
+	font-size: 10pt;
+	margin-bottom: 0;
+}
+
+MadCap|xref.bookmarklink
+{
+	mc-format: '{b}{/b}';
+}
+
+p.tabletext
+{
+	font-family: Arial;
+	font-size: 10pt;
+	padding-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	padding-left: 0px;
+	color: #424246;
+}
+
+h3.NoTocEntryPageBreak
+{
+	mc-heading-level: 0;
+	page-break-before: always;
+	color: #424246;
+}
+
+@media print
+{
+	body
+	{
+		color: #424246;
+	}
+
+	a.MCBreadcrumbsLink
+	{
+		font-size: 9pt;
+	}
+}
+

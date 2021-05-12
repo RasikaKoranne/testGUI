@@ -1,0 +1,1 @@
+define({'skin':{'default':{},'RED_DBA_HTML_5':{}},'toc':{'default':{'OpenBookIconAlternateText':'Open Book','ClosedBookIconAlternateText':'Closed Book','TopicIconAlternateText':'Topic Icon','MarkAsNewIconAlternateText':'New Topic'}}});

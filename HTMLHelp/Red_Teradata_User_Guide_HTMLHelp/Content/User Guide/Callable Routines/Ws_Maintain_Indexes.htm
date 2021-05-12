@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Callable Routines" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Ws_Maintain_Indexes</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Ws_Maintain_Indexes</h2>
+            <p><b>Synopsis</b>
+            </p>
+            <p class="BodyText">Drops and/or builds database indexes that are defined in the WhereScape RED metadata.</p>
+            <p><b>Description</b>
+            </p>
+            <p class="BodyText">Drops and/or builds indexes for a specified table or a specified index. Only indexes that are defined in the WhereScape RED metadata are supported. Typically, this routine is used by a WhereScape RED Scheduler and RED-generated procedures to automatically maintain indexes. However, it is also valid for user-defined custom procedures/scripts to execute this routine to control when indexes are dropped and/or created.</p>
+            <p><b>Input</b>
+            </p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Input
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Common Input
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Includes all 5 inputs of the <a href="Common Input.htm">Callable Routines Common Input</a>.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Table Name
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Table Name to process the relevant indexes of.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                                        The Table Name is ignored when the optional Index Name is specified.
+                                    </td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Optional Build Arguments 
+                        <br /><b>[ORACLE only]</b></td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Optional arguments related to building indexes <b>[ORACLE only]</b>:<br />TABLESPACE=XYZ will override the default tablespace name and use the specified tablespace name. e.g. 'TABLESPACE=non_default_tablespace'. Typically the TABLESPACE argument is used to build indexes in a partition-specific tablespace.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Index Name
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Optional Index Name to only process the specified index. When NOT specified all the relevant indexes of the table are processed.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><ul><li style="color: #d7454b;">The Table Name is ignored when the Index Name is specified.</li><li style="color: #d7454b;"> Must be specified to use the 'DROP' or 'BUILD' index actions.</li></ul></td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+                        Index Action
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        Action that specifies whether indexes are dropped or built and what types of indexes are applicable:
+                        <ul><li><b>DROP</b> - Drops the specified index (Index Name must be specified).</li><li><b>DROP ALL</b> - Drops ALL the indexes of the table.</li><li><b>PRE DROP</b> - Drops the indexes of the table that are defined as pre-drop.</li><li><b>BUILD</b> - Builds the specified index (Index Name must be specified). Otherwise, build all the indexes of the table that were pre-dropped.</li><li><b>BUILD ALL</b> - Builds ALL the indexes of the table.</li></ul></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><b>Output</b>
+            </p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Output
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+                        Result Number
+                        &#160;
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        Output Result Number:
+                        <ul><li>1&#160;&#160;&#160;&#160;&#160;&#160; Success.</li><li><b>-1&#160;&#160;&#160;&#160;&#160; Warning.</b></li><li>-2&#160;&#160;&#160;&#160;&#160; Error.</li><li>-3&#160;&#160;&#160;&#160;&#160; Fatal/Unexpected Error.</li></ul></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Ws_Maintain_Indexes does NOT include a Return Code or Return Message like most of the WhereScape RED Callable routines, but it does output a Result Number.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

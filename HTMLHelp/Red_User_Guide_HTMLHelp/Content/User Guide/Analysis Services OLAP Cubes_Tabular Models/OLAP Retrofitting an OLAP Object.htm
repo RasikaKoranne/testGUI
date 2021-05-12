@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes/Tabular Models|OLAP Cubes" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Retrofitting an OLAP Object</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">OLAP Retrofitting an OLAP Object</h3>
+            <p class="BodyText"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> provides the functionality for retrofitting OLAP cubes from Analysis Services. </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Before you can retrofit an OLAP cube, you must first retrofit any and all of the OLAP dimensions used by the OLAP cube.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">The process to retrofit an OLAP dimension is as follows:</p>
+            <ol>
+                <li value="1">Right-click the <b>OLAP Dimension</b> object heading in the left pane and select <b>New Object</b>. <p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Retrofitting an OLAP.png" /></p></li>
+                <li value="2">Enter any name for the object name and click <b>ADD</b>. <p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Retrofitting an OLAP_1.png" /></p></li>
+                <li value="3">Fill the Properties window fields described below:&#160; <p><br /><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Retrofitting an OLAP_2.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0"><col class="TableStyle-tablestyle-Column-Column1" /><col class="TableStyle-tablestyle-Column-Column2" /><thead><tr class="TableStyle-tablestyle-Head-Header1"><th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th><th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th></tr></thead><tbody><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">Internal Dimension Name </td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">The name that matches exactly the name of the OLAP Dimension in Analysis Services that you want to retrofit. </td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyB-Column1-Body1">Dimension publish name </td><td class="TableStyle-tablestyle-BodyA-Column2-Body1">The name for the dimension.</td></tr></tbody></table></li>
+                <li value="4">The OLAP Dimension can now be retrofitted by right-clicking the object in the left pane and choosing <b>Retrofit Dimension</b>.<p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Retrofitting an OLAP_3.png" /></p></li>
+                <li value="5">Two warning prompts appear. The first warns that the existing information is deleted before being redefined from Analysis Services. Select <b>Yes</b>.<br /><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Retrofitting an OLAP_4.png" /></li>
+                <li value="6">The second prompt warns that retrofitting a dimension will remove the links to cubes in the Metadata. Select <b>Yes</b>.<br /><br /><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Retrofitting an OLAP_5.png" /></li>
+                <li value="7">The results of the retrofit are displayed in the results panel at the bottom of the screen. If it was successful, the new object should now have all the attributes, hierarchies and hierarchy levels (as well as all their properties) as set in Analysis Services.</li>
+            </ol>
+            <p>Once all&#160; the dimensions have been retrofitted, you can retrofit the <b>OLAP Cube</b>. Follow steps 1-6 above to retrofit the OLAP Cube as for the OLAP dimensions.</p>
+            <p>The final dialog is a reminder to only retrofit an OLAP cube once the dimensions used by the cube have been retrofitted. If all relevant dimensions have been retrofitted, select <b>Yes</b>.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Retrofitting an OLAP_6.png" />
+            </p>
+            <p>Once again, the results of the retrofit are displayed in the results panel at the bottom of the screen. </p>
+            <p class="AllowPageBreak">&#160;</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data_type_mapping_set name="Standard Netezza to Netezza" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd">
+
+  <mapping_set_description>StandardNetezza to Netezza data type mappings. NOTE: ONLY includes the exception cases.</mapping_set_description>
+
+  <mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+
+  <data_type_mapping match_data_type="byteint" output_data_type="byteint"/>
+
+  <data_type_mapping match_data_type="smallint" output_data_type="smallint"/>
+
+  <data_type_mapping match_data_type="integer" output_data_type="integer"/>
+
+  <data_type_mapping match_data_type="bigint" output_data_type="bigint"/>
+
+  <data_type_mapping match_data_type="double" output_data_type="double"/>
+
+  <data_type_mapping match_data_type="float" output_data_type="float(%precision)">
+    <match_parameters>
+      <match_precision>1-*</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="date" output_data_type="date"/>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="timestamp(%precision)">
+    <match_parameters>
+      <match_precision>1-25</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="timestamp">
+    <match_parameters>
+      <match_precision>26</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+</data_type_mapping_set>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Fact Tables|Partitioned Fact Tables" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Creating a Partitioned Fact Table in Oracle</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>Creating a Partitioned Fact Table in Oracle</h3>
+            <p>In WhereScape RED a partitioned fact table can only be created from an existing fact table. The process therefore is to create a fact table normally, including the update procedure and indexes. <br />The table is then partitioned through the <b>Storage</b> screen of the fact table's properties dialog. WhereScape RED will assist in creating the exchange table, modifying the indexes and building the procedure to handle the update of the partitions.&#160; </p>
+            <h4>Create a detail or rollup/combined fact table</h4>
+            <ul>
+                <li>Create the fact table that you wish to partition in the usual way. </li>
+                <li>You must create an update procedure but do not need to load any data. The process of creating the update procedure will also build any indexes for the fact table. </li>
+                <li>RED will be using a partition exchange table to move data to and from the partitioned fact table. This exchange table must have the same columns, column order and indexes as the fact table. It is therefore recommended to get the fact table into its final form before partitioning it. </li>
+                <li>Add any indexes to avoid extra work later.</li>
+            </ul>
+            <h4>Convert to a partitioned fact table</h4>
+            <ol>
+                <li value="1">Double-click the fact table that you want to partition to bring up its properties screen.</li>
+                <li value="2">Click the <b>Storage</b> tab and tick the <b>Partitioned</b> check-box (see example in the screens below).</li>
+                <li value="3">A prompt is displayed warning you that this table needs to be recreated to change the current fact to a partitioned table and offering assistance to create the partitioned table. The exchange table is then used to replace the relevant period in the fact table. The fact table remains in a queryable state throughout the process. </li>
+                <li value="4">Click <b>Yes</b> to launch the wizard that will assist you through the partitioning of the table.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Converting an existing non-partitioned table to a partitioned table cannot be done using a deployment application. <br />To convert non-partitioned to partitioned tables using deployment applications, may require some manual intervention to update the target databases to match the new metadata.</td></tr></tbody></table></li>
+            </ol>
+            <blockquote>
+                <p class="ListContinue">
+                    <img src="../../Images/UserGuide_Images/Fact Tables/Creating a Partitioned Fact.png" />
+                </p>
+            </blockquote>
+            <ol data-mc-continue="true">
+                <li value="5">A dialog will pop-up as follows, asking for confirmation that the table is to be converted to a partitioned fact table. <br />If you click <b>Yes</b>, the existing fact table will be renamed to become the partition exchange table. Any current data will remain in this table.<p><img src="../../Images/UserGuide_Images/Fact Tables/Partitioned Fact Tables_1.png" /></p></li>
+                <li value="6">
+                    <p>The parameters for the partitioned fact table are then prompted for and are described below:<p><img src="../../Images/UserGuide_Images/Fact Tables/Partitioned Fact Tables_2.png" /></p></p>
+                </li>
+                <li value="7">
+                    <p>The partition exchange table name is prompted for. This table is identical to the fact table and is used to swap partitions to and from the fact table. Enter a <b>name</b> for the exchange partitioned table.</p>
+                    <ul>
+                        <li>The fact table will be partitioned by the date dimension key. Select a<b> date dimension key</b> that will be used as the basis for the partitioning of the fact table. It is assumed that this key has the standard WhereScape format of YYYYMMDD.&#160; </li>
+                        <li>Select a partition granularity of day, month or year along with the corresponding column in the date dimension. <ul style="list-style-type: circle;"><li>For a<b> daily partition </b>a column with a date data type must be chosen. The date dimension key will actually be used for the partitioning but the date column is required. </li><li>For a <b>monthly partition</b> a column with the format YYYYMM must be chosen. In the standard WhereScape date dimension this is the column cal_month. </li><li>For a<b> yearly partition </b>a column with the format YYYY must be chosen. In the standard WhereScape date dimension this is the column cal_year. </li></ul></li>
+                        <li>The first and last partition should then be selected. The last partition is not that important as additional partitions will be created as required. Normally just select a partition a few on from the first. The first partition is however important as any data that is dated prior to the first partition will be loaded into this first partition. The partition must be entered in the format shown. For example monthly partitions require the format YYYYMM. </li>
+                        <li>After all the relevant fields have been completed, click<b> OK </b>and the conversion process will populate the <b>Partition Function, Partition Scheme</b> and <b>Table Partition Scheme </b>fields of the table's storage properties. </li>
+                    </ul>
+                    <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                        <col class="TableStyle-note-Column-Column1" />
+                        <thead>
+                            <tr class="TableStyle-note-Head-Header1">
+                                <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-note-Body-Body1">
+                                <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">This field is limited in size, so if too many partitions are chosen only the first few will be added to this field. The other partitions will be created dynamically by the update procedure.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ol>
+            <ol data-mc-continue="true">
+                <li value="8">Click the <b>OK</b> button on the table's <b>Storage</b> screen to begin the process of converting the fact table, creating the new fact table and building the new update procedure. <br />Examine the results screen to see what has been done.<p><img src="../../Images/UserGuide_Images/Fact Tables/Creating a Partitioned Fact_1.png" /></p></li>
+            </ol>
+            <p>The exchange partition table will now have any current data, to populate the fact table, copy the data from partition table to the fact table, drop and recreate fact index. <br />The date dimension key used to base the partitioning on is not allowed to have nulls. WhereScape RED has modified the table property, however the partition table needs to be validated and recreated to be valid. </p>
+            <p>Then the fact table can be processed.</p>
+            <h4>The partitioned fact table update procedure</h4>
+            <p>The generated procedure will handle the creation of new partitions as required. </p>
+            <p>Any data for periods prior to the first partition is placed in the first partition. If data is received for a period after the last partition then new partitions are created. </p>
+            <p>Empty partitions are created if necessary to skip periods where no data is present. For example, if we have a table partitioned by month and the latest partition is 200204 (April/2002).&#160; If data is then received for say September 2002 the update procedure will build partitions for May, June, July, August and September. </p>
+            <p>There is a variable at the start of the update procedure called v_max_skip_periods. This variable is by default set to 12. This defines the maximum number of continuous partitions we will leave empty. </p>
+            <p>From our previous example if our latest partition was April 2002 and we received data for July 2003 with no interim data then the update procedure will fail as it would have to skip 14 partitions. This check is present to prevent erroneous data from creating hundreds of partitions into the future.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <p>Recreating or Altering a partitioned fact table prompts with an offer to resync and recreate the related exchange table and indexes. This will resync the columns and indexes from the fact table to its exchange partition table so that partition swapping works correctly.<br /><br /><img src="../../Images/UserGuide_Images/Fact Tables/Partitioned Fact Tables_4.png" style="height: 165px;width: 445px;" class="img_1" /></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

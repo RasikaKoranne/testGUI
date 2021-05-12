@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Scheduler |Scheduler Options" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Stand Alone Scheduler Maintenance</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Stand Alone Scheduler Maintenance</h2>
+            <p class="BodyText"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> includes a stand alone scheduler maintenance screen. This screen provides all the scheduler control functionality found in the main <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> utility, but with no access to the main metadata repository.</p>
+            <h3>Scheduler maintenance logon</h3>
+            <p class="BodyText">The logon screen differs in that the user name and password do not have to be that of a valid metadata repository. This user name/password combination can be any valid database user. </p>
+            <h3>Scheduler maintenance grants</h3>
+            <p class="BodyText" style="font-weight: bold;">Repository access grants:</p>
+            <ul>
+                <li data-mc-conditions="Outputs.Only Teradata User Manual">grant select on ws_dbc_connect to dsssched;</li>
+                <li>grant select on ws_meta to dsssched;</li>
+                <li>grant select on ws_meta_tables to dsssched;</li>
+                <li data-mc-conditions="Outputs.Only Teradata User Manual">grant select on ws_meta_names to dsssched;</li>
+                <li>grant select on ws_obj_type to dsssched;</li>
+                <li>grant select,insert,update on ws_user_adm to dsssched;</li>
+            </ul>
+            <p class="BodyText" style="font-weight: bold;">Object access (job create) grants:</p>
+            <ul>
+                <li>grant select on ws_obj_object to dsssched;</li>
+                <li>grant select on ws_obj_pro_map to dsssched;</li>
+                <li>grant select on ws_obj_project to dsssched;</li>
+                <li>grant select on ws_obj_group to dsssched;</li>
+                <li>grant select on ws_pro_gro_map to dsssched;</li>
+            </ul>
+            <p class="BodyText" style="font-weight: bold;">Scheduler status grants:</p>
+            <ul>
+                <li>grant select on ws_wrk_audit_log to dsssched;</li>
+            </ul>
+            <p class="BodyText" style="font-weight: bold;">Scheduler status, and job deletion grants:</p>
+            <ul>
+                <li>grant select,delete on ws_wrk_error_log to dsssched;</li>
+            </ul>
+            <p class="BodyText" style="font-weight: bold;">Scheduler status, poll grants:</p>
+            <ul>
+                <li>grant select,update on ws_wrk_scheduler to dsssched;</li>
+            </ul>
+            <p class="BodyText" style="font-weight: bold;">Job creation grants:</p>
+            <ul>
+                <li>grant select,insert,update,delete on ws_wrk_dependency to dsssched;</li>
+                <li>grant select,insert,update,delete on ws_wrk_job_ctrl to dsssched;</li>
+                <li data-mc-conditions="Outputs.Only Teradata User Manual">grant select.delete on ws_wrk_job_thread to dsssched;</li>
+            </ul>
+            <p class="BodyText" style="font-weight: bold;">Job maintenance grants:</p>
+            <ul>
+                <li>grant select,insert,delete on ws_wrk_job_log to dsssched;</li>
+                <li>grant select,update,delete on ws_wrk_job_run to dsssched;</li>
+                <li>grant select,insert,update,delete on ws_wrk_dependency to dsssched;</li>
+                <li>grant select,insert,update,delete on ws_wrk_job_dependency to dsssched;</li>
+                <li>grant select,delete on ws_wrk_job_thread to dsssched;</li>
+            </ul>
+            <p class="BodyText" style="font-weight: bold;">Task maintenance grants:</p>
+            <ul>
+                <li>grant select,insert,update,delete on ws_wrk_task_ctrl to dsssched;</li>
+                <li>grant select,update,delete on ws_wrk_task_run to dsssched;</li>
+                <li>grant select,insert,delete on ws_wrk_task_log to dsssched;</li>
+                <li>grant select,insert,update on dss_parameter to dsssched;</li>
+            </ul>
+            <p class="BodyText" style="font-weight: bold;">Right-click <b>Used by</b> option in parameters listing grants:</p>
+            <ul>
+                <li>grant select on ws_pro_header to dsssched;</li>
+                <li>grant select on ws_pro_line to dsssched;</li>
+                <li>grant select on ws_scr_header to dsssched;</li>
+                <li>grant select on ws_scr_line to dsssched;</li>
+                <li>grant select on ws_load_tab to dsssched;</li>
+                <li>grant select on ws_load_col to dsssched;</li>
+                <li>grant select on ws_stage_tab to dsssched;</li>
+                <li>grant select on ws_stage_col to dsssched;</li>
+                <li>grant select on ws_dim_tab to dsssched;</li>
+                <li>grant select on ws_dim_col to dsssched;</li>
+                <li>grant select on ws_agg_tab to dsssched;</li>
+                <li>grant select on ws_agg_col to dsssched;</li>
+            </ul>
+            <p class="BodyText">A sample script to grant these privileges is shipped with <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. This script is called 'grant_sched_access.sql' and can be found in the WhereScape program directory.</p>
+            <p class="BodyText">The scheduler maintenance utility does not require a <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> license key. The <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> software can be installed onto a PC, and use this utility without having to use the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <b>Setup Administrator</b> utility.</p>
+        </div>
+    </body>
+</html>

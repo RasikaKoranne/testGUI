@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data_type_mapping_set name="SQL Server to Teradata" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wherescape.com/xml/red">
+	<mapping_set_description>SQL Server to Teradata data type mapping using SQL Server Client 11 ODBC driver and Teradata's provided Data Direct SQL Server Wire 7.1 ODBC driver.
+</mapping_set_description>
+	<mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+	<data_type_mapping match_data_type="numeric" output_data_type="number(%precision)" active_flag="true">
+		<match_parameters>
+			<match_scale>0</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="numeric" output_data_type="number(%precision,%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>1-*</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="decimal" output_data_type="number(%precision)" active_flag="true">
+		<match_parameters>
+			<match_scale>0</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="decimal" output_data_type="number(%precision,%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>1-*</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="smallmoney" output_data_type="number(10,4)" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="money" output_data_type="number(19,4)" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="bit" output_data_type="byteint" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="int identity" output_data_type="integer" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="int" output_data_type="integer" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="tinyint identity" output_data_type="smallint" active_flag="true">
+		<transform_code>CAST(%table_name.%column_name AS smallint)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="tinyint" output_data_type="smallint" active_flag="true">
+		<transform_code>CAST(%table_name.%column_name AS smallint)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="smallint identity" output_data_type="smallint" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="smallint" output_data_type="smallint" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="bigint identity" output_data_type="bigint" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="bigint" output_data_type="bigint" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="float" output_data_type="float" active_flag="true">
+		<match_parameters>
+			<match_precision>1-14</match_precision>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="float" output_data_type="float" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="real" output_data_type="float" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="binary" output_data_type="byte(%precision)" active_flag="true">
+		<match_parameters>
+			<match_length>*-8000</match_length>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="varbinary" output_data_type="varbyte(9000)" active_flag="true">
+		<match_parameters>
+			<match_length>1073741822-*</match_length>
+		</match_parameters>
+		<transform_code>SUBSTRING(%table_name.%column_name, 1, 9000)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="varbinary" output_data_type="varbyte(9000)" active_flag="true">
+		<match_parameters>
+			<match_length>0</match_length>
+		</match_parameters>
+		<transform_code>SUBSTRING(%table_name.%column_name, 1, 9000)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="varbinary" output_data_type="varbyte(%precision)" active_flag="true">
+		<match_parameters>
+			<match_length>1-8000</match_length>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="image" output_data_type="varbyte(9000)" active_flag="true">
+		<transform_code>SUBSTRING(%table_name.%column_name, 1, 9000)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="char" output_data_type="char(%precision)" active_flag="true">
+		<match_parameters>
+			<match_length>1-8000</match_length>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="varchar(max)" output_data_type="varchar(9000)" active_flag="true">
+		<match_parameters>
+			<match_length>1073741822-*</match_length>
+		</match_parameters>
+		<transform_code>SUBSTRING(%table_name.%column_name,1,9000)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="varchar" output_data_type="varchar(9000)" active_flag="true">
+		<match_parameters>
+			<match_length>0</match_length>
+		</match_parameters>
+		<transform_code>SUBSTRING(%table_name.%column_name,1,9000)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="varchar" output_data_type="varchar(%precision)" active_flag="true">
+		<match_parameters>
+			<match_length>1-8000</match_length>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="text" output_data_type="varchar(9000)" active_flag="true">
+		<transform_code>SUBSTRING(%table_name.%column_name,1,9000)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="nchar" output_data_type="char(%precision)" active_flag="true">
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="nvarchar" output_data_type="varchar(9000)" active_flag="true">
+		<match_parameters>
+			<match_length>1073741822-*</match_length>
+		</match_parameters>
+		<transform_code>SUBSTRING(%table_name.%column_name,1,9000)</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="nvarchar" output_data_type="varchar(9000)" active_flag="true">
+		<match_parameters>
+			<match_length>0</match_length>
+		</match_parameters>
+		<transform_code>SUBSTRING(%table_name.%column_name,1,9000)</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="nvarchar" output_data_type="varchar(%precision)" active_flag="true">
+		<match_parameters>
+			<match_length>1-4000</match_length>
+		</match_parameters>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="ntext" output_data_type="varchar(9000)" active_flag="true">
+		<transform_code>SUBSTRING(%table_name.%column_name,1,9000)</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="date" output_data_type="date" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="datetime" output_data_type="timestamp(3)" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="datetime2" output_data_type="timestamp(%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>0-5</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="datetime2" output_data_type="timestamp(6)" active_flag="true">
+		<match_parameters>
+			<match_scale>6-*</match_scale>
+		</match_parameters>
+		<transform_code>CAST(%table_name.%column_name AS datetime2(6))</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="smalldatetime" output_data_type="timestamp(0)" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="datetimeoffset" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>0</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(19), CAST(%table_name.%column_name AS datetime2(%scale)), 121) + cast(right(convert(varchar(40), %table_name.%column_name, 121), 6) AS char(6))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SSZ</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="datetimeoffset" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>1</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(21), CAST(%table_name.%column_name AS datetime2(%scale)), 121) + cast(right(convert(varchar(40), %table_name.%column_name, 121), 6) AS char(6))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(1)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="datetimeoffset" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>2</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(22), CAST(%table_name.%column_name AS datetime2(%scale)), 121) + cast(right(convert(varchar(40), %table_name.%column_name, 121), 6) AS char(6))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(2)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="datetimeoffset" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>3</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(23), CAST(%table_name.%column_name AS datetime2(%scale)), 121) + cast(right(convert(varchar(40), %table_name.%column_name, 121), 6) AS char(6))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(3)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="datetimeoffset" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>4</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(24), CAST(%table_name.%column_name AS datetime2(%scale)), 121) + cast(right(convert(varchar(40), %table_name.%column_name, 121), 6) AS char(6))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(4)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="datetimeoffset" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>5</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(25), CAST(%table_name.%column_name AS datetime2(%scale)), 121) + cast(right(convert(varchar(40), %table_name.%column_name, 121), 6) AS char(6))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(5)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="datetimeoffset" output_data_type="timestamp(6) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>6-*</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(26), CAST(%table_name.%column_name AS datetime2(6)), 121) + cast(right(convert(varchar(40), %table_name.%column_name, 121), 6) AS char(6))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(6)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="time" output_data_type="time(%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>0</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(8), cast(%table_name.%column_name AS time(%scale)), 114)</transform_code>
+		<format_value>HH:MI:SS.S(F)</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="time" output_data_type="time(%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>1</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(10), cast(%table_name.%column_name AS time(%scale)), 114)</transform_code>
+		<format_value>HH:MI:SS.S(F)</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="time" output_data_type="time(%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>2</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(11), cast(%table_name.%column_name AS time(%scale)), 114)</transform_code>
+		<format_value>HH:MI:SS.S(F)</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="time" output_data_type="time(%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>3</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(12), cast(%table_name.%column_name AS time(%scale)), 114)</transform_code>
+		<format_value>HH:MI:SS.S(F)</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="time" output_data_type="time(%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>4</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(13), cast(%table_name.%column_name AS time(%scale)), 114)</transform_code>
+		<format_value>HH:MI:SS.S(F)</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="time" output_data_type="time(%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>5</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(14), cast(%table_name.%column_name AS time(%scale)), 114)</transform_code>
+		<format_value>HH:MI:SS.S(F)</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="time" output_data_type="time(6)" active_flag="true">
+		<match_parameters>
+			<match_scale>6-*</match_scale>
+		</match_parameters>
+		<transform_code>CONVERT(char(15), cast(%table_name.%column_name AS time(6)), 114)</transform_code>
+		<format_value>HH:MI:SS.S(F)</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp" output_data_type="byte(8)" active_flag="true">
+		<transform_code>CAST(%table_name.%column_name AS binary(8))</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="uniqueidentifier" output_data_type="char(36)" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="rowversion" output_data_type="byte(8)" active_flag="true">
+		<transform_code>CAST(%table_name.%column_name AS binary(8))</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="sql_variant" output_data_type="varchar(9000)" active_flag="true">
+		<transform_code>SUBSTRING(CAST(%table_name.%column_name AS nvarchar(max)), 1, 9000)</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="xml" output_data_type="varchar(9000)" active_flag="true">
+		<transform_code>SUBSTRING(CAST(%table_name.%column_name AS nvarchar(max)), 1, 9000)</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="hierarchyid" output_data_type="varchar(4000)" active_flag="true">
+		<transform_code>CAST(%table_name.%column_name AS varchar(4000))</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="geography" output_data_type="varchar(8000)" active_flag="true">
+		<transform_code>(%table_name.%column_name.STIntersection(%table_name.%column_name)).STAsText()</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="geometry" output_data_type="varchar(8000)" active_flag="true">
+		<transform_code>(%table_name.%column_name.STIntersection(%table_name.%column_name)).STAsText()</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="*" output_data_type="%prompt" active_flag="true"></data_type_mapping>
+</data_type_mapping_set>

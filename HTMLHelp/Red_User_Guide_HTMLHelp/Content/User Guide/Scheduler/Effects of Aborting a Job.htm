@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Scheduler |Scheduler Options|Working with Jobs|Aborting a Job" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Effects of Aborting a Job</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4 class="Heading4">Effects of Aborting a Job</h4>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">The effects of aborting a job depend on the Operating System the Scheduler is running on, the target platform and the action being run.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader" data-mc-conditions="Outputs.Only for RED User Guide">Rolling back the current transaction may take a considerable amount of time.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 class="Heading5" data-mc-conditions="Outputs.Only for RED User Guide">Windows Scheduler</h5>
+            <p style="font-weight: bold;" data-mc-conditions="Outputs.Only for RED User Guide">SQL Server</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Object
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Action
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Effect
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Native Load, SSIS Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        ODBC Load, Database Link Load, File/Script Windows Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Stops process
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        All objects using Procedures
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Stops process and rolls back current transaction
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Cube
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-weight: bold;" data-mc-conditions="Outputs.Only for RED User Guide">Oracle</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Object
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Action
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Effect
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Database Link Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Stops process
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        All other loads
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        All objects using Procedures
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Stops process and rolls back current transaction
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Cube
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-weight: bold;" data-mc-conditions="Outputs.Only for RED User Guide">DB2</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Object
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Action
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Effect
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="height: 9pt;" class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        All Loads
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        All objects using Procedures
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Stops process and rolls back current transaction
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Cube
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-weight: bold;" data-mc-conditions="Outputs.Only for RED User Guide">Greenplum (target)</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">Load and update processes are not stopped for all objects.</p>
+            <p style="font-weight: bold;" data-mc-conditions="Outputs.Only for RED User Guide">Hive (target)</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">Load and update processes are not stopped for all objects.</p>
+            <p style="font-weight: bold;" data-mc-conditions="Outputs.Only for RED User Guide">Netezza (target)</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">Load and update processes are not stopped for all objects.</p>
+            <p style="font-weight: bold;" data-mc-conditions="Outputs.Only for RED User Guide">PDW (target)</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Object
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Action
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Effect
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Native Load, SSIS Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        ODBC Load, Database Link Load, File/Script Windows Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Stops process
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        All objects using Procedures (Local targets)
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Stops process and rolls back current transaction
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        All objects using Procedures (remote targets)
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Cube
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 class="Heading5" data-mc-conditions="Outputs.Only for RED User Guide">Unix Scheduler</h5>
+            <p style="font-weight: bold;" data-mc-conditions="Outputs.Only for RED User Guide">Oracle</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Object
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Action
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Effect
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="height: 9pt;" class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Database Link Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Stops process and rolls back current transaction
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        File/Script Unix Load
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        Does not stop process
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-weight: bold;" data-mc-conditions="Outputs.Only for RED User Guide">Hive (target)</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">File/Hadoop Load processes are not stopped on Hive target platforms.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

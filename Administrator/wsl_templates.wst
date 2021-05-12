@@ -1,0 +1,1600 @@
+_TEMPLATE_ update_dim_time
+-- =============================================================================
+-- DBMS Name      :    Oracle
+-- Script Name    :    update_dim_time
+-- Description    :    Update the dimension dim_time
+-- Author         :    WhereScape
+-- =============================================================================
+-- Notes / History
+--
+-- WMR 22/01/2002   Version 1.0.0
+-- BC  14/08/2015   Version 6.8.4.3  RED-5520 Replaced occurrences of the != SQL operator with <>
+
+CREATE OR REPLACE procedure update_dim_time
+    (
+    v_sequence         IN  number,
+    v_job_name         IN  varchar2,
+    v_task_name        IN  varchar2,
+    v_job_id           IN  number,
+    v_task_id          IN  number,
+    v_return_msg       OUT varchar2,
+    v_status           OUT number
+    )
+    AS
+
+    --=====================================================
+    -- Control variables used in most programs
+    --=====================================================
+    v_MsgText         varchar2(255); -- Text for audit_trail
+    v_step            integer := 0;  -- return code
+    v_update_count    integer := 0;  -- no of records updated
+    v_insert_count    integer := 0;  -- no of records inserted
+    v_count           integer := 0;  -- General counter;
+
+    --=====================================================
+    -- Variables
+    --=====================================================
+    v_DimRec          dim_time%ROWTYPE;
+    v_time_qq       integer;
+
+    --=====================================================
+    -- Select all input columns for all dimension rows
+    --=====================================================
+
+
+
+BEGIN
+
+    v_step := 1;
+    v_DimRec.dss_source_system_key := 1;
+
+    --=====================================================
+    -- Every dimension table should have a 0 row for
+    -- when the dimension is null
+    --=====================================================
+    v_step := 10;
+    select count(1) into v_count from dim_time
+        where dim_time_key = 9999;
+
+    IF v_count = 0 THEN
+        v_step := 20;
+        insert into dim_time
+        (
+        dim_time_key,
+        dss_source_system_key,
+        time_hh,
+        time_mm,
+        time_hhmm,
+        time_display_hh,
+        time_display_mm,
+        time_display_hhmm,
+        time_display_hhqq
+        )
+        values
+        (
+        9999,
+        v_DimRec.dss_source_system_key,
+        99,
+        99,
+        9999,
+        'xx',
+        'xx',
+        'UNKWN',
+        'UNKWN'
+        );
+    END IF;
+
+    --=======================================================
+    -- Loop through all the input records. Attempt to update
+    -- the dimension and if that fails then perform an insert
+    --=======================================================
+    v_step := 30;
+
+    v_DimRec.time_hh := 0;
+
+    WHILE v_DimRec.time_hh < 24 LOOP
+
+        v_DimRec.time_mm := 0;
+
+        WHILE v_DimRec.time_mm < 60 LOOP
+
+            v_DimRec.time_hhmm := v_DimRec.time_hh * 100
+                + v_DimRec.time_mm;
+
+            v_DimRec.time_display_hhmm := LPAD( v_DimRec.time_hh, 2, '0' )
+                || ':' || LPAD( v_DimRec.time_mm, 2, '0' );
+
+            If  v_DimRec.time_mm < 15 Then
+                v_time_qq := 0;
+            Elsif v_DimRec.time_mm < 30 Then
+                v_time_qq := 15;
+            Elsif v_DimRec.time_mm < 45 Then
+                v_time_qq := 30;
+            Else
+                v_time_qq := 45;
+            End If;
+
+            v_DimRec.time_display_hhqq := LPAD( v_DimRec.time_hh, 2, '0' )
+                || ':' || LPAD( v_time_qq, 2, '0' );
+
+            v_DimRec.time_display_hh := LPAD( v_DimRec.time_hh, 2, '0' );
+            v_DimRec.time_display_mm := LPAD( v_DimRec.time_mm, 2, '0' );
+
+            --===================================================
+            -- Update the dim_time
+            --===================================================
+            Update dim_time
+            Set
+                time_hh = v_DimRec.time_hh,
+                time_mm = v_DimRec.time_mm,
+                time_hhmm = v_DimRec.time_hhmm,
+                time_display_hh = v_DimRec.time_display_hh,
+                time_display_mm = v_DimRec.time_display_mm,
+                time_display_hhmm = v_DimRec.time_display_hhmm,
+                time_display_hhqq = v_DimRec.time_display_hhqq
+            Where
+                time_hhmm = v_DimRec.time_hhmm
+            And dss_source_system_key = v_DimRec.dss_source_system_key;
+
+            --===================================================
+            -- If the record is not found then insert it
+            --===================================================
+            v_step := 100;
+            IF SQL%NOTFOUND THEN
+              Insert into dim_time
+                (
+                dim_time_key,
+                time_hh,
+                time_mm,
+                time_hhmm,
+                time_display_hh,
+                time_display_mm,
+                time_display_hhmm,
+                time_display_hhqq,
+                dss_source_system_key
+                )
+              values
+                (
+                v_DimRec.time_hhmm,
+                v_DimRec.time_hh,
+                v_DimRec.time_mm,
+                v_DimRec.time_hhmm,
+                v_DimRec.time_display_hh,
+                v_DimRec.time_display_mm,
+                v_DimRec.time_display_hhmm,
+                v_DimRec.time_display_hhqq,
+                v_DimRec.dss_source_system_key
+                );
+                v_insert_count := v_insert_count + 1;
+            ELSE
+                v_update_count := v_update_count + 1;
+            END IF;
+
+            v_DimRec.time_mm := v_DimRec.time_mm + 1;
+
+            END LOOP;
+
+        v_DimRec.time_hh := v_DimRec.time_hh + 1;
+
+    END LOOP;
+    COMMIT;
+
+    --=====================================================
+    -- All Done report the results
+    --=====================================================
+    v_step := 200;
+    v_status := 1;
+    v_return_msg := 'dim_time updated. '
+                    || v_insert_count || ' new records. '
+                    || v_update_count || ' records updated.';
+
+    RETURN;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    v_return_msg := 'Unhandled Exception in update_dim_time. '||
+                ' Step ' ||v_step || ' '||SQLERRM;
+    v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+               v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+    v_status := -3;
+
+    RETURN;
+END update_dim_time;
+_TEMPLATE_ fast_stage_update
+-- =============================================================================
+-- DBMS Name      :    Oracle
+-- Script Name    :    fask_create_stage
+-- Description    :    Use ROWID to add surrogate keys to the staging table.
+-- Author         :    WhereScape
+-- =============================================================================
+-- Notes / History
+--
+--     fask = Fast Assignment (of) Surrogate Keys
+--
+--     This is a template to assist in associating surrogate keys.
+--
+--     First the records have to be added to the staging table.
+--     Then the (first) cursor has to be invoked to join the staging table to
+--     the various
+--
+--     The number of tables that can be joined in one statement depends on the
+--     size of the tables involved.
+--
+--     The CRITICAL factors of these procedures (in descending order of
+--     importance) are:
+--         1). the output of the select is in physical (ROWID) order of the table
+--             being updated; this results in big-block reads and writes of the
+--             output table; also any particular block of the output table is
+--             only ever read from and written to ONCE.
+--         2). tablescans are used for all tables involved in the joins
+--
+--     This template includes two cursor loops to assign surrogate keys.
+--
+--     We do not advocate putting all these steps into a single
+--     procedure unless restart logic is included as if it fails after the 2nd
+--     step the default logic will result in the first and second steps being
+--     repeated unnecessarily.
+--
+--     Therefore this template is broken into three procedures:
+--         fask_create_stage:  creates the staging table from the load table(s)
+--         fask_set_one:       assigns the first set of surrogate keys
+--         fask_set_two:       assigns the second set of surrogate keys
+--
+--
+--     The Cost Based Optimizer
+--         Under some circumstances, where one or more of the dimension tables
+--         are large, the optimizer decides to use an index on one of these
+--         dimensions, even though this will result in literally several
+--         million random reads.
+--         Therefore it is sometimes necessary to put in hints to prevent
+--         oracle from using the index and instead perform a full table scan.
+--
+--         WARNING: If your hint syntax is faulty, oracle will ignore the hint(s)
+--                  and continue processing!
+--
+--         NOTE: By forcing oracle not to use indexes, there is no requirement
+--               to analyze the tables.
+--
+
+CREATE OR REPLACE procedure update_stage_fask_insert
+    (
+    v_sequence         IN  number,
+    v_job_name         IN  varchar2,
+    v_task_name        IN  varchar2,
+    v_job_id           IN  number,
+    v_task_id          IN  number,
+    v_return_msg       OUT varchar2,
+    v_status           OUT number
+    )
+    AS
+
+    v_insert_count           integer := 0;
+    v_sql                    varchar2(256);
+    v_step                   integer := 0;
+
+BEGIN
+    v_step := 10;
+
+    --
+    --  Set the sort area size to something sensible - in this case 50 MB
+    --
+    v_sql := 'alter session set sort_area_size = 50000000';
+    execute immediate v_sql;
+
+    --
+    --  Set the sort area retained size to match the sort area size.
+    --
+    v_step := 20;
+    v_sql := 'alter session set sort_area_retained_size = 50000000';
+    execute immediate v_sql;
+
+    --
+    -- Delete all existing data from the staging table
+    --
+    v_step := 30;
+
+    v_Sql := 'truncate table stage_fask reuse storage';
+    execute immediate v_Sql;
+    COMMIT;
+
+    --
+    -- Build the staging table from the load table(s)
+    --
+    v_step := 40;
+
+    Insert into stage_fask
+        ( column1,
+          column2,
+          column3,
+          column4,
+          dim_01_bus_key,
+          dim_02_bus_key,
+          dim_03_bus_key,
+          dim_04_bus_key,
+          dss_update_time )
+        ( Select
+              load_table1.columna,
+              load_table2.columnz,
+              load_table2.columny,
+              load_table2.columnx,
+              load_table1.bus_key_01,
+              load_table2.bus_key_02,
+              load_table1.bus_key_03,
+              load_table1.bus_key_04,
+              sysdate
+          From
+              load_table1,
+              load_table2,
+          Where
+              load_table1.join_key = load_table2.join_key
+          and load_table2.selection_value = 'required value'
+        );
+
+    COMMIT;
+
+    v_insert_count := SQL%ROWCOUNT;
+
+    v_return_msg := 'Records inserted into stage_fask: ' || v_insert_count;
+
+    v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                  v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+
+    v_status := 1;
+
+    RETURN;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    v_return_msg := 'Unhandled Exception in update_stage_fask_insert. '||
+                ' Step ' ||v_step || ' '||SQLERRM;
+    v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+               v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+    v_status := -3;
+
+    RETURN;
+END update_stage_fask_insert;
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+CREATE OR REPLACE procedure update_stage_fask_keys1
+    (
+    v_sequence         IN  number,
+    v_job_name         IN  varchar2,
+    v_task_name        IN  varchar2,
+    v_job_id           IN  number,
+    v_task_id          IN  number,
+    v_return_msg       OUT varchar2,
+    v_status           OUT number
+    )
+    AS
+
+    vc_count_commit constant integer := 100000;
+
+    v_count                  integer := 0;
+    v_sql                    varchar2(256);
+    v_step                   integer := 0;
+    v_update_count           integer := 0;
+
+    --
+    -- Alter the following cursor to reflect the tables and columns of your
+    -- system.
+    --
+
+    cursor c_Loop is
+    select /*+ ORDERED
+               NO_INDEX(dim_01)
+               NO_INDEX(dim_02)
+               NO_INDEX(dim_04) */
+        stage_fask.rowid,
+        nvl( dim_01.dim_01_key, 0 )    dim_01_key,
+        nvl( dim_02.dim_02_key, 0 )    dim_02_key,
+        nvl( dim_04.dim_04_key, 0 )    dim_04_key
+    from
+        stage_int_payments,
+        dim_01,
+        dim_02,
+        dim_04
+    where
+        nvl(stage_fask.bus_key_01, 0) = dim_01.dim_01_bus_key(+) -- not all of
+        and nvl(stage_fask.bus_key_02, 0) = dim_02.dim_02_bus_key(+) -- these may
+        and nvl(stage_fask.bus_key_04, 0) = dim_04.dim_04_bus_key(+) -- need to be
+    order by                                                     -- outer joins
+        stage_fask.rowid
+        ;
+
+BEGIN
+    v_step := 10;
+
+    FOR r_Loop in c_Loop LOOP
+
+        IF v_update_count = 0 THEN
+            v_status := WsWrkError('I',v_job_name, v_task_name, v_sequence,
+                'First record',SQLCODE,SQLERRM,v_task_id, v_job_id,'');
+        END IF;
+
+        v_step := 20;
+
+        --
+        -- Alter the following update statement to reflect the table(s) and
+        -- column(s) of your system.
+        --
+        UPDATE
+            stage_fask
+	      SET
+                dim_01_key    = r_Loop.dim_01_key,
+                dim_02_key    = r_Loop.dim_02_key,
+                dim_04_key    = r_Loop.dim_04_key
+            WHERE
+                rowid = r_Loop.rowid;
+
+        v_update_count := v_update_count + 1;
+
+        v_count := v_count + 1;
+        IF v_count >= vc_count_commit THEN
+            v_count := 0;
+            COMMIT;
+
+            v_status := WsWrkError('I',v_job_name, v_task_name, v_sequence,
+                'Updated another ' || vc_count_commit
+                    || ' records',SQLCODE,SQLERRM,v_task_id, v_job_id,'');
+        END IF;
+
+    END LOOP;
+
+    COMMIT;
+
+    v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+        'Completed first loop; records updated: '
+            || v_update_count,SQLCODE,SQLERRM,v_task_id, v_job_id );
+
+    v_update_count := SQL%ROWCOUNT;
+
+    v_return_msg := 'Records updated in stage_fask: ' || v_update_count;
+
+    v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                  v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+
+    v_status := 1;
+
+    RETURN;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    v_return_msg := 'Unhandled Exception in update_stage_fask_keys1. '||
+                ' Step ' ||v_step || ' '||SQLERRM;
+    v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+               v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+    v_status := -3;
+
+    RETURN;
+END update_stage_fask_keys1;
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+CREATE OR REPLACE procedure update_stage_fask_keys2
+    (
+    v_sequence         IN  number,
+    v_job_name         IN  varchar2,
+    v_task_name        IN  varchar2,
+    v_job_id           IN  number,
+    v_task_id          IN  number,
+    v_return_msg       OUT varchar2,
+    v_status           OUT number
+    )
+    AS
+
+    vc_count_commit constant integer := 100000;
+
+    v_count                  integer := 0;
+    v_sql                    varchar2(256);
+    v_step                   integer := 0;
+    v_update_count           integer := 0;
+
+    --
+    -- Update the following cursor to reflect the tables and columns of your
+    -- system.
+    --
+
+    cursor c_Loop is
+    select /*+ ORDERED
+               NO_INDEX(dim_03) */
+        stage_fask.rowid,
+        nvl( dim_03.dim_01_key, 0 )    dim_03_key
+    from
+        stage_int_payments,
+        dim_03
+    where                                                        -- this might
+        nvl(stage_fask.bus_key_03, 0) = dim_03.dim_03_bus_key(+) -- not need to
+    order by                                                     -- be an outer
+        stage_fask.rowid                                         -- join
+        ;
+
+BEGIN
+    v_step := 10;
+
+    FOR r_Loop in c_Loop LOOP
+
+        IF v_update_count = 0 THEN
+            v_status := WsWrkError('I',v_job_name, v_task_name, v_sequence,
+                'First record',SQLCODE,SQLERRM,v_task_id, v_job_id,'');
+        END IF;
+
+        v_step := 20;
+
+        --
+        -- Alter the following update statement to reflect the table(s) and
+        -- column(s) of your system.
+        --
+        UPDATE
+            stage_fask
+	      SET
+                dim_03_key    = r_Loop.dim_03_key
+            WHERE
+                rowid = r_Loop.rowid;
+
+        v_update_count := v_update_count + 1;
+
+        v_count := v_count + 1;
+        IF v_count >= vc_count_commit THEN
+            v_count := 0;
+            COMMIT;
+
+            v_status := WsWrkError('I',v_job_name, v_task_name, v_sequence,
+                'Updated another ' || vc_count_commit
+                    || ' records',SQLCODE,SQLERRM,v_task_id, v_job_id,'');
+        END IF;
+
+    END LOOP;
+
+    COMMIT;
+
+    v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+        'Completed first loop; records updated: '
+            || v_update_count,SQLCODE,SQLERRM,v_task_id, v_job_id );
+
+    v_update_count := SQL%ROWCOUNT;
+
+    v_return_msg := 'Records updated in stage_fask: ' || v_update_count;
+
+    v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                  v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+
+    v_status := 1;
+
+    RETURN;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    v_return_msg := 'Unhandled Exception in update_stage_fask_keys1. '||
+                ' Step ' ||v_step || ' '||SQLERRM;
+    v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+               v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+    v_status := -3;
+
+    RETURN;
+END update_stage_fask_keys1;
+_TEMPLATE_ Job_Dependency
+-- =============================================================================
+-- DBMS Name      :    Oracle
+-- Script Name    :    Ws_Job_Dependency
+-- Description    :    Checks whether there are any dependencies; if there
+--                     are, checks whether they have all been met. If not,
+--                     waits until they have been met.
+-- Author         :    WhereScape
+-- =============================================================================
+-- Notes
+--     For inter-job dependency (parent / child) you need to add an entry to the
+--     table ws_wrk_job_dependency. Columns are:
+--         WJD_SEQUENCE         Unique sequence number. Create using
+--                              ws_wrk_job_depenedency_seq.nextval.
+--         WJD_PARENT_JOB_NAME  Name of parent job; must match exactly.
+--         WJD_CHILD_JOB_NAME   Name of child job; must match exactly.
+--         WJD_FIRST_CHECK_LAG  Time that the child will wait (in minutes) before
+--                              checking for the first time the completetion
+--                              status of the parent.
+--         WJD_WAIT_INTERVAL    Time (in minutes) between each check by the child
+--                              for completion of the parent.
+--         WJD_REQUIRE_PARENT   If this flag is set, the parent must be scheduled
+--                              to run on the same day as the child. Therefore
+--                              parent must run at least as often as the child.
+--                              If this flag is reset, the child will only wait
+--                              for the parent if it is scheduled to run on the
+--                              same day. This allows the child to have a part
+--                              time parent.
+--
+-- =============================================================================
+
+CREATE OR REPLACE procedure Ws_Job_Dependency
+    (
+    v_sequence         IN  number,
+    v_job_name         IN  varchar2,
+    v_task_name        IN  varchar2,
+    v_job_id           IN  number,
+    v_task_id          IN  number,
+    v_return_msg       OUT varchar2,
+    v_status           OUT number
+    )
+    AS
+
+    v_extra_wait                  integer;
+    v_parent_count                integer;
+    v_step                        integer := 0;
+    v_still_waiting               integer := 1;
+    v_total_wait                  integer := 0;
+    v_wait                        integer;
+    v_wait_count                  integer := 0;
+    v_wait_interval               integer;
+    v_waited_for_running          integer := 0;
+    v_waited_for_failed           integer := 0;
+    v_waited_for_running_parent   integer := 0;
+    v_waited_for_failed_parent    integer := 0;
+
+    v_wjc_start_after    date;
+
+    v_wjd_first_check_lag         integer := 0;
+    v_wjd_require_parent          varchar2(1) := 'Y';
+    v_wjd_wait_interval           integer := 0;
+
+    r_Dependency ws_wrk_job_dependency%ROWTYPE;
+    r_JobLog     ws_wrk_job_log%ROWTYPE;
+    r_Parent_JC  ws_wrk_job_ctrl%ROWTYPE;
+    r_Running    ws_wrk_job_run%ROWTYPE;
+
+    CURSOR c_Parents ( v_job_name varchar2 ) IS
+        SELECT
+            wjd_parent_job_name,
+            wjd_first_check_lag,
+            wjd_wait_interval,
+            wjd_require_parent
+        FROM
+            ws_wrk_job_dependency
+        WHERE
+            wjd_child_job_name = v_job_name;
+
+    CURSOR c_Job_Control (v_job_name varchar2) IS
+        SELECT
+            *
+        FROM
+            ws_wrk_job_ctrl
+        WHERE
+            wjc_name = v_job_name;
+
+    CURSOR c_Running (v_job_name varchar2, v_sequence integer) IS
+        SELECT
+            *
+        FROM
+            ws_wrk_job_run
+        WHERE
+            wjr_name = v_job_name
+        AND wjr_sequence <> v_sequence;
+
+    CURSOR c_RunningParent (v_job_name varchar2) IS
+        SELECT
+            *
+        FROM
+            ws_wrk_job_run
+        WHERE
+            wjr_name = v_job_name
+        AND wjr_sequence <> v_sequence;
+
+    CURSOR c_JobLog (v_job_name varchar2) IS
+        SELECT
+            *
+        FROM
+            ws_wrk_job_log
+        WHERE
+            wjl_name = v_job_name
+        AND (    wjl_status = 'F'
+              OR wjl_status = 'G' );
+
+    CURSOR c_JobLogCompleted (v_job_name varchar2, v_scheduled date) IS
+        SELECT
+            *
+        FROM
+            ws_wrk_job_log
+        WHERE
+            wjl_name = v_job_name
+        AND wjl_status = 'C'
+        AND trunc( wjl_scheduled ) = trunc( v_scheduled );
+
+    CURSOR c_Dependency( v_job_name varchar2) IS
+        SELECT
+            *
+        FROM
+            ws_wrk_job_dependency
+        WHERE
+            wjd_parent_job_name = v_job_name
+        AND wjd_child_job_name  = v_job_name;
+
+BEGIN
+
+    --
+    --  Get ws_wrk_job_ctrl record for this job.
+    --
+    v_step := 10;
+
+    SELECT
+        wjc_start_after
+    INTO
+        v_wjc_start_after
+    FROM
+        ws_wrk_job_ctrl
+    WHERE
+        wjc_name = v_job_name;
+
+    --
+    --  Check for completed instance today. We are only allowed to run once
+    --  per day at the most.
+    --  We will rely on the ws_wrk_job_log table for this. If someone has
+    --  deleted the entry then we will run again.
+    --
+    v_step := 4;
+    r_JobLog.wjl_name := 'zz - no completed instance - zz';
+    OPEN  c_JobLogCompleted( v_job_name, v_wjc_start_after );
+    FETCH c_JobLogCompleted INTO r_JobLog;
+    CLOSE c_JobLogCompleted;
+
+    v_step := 6;
+    IF r_JobLog.wjl_name = v_job_name THEN
+        v_return_msg := 'Found a previous completed instance for today';
+
+        v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+                            v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+
+        v_status := -2;
+
+        RETURN;
+    END IF;
+
+    --
+    --  Try getting specific implicit dependency record for this job.
+    --
+    v_step := 20;
+
+    r_Dependency.wjd_parent_job_name := 'zz - no job - zz';
+    OPEN  c_Dependency( v_job_name );
+    FETCH c_Dependency INTO r_Dependency;
+    CLOSE c_Dependency;
+
+    v_step := 30;
+
+    IF  r_Dependency.wjd_parent_job_name = 'zz - no job - zz' THEN
+        v_status := WsWrkError('I',v_job_name, v_task_name, v_sequence,
+                        'No specific implicit dependency record found for job: ' || v_job_name || '.',
+                        SQLCODE,SQLERRM,v_task_id, v_job_id,'');
+
+        --
+        --  Try getting the general implicit dependency record.
+        --
+        v_step := 40;
+
+        r_Dependency.wjd_parent_job_name := 'zz - no job - zz';
+        OPEN  c_Dependency( 'implicit' );
+        FETCH c_Dependency INTO r_Dependency;
+        CLOSE c_Dependency;
+
+        v_step := 50;
+
+        IF  r_Dependency.wjd_parent_job_name = 'zz - no job - zz' THEN
+            r_Dependency.wjd_first_check_lag := 0;
+            r_Dependency.wjd_wait_interval   := 10;
+
+            v_status := WsWrkError('I',v_job_name, v_task_name, v_sequence,
+                        'No general implicit dependency record found.',
+                        SQLCODE,SQLERRM,v_task_id, v_job_id,'');
+        END IF;
+    END IF;
+
+    v_step := 60;
+
+    WHILE v_still_waiting = 1 LOOP
+
+        v_step := 70;
+
+        v_wait := 0;
+        v_wait_interval := 0;
+        --
+        --  Start with implicit dependency first. No point going any further if
+        --  previous instance of job is still running or has failed.
+        --  We are only concerned with running or failed jobs. If there is no
+        --  previous job we will just carry on.
+        --
+        v_step := 80;
+
+        --
+        --  Check for running instance. Any running instance will do.
+        --
+        r_Running.wjr_name := 'zz - no running instance - zz';
+        OPEN  c_Running( v_job_name, v_sequence );
+        FETCH c_Running INTO r_Running;
+        CLOSE c_Running;
+
+        v_step := 90;
+
+        IF r_Running.wjr_name <> 'zz - no running instance - zz' THEN
+            v_wait_interval := 0;
+
+            IF v_waited_for_running = 0 THEN
+                v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                                'Waiting for previous (running) instance to finish',
+                                SQLCODE,SQLERRM,v_task_id, v_job_id);
+
+                v_wait_interval := r_Dependency.wjd_first_check_lag;
+                v_waited_for_running := 1;
+            END IF;
+
+            v_wait := 1;
+            v_wait_interval := v_wait_interval + r_Dependency.wjd_wait_interval;
+
+            GOTO wait_for_a_while;
+        END IF;
+
+        --
+        --  Check for failed instance. Any failed instance will do. If they
+        --  really want us to restart they will have deleted or completed
+        --  any previous failed instances.
+        --
+
+        v_step := 100;
+
+        r_JobLog.wjl_name := 'zz - no failed instance - zz';
+        OPEN  c_JobLog( v_job_name );
+        FETCH c_JobLog INTO r_JobLog;
+        CLOSE c_JobLog;
+
+        v_step := 110;
+
+        IF r_JobLog.wjl_name <> 'zz - no failed instance - zz' THEN
+            v_wait_interval := 0;
+
+            IF v_waited_for_failed = 0 THEN
+                v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                                'Waiting for previous (failed) instance to finish',
+                                SQLCODE,SQLERRM,v_task_id, v_job_id);
+                v_waited_for_failed := 1;
+
+                IF v_waited_for_running = 0 THEN
+                    v_wait_interval := r_Dependency.wjd_first_check_lag;
+                END IF;
+            END IF;
+
+            v_wait := 1;
+            v_wait_interval := v_wait_interval + r_Dependency.wjd_wait_interval;
+
+            GOTO wait_for_a_while;
+        END IF;
+
+        --
+        --  Now go through the dependencies
+        --
+
+        v_step := 120;
+
+        FOR r_Parent in c_Parents( v_job_name ) LOOP
+
+            v_step := 130;
+
+            v_wjd_first_check_lag := r_Parent.wjd_first_check_lag;
+            v_wjd_require_parent  := r_Parent.wjd_require_parent;
+            v_wjd_wait_interval   := r_Parent.wjd_wait_interval;
+
+            --
+            --  Check for running parent.
+            --
+            r_Running.wjr_name := 'zz - no running parent - zz';
+            OPEN  c_RunningParent (r_Parent.wjd_parent_job_name );
+            FETCH c_RunningParent INTO r_Running;
+            CLOSE c_RunningParent;
+
+            v_step := 140;
+
+            IF r_Running.wjr_name <> 'zz - no running parent - zz' THEN
+                IF v_waited_for_running_parent = 0 THEN
+                    v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                                    'Waiting for running parent instance ('
+                                        || r_Running.wjr_name
+                                        || ') to finish',
+                                    SQLCODE,SQLERRM,v_task_id, v_job_id);
+
+                    v_waited_for_running_parent := 1;
+                END IF;
+
+                v_wait := 1;
+                EXIT;
+            END IF;
+
+            --
+            --  Check for failed parent.
+            --
+            v_step := 150;
+
+            r_JobLog.wjl_name := 'zz - no failed parent - zz';
+            OPEN  c_JobLog( v_job_name );
+            FETCH c_JobLog INTO r_JobLog;
+            CLOSE c_JobLog;
+
+            v_step := 160;
+
+            IF r_JobLog.wjl_name <> 'zz - no failed parent - zz' THEN
+                IF v_waited_for_failed_parent = 0 THEN
+                    v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                                    'Waiting for failed parent instance ('
+                                        || r_Running.wjr_name
+                                        || ') to finish',
+                                    SQLCODE,SQLERRM,v_task_id, v_job_id);
+                    v_waited_for_failed_parent := 1;
+                END IF;
+
+                v_wait := 1;
+                EXIT;
+            END IF;
+
+            --
+            --  Nothing has failed, nothing is still running. Now check
+            --  that the parent isn't going to start soon.
+            --
+            v_step := 170;
+
+            r_Parent_JC.wjc_name := 'zz - parent not starting soon - zz';
+
+            OPEN  c_Job_Control ( r_Parent.wjd_parent_job_name );
+            FETCH c_Job_Control INTO r_Parent_JC;
+            CLOSE c_Job_Control;
+
+            v_step := 180;
+
+            IF r_Parent_JC.wjc_name = 'zz - parent not starting soon - zz' THEN
+                v_return_msg := 'Dependency record exists but parent job ('
+                                    || r_Parent.wjd_parent_job_name
+                                    || ') does not.';
+
+                v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+                                v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+                v_status := -1;
+                return;
+            END IF;
+
+            v_step := 190;
+
+            --
+            --  Check that the parent has a start date for the same day as the child
+            --
+            IF  trunc( r_Parent_JC.wjc_start_after ) = trunc( v_wjc_start_after ) THEN
+
+                --
+                -- Check that there are no outstanding failures, whether or not there
+                -- is a ws_wrk_job_run record.
+                --
+                IF  (     trunc( r_Parent_JC.wjc_completed ) = trunc( v_wjc_start_after )
+                      AND r_Parent_JC.wjc_status = 'F' )
+                OR  (     trunc( r_Parent_JC.wjc_completed ) <> trunc( v_wjc_start_after )
+                      AND r_Parent_JC.wjc_status = 'W' )
+                OR  r_Parent_JC.wjc_completed is null
+                OR  r_Parent_JC.wjc_status is null
+                THEN
+                    v_step := 200;
+
+                    IF  v_waited_for_failed_parent = 0 THEN
+                        v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                                        'Waiting for parent job to (re)start' ,SQLCODE,SQLERRM,v_task_id, v_job_id);
+                        v_waited_for_failed_parent := 1;
+                    END IF;
+
+                    IF  r_Parent_JC.wjc_start_after >= v_wjc_start_after
+                    AND r_Parent_JC.wjc_start_after >= sysdate() THEN
+                        v_wait := 1;
+                        v_extra_wait := (   to_number( to_char( v_wjc_start_after, 'SSSSS' ) )
+                                          - to_number( to_char( r_Parent_JC.wjc_start_after, 'SSSSS' ) ) ) / 60;
+                        if v_extra_wait < 0 then
+                            v_extra_wait := 0;
+                        end if;
+
+                        v_wait_interval := r_Parent.wjd_wait_interval + v_extra_wait;
+                        EXIT;
+                    ELSE
+                        IF r_Parent_JC.wjc_type = 'S' THEN
+                            v_return_msg := 'Parent job "'
+                                                || r_Parent.wjd_parent_job_name
+                                                || '" should have started at '
+                                                || r_Parent_JC.wjc_start_after
+                                                || ' but has not.';
+                        ELSE
+                            v_return_msg := 'Parent job "'
+                                                || r_Parent.wjd_parent_job_name
+                                                || '" has never been scheduled.';
+                        END IF;
+
+                        v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+                                        v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+                        v_status := -2;
+                        return;
+                    END IF;
+                ELSE
+                    --
+                    --  Someone must have deleted the ws_wrk_job_log record already.
+                    --
+                    v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                                    'Parent start after true but already completed; '
+                                        || 'someone must have already deleted the ws_wrk_job_log record',
+                                    SQLCODE,SQLERRM,v_task_id, v_job_id);
+
+                    v_still_waiting := 0;
+                END IF;
+            ELSE
+                IF  v_wjd_require_parent = 'Y' THEN
+
+                    v_step := 200;
+
+                    v_return_msg := 'Parent job "'
+                                        || r_Parent.wjd_parent_job_name
+                                        || '" not scheduled to start on '
+                                        || v_wjc_start_after
+                                        || ' but is required by dependency.';
+
+                    v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+                                    v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+                    v_status := -3;
+                    return;
+                END IF;
+            END IF;
+
+        END LOOP;        -- FOR r_Parent in c_Parents LOOP
+
+
+        --
+        --  Now we consider waiting.
+        --
+
+        v_step := 210;
+
+<<wait_for_a_while>>
+
+        IF v_wait = 0 THEN
+                v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+                                'All dependencies met.',
+                                SQLCODE,SQLERRM,v_task_id, v_job_id);
+                v_still_waiting := 0;
+        ELSE
+            --
+            --  They also serve who only stand and wait.
+            --
+
+            v_step := 220;
+
+            IF  v_wait_interval = 0 THEN
+                IF  v_wait_count = 0 THEN
+                    v_wait_interval := v_wjd_first_check_lag;
+                END IF;
+
+                v_wait_interval := v_wait_interval + v_wjd_wait_interval;
+            END IF;
+
+            v_wait_count := v_wait_count + 1;
+            v_total_wait := v_total_wait + v_wait_interval;
+
+            v_status := WsWrkError('I',v_job_name, v_task_name, v_sequence,
+                            'Waiting for ' || v_wait_interval || ' minute(s). Waited ' || v_total_wait || ' minute(s) so far',
+                             SQLCODE,SQLERRM,v_task_id, v_job_id, '');
+
+            DBMS_LOCK.SLEEP( v_wait_interval * 60 );
+        END IF;
+
+    END LOOP;        -- WHILE v_still_waiting = 1 LOOP
+
+    IF  v_wait_count > 0 THEN
+        IF v_wait_count = 1 THEN
+            v_return_msg := 'Waited once for a total of ';
+        ELSE
+            v_return_msg := 'Waited ' || v_wait_count || ' times for a total of ';
+        END IF;
+
+        IF v_total_wait = 1 THEN
+            v_return_msg := v_return_msg || ' 1 minute.';
+        ELSE
+            v_return_msg := v_return_msg || v_total_wait || ' minutes.';
+        END IF;
+    ELSE
+        v_return_msg := 'Did not have to wait for any dependencies';
+    END IF;
+
+    v_status := WsWrkAudit('I',v_job_name, v_task_name, v_sequence,
+               v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+
+    v_status := 1;
+
+    RETURN;
+
+EXCEPTION
+
+  WHEN OTHERS THEN
+    v_return_msg := 'Unhandled Exception in ws_job_dependency. '||
+                ' Step ' ||v_step || ' '||SQLERRM;
+
+    v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+               v_return_msg,SQLCODE,SQLERRM,v_task_id, v_job_id);
+
+    v_status := -3;
+
+    RETURN;
+
+END Ws_Job_Dependency;
+
+_TEMPLATE_ Get_Pseudo_key
+-- =============================================================================
+-- DBMS Name      :    Oracle
+-- Script Name    :    get_pseudo_product_key
+-- Description    :    Get the pseudo key for the dimension dim_product based on
+--                :    elements in the hierarchy
+-- Author         :    WhereScape
+-- =============================================================================
+-- Notes / History
+--
+
+CREATE OR REPLACE function get_pseudo_product_key
+    (
+    v_prod_group       IN  dim_product.prod_group%TYPE,
+    v_subgroup         IN  dim_product.subgroup%TYPE,
+    v_dss_source_system_key IN  dim_product.dss_source_system_key%TYPE,
+    v_auto_add         IN  varchar2,
+    v_log_error        IN  varchar2,
+    v_sequence         IN  number,
+    v_job_name         IN  varchar2,
+    v_task_name        IN  varchar2,
+    v_job_id           IN  number,
+    v_task_id          IN  number,
+    v_dim_product_key  OUT number
+    )
+    RETURN Integer
+    AS PRAGMA AUTONOMOUS_TRANSACTION;
+
+    --=====================================================
+    -- Control variables used in most programs
+    --=====================================================
+    v_MsgText         varchar2(255); -- Text for audit_trail
+    v_step            integer := 0;  -- debug step
+    v_status          integer := 0;  -- return code
+
+    --=====================================================
+    -- Variables
+    --=====================================================
+    v_prod_code       dim_product.code%TYPE;
+    v_description     dim_product.description%TYPE;
+    v_group_desc      dim_product.group_desc%TYPE;
+    v_subgroup_desc   dim_product.subgroup_desc%TYPE;
+
+BEGIN
+
+    v_step := 1;
+    --=====================================================
+    -- Check that no business keys are null
+    --=====================================================
+    IF v_prod_group is NULL THEN
+        v_dim_product_key := 0;
+
+        IF v_log_error = 'Y' THEN
+            v_MsgText := 'Null value in product group';
+            v_status := WsWrkError('W',v_job_name, v_task_name, v_sequence,
+               v_MsgText,SQLCODE,SQLERRM,v_task_id, v_job_id,
+               'NULL_KEY');
+        END IF;
+        RETURN 0;
+    END IF;
+    IF v_subgroup is NULL THEN
+        v_dim_product_key := 0;
+
+        IF v_log_error = 'Y' THEN
+            v_MsgText := 'Null value in product subgroup';
+            v_status := WsWrkError('W',v_job_name, v_task_name, v_sequence,
+               v_MsgText,SQLCODE,SQLERRM,v_task_id, v_job_id,
+               'NULL_KEY');
+        END IF;
+        RETURN 0;
+    END IF;
+    IF v_dss_source_system_key is NULL THEN
+        v_dim_product_key := 0;
+
+        IF v_log_error = 'Y' THEN
+            v_MsgText := 'Null value in v_dss_source_system_key';
+            v_status := WsWrkError('W',v_job_name, v_task_name, v_sequence,
+               v_MsgText,SQLCODE,SQLERRM,v_task_id, v_job_id,
+               'NULL_KEY');
+        END IF;
+        RETURN 0;
+    END IF;
+
+    --=====================================================
+    -- Lookup the key
+    --=====================================================
+    v_step := 100;
+    SELECT dim_product_key
+        into v_dim_product_key
+    FROM dim_product
+    WHERE prod_group = v_prod_group
+    And   subgroup = v_subgroup
+    And   code < 0
+    and   dss_source_system_key = v_dss_source_system_key;
+    RETURN 1;
+
+EXCEPTION
+    --=====================================================
+    -- If not found then add it if we have the flag set.
+    --=====================================================
+    WHEN NO_DATA_FOUND THEN
+      IF v_auto_add = 'Y' THEN
+
+          Select max(group_desc), max(subgroup_desc)
+          Into v_group_desc, v_subgroup_desc
+          From dim_product
+          Where prod_group = v_prod_group
+          And subgroup = v_subgroup;
+
+          Select min(code)
+          Into v_prod_code
+          From dim_product;
+
+          If v_group_desc is null Then
+             v_group_desc := 'group '||v_prod_group;
+          End If;
+
+          If v_subgroup_desc is null Then
+             v_subgroup_desc := 'subgroup '||v_subgroup;
+          End If;
+
+          If v_prod_code is null Then
+             v_prod_code := -9;
+          End If;
+
+          If v_prod_code >= 0 Then
+             v_prod_code := -9;
+          End If;
+
+          v_prod_code := v_prod_code - 1;
+
+          v_description := 'Group '||v_prod_group||' Subgroup '||v_subgroup;
+
+          INSERT into dim_product
+          (
+              dim_product_key,
+              code,
+              description,
+              prod_group,
+              subgroup,
+              group_desc,
+              subgroup_desc,
+              dss_source_system_key,
+              dss_update_time
+          )
+          values
+          (
+              v_prod_code,
+              v_prod_code,
+              v_description,
+              v_prod_group,
+              v_subgroup,
+              v_group_desc,
+              v_subgroup_desc,
+              v_dss_source_system_key,
+              sysdate
+          );
+          v_dim_product_key := v_prod_code;
+
+          --=====================================================
+          -- If requested log a message about the auto add
+          --=====================================================
+          IF v_log_error = 'Y' THEN
+              v_MsgText := 'Auto added dimension row '
+                ||v_prod_code
+                ||v_dss_source_system_key;
+              v_status := WsWrkError('W',v_job_name, v_task_name, v_sequence,
+              v_MsgText,SQLCODE,SQLERRM,v_task_id, v_job_id,
+                 'NULL_KEY');
+          END IF;
+          COMMIT;
+          RETURN 2;
+      ELSE
+          v_dim_product_key := 0;
+
+          --=====================================================
+          -- If requested log a message about the lookup failure
+          --=====================================================
+          IF v_log_error = 'Y' THEN
+            v_MsgText := 'Unmatched key lookup '
+                ||v_prod_code
+                ||v_dss_source_system_key;
+            v_status := WsWrkError('W',v_job_name, v_task_name, v_sequence,
+               v_MsgText,SQLCODE,SQLERRM,v_task_id, v_job_id,
+               'NULL_KEY');
+          END IF;
+          RETURN 0;
+      END IF;
+    WHEN OTHERS THEN
+          --=====================================================
+          -- Unexpected Error
+          --=====================================================
+    v_MsgText := 'Unhandled Exception in get_pseudo_product_key. '||
+                ' Step ' ||v_step || ' '||SQLERRM;
+    v_status := WsWrkAudit('F',v_job_name, v_task_name, v_sequence,
+               v_MsgText,SQLCODE,SQLERRM,v_task_id, v_job_id);
+    v_dim_product_key := 0;
+
+    RETURN -3;
+END get_pseudo_product_key;
+_TEMPLATE_ Unix_Mon_Job_Mail
+#!/bin/sh
+# ============================================================================
+# Script Name 	:	monitor_job_mail.sh
+# Description 	:	mail a job result to the specified user
+# Author 		:	WhereScape Limited
+# Date		: 	Version 1.0.0  03/10/2002
+# =============================================================================
+# Notes / History
+#
+# Positional parameters:
+# 1 = job_name
+# 2 = Message
+# 3 = Mail users
+#
+# The variables $DSS_USER and $DSS_PWD are set up in the environment file
+# as part of the scheduler setup process
+# ============================================================================
+
+TMP_FILE="/tmp/monitor_mail.log"
+
+echo "Job: ${1} Status: ${2}">${TMP_FILE}
+echo "">>${TMP_FILE}
+echo "*** NOTE: Change message font to Courier for correct formating">>${TMP_FILE}
+echo "*** Overall job status ">>${TMP_FILE}
+echo "">>${TMP_FILE}
+#
+# Get an overall status of all jobs either
+# waiting, running, failed or completed for the last day.
+#
+echo "Job Name                 Status     Start             Finish         Elap    Ok  Inf Warn  Det  Err  Sort Order" >>${TMP_FILE}
+sqlplus -s <<EOW | grep -v "rows selected.$" | grep -v "^$" | tr -d "\015" >>${TMP_FILE}
+$DSS_USER/$DSS_PWD
+set sqlprompt "";
+set heading off;
+set pagesize 0
+set linesize 1024
+set trimspool on
+set tab off
+set numwidth 2
+set echo off;
+select
+	rpad(substr(wjc_name,1,24),24,' ') "Job Name",
+	decode(wjc_status,'H','On Hold','R','Running','P','Pending','W','Waiting','C','Completed',
+			'B','Blocked','F','Failed','G','Aborted','E','Err Finish','Unknown') "Status",
+	to_char(wjc_start_after,'YYYYMMDD HH24:MI') "Started",
+	'00000000 00:00' "Completed",
+	'00:00' "elap" ,
+	lpad(0,4,' ') "Okay",
+	lpad(0,4,' ') "Info",
+	lpad(0,4,' ') "Warn",
+	lpad(0,4,' ') "Deta",
+	lpad(0,4,' ') "Erro",
+       1
+	from ws_wrk_job_ctrl
+       where wjc_start_after >= sysdate -1
+       and wjc_start_after <= sysdate + 0.2
+union
+	 select substr(wjr_name,1,24),
+	 decode(wjr_status,'H','On Hold','R','Running','P','Pending','W','Waiting','C','Completed',
+			'B','Blocked','F','Failed','G','Aborted','E','Err Finish','Unknown') "Status",
+        to_char(wjr_started,'YYYYMMDD HH24:MI') ,
+        to_char(wjr_completed,'YYYYMMDD HH24:MI') ,
+	 lpad(trunc(to_number(sysdate-wjr_started)*24,0),2,'0')||':'||
+	 lpad((round(to_number(sysdate-wjr_started)*24*60,0)
+	 - (trunc(to_number(sysdate-wjr_started)*24,0)*60)),2,'0'),
+	 lpad(wjr_okay_count,4,' '),
+	 lpad(wjr_info_count,4,' '),
+        lpad(wjr_warning_count,4,' '),
+        lpad(wjr_detail_count,4,' '),
+	 lpad(wjr_error_count,4,' '),
+        2
+	 from ws_wrk_job_run
+        where wjr_started > sysdate -1
+union
+	 select substr(wjl_name,1,24),
+	 decode(wjl_status,'H','On Hold','R','Running','P','Pending','W','Waiting','C','Completed',
+			'B','Blocked','F','Failed','G','Aborted','E','Err Finish','Unknown') "Status",
+        to_char(wjl_started,'YYYYMMDD HH24:MI') ,
+        to_char(wjl_completed,'YYYYMMDD HH24:MI') ,
+	 lpad(wjl_elapsed_hh,2,'0')||':'||lpad(wjl_elapsed_mi,2,'0'),
+   	 lpad(wjl_okay_count,4,' '),
+	 lpad(wjl_info_count,4,' '),
+        lpad(wjl_warning_count,4,' '),
+        lpad(wjl_detail_count,4,' '),
+	 lpad(wjl_error_count,4,' '),
+        3
+	 from ws_wrk_job_log
+        where wjl_completed >= sysdate -1
+order by 11,3  ;
+exit;
+EOW
+
+echo "">>${TMP_FILE}
+echo "*** Task status for ${1} ">>${TMP_FILE}
+echo "">>${TMP_FILE}
+#
+# Get the task status for our selected job
+#
+echo "Task name                        status    start          finish         elap   inf warn detail">>${TMP_FILE}
+sqlplus -s <<EOW | grep -v "rows selected.$" | grep -v "^$" | tr -d "\015" >>${TMP_FILE}
+$DSS_USER/$DSS_PWD
+set sqlprompt "";
+set heading off;
+set pagesize 0
+set linesize 1024
+set trimspool on
+set tab off
+set numwidth 2
+set echo off;
+select
+	 substr(wtr_name,1,24) "Task name",
+	 decode(wtr_run_status,'C','Completed','R','Running','E','Error','F','Failed','Unknown') "Status",
+        to_char(wtr_started,'YYYYMMDD HH24:MI')  "Started",
+        to_char(wtr_completed,'YYYYMMDD HH24:MI')  "Completed",
+        lpad(wtr_elapsed_hh,2,'0')||':'||lpad(wtr_elapsed_mi,2,'0') "Elap",
+	 lpad(wtr_info_count,4,' ') "info",
+        lpad(wtr_warning_count,4,' ') "warn",
+        lpad(wtr_detail_count,4,' ') "deta"
+	 from ws_wrk_task_run
+        where wtr_job_key =
+            ( select max(wjr_job_key) from ws_wrk_job_run where upper(wjr_name) = upper('${1}'))
+        and wtr_sequence = ( select max(wa_sequence) from
+                                 ws_wrk_audit_log where upper(wa_job) = upper('${1}'))
+union
+	 select substr(wtl_name,1,24),
+	 decode(wtl_run_status,'C','Completed','R','Running','E','Error','F','Failed','Unknown') "Status",
+        to_char(wtl_started,'YYYYMMDD HH24:MI') ,
+        to_char(wtl_completed,'YYYYMMDD HH24:MI') ,
+        lpad(wtl_elapsed_hh,2,'0')||':'||lpad(wtl_elapsed_mi,2,'0'),
+	 lpad(wtl_info_count,4,' '),
+        lpad(wtl_warning_count,4,' '),
+        lpad(wtl_detail_count,4,' ')
+	 from ws_wrk_task_log
+        where wtl_job_key =
+            ( select max(wjl_job_key) from ws_wrk_job_log where upper(wjl_name) = upper('${1}'))
+        and wtl_sequence = ( select max(wa_sequence) from
+                                 ws_wrk_audit_log where upper(wa_job) = upper('${1}'))
+order by 3,4  ;
+exit;
+EOW
+
+echo "">>${TMP_FILE}
+echo "*** Detail report for ${1} ">>${TMP_FILE}
+echo "">>${TMP_FILE}
+#
+# Get the messages for the specific job
+#
+echo "Msg Time       Task name           Status Message and Database message">>${TMP_FILE}
+sqlplus -s <<EOW2| grep -v "rows selected." | grep -v "^$" | tr -d "\015" >>${TMP_FILE}
+$DSS_USER/$DSS_PWD
+set sqlprompt "";
+set heading off;
+set pagesize 0
+set linesize 1024
+set trimspool on
+set tab off
+set echo off;
+select  to_char(wa_time_stamp,'YYYYMMDD HH24:MI') ,
+rpad(substr(wa_task,1,24),24,' '),
+wa_status,
+rtrim(wa_message),rtrim(wa_db_msg_desc)
+from ws_wrk_audit_log
+where wa_job = '${1}'
+and wa_sequence = ( select max(wa_sequence) from
+                                 ws_wrk_audit_log where wa_job = '${1}')
+order by wa_time_stamp, wa_job, wa_task;
+
+exit;
+EOW2
+
+mailx -s "${2}" ${3} <${TMP_FILE}
+ret_code=$?
+if [ ${ret_code} -ne 0 ]
+then
+    echo "-2"
+    echo "Mail message send FAILED with status ${ret_code} for job $1"
+else
+    echo "1"
+    echo "Mail message sent for job $1"
+fi
+
+exit
+_TEMPLATE_ Unix_Mon_Db_Mail
+#!/bin/sh
+# ============================================================================
+# Script Name 	:	monitor_db_mail.sh
+# Description 	:	mail a database problem to a specified user
+# Author 		:	WhereScape Limited
+# Date		: 	Version 1.0.0  03/10/2002
+# =============================================================================
+# Notes / History
+#
+# Positional parameters:
+# 1 = Message
+# 2 = Mail Users
+#
+# The variables $DSS_USER and $DSS_PWD are set up in the environment file
+# as part of the scheduler setup process
+# ============================================================================
+
+TMP_FILE="/tmp/monitor_db_mail.log"
+
+echo "">${TMP_FILE}
+echo "${1}">>${TMP_FILE}
+echo "">>${TMP_FILE}
+echo "">>${TMP_FILE}
+echo "*** Attempting database connect ">>${TMP_FILE}
+echo "">>${TMP_FILE}
+#
+# Test database access
+#
+sqlplus -s <<EOW | grep -v "rows selected.$" | grep -v "^$" | tr -d "\015" >>${TMP_FILE}
+$DSS_USER/$DSS_PWD
+set sqlprompt "";
+set heading off;
+set pagesize 0
+set linesize 256
+set trimspool on
+set echo off;
+select sysdate from dual;
+exit;
+EOW
+
+
+mailx -s "${1}" ${2} <${TMP_FILE}
+ret_code=$?
+if [ ${ret_code} -ne 0 ]
+then
+    echo "-2"
+    echo "Mail message send FAILED with status ${ret_code} for database notify"
+else
+    echo "1"
+    echo "Mail message sent for database notify"
+fi
+
+exit
+
+_TEMPLATE_ Unix_Mon_Page
+#!/bin/sh
+# ============================================================================
+# Script Name 	:	monitor_page.sh
+# Description 	:	send a message to a pager
+# Author 		:	WhereScape Limited
+# Date		: 	Version 1.0.0  03/10/2002
+# =============================================================================
+# Notes / History
+#
+# Positional parameters:
+# 1 = pager number
+# 2 = message for the pager
+#
+# The first returned line contains the result code 1=okay, -2 = error
+# The second returned line contains a message
+#
+# The variables $DSS_USER and $DSS_PWD are set up in the environment file
+# as part of the scheduler setup process
+#
+# The pager command is an example only. Software will need to exist on
+# the unix host to perform this functionality
+# ============================================================================
+#
+pager page $1 $2 >/tmp/ws_mon_page.log 2>&1
+ret_code=$?
+if [ ${ret_code} -ne 0 ]
+then
+    echo "-2"
+    echo "Error sending code $2 to pager $1"
+else
+    echo "1"
+    echo "Message code $2 sent to pager $1"
+fi
+exit
+
+

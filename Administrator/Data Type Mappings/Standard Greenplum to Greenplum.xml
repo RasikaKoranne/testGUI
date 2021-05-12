@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data_type_mapping_set name="Standard Greenplum to Greenplum" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd">
+
+  <mapping_set_description>Standard Other to Greenplum data type mapping.
+Please do not edit this standard mapping file as any changes will be overwritten on upgrades.
+See the user guide for information on how to create custom mapping files.</mapping_set_description>
+
+  <mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+
+  <data_type_mapping match_data_type="float" output_data_type="float"/>
+
+  <data_type_mapping match_data_type="float4" output_data_type="real"/>
+
+  <data_type_mapping match_data_type="float8" output_data_type="double precision"/>
+
+  <data_type_mapping match_data_type="int8" output_data_type="bigint"/>
+
+  <data_type_mapping match_data_type="int4" output_data_type="integer"/>
+
+  <data_type_mapping match_data_type="int2" output_data_type="smallint"/>
+
+  <data_type_mapping match_data_type="int" output_data_type="integer"/>
+
+  <data_type_mapping match_data_type="numeric" output_data_type="numeric(%precision)">
+    <match_parameters>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="numeric" output_data_type="numeric(%precision,%scale)"/>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="varchar(%precision)"/>
+
+  <data_type_mapping match_data_type="char" output_data_type="char(%precision)"/>
+
+  <data_type_mapping match_data_type="bpchar" output_data_type="character(%precision)"/>
+
+  <data_type_mapping match_data_type="text" output_data_type="text"/>
+
+  <data_type_mapping match_data_type="money" output_data_type="money"/>
+
+  <data_type_mapping match_data_type="date" output_data_type="date"/>
+
+  <data_type_mapping match_data_type="time" output_data_type="time"/>
+
+  <data_type_mapping match_data_type="bit" output_data_type="bit"/>
+
+  <data_type_mapping match_data_type="varbit" output_data_type="bit varying">
+    <match_parameters>
+      <match_precision>0</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="varbit" output_data_type="bit varying(%precision)"/>
+
+  <data_type_mapping match_data_type="bool" output_data_type="boolean"/>
+
+  <data_type_mapping match_data_type="timestamptz" output_data_type="timestamp(%scale) with time zone">
+    <match_parameters>
+      <match_scale>1-*</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="timestamptz" output_data_type="timestamp with time zone"/>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="timestamp(%scale)">
+    <match_parameters>
+      <match_scale>1-*</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="timestamp"/>
+
+  <data_type_mapping match_data_type="timetz" output_data_type="time(%scale) with time zone">
+    <match_parameters>
+      <match_scale>1-*</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="timetz" output_data_type="time with time zone"/>
+
+  <data_type_mapping match_data_type="time" output_data_type="time(%scale) with time zone">
+    <match_parameters>
+      <match_scale>1-*</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="time" output_data_type="time with time zone"/>
+
+  <data_type_mapping match_data_type="box" output_data_type="box"/>
+
+  <data_type_mapping match_data_type="bytea" output_data_type="bytea"/>
+
+  <data_type_mapping match_data_type="cidr" output_data_type="cidr"/>
+
+  <data_type_mapping match_data_type="circle" output_data_type="circle"/>
+
+  <data_type_mapping match_data_type="inet" output_data_type="inet"/>
+
+  <data_type_mapping match_data_type="line" output_data_type="line"/>
+
+  <data_type_mapping match_data_type="lseg" output_data_type="lseg"/>
+
+  <data_type_mapping match_data_type="macaddr" output_data_type="macaddr"/>
+
+  <data_type_mapping match_data_type="path" output_data_type="path"/>
+
+  <data_type_mapping match_data_type="point" output_data_type="point"/>
+
+  <data_type_mapping match_data_type="polygon" output_data_type="polygon"/>
+
+</data_type_mapping_set>

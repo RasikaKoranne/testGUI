@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Procedures and Scripts" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Procedure Editing</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Procedure Editing</h2>
+            <p class="BodyText"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> includes a procedure editor which allows the maintenance of the various procedures, functions and packages within the data warehouse. The editor is invoked by double-clicking on a procedure name in the left pane or by right-clicking on the procedure name and selecting <b>Edit the Procedure</b>.</p>
+            <p class="BodyText">This section  discuss some of the features of the procedure editor&#160;which includes the following:</p>
+            <ul>
+                <li>SQL syntax highlighting</li>
+                <li>	improved find feature (repeated find, up and down, etc.)</li>
+                <li>	toggle the display of line numbering</li>
+                <li>	a status bar that includes line number, line length, selected text length, etc.</li>
+                <li>	a context sensitive toolbar</li>
+                <li>	tab to space conversion and vice versa</li>
+                <li>	uppercase, lowercase, titlecase text conversion command</li>
+                <li>	increase/decrease test indent command</li>
+                <li>	bookmark support</li>
+            </ul>
+            <p class="BodyText">A procedure can be compiled by selecting the <b>Tools &gt; Compile Procedures</b> menu option. Refer to <a href="Procedure Compilation.htm">Procedure Compilation</a> for details.<br /><br />In the following sections reference is made to a selected block of text. A selected block of text is a normal windows selection where the text in question is highlighted. Normally achieved by holding down the left mouse button and moving the cursor.</p>
+            <p class="SubHeading1"><b>Indenting code</b>
+            </p>
+            <p class="BodyText">The <b>Tab</b> character inserts four spaces into the text. A <b>Shift+Tab</b> removes four spaces.&#160; </p>
+            <p class="SubHeading1"><b>Cut, Copy, Paste and Delete</b>
+            </p>
+            <p class="BodyText">The normal Windows cut, copy, paste and delete functions are available either through the toolbar or via the right mouse pop-up menu.</p>
+            <p class="SubHeading1"><b>Indenting a block of text</b>
+            </p>
+            <p class="BodyText">A selected block of text can be indented by four spaces by depressing the <b>Tab</b> character. Each tab will indent by a further four spaces. A <b>Shift+Tab</b> removes four spaces from the front of each line in the selected block.</p>
+            <p class="SubHeading1"><b>Commenting out a block of text</b>
+            </p>
+            <p class="BodyText">A selected block of text can be turned into a comment by right-clicking and selecting <b>Comment</b>. The editor places two dashes '--' at the front of each line in the selected block. In the same way a block of text can be uncommented by choosing the <b>Uncomment</b> option. </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"> Only lines that start with two dashes in the left most column can be uncommented.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="SubHeading1"><b>Inserting Steps</b>
+            </p>
+            <p class="BodyText">The right-click menu option <b>Insert Step</b> inserts a code line of the format 'v_step := 1000;'. Each subsequent insert adds 100 to the step value. The <b>Alt+Z</b> key combination can also be used to insert a step line.&#160; </p>
+            <p class="BodyText">The v_step variable is used in the event of an unhandled exception. In such a case, the current v_step value is reported, and it may be possible to ascertain the code that failed based on the value of this v_step variable.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If a step is inserted via this method, then the step numbering automatically resets for all steps numbering from 100 in increments of 100 when the procedure is compiled or saved.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p data-mc-conditions="Outputs.Only Teradata User Manual"><b>Inserting Audit and Detail Messages</b>
+            </p>
+            <p data-mc-conditions="Outputs.Only Teradata User Manual">The Alt/A key can be used to insert an extra audit message to be written to the audit log while the procedure is running. The default message can be changed as appropriate. The inserted code is:</p>
+            <p data-mc-conditions="Outputs.Only Teradata User Manual">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Procedure Editing_Teradata.png" data-mc-conditions="Outputs.Only Teradata User Manual" />
+            </p>
+            <p data-mc-conditions="Outputs.Only Teradata User Manual">The Alt/D key can be used to insert an extra detail (or error) message to be written to the detail log while the procedure is running. The default message can be changed as appropriate. The inserted code is:</p>
+            <p data-mc-conditions="Outputs.Only Teradata User Manual">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Procedure Editing_Teradata1.png" data-mc-conditions="Outputs.Only Teradata User Manual" />
+            </p>
+            <p class="SubHeading1"><b>Viewing other procedural code</b>
+            </p>
+            <p class="BodyText">During the editing process it is possible to pop up a window containing other procedural code. This window allows cut and paste operations. In such a way it can be used as a work area or as a source of code. Select the <b>Tools &gt; View Procedure or Template</b> menu option to bring the viewer window up. A dialog will appear as follows:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Procedure Editing.png" />
+            </p>
+            <p class="BodyText">There are a number of drop-down list boxes to choose from. Once an item is selected, the viewer loads the code and moves to the right side of the edit window. The various options are:</p>
+            <ul>
+                <li>Version: A previously saved version of this procedure. The description and time are shown.</li>
+                <li>Procedure: Some other procedure stored within the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata.</li>
+                <li>Template: A template procedure as defined in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata.</li>
+                <li>Compiled procedure: One of the currently compiled procedures existing in the database.</li>
+            </ul>
+            <p class="BodyText">Once an item is chosen, the viewer appears on the right side of the editor window. The viewer or the main editor window can receive the focus by clicking the mouse within the appropriate window. </p>
+            <p class="BodyText">Code can be cut from one window and pasted into the other. Any changes made in the viewer window cannot be saved. An example of an active view window is as follows:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Procedure Editing_1_1037x693.png" style="width: 1037;height: 693;" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><b>Editing, deleting or compiling Locked for Edit or opened procedures/scripts</b>
+                            <ul>
+                                <li style="color: #d7454b;">Procedures or scripts cannot be deleted if they are Locked for Edit by any user, checked out by another user or if there is another object that has the same associated procedures or scripts. </li>
+                                <li style="color: #d7454b;">Saving or Compiling in the procedure or script edit window cannot be performed if the procedures or scripts become Locked for Edit by other users after the edit window has been opened.</li>
+                                <li style="color: #d7454b;">Procedures or scripts cannot be deleted or modified after the editor window has been opened, unless the Edit Lock has been released. Edit Locks can be released by any user in the Script or Procedure Properties screen.</li>
+                                <li style="color: #d7454b;">To prevent updates, deletes and modifications to certain procedures or scripts, it is best to use the Check Out functionality instead. For more information about this functionality, refer to <a href="../Objects and Windows/Object Check-Outs and Check-Ins.htm">Object Check Outs and Check Ins</a> for details.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Integrating WhereScare RED into existing Warehouse|Integrating" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Integrating, Questions</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>Integrating, Questions</h3>
+            <p class="BodyText">When a table within the data warehouse schema, that is unknown to <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>, is dropped onto a table target the following dialog appears.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Integrating_existing Warehouse/Integrating Selecting a Table.png" />
+            </p>
+            <p class="BodyText">If this is an integrate then click <b>Yes</b> to proceed with the integrate process. The standard <b>New Object</b> dialog appears and it would be advisable to leave the name of the object unchanged so that it matches the existing table.</p>
+            <p class="BodyText">A dialog asks if the bulk of the columns in this table are derived from another table. If they are enter the table from which these columns derive at this stage. The purpose of this dialog is simply to set the <b>Source Table</b> field against each of the columns for the table.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Integrating_existing Warehouse/Integrating_Questions.png" />
+            </p>
+            <h4>Artificial Key definition</h4>
+            <p class="BodyText">If the table target is a dimension or fact table then the following dialog appears to enable the definition of any artificial or surrogate key. If no such key exists then simply proceed to the next question.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Integrating_existing Warehouse/Artificial Key Definition.png" />
+            </p>
+            <h4 data-mc-conditions="Outputs.Only for RED User Guide">Get Key Function</h4>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">If the target table is a dimension you will be asked if you want to generate a get key function. The get key function is used by <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> for rapid prototyping. It returns the artificial key when passed the business key. Although this function is possibly not necessary in the existing environment it is useful if the dimension is to be used in any expansion of the data warehouse. If an existing get key type function exists, then this can be used, although changes will probably need to be made to the generated procedures to utilize this existing get key function.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1" data-mc-conditions="Outputs.Only for RED User Guide">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader" data-mc-conditions="Outputs.Only for RED User Guide"> The <b>Get Key</b> function is not available for dimension objects that are stored in custom database targets. </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 data-mc-conditions="Outputs.Only for RED User Guide">Update Procedure</h4>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">If the target table is a dimension, stage, fact or aggregate a dialog box will ask if an update procedure or update template is required. If selected a subsequent dialog will define the structure and content of this procedure. If an existing procedure is to be modified to include the scheduler imposed procedure standards it is best to select this option and use the existing procedure name to cut down on the amount of work required. The existing procedure can then be loaded into the generated procedure using the procedure editor.</p>
+            <h4 data-mc-conditions="Outputs.Only for RED User Guide">Artificial Key Sequence</h4>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">If a get key function or update procedure is to be built and an artificial key is in use for the table then a dialog will prompt for the artificial key sequence. A drop-down list provides all the sequences defined for this database user. This sequence is an Oracle sequence that is used in the automatic generation of the artificial key. If no such sequence is used then select the *** no sequence *** option.</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">
+                <img src="../../Images/UserGuide_Images/Integrating_existing Warehouse/Artificial Key Sequence.gif" />
+            </p>
+            <h4 data-mc-conditions="Outputs.Only for RED User Guide">Update Procedure Definition</h4>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">If an update procedure was selected then the following dialog will display to help define how the update procedure is generated.</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">
+                <img src="../../Images/UserGuide_Images/Integrating_existing Warehouse/Update Procedure Definition.png" />
+            </p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">As defined in this dialog box the scheduler needs specific parameters in order to control and run a procedure. An existing procedure will not have these parameters. There are basically two forms of generated procedure. The first option is to generate a procedure that looks much like a standard <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> procedure and then manually insert the changes from the existing procedure. The second option is to generate a wrapper procedure that calls the existing procedure. This second option will still require manual changes to the procedure to return a valid return code and message.</p>
+            <h4>Business Key definition</h4>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">If a get key or update procedure has been selected a dialog will now prompt for the selection of the business key from the table. Multiple columns may constitute the business key, but they must uniquely identify each record in the table.</p>
+            <h4>Index definition</h4>
+            <p class="BodyText">Any indexes associated with the table will now be automatically defined and loaded into the metadata. Changes may need to be made in terms of when the indexes are dropped and to set the <b>Drop Before Update</b> checkbox if appropriate and the scheduler is to be used to manage these indexes.</p>
+            <h4>Procedure creation</h4>
+            <p class="BodyText">If defined the get key and update procedures will now be generated. They will need to be manually edited and compiled. Refer to <a href="Integrating Procedures.htm">Integrating procedures</a> for details.</p>
+            <p class="BodyText">&#160;</p>
+            <p id="linespace" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+            <hr width="100%" size="0" align="center" data-mc-conditions="Outputs.Exclude_In_Print" />
+            <p id="spacing" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+        </div>
+    </body>
+</html>

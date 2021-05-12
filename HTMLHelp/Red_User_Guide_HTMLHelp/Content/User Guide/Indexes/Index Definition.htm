@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Indexes" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Index Definition</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Index Definition</h2>
+            <p class="BodyText">Right-clicking a table in the left pane and selecting <b>Display Indexes </b>from the context menu lists the indexes for the table in the middle pane. Alternatively, you can double-click the Index object type in the left pane, to display all indexes in the repository or a specific group or project.</p>
+            <p class="BodyText">In the middle pane, right-click an index and the following options are displayed:</p>
+            <ul>
+                <li>Properties</li>
+                <li>Create Index</li>
+                <li>Drop Index</li>
+                <li>Delete Metadata and Drop Index</li>
+                <li>Create via Scheduler</li>
+                <li>Projects</li>
+                <li>Build</li>
+            </ul>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Indexes/Index Definition.png" />
+            </p>
+            <h3>Properties</h3>
+            <p class="BodyText">The <b>Properties</b> screen (see example below) can be selected via the right-click context menu when positioned on an index name in the middle pane. The Update Buttons: <b>Update &lt;-</b> and <b>Update -&gt;</b> are used to move to the previous and next index respectively. The Update Buttons are not available when browsing all indexes in a group, project or repository.</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide"><b>SQL Server </b>example:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Indexes/SQL Server example.png">
+                </img>
+            </p>
+            <p class="ListBullet_1" data-mc-conditions="Outputs.Only for RED User Guide"><b>Oracle</b> example:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Indexes/SQL Server example_1.png" data-mc-conditions="Outputs.Only for RED User Guide">
+                </img>
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ul>
+                                <li style="color: #d7454b;">
+                       Oracle 11g allows Indexes to be marked as<b> invisible</b>. 
+                        </li>
+                                <li style="color: #d7454b;"><b>Invisible Indexes </b>are maintained like any other index but they are ignored by the optimizer, unless the OPTIMIZER_USE_INVISIBLE_INDEXES parameter is set to true at the instance or the session level. The default of this option is not set.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ListBullet_1" data-mc-conditions="Outputs.Only for RED User Guide">IBM <b>DB2</b> example:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Indexes/IBM DB2 example.png" data-mc-conditions="Outputs.Only for RED User Guide">
+                </img>
+            </p>
+            <p class="BodyText">The fields in the <b>General</b> section are described below:</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1">
+                </col>
+                <col class="TableStyle-tablestyle-Column-Column2">
+                </col>
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">
+                        Field
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">
+                        Description
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Index Name
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Typically the table short name followed by:
+                        <ul><li><b>_idx_0</b> indicating primary key</li><li><b>_idx_n</b> where n = any number from 1 indicating dimensional keys</li><li><b>_idx_x</b> where x = any letter a thru z indicating business keys.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Index Description
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       Free flow description of the index.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1" data-mc-conditions="">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Active
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <ul>
+                                <li>When enabled means the index is in use.</li>
+                                <li>When disabled means the index is not managed by the scheduler.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Business Key
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Denotes a business key.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Artificial Key
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+When enabled indicates that this is the surrogate (artificial) key generated by the system.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Unique
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       
+Specifies that the index is a unique index.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If both <b>unique and artificial</b> are set it is assumed to be a primary key constraint and it is added as such.
+</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Index Type
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Database-specific type of index
+On <b>SQL Server</b> the options are:
+                        <ul><li>Nonclustered Index</li><li>Clustered Index</li><li>ColumnStore Index available for SQL2012</li></ul>
+On <b>Oracle</b> the options are:
+                        <ul><li>B-Tree Index</li><li>Bitmap Index</li><li>Function-based Index</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1" data-mc-conditions="">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Index Columns
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><![CDATA[
+]]><MadCap:conditionalText data-mc-conditions="Outputs.Only for RED User Guide">Shows the columns in the order they will be applied to the index. The order can be changed using the up/down buttons at the left.
+</MadCap:conditionalText> <![CDATA[                  ]]></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Non-Key (Include) Columns
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Extend a Non-clustered Index to include Non-Key columns in addition to the key columns.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Index Filter Predicate
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+A filtered index is an optimized Non-clustered index, which uses a filter predicate to 
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Enable Parallel Build Degree
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Activates parallel creation /build of the index. For unsupported database versions (Pre SQL2005) leave disabled.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Additional Index Create Options
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Database-specific-and-compliant options to include in the generated CREATE INDEX statement.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1" data-mc-conditions="Outputs.Only for RED User Guide">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+Compute Statistics
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1"><b>For Oracle</b>. When enabled, RED automatically collects statistics during index creation and rebuild. NOTE: Deprecated since 10g (but supported for backwards compatibility) as now statistics are always collected during index creation and rebuild.
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">The fields in the <b>Storage</b> section are described below:</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1">
+                </col>
+                <col class="TableStyle-tablestyle-Column-Column2">
+                </col>
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">
+                       Field
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">
+                        Description
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Filegroup/Tablespace
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Default Filegroup/Tablespace of the index that determines the storage location it is created. Select (Default) to use the default.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Initial Extent (KB)
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For Oracle</b>. Size of the first extent allocated to the index when it is created. The default value of 0 will instead use the value from the Tablespace in which the index is stored.
+                    </td>
+                    </tr>
+                    <tr style="height: 25pt;" class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Next Extent (KB)
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For Oracle</b>. Size of the next extent allocated to the index, unless Percent Increase is specified.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Minimum Extents
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For Oracle</b>. Number of extents to allocate when the index is created. The default value of 0 will instead use the value from the Tablespace in which the index is stored.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Maximum Extents
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For Oracle</b>. Total number of extents that can be allocated to the index. The default value of 0 will instead use the value from the Tablespace in which the index is stored.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Percent Increase
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For Oracle</b>. Percent by which the third and subsequent grow over the preceding extent. The default value of 0 will instead use the value from the Tablespace in which the index is stored.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Percent Free
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For Oracle</b>. Percentage [0-99] of space in each data block of the index to reserve for future updates. The default value of 0 will instead use the value from the Tablespace in which the index is stored.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Buffer Pool
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For Oracle</b>. Default buffer pool used to cache the data blocks of the index.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Compress
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Compress index to reduce disk and memory use. For unsupported database versions (Pre SQL2008) select (Not Defined).
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Enable Fill Factor
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Setting this will enable setting of the Fill Factor. For unsupported database versions (Pre SQL2005) leave disabled.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Sort In tempdb
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+Use the tempdb to store the intermediate sort results that are used to build the index, which may reduce the index build time if tempdb is on different disks to the index.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Enable Percent Free
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For DB2. </b>Setting this will enable setting of the Percent Free to something other than the Database defaults.
+                    </td>
+                    </tr>
+                    <tr style="height: 19pt;" class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Percent Free
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For DB2. </b>The amount of free space to leave in each extent/page of the index.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Enable Level2 Percent Free
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For DB2. </b>Setting this will enable setting of the Level2 Percent Free to something other than the Database defaults.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Level2 Percent Free
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For DB2. </b>The amount of free space in each index level 2 page.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+Enable Minimum Percent Used
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>For DB2. </b>Setting this will enable setting of the Minimum Percent Used to something other than the Database defaults.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+Minimum Percent Used
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1"><b>For DB2. </b>The threshold of the minimum percentage of space used on an index leaf page.
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">The fields in the <b>Scheduler</b> section are described below:</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-tablestyle-Column-Column1">
+                </col>
+                <col class="TableStyle-tablestyle-Column-Column2">
+                </col>
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">
+                       Field
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">
+                        Description
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Drop Index before Table Update
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Drop the index before running the table update procedure and recreate the index after the update procedure has completed.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+                        Index Rebuild Frequency
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                       Optional frequency that the index is automatically rebuilt by the Scheduler.
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">Indexes are normally managed by the scheduler as part of the normal processing of a table.</p>
+            <p data-mc-conditions="Outputs.Only for RED User Guide">Refer to <a href="../Callable Routines/Ws_Maintain_Indexes.htm">Ws_Maintain_Indexes</a>. This function allows the control of index drop and creation from within a procedure. Typically, this function is called when using partitioned tables.</p>
+            <p>&#160;</p>
+            <h3>Extended Properties</h3>
+            <p>Extended property variables can be set for index objects. An extended property's scope is defined by object type but the value for the variable can be set for the table and each index independently. Refer to <a href="../Extended Properties/Creating an Extended Property Definition.htm">Creating an Extended Property Definition</a> for details.</p>
+            <p>Automatically created indexes are recreated each time the table's procedure is rebuilt. Therefore, the values set for extended properties in automatically created indexes are lost when they are recreated. Manually created indexes and their extended properties are persisted.</p>
+            <p>Similar to the extended properties defined for tables and connections, extended properties defined in indexes can be accessed from templates, including create index DDL, drop index DDL and update procedure/script.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

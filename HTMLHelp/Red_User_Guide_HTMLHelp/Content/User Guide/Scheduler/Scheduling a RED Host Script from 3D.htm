@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Scheduler |Scheduler Options" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Scheduling a RED Host Script from 3D</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Scheduling a RED Host Script from 3D</h2>
+            <p class="BodyText">Create the RED host script in 3D. Use Ctrl-C to copy the script.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script.png" />
+            </p>
+            <p class="BodyText">In RED, create a host script by right-clicking on the <b>Host Script</b> object group and choosing <b>New Object</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_1.png" />
+            </p>
+            <p class="BodyText">Enter a name for the host script and click <b>ADD</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_2.png" />
+            </p>
+            <p class="BodyText">Set the default connection to Windows and click <b>OK</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_3.png" />
+            </p>
+            <p class="BodyText">Double-click the 3d host script in the left pane.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_4.png" />
+            </p>
+            <p class="BodyText">Now paste the script from 3D and click <b>Save</b>; then close the host script window. </p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_5.png" />
+            </p>
+            <p class="BodyText">Go to <b>Control Panel &gt; Administrative Tools &gt; Services</b> and right-click on the relevant service name. Choose <b>Properties</b> and then the <b>Log On</b> tab. Change the scheduler to run as the current user. Click <b>Apply</b> and then <b>OK</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_6.png" />
+            </p>
+            <p class="BodyText">Stop and start the scheduler and then close the <b>Services</b> window.</p>
+            <p class="BodyText">Click <b>Scheduler Maintenance</b> in WhereScape Administrator; right-click the scheduler and choose <b>Configure</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_7.png" />
+            </p>
+            <p class="BodyText">Set the <b>Service logged on under User</b> field to the current user. Click <b>OK</b> and close WhereScape Administrator.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_8.png" />
+            </p>
+            <p class="BodyText">In RED, click the <b>Scheduler</b> tab and create a new job. Click <b>OK</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_9.png" />
+            </p>
+            <p class="BodyText">Select the host script to be run and click <b>OK</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Scheduler/Scheduling a RED Host Script_10.png" />
+            </p>
+            <p class="BodyText">Run the job.</p>
+        </div>
+    </body>
+</html>

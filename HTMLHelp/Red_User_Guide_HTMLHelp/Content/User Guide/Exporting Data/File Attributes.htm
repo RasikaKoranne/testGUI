@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Exporting Data" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>File Attributes</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">File Attributes</h2>
+            <p class="BodyText">The following fields are available to define the location, name and contents of the exported data file:</p>
+            <p class="BodyText"><b>SQL Server </b>File Attributes example screen:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Exporting Data/File Attributes.png" />
+            </p>
+            <p class="BodyText"><b>Greenplum </b>File Attributes example screen:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Exporting Data/Greenplum File Attributes.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Export Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Method of exporting data from the table. The available options are dependent on the Destination connection that can be specified via the Properties page.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Destination Connection</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Destination to the file system to which data will be exported. The destination connection can be specified on the Properties screen.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Export File Definition</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Export File Path</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The full path (absolute path) of the folder/directory where the File is to be created on the Windows or UNIX/Linux system.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Export File Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name of the Export File to which the data will be exported. The variable $SEQUENCE$ can be used to provide a unique sequence number for the export file. Also the data/file components YYYY, MM, HH, MI, SS can be used when enclosed with the $ character.For example an export file name might be budget_$YYYYMMDD$.txt which would result in a file name like budget_20150520.txt.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Export Routine</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database-specific routine to use to export the data.<table style="width: 100%;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/Install_Images/RED_SQLserver.png" /></td><td>In SQL Server this is BCP or isql. In later versions of SQL Server this is BCP or sqlcmd.</td></tr><tr><td><img src="../../Images/Install_Images/RED_oracleapp.png" /></td><td> For Oracle this is SQL*Plus.</td></tr><tr><td><img src="../../Images/Install_Images/RED_DB2icon.png" /></td><td>For DB2 the supported export routine is EXPORT.</td></tr><tr><td><img src="../../Images/UserGuide_Images/Exporting Data/Building an Export Object.png"></img></td><td>For Greenplum, the supported export routine is COPY.</td></tr><tr><td><img src="../../Images/UserGuide_Images/Exporting Data/Export File Name_3.png" /></td><td> For PDW, the supported export routine is sqlcmd.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Use Temp Table</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <table style="width: 100%;">
+                                <col style="width: 120px;" />
+                                <col />
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/UserGuide_Images/Exporting Data/Building an Export Object.png">
+                                            </img>
+                                        </td>
+                                        <td>This option is only available for <b>Greenplum</b> and is enabled by default. Ticking this check-box creates a temporary table to export the data into. The temporary table is then deleted once the data has been exported.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Export Format</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <p>Routine-specific format to use to export the data.</p>
+                            <table style="width: 100%;">
+                                <col style="width: 120px;" />
+                                <col />
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/Install_Images/RED_SQLserver.png" /> <img src="../../Images/Install_Images/RED_oracleapp.png" /></td>
+                                        <td> This is the format of the data in the export file and is either Delimited Text or Width Fixed Text in Oracle and SQL Server.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/Install_Images/RED_DB2icon.png" />
+                                        </td>
+                                        <td>In DB2, the supported formats are DEL (delimited), WSF (worksheet format) and IXF(intergrated exchange format).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/UserGuide_Images/Exporting Data/Building an Export Object.png">
+                                            </img>
+                                        </td>
+                                        <td>In Greenplum, the supported formats are Text and CSV.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Export File Delimiter</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Character that separates the fields within each record of the Export File for Delimited formats. The delimiter identifies the end of which field. Common field delimiters are tab, comma, colon, semi-colon, pipe. To enter a special character enter the uppercase string CHAR with the ASCII value in brackets (e.g. CHAR(9) ). This is only available if the Export Format is Delimited Text.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Optionally Enclosed by</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Character that brackets text fields within each record of the Export File for Delimited formats. A common example is ". This is only available if the Export Format is Delimited Text.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Header Row in Export</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If a header line is required, choose business names or column names from this drop-down list. This option is not available in DB2.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Export Options</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Allows the entry of export utility options. If more than one option is required, then a semi-colon should be used between options. This option is not available in DB2.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Export Modifier</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                            <table style="width: 100%;">
+                                <col style="width: 120px;" />
+                                <col />
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/Install_Images/RED_DB2icon.png" />
+                                        </td>
+                                        <td>DB2 only. This allows the entry of EXPORT modifiers in DB2.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Trigger File</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trigger file</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If a trigger file is specified then this file is created after the export file. It will normally contain a row count and a check sum.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trigger Path</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The purpose of the trigger file is to indicate that the export to the main file has completed and that it is now safe to load the file. Secondly the trigger file may contain control sums to validate the contents of the main load file. This field should contain the full path name to the directory in which a trigger file is to be generated on the destination system.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trigger Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Refers to the name of the file that is to be created as a trigger file. A trigger file typically contains check sums (row count or the sum of a numeric column). The variable $SEQUENCE$ can be used to provide a unique sequence number for the trigger file. Also the data/file components YYYY, MM, HH, MI, SS can be used when enclosed with the $ character. For example a trigger file name might be budget_$YYYYMMDD$.txt which would result in a file name like budget_20150520.txt.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trigger Delimiter</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Multiple fields in the trigger file are to be separated by the trigger delimiter.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Trigger Parameter 1,2,3</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                            <p>The checksums to be put in the trigger file. One of the row count and the sum of any numeric fields in the source data.</p>
+                            <table style="width: 100%;">
+                                <col style="width: 120px;" />
+                                <col />
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <img src="../../Images/Install_Images/RED_SQLserver.png" /> <img src="../../Images/Install_Images/RED_oracleapp.png" /> <img src="../../Images/Install_Images/RED_DB2icon.png" /> <img src="../../Images/UserGuide_Images/Exporting Data/Export File Name_3.png" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Compress After Export</b><![CDATA[
+]]></td>
+                                        <td>Check this box if you want to compress the export file after it has been created.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Compress Utility Path</b>
+                                        </td>
+                                        <td>The directory in which the compress utility exists.
+</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Compress Utility Name</b>
+                                        </td>
+                                        <td>The name of the compression utility executable.
+</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Compress Parameters</b>
+                                        </td>
+                                        <td>The name of the file to be compressed (using the WhereScape RED variable $EXPFILE$) and any commands or switches required to make the compression utility work. These parameters will depend on the compression utility used.
+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>File Actions</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">File Action 1, 2, 3</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                            <table style="width: 100%;">
+                                <col style="width: 120px;" />
+                                <col />
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/UserGuide_Images/Exporting Data/Building an Export Object.png">
+                                            </img>
+                                        </td>
+                                        <td>File Actions are only available for Greenplum. Use these fields to enter any command lines to run after the export such as copying files to another machine or deleting files.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">&#160;</p>
+        </div>
+    </body>
+</html>

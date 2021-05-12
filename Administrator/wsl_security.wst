@@ -1,0 +1,141 @@
+-- ============================================================================
+-- DBMS Name     :      Oracle
+-- Script Name   :      ws_set_predicate
+-- Description   :      Returns the where clause to be appended to the select
+-- Author        :      WhereScape
+-- Date          :      August 2002
+-- ============================================================================
+-- Notes / History
+-- KH 26/08/2002  Version 1.0.0
+
+CREATE or REPLACE FUNCTION Ws_Set_Predicate (
+    p_object_schema        all_objects.owner%TYPE
+  , p_object_name          all_objects.object_name%TYPE )
+  RETURN varchar2
+  IS
+
+    --====================================================
+    -- Variables
+    --====================================================
+    v_predicate       varchar2(2000);
+    v_user            varchar2(64);
+    v_owner           varchar2(64);
+    v_access          varchar2(1);
+    v_pol_key         integer;
+    v_row_count       integer;
+    v_stmt_count      integer;
+
+    --====================================================
+    -- cursor to fetch statements
+    -- Get all spt_statement from ws_sec_pol_table
+    -- for the table where the user is
+    -- active for the same policy
+    --====================================================
+    CURSOR c_get_pol_line IS
+    SELECT ws_sec_pol_table.spt_statement st
+    FROM ws_sec_pol_table, ws_sec_pol_user
+    WHERE UPPER(spt_table) = p_object_name
+    AND spt_pol_key = spu_pol_key
+    AND UPPER(spu_user) = v_user;
+
+
+BEGIN
+    --====================================================
+    -- Define the Function owner.
+    -- Note: the line below is replaced with the owner
+    --       name when the function is compiled
+    --====================================================
+    v_owner := 'XXXX';
+
+
+    --================================================
+    -- Get the user name
+    -- If owner of function provide full access
+    --================================================
+    v_user := SYS_CONTEXT('userenv','session_user');
+	  IF upper(v_user) = upper(v_owner) THEN
+       v_predicate := NULL;
+       return v_predicate;
+    END IF;
+
+    v_predicate := NULL;
+    v_row_count := 0;
+    v_stmt_count := 0;
+
+    --================================================
+    -- Loop through all the policies for this
+    -- user on this table and 'AND' them in
+    --================================================
+    FOR v_Pol IN c_get_pol_line LOOP
+
+      v_row_count := v_row_count + 1;
+
+      IF v_Pol.st is NOT NULL THEN
+          v_stmt_count := v_stmt_count + 1;
+          IF v_stmt_count > 1
+          THEN
+              IF length(v_predicate || ' AND ' || v_Pol.st) < 2000 THEN
+                  v_predicate := v_predicate || ' AND ' || v_Pol.st;
+              END IF;
+          ELSE
+              v_predicate := v_Pol.st;
+          END IF;
+
+      END IF;
+
+    END LOOP;
+
+    --================================================
+    -- If no match the use the default action
+    -- They may not have a blank predicate if a
+    -- table had no constraining clause
+    --================================================
+    IF v_stmt_count = 0
+    THEN
+        BEGIN
+            --================================================
+            -- Get default access for this table
+            --================================================
+            SELECT NVL(MAX(spt_default_access_ind),'N')
+            INTO v_access
+            FROM ws_sec_pol_table
+            WHERE UPPER(spt_table) = p_object_name;
+
+        EXCEPTION
+            --================================================
+            -- Any error (i.e. no security table then default
+            -- to no access )
+            --================================================
+            WHEN OTHERS THEN
+                v_predicate := '1 = 3';
+                return v_predicate;
+        END;
+
+        --================================================
+        -- If Full access then no predicate else a lockout
+        --================================================
+        IF v_access = 'F'
+        THEN v_predicate := NULL;
+        ELSE v_predicate := '1 = 2';
+        END IF;
+    ELSE
+        --================================================
+        -- Check to see if a full access predicate (1=1)
+        --================================================
+        IF rtrim(v_predicate) = '1=1' THEN
+            v_predicate := NULL;
+        END IF;
+    END IF;
+
+    RETURN v_predicate;
+
+--================================================
+-- On Unhandled exception lock the table out
+--================================================
+EXCEPTION
+    WHEN OTHERS THEN
+        v_predicate := '1 = 4';
+        RETURN v_predicate;
+END ws_set_predicate;
+
+

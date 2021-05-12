@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Connections|Connection Types" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>UNIX</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">UNIX</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1"><b>UNIX/Linux</b> connections are only supported from<b> Oracle,</b><b>DB2 </b>and<b> Greenplum </b>data warehouses.<br /><br />If the <b>UNIX/Linux</b> connection returns a blank screen or an error message in the <b>Results</b> pane after the connection is browsed, take necessary action through the<b> Server (SSH) </b>tab next to the main Builder and Scheduler tabs. <img src="../../Images/UserGuide_Images/Connections/UNIX.png" /> This tab is displayed after browsing the UNIX connection.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>This topic describes in greater detail the connection Properties as they apply to <b>UNIX</b> connections. From a UNIX connection you can only do flat file loads.<br /></p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/Connection Types_1.png" /> <b>Sample Oracle UNIX connection screen</b></p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/UNIX_1.png" />
+            </p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/Connection Types_2.png">
+                </img><b> Sample DB2 UNIX connection screen</b>
+            </p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/Sample DB2 UNIX connection.png" />
+            </p>
+            <h4 class="SpecialBold_1">General</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name used to label the connection within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> RED.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Connection Type</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Indicates the connection source type or the connection method, such as Database, ODBC, Windows, Unix.
+ Select the <b>UNIX</b> connection type.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="SpecialBold_1">Unix/Linux Host</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">UNIX/Linux Host Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">IP address or host name that identifies the UNIX machine.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Script Shell</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Path to the POSIX-compliant UNIX/Linux shell to use for generated scripts. For <b>UNIX</b> hosts, set to<b> /bin/ksh</b>. For <b>Linux</b> hosts set to <b>/bin/sh</b>.
+                        
+        <p>If this field is left blank, a default will be chosen based on the name of the connection and the type of database used for the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata repository.</p></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Loader Host Identification</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">IP Address or host name(s) that identifies the Loader/ Multiple hosts can be entered with using a comma (,) to delimit.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Work Directory</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Windows directory used by WhereScape RED to create temporary files for minimal logged extracts. The directory must exist and allow write access. There must be a different work directory for each WhereScape RED Scheduler running on the same machine to avoid file conflicts. Typically C:\Temp or a sub-directory of C:\Temp is used.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database Identifier (e.g. Oracle SID or TNS Name, Teradata TDPID) or Database Name (e.g. as in DB2 or SQL Server).
+    <![CDATA[                        ]]><table style="width: 100%;margin-left: 0;margin-right: auto;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/UserGuide_Images/Connections/Connection Types_1.png" /></td><td> For UNIX/Linux exports and loads, if the ORACLE_SID environment variable is set in your UNIX/Linux environment, this will be the variable used. If this environment variable is not set then the value from the UNIX/Linux connection object will be used.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database Server/Home Directory</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><![CDATA[
+                                                ]]>Optional to specify the Database Home Directory if it is different from the standard home directory.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Protocol</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+       Telnet or Secure Shell (SSH) protocol to use to connect to the UNIX/Linux machine. For SSH, the <b>Secure Shell (SSH) Command</b> property is enabled to specify how to connect.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Secure Shell (SSH) Command</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Command to execute to connect to a UNIX/Linux machine using the Secure Shell (SSH) protocol such as <b>C:\Program Files(x86)\PuTTY\plink.exe -ssh $HOST$ -l $USER$ -pw $PASSWORD$</b></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Pre-Login Action, Login Prompt, Password Prompt, Post-Login Action, and Command Prompt.</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">These fields are only used to create a Telnet connection to the host machine. WhereScape RED uses the Telnet connection in the drag and drop functionality. <br />They are <b> not used in the actual production running of the Data Warehouse, </b>and is only necessary if you wish to use the drag and drop functionality.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Pre-Login Action
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Response or command to send BEFORE logging in to the UNIX/Linux machine. Typically this is NOT necessary but it can be used to indicate that the UNIX/Linux Login Prompt is preceded by a line-feed (\n). However it is preferable that the UNIX/Linux login displays the Login Prompt without anything preceding it. [Optional]
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Login Prompt</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        The UNIX login prompt, or the tail end of the login prompt, e.g. <b>ogin as:</b>.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Password Prompt</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+       The UNIX password prompt, or the tail end of the password prompt, e.g. <b>ssword:</b>.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Post-Login Action</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        
+                        Not often used but may be necessary to respond to a login question. It is preferable that the UNIX login goes straight to the command prompt.
+                    
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Command Prompt</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+        Enter the UNIX/Linux command prompt, or the tail end of that prompt, typically <b>&gt;</b>.
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">To ascertain some of the above fields, you have to log in to the UNIX system.</td></tr></tbody></table></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="SpecialBold_1">Credentials</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">UNIX/Linux User ID
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">User Account to login to the UNIX/Linux Host.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">UNIX/Linux User Password</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Password to login to the UNIX/Linux Host.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">DSS User ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database user to connect to the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata repository.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">DSS User Password</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Database password to connect to the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata repository.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="SpecialBold_1">Other</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Path for Browsing</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        Optional default Path for browser pane filter. When a path has been selected in this field, it becomes the initial point for browsing and it is also expanded on open in the right hand browser pane.
+    <![CDATA[                     
+                    ]]></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Load Type</b> for new Load tables created using this connection as a source. Select the desired default load type from the list, e.g. <b> Database Link Load, Script based load, Integration Services Load</b> or <b>Externally Loaded</b>.
+                        
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"> 
+        The available options in this drop-down list is configured from Tools &gt; Options &gt; <a href="../Default Settings/Available Load Types.htm">Available Load Types</a>.
+    </td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Script Template</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Script Template</b> to use when a <b>Script based load</b> type is defined for a Load table object that is <b>sourced</b> from this connection.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Data Type Mapping Set</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+       XML files have been created to store mappings from one set of data types to another. Setting this field to <b>(Default)</b> will cause RED to automatically select the relevant mapping set; otherwise you can choose one of the standard mapping sets from the drop-down list or create a new one.
+    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="SpecialBold_1">To validate the fields</h4>
+            <ul>
+                <li>Right-click on the connection name</li>
+                <li>Select <b>Telnet window </b></li>
+            </ul>
+            <h4 class="SpecialBold_1">To test the drag and drop functionality</h4>
+            <ul>
+                <li>From the menu strip select <b>Browse</b> <b> &gt; </b> <b>Source Tables</b></li>
+                <li>Drill down to the area required</li>
+                <li>Drag an item to the middle pane, (having first selected the object in the left pane).</li>
+            </ul>
+            <h4 class="SpecialBold_1">Connection Failures</h4>
+            <p>In the event that a telnet connection cannot be established to the UNIX host, the following message normally appears in the results pane, after approximately 30 seconds </p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/To validate the fields.png">
+                </img>
+            </p>
+            <p>Attempt the connection again and using the <b>Window</b> menu option select the <b>Telnet</b> window. This displays the login session and should provide an insight as to why the connection is not being completed.</p>
+            <p>If the situation cannot be resolved, a telnet trace can be acquired. Select the <b>Tools &gt; Options </b>menu option and click on the <b>Trace all Unix sessions </b>check box. Then try to do the connection or browse again. A log file called WslMedTelnet.log is created in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> program directory. Edit the log file and ensure there are no passwords visible and then contact <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> support using the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> forum at <span class="mc-variable WS_Branding.website variable">www.wherescape.com</span>.</p>
+            <h4>Closing the Connection
+        </h4>
+            <p>To close the collection, right-click in the browser pane and select <b>Close UNIX/LINUX session</b>:</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/Closing the Connection_280x436.png" style="width: 280;height: 436;" class="img_1" />
+            </p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

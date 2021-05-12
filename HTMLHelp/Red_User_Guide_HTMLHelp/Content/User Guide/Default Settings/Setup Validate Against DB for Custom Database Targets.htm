@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Default Settings|Settings - Options" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Setup Validate Against DB for Custom Database Targets</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h1 class="Heading2">Setup Validate against DB for Custom Database Targets</h1>
+            <p>&#160;</p>
+            <p>The new Validate Against DB functionality works in the following stages:</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');width: 500px;" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 183px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 298px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 223px;" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">
+                       Stage </th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1">Operations</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Configuration </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Validate                   </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                            <ol>
+                                <li value="1">Create the expected table, under a different name, based on the metadata.</li>
+                                <li value="2">Fetch information about the expected and actual tables.</li>
+                                <li value="3">Compare the actual and expected information.</li>
+                            </ol>
+                        </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <p>Table/column information SQL Block Procedure.</p>
+                            <p>Configure on the Connection.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Alter
+</td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1">
+                            <ol>
+                                <li value="1">Generate a SQL Block procedure using a template.</li>
+                                <li value="2">Execute                    the SQL Block.</li>
+                            </ol>
+                        </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                            <p>Alter DDL Template.</p>
+                            <p>Configured the Table.</p>
+                            <p>Default is configured on the connection. </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Create DDL</h3>
+            <p>Validate or Create the Create DDL  for the table using <code>$OBJECT$</code>,&#160;<code>$TABLE$</code> or&#160;<code>[TABLEOWNER</code>&#160;<code>[.table_name</code> to refer to the name of the table. </p>
+            <p>Before the Create DDL is executed to create a temporary table, validate it to ensure it contains the unique temporary table name. Otherwise, the user is warned and given the chance to continue and the validation for application deployment is skipped. </p>
+            <h3>Table/Column information SQL Block</h3>
+            <p>These are some of the characteristics that this procedure needs to be created:</p>
+            <ul>
+                <li>This procedure is configured on the target connection.</li>
+                <li>It must be a SQL Block type procedure. </li>
+                <li>It must contain exactly two separated statements by the configured end-of the statement string. (&lt;EOS&gt;, by default).</li>
+                <li>Each statement must return one result set.</li>
+                <li>Each result set must contain the specified columns below in the correct order.</li>
+                <li>The data types shown below are the maximum sizes to be processed. </li>
+                <li>Additional information is returned in triples of extra columns at the end of the result set. This additional information is compared during validation and is provided to the template used to generate alter DDL.</li>
+            </ul>
+            <h4>Statement 1 - Table information</h4>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');width: 500px;" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 183px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 298px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 223px;" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Columm</th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1">Type</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">1                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">catalog</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">2</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)<![CDATA[                    ]]></td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">schema</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">3
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)<![CDATA[                    ]]></td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">table name</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">4 + (<i>i</i> * 3)</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">additional information key</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">5 + (<i>i</i> * 3)</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">additional information description</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">6 + (<i>i</i> * 3)</td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1">VARCHAR(128)</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">additional information value</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Where <i>i</i> ranges from 0 to the number of additional information keys are exclusive.</p>
+            <h4>Statement 2 - Column information</h4>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');width: 704px;" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 183px;">
+                </col>
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 298px;">
+                </col>
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 223px;">
+                </col>
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Columm</th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1">Type</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">1                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">catalog</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">2</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">schema</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">3
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">table name</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">4</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">INTEGER</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">ordinal position</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">5</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">column name</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">6</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">data type</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">7 + (<i>i</i> * 3)</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(128)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">additional information key</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">8 + (<i>i</i> * 3)</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">VARCHAR(4000)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">additional information description</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">9+ (<i>i</i> * 3)</td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1">VARCHAR(128)</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">additional information value</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Where <i>i</i> ranges from 0 to the number of additional information keys are exclusive.</p>
+            <p>&#160;</p>
+            <p>The following example uses the standard <code>information_schema</code> views. It is also the default if nothing is configured</p>
+            <div class="codeSnippet"><a class="codeSnippetCopyButton" role="button" href="javascript:void(0);">Copy</a>
+                <div style="mc-code-lang: Java;" class="codeSnippetBody" data-mc-continue="False" data-mc-line-number-start="1" data-mc-use-line-numbers="False"><pre><code>SELECT table_catalog<span style="color: #000000; ">,</span> table_schema<span style="color: #000000; ">,</span> table_name<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FROM information_schema<span style="color: #000000; ">.</span>tables<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;WHERE <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span>table_catalog<span style="color: #000000; ">)</span> = <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span><span style="color: #df5000; ">'$DATABASE$'</span><span style="color: #000000; ">)</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AND <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span>table_schema<span style="color: #000000; ">)</span> = <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span><span style="color: #df5000; ">'$SCHEMA$'</span><span style="color: #000000; ">)</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AND <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span>table_name<span style="color: #000000; ">)</span> = <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span><span style="color: #df5000; ">'$TABLE$'</span><span style="color: #000000; ">)</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;ORDER BY table_catalog<span style="color: #000000; ">,</span> table_schema<span style="color: #000000; ">,</span> table_name<br /><span style="color: #000000; ">&lt;</span>EOS<span style="color: #000000; ">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;SELECT table_catalog<span style="color: #000000; ">,</span> table_schema<span style="color: #000000; ">,</span> table_name<span style="color: #000000; ">,</span> ordinal_position<span style="color: #000000; ">,</span> column_name<span style="color: #000000; ">,</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #795da3; ">CONCAT</span><span style="color: #000000; ">(</span>data_type<span style="color: #000000; ">,</span> CASE WHEN <span style="color: #795da3; ">COALESCE</span><span style="color: #000000; ">(</span>character_maximum_length<span style="color: #000000; ">,</span> numeric_precision<span style="color: #000000; ">,</span> datetime_precision<span style="color: #000000; ">)</span> IS NOT NULL<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;THEN <span style="color: #795da3; ">CONCAT</span><span style="color: #000000; ">(</span><span style="color: #df5000; ">'('</span><span style="color: #000000; ">,</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #795da3; ">CONCAT</span><span style="color: #000000; ">(</span><span style="color: #795da3; ">CAST</span><span style="color: #000000; ">(</span><span style="color: #795da3; ">COALESCE</span><span style="color: #000000; ">(</span>character_maximum_length<span style="color: #000000; ">,</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numeric_precision<span style="color: #000000; ">,</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;datetime_precision<span style="color: #000000; ">)</span> AS <span style="color: #795da3; ">VARCHAR</span><span style="color: #000000; ">(</span><span style="color: #008080; ">20</span><span style="color: #000000; ">)),</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #795da3; ">CONCAT</span><span style="color: #000000; ">(</span>CASE WHEN numeric_scale IS NOT NULL<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;THEN <span style="color: #795da3; ">CONCAT</span><span style="color: #000000; ">(</span><span style="color: #df5000; ">', '</span><span style="color: #000000; ">,</span> <span style="color: #795da3; ">CAST</span><span style="color: #000000; ">(</span>numeric_scale AS <span style="color: #795da3; ">VARCHAR</span><span style="color: #000000; ">(</span><span style="color: #008080; ">20</span><span style="color: #000000; ">)))</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ELSE <span style="color: #df5000; ">''</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;END<span style="color: #000000; ">,</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #df5000; ">')'</span><span style="color: #000000; ">)))</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ELSE <span style="color: #df5000; ">''</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;END<span style="color: #000000; ">)</span> data_type<span style="color: #000000; ">,</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #df5000; ">'COLUMN_DEFAULT'</span><span style="color: #000000; ">,</span> <span style="color: #df5000; ">'Default Value'</span><span style="color: #000000; ">,</span> column_default<span style="color: #000000; ">,</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #df5000; ">'NULLABLE'</span><span style="color: #000000; ">,</span> <span style="color: #df5000; ">'Nullable'</span><span style="color: #000000; ">,</span> is_nullable<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FROM information_schema<span style="color: #000000; ">.</span>columns<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;WHERE <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span>table_catalog<span style="color: #000000; ">)</span> = <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span><span style="color: #df5000; ">'$DATABASE$'</span><span style="color: #000000; ">)</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AND <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span>table_schema<span style="color: #000000; ">)</span> = <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span><span style="color: #df5000; ">'$SCHEMA$'</span><span style="color: #000000; ">)</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AND <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span>table_name<span style="color: #000000; ">)</span> = <span style="color: #795da3; ">UPPER</span><span style="color: #000000; ">(</span><span style="color: #df5000; ">'$TABLE$'</span><span style="color: #000000; ">)</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;ORDER BY table_catalog<span style="color: #000000; ">,</span> table_schema<span style="color: #000000; ">,</span> table_name<span style="color: #000000; ">,</span> ordinal_position</code></pre>
+                </div>
+            </div>
+            <h4>Alter DDL Template</h4>
+            <ul>
+                <li>This is a template that is configured on each table.</li>
+                <li>The default for new tables is taken from the default template configured on the target connection.</li>
+                <li>It has to be a DDL type template.</li>
+                <li>The result of the template is interpreted as a sequence of SQL Blocks separated by two newlines.<ul><li>Each SQL Block is executed independently; the failure of one does not prevent the execution of the following.</li><li>Within each SQL Block there can be multiple statements separated by "&lt;EOS&gt;" or the configured separator.<ul><li>A failure of a statement within an SQL Block does prevent the execution of the following statements in that block.</li></ul></li><li>The usual variables are available, e.g. table, options, env.</li></ul></li>
+            </ul>
+            <p>In addition, the following variables are available:</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');width: 704px;" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 183px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 298px;" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Variable</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;"><code>changes</code>
+                        </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">An array of objects describing the ways in which the actual table is different to the expected table. Each element has type Change.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" style="font-weight: normal;"><code>actualTable</code>
+                        </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">	An object containing the table/column information obtained for the actual table. Has type TableInformation.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <h5>Change object type</h5>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');width: 704px;" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 183px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 298px;" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Field</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;"><code>changeType</code>
+                        </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">One of the enum values in Types. ChangeType; determines the type of the object under data.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" style="font-weight: normal;"><code>data</code>
+                        </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">An object containing the details of the specific change; the type depends on the value of changeType.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

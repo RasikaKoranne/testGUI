@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Importing a Data Model</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div role="main" id="mc-main-content">
+            <h2>Importing a Data Model</h2>
+            <p class="p_2"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> provides functionality for importing data models from modeling tools.</p>
+            <p class="p_2">The process to import a model is:</p>
+            <ol>
+                <li value="1">Create the physical data model in the modeling tool.</li>
+                <li value="2">Generate DDL for the physical model in the modeling tool.</li>
+                <li value="3">Run the DDL in the data warehouse database to create empty versions of the model tables.</li>
+                <li value="4">Retrofit the tables in the dummy database into the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata as Retro objects.</li>
+                <li value="5">Convert the Retro objects to Dimensions and Facts.</li>
+            </ol>
+            <p>The following instructions outline steps 4 and 5 above:</p>
+            <ol>
+                <li class="li_2" value="1">Right-click the <b>Retro object group</b> in the object tree in the left pane and select <b>Select Source Tables</b>.<p><img src="../../Images/UserGuide_Images/Retrofitting/import_data_model1.png" /></p></li>
+                <li value="2">The <b>Retrofit tables</b> dialog is displayed. In the <b>Source Connection</b> drop-down list choose the <b>DataWarehouse</b> connection. A list of <b>databases</b> appears in the left pane (your list will be different).<p><img src="../../Images/UserGuide_Images/Retrofitting/import_data_model2.png" /></p></li>
+                <li value="3">Double-click the data warehouse database/schema in the left pane list. A list of <b>tables </b>in the database is displayed in the middle pane.<p><img src="../../Images/UserGuide_Images/Retrofitting/import_data_model3.png" /></p></li>
+                <li value="4">Click the required tables in the middle pane list and click <b>&gt;</b> to move them to the right pane. Then click the <b>Add Ancillary Columns (e.g. dss_update_time)</b> check box. Click <b>OK</b>.<p><img src="../../Images/UserGuide_Images/Retrofitting/import_data_model4.png" /></p></li>
+            </ol>
+            <ol data-mc-continue="true">
+                <li value="5">Double-click the <b>Retro object group</b> in the object tree in the left pane. Select all objects in the middle pane, right-click and select <b>Convert to Target Object</b>.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"> If the appropriate Target Object Type has not been set for one or more Retro objects; in the right click menu select <b style="color: #d7454b;">Change Target Object Type</b> and select the correct Object Type.</td></tr></tbody></table><p><img src="../../Images/UserGuide_Images/Retrofitting/import_data_model5.png" /></p></li>
+                <li value="6">The new aggregate tables are imported and listed in the <b>Aggregate</b> object group in the left pane.<p><img src="../../Images/UserGuide_Images/Retrofitting/import_data_model6.png" /></p></li>
+                <li value="7">At this stage, you have only created the table metadata. To create the tables in the data warehouse, double click the object group in the left pane. In the middle pane highlight the tables, then right-click and select <b>Create (ReCreate)</b>.</li>
+            </ol>
+            <br />&#160;</div>
+    </body>
+</html>

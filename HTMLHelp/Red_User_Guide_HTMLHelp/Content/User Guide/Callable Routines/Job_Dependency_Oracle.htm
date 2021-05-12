@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Callable Routines|Ws_Job_Dependency" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Oracle</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Oracle</h3>
+            <p><b>Oracle Parameters:</b> Ws_Job_Dependency</p>
+            <p><b>Callable Routine Type:</b> FUNCTION.</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col style="width: 150px;" class="TableStyle-tablestyle-Column-Column2" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">
+                        Parameter Name
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1">
+                        Datatype
+                    </th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">
+                        Mode
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_sequence
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        NUMBER
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_job_name
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        VARCHAR2
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_task_name
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        VARCHAR2
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_job_id
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        NUMBER
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_task_id
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        NUMBER
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_action
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        VARCHAR2
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_parent
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        VARCHAR2
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_child
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        VARCHAR2
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_required
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        VARCHAR2
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_look_back
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        NUMBER
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_max_wait
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        NUMBER
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        IN
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_return_code
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        VARCHAR2
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        OUT
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        p_return_msg
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">
+                        VARCHAR2
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        OUT
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+                        FUNCTION Return Value
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1">
+                        NUMBER
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        OUT-Function
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-weight: bold;">Oracle Examples: Ws_Job_Dependency</p>
+            <p>
+                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                    <col />
+                    <tbody>
+                        <tr class="TableStyle-code-Body-Body1">
+                            <td class="TableStyle-code-BodyA--Body1">
+                                <p class="PlainText">-- The p_ VARIABLES are normally PARAMETERS in a RED-generated Procedure.</p>
+                                <p class="PlainText">p_sequence number;</p>
+                                <p class="PlainText">p_job_name varchar2(256);</p>
+                                <p class="PlainText">p_task_name varchar2(256);</p>
+                                <p class="PlainText">p_job_id number;</p>
+                                <p class="PlainText">p_task_id number;</p>
+                                <p class="PlainText">p_return_msg varchar2(256);</p>
+                                <p class="PlainText">p_status number;</p>
+                                <p class="PlainText">v_result_num number;</p>
+                                <p class="PlainText">v_return_code varchar2(1);</p>
+                                <p class="PlainText">v_return_msg varchar2(256);</p>
+                                <p class="PlainText">v_result_num := Ws_Job_Dependency</p>
+                                <p class="PlainText">( p_sequence, p_job_name, p_task_name, p_job_id, p_task_id</p>
+                                <p class="PlainText">, 'ADD', 'Daily Run', 'Daily Run Part2', 'Y', 60, 60</p>
+                                <p class="PlainText">, v_return_code</p>
+                                <p class="PlainText">, v_return_msg</p>
+                                <p class="PlainText">);</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+        </div>
+    </body>
+</html>

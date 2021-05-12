@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Altering Metadata" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Validating Tables</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Validating Tables</h2>
+            <p class="BodyText">The metadata as stored and maintained by <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> does not necessarily reflect the actual tables and procedures in use in the data warehouse. For example, if a new column is added to the metadata for a table, then that change is not automatically made in the actual physical table residing in the data warehouse. Likewise, if a column is deleted from the metadata, then that column may still exist in the physical database table.</p>
+            <p class="BodyText">This situation may be particularly apparent after an application patch or upgrade. The menu option<b> Validate &gt; Validate Table Create Status</b>, and the right-click menu options in either the left or middle panes all provide a means of comparing the metadata to the physical tables in the database. A table, range of tables or all tables can be chosen. Each chosen table is a table in the metadata, and it is compared against the physical database table, if it exists.</p>
+            <p class="BodyText">The following example is the output from a validation.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Altering Metadata/Validating Tables.png" />
+            </p>
+            <p data-mc-conditions="Outputs.Only Teradata User Manual">In this example, we see five different scenarios.</p>
+            <ol data-mc-conditions="Outputs.Only Teradata User Manual">
+                <li value="1">The metadata for table <b>load_customer</b> matches the physical table in the database.</li>
+                <li value="2">The metadata for the table <b>model_forecast</b> does not match the physical table. The metadata has an additional column called 'product_line'. This column was not found in the physical table. The table can be altered if desired. See the next section on Altering Tables.</li>
+                <li value="3">The physical database table <b>model_customer</b> has an additional column not found in the metadata. The column is 'address'. The table can be altered if desired. See the next section on Altering Tables.</li>
+                <li value="4">The table <b>stage_customer</b> has the same columns in both the metadata and the physical table, but the column order is different. This is probably not an issue for most tables, but may be a problem for some type of load tables, where the column order is important. This could be the result of a previous alter of the table. The table must be re-created if the order is important.</li>
+                <li value="5">The table <b>load_state</b> is defined in the metadata but has not been physically created in the database. The table can be created in the normal manner.</li>
+            </ol>
+            <h3>Using outdated metadata in drag and drop</h3>
+            <p class="BodyText">When dragging from a data warehouse table to create another data warehouse table (e.g. Load table to create Dimension table) a check is made to ensure that the metadata matches the database table. </p>
+            <p class="BodyText">If the two are found to be out of sync, the following message  appears:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Altering Metadata/Validating Tables_1.png" />
+            </p>
+            <p class="BodyText">If a subsequent validate of the table in question shows that it validates, this message means that the dates are somehow out of sync. This can occur for example, after an import where the metadata has been replaced, but the underlying table still matches the metadata. Another common occurrence is where a new column is added and then deleted. To prevent the message from reoccurring in such a situation, proceed as follows. </p>
+            <p class="BodyText">Use the right-click menu and select <b>Alter Table </b>when positioned on the table name in the validate results screen (event though the table validates OK). The metadata update time is set back to that of the last database table create.</p>
+            <p class="BodyText">&#160;</p>
+        </div>
+    </body>
+</html>

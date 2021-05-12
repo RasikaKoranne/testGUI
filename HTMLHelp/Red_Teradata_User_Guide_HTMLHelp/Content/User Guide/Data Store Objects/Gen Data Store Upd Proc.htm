@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Data Store Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Generating the Data Store Update Procedure</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Generating the Data Store Update Procedure</h2>
+            <p>Once a Data Store object has been defined in the metadata and created in the database, an update procedure can be generated to handle the joining of any tables and the update of the Data Store object.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ul>
+                                <li style="color: #d7454b;">You can also generate an update procedure via a template, refer to <a href="../Table Properties/Rebuilding Update Procedures.htm">Rebuilding Update Procedures</a> for details.
+</li>
+                                <li style="color: #d7454b;">If the Data Store object is created in a custom database target, then an additional processing option is available—PowerShell script-based processing. Refer to <a href="../Templates/Script Temp Custom Dbase Tbl Objs.htm">Script Templates for Custom Database Table Objects</a> for details.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="SpecialBold_1">Generating a Procedure</h3>
+            <p>To generate a procedure:</p>
+            <ol>
+                <li value="1">Right-click the Data Store object in the left pane and select <b>Properties</b>. </li>
+                <li value="2">Click the <b>Rebuild</b> button to start the process of generating the new procedure.</li>
+                <li value="3">A series of options are presented.</li>
+            </ol>
+            <h4 class="Heading4">Processing Tab</h4>
+            <p>
+                <img src="../../Images/UserGuide_Images/Data Store Objects/Generating the Data Store.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Template</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Enables you to generate update procedures via a <a href="../Table Properties/Rebuilding Update Procedures.htm">template</a>. </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Business Key Columns</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        
+                        Columns that define the business key for update processing. This is required for include Update options. 
+                        <ul><li>Clicking on the ellipsis button will bring up the <b>Business Key</b> selection screen. 
+                        </li><li>A business key can be made up of multiple columns, but it must provide a unique identifier. Where multiple columns separately uniquely identify rows in the Data Store object, choose one to act as the primary business key. </li></ul>                       For example, a source table may have a unique constraint on both a product code and a product description. Therefore, the description as well as the code must be unique. 
+                       <br />It is of course possible to combine the two columns, but the normal practice would be to choose the code as the business key.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0"><col class="TableStyle-tip-Column-Column1" /><thead><tr class="TableStyle-tip-Head-Header1"><th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th></tr></thead><tbody><tr class="TableStyle-tip-Body-Body1"><td class="TableStyle-tip-BodyA-Column1-Body1"><ul><li>Use the column name ascending/descending buttons to sort column names. To revert to the meta column order, click on the meta column order button.</li><li><b> NULL Values </b>- none of the columns chosen as the business key should ever contain a NULL value. See the note at the start of the Dimensions chapter. </li></ul></td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Parameters</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <p>Any parameters selected are included in the generated update procedure as variables. The procedure will include code to retrieve the value of the parameter at run time and store it in the declared variable. </p>
+                            <p>Clicking on the ellipsis button opens the <b>Parameters</b> selection screen.<br /></p>
+                            <p>The variables can also be used in column transformations and in the from/where clause for the update procedure. Some databases have a 30 character limit for variable names. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> ensures the variables added for any parameters are less than 30 characters long by creating variable names in the form v_ followed by the first 28 characters of the parameter name.<br />For example, a parameter called MINIMUM_ORDER_NUMBER_SINCE_LAST_SOURCE_LOAD will be available as the variable v_MINIMUM_ORDER_NUMBER_SINCE_L.</p>
+                            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                                <col class="TableStyle-tip-Column-Column1" />
+                                <thead>
+                                    <tr class="TableStyle-tip-Head-Header1">
+                                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-tip-Body-Body1">
+                                        <td class="TableStyle-tip-BodyA-Column1-Body1">
+                                            <ul>
+                                                <li><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> parameters should be unique within the first 28 characters to avoid conflicting variables names.</li>
+                                                <li>If the desired parameter doesn't exist in the metadata yet, a new parameter can be added by clicking on the <b>Add New</b> button on the bottom leftmost corner of the Select Parameters dialog. </li>
+                                                <li>Refer to <a href="../Parameters.htm">Parameters</a> for more information.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Enable Parallel DML </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><b>Oracle Only</b>. Adds all the code required to the update procedure to enable Oracle parallel inserts. Default for this option is not set.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Initial Load Insert</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Adds an additional insert statement to the update procedure that runs if the target Data Store is empty. The benefit of this is improved performance inserting into an empty table without performing any checks to see if rows already exist. The default for this field is off (i.e. an initial insert statement is not added to the procedure).
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Process by Batch</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Allows users to select a column to drive data processing in a loop based on the distinct ordered values of the selected columns. The update procedure loops on this column and performs the delete, update and/or insert for each value. If the column chosen is a date datatype (date, datetime or timestamp), then the user is able to specify yearly, monthly, daily or column level looping. The default for this field is off (do not do batch processing).
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Delete Before Insert</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Allows selection of how to process deletes. It enables a delete statement to be added to the update procedure before any update or insert statement. This is a particularly useful option for purging old data and for updates based on a source system batch number. If this option is selected, the following options are also available:
+                        <ul><li><b>Truncate Option</b> – Optional <b>Oracle</b> TRUNCATE clause which is appended to the truncate statement. Add a truncate option such as REUSE/DROP STORAGE by typing it in the truncate options box.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Issue Warning if a Delete occurs</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This option sets the procedure to a warning state if any deletes occur.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Delete Where Clause</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The delete where clause is appended to the generated delete statement to constrain the rows deleted.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Process Method</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Select between Insert/Update and Merge which enables you to use the Merge statement instead of two separate Insert and update statements.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Table Locking</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Teradata only.<br />Enables a locking request modifier to be specified for each source table. The specified locking request modifier is applied to each source table during generated update procedures. By default this is set to 'ACCESS' which locks each row being accessed, a blank entry will result in no locking clause in the generated procedure.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Insert Statement</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Includes the insert statement in the procedure to insert new rows in the Data Store.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert Hint </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       Enter a database hint to be used in the INSERT statement. This is an Oracle and SQL Server only option. Defaults can be configured in <b>Tools &gt;</b> <b>Options &gt; Default Update Procedure Options</b>.
+                        <table style="width: 100%;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/Install_Images/RED_SQLserver.png" /></td><td>Default is TABLOCK.
+</td></tr><tr><td><img src="../../Images/Install_Images/RED_oracleapp.png" /></td><td>Default is APPEND.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Insert New Rows Only</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Uses change detection to work out what rows require inserting.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Row Identification Method</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Method used to identify that records in source are not currently recorded in the target table.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Existing Data Selection Hint</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database-compliant hint to be used for the existing data select statement.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Update Statement</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Includes an update statement in the procedure to update changing rows in the Data Store. If this option is chosen, then the Update Changed rows only option is available.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Include Hint</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       Enter a database hint to be used in the INCLUDE statement. This is an Oracle and SQL Server only option. Defaults can be configured in <b>Tools &gt;</b> <b>Options &gt; Default Update Procedure Options</b>.
+                        <table style="width: 100%;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/Install_Images/RED_SQLserver.png" /></td><td>Default is TABLOCK.
+</td></tr><tr><td><img src="../../Images/Install_Images/RED_oracleapp.png" /></td><td>Default is APPEND.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Update Changed Rows Only</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Uses change detection to work out what rows require updating. Choosing this option, enables the <b>Change Row identification Method</b>.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Change Row Identification Method</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Method used to identify that records in source have changed from what is currently recorded in the target table.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Existing Data Selection Hint</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database-compliant hint to be used for the existing data select statement.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Merge Hint</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                       Enter a database hint to be used in the MERGE statement. This is an Oracle and SQL Server only option. Defaults can be configured in <b>Tools &gt; Options &gt; Default Update Procedure Options</b>.
+                        <table style="width: 100%;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/Install_Images/RED_SQLserver.png" /></td><td>Default is TABLOCK.
+</td></tr><tr><td><img src="../../Images/Install_Images/RED_oracleapp.png" /></td><td>Default is APPEND.</td></tr></tbody></table></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="Heading4">Source Tab</h4>
+            <p>
+                <img src="../../Images/UserGuide_Images/Data Store Objects/Source tab_842x520.png" style="width: 842;height: 520;" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Distinct Data Select</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Ensures duplicate rows are not added to the Data Store. This is achieved by the word DISTINCT being added to the source select in the update procedure. The default for this field is not set.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Select Hint</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field is only available when one of these two conditions is met: Oracle code generation and Template code generation.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Join</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The From clause, including Source Join information.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Where Clause</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"> The Where clause.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Group By</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">The Group By clause.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Simple Join</h5>
+            <p>A simple join only returns rows where data is matched in both tables. So for example if table A has 100 rows and table B has a subset of 24 rows. If all the rows in table B can be joined to table A then 24 rows will be returned. The other 76 rows from table A will not be returned.</p>
+            <h5>Outer Join</h5>
+            <p>The outer join returns all rows in the master table regardless of whether or not they are found in the second table. So if the example above was executed with table A as the master table then 100 rows would be returned. 76 of those rows would have null values for the table B columns.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ul>
+                                <li style="color: #d7454b;">When <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> builds up an outer join, it needs to know which table is the master table, and which is subordinate. Select the join column from the master table first. In the example screen above the table 'load_order_header' has had its column chosen and the column for the table 'load_order_line' is currently being chosen. This will result in the 'load_order_header' table being defined as the master, as per the example statement above. The results of this example select are that a row will be added containing order information regardless of whether or not a corresponding load_order_line entry exists.</li>
+                                <li style="color: #d7454b;">When upgrading from a <span class="mc-variable WS_Branding.Product variable">RED</span> version previous to 6.8.2.0 and moving existing objects to a target location, all procedures that reference those objects will need to be rebuilt. <br />Any <b>FROM</b> clauses will also need to be manually regenerated in order for the table references to be updated to the new [TABLEOWNER] form.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Building and Compiling the Procedure</h3>
+            <ul>
+                <li>Once the relevant options are completed, click <b>OK</b>. The procedure is built and compiled. </li>
+                <li>If the compile fails, an error is displayed along with the first few lines of error messages. </li>
+                <li>Compile fails typically occur when the physical creation of the table was not done. If the compile fails for some other reason, the best approach is to use the procedure editor to edit and compile the procedure. </li>
+                <li>The procedure editor highlights all the errors within the context of the procedure.</li>
+                <li>Once the procedure has been successfully compiled, it can either be executed interactively or passed to the scheduler.</li>
+            </ul>
+            <h2>Indexes</h2>
+            <p>By default, a number of indexes is created to support each Data Store object. </p>
+            <p>These indexes are added, once the procedure has been built. An example of the type of indexes created is as follows:</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Data Store Objects/Source tab_1.png" />
+            </p>
+            <p>Additional indexes can be added, or these indexes changed. Refer to <a href="../Indexes/Indexes.htm">Indexes</a> for details.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

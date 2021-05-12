@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>UI Configurations</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h1>UI Configurations</h1>
+            <p>UI Configurations allow the user to define the fields available on certain configurable UI’s. RED stores any data captured in these fields and treats it like any other object metadata, making it available to all automation aspects of the tool.</p>
+            <h2>Configurable UI’s</h2>
+            <ul>
+                <li>
+                    <h6>Connection Properties</h6>
+                </li>
+                <p>Allows configuration of fields on the Connection Properties page, set and used in creating an <a href="../Connections/Extensible Source Connections.htm">Extensible Source Connection</a>.</p>
+                <li>
+                    <h6>Load Table Properties</h6>
+                </li>
+                <p>Allows configuration of fields on the Source page of Load Table Properties, used as the UI Configuration when sourcing from an <a href="../Connections/Extensible Source Connections.htm">Extensible Source Connection</a> where this configuration is set.</p>
+                <li>
+                    <h6>Column Properties</h6>
+                </li>
+                <p>Allows configuration of fields on the Column Properties page, set on a <a href="../Connections/Connection Target Settings.htm#Column">Target Connection</a> and applied for any table residing on that Connection’s Targets.</p>
+            </ul>
+            <h2><a name="top"></a>Configurations Maintenance</h2>
+            <p>&#160;</p>
+            <p>The UI Configurations actions are located under the Tools menu. The UI Configurations menu action items are:</p>
+            <ul>
+                <li>Maintain UI Configurations</li>
+                <li>Load UI Configuration: Select this option to load a UI configuration from file.</li>
+                <li>Export UI Configuration: Select this option to export a UI configuration to file.</li>
+            </ul>
+            <p>To mantain UI Configurations select <b>Tools &gt; UI Configurations&gt; UI Configurations Maintenance.</b></p>
+            <ul>
+                <li>
+                    <p>Click <b>New...</b> to create a new UI Configuration. </p>
+                </li>
+            </ul>
+            <ol>
+                <ul style="list-style-type: circle;">
+                    <li>In the Edit UI Configuration window, enter a <b>Name</b> for the UI Configuration. </li>
+                    <li>Add a <b>Description</b> of UI configuration.</li>
+                    <li>Select the <b>Configuration Type</b> among <b>ConnectionProperties</b>, <b>LoadTableProperties</b>, and <b>ColumnProperties</b>.</li>
+                    <li>Click <b>OK</b> to proceed to the <a href="#Field">Field Configuration JSON</a> where a sample field configuration is created to get you started. </li>
+                </ul>
+                <blockquote>
+                    <p>
+                        <img src="../../Images/UserGuide_Images/UI Configuration/Edit UI configuration.bmp">
+                        </img>
+                    </p>
+                </blockquote>
+            </ol>
+            <ul>
+                <li>Click <b>Copy...</b> to copy an existing UI Configuration. Edit the name and it creates a new copied configuration under a new name.</li>
+                <li>You can edit any existing UI Configuration's name and description by selecting it and clicking <b>Edit...</b></li>
+                <li>Click <b>Delete</b> to remove any listed UI Configuration, deletion is prevented for configurations in use.</li>
+                <li><b>Edit Json</b> opens the configuration in the editor to view or edit the configured fields.</li>
+            </ul>
+            <h4>Referencing a configured field’s metadata</h4>
+            <p>There are three ways to reference the metadata set in configured fields:</p>
+            <p>&#160;</p>
+            <p><b>Token replacement in scripts</b>
+            </p>
+            <p>In Scripts of Objects which have an association to an Extensible Source Connection you can reference any configured field from the connection in the script using the following token format which will be replaced at run-time:</p>
+            <p><code>$WSL_SRCCFG_&lt;cofigured_field_name&gt;$</code>
+            </p>
+            <p>&#160;</p>
+            <p><b>Environment variables in scripts</b>
+            </p>
+            <p>In Scripts of Objects which have an association to an Extensible Source Connection, when a configured field has the attribute “setEnvVarForScripts” = TRUE then the environment variable RED exposes at run-time takes the following form:</p>
+            <p><code>WSL_SRCCFG_&lt;cofigured_field_name&gt;</code>
+            </p>
+            <p>&#160;</p>
+            <p><b>Templated code generation</b>
+            </p>
+            <p>The following pebble syntax can be used in templates to reference the metadata stored in configured fields, replace &lt;field_name&gt; with the field name in your configuration. The full pebble examples can be generated through the Template Editor using the ‘Tools’ menu ‘Create API Example Template’. Configured fields are available as a key:value array.</p>
+            <ul>
+                <li>
+                    <p>For Extensible Source Connections:</p>
+                </li>
+            </ul>
+            <ul>
+                <p><code>table.loadInfo.sourceConnection.uiConfigFields.&lt;field_name&gt;</code>
+                </p>
+            </ul>
+            <ul>
+                <li>
+                    <p>For Load Tables:</p>
+                </li>
+                <p><code>table.loadInfo.uiConfigLoadProperties.&lt;field_name&gt;</code>
+                </p>
+                <li>
+                    <p>For Columns:</p>
+                </li>
+                <p><code>column.uiConfigColumnProperties.&lt;field_name&gt;</code>
+                </p>
+            </ul>
+            <h4><a name="Field"></a>Field Configuration JSON</h4>
+            <p>The UI Configurations allow you to add user-defined UI component including List boxes, Text boxes, and Numeric fields to certain properties pages in the UI. The table below lists the required common and specific attributes of each UI component. Example configurations follow the table:</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');border-left-style: solid;border-left-width: 1px;border-left-color: #dbd9d6;border-right-style: solid;border-right-width: 1px;border-right-color: #dbd9d6;border-top-style: solid;border-top-width: 1px;border-top-color: #dbd9d6;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #dbd9d6;margin-left: 0;margin-right: auto;" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 169px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 173px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 845px;" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1">Applicable Configs</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1" style="height: 17px;">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">description</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <p>Add a description for the field which will be displayed on mouse-hover and in the bottom description pane of the connection.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">displayName</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Add the name that displays in the configuration field. </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">documentation</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If the connection is part of documentation and the value is set to "true", therefore it adds this attribute to the generated documentation.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">encryption</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">CONNECTIONS</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <p>Optional encryption settings when persisting the field value to the database: (add bullet points for these) 'none' : the value will not be encrypted. 'wherescape' : the value will be encrypted by RED and decrypted as required. 'external' : equivalent to 'none' but allows you to flag that values have been encrypted externally.</p>
+                            <p>This option is required, if you do not add a value in this field, you get an error message.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">group</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Add a group name for the configuration attributes. </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">masked</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">CONNECTIONS, COLUMNS&#160;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Set the value to "true" to mask the value.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">order</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Set the order value for the created groups. </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">page</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The UI configuration is being applied under the Properties page. </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">required</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If this value is set to "true", the field must be filled in; otherwise, a message stops you to close the dialog, after clicking OK. </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">setEnvVarForScripts</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">CONNECTIONS</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If the value is set to "true", it allows you to access your environment variable with the token name, which is found under the description field. For example: </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">textBoxSettings</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <p>"default": Any created field can have a default. When you save a value as the default, that value is saved to the metadata for that particular connection.</p>
+                            <p>"length": Number of characters that you can type in the field. </p>
+                            <p>"multiLineEdit": The "False" value is set by default. This field is applicable for future use. </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">listViewSettings</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <p>"defaultListItem": When the value is '0' the field is blank. </p>
+                            <p>"editable": Set to "true" when the field will be editable.</p>
+                            <p>"list": Enter the list of items you want to display in the configuration field.</p>
+                            <p>"listMessage": This message displays when you hover the mouse on the field.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">numericSettings</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">"default":  The default value field.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">type</td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1">ALL</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Describes the type of the configuration field. The type goes along with the textBoxSettings, listViewSettings, and numericSettings with the specifics described above. </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Text Box Example</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1">
+                </col>
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If you want to use the example below for Column or Load Table UI Configurations you have to remove <b>"setEnvVarForScripts"</b> and <b>"encryption"</b></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="width: 100%;border-left-style: solid;border-left-width: 1px;border-right-style: solid;border-right-width: 1px;border-top-style: solid;border-top-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;mc-table-style: url('../../Resources/tablestyles/code.css');margin-left: 0;margin-right: auto;" class="TableStyle-code" cellspacing="0">
+                <col style="width: 1000px;">
+                </col>
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1"><pre xml:space="preserve">
+"uiConfigFields": [ 
+	{ 
+		"description": "For token replacement in scripts use:\r\n $WSL_SRCCFG_simpleTextBox$",
+		"displayName": "Simple text box",
+		"documentation": false,
+		"encryption": "none",</pre><pre xml:space="preserve">
+		"group": "Example Text Box Fields",
+		"masked": false,
+		"name": "simpleTextBox",
+		"order": 100,
+		"page": "Properties",
+		"required": false,
+		"setEnvVarForScripts": false,
+		"textBoxSettings": { 
+			"default": "This is my default file c:\temp\text.txt",
+			"length": 256,
+			"multiLineEdit": false
+	},
+			"type": "textBox"
+	},	
+	{ 
+		"description": "For access at runtime use environment variable: WSL_SRCCFG_encryptedTextBox",
+		"displayName": "Encrypted and masked text box",
+		"documentation": false,
+		"encryption": "wherescape",
+		"group": "Example Text Box Fields",
+		"masked": true,
+		"name": "encryptedTextBox",
+		"order": 200,
+		"page": "Properties",
+		"required": true,
+		"setEnvVarForScripts": true,
+		"textBoxSettings": { 
+			"default": "This is my default",
+			"length": 256,
+			"multiLineEdit": false
+		},
+			"type": "textBox"</pre><pre xml:space="preserve">	},</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <h4 class="SpecialBold_1">List View Example</h4>
+            <table style="mc-table-style: url('../../Resources/tablestyles/code.css');border-top-left-radius: 5px 0px;border-top-right-radius: 5px 0px;border-bottom-right-radius: 5px 0px;border-bottom-left-radius: 5px 0px;border-left-style: solid;border-left-width: 1px;border-left-color: #ffffff;border-right-style: solid;border-right-width: 1px;border-right-color: #ffffff;border-top-style: solid;border-top-width: 1px;border-top-color: #dcdcdc;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #dcdcdc;margin-left: 0;margin-right: auto;width: 100%;" class="TableStyle-code" cellspacing="0">
+                <col style="width: 1000px;">
+                </col>
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1" style="font-size: 9pt;"><pre xml:space="preserve" style="font-family: monospace;page-break-inside: avoid;">		{
+		    "description": "For token replacement in scripts use: $WSL_SRCCFG_simpleListView$",
+		    "displayName": "Simple list view",
+		    "documentation": false,
+		    "encryption": "none",
+		    "group": "Example List View Fields",
+		    "listViewSettings": {
+		        "defaultListItem": 3,
+		        "editable": false,
+		        "list": [
+		            "My list item one",
+		            "My list item two",
+		            "My list item three",
+		            "My list item four",
+		            "My list item five"
+		        ],
+		        "listMessage": "Select an item from the list"
+		    },
+		    "masked": false,
+		    "name": "simpleListView",
+		    "order": 300,
+		    "page": "Properties",
+		    "required": false,
+		    "setEnvVarForScripts": false,
+		    "type": "listView"
+		}, {
+		    "description": "For token replacement in scripts use: $WSL_SRCCFG_editableListView$",
+		    "displayName": "Editable list view",
+		    "documentation": false,
+		    "encryption": "none",
+		    "group": "Example List View Fields",
+		    "listViewSettings": {
+		        "defaultListItem": 0,
+		        "editable": true,
+		        "length": 256,
+		        "list": [
+		            "My list item one",
+		            "My list item two",
+		            "My list item three",
+		            "My list item four",
+		            "My list item five"
+		        ],
+		        "listMessage": "Select an item from the list or type your own value"
+		    },
+		    "masked": false,
+		    "name": "editableListView",
+		    "order": 300,
+		    "page": "Properties",
+		    "required": true,
+		    "setEnvVarForScripts": false,
+		    "type": "listView"
+		}, {
+		    "description": "For token replacement in scripts use: $WSL_SRCCFG_booleanListView$",
+		    "displayName": "Boolean list view",
+		    "documentation": false,
+		    "encryption": "none",
+		    "group": "Example List View Fields",
+		    "listViewSettings": {
+		        "defaultListItem": 1,
+		        "editable": false,
+		        "list": [
+		            "TRUE",
+		            "FALSE"
+		        ],
+		        "listMessage": "Set something True or False"
+		    },
+		    "masked": false,
+		    "name": "booleanListView",
+		    "order": 400,
+		    "page": "Properties",
+		    "required": false,
+		    "setEnvVarForScripts": false,
+		    "type": "listView"
+		},</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Numeric Fields Example</h4>
+            <table style="width: 100%;border-left-style: solid;border-left-width: 1px;border-left-color: ;border-right-style: solid;border-right-width: 1px;border-right-color: ;border-top-style: solid;border-top-width: 1px;border-top-color: ;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: ;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col style="width: 989px;">
+                </col>
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1"><pre xml:space="preserve">	{ 
+		"description": "For token replacement in scripts use: $WSL_SRCCFG_numeric$",
+		"displayName": "Simple numeric field",
+		"documentation": false,
+		"encryption": "none",
+		"group": "Example Numeric Fields",
+		"masked": false,
+		"name": "numeric",
+		"numericSettings": { 
+			"defaultValue": 999
+		},
+		"order": 500,
+		"page": "Properties",
+		"required": false,
+		"setEnvVarForScripts": false,
+		"type": "numeric"
+	}</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<Application_Load_Options>
+      <!--                                                                                                                                                 -->
+      <!--  Sample XML file for command line application load to SQLServer repository                                         -->
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************** -->
+      <!--                                                                                                                                                 -->
+      <!-- CONNECT / LOGON OPTIONS:                                                                                                       -->
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************** -->
+      <!--                                                                                                                                                 -->
+      <UserID></UserID>
+      <Password></Password>
+      <DSN>WslWarehouse</DSN>
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************** -->
+      <!--                                                                                                                                                 -->
+      <!-- METADATA OPTIONS:                                                                                                                   -->
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************** -->
+      <!--                                                                                                                                                 -->
+      <!-- Ignore_Checkout YES/NO (default is NO). YES - Checked out objects are overwritten or deleted, NO - If checked out objects are found the load will not proceed.-->
+      <!--                                                                                                                                                 -->
+      <Ignore_Checkout>NO</Ignore_Checkout>
+      <!--                                                                                                                                                 -->
+      <!-- Use_Existing_Connections YES/NO (default is YES). YES - uses existing like named connections             -->
+      <!--                                                                                                                                                 -->
+      <Use_Existing_Connections>YES</Use_Existing_Connections>
+      <!--                                                                                                                                                 -->
+      <!-- Create_new_Connections YES/NO (default is YES), connection must be included in application               -->
+      <!--                                                                                                                                                 -->
+      <Create_new_Connections>YES</Create_new_Connections>
+      <!--                                                                                                                                                 -->
+      <!-- Compile_Procedures YES/NO (default is YES)                                                                                   -->
+      <!--                                                                                                                                                 -->
+      <Compile_Procedures>YES</Compile_Procedures>
+      <!--                                                                                                                                                 -->
+      <!-- Apply_Changes YES/NO (default is YES). YES - user tables will be validated and altered, or recreated etc -->
+      <!--                                                                                                                                                 -->
+      <Apply_Changes>YES</Apply_Changes>
+      <!--                                                                                                                                                 -->
+      <!-- Log_DDL YES/NO (default is NO). YES - A DDL log file created in same directory as application log         -->
+      <!--                                                                                                                                                 -->
+      <Log_DDL>NO</Log_DDL>
+      <!--                                                                                                                                                 -->
+      <!-- DDL_Terminator is a string to be used to terminate the procedure listings and the DDL statements, default is ;                                  -->
+      <!--                                                                                                                                                 -->
+      <DDL_Terminator>;</DDL_Terminator>
+      <!--                                                                                                                                                 -->
+      <!-- DDL_Encoding is a numeric as follows: 0 - DDL file is UNICODE, 1 - DDL file is ASCII, 2 - DDL file is UTF-8, default is UNICODE                 -->
+      <!--                                                                                                                                                 -->
+      <DDL_Encoding>0</DDL_Encoding>
+      <!--                                                                                                                                                 -->
+      <!-- DDL_CRLF YES/NO (default is YES). YES - The DDL log file uses CR and LF to terminate each line                                                  -->
+      <!--                                                                                                                                                 -->
+      <DDL_CRLF>YES</DDL_CRLF>
+      <!--                                                                                                                                                 -->
+      <!-- Native_Procedure_Load YES/NO (default is NO). YES - procedures/scripts metadata loaded using client tools  -->
+      <!--                                                                                                                                                 -->
+      <Native_Procedure_Load>NO</Native_Procedure_Load>
+      <!--                                                                                                                                                 -->
+      <!-- Auto_Resolve_Storage YES/NO (default is YES). YES - use source filegroup if found, or storage mapping below -->
+      <!--                                                                                                                                                 -->
+      <Auto_Resolve_Storage>YES</Auto_Resolve_Storage>
+      <!--                                                                                                                                                 -->
+      <!-- Import_Group_Project_Relationships YES/NO (default is YES). YES - add new projects and groups from source repository and object relationships -->
+      <!--                                                                                                                                                 -->
+      <Import_Group_Project_Relationships>YES</Import_Group_Project_Relationships>
+      <!--                                                                                                                                                 -->
+      <!-- Parameter_Exists UPDATE/RETAIN/RENAME (default is RENAME)                                                        -->
+      <!--                                                                                                                                                 -->
+      <Parameter_Exists>RENAME</Parameter_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Job_Exists UPDATE/RETAIN/RENAME (default is RENAME)                                                                  -->
+      <!--                                                                                                                                                 -->
+      <Job_Exists>RENAME</Job_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************** -->
+      <!--                                                                                                                                                 -->
+      <!-- DATA WAREHOUSE OPTIONS:                                                                                                        -->
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************** -->
+      <!--                                                                                                                                                 -->
+      <!-- Load_New CREATE/NOTHING (default is CREATE)                                                                             -->
+      <!--                                                                                                                                                 -->
+      <Load_New>CREATE</Load_New>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Load_New CREATE/NOTHING (default is CREATE)                                                                   -->
+      <!--                                                                                                                                                 -->
+      <Index_Load_New>CREATE</Index_Load_New>
+      <!--                                                                                                                                                 -->
+      <!-- Stage_New CREATE/NOTHING (default is CREATE)                                                                           -->
+      <!--                                                                                                                                                 -->
+      <Stage_New>CREATE</Stage_New>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Stage_New CREATE/NOTHING (default is CREATE)                                                                  -->
+      <!--                                                                                                                                                 -->
+      <Index_Stage_New>CREATE</Index_Stage_New>
+      <!--                                                                                                                                                 -->
+      <!-- Permanent_Stage_New CREATE/NOTHING (default is CREATE)                                                           -->
+      <!--                                                                                                                                                 -->
+      <Permanent_Stage_New>CREATE</Permanent_Stage_New>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Permanent_Stage_New CREATE/NOTHING (default is CREATE)                                                  -->
+      <!--                                                                                                                                                 -->
+      <Index_Permanent_Stage_New>CREATE</Index_Permanent_Stage_New>
+      <!--                                                                                                                                                 -->
+      <!-- Dimension_New CREATE/NOTHING (default is CREATE)                                                                     -->
+      <!--                                                                                                                                                 -->
+      <Dimension_New>CREATE</Dimension_New>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Dimension_New CREATE/NOTHING (default is CREATE)                                                            -->
+      <!--                                                                                                                                                 -->
+      <Index_Dimension_New>CREATE</Index_Dimension_New>
+      <!--                                                                                                                                                 -->
+      <!-- Dimension_View_New CREATE/NOTHING (default is CREATE)                                                             -->
+      <!--                                                                                                                                                 -->
+      <Dimension_View_New>CREATE</Dimension_View_New>
+      <!--                                                                                                                                                 -->
+      <!-- Fact_New CREATE/NOTHING (default is CREATE)                                                                              -->
+      <!--                                                                                                                                                 -->
+      <Fact_New>CREATE</Fact_New>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Fact_New CREATE/NOTHING (default is CREATE)                                                                    -->
+      <!--                                                                                                                                                 -->
+      <Index_Fact_New>CREATE</Index_Fact_New>
+      <!--                                                                                                                                                 -->
+      <!-- ODS_New CREATE/NOTHING (default is CREATE)                                                                              -->
+      <!--                                                                                                                                                 -->
+      <ODS_New>CREATE</ODS_New>
+      <!--                                                                                                                                                 -->
+      <!-- Index_ODS_New CREATE/NOTHING (default is CREATE)                                                                    -->
+      <!--                                                                                                                                                 -->
+      <Index_ODS_New>CREATE</Index_ODS_New>
+      <!--                                                                                                                                                 -->
+      <!-- Normal_New CREATE/NOTHING (default is CREATE)                                                                          -->
+      <!--                                                                                                                                                 -->
+      <Normal_New>CREATE</Normal_New>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Normal_New CREATE/NOTHING (default is CREATE)                                                                -->
+      <!--                                                                                                                                                 -->
+      <Index_Normal_New>CREATE</Index_Normal_New>
+      <!--                                                                                                                                                 -->
+      <!-- View_New CREATE/NOTHING (default is CREATE)                                                                             -->
+      <!--                                                                                                                                                 -->
+      <View_New>CREATE</View_New>
+      <!--                                                                                                                                                 -->
+      <!-- Aggregate_New CREATE/NOTHING (default is CREATE)                                                                     -->
+      <!--                                                                                                                                                 -->
+      <Agg_New>CREATE</Agg_New>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Agg_New CREATE/NOTHING (default is CREATE)                                                                     -->
+      <!--                                                                                                                                                 -->
+      <Index_Agg_New>CREATE</Index_Agg_New>
+      <!--                                                                                                                                                 -->
+      <!-- Load_Exists ALTER/RECREATE/NOTHING (default is RECREATE)                                                          -->
+      <!--                                                                                                                                                 -->
+      <Load_Exists>RECREATE</Load_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Load_Exists RECREATE/NOTHING (default is RECREATE)                                                          -->
+      <!--                                                                                                                                                 -->
+      <Index_Load_Exists>RECREATE</Index_Load_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Stage_Exists ALTER/RECREATE/NOTHING (default is RECREATE)                                                        -->
+      <!--                                                                                                                                                 -->
+      <Stage_Exists>RECREATE</Stage_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Stage_Col_Drop YES/NO (default is NO) If Stage_Exists option is ALTER, and a Stage table has columns that are not in the metadata, they will be dropped.-->
+      <!--                                                                                                                                                 -->
+      <Stage_Col_Drop>NO</Stage_Col_Drop>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Stage_Exists RECREATE/NOTHING (default is RECREATE)                                                         -->
+      <!--                                                                                                                                                 -->
+      <Index_Stage_Exists>RECREATE</Index_Stage_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Permanent_Stage_Exists ALTER/RECREATE/NOTHING (default is ALTER)                                              -->
+      <!--                                                                                                                                                 -->
+      <Permanent_Stage_Exists>ALTER</Permanent_Stage_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Permanent_Stage_Col_Drop YES/NO (default is NO) If Permanent_Stage_Exists option is ALTER, and a Permanent Stage table has columns that are not in the metadata, they will be dropped.-->
+      <!--                                                                                                                                                 -->
+      <Permanent_Stage_Col_Drop>NO</Permanent_Stage_Col_Drop>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Permanent_Stage_Exists RECREATE/NOTHING (default is RECREATE)                                        -->
+      <!--                                                                                                                                                 -->
+      <Index_Permanent_Stage_Exists>RECREATE</Index_Permanent_Stage_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Dimension_Exists ALTER/RECREATE/NOTHING (default is ALTER)                                                       -->
+      <!--                                                                                                                                                 -->
+      <Dimension_Exists>ALTER</Dimension_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Dimension_Col_Drop YES/NO (default is NO) If Dimension_Exists option is ALTER, and a Dimension table has columns that are not in the metadata, they will be dropped.-->
+      <!--                                                                                                                                                 -->
+      <Dimension_Col_Drop>NO</Dimension_Col_Drop>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Dimension_Exists RECREATE/NOTHING (default is RECREATE)                                                  -->
+      <!--                                                                                                                                                 -->
+      <Index_Dimension_Exists>RECREATE</Index_Dimension_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Dimension_View_Exists RECREATE/NOTHING (default is RECREATE)                                                   -->
+      <!--                                                                                                                                                 -->
+      <Dimension_View_Exists>RECREATE</Dimension_View_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Fact_Exists ALTER/RECREATE/NOTHING  (default is ALTER)                                                               -->
+      <!--                                                                                                                                                 -->
+      <Fact_Exists>ALTER</Fact_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Fact_Col_Drop YES/NO (default is NO) If Fact_Exists option is ALTER, and a Fact table has columns that are not in the metadata, they will be dropped.-->
+      <!--                                                                                                                                                 -->
+      <Fact_Col_Drop>NO</Fact_Col_Drop>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Fact_Exists RECREATE/NOTHING  (default is RECREATE)                                                          -->
+      <!--                                                                                                                                                 -->
+      <Index_Fact_Exists>RECREATE</Index_Fact_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- ODS_Exists ALTER/RECREATE/NOTHING  (default is ALTER)                                                               -->
+      <!--                                                                                                                                                 -->
+      <ODS_Exists>ALTER</ODS_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- ODS_Col_Drop YES/NO (default is NO) If ODS_Exists option is ALTER, and an ODS table has columns that are not in the metadata, they will be dropped.-->
+      <!--                                                                                                                                                 -->
+      <ODS_Col_Drop>NO</ODS_Col_Drop>
+      <!--                                                                                                                                                 -->
+      <!-- Index_ODS_Exists RECREATE/NOTHING  (default is RECREATE)                                                          -->
+      <!--                                                                                                                                                 -->
+      <Index_ODS_Exists>RECREATE</Index_ODS_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Normal_Exists ALTER/RECREATE/NOTHING  (default is ALTER)                                                           -->
+      <!--                                                                                                                                                 -->
+      <Normal_Exists>ALTER</Normal_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Normal_Col_Drop YES/NO (default is NO) If Normal_Exists option is ALTER, and a Normal table has columns that are not in the metadata, they will be dropped.-->
+      <!--                                                                                                                                                 -->
+      <Normal_Col_Drop>NO</Normal_Col_Drop>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Normal_Exists RECREATE/NOTHING  (default is RECREATE)                                                      -->
+      <!--                                                                                                                                                 -->
+      <Index_Normal_Exists>RECREATE</Index_Normal_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- View_Exists RECREATE/NOTHING  (default is RECREATE)                                                                  -->
+      <!--                                                                                                                                                 -->
+      <View_Exists>RECREATE</View_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Aggregate_Exists ALTER/RECREATE/NOTHING  (default is ALTER)                                                       -->
+      <!--                                                                                                                                                 -->
+      <Agg_Exists>ALTER</Agg_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- Agg_Col_Drop YES/NO (default is NO) If Agg_Exists option is ALTER, and an Aggregate table has columns that are not in the metadata, they will be dropped.-->
+      <!--                                                                                                                                                 -->
+      <Agg_Col_Drop>NO</Agg_Col_Drop>
+      <!--                                                                                                                                                 -->
+      <!-- Index_Agg_Exists RECREATE/NOTHING  (default is RECREATE)                                                          -->
+      <!--                                                                                                                                                 -->
+      <Index_Agg_Exists>RECREATE</Index_Agg_Exists>
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************************************ -->
+      <!--                                                                                                                                                 -->
+      <!-- VERSION OPTIONS: DEFAULTS ASSUME THAT A RESTORE POINT APPLICATION WILL BE CREATED BEFORE THE APPLICATION LOAD. -->
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************************************  -->
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Load YES/NO (default is YES ). YES - existing Load table will be versioned                  -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Load>YES</Version_Existing_Load>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Load YES/NO (default is NO). YES - new Load table will be versioned                             -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Load>NO</Version_New_Load>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Stage YES/NO (default is YES ). YES - existing Stage table will be versioned                -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Stage>YES</Version_Existing_Stage>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Stage YES/NO (default is NO). YES - new Stage table will be versioned                          -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Stage>NO</Version_New_Stage>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Permanent_Stage YES/NO (default is YES ). YES - existing Permanent Stage table will be versioned -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Perm_Stage>YES</Version_Existing_Perm_Stage>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Permanent_Stage YES/NO (default is NO). YES - new Permanent Stage table will be versioned -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Permanent_Stage>NO</Version_New_Permanent_Stage>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Dim YES/NO (default is YES ). YES - existing Dimension table will be versioned            -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Dim>YES</Version_Existing_Dim>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Dim YES/NO (default is NO). YES - new Dimension table will be versioned                      -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Dim>NO</Version_New_Dim>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Dim_View YES/NO (default is YES ). YES - existing Dimension View table will be versioned -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Dim_View>YES</Version_Existing_Dim_View>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Dim_View YES/NO (default is NO). YES - new Dimension View table will be versioned       -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Dim_View>NO</Version_New_Dim_View>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_ODS YES/NO (default is YES). YES - existing ODS table will be versioned                     -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_ODS>YES</Version_Existing_ODS>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_ODS YES/NO (default is NO). YES - new ODS table will be versioned                              -->
+      <!--                                                                                                                                                 -->
+      <Version_New_ODS>NO</Version_New_Dim_View>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Normal YES/NO (default is YES). YES - existing Normal table will be versioned              -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Normal>YES</Version_Existing_Normal>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Normal YES/NO (default is NO). YES - new Normal table will be versioned                      -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Normal>NO</Version_New_Normal>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Fact YES/NO (default is YES). YES - existing Fact table will be versioned                     -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Fact>YES</Version_Existing_Fact>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Fact YES/NO (default is NO). YES - new Fact table will be versioned                              -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Fact>NO</Version_New_Fact>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Aggregate YES/NO (default is YES). YES - existing Aggregate table will be versioned     -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Agg>YES</Version_Existing_Agg>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Aggregate YES/NO (default is NO). YES - new Aggregate table will be versioned              -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Agg>NO</Version_New_Agg>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_View YES/NO (default is YES). YES - existing View table will be versioned                    -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_View>YES</Version_Existing_View>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_View YES/NO (default is NO). YES - new View table will be versioned                             -->
+      <!--                                                                                                                                                 -->
+      <Version_New_View>NO</Version_New_View>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Olap_Cube YES/NO (default is YES). YES - existing Olap Cube will be versioned            -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Olap_Cube>YES</Version_Existing_Olap_Cube>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Olap_Cube YES/NO (default is NO). YES - new Olap Cube will be versioned                     -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Olap_Cube>NO</Version_New_Olap_Cube>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Olap_Dim YES/NO (default is YES). YES - existing Olap Dim will be versioned              -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Olap_Dim>YES</Version_Existing_Olap_Dim>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Olap_Dim YES/NO (default is NO). YES - new Olap Cube will be versioned                      -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Olap_Dim>NO</Version_New_Olap_Dim>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Cube YES/NO (default is YES). YES - existing Cube will be versioned                           -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Cube>YES</Version_Existing_Cube>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Cube YES/NO (default is NO). YES - new Cube will be versioned                                    -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Cube>NO</Version_New_Cube>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Retro YES/NO (default is YES). YES - existing Retro table will be versioned                  -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Retro>YES</Version_Existing_Retro>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Retro YES/NO (default is NO). YES - new Retro table will be versioned                           -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Retro>NO</Version_New_Retro>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Export YES/NO (default is YES). YES - existing Export table will be versioned               -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Export>YES</Version_Existing_Export>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Export YES/NO (default is NO). YES - new Export table will be versioned                        -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Export>NO</Version_New_Export>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Procedure YES/NO (default is YES). YES - existing Procedure will be versioned              -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Proc>YES</Version_Existing_Proc>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Procedure YES/NO (default is NO). YES - new Procedure will be versioned                       -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Proc>NO</Version_New_Proc>
+      <!--                                                                                                                                                 -->
+      <!-- Version_Existing_Script YES/NO (default is YES). YES - existing Script will be versioned                         -->
+      <!--                                                                                                                                                 -->
+      <Version_Existing_Script>YES</Version_Existing_Script>
+      <!--                                                                                                                                                 -->
+      <!-- Version_New_Script YES/NO (default is NO). YES - new Script will be versioned                                   -->
+      <!--                                                                                                                                                 -->
+      <Version_New_Script>NO</Version_New_Script>
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************** -->
+      <!--                                                                                                                                                 -->
+      <!-- STORAGE OPTIONS:                                                                                                                     -->
+      <!--                                                                                                                                                 -->
+      <!-- ************************************************************************************** -->
+      <!--                                                                                                                                                 -->
+      <!-- Storage mapping: up to 50 File Group substitutions                                                                          -->
+      <!--                                                                                                                                                 -->
+      <Storage1_IN></Storage1_IN>
+      <Storage1_OUT></Storage1_OUT>
+      <!--                                                                                                                                                 -->
+      <Storage2_IN></Storage2_IN>
+      <Storage2_OUT></Storage2_OUT>
+      <!--                                                                                                                                                 -->
+</Application_Load_Options>
+

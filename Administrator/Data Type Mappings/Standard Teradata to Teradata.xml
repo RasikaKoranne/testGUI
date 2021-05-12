@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data_type_mapping_set name="Standard Teradata to Teradata" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd">
+
+  <mapping_set_description>Standard Teradata to Teradata data type mapping.
+Please do not edit this standard mapping file as any changes will be overwritten on upgrades.
+See the user guide for information on how to create custom mapping files.</mapping_set_description>
+
+  <mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="decimal(%precision)">
+    <match_parameters>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="decimal(%precision,%scale)">
+    <match_parameters>
+      <match_precision>32-*</match_precision>
+      <match_scale>1-*</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="byteint" output_data_type="byteint"/>
+
+  <data_type_mapping match_data_type="smallint" output_data_type="smallint"/>
+
+  <data_type_mapping match_data_type="integer" output_data_type="integer"/>
+
+  <data_type_mapping match_data_type="bigint" output_data_type="bigint"/>
+
+  <data_type_mapping match_data_type="float" output_data_type="float"/>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="long varchar">
+    <match_parameters>
+      <match_length>64000</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="long varchar" output_data_type="clob"/>
+
+  <data_type_mapping match_data_type="time" output_data_type="time">
+    <match_parameters>
+      <match_precision>8</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="date" output_data_type="date"/>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="timestamp">
+    <match_parameters>
+      <match_scale>6</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="timestamp(%scale)">
+    <match_parameters>
+      <match_scale>*-5</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval year to month" output_data_type="interval year to month"/>
+
+  <data_type_mapping match_data_type="interval day to hour" output_data_type="interval day to hour"/>
+
+  <data_type_mapping match_data_type="interval day to minute" output_data_type="interval day to minute"/>
+
+  <data_type_mapping match_data_type="interval day to second" output_data_type="interval day to second"/>
+
+  <data_type_mapping match_data_type="interval hour to minute" output_data_type="interval hour to minute"/>
+
+  <data_type_mapping match_data_type="interval hour to second" output_data_type="interval hour to second"/>
+
+  <data_type_mapping match_data_type="interval minute to second" output_data_type="interval minute to second"/>
+
+  <data_type_mapping match_data_type="interval year" output_data_type="interval year(1)">
+    <match_parameters>
+      <match_length>2</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval year" output_data_type="interval year">
+    <match_parameters>
+      <match_length>3</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval year" output_data_type="interval year(3)">
+    <match_parameters>
+      <match_length>4</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval year" output_data_type="interval year(4)">
+    <match_parameters>
+      <match_length>5</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval month" output_data_type="interval month(1)">
+    <match_parameters>
+      <match_length>2</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval month" output_data_type="interval month">
+    <match_parameters>
+      <match_length>3</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval month" output_data_type="interval month(3)">
+    <match_parameters>
+      <match_length>4</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval month" output_data_type="interval month(4)">
+    <match_parameters>
+      <match_length>5</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval day" output_data_type="interval day(1)">
+    <match_parameters>
+      <match_length>2</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval day" output_data_type="interval day">
+    <match_parameters>
+      <match_length>3</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval day" output_data_type="interval day(3)">
+    <match_parameters>
+      <match_length>4</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval day" output_data_type="interval day(4)">
+    <match_parameters>
+      <match_length>5</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval hour" output_data_type="interval hour(1)">
+    <match_parameters>
+      <match_length>2</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval hour" output_data_type="interval hour">
+    <match_parameters>
+      <match_length>3</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval hour" output_data_type="interval hour(3)">
+    <match_parameters>
+      <match_length>4</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval hour" output_data_type="interval hour(4)">
+    <match_parameters>
+      <match_length>5</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval minute" output_data_type="interval minute(1)">
+    <match_parameters>
+      <match_length>2</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval minute" output_data_type="interval minute">
+    <match_parameters>
+      <match_length>3</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval minute" output_data_type="interval minute(3)">
+    <match_parameters>
+      <match_length>4</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval minute" output_data_type="interval minute(4)">
+    <match_parameters>
+      <match_length>5</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval second" output_data_type="interval second(1)">
+    <match_parameters>
+      <match_length>9</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval second" output_data_type="interval second">
+    <match_parameters>
+      <match_length>10</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval second" output_data_type="interval second(3)">
+    <match_parameters>
+      <match_length>11</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval second" output_data_type="interval second(4)">
+    <match_parameters>
+      <match_length>12</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+</data_type_mapping_set>

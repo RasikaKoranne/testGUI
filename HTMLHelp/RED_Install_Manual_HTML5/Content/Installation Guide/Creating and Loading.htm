@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins_HTML5___Top_Navigation" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-has-content-body="True" data-mc-toc-path="Installation|Applications" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="print">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" /><title>Creating and Loading Applications from the Command Line</title>
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/foundation.6.2.3.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/foundation.6.2.3_custom.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-right" role="navigation" id="offCanvas" data-off-canvas="" data-position="right" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-right is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" role="banner" data-mc-ignore="true"><a class="skip-to-content fluid-skip showOnFocus" href="#">Skip To Main Content</a>
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="menu-icon-container relative clearfix">
+                                    <div class="central-account-wrapper">
+                                        <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                            <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                                <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="menu-icon" aria-label="Show Navigation Panel" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="title-bar-layout outer-row">
+                                <div class="logo-wrapper"><a class="logo" href="../external_help/About.htm" alt="Logo"></a>
+                                </div>
+                                <div class="navigation-wrapper nocontent">
+                                    <ul class="navigation clearfix" role="navigation" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="3" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                        <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="central-account-wrapper">
+                                    <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                        <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                            <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-search-wrapper">
+                                    <div class="nav-search row">
+                                        <form class="search" action="#">
+                                            <div class="search-bar search-bar-container needs-pie">
+                                                <input class="search-field needs-pie" type="search" aria-label="Search Field" placeholder="Search" />
+                                                <div class="search-filter-wrapper"><span class="invisible-label" id="search-filters-label">Filter: </span>
+                                                    <div class="search-filter" aria-haspopup="true" aria-controls="sf-content" aria-expanded="false" aria-label="Search Filter" title="All Files" role="button" tabindex="0">
+                                                    </div>
+                                                    <div class="search-filter-content" id="sf-content">
+                                                        <ul>
+                                                            <li>
+                                                                <button class="mc-dropdown-item" aria-labelledby="search-filters-label filterSelectorLabel-00001"><span id="filterSelectorLabel-00001">All Files</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="search-submit-wrapper" dir="ltr">
+                                                    <div class="search-submit" title="Search" role="button" tabindex="0"><span class="invisible-label">Submit Search</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="main-section">
+                        <div class="row outer-row sidenav-layout">
+                            <nav class="sidenav-wrapper">
+                                <div class="sidenav-container">
+                                    <ul class="off-canvas-accordion vertical menu sidenav" data-accordion-menu="" data-mc-css-tree-node-expanded="is-accordion-submenu-parent" data-mc-css-tree-node-collapsed="is-accordion-submenu-parent" data-mc-css-sub-menu="vertical menu accordion-menu is-accordion-submenu nested" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="False" data-mc-include-back="False" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.accordionMenu" data-mc-toc="True" data-mc-side-nav-menu="True">
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="body-container">
+                                <div data-mc-content-body="True">
+                                    <div class="nocontent">
+                                        <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+                                        </div>
+                                    </div>
+                                    <div role="main" id="mc-main-content">
+                                        <h2 class="Heading2">Creating and Loading Applications from the Command Line</h2>
+                                        <p class="BodyText">It is possible to create and load applications from the command line by running a batch file. The <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Application directory contains an example batch file&#160; WSL_Application_Create_Restore_Point_and_Load.bat for creating and loading. </p>
+                                        <p class="BodyText">If you right-click this file and select <b>Edit </b>you will see the steps outlined, as well as the details on the options available.</p>
+                                        <p class="BodyText">The first step <b>creates</b> a restore point application (R) based on objects about to be loaded. This process calls the command line functionality of <span class="mc-variable WS_Branding.Product variable">RED</span> and creates the application file.</p>
+                                        <p class="BodyText">The second step <b>loads</b> an application (A) into a test <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> repository. It uses an XML Options File to specify various options, calls the command line automation functionality of Setup Administrator and loads the application (A). Ensure that you have already created and properly defined the XML Options File. Refer to <a href="XML Files for Application Loads.htm">XML Options File for Application Loads</a> for details.</p>
+                                        <p class="BodyText">The <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Application directory contains example XML files:</p>
+                                        <ul class="ul_1">
+                                            <li class="ListBullet_1">WSL_Application_Load_SQL.xml for SQL Server</li>
+                                        </ul>
+                                        <ul class="ul_1">
+                                            <li class="ListBullet_1">WSL_Application_Load_ORA.xml for Oracle</li>
+                                            <li class="ListBullet_1">WSL_Application_Load_TER.xml for Teradata</li>
+                                        </ul>
+                                        <p class="BodyText">The tags in the XML Options File need to be edited because the login/connection details, etc. need to be set. Refer to <a href="XML Files for Application Loads.htm">XML Options File for Application Loads</a> for details.</p>
+                                        <p class="BodyText">The Batch Application Create options and the Batch Application Load options (described below) are listed at the end of the batch file. The values for these variables also needs to be customized before running this file. </p>
+                                        <h3 class="NoTocEntry">The process typically involves the following steps:</h3>
+                                        <ol start="1" class="ol_1">
+                                            <li class="ListNumber" value="1">Create an application (A) in <span class="mc-variable WS_Branding.Product variable">RED</span> containing your data warehouse changes.</li>
+                                        </ol>
+                                        <ol start="2" class="ol_1">
+                                            <li class="ListNumber" value="2">RUN WSL_Application_Create_Restore_Point_and_Load.bat from the command line; which creates a restore point application (R) and applies application (A) to a test <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> repository.</li>
+                                        </ol>
+                                        <ol start="3" class="ol_1">
+                                            <li class="ListNumber" value="3">If the changes are incorrect, they can be undone by loading the restore point application (R).</li>
+                                        </ol>
+                                        <h3 class="NoTocEntry">Batch Application CREATE Options</h3>
+                                        <p class="BodyText">The following options are available on <span class="mc-variable WS_Branding.Product variable">RED</span> to create applications.</p>
+                                        <table class="TableStyle-tablestyle" style="mc-table-style: url('../Resources/tablestyles/tablestyle.css');margin-left: 0;margin-right: auto;width: 100%;" cellspacing="0">
+                                            <col class="TableStyle-tablestyle-Column-Column1">
+                                            </col>
+                                            <col class="TableStyle-tablestyle-Column-Column2">
+                                            </col>
+                                            <thead>
+                                                <tr class="TableStyle-tablestyle-Head-Header1">
+                                                    <th class="TableStyle-tablestyle-HeadE-Column1-Header1">
+                                                        <p class="TableHeading">Option</p>
+                                                    </th>
+                                                    <th class="TableStyle-tablestyle-HeadD-Column2-Header1">
+                                                        <p class="TableHeading">Description</p>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/BA</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Selects batch application create.</td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/U
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">ODBC user name.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/P
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">ODBC password.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/C
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">ODBC DSN name.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/A</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">DSN Architecture</td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/M
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">meta database for Teradata logon.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/N</td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><span class="mc-variable WS_Branding.Product variable">RED</span> User name.</td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/D
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Directory to save application files.                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/I
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">New application files identifier.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/V
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">New application files version.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/AP
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Project name - all objects in a Project; and associated jobs.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/AG
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Group name - all objects in a Group; and associated jobs.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/ALL
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">All objects - all objects, jobs and parameters.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/RC
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Remove connections - drop all connections from the application.
+                    </td>
+                                                </tr>
+                                                <tr style="height: 16pt;" class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/RJ
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Remove jobs - drop all jobs from the application.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/RP
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Remove parameters - drop all parameters from the application.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyB-Column1-Body1">/AF
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Absolute application id file name which restore point is being created for.
+                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="MiniTOCItem">If using a trusted connection, the user name and password are not necessary.</p>
+                                        <h3 class="NoTocEntry">Batch Application LOAD Options</h3>
+                                        <p class="BodyText">The following options are available on Setup Administrator to load applications.</p>
+                                        <table class="TableStyle-tablestyle" style="mc-table-style: url('../Resources/tablestyles/tablestyle.css');margin-left: 0;margin-right: auto;width: 100%;" cellspacing="0">
+                                            <col class="TableStyle-tablestyle-Column-Column1" />
+                                            <col class="TableStyle-tablestyle-Column-Column2" />
+                                            <thead>
+                                                <tr class="TableStyle-tablestyle-Head-Header1">
+                                                    <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Option</th>
+                                                    <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/AL
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Select application load.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/AF
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Absolute application ID file name.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/LF
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Absolute log file name.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyH-Column1-Body1">/PF
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Absolute xml parameter file name.
+                    </td>
+                                                </tr>
+                                                <tr class="TableStyle-tablestyle-Body-Body1">
+                                                    <td class="TableStyle-tablestyle-BodyB-Column1-Body1">/SO
+                    </td>
+                                                    <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Stay open - Setup Administrator does not close after the application has been created. Relevant for /AL LOAD option. Relevant for -QA, -QR, -WS, -QL and -QV application switch options. Not relevant for -QS switch option. For switch options, refer to  <span class="HotSpot"><a href="SQL Server Quick Application.htm">SQL Server Quick Application</a></span> for details.
+                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><a data-close="true"></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

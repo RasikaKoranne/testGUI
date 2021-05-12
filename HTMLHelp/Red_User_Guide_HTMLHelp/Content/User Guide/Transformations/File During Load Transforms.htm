@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Transformations|Column Transformations|Load Table Column Transformations" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>File During Load Transformations</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>File During Load Transformations</h3>
+            <p class="BodyText">The loading of flat files is performed using the database specific loader. For Oracle, this is SQL*LOADER. For SQL Server it is the Bulk Insert Transact SQL statement. The contents of the <span class="SpecialBold">Transformation</span> tab in the column's Properties are the functions and conversions supported by the database loader.</p>
+            <p class="SubHeading1"><b>Example</b>
+            </p>
+            <p class="BodyText">SQL*LOADER performs transformations such as:</p>
+            <ul>
+                <li>DATE 'DD-MMM-YYYY'converts from a value such as 23-Mar-1999 to an Oracle date.</li>
+                <li>"TO_NUMBER(:COL)"converts the data to a number</li>
+                <li>"NVL(TRIM(:COL),0)"trims leading and trailing white characters and inserts zero if null.</li>
+            </ul>
+            <p>&#160;</p>
+            <p>In Teradata, the loading of flat files is performed using Fastload, Multi-load or TPT. The contents of the Transformation tab in a column's Properties are the functions and conversions supported by the database loader.</p>
+            <p><b>Example</b>
+            </p>
+            <ul>
+                <li>Multiload performs transformations such as:</li>
+                <li>FORMAT 'DD-MMM-YYYY' converts from a value such as 23-Mar-1999 to a Teradata date.</li>
+                <li>CAST(:COL AS NUMERIC(18,4)) converts the data to a numeric(18,4)</li>
+                <li>COALESCE(LTRIM(RTRIM(:COL)),0) trims leading and trailing white characters and inserts zero if null.</li>
+            </ul>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

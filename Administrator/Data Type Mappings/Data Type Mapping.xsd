@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- WARNING: This XML Schema Definition (XSD) file is provided by WhereScape.         -->
+<!-- WARNING: It should not be modified under any circumstance.                        -->
+<!-- WARNING: Modifications to this file may cause unpredictible behavior and results. -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.wherescape.com/xml/red"
+           xmlns="http://www.wherescape.com/xml/red" attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+    <xs:element name="data_type_mapping_set">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element name="mapping_set_description" type="xs:string" minOccurs="1" maxOccurs="1" default=""/>
+				<xs:element name="mapping_set_null_policy" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="data_type_mapping" type="data_type_mapping" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:complexType name="data_type_mapping">
+		<xs:sequence>
+			<xs:element name="match_parameters" type="match_parameters" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="transform_code" type="xs:string" minOccurs="0" maxOccurs="1" default=""/>
+			<xs:element name="format_value" type="xs:string" minOccurs="0" maxOccurs="1" default=""/>
+			<xs:element name="default_value" type="xs:string" minOccurs="0" maxOccurs="1" default=""/>
+		</xs:sequence>
+		<xs:attribute name="match_data_type" type="xs:string" use="required"/>
+		<xs:attribute name="output_data_type" type="xs:string" use="required"/>
+		<xs:attribute name="active_flag" type="xs:boolean" use="optional" default="true"/>
+	</xs:complexType>
+	
+	<xs:complexType name="match_parameters">
+		<xs:sequence>
+			<xs:element name="match_length" type="xs:string" minOccurs="0" maxOccurs="1" default=""/>
+			<xs:element name="match_precision" type="xs:string" minOccurs="0" maxOccurs="1" default=""/>
+			<xs:element name="match_scale" type="xs:string" minOccurs="0" maxOccurs="1" default=""/>
+		</xs:sequence>
+	</xs:complexType>
+		
+</xs:schema>

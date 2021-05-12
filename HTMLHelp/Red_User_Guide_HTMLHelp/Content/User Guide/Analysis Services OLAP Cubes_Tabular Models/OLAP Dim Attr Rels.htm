@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes/Tabular Models|OLAP Cubes|OLAP Dimension Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Dimension Attribute Relationships</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>OLAP Dimension Attribute Relationships</h3>
+            <p class="BodyText">Attribute relationships define functional dependencies between attributes. If attribute A has a related attribute B in a hierarchical relationship, then an attribute relationship can be defined that assists Analysis Services to aggregate data.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Attribute relationships require unique members in order to function correctly—if there are duplicate values participating in an attribute relationship then cube data can be incorrectly aggregated and displayed</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">To view the <b>Properties</b> of an attribute relationship right-click an Attribute Relationship and then select <b>Properties</b> to show the window below:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Dimension Attributes_2.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Dimension Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A read only field indicating the dimension associated with the attribute relationship.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Attribute</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the attribute on which the attribute relationship is based.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Relationship Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the name of the attribute relationship.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Related Attribute</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the name of the related attribute.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Relationship Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates whether the relationship between attributes can change over time.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Cardinality</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates if the related attribute has a many to one or a one to one relationship with this attribute.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Visible</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates whether the attribute relationship is visible to the client applications.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To View Attribute Relationships</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">To view the list of Attribute Relationships, right-click the OLAP Dimension in the left pane and then select <b>Display Attribute Relationships</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To Add an Attribute Relationship</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <ol>
+                                <li value="1">Attribute relationships are defined automatically when a User Defined hierarchy is inherited from an underlying relational dimension.</li>
+                                <li value="2">To add an Attribute Relationship, right-click the OLAP Dimension in the left pane and then select <b>Add Attribute Relationship</b>. Fill out the dialog box with the relevant details.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">To Delete an Attribute Relationship</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Display the Attribute Relationships in the middle pane, right-click the Attribute Relationship and then select <b>Delete</b>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">&#160;</p>
+        </div>
+    </body>
+</html>

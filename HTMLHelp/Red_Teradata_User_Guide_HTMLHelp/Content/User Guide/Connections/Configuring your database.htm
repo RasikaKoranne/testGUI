@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Configuring your database for use by BDA</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Configuring your database for use by BDA</h3>
+            <p class="BodyText">Connections using BDA enable loading data into Hive as a target database and they also enable loading data from Hive into Datawarehouse tables as a source, using the Apache Sqoop load method.</p>
+            <p class="BodyText">This connection type needs to include the JDBC connection string (JDBC URL) and related attributes (username, password) for the Hive database. The JDBC User and Password is usually the same as the Extract User ID but users can specify different credentials if necessary. </p>
+            <p class="BodyText">The Big Data Adapter settings will also need to be populated in the Datawarehouse connection. Refer to <a href="Database Data Warehouse Metadata.htm">Database - the Data Warehouse/Metadata Repository</a> for details.</p>
+            <p class="BodyText"><span class="mc-variable WS_Branding.Product variable">RED</span> can also load data directly into Hive from any database source. This load can also be processed via an Apache Sqoop load and the JDBC settings on the Hive connection will need to be populated. Please see the connection example and field description below for more details about this.<br />When loading data into Hive as a target, users can also add specific target locations in their Hive ODBC connections, if they have a Hive target license enabled. </p>
+            <p class="BodyText">Hive connection properties will be the same for any database sources.</p>
+            <p class="SubHeading1">Example of a Hive ODBC connection</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Connections/Example of a Hive ODBC connection.png">
+                </img>
+            </p>
+            <h4 class="SpecialBold_1">Big Data Adapter Settings</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Big Data Adapter Host</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Host machine on which the Big Data Adapter is running its web-server.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Big Data Adapter Port</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Port that Tomcat is running. Default is 8080.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Base Target Directory for Sqoop Loads</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">HDFS directory in which to create target directories for Sqoop loads using the Big Data Adapter.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">JDBC Connection String (JDBC URL)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Connection string used by the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> Big Data Adapter to access this database.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">JDBC Driver Class Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">JDBC driver class to be used by the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> Big Data Adapter. This field must be set if the JDBC URL is set. <br />Select the appropriate JDBC Driver class name from the drop-down list. If this is left empty this will not be specified in generated commands.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Omit Sqoop Driver Option</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If set, the --driver option to Sqoop is omitted. This is required for certain connection types such as Oracle connections.<br />If you select the <b>Omit Sqoop Driver Option </b>check box, the driver parameter is not used in the Sqoop command line. This is a requirement for Oracle at the moment, as suggested by Sqoop documentation for 1.4.5.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Sqoop Connection Manager Class</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        Custom Sqoop connection manager class. Corresponds to the --connection-manager command line argument. Leave blank if this is not required.
+                        <p><b>Example connection from a source database to Hive</b></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0"><col class="TableStyle-tablestyle-Column-Column1" /><tbody><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyA-Column1-Body1">The full JDBC connection string is:<br />jdbc:sqlserver://192.168.60.100/DATABASE=SQL_Hive,DBS_PORT=1025
+                    </td></tr></tbody></table><p class="BodyText"><img src="../../Images/UserGuide_Images/Connections/JDBC Driver Class Name_571x438.png" style="width: 571;height: 438;" /></p></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">&#160;</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Connections|Connection Types" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Hadoop</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Hadoop</h3>
+            <p>This topic describes in greater detail the connection Properties, as they apply to <b>Hadoop </b>connections.&#160; </p>
+            <p>Hadoop as a source enables <span class="mc-variable WS_Branding.Product variable">RED</span> users to connect to the Hadoop System and process two load types from a Hadoop source into a Teradata repository. These connections must always be set via a Secure Shell (SSH) protocol.</p>
+            <p>Please note that <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>only fully supports HDFS as the underlying file system.</p>
+            <p>The two load types that can be processed from RED are:</p>
+            <ul>
+                <li><b>Native SSH Load</b> - connections to Hadoop on UNIX/Linux from which users do flat file loads. To process a Native SSH load, select Hadoop as the connection type set the remaining connection properties.</li>
+                <li><b>TPT Load</b> - connections to Hadoop from which users can do TPT script-based loads. To process Hadoop TPT loads, select Hadoop as the connection type and set the remaining connection properties.</li>
+            </ul>
+            <p>For <b>Hadoop TPT Loads</b>, users will need to have the following system prerequisites before setting up a connection within RED:</p>
+            <ul>
+                <li>Install Hadoop</li>
+                <li>Include Hadoop Client Jar files in Classpath</li>
+            </ul>
+            <h5>Example for an Apache Hadoop environment setup</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1">
+                            <p>#Hadoop</p>
+                            <p>export PATH=$PATH:/opt/hadoop-2.4.1/bin:/opt/hadoop-2.4.1/sbin</p>
+                            <p>#For Teradata TPT Load (Hadoop)</p>
+                            <p>export CLASSPATH=$(find /opt/hadoop-2.4.1/share/hadoop/hdfs -name *.jar -printf '%p:' | sed 's/:$//')</p>
+                            <p>export CLASSPATH=$CLASSPATH:$(find /opt/hadoop-2.4.1/share/hadoop/common -name *.jar -printf '%p:' | sed 's/:$//')</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">When the <b>Big Data Adapter</b> Settings are populated in Hadoop connections, <span class="mc-variable WS_Branding.Product variable">RED</span> can load data from Hadoop into Hive and/or Datawarehouse tables and also perform loads from Hadoop directly into the Datawarehouse using Sqoop through <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span class="mc-variable WS_Branding.Product variable">RED</span>'s Big Data Adapter (BDA).<br />For more information about these settings, refer to the <b>Big Data Adapter Settings</b> fields description below and also refer to <a href="Database Datawarehouse Metadata Teradata.htm">Connections to the Data Warehouse/Metadata Repository</a>, <a href="../../User Guide/Connections/Configuring your database.htm">Configuring your database for use by BDA</a> and <a href="../../User Guide/Loading Data/Apache Sqoop Load.htm">Apache Sqoop Load</a>. </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span class="mc-variable WS_Branding.Product variable">RED</span> only fully supports&#160; HDFS as the underlying file system.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If the <b>Hadoop</b> connection returns a blank screen or an error message in the <b>Results</b> pane after the connection is browsed, take necessary action through the<b> Server (SSH) </b>tab next to the main Builder and Scheduler tabs.  <img src="../../Images/UserGuide_Images/Connections/ssh key hadoop.png" /> This tab is displayed after browsing the UNIX connection.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Sample Hadoop TPT&#160;Connection screen:</h5>
+            <p>
+                <img src="../../Images/Teradata_images/Connections/Connection Hadoop.png" />
+            </p>
+            <h4 class="SpecialBold_1">General</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name used to label the connection within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> RED.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Connection Type</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Indicates the connection source type or the connection method, such as Database, ODBC, Windows, Unix.
+ Select the <b>Hadoop</b> connection type.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="SpecialBold_1">Apache Hadoop</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">UNIX/Linux Host Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">IP address or host name that identifies the Hadoop server.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Script Shell</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Path to the POSIX-compliant UNIX/Linux shell to use for generated scripts. For <b>UNIX</b> hosts, set to<b> /bin/ksh</b>. For <b>Linux</b> hosts set to <b>/bin/sh</b>.
+                        
+        <p>If this field is left blank, a default will be chosen based on the name of the connection and the type of database used for the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata repository.</p></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Work Directory</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Directory used by <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span class="mc-variable WS_Branding.Product variable">RED</span> to create temporary files for minimal logged extracts. The directory must exist and allow write access. There must be a different work directory for each <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span class="mc-variable WS_Branding.Product variable">RED</span> Scheduler running on the same machine to avoid file conflicts. Typically /tmp or a sub-directory of the UNIX user is used.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database Identifier (e.g. Oracle SID or TNS Name, Teradata TDPID) or Database Name (e.g. as in DB2 or SQL Server).
+    <![CDATA[                        ]]></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database Server/Home Directory</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><![CDATA[
+                                                ]]>Optional to specify the Database Home Directory if it is different from the standard home directory.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Protocol</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+       Telnet or Secure Shell (SSH) protocol to use to connect to the Hadoop machine. For SSH, the <b>Secure Shell (SSH) Command</b> property is enabled to specify how to connect.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Secure Shell (SSH) Command</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Command to execute to connect to a Hadoop machine using the Secure Shell (SSH) protocol, such as <b>C:\putty\plink.exe -ssh some_host_name</b>.<br />In-built variables <b>$HOST$</b>, <b>$USER$</b> and <b>$PASSWORD$</b> can be used here for the required host, user and password fields.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Pre-Login Action, Login Prompt, Password Prompt, Post-Login Action, and Command Prompt.</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">These fields are only used to create a Telnet connection to the host machine. WhereScape RED uses the Telnet connection in the drag and drop functionality. <br />They are <b> not used in the actual production running of the Data Warehouse, </b>and is only necessary if you wish to use the drag and drop functionality.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                       Pre-Login Action
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Response or command to send BEFORE logging in to the host machine. Typically this is NOT necessary but it can be used to indicate that the host Login Prompt is preceded by a line-feed (\n). However, it is preferable that the host login displays the Login Prompt without anything preceding it. [Optional]
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Login Prompt</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The host login prompt, or the tail end of the login prompt, e.g. <b>ogin as:</b></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Password Prompt</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The host password prompt, or the tail end of the password prompt, e.g. <b>ssword:</b></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Post-Login Action</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Not often used but may be necessary to respond to a login question. It is preferable that the host login goes straight to the command prompt.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Command Prompt</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        Enter the UNIX/Linux command prompt, or the tail end of that prompt, typically <b>&gt;</b>.
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">To ascertain some of the above fields, you have to log in to the UNIX system.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">TPT HadoopHost</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+IP address or host name (and optional port number) that identifies the Hadoop Host to a TPT load routine, in order to connect to the Hadoop file system from the machine you run TPT. e.g, <b>HadoopHost:9000</b> or <b>127.0.0.1:9000</b>.
+If this is not specified, then the UNIX/Linux Host Name will be used as the Hadoop Host to the TPT load routine. 
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Big Data Adapter Settings</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Set the two fields below to enable RED to communicate with BDA and enable loading data from Hadoop into Hive and/or into data warehouse tables using Sqoop.
+For further information about setting these fields, refer to <a href="Database Datawarehouse Metadata Teradata.htm">Connections to the Data Warehouse/Metadata Repository</a> and <a href="../../User Guide/Connections/Configuring the BDA Server.htm">Configuring the BDA Server</a>/<a href="../../User Guide/Connections/Configuring your database.htm">Configuring your database for use by BDA</a> for details.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Big Data Adapter Host</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Host machine on which the Big Data Adapter is running its web-server.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Big Data Adapter Port</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Port that Tomcat is running. Default is 8080.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="SpecialBold_1">Credentials</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        UNIX/Linux User ID
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        User Account to login to the UNIX/Linux Host.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">UNIX/Linux User Password</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Password to login to the UNIX/Linux Host.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">DSS User ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database user to connect to the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span class="mc-variable WS_Branding.Product variable">RED</span> metadata repository.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">DSS User Password</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database password to connect to the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span class="mc-variable WS_Branding.Product variable">RED</span> metadata repository.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Teradata Wallet User ID and Teradata Wallet String</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Enter the relevant Teradata Wallet credentials instead of the DSS User and Password for the Unix connection if using the Teradata log on method.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Other
+</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Path for Browsing</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        Optional default Path for browser pane filter. When a path has been selected in this field, it becomes the initial point for browsing and it is also expanded on open in the right hand browser pane.
+    <![CDATA[                     
+                    ]]></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default Load type for new tables created using this connection. Select from the <b>Script based load</b>, <b>Native SSH</b> or <b>Externally</b> loaded options.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+        The available options in this drop-down list is configured from Tools &gt; Options &gt; <a href="../../User Guide/Default Settings/Available Load Types.htm">Available Load Types</a>.
+    </td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Script Template</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Script Template</b> to use when a <b>Script based load</b> type is defined for a Load table object that is <b>sourced</b> from this connection.
+    <table style="width: 100%;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/UserGuide_Images/Connections/Connection Types.png" /></td><td><b>SQL Server&#160; Hadoop Native SSH Loads</b><br />Please note that for SQL Server Hadoop Native SSH loads to be processed successfully, you must be running <span class="mc-variable WS_Branding.Product variable">RED</span> and the <span class="mc-variable WS_Branding.Product variable">RED</span> Scheduler on same machine as SQL Server to ensure that the files are accessible from the same path.&#160; </td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Data Type Mapping Set</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+       XML files have been created to store mappings from one set of data types to another. Setting this field to <b>(Default)</b> will cause RED to automatically select the relevant mapping set; otherwise you can choose one of the standard mapping sets from the drop-down list or create a new one.
+    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>To test the drag and drop functionality</h4>
+            <ul>
+                <li>From the menu strip select <b>Browse</b> <b> &gt; </b> <b>Source Tables</b></li>
+                <li>Drill down to the area required</li>
+                <li>Drag an item to the middle pane, (having first selected the object in the left pane).</li>
+            </ul>
+            <h5>Closing the Connection
+        </h5>
+            <p>To close the collection, right-click in the browser pane and select <b>Close UNIX/LINUX session</b>:</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/Closing the Connection_1.png" />
+            </p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

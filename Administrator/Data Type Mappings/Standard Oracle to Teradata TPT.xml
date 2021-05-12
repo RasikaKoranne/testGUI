@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data_type_mapping_set name="Oracle12c to Teradata" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wherescape.com/xml/red">
+	<mapping_set_description>Oracle to Teradata data type mapping using the Oracle 12.02.001 ODBC driver.</mapping_set_description>
+	<mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+	<data_type_mapping match_data_type="number" output_data_type="number" active_flag="true">
+		<match_parameters>
+			<match_precision>38-*</match_precision>
+			<match_scale>0</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="number" output_data_type="number(%precision)" active_flag="true">
+		<match_parameters>
+			<match_scale>0</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="number" output_data_type="number(%precision,%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>1-*</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="decimal" output_data_type="number" active_flag="true">
+		<match_parameters>
+			<match_precision>38-*</match_precision>
+			<match_scale>0</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="decimal" output_data_type="number(%precision)" active_flag="true">
+		<match_parameters>
+			<match_scale>0</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="decimal" output_data_type="number(%precision,%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>1-*</match_scale>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="binary_float" output_data_type="float" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="binary_double" output_data_type="float" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="float" output_data_type="float" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="char" output_data_type="char(%precision)" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="nchar" output_data_type="char(%precision)" active_flag="true">
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="varchar2" output_data_type="varchar(%precision)" active_flag="true"></data_type_mapping>
+	<data_type_mapping match_data_type="nvarchar2" output_data_type="varchar(%precision)" active_flag="true">
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="long" output_data_type="varchar(8000)" active_flag="true">
+		<transform_code>NULL /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="clob" output_data_type="varchar(4000)" active_flag="true">
+		<transform_code>dbms_lob.substr(%table_name.%column_name, 4000, 1)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="nclob" output_data_type="varchar(2000)" active_flag="true">
+		<transform_code>dbms_lob.substr(%table_name.%column_name, 2000, 1)</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="bfile" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="xmltype" output_data_type="varchar(4000)" active_flag="true">
+		<transform_code>dbms_lob.substr(xmlserialize(content %table_name.%column_name as clob), 4000, 1)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="uritype" output_data_type="varchar(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="blob" output_data_type="varbyte(8000)" active_flag="true">
+		<transform_code>dbms_lob.substr(%table_name.%column_name, 8000, 1)</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="raw" output_data_type="varbyte(%precision)" active_flag="true">
+		<match_parameters>
+			<match_precision>1-7999</match_precision>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="raw" output_data_type="varbyte(8000)" active_flag="true">
+		<match_parameters>
+			<match_precision>8000-*</match_precision>
+		</match_parameters>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="long raw" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="rowid" output_data_type="varchar(18)" active_flag="true">
+		<transform_code>CAST(%table_name.%column_name AS varchar2(18))</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="urowid" output_data_type="varchar(%length)" active_flag="true">
+		<match_parameters>
+			<match_length>1-3999</match_length>
+		</match_parameters>
+		<transform_code>CAST(%table_name.%column_name AS varchar2(%length))</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="urowid" output_data_type="varchar(4000)" active_flag="true">
+		<match_parameters>
+			<match_length>4000-*</match_length>
+		</match_parameters>
+		<transform_code>CAST(%table_name.%column_name AS varchar2(4000))</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="urowid" output_data_type="varchar(18)" active_flag="true">
+		<transform_code>CAST(%table_name.%column_name AS varchar2(18))</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="date" output_data_type="timestamp(0)" active_flag="true">
+		<transform_code>CAST(TO_CHAR(%table_name.%column_name, 'YYYY-MM-DD HH:MI:SS') AS char(19))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp" output_data_type="timestamp(%scale)" active_flag="true">
+		<match_parameters>
+			<match_scale>0-6</match_scale>
+		</match_parameters>
+		<format_value>YYYY-MM-DDBHH:MI:SS</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp" output_data_type="timestamp(6)" active_flag="true">
+		<match_parameters>
+			<match_scale>7-*</match_scale>
+		</match_parameters>
+		<transform_code>CAST(%table_name.%column_name AS timestamp(6))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(6)</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>0</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(%table_name.%column_name, 'YYYY-MM-DD HH24:MI:SSTZH:TZM') AS char(25))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(0)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>1</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(%table_name.%column_name, 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(27))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(1)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>2</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(%table_name.%column_name, 'YYYY-MM-DD HH24:MI:SS.FF2TZH:TZM') AS char(28))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(2)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>3</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(%table_name.%column_name, 'YYYY-MM-DD HH24:MI:SS.FF3TZH:TZM') AS char(29))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(3)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>4</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(%table_name.%column_name, 'YYYY-MM-DD HH24:MI:SS.FF4TZH:TZM') AS char(30))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(4)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>5</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(%table_name.%column_name, 'YYYY-MM-DD HH24:MI:SS.FF5TZH:TZM') AS char(31))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(5)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with time zone" output_data_type="timestamp(6) with time zone" active_flag="true">
+		<transform_code>CAST(TO_CHAR(%table_name.%column_name, 'YYYY-MM-DD HH24:MI:SS.FF6TZH:TZM') AS char(32))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(6)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local timezone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>0</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SSTZH:TZM') AS char(25))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(0)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>0</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SSTZH:TZM') AS char(25))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(0)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local timezone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>1</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(27))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(1)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>1</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(27))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(1)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local timezone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>2</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(28))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(2)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>2</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(28))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(2)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local timezone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>3</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(29))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(3)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>3</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(29))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(3)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local timezone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>4</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(30))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(4)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>4</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(30))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(4)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local timezone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>5</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(31))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(5)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local time zone" output_data_type="timestamp(%scale) with time zone" active_flag="true">
+		<match_parameters>
+			<match_scale>5</match_scale>
+		</match_parameters>
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(31))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(5)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local timezone" output_data_type="timestamp(6) with time zone" active_flag="true">
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(32))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(6)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="timestamp with local time zone" output_data_type="timestamp(6) with time zone" active_flag="true">
+		<transform_code>CAST(TO_CHAR(CAST(%table_name.%column_name AS timestamp with time zone) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.FF1TZH:TZM') AS char(32))</transform_code>
+		<format_value>YYYY-MM-DDBHH:MI:SS.S(6)Z</format_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="anydata" output_data_type="varchar(4000)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="anytype" output_data_type="varchar(4000)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="anydataset" output_data_type="varchar(4000)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+		<charset_value>unicode</charset_value>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="sdo_geometry" output_data_type="varchar(4000)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="sdo_topo_geometry" output_data_type="varchar(4000)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="sdo_georaster" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="ordaudio" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="ordimage" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="ordvideo" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="orddoc" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="orddicom" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="ordimagesignature" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="si_stillimage" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="si_averagecolor" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="si_positionalcolor" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="si_colorhistogram" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="si_texture" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="si_featurelist" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="si_color" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="t_varray_int" output_data_type="varbyte(256)" active_flag="true">
+		<transform_code>NULL  /* CURRENTLY NOT SUPPORTED */</transform_code>
+	</data_type_mapping>
+	<data_type_mapping match_data_type="*" output_data_type="%prompt" active_flag="true"></data_type_mapping>
+</data_type_mapping_set>

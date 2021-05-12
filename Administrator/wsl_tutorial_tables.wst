@@ -1,0 +1,193 @@
+_TABLE_
+
+Create table PRODUCT(
+code                      number(6),
+description               varchar2(64),
+prod_line                 varchar2(24),
+prod_group                varchar2(24),
+subgroup                  varchar2(24));
+_SQL_
+comment on column product.code is 'Product code (SKU) that uniquely identifies the product.';
+_SQL_
+comment on column product.description is 'Description of the product. Normally unqiue.';
+_SQL_
+comment on column product.prod_line is 'Product line to which the product belongs. Forms part of the product, subgroup, group, line hierarchy';
+_SQL_
+comment on column product.prod_group is 'Group to which the product belongs. Forms part of the product, subgroup, group hierarchy';
+_SQL_
+comment on column product.subgroup is 'Sub group category to which the product belongs. Forms part of the product, subgroup, group hierarchy';
+_TABLE_
+
+Create table PROD_SUBGROUP(
+prod_group                varchar2(24),
+subgroup                  varchar2(24),
+subgroup_description      varchar2(64));
+_SQL_
+comment on column prod_subgroup.prod_group is 'Product group category. Combined with subgroup category to provide a unique entity';
+_SQL_
+comment on column prod_subgroup.subgroup is 'Sub group category. Part of a group.';
+_SQL_
+comment on column prod_subgroup.subgroup_description is 'Description of the subgroup category.';
+
+_TABLE_
+
+Create table PROD_GROUP(
+prod_group                varchar2(24),
+group_description         varchar2(64));
+_SQL_
+comment on column prod_group.prod_group is 'Group category. Every product belongs to a group';
+_SQL_
+comment on column prod_group.group_description is 'Description of the group category.';
+
+_TABLE_
+
+Create table PROD_LINE(
+prod_line                 varchar2(24),
+line_description          varchar2(64));
+_SQL_
+comment on column prod_line.prod_line is 'Product line category. Every product belongs to a product line';
+_SQL_
+comment on column prod_line.line_description is 'Description of the product line category.';
+
+_TABLE_
+
+Create table CODE_TABLE(
+type                      varchar2(24),
+code_value                varchar2(24),
+description               varchar2(64));
+_SQL_
+comment on column code_table.type is 'Defines the type of code being used.';
+_SQL_
+comment on column code_table.code_value is 'The code value for the specific code type.';
+_SQL_
+comment on column code_table.description is 'Description of the specific code for the specified code type.';
+
+_TABLE_
+
+Create table ORDER_LINE(
+order_number              number(12),
+order_line_no             number(4),
+product_code              number(6),
+unit_sale_price           number(9,3),
+quantity                  number(8),
+sales_value               number(13,2),
+tax                       number(9,2));
+_SQL_
+comment on column order_line.order_number is 'Every order has a unique generated order number. Link to the order_header table.';
+_SQL_
+comment on column order_line.order_line_no is 'Every sale of a product to a customer is assigned a unique line number within an order.';
+_SQL_
+comment on column order_line.product_code is 'Product sold to the customer specified in the order_header, as per the dates in the order_header.';
+_SQL_
+comment on column order_line.unit_sale_price is 'Standard sale price per unit of product in effect at the time of the order.';
+_SQL_
+comment on column order_line.quantity is 'Quantity of product sold (i.e. number of product units).';
+_SQL_
+comment on column order_line.sales_value is 'The sales value is the sum of the quantity multiplied by the unit sale price in effect at the time of the order.';
+_SQL_
+comment on column order_line.tax is 'The tax component of the sales value.';
+
+_TABLE_
+
+Create table ORDER_HEADER(
+order_number              number(12),
+order_date                date,
+customer_code             number(6),
+ship_date                 date);
+_SQL_
+comment on column order_header.order_number is 'Every order has a unique generated order number. Cancelled orders are removed to the cancelled_orders table.';
+_SQL_
+comment on column order_header.order_date is 'Date that the order was placed. Order pricing is that pricing in effect on the order date.';
+_SQL_
+comment on column order_header.customer_code is 'The code that relates to the customer who placed the order. Link to the customer table.';
+_SQL_
+comment on column order_header.ship_date is 'Date that the order was physicaly shipped to the customer.';
+
+_TABLE_
+
+Create table FORECAST(
+product_code              number(6),
+customer_code             number(6),
+forecast_quantity         number(8),
+forecast_sales_value      number(8,2),
+forecast_date             date);
+_SQL_
+comment on column forecast.product_code is 'Code that relates to the product being forecasted. Link to the product table.';
+_SQL_
+comment on column forecast.customer_code is 'The code that relates to the customer being forecasted. Link to the customer table.';
+_SQL_
+comment on column forecast.forecast_quantity is 'The quantity of the specified product units forecasted to be sold to the customer.';
+_SQL_
+comment on column forecast.forecast_sales_value is 'The total sales value of the forecasted sales of this product to this customer.';
+_SQL_
+comment on column forecast.forecast_date is 'The week in which the forecasted sales are expected to occur (First day of the week).';
+
+_TABLE_
+
+Create table CUSTOMER(
+code                      number(6),
+name                      varchar2(45),
+address                   varchar2(40),
+city                      varchar2(30),
+state                     varchar2(2));
+_SQL_
+comment on column customer.code is 'Unique code to identify the customer. Forms a hierarchy with city and state.';
+_SQL_
+comment on column customer.name is 'The full name of the customer. Forms a hierarchy with city and state.';
+_SQL_
+comment on column customer.address is 'The physical shipping address of the customer.';
+_SQL_
+comment on column customer.city is 'The city in which the customer sells shipped product.Forms a hierarchy with code and state.';
+_SQL_
+comment on column customer.state is 'The state in which the customer sells shipped product. Forms a hierarchy with code and city.';
+
+_TABLE_
+
+Create table BUDGET(
+product_code              number(6),
+customer_code             number(6),
+budget_quantity           number(8),
+budget_sales_value        number(8,2),
+budget_date               date);
+_SQL_
+comment on column budget.product_code is 'Code that relates to the product being budgeted for. Link to the product table.';
+_SQL_
+comment on column budget.customer_code is 'The code that relates to the customer being budgeted for. Link to the customer table.';
+_SQL_
+comment on column budget.budget_quantity is 'The quantity of the specified product units budgeted to be sold to the customer.';
+_SQL_
+comment on column budget.budget_sales_value is 'The total value of the budgeted sales of this product to this customer.';
+_SQL_
+comment on column budget.budget_date is 'The month in which the sales are budgeted for (First day of the month).';
+
+_TABLE_
+
+Create table KPI(
+kpi_identifier            varchar2(12),
+kpi_name         	  varchar2(256));
+_SQL_
+comment on column kpi.kpi_identifier is 'Unique identifier and descriptor for the key performance indicator (e.g. STAT01 through STAT99).';
+_SQL_
+comment on column kpi.kpi_name is 'Name and full description of the key performance indicator.';
+
+_TABLE_
+
+Create table STATES(
+state_code                    varchar2(2),
+state_name                    varchar2(256),
+country                          varchar2(256),
+continent                       varchar2(256)
+)
+;
+
+_SQL_
+comment on column states.state_code is 'Code that uniquely identifies the state across all countries and regions.';
+_SQL_
+comment on column states.state_name is 'Name of the state.';
+_SQL_
+comment on column states.country is 'Country in which the state is found.';
+_SQL_
+comment on column states.continent is 'Continental region in which the states country is found.';
+
+
+

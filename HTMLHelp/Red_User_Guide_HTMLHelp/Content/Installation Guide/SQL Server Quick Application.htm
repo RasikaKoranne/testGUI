@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" /><title>SQL Server Quick Application</title>
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">SQL Server Quick Application</h2>
+            <p class="BodyText">The quick application option for SQL Server attempts to create a Data Warehouse database, populate that database with the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> metadata, load an application, install a scheduler and optionally run a batch job.</p>
+            <p class="BodyText">It provides a means of quickly installing a <span class="mc-variable WS_Branding.Product variable">RED</span> application and getting the contents of the tables loaded and populated.</p>
+            <ol start="1" class="ol_1">
+                <li class="ListNumber" value="1">On the <b>Quick Start</b> tab, click <b>Auto Install Metadata and Application</b> to start.<p><img src="../Images/Install_Images/RED_SQLserverQuickapplication1_211x285.png" style="width: 211;height: 285;" class="img_2" /></p></li>
+                <li class="ListNumber" value="2">The following window is displayed. <p><img src="../Images/Install_Images/RED_SQLserverQuickapplication2.png" /></p><ul start="1" style="list-style-type: circle;"><li>Click <b>Yes</b> to proceed.</li></ul></li>
+            </ol>
+            <ol start="3" class="ol_1">
+                <li class="ListNumber" value="3">The following window is displayed. <p><img src="../Images/Install_Images/RED_SQLserverQuickapplication3_504x692.png" style="width: 504;height: 692;" class="img_2" /></p><ul start="3" style="list-style-type: circle;"><li class="ListNumber">Once all the values have been entered, click <b>OK</b> to proceed with the creation of the databases and the loading of the application.</li></ul></li>
+            </ol>
+            <p class="BodyText">The quick application can also be initiated from the command line or from a Windows batch file.&#160; </p>
+            <h4>Windows Command Line Invocation</h4>
+            <p class="BodyText">The syntax for calling from the command line is as follows:</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col class="TableStyle-Path-Column-Column1" />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1">adm.exe -QA [-SWITCH "switch value"]</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">The switches that can be applied supply information to the Setup Administrator utility. When all switches are provided, the application install occurs automatically. Where some switches are left out a partially completed, a window appears. The missing information can be provided and the install then proceeds. </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">Where a parameter for a switch contains spaces, the parameter must be enclosed in double quotes.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">The switches are:</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Switch</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Parameter to be supplied</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-QA
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates that this is a "Quick Application". No parameter is required.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-SS</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The SQL Server instance name where the Data Warehouse database will reside.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-SL
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The administrator user name for the SQL Server instance defined with the -SS switch. If this switch is not provided a Trusted connection is assumed.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-SP</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The administrator password for the SQL Server instance defined with the -SS switch.&#160; 
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-SN</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The Data Warehouse database name. This database will be created in the instance defined by -SS. An ODBC Source DSN of the same name will also be created on the PC.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-a</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The ODBC DSN architecture.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-AN
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The RED application name. This is the name of the 'id' file and is typically of the structure app_id_XXXX_vvvvvv.wst where XXXX is the application identifier and vvvvvv is the application version. For example, the tutorial application would be app_id_SQLT_tutorial_6.wst
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-AD</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The RED application directory. This is the directory in which the file defined by the -AN switch resides.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-LI
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The SQL Server instance that contains the source database.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-LD
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The ODBC source DSN name as defined in the Connection object in the data warehouse application. This ODBC source will be created.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-LN</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The database name on the SQL Server instance as defined by the -LI switch. This is the database that contains the source data.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-LT</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This switch does not have a parameter. If set, it flags the ODBC source DSN as defined in the -LD switch as a trusted connection.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-JN</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The name of a job in the data warehouse that is to be run once all other tasks are completed.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-CC</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The name of the cube connection if appropriate. If set, then all cubes will be updated to have this as the Analysis Services connection.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-DC</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The name of the Data Warehouse connection if appropriate. If set, then all cubes will be updated to have this as their Source connection.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-CD</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The name of the cube database in Analysis Services if appropriate. If set, then all cubes will be updated to have this database as their Analysis Services database.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">-ML</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The scheduler login name.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">-MP</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">The scheduler password.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="SubHeading1">For example, a batch file to call an application load of the tutorial may look as follows:</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col class="TableStyle-Path-Column-Column1" />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1">
+                            <p class="MiniTOCItem">@echo off</p>
+                            <p class="MiniTOCItem">c:\</p>
+                            <p class="MiniTOCItem">cd \Program Files\WhereScape\</p>
+                            <p class="MiniTOCItem">adm -QA -SS "WSL-TEST"&#160; -SN new_dw -LT -AN app_id_SQLT_tutorial_3.wst&#160; -AD "c:\Program Files\WhereScape\" -LI WSL-TEST -LD tutorial -LN tutorial -JN "Daily Update" -CC Cubes -CD My_database -DC DataWarehouse</p>
+                            <p class="MiniTOCItem">exit</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

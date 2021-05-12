@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Model Tables" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Building a Model Table</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Building a Model Table</h2>
+            <p>Model Tables are often sourced from one table in the base application. The process for building a model table is the same for most other tables and begins with the drag and drop of the stage table that contains the bulk of the model information.</p>
+            <h3>Drag and Drop</h3>
+            <ol>
+                <li value="1">Create a model target by double clicking on the <b>Dimension</b> object group in the left pane. The middle pane displays a list of all existing Dimension tables. </li>
+                <li value="2">Browse to the Data Warehouse via the <b>Browse &gt; Source Tables</b> menu option. </li>
+                <li value="3">Drag the table that contains the bulk of the model table columns, into the middle pane. Drop the table anywhere in the pane.<br />The new object dialog box appears and identifies the new object as a Dimension table. It provides a default name based on the Load table name</li>
+                <li value="4">Either accept this name or change the name to reflect the new model table and click <b>OK</b> to proceed.</li>
+            </ol>
+            <h3>Model Table Properties</h3>
+            <p>At this stage change the Table type to Model Table and change any other storage options if desired.<br />If prototyping and the model table is simple (e.g. one source table), then it is possible to create, load and update the model table in a couple of steps. <br />If you want to do this, select the (Build Procedure...) option from the 'Update Procedure' drop-down and then click Create and Load on the next dialog.</p>
+            <p>
+                <img src="../../Resources/images/Model Tables/Building a Model Table.png" />
+            </p>
+            <h3>Create and Load</h3>
+            <p>If you chose to build the update procedure the following dialog appears after clicking OK on the Properties page. This dialog asks if you want to create the Model table in the database and execute the update procedure.</p>
+            <p>
+                <img src="../../Resources/images/Model Tables/Building a Model Table_1.png" style="visibility: visible;mso-wrap-style: square;width: 368px;height: 173px;" />
+            </p>
+            <p>If you are satisfied with the columns that will be used and do not wish to add any columns, click the <b>Create and Load</b> button. Alternatively, the <b>Create</b> button creates the table in the repository but does not execute an update, allowing you to change columns before loading data into the table.</p>
+            <p>If <b>Create</b> or <b>Create and Load</b> is selected and a new procedure creation was chosen proceed directly to Generating the Model Table Update Procedure.</p>
+            <p>If you have additional columns to add or columns to delete then click <b>Close</b> and proceed as follows.</p>
+            <p>
+                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                    <col class="TableStyle-note-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-note-Head-Header1">
+                            <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-note-Body-Body1">
+                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">It is possible to create and load the table via the Scheduler; by selecting this option from the drop-down list on the <b>Create and Load</b> button:<br /><img src="../../Resources/images/Model Tables/Building a Model Table_2.png" style="visibility: visible;mso-wrap-style: square;width: 369px;height: 192px;" /><br /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h3>Deleting and Changing columns</h3>
+            <p>The columns defined for the model table will be displayed in the middle pane. At this stage it is possible to delete any unwanted columns by highlighting a column name or a group of names and clicking the Delete key.</p>
+            <p>The name of a column can also be changed at this stage by selecting the column and using the right-click menu to edit its properties. Any new name must conform to the database naming standards. Good practice is to use alphanumerics and the underscore character. See the section on column properties for a fuller description on what the various fields mean.</p>
+            <p>
+                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                    <col class="TableStyle-note-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-note-Head-Header1">
+                            <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-note-Body-Body1">
+                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">When prototyping, and in the initial stages of an analysis area build it is best not to remove columns, nor to change their names to any great extent. This type of activity is best left until after end users have used the data and provided feedback.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h3>Adding additional columns</h3>
+            <p>With the columns of the model table displayed in the middle pane, this pane is considered a drop target for additional columns.</p>
+            <p>It is a simple matter therefore to select columns from other Load tables and drag these columns into the middle pane.</p>
+            <p>The source table shows where each column was dragged from. Note that it is often common to have columns of the same name coming from different tables. In the example above, the description column is acquired from the load_product, load_prod_group and load_prod_subgroup tables. In order to create the model table, we need to assign these columns unique names, so for this example the last two columns in question have been renamed to group_description and subgroup_description.</p>
+            <p>There are a number of columns that do not have a source table. These columns have been added by WhereScape RED, and are added depending on earlier choices. A description of these columns follows.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Column name</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">model_customer_key</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The unique identifier (artificial key) for the model table. This key is used in the joins to the fact table. It is generated via an identity associated with the table, except for the date model table where it has the form YYYYMMDD. If you have changed the default behavior of RED not automatically add surrogate keys, this column will not have been added. Refer to Settings - Reppository Identification.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">dss_start_date</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Used for model history tables. This column provides a date time stamp when the model table record came into existence. It is used to ascertain which model table record should be used when multiple are available.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">dss_end_date</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Used for model history tables. This column provides a date time stamp when the model table record ceased to be the current record. It is used to ascertain which model table record should be used when multiple are available.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">dss_current_flag</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Used for model history tables. This flag identifies the current record where multiple versions exist.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">dss_version</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Used for model history tables. This column contains the version number of a model table record. Numbered from 1 upwards with the highest number being the latest or current version. It forms part of the unique constraint for the business key of a model history table.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">dss_update_time</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates when the record was last updated in the data warehouse.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">dss_create_time</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Indicates when the record was first created in the data warehouse</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="Heading3">Create the table</h3>
+            <p>Once the model table has been defined in the metadata, we need to physically create the table in the database. This is achieved by right-clicking the model name and selecting <b>Create (ReCreate)</b> from the context menu.</p>
+            <p>The results pane displays the result of the creation. </p>
+            <p>A message confirms that the model table was created. A copy of the actual database create statement and if defined the results of any index create statements will be listed. For the initial create no indexes, is defined.</p>
+            <p>If the table was not created then ascertain and fix the problem. A common problem is a 'Duplicate column' where a column has the same name in two of the source tables. The best way of finding such a column is to double click on the list heading 'Col name'. This sorts the column names into alphabetic order. Another double click on the heading will sort the columns back into their create order. </p>
+            <p>The next section covers the Generating the Model Table Update Procedure.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

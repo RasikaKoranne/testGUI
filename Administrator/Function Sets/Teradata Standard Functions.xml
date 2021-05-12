@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<database_function_set name="Default Teradata" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Database%20Function%20Set.xsd">
+
+  <database>Teradata</database>
+
+  <meta_version>1</meta_version>
+
+  <functional_groups>
+    <functional_group name="Number">
+      <functions>
+        <function name="Absolute Value (ABS)">
+          <description>Returns the absolute value of the number. Essentially converts all values to positive\r\nExample: ABS(load_sales.tax)</description>
+          <syntax>ABS(numeric_column)</syntax>
+          <model>ABS(numeric_column)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Cosine (COS)">
+          <description>Returns the trigonometric cosine for an angle expressed in radians.\r\nExample: COS(load_sales.value)</description>
+          <syntax>COS(numeric_column)</syntax>
+          <model>COS(numeric_column)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Exponent (EXP)">
+          <description>Returns e raised to the specified power. e = 2.718281828...\r\nExample: EXP(3)</description>
+          <syntax>EXP(n)</syntax>
+          <model>EXP(n)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>5</default_column_end>
+        </function>
+        <function name="Natural Logarithm (LN)">
+          <description>Returns the natural, or base 'e' logarithm of the supplied value\r\nExample: LN(10.34)</description>
+          <syntax>LN(n)</syntax>
+          <model>LN(n)</model>
+          <default_column_start>3</default_column_start>
+          <default_column_end>4</default_column_end>
+        </function>
+        <function name="Base 10 Logarithm (LOG)">
+          <description>Returns the base10 logarithm of the supplied value\r\nExample: LOG(100)</description>
+          <syntax>LOG(number)</syntax>
+          <model>LOG(number)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>10</default_column_end>
+        </function>
+        <function name="If Null Value (COALESCE)">
+          <description>Returns either the passed column or the default value if the passed column is null.\r\nExample: COALESCE(load_sales.boxes,0)</description>
+          <syntax>COALESCE(numeric_column,default_value)</syntax>
+          <model>COALESCE(numeric_column,default_value)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>23</default_column_end>
+        </function>
+        <function name="Sine (SIN)">
+          <description>Returns the trigonometric sine for an angle expressed in radians.\r\nExample: SIN(load_sales.value)</description>
+          <syntax>SIN(numeric_column)</syntax>
+          <model>SIN(numeric_column)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Square Root (SQRT)">
+          <description>Returns the square root of the value supplied.\r\nExample: SQRT(load_sales.value)</description>
+          <syntax>SQRT(numeric_column)</syntax>
+          <model>SQRT(numeric_column)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Tangent (TAN)">
+          <description>Returns the trigonometric tangent for an angle expressed in radians.\r\nExample: TAN(load_sales.value)</description>
+          <syntax>TAN(numeric_column)</syntax>
+          <model>TAN(numeric_column)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="String">
+      <functions>
+        <function name="Hex value (CHAR2HEXINT)">
+          <description>Returns the hexadecimal value of the characters in the string\r\nExample: CHAR2HEXINT(load_customer.name)</description>
+          <syntax>CHAR2HEXINT(string_column)</syntax>
+          <model>CHAR2HEXINT(string_column)</model>
+          <default_column_start>12</default_column_start>
+          <default_column_end>25</default_column_end>
+        </function>
+        <function name="If Null Value (COALESCE)">
+          <description>Returns either the passed column or the default value if the passed column is null.\r\nExample: COALESCE(load_sales.payment_methd,'Cash')</description>
+          <syntax>COALESCE(string_column,default_value)</syntax>
+          <model>COALESCE(string_column,default_value)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Locate (POSITION)">
+          <description>Returns an integer value containing the starting position of the search string, or zero if the search string is not found.\r\nExample: POSITION('MITH' IN load_customer.name)</description>
+          <syntax>POSITION('search_string' IN string_column)</syntax>
+          <model>POSITION('search_string' IN string_column)</model>
+          <default_column_start>28</default_column_start>
+          <default_column_end>41</default_column_end>
+        </function>
+        <function name="Lower (LOWER)">
+          <description>Returns a string where every character in the passed column data is converted to lower case.\r\nExample: LOWER(load_customer.name)</description>
+          <syntax>LOWER(string_column)</syntax>
+          <model>LOWER(string_column)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+        <function name="Trim (TRIM)">
+          <description>Returns a string which is the passed column data where all of the trailing. leading or both white spaces are removed.\r\nExample: TRIM( BOTH FROM load_customer.name)</description>
+          <syntax>TRIM(BOTH/TRAILING/LEADING char FROM string_column)</syntax>
+          <model>TRIM(BOTH/TRAILING/LEADING char FROM string_column)</model>
+          <default_column_start>37</default_column_start>
+          <default_column_end>50</default_column_end>
+        </function>
+        <function name="Sounds Like (SOUNDEX)">
+          <description>Used in a comparison situation. This function returns a sound code that can be used to compare against a second sound code.\r\nExample: CASE WHEN SOUNDEX(load_customer.last_name) = SOUNDEX('smith') THEN 'smith' ELSE load_customer.last_name END</description>
+          <syntax>SOUNDEX(string_column)</syntax>
+          <model>SOUNDEX(string_column)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>21</default_column_end>
+        </function>
+        <function name="Sub String (SUBSTR)">
+          <description>Returns a sub string of the passed column data. The start position and length of the substring are supplied.\r\nExample: SUBSTR(load_customer.name,1,10)</description>
+          <syntax>SUBSTR(string_column, start ,count )</syntax>
+          <model>SUBSTR(string_column, start ,count )</model>
+          <default_column_start>7</default_column_start>
+          <default_column_end>20</default_column_end>
+        </function>
+        <function name="Upper (UPPER)">
+          <description>Returns a string where every character in the passed column data is converted to upper case.\r\nExample: UPPER(load_customer.name)</description>
+          <syntax>UPPER(string_column)</syntax>
+          <model>UPPER(string_column)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>19</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Date">
+      <functions>
+        <function name="Add Date parts (INTERVAL)">
+          <description>Returns a date which has a number of date parts added to the supplied date. Date parts are Year, Month ,Day ,Hour, minute ,second.\r\nExample: CURRENT_TIMESTAMP + INTERVAL '1' DAY\r\nExample: SELECT CURRENT_TIMESTAMP + INTERVAL '129' MINUTE - CURRENT_TIME</description>
+          <syntax>INTERVAL 'number' date_part</syntax>
+          <model>INTERVAL 'number' date_part</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="Add Months (ADD_MONTHS)">
+          <description>Returns a date which has had the specified number of months added to it.\r\nExample: ADD_MONTHS(load_customer.start_date,36)</description>
+          <syntax>ADD_MONTHS(date_column,number_of_months)</syntax>
+          <model>ADD_MONTHS(date_column,number_of_months)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Date Conversion (CAST)">
+          <description>Performs a date conversion or calculation.\r\nExample: CAST('2003-11-23 12:35' AS TIMESTAMP FORMAT 'Y4-MM-DDBHH:MI')</description>
+          <syntax>CAST(date AS FORMAT '')</syntax>
+          <model>CAST(date AS FORMAT '')</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>9</default_column_end>
+        </function>
+        <function name="Extract (EXTRACT)">
+          <description>Returns the integer value of the date part for the date supplied.\r\nDate parts are year,quarter,month,dayofyear,day,week,weekday,hour,minute,second,millisecond.\r\nExample: EXTRACT(YEAR FROM load_customer.start_date)</description>
+          <syntax>EXTRACT(YEAR/MONTH/DAY/HOUR/MINUTE/SECOND FROM date_column)</syntax>
+          <model>EXTRACT(YEAR/MONTH/DAY/HOUR/MINUTE/SECOND FROM date_column)</model>
+          <default_column_start>47</default_column_start>
+          <default_column_end>58</default_column_end>
+        </function>
+        <function name="System Date (CURRENT_TIMESTAMP)">
+          <description>Returns the current system date time.\r\nExample: CURRENT_TIMESTAMP</description>
+          <syntax>CURRENT_TIMESTAMP</syntax>
+          <model>CURRENT_TIMESTAMP</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Conversion">
+      <functions>
+        <function name="Case Statement (CASE)">
+          <description>Allows the use of IF ... THEN ... ELSE logic.\r\nExample: CASE WHEN load_sample.temp1 &gt; load_sample_temp2 THEN 'Hot' ELSE 'Cold' END</description>
+          <syntax>CASE [input_expression] WHEN when_expression THEN result_expression [ ...n ] [ ELSE else_result_expression] END</syntax>
+          <model>CASE [input_expression] WHEN when_expression THEN result_expression [ ...n ] [ ELSE else_result_expression] END</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+        <function name="Cast as Type (CAST)">
+          <description>Returns the column converted to the specified data type and size.\r\nExample: CAST(load_inventory.size AS VARCHAR(20))</description>
+          <syntax>CAST(column AS data_type)</syntax>
+          <model>CAST(column AS data_type)</model>
+          <default_column_start>5</default_column_start>
+          <default_column_end>11</default_column_end>
+        </function>
+        <function name="If Null Value (COALESCE)">
+          <description>Returns either the passed column or the default value if the passed column is null.\r\nExample: COALESCE(load_sales.boxes,0)</description>
+          <syntax>COALESCE(column,default_value)</syntax>
+          <model>COALESCE(column,default_value)</model>
+          <default_column_start>9</default_column_start>
+          <default_column_end>15</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Aggregate">
+      <functions>
+        <function name="Average (AVG)">
+          <description>Returns the average value for the supplied column.\r\nExample: AVG(load_inventory.temp1)</description>
+          <syntax>AVG(numeric_column)</syntax>
+          <model>AVG(numeric_column)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Count (COUNT)">
+          <description>Returns the count of the number of non-null values for the column.\r\nExample: COUNT(load_inventory.temp1)</description>
+          <syntax>COUNT(column)</syntax>
+          <model>COUNT(column)</model>
+          <default_column_start>6</default_column_start>
+          <default_column_end>12</default_column_end>
+        </function>
+        <function name="Maximum (MAX)">
+          <description>Returns the maximum value from the supplied column.\r\nExample: MAX(load_inventory.temp1)</description>
+          <syntax>MAX(numeric_column)</syntax>
+          <model>MAX(numeric_column)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Minimum (MIN)">
+          <description>Returns the minimum value from the supplied column.\r\nExample: MIN(load_inventory.temp1)</description>
+          <syntax>MIN(numeric_column)</syntax>
+          <model>MIN(numeric_column)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Standard Deviation (STDDEV_POP)">
+          <description>Returns the standard deviation for the supplied column.\r\nExample: STDDEV_POP(load_inventory.temp1)</description>
+          <syntax>STDDEV_POP(numeric_column)</syntax>
+          <model>STDDEV_POP(numeric_column)</model>
+          <default_column_start>11</default_column_start>
+          <default_column_end>25</default_column_end>
+        </function>
+        <function name="Sum (SUM)">
+          <description>Returns the summed values from the supplied column.\r\nExample: SUM(load_inventory.temp1)</description>
+          <syntax>SUM(numeric_column)</syntax>
+          <model>SUM(numeric_column)</model>
+          <default_column_start>4</default_column_start>
+          <default_column_end>18</default_column_end>
+        </function>
+        <function name="Variance (VAR_POP)">
+          <description>Returns the variance for the supplied column.\r\nExample: VAR_POP(load_inventory.temp1)</description>
+          <syntax>VAR_POP(numeric_column)</syntax>
+          <model>VAR_POP(numeric_column)</model>
+          <default_column_start>8</default_column_start>
+          <default_column_end>22</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+    <functional_group name="Operator">
+      <functions>
+        <function name="+">
+          <description>Inserts the plus operator to allow addition of two numbers.\r\nExample: load_sales.base + load_sales.gst</description>
+          <syntax>+</syntax>
+          <model>+</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="-">
+          <description>Inserts the minus operator to allow subtraction of two numbers.\r\nExample: load_sales.base - load_sales.gst</description>
+          <syntax>-</syntax>
+          <model>-</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="/">
+          <description>Inserts the divide operator to allow division of two numbers.\r\nExample: load_sales.base / load_sales.gst</description>
+          <syntax>/</syntax>
+          <model>/</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="*">
+          <description>Inserts the multiply operator to allow multiplication of two numbers.\r\nExample: load_sales.base * load_sales.gst</description>
+          <syntax>*</syntax>
+          <model>*</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="||">
+          <description>Inserts the concatenation operator to allow adding of two strings.\r\nExample: load_customer.first_name || ' ' || load_customer.last_name</description>
+          <syntax>||</syntax>
+          <model>||</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name=" ">
+          <description>Inserts the space character for clarity or other purposes.</description>
+          <syntax> </syntax>
+          <model> </model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name="(">
+          <description>Inserts the open bracket, used for setting precedence in result evaluation.</description>
+          <syntax>(</syntax>
+          <model>(</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+        <function name=")">
+          <description>Inserts the close bracket, used for setting precedence in result evaluation.</description>
+          <syntax>)</syntax>
+          <model>)</model>
+          <default_column_start>0</default_column_start>
+          <default_column_end>0</default_column_end>
+        </function>
+      </functions>
+    </functional_group>
+  </functional_groups>
+
+</database_function_set>

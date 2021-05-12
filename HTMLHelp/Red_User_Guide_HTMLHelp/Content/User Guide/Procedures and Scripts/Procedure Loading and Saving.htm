@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Procedures and Scripts" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Procedure Loading and Saving</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Procedure Loading and Saving</h2>
+            <p class="BodyText">Procedures are normally stored in the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata tables. When a procedure is opened within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> then the data is retrieved from the meta tables. Likewise when the procedure is saved, it overwrites the existing data in the meta tables.</p>
+            <p class="BodyText">When a procedure is compiled, it is also written to the database system tables. <MadCap:conditionalText data-mc-conditions="Outputs.Only for RED User Guide">In the case of Oracle a compiled procedure can be viewed via the 'User_source' view (e.g. select text from user_source where name = 'MY_PROCEDURE' order by line;). For SQL Server the command is sp_helptext 'MY_PROCEDURE'.</MadCap:conditionalText></p>
+            <p class="SubHeading1"><b>Loading data</b>
+            </p>
+            <p class="BodyText">As mentioned above when a procedure is opened for editing the information stored in the metadata is loaded. Additional text can be loaded into the procedure edit window by selecting the <b>File &gt; Insert from File</b> menu option which allows the browsing and inserting of a PC based file. Also paste buffer data can be inserted in the normal manner. In the previous 'Editing' section the viewer window was discussed. This window can also be a source of data via cut and paste.</p>
+            <p class="SubHeading1"><b>Saving the Procedure</b>
+            </p>
+            <p class="BodyText">The default <b>File &gt; Save Procedure</b> menu option overwrites the existing procedure in the metadata. In addition, a procedure can be saved to a Windows disk by selecting the <b>File &gt; Write procedure to disk</b> menu option. All procedures can be written to disk from the main Builder menu option <b>Backup &gt; Save procedures to disk</b>. This option allows the selection of a directory. The procedures are then written individually into that directory.<MadCap:conditionalText data-mc-conditions="Outputs.Only for RED User Guide"> All procedures are also written to one text file as part of the <b>Backup &gt; Export the metadata</b> menu option.</MadCap:conditionalText></p>
+            <p class="SubHeading1"><b>Versions</b>
+            </p>
+            <p class="BodyText">Multiple versions of a procedure can be stored. Once a version is created that version may be read but may not be updated. Only the current procedure can be edited. There are a number of ways of creating a version of a procedure. These are:</p>
+            <ol>
+                <li value="1">By setting <b>Auto-Version before Procedure Compile </b>under <b>Tools &gt; Options &gt; Versioning.</b> If set to true, a new version of a procedure will be created whenever the procedure is compiled. </li>
+                <li value="2">The Procedure Editor menu option <b>File &gt; Save and Version</b> will save a procedure and create a version at the same time.</li>
+                <li value="3">By selecting the <b>Version Control &gt; New Version </b>menu option from the right-click context menu of a procedure in the main Builder window.</li>
+                <li value="4">By selecting the <b>Tools &gt; Version Objects</b> menu option.</li>
+            </ol>
+            <p class="BodyText">When a version is created via method (2) or (3) above the following screen appears, to enable the definition of the version. If an auto version is created, then the person creating the version is recorded along with the reason for the version. (e.g. Version on compile, Version on procedure delete)</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Versions.png" />
+            </p>
+            <ul>
+                <li>The version name/description appears when the versions are subsequently browsed. </li>
+                <li>The Retain Until date is set ten years in the future by default. </li>
+                <li>The automated deletion of versions is not supported.</li>
+            </ul>
+        </div>
+    </body>
+</html>

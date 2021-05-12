@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins_HTML5___Top_Navigation" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-has-content-body="True" data-mc-toc-path="Installation|BDA" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="print">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" /><title>Configuring Kerberos for a secure use with BDA</title>
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/foundation.6.2.3.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Fluid/Stylesheets/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/foundation.6.2.3_custom.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-right" role="navigation" id="offCanvas" data-off-canvas="" data-position="right" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-right is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" role="banner" data-mc-ignore="true"><a class="skip-to-content fluid-skip showOnFocus" href="#">Skip To Main Content</a>
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="menu-icon-container relative clearfix">
+                                    <div class="central-account-wrapper">
+                                        <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                            <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                                <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="menu-icon" aria-label="Show Navigation Panel" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="title-bar-layout outer-row">
+                                <div class="logo-wrapper"><a class="logo" href="../external_help/About.htm" alt="Logo"></a>
+                                </div>
+                                <div class="navigation-wrapper nocontent">
+                                    <ul class="navigation clearfix" role="navigation" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="3" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                        <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="central-account-wrapper">
+                                    <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                        <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                            <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-search-wrapper">
+                                    <div class="nav-search row">
+                                        <form class="search" action="#">
+                                            <div class="search-bar search-bar-container needs-pie">
+                                                <input class="search-field needs-pie" type="search" aria-label="Search Field" placeholder="Search" />
+                                                <div class="search-filter-wrapper"><span class="invisible-label" id="search-filters-label">Filter: </span>
+                                                    <div class="search-filter" aria-haspopup="true" aria-controls="sf-content" aria-expanded="false" aria-label="Search Filter" title="All Files" role="button" tabindex="0">
+                                                    </div>
+                                                    <div class="search-filter-content" id="sf-content">
+                                                        <ul>
+                                                            <li>
+                                                                <button class="mc-dropdown-item" aria-labelledby="search-filters-label filterSelectorLabel-00001"><span id="filterSelectorLabel-00001">All Files</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="search-submit-wrapper" dir="ltr">
+                                                    <div class="search-submit" title="Search" role="button" tabindex="0"><span class="invisible-label">Submit Search</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="main-section">
+                        <div class="row outer-row sidenav-layout">
+                            <nav class="sidenav-wrapper">
+                                <div class="sidenav-container">
+                                    <ul class="off-canvas-accordion vertical menu sidenav" data-accordion-menu="" data-mc-css-tree-node-expanded="is-accordion-submenu-parent" data-mc-css-tree-node-collapsed="is-accordion-submenu-parent" data-mc-css-sub-menu="vertical menu accordion-menu is-accordion-submenu nested" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="False" data-mc-include-back="False" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.accordionMenu" data-mc-toc="True" data-mc-side-nav-menu="True">
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="body-container">
+                                <div data-mc-content-body="True">
+                                    <div class="nocontent">
+                                        <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+                                        </div>
+                                    </div>
+                                    <div role="main" id="mc-main-content">
+                                        <h2 class="Major_Section_Heading">Configuring Kerberos for a secure use with BDA</h2>
+                                        <p>To configure Kerberos for use with BDA, users need to do the following configuration steps:</p>
+                                        <ol>
+                                            <li value="1">Download the Kerberos Windows client (<a href="http://web.mit.edu/kerberos/dist/">http://web.mit.edu/kerberos/dist/</a>) and configure it using the Kerberos KDC.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0"><col class="TableStyle-tip-Column-Column1" /><thead><tr class="TableStyle-tip-Head-Header1"><th class="TableStyle-tip-HeadD-Column1-Header1">Tip:</th></tr></thead><tbody><tr class="TableStyle-tip-Body-Body1"><td class="TableStyle-tip-BodyA-Column1-Body1">
+                                If necessary, manual changes for a Kerberos configuration in Windows can be made in the configuration file <b>C:\ProgramData\MIT\Kerberos5\krb5.ini</b>. In some installations where this file is not found, please add the system variable <b>KRB5_CONFIG=C:\ProgramData\MIT\Kerberos5\krb5.ini</b>.
+                            </td></tr></tbody></table></li>
+                                            <li value="2">Check your <b>KRB5CCNAME</b> environment variable; for example, C:\temp\krb5cache.<p><img src="../Images/Install_Images/RED_configuringKerberos.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><ul><li style="color: #d7454b;">krb5cache is a regular file (not a directory) managed by the Kerberos software and should not be created by the user. 
+</li><li style="color: #d7454b;">If you change this variable, you will need to restart your computer to ensure MIT Kerberos for Windows uses this setting.
+</li></ul></td></tr></tbody></table></li>
+                                            <li value="3">Cloudera Hive Configuration Example.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The following example is based on Cloudera Hive with impersonation enabled. Please refer to the vendor documentation for your Hive distribution to configure Kerberos in your environment.</td></tr></tbody></table><p>Configure your Hive ODBC connection by downloading a Hive ODBC client, e.g. HortonWorks or Cloudera, and configure it to use Kerberos authentication as shown in the example below.</p><p><img src="../Images/Install_Images/RED_configureCloudera.png" /></p></li>
+                                            <li value="4">
+                                                <p>In <span class="mc-variable WS_Branding.Product variable">RED</span>, update your JDBC connection string for your relevant connections.</p>
+                                                <p>The JDBC connection string for <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> connections to a Hive database needs to be updated to reflect the secured server where the principal in the connection string must be the HiveServer2-Kerberos-Principal:</p>
+                                                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                                                    <col class="TableStyle-Path-Column-Column1" />
+                                                    <tbody>
+                                                        <tr class="TableStyle-code-Body-Body1">
+                                                            <td class="TableStyle-code-BodyA--Body1">
+                                                                <p>example: </p>
+                                                                <p>jdbc:hive2://quickstart.cloudera:10000/default;principal=hive/quickstart.cloudera@CLOUDERA;</p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                            <li value="5">
+                                                <p>BDA then needs to be changed to connect to a Kerberos secured environment. The configuration parameters are the following options included in the bdaenv file:</p>
+                                                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                                                    <col class="TableStyle-Path-Column-Column1" />
+                                                    <tbody>
+                                                        <tr class="TableStyle-code-Body-Body1">
+                                                            <td class="TableStyle-code-BodyA--Body1">
+                                                                <p>########################################
+<br /># Kerberos Authentication
+<br />########################################
+</p>
+                                                                <p>
+# Example configuration for a Kerberos-secured cluster
+<br /># WS_BDA_HADOOP_SECURITY_AUTHENTICATION=kerberos
+<br /># WS_BDA_HADOOP_SECURITY_PRINCIPAL=hive/quickstart.cloudera@CLOUDERA
+<br /># WS_BDA_HADOOP_SECURITY_KEYTAB=/etc/hive/conf/hive.keytab
+</p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                            <li value="6">
+                                                <p>Depending on the cluster configuration, there are two options with and without proxy users enabled.</p>
+                                                <p>The proxy option is the preferred option because this enables BDA to use any valid Kerberos principal instead of the hive super-user, in general hive/quickstart.cloudera@CLOUDERA. A sample configuration using a user defined principal is as follows:</p>
+                                                <p><span style="font-family: 'Courier New';">WS_BDA_HADOOP_SECURITY_AUTHENTICATION =kerberos</span>
+                                                    <br style="font-family: 'Courier New';" /><span style="font-family: 'Courier New';">WS_BDA_HADOOP_SECURITY_PRINCIPAL =bda@CLOUDERA</span>
+                                                    <br style="font-family: 'Courier New';" /><span style="font-family: 'Courier New';">WS_BDA_HADOOP_SECURITY_KEYTAB =/home/bda/bda.keytab</span>
+                                                </p>
+                                                <p>If you need to access a cluster without proxy users enabled, you can use following configuration:</p>
+                                                <p><span style="font-family: 'Courier New';">WS_BDA_HADOOP_SECURITY_AUTHENTICATION =kerberos</span>
+                                                    <br style="font-family: 'Courier New';" /><span style="font-family: 'Courier New';">WS_BDA_HADOOP_SECURITY_PRINCIPAL =hive/quickstart.cloudera@CLOUDERA</span>
+                                                    <br style="font-family: 'Courier New';" /><span style="font-family: 'Courier New';">WS_BDA_HADOOP_SECURITY_KEYTAB =/etc/hive/conf/hive.keytab</span>
+                                                </p>
+                                                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                                    <col class="TableStyle-note-Column-Column1" />
+                                                    <thead>
+                                                        <tr class="TableStyle-note-Head-Header1">
+                                                            <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="TableStyle-note-Body-Body1">
+                                                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                                The last option for the keytab file assumes that the file /etc/hive/conf/hive.keytab exists and is readable for the user running the Tomcat service. In a Cloudera cluster using Cloudera Manager, keytab files are generated and stored in several local directories. One way to find the keytab file is to use the find command on the command shell:
+                                <p><span style="font-family: 'Courier New';">find / -name hive.keytab -print</span><![CDATA[
+]]></p><p>and copy the corresponding file to the destination folder. Also, you will need to repeat this step after each password change of the principal "hive" in the Cloudera Manager.
+</p></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </ol>
+                                        <h3 class="NoTocEntry">Hadoop on a UNIX shell</h3>
+                                        <p>For browsing Hadoop HDFS and loading data from Hadoop HDFS,  <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> establishes a connection to the Linux server via a secure shell. Although some ssh-clients allow ticket forwarding for Kerberos this option is not available for PuTTy psexec. The easiest method is to create a keytab file that is readable only for the session user and to add the kinit command to obtain a Kerberos ticket at log-on time.</p>
+                                        <p style="font-family: 'Courier New';">e.g.: add "kinit cloudera@CLOUDERA -k -t ~/cloudera.keytab" to /home/cloudera/.bashrc.</p>
+                                        <h3 class="NoTocEntry">Secured Hadoop and Scheduler</h3>
+                                        <p>Apart from ODBC loads into Hive tables, all Kerberos authentications are performed on the Hadoop server side and, therefore, are independent of the invocation method, interactive or scheduler.</p>
+                                        <p>For ODBC loads, the service user running the scheduler needs to provide a valid ticket for a Kerberos principal. Because the ticket must be renewed automatically, a keytab file for this user needs to be provided on the server running the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> scheduler. For instance, the Dos-shell command "kinit" can be run periodically as a Windows scheduled task to renew a ticket without user interaction:</p>
+                                        <p style="font-family: 'Courier New';">e.g.: kinit -k -t C:\Users\ServiceUser\cloudera.keytab cloudera@CLOUDERA</p>
+                                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                            <col class="TableStyle-note-Column-Column1" />
+                                            <thead>
+                                                <tr class="TableStyle-note-Head-Header1">
+                                                    <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="TableStyle-note-Body-Body1">
+                                                    <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The keytab file should be readable to the service user only.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><a data-close="true"></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

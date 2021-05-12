@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Fact Tables|Rollup or Combined Fact Tables" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Creating Rollup Fact Tables</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Creating Rollup Fact Tables</h3>
+            <p>A rollup or combined Fact table is typically created by dragging a Fact table onto a Fact table list. In the example below, a double-click on the Fact table object group under the Sales project produced a list in the middle pane, showing the existing Fact tables. </p>
+            <p>A <b>fact_sales_analysis</b> rollup Fact table is created after selecting and dragging the <b>fact_sales_detail</b> table in the right pane into the middle pane. </p>
+            <p>The initial object create window appears. Note that the name implies that this is a rollup Fact table. </p>
+            <p>The name is changed to the one chosen above. </p>
+            <p>A list of columns is displayed and those not required are deleted (everything except additive measures and dimensions).&#160; </p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Fact Tables/Creating Rollup Fact Tables.png" />
+            </p>
+            <p><b>Drag and drop</b> additional columns from other Fact tables into the middle pane if required. Columns that have the same name need to be changed. </p>
+            <p>For example, if we acquired a quantity column from <b>fact_sales_detail</b> and a column of the same name from <b>fact_forecast</b> we may choose to change the names to <b>actual_quantity</b> and <b>forecast_quantity</b>.&#160; </p>
+            <p>Once all columns have been defined:</p>
+            <ol>
+                <li value="1">Create the table.</li>
+                <li value="2">Edit the properties of the table and request that a new procedure be created.&#160; </li>
+                <li value="3">Click <b>OK</b> and the window to create a template procedure is commenced. This process can include the definition of the date dimension granularity. Monthly rollup is the norm. </li>
+                <li value="4">To just combine Fact tables with no rollup, select the date dimension key as directed in the window. Other forms of dimension rollup require some alteration to the produced template procedure.</li>
+            </ol>
+            <h4>Rollup Fact Columns</h4>
+            <p>The columns for a rollup Fact table are typically the dimensions, and only those key measures that are added. </p>
+            <p>For example, in the sales world, measures may simply be quantity, kilograms, $value, forecast_quantity, forecast_$value, budget_quantity, budget_$value.</p>
+        </div>
+    </body>
+</html>

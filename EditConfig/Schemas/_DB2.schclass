@@ -1,0 +1,203 @@
+//=======================================================================
+//================ Lex class support: DB2 ===============================
+//=======================================================================
+
+lexClass:
+    parent:file = <*.db2>
+    name = c_SQL
+    caseSensitive = 0
+    txt:colorFG = 0x000000
+
+lexClass:
+    name = BatchSeparator
+    parent = c_SQL
+    children = 0
+    previous:tag = '\t', ' ', @EOL, @SPECS
+    start:Tag = 'go'
+    end:Separators = '\t', ' ', @EOL, @SPECS
+    txt:colorFG = 0x0000FF
+
+lexClass:
+    name = CodeBlock
+    caseSensitive = 0
+    parent = c_SQL, CodeBlockEnd
+    //RecurrenceDepth = 15
+    previous:tag = ';', ' ', '\t', @EOL
+    Start:Tag = 'begin ', 'begin\t', 'begin\r', 'begin\n'
+    End:Tag = ' end', '\tend', '\rend', '\nend'
+    End:separators = ';', ' ', '\t', @EOL
+    Collapsable = 1
+    CollapsedText = '...'
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = CodeBlockEnd
+    caseSensitive = 0
+    parent = CodeBlock
+    previous:class = CodeBlock
+    end:separators = ' end;', '\tend;', '\rend;', '\nend;'
+    end:separators = ' end ', '\tend ', '\rend ', '\nend '
+    end:separators = ' end\t', '\tend\t', '\rend\t', '\nend\t'
+    end:separators = ' end\r', '\tend\r', '\rend\r', '\nend\r'
+    end:separators = ' end\n', '\tend\n', '\rend\n', '\nend\n'
+    txt:colorFG = 0x000000
+    txt:Bold = 0
+    //RecurrenceDepth = 15
+
+lexClass:
+    name = MultilineComment
+    parent = c_SQL, CodeBlockEnd
+    children = 0
+    start:Tag ='/*'
+    end:Tag ='*/'
+    Collapsable = 1
+    CollapsedText = '/**/'
+    txt:colorFG = 0x008000
+
+lexClass:
+    name = CompileSingleLineComment
+    parent = c_SQL, CodeBlockEnd
+    start:tag ='--E--', '--W--'
+    end:tag = @EOL
+    txt:colorFG = 0xF30000
+
+lexClass:
+    name = CompareSingleLineComment
+    parent = c_SQL, CodeBlockEnd
+    start:tag ='--<<--', '-->>--'
+    end:tag = @EOL
+    txt:colorFG = 0x0000F0
+
+lexClass:
+    name = SingleLineComment
+    parent = c_SQL, CodeBlockEnd
+    start:tag ='--'
+    end:tag = @EOL
+    txt:colorFG = 0x008F00
+
+lexClass:
+    name = ArithmeticOperators
+    ParseOnScreen = 1
+    parent = c_SQL, CodeBlockEnd
+    Token:Tag = '<', '>', '=', '+', '-', '*', '/', '!', '(', ')', ',', '[', ']'
+    txt:colorFG = 0x804040
+    txt:Bold = 1
+
+lexClass:
+    name = LogicalOperators
+    caseSensitive = 0
+    parent = c_SQL, CodeBlockEnd
+    Token:Tag = 'AND', 'OR', 'XOR', 'NOT', 'EXISTS', 'LIKE', 'BETWEEN', 'IN', 'SOME', 'ALL'
+    token:start:separators = ' ', '\t', ':', ';', '!', '(', ')', '{', '}', @EOL
+    token:end:separators = ' ', '\t', ':', ';', '!', '(', ')', '{', '}', @EOL
+    txt:colorFG = 0x804040
+    txt:Bold = 1
+
+lexClass:
+    name = StringConstant
+    parent = c_SQL, CodeBlockEnd
+    children = 0
+    start:Tag = '\''
+    end:Tag = '\'', @EOL
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = NumericConstant
+    parent = c_SQL, CodeBlockEnd
+    children = 0
+    previous:tag = ' ', '\t', '-', '+', '.', '=', ',', '(', @EOL
+    start:Tag = @DIGIT
+    skip:Tag = @DIGIT, '.'
+    end:separators = ' ', ',', '\t', ']', ')', @EOL
+    txt:colorFG = 0x6400C8
+
+lexClass:
+    name = c_SQL_DB2_Keywords
+    caseSensitive = 0
+    parent = c_SQL, CodeBlockEnd
+    Token:Tag = 'ADD', 'AFTER', 'ALLOCATE', 'ALLOW', 'ALTER', 'ANY', 'AS', 'ASENSITIVE', 'ASSOCIATE' // 'ALL', 'AND',
+    Token:Tag = 'ASUTIME', 'AT', 'AUDIT', 'AUX', 'AUXILIARY', 'BEFORE', 'BEGIN', 'BIGINT', 'BINARY', 'BLOB'
+    Token:Tag = 'BUFFERPOOL', 'BY', 'CALL', 'CAPTURE', 'CASCADED', 'CASE', 'CAST', 'CCSID', 'CHAR', 'CHARACTER', 'CHECK'
+    Token:Tag = 'CLONE', 'CLOSE', 'CLUSTER', 'COLLECTION', 'COLLID', 'COLUMN', 'COMMENT', 'COMMIT', 'CONCAT', 'CONDITION'
+    Token:Tag = 'CONNECT', 'CONNECTION', 'CONSTRAINT', 'CONTAINS', 'CONTENT', 'CONTINUE', 'CREATE', 'CURRENT'
+    Token:Tag = 'CURRENT_DATE', 'CURRENT_LC_CTYPE', 'CURRENT_PATH', 'CURRENT_SCHEMA', 'CURRENT_TIME', 'CURRENT_TIMESTAMP'
+    Token:Tag = 'CURRVAL', 'CURSOR', 'DATA', 'DATE', 'DATABASE', 'DAY', 'DAYS', 'DBINFO', 'DECLARE', 'DEFAULT', 'DELETE'
+    Token:Tag = 'DESCRIPTOR', 'DETERMINISTIC', 'DIAGNOSTICS', 'DISABLE', 'DISALLOW', 'DISTINCT', 'DO', 'DOCUMENT', 'DOUBLE'
+    Token:Tag = 'DROP', 'DSSIZE', 'DYNAMIC', 'EDITPROC', 'ELSE', 'ELSEIF', 'ENCODING', 'ENCRYPTION', 'END', 'END-EXEC2'
+    Token:Tag = 'ENDING', 'ERASE', 'ESCAPE', 'EXCEPT', 'EXCEPTION', 'EXECUTE', 'EXIT', 'EXPLAIN', 'EXTERNAL' // 'EXISTS',
+    Token:Tag = 'FENCED', 'FETCH', 'FIELDPROC', 'FINAL', 'FIRST', 'FLOAT', 'FOR', 'FOUND', 'FREE', 'FROM', 'FULL', 'FUNCTION'
+    Token:Tag = 'GENERATED', 'GET', 'GLOBAL', 'GO', 'GOTO', 'GRANT', 'GROUP', 'HANDLER', 'HAVING', 'HOLD', 'HOUR', 'HOURS'
+    Token:Tag = 'IF', 'IMMEDIATE', 'INCLUSIVE', 'INDEX', 'INHERIT', 'INNER', 'INOUT', 'INSENSITIVE', 'INSERT' //, 'INTERSECT'
+    Token:Tag = 'INT', 'INTEGER', 'INTO', 'IS', 'ISOBID', 'ITERATE', 'JAR', 'JOIN', 'KEEP', 'KEY', 'LABEL', 'LANGUAGE', 'LAST', 'LC_CTYPE'
+    Token:Tag = 'LEAVE', 'LEFT', 'LOCAL', 'LOCALE', 'LOCATOR', 'LOCATORS', 'LOCK', 'LOCKMAX', 'LOCKSIZE', 'LONG'
+    Token:Tag = 'LOOP', 'MAINTAINED', 'MATERIALIZED', 'MICROSECOND', 'MICROSECONDS', 'MINUTE', 'MINUTES', 'MODIFIES'
+    Token:Tag = 'MONTH', 'MONTHS', 'NEXT', 'NEXTVAL', 'NO', 'NONE', 'NULL', 'NULLS', 'NUMPARTS', 'OBID', 'OF' // 'NOT',
+    Token:Tag = 'OLD', 'ON', 'OPEN', 'OPTIMIZATION', 'OPTIMIZE', 'ORDER', 'ORGANIZATION', 'OUT', 'OUTER', 'PACKAGE' // 'OR',
+    Token:Tag = 'PADDED', 'PARAMETER', 'PART', 'PARTITION', 'PARTITIONED', 'PARTITIONING', 'PATH', 'PERIOD', 'PIECESIZE'
+    Token:Tag = 'PLAN', 'PRECISION', 'PREPARE', 'PREVVAL', 'PRIOR', 'PRIQTY', 'PRIVILEGES', 'PROCEDURE', 'PROGRAM', 'PSID'
+    Token:Tag = 'PUBLIC', 'QUERY', 'QUERYNO', 'READS', 'REFERENCES', 'REFRESH', 'RELEASE', 'RENAME', 'REPEAT', 'RESIGNAL'
+    Token:Tag = 'RESTRICT', 'RESULT', 'RESULT_SET_LOCATOR', 'RETURN', 'RETURNS', 'REVOKE', 'RIGHT', 'ROLE', 'ROLLBACK'
+    Token:Tag = 'ROUND_CEILING', 'ROUND_DOWN', 'ROUND_FLOOR', 'ROUND_HALF_DOWN', 'ROUND_HALF_EVEN', 'ROUND_HALF_UP'
+    Token:Tag = 'ROUND_UP', 'ROW', 'ROWSET', 'RUN', 'SAVEPOINT', 'SCHEMA', 'SCRATCHPAD', 'SECOND', 'SECONDS', 'SECQTY'
+    Token:Tag = 'SECURITY', 'SELECT', 'SENSITIVE', 'SEQUENCE', 'SESSION_USER', 'SET', 'SIGNAL', 'SIMPLE', 'SOURCE'
+    Token:Tag = 'SPECIFIC', 'SQL', 'SQLEXCEPTION', 'STANDARD', 'STATEMENT', 'STATIC', 'STAY', 'STOGROUP', 'STORES', 'STYLE'
+    Token:Tag = 'SUMMARY', 'SYNONYM', 'SYSDATE', 'SYSTEM', 'SYSTIMESTAMP', 'TABLE', 'TABLESPACE', 'THEN', 'TIMESTAMP', 'TO'
+    Token:Tag = 'TRIGGER', 'TRUNCATE', 'TYPE', 'UNDO', 'UNIQUE', 'UNTIL', 'UPDATE', 'USER', 'USING', 'VALIDPROC', 'VALUE' // 'UNION',
+    Token:Tag = 'VALUES', 'VARBINARY',  'VARCHAR', 'VARGRAPHIC', 'VARIABLE', 'VARIANT', 'VCAT', 'VIEW', 'VOLATILE', 'VOLUMES'
+    Token:Tag = 'WHEN', 'WHENEVER', 'WHERE', 'WHILE', 'WITH', 'WLM', 'XMLCAST', 'XMLEXISTS', 'XMLNAMESPACES', 'YEAR', 'YEARS', 'ZONE'
+    txt:colorFG = 0x0000FF
+    token:start:separators = ' ', '\t', ':', ';', '!', '(', ')', '{', '}', @EOL
+    token:end:separators = ' ', '\t', ':', ';', '!', '(', ')', '{', '}', ',', @EOL
+    txt:Bold = 1
+
+lexClass:
+    name = c_SQL_DB2_Functions
+    caseSensitive = 0
+    parent = c_SQL, CodeBlockEnd
+    Token:Tag = 'ABS', 'ABSVAL', 'ACOS', 'ANTILOG', 'ARRAY_AGG', 'ASCII', 'ASIN', 'ATAN', 'ATAN2', 'ATANH', 'AVG'
+    Token:Tag = 'BIT_LENGTH', 'BITAND', 'BITANDNOT', 'BITNOT', 'BITOR', 'BITXOR' // 'BIGINT', 'BINARY', 'BLOB'
+    Token:Tag = 'CARDINALITY', 'CEILING', 'CHAR_LENGTH', 'CHARACTER_LENGTH', 'CHR', 'CLOB', 'COALESCE' // 'CHAR'
+    Token:Tag = 'COLLATION_KEY_BIT', 'COMPARE_DECFLOAT', 'CONCAT', 'CORRELATION', 'COS', 'COSH', 'COT', 'COUNT'
+    Token:Tag = 'COUNT_BIG', 'COVARIANCE', 'CURDATE', 'CURTIME', 'DATAPARTITIONNAME', 'DATAPARTITIONNUM' //'DATABASE',
+    Token:Tag = 'DAYNAME', 'DAYOFMONTH', 'DAYOFWEEK', 'DAYOFWEEK_ISO', 'DAYOFYEAR', 'DBCLOB' // 'DATE', 'DAY', 'DAYS',
+    Token:Tag = 'DBPARTITIONNAME', 'DBPARTITIONNUM', 'DECIMAL', 'DECODE', 'DECRYPT_BIN', 'DECRYPT_BINARY', 'DECRYPT_BIT'
+    Token:Tag = 'DECRYPT_CHAR', 'DECRYPT_DB', 'DEGREES', 'DEREF', 'DIFFERENCE', 'DIGITS', 'DLCOMMENT', 'DLLINKTYPE'
+    Token:Tag = 'DLURLCOMPLETE', 'DLURLPATH', 'DLURLPATHONLY', 'DLURLSCHEME', 'DLURLSERVER', 'DLVALUE' //, 'DOUBLE'
+    Token:Tag = 'DOUBLE_PRECISION', 'ENCRYPT', 'ENCRYPT_RC2', 'EVENT_MON_STATE', 'EXP', 'EXTRACT', 'FLOOR' // 'FLOAT',
+    Token:Tag = 'GENERATE_UNIQUE', 'GETHINT', 'GRAPHIC', 'GREATEST', 'GROUPING', 'HASH', 'HASHED_VALUE', 'HASHEDVALUE'
+    Token:Tag = 'HEX', 'IDENTITY_VAL_LOCAL', 'IFNULL', 'INSERT', 'JULIAN_DAY', 'LAND', 'LCASE' // 'HOUR',
+    Token:Tag = 'LEAST', 'LEFT', 'LENGTH', 'LN', 'LNOT', 'LOCATE', 'LOG10', 'LOR', 'LOWER', 'LTRIM', 'MAX', 'MAX_CARDINALITY'
+    Token:Tag = 'MESSAGE_TEXT', 'MIDNIGHT_SECONDS', 'MIN', 'MOD', 'MONTHNAME', 'MULTIPLY_ALT', 'NODENAME' // 'MICROSECOND', 'MINUTE', 'MONTH',
+    Token:Tag = 'NORMALIZE_DECFLOAT', 'NOW', 'NULLIF', 'NVL', 'OCTET_LENGTH', 'OVERLAY', 'PI', 'POSITION' // 'NULL', 'PARAMETER',
+    Token:Tag = 'POSSTR', 'POWER', 'QUANTIZE', 'QUARTER', 'RADIANS', 'RAISE_ERROR', 'RAND', 'REAL', 'REC2XML' //, 'REPEAT'
+    Token:Tag = 'REPLACE', 'RID', 'RID_BIT', 'RIGHT', 'ROUND', 'ROW_COUNT', 'RRN', 'RTRIM', 'SECLABEL', 'SECLABEL_BY_NAME'
+    Token:Tag = 'SECLABEL_TO_CHAR', 'SIGN', 'SIN', 'SINH', 'SMALLINT', 'SOUNDEX', 'SPACE', 'SQLCODE', 'SQLSTATE', 'SQRT' // 'SECOND',
+    Token:Tag = 'STDDEV', 'STRIP', 'SUBST', 'SUBSTR', 'SUBSTRING', 'SUM', 'TABLE_NAME', 'TABLE_SCHEMA', 'TAN', 'TANH', 'TIME'
+    Token:Tag = 'TIMESTAMP_FORMAT', 'TIMESTAMP_ISO', 'TIMESTAMPDIFF', 'TO_CHAR', 'TO_DATE', 'TOTALORDER' // 'TIMESTAMP',
+    Token:Tag = 'TRANSLATE', 'TRIM', 'TRUNC', 'TRUNCATE', 'TYPE_ID', 'TYPE_NAME', 'TYPE_SCHEMA', 'UCASE', 'UPPER', 'URL'
+    Token:Tag = 'VARCHAR_FORMAT', 'VARIANCE', 'WEEK', 'WEEK_ISO', 'XMLAGG' // 'VARBINARY', 'VARCHAR', 'VALUE', 'VARGRAPHIC'
+    Token:Tag = 'XMLATTRIBUTES', 'XMLCOMMENT', 'XMLCONCAT', 'XMLDOCUMENT', 'XMLELEMENT', 'XMLFOREST', 'XMLGROUP'
+    Token:Tag = 'XMLNAMESPACES', 'XMLPARSE', 'XMLPI', 'XMLQUERY', 'XMLROW', 'XMLSERIALIZE', 'XMLTEXT', 'XMLVALIDATE'
+    Token:Tag = 'XMLXSROBJECTID', 'XSLTRANSFORM', 'ZONED' // , 'XOR', 'YEAR'
+    txt:colorFG = 0x007FAE
+    token:start:separators = ' ', '\t', ':', ';', '!', '(', ')', '{', '}', ',', @EOL
+    token:end:separators = ' ', '\t', ':', ';', '!', '(', ')', '{', '}', ',', @EOL
+    txt:Bold = 1
+
+lexClass:
+    name = DB2SystemSchema
+    parent = c_SQL, CodeBlockEnd
+    children = 0
+    start:Tag = 'SYS'
+    end:Tag = ' ', '\t', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '[', ']', '{', '}', ';', '\'', ':', '\"', ',', '.', '/', '<', '>', '?', '|', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = SetOperators
+    caseSensitive = 0
+    parent = c_SQL, CodeBlockEnd
+    Token:Tag = 'UNION', 'UNION ALL', 'INTERSECT', 'MINUS'
+    txt:colorFG = 0x804040
+    token:start:separators = ' ', '\t', ':', ';', '!', '(', ')', '{', '}', @EOL
+    token:end:separators = ' ', '\t', ':', ';', '!', '(', ')', '{', '}', @EOL

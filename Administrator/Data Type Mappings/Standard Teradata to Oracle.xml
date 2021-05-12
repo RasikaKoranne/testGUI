@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data_type_mapping_set name="Standard Teradata to Oracle" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd">
+
+  <mapping_set_description>Standard Teradata to Oracle data type mapping.
+Please do not edit this standard mapping file as any changes will be overwritten on upgrades.
+See the user guide for information on how to create custom mapping files.</mapping_set_description>
+
+  <mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+
+  <data_type_mapping match_data_type="byteint" output_data_type="number"/>
+
+  <data_type_mapping match_data_type="smallint" output_data_type="number"/>
+
+  <data_type_mapping match_data_type="integer" output_data_type="number"/>
+
+  <data_type_mapping match_data_type="bigint" output_data_type="number"/>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="number(%precision)">
+    <match_parameters>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="number(%precision,%scale)"/>
+
+  <data_type_mapping match_data_type="float" output_data_type="float"/>
+
+  <data_type_mapping match_data_type="date" output_data_type="date"/>
+
+  <data_type_mapping match_data_type="time" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="timestamp" output_data_type="date">
+    <transform_code>CAST(%column_name AS TIMESTAMP FORMAT 'Y4-MM-DDBHH:MI:SS')</transform_code>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="time with time zone" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="timestamp with time zone" output_data_type="date">
+    <transform_code>CAST(%column_name AS TIMESTAMP FORMAT 'Y4-MM-DDBHH:MI:SS')</transform_code>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="interval year" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval year to month" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval month" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval day" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval day to hour" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval day to minute" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval day to second" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval hour" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval hour to minute" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval hour to second" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval minute" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval minute to second" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="interval second" output_data_type="varchar2(20)"/>
+
+  <data_type_mapping match_data_type="char" output_data_type="char(%precision)">
+    <match_parameters>
+      <match_precision>*-2000</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="char" output_data_type="char(2000)">
+    <match_parameters>
+      <match_precision>2001-*</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="varchar2(%precision)">
+    <match_parameters>
+      <match_precision>*-4000</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="varchar2(4000)">
+    <match_parameters>
+      <match_precision>4001-63999</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="clob">
+    <match_parameters>
+      <match_precision>64000</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="long varchar" output_data_type="clob"/>
+
+</data_type_mapping_set>

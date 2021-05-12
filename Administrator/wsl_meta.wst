@@ -1,0 +1,642 @@
+_SQL_
+insert into ws_pro_line values (0,0,'Object 0: This line should not be seen. Contact WhereScape',NULL);
+
+_SQL_
+insert into dss_current_day_details(current_date) values (sysdate);
+
+_SQL_
+delete from ws_meta_tables;
+_SQL_
+insert into ws_meta_tables values('ws_dbc_connect','.','ws_dbc_connect',8006);
+_SQL_
+insert into ws_meta_tables values('ws_dim_col','.','ws_dim_col',8006);
+_SQL_
+insert into ws_meta_tables values('ws_dim_tab','.','ws_dim_tab',8006);
+_SQL_
+insert into ws_meta_tables values('ws_fact_col','.','ws_fact_col',8006);
+_SQL_
+insert into ws_meta_tables values('ws_fact_tab','.','ws_fact_tab',8006);
+_SQL_
+insert into ws_meta_tables values('ws_index_col','.','ws_index_col',8006);
+_SQL_
+insert into ws_meta_tables values('ws_index_header','.','ws_index_header',8006);
+_SQL_
+insert into ws_meta_tables values('ws_insfilter','.','ws_insfilter',8006);
+_SQL_
+insert into ws_meta_tables values('ws_insfilterline','.','ws_insfilterline',8006);
+_SQL_
+insert into ws_meta_tables values('ws_load_col','.','ws_load_col',8006);
+_SQL_
+insert into ws_meta_tables values('ws_load_tab','.','ws_load_tab',8006);
+_SQL_
+insert into ws_meta_tables values('ws_meta','.','ws_meta',8006);
+_SQL_
+insert into ws_meta_tables values('ws_meta_names','.','ws_meta_names',8006);
+_SQL_
+insert into ws_meta_tables values('ws_meta_tables','.','ws_meta_tables',8006);
+_SQL_
+insert into ws_meta_tables values('ws_obj_group','.','ws_obj_group',8006);
+_SQL_
+insert into ws_meta_tables values('ws_obj_maps','.','ws_obj_maps',8006);
+_SQL_
+insert into ws_meta_tables values('ws_obj_object','.','ws_obj_object',8006);
+_SQL_
+insert into ws_meta_tables values('ws_obj_project','.','ws_obj_project',8006);
+_SQL_
+insert into ws_meta_tables values('ws_obj_pro_map','.','ws_obj_pro_map',8006);
+_SQL_
+insert into ws_meta_tables values('ws_obj_seq','.','ws_obj_seq',8006);
+_SQL_
+insert into ws_meta_tables values('ws_obj_type','.','ws_obj_type',8006);
+_SQL_
+insert into ws_meta_tables values('ws_pro_gro_map','.','ws_pro_gro_map',8006);
+_SQL_
+insert into ws_meta_tables values('ws_pro_header','.','ws_pro_header',8006);
+_SQL_
+insert into ws_meta_tables values('ws_pro_line','.','ws_pro_line',8006);
+_SQL_
+insert into ws_meta_tables values('ws_scr_header','.','ws_scr_header',8006);
+_SQL_
+insert into ws_meta_tables values('ws_scr_line','.','ws_scr_line',8006);
+_SQL_
+insert into ws_meta_tables values('ws_stage_col','.','ws_stage_col',8006);
+_SQL_
+insert into ws_meta_tables values('ws_stage_tab','.','ws_stage_tab',8006);
+_SQL_
+insert into ws_meta_tables values('ws_tem_block','.','ws_tem_block',8006);
+_SQL_
+insert into ws_meta_tables values('ws_user_adm','.','ws_user_adm',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_audit_log','.','ws_wrk_audit_log',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_dependency','.','ws_wrk_dependency',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_error_log','.','ws_wrk_error_log',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_job_ctrl','.','ws_wrk_job_ctrl',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_job_log','.','ws_wrk_job_log',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_job_mon','.','ws_wrk_job_mon',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_job_publish','.','ws_wrk_job_publish',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_job_run','.','ws_wrk_job_run',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_mon_log','.','ws_wrk_mon_log',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_mon_run','.','ws_wrk_mon_run',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_msg_type','.','ws_wrk_msg_type',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_tab_publish','.','ws_wrk_tab_publish',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_task_ctrl','.','ws_wrk_task_ctrl',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_task_log','.','ws_wrk_task_log',8006);
+_SQL_
+insert into ws_meta_tables values('ws_wrk_task_run','.','ws_wrk_task_run',8006);
+_SQL_
+insert into ws_meta_tables values('ws_normal_col','.','ws_normal_col',8006);
+_SQL_
+insert into ws_meta_tables values('ws_normal_tab','.','ws_normal_tab',8006);
+_SQL_
+insert into ws_meta_tables values('ws_ods_col','.','ws_ods_col',8006);
+_SQL_
+insert into ws_meta_tables values('ws_ods_tab','.','ws_ods_tab',8006);
+_SQL_
+insert into ws_meta_tables values('ws_olap_cube','.','ws_olap_cube',8006);
+_SQL_
+insert into ws_meta_tables values('ws_olap_dim','.','ws_olap_dim',8006);
+_SQL_
+insert into ws_meta_tables values('ws_olap_role','.','ws_olap_role',8006);
+
+
+_SQL_
+insert into ws_obj_type values(0,' ','All Objects','A','','','','',0,0,0,'N','','','','');
+_SQL_
+insert into ws_obj_type values(1,'P','Procedure','U','','','','',1,0,19,'N','','','','');
+_SQL_
+insert into ws_obj_type values(2,'X','Kpi Fact Table','U','fact_','','','',2,0,10,'Y','','','','');
+_SQL_
+insert into ws_obj_type values(3,'H','Host Script','U','','','','',3,0,20,'N','','','','');
+_SQL_
+insert into ws_obj_type values(4,'T','Template','U','','','','',4,0,21,'N','','','','');
+_SQL_
+insert into ws_obj_type values(5,'F','Fact Table','U','fact_','','','',5,0,10,'Y','','','','');
+_SQL_
+insert into ws_obj_type values(6,'D','Dimension','U','dim_','','','',6,0,9,'Y','','','','');
+_SQL_
+insert into ws_obj_type values(7,'S','Stage Table','U','stage_','','','',7,0,3,'N','','','','');
+_SQL_
+insert into ws_obj_type values(8,'L','Load Table','U','load_','','','',8,0,2,'N','','','','');
+_SQL_
+insert into ws_obj_type values(9,'A','Aggregate','U','agg_','','','',9,0,11,'Y','','','','');
+_SQL_
+insert into ws_obj_type values(10,'I','Index','U','','','','',10,0,22,'N','','','','');
+_SQL_
+insert into ws_obj_type values(11,'C','Connection','U','','','','',11,0,1,'N','','','','');
+_SQL_
+insert into ws_obj_type values(12,'V','Dimension View','U','dim_','','','',12,0,0,'Y','','','','');
+_SQL_
+insert into ws_obj_type values(13,'E','Export','U','exp_','','','',13,0,15,'N','','','','');
+_SQL_
+insert into ws_obj_type values(14,'G','Group','A','','','','',14,0,0,'N','','','','');
+_SQL_
+insert into ws_obj_type values(15,'M','Cube','U','cube_','','','',15,0,0,'Y','','','','');
+_SQL_
+insert into ws_obj_type values(16,'M','Cube Virtual','U','cube_','','','',16,0,0,'Y','','','','');
+_SQL_
+insert into ws_obj_type values(17,'R','Report','U','rep_','','','',17,0,0,'Y','','','','');
+_SQL_
+insert into ws_obj_type values(18,'W','View','U','view_','','','',18,0,12,'Y','','','','');
+_SQL_
+insert into ws_obj_type values(19,'B','File','U','file_','','','',19,0,0,'N','','','','');
+_SQL_
+insert into ws_obj_type values(20,'N','Join Index','U','join_','','','',20,0,0,'N','','','','');
+_SQL_
+insert into ws_obj_type values(21,'Z','Retro','U','retro_','','','',21,0,13,'N','','','','');
+_SQL_
+insert into ws_obj_type values(22,'Z','Retro Copy','U','retro_','','','',22,0,13,'N','','','','');
+_SQL_
+insert into ws_obj_type values(23,'m','Olap Cube','U','olap_','','','',23,0,14,'Y','','','',''); 
+_SQL_
+insert into ws_obj_type values(24,'m','Olap Dimension','U','odim_','','','',24,0,14,'Y','','','',''); 
+_SQL_
+insert into ws_obj_type values(25,'m','Olap Role','U','orole_','','','',25,0,14,'N','','','',''); 
+_SQL_
+insert into ws_obj_type values(26,'O','Data Store','U','ds_','','','',26,0,4,'N','','','',''); 
+_SQL_
+insert into ws_obj_type values(27,'3','EDW 3NF','U','edw_','','','',27,0,8,'Y','','','',''); 
+_SQL_
+insert into ws_obj_type values(28,'1','Hub','U','h_','','','',28,0,5,'Y','','','','AUTOADDKEY=N;'); 
+_SQL_
+insert into ws_obj_type values(29,'2','Satellite','U','s_','','','',29,0,7,'Y','','','','AUTOADDKEY=N;OBJSUBTYPE=H;'); 
+_SQL_
+insert into ws_obj_type values(30,'4','Link','U','l_','','','',30,0,6,'Y','','','','AUTOADDKEY=N;'); 
+_SQL_
+insert into ws_obj_type values(31,'5','Custom1','U','c1_','','','',31,0,53,'Y','','','',''); 
+_SQL_
+insert into ws_obj_type values(32,'6','Custom2','U','c2_','','','',32,0,54,'Y','','','',''); 
+_SQL_
+insert into ws_obj_type values(50,'J','Job','S','','','','',50,0,0,'N','','','','');
+_SQL_
+insert into ws_obj_type values(51,'K','Task','S','','','','',51,0,0,'N','','','','');
+_SQL_
+insert into ws_obj_type values(52,'E','Dependency','S','','','','',52,0,0,'N','','','','');
+_SQL_
+insert into ws_obj_type values(69,'Q','Source Mapping','U','smt_','','','',69,0,55,'N','','','',''); 
+
+
+_SQL_
+insert into ws_obj_action values(0,'Drop','Drop table and indexes',10);
+_SQL_
+insert into ws_obj_action values(1,'Create','Create table or index',12);
+_SQL_
+insert into ws_obj_action values(2,'Compile','Compile procedure',12);
+_SQL_
+insert into ws_obj_action values(3,'Drop All Indexes','Drop all  indexes',14);
+_SQL_
+insert into ws_obj_action values(4,'Pre Drop Indexes','Drop indexes specified as being pre-processing dropped',14);
+_SQL_
+insert into ws_obj_action values(5,'Load','Load the table',16);
+_SQL_
+insert into ws_obj_action values(6,'Update','Execute the update proceedure',20);
+_SQL_
+insert into ws_obj_action values(7,'Execute','Execute a procedure',20);
+_SQL_
+insert into ws_obj_action values(8,'Process','Pre Drop Indexes, Update or Load, Build Indexes',20);
+_SQL_
+insert into ws_obj_action values(9,'Build Indexes','Build all pre-drop and scheduled indexes',22);
+_SQL_
+insert into ws_obj_action values(10,'Build All Indexes','Build all indexes',22);
+_SQL_
+insert into ws_obj_action values(11,'Analyze','Perform a complete Analyze ',24);
+_SQL_
+insert into ws_obj_action values(12,'Quick Analyze','Perform a 1% Analyze',24);
+_SQL_
+insert into ws_obj_action values(13,'Statistics','Analyze using the Dbms Stats package',24);
+_SQL_
+insert into ws_obj_action values(14,'Quick Statistics','Fast Analyze using the Dbms Stats package',24);
+_SQL_
+insert into ws_obj_action values(21,'Process with default stats','Pre Drop Indexes, Update or Load, Build Indexes, default statistics',20);
+
+
+_SQL_
+insert into ws_typ_act_map values(12,0,30010,'N');
+_SQL_
+insert into ws_typ_act_map values(12,1,30012,'Y');
+_SQL_
+insert into ws_typ_act_map values(10,0,10010,'N');
+_SQL_
+insert into ws_typ_act_map values(10,1,70012,'N');
+_SQL_
+insert into ws_typ_act_map values(10,11,70024,'Y');
+_SQL_
+insert into ws_typ_act_map values(10,12,70024,'N');
+_SQL_
+insert into ws_typ_act_map values(10,13,70024,'N');
+_SQL_
+insert into ws_typ_act_map values(10,14,70024,'N');
+_SQL_
+insert into ws_typ_act_map values(9,0,50010,'N');
+_SQL_
+insert into ws_typ_act_map values(9,1,50012,'N');
+_SQL_
+insert into ws_typ_act_map values(9,3,50014,'N');
+_SQL_
+insert into ws_typ_act_map values(9,4,50014,'N');
+_SQL_
+insert into ws_typ_act_map values(9,6,50020,'N');
+_SQL_
+insert into ws_typ_act_map values(9,8,50020,'Y');
+_SQL_
+insert into ws_typ_act_map values(9,9,50022,'N');
+_SQL_
+insert into ws_typ_act_map values(9,10,50022,'N');
+_SQL_
+insert into ws_typ_act_map values(9,11,50024,'N');
+_SQL_
+insert into ws_typ_act_map values(9,12,50024,'N');
+_SQL_
+insert into ws_typ_act_map values(9,13,50024,'N');
+_SQL_
+insert into ws_typ_act_map values(9,14,50024,'N');
+_SQL_
+insert into ws_typ_act_map values(8,0,20010,'N');
+_SQL_
+insert into ws_typ_act_map values(8,1,20012,'N');
+_SQL_
+insert into ws_typ_act_map values(8,3,20014,'N');
+_SQL_
+insert into ws_typ_act_map values(8,4,20014,'N');
+_SQL_
+insert into ws_typ_act_map values(8,5,20020,'N');
+_SQL_
+insert into ws_typ_act_map values(8,8,20020,'Y');
+_SQL_
+insert into ws_typ_act_map values(8,9,20022,'N');
+_SQL_
+insert into ws_typ_act_map values(8,10,20022,'N');
+_SQL_
+insert into ws_typ_act_map values(8,11,20024,'N');
+_SQL_
+insert into ws_typ_act_map values(8,12,20024,'N');
+_SQL_
+insert into ws_typ_act_map values(8,13,20024,'N');
+_SQL_
+insert into ws_typ_act_map values(8,14,20024,'N');
+_SQL_
+insert into ws_typ_act_map values(7,0,40010,'N');
+_SQL_
+insert into ws_typ_act_map values(7,1,40012,'N');
+_SQL_
+insert into ws_typ_act_map values(7,3,40014,'N');
+_SQL_
+insert into ws_typ_act_map values(7,4,40014,'N');
+_SQL_
+insert into ws_typ_act_map values(7,6,40020,'N');
+_SQL_
+insert into ws_typ_act_map values(7,8,40020,'Y');
+_SQL_
+insert into ws_typ_act_map values(7,9,40022,'N');
+_SQL_
+insert into ws_typ_act_map values(7,10,40022,'N');
+_SQL_
+insert into ws_typ_act_map values(7,11,40024,'N');
+_SQL_
+insert into ws_typ_act_map values(7,12,40024,'N');
+_SQL_
+insert into ws_typ_act_map values(7,13,40024,'N');
+_SQL_
+insert into ws_typ_act_map values(7,14,40024,'N');
+_SQL_
+insert into ws_typ_act_map values(6,0,30010,'N');
+_SQL_
+insert into ws_typ_act_map values(6,1,30012,'N');
+_SQL_
+insert into ws_typ_act_map values(6,3,30014,'N');
+_SQL_
+insert into ws_typ_act_map values(6,4,30014,'N');
+_SQL_
+insert into ws_typ_act_map values(6,6,30020,'N');
+_SQL_
+insert into ws_typ_act_map values(6,8,30020,'Y');
+_SQL_
+insert into ws_typ_act_map values(6,9,30022,'N');
+_SQL_
+insert into ws_typ_act_map values(6,10,30022,'N');
+_SQL_
+insert into ws_typ_act_map values(6,11,30024,'N');
+_SQL_
+insert into ws_typ_act_map values(6,12,30024,'N');
+_SQL_
+insert into ws_typ_act_map values(6,13,30024,'N');
+_SQL_
+insert into ws_typ_act_map values(6,14,30024,'N');
+_SQL_
+insert into ws_typ_act_map values(1,1,30012,'N');
+_SQL_
+insert into ws_typ_act_map values(1,7,30020,'Y');
+_SQL_
+insert into ws_typ_act_map values(3,7,20020,'Y');
+_SQL_
+insert into ws_typ_act_map values(5,0,50010,'N');
+_SQL_
+insert into ws_typ_act_map values(5,1,50012,'N');
+_SQL_
+insert into ws_typ_act_map values(5,3,50014,'N');
+_SQL_
+insert into ws_typ_act_map values(5,4,50014,'N');
+_SQL_
+insert into ws_typ_act_map values(5,6,50020,'N');
+_SQL_
+insert into ws_typ_act_map values(5,8,50020,'Y');
+_SQL_
+insert into ws_typ_act_map values(5,9,50022,'N');
+_SQL_
+insert into ws_typ_act_map values(5,10,50022,'N');
+_SQL_
+insert into ws_typ_act_map values(5,11,50024,'N');
+_SQL_
+insert into ws_typ_act_map values(5,12,50024,'N');
+_SQL_
+insert into ws_typ_act_map values(5,13,50024,'N');
+_SQL_
+insert into ws_typ_act_map values(5,14,50024,'N');
+
+_SQL_
+insert into ws_table_attributes (ta_obj_key, ta_type, ta_val_1, ta_val_2, ta_val_3, ta_val_4) values (-1, 'Y', 4, 2, -1, 3);
+_SQL_
+insert into ws_table_attributes (ta_obj_key, ta_type, ta_val_1, ta_val_2, ta_val_3, ta_val_4) values (-2, 'Y', 4, 4, -1, 9);
+_SQL_
+insert into ws_table_attributes (ta_obj_key, ta_type, ta_val_1, ta_val_2, ta_val_3, ta_val_4) values (-3, 'Y', 4, 4, -1, 4);
+_SQL_
+insert into ws_table_attributes (ta_obj_key, ta_type, ta_val_1, ta_val_2, ta_val_3, ta_val_4) values (-4, 'Y', 4, 1, -1, 4);
+_SQL_
+insert into ws_table_attributes (ta_obj_key, ta_type, ta_val_1, ta_val_2, ta_val_3, ta_val_4) values (-5, 'Y', 4, 2, -1, 4);
+_SQL_
+insert into ws_table_attributes (ta_obj_key, ta_type, ta_val_1, ta_val_2, ta_val_3, ta_val_4) values (-6, 'Y', 4, 3, -1, 4);
+_SQL_
+insert into ws_table_attributes (ta_obj_key, ta_type, ta_val_1, ta_val_2, ta_val_3, ta_val_4) values (-7, 'Y', 4, 5, -1, 4);
+_SQL_
+insert into ws_table_attributes (ta_obj_key, ta_type, ta_val_1, ta_val_2, ta_val_3, ta_val_4) values (-8, 'Y', 4, 6, -1, 4);
+_SQL_
+insert into ws_table_attributes (ta_obj_key, ta_type, ta_val_1, ta_val_2, ta_val_3, ta_val_4) values (-9, 'Y', 4, 7, -1, 4);
+
+_SQL_
+insert into ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_source_system', 'Y', '', '', 'WSL_NOT_USED_BY_DSS')
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_fact_table', 'Y', '', '', 'dss_fact_table')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_batch_table', 'Y', '', '', 'dss_batch')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_file_name', 'Y', '', '', 'dss_file_name')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_update_time', 'Y', '', '', 'dss_update_time')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_create_time', 'Y', '', '', 'dss_create_time')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_start_date', 'Y', '', '', 'dss_start_date')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_end_date', 'Y', '', '', 'dss_end_date')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_version', 'Y', '', '', 'dss_version')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_current_flag', 'Y', '', '', 'dss_current_flag')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_count', 'Y', '', '', 'WSL_NOT_USED_BY_DSS')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_change_hash', 'Y', '', '', 'dss_change_hash')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_load_date', 'Y', '', '', 'dss_load_date')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_prefix, mn_postfix, mn_name) VALUES ('dss_record_source', 'Y', '', '', 'dss_record_source')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('fact_kpi_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('fact_source','Y','Full table name','src_',cast(null as char))
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('fact_key','Y','Short name',cast(null as char),'_key')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('fact_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('dim_source','Y','Full table name','src_',cast(null as char))
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('dim_key','Y','Short name',cast(null as char),'_key')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('dim_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('stage_source','Y','Full table name','src_',cast(null as char))
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('stage_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('load_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('agg_source','Y','Full table name','src_',cast(null as char))
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('agg_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('dim_view_key','Y','Short name',cast(null as char),'_key')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('join_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('retro_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('retro_copy_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('ods_source','Y','Full table name','src_',cast(null as char))
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('ods_key','Y','Short name',cast(null as char),'_key')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('ods_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('edw_source','Y','Full table name','src_',cast(null as char))
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('edw_key','Y','Short name',cast(null as char),'_key')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('edw_index','Y','Short name',cast(null as char),'_idx')
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('hub_source','Y','Full table name','src_',cast(null as char))
+
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('hub_key','Y','Full table name','hk_',cast(null as char))
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('hub_index','Y','Short name',cast(null as char),'_idx')
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('sat_source','Y','Full table name','src_',cast(null as char))
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('sat_key','Y','Full table name','hk_',cast(null as char))
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('sat_index','Y','Short name',cast(null as char),'_idx')
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('lnk_source','Y','Full table name','src_',cast(null as char))
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('lnk_key','Y','Full table name','hk_',cast(null as char))
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('lnk_index','Y','Short name',cast(null as char),'_idx')
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('custom1_source','Y','Full table name','src_',cast(null as char))
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('custom1_key','Y','Short name',cast(null as char),'_key')
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('custom1_index','Y','Short name',cast(null as char),'_idx')
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('custom2_source','Y','Full table name','src_',cast(null as char))
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('custom2_key','Y','Short name',cast(null as char),'_key')
+_SQL_
+INSERT INTO ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) VALUES ('custom2_index','Y','Short name',cast(null as char),'_idx')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('dim_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('dim_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('dim_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('dim_view_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('fact_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('fact_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('fact_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('fact_kpi_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('fact_kpi_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('fact_kpi_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('stage_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('stage_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('agg_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('agg_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('load_load','Y','Short','post_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('load_script','Y','Short','script_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('export_export','Y','Short','export_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('export_script','Y','Short','exp_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('view_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('view_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('ods_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('ods_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('ods_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('normal_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('normal_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('normal_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('hub_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('hub_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('hub_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('satellite_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('satellite_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('satellite_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('link_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('link_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('link_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('custom1_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('custom1_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('custom1_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('custom2_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('custom2_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('custom2_get','Y','Short','get_','_key')
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('retro_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('retro_build','Y','Short','custom_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('retro_copy_update','Y','Short','update_',cast(null as char))
+_SQL_
+Insert into ws_meta_names (mn_object, mn_default, mn_name, mn_prefix, mn_postfix) values ('retro_copy_build','Y','Short','custom_',cast(null as char))
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -2,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -5,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -6,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;HISNullSupport=TRUE;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -7,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Insert~;Insert_Hint:TABLOCK~;PreDelete~;DeleteTruncate~;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -9,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -21,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -22,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -26,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;HISNullSupport=TRUE;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -27,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;HISNullSupport=TRUE;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -28,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;Distinct~;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -29,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;Distinct~;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -30,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;Distinct~;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -31,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;HISNullSupport=TRUE;'  ) 
+_SQL_
+INSERT INTO ws_table_attributes(ta_obj_key, ta_type ,ta_text_1  ) VALUES ( -32,'M' ,'Version=08010;sbtype=Set;sansijoin=TRUE;Update~;Minus_Update:;Update_Hint:TABLOCK~;Insert~;Minus_Insert:;Insert_Hint:TABLOCK~;HISNullSupport=TRUE;'  )

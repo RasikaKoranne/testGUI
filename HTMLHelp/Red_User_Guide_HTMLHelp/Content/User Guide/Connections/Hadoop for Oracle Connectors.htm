@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Connections|Connection Types|Hadoop|Hadoop using Oracle's Big Data Connectors" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Hadoop for Oracle Connectors</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h5 class="Heading5">Hadoop for Oracle Connectors</h5>
+            <p class="BodyText">This topic describes in greater detail the connection properties as they apply to <b>Hadoop </b>connections using either <b>Oracle's SQL Connector for Hadoop (OSCH)</b> or <b>Oracle's Loader for Hadoop (OLH)</b>.&#160; </p>
+            <p class="BodyText">If the connection to Hadoop will not be using Oracle's Big Data connectors, refer to the previous section - Hadoop.<br />In <span class="mc-variable WS_Branding.Product variable">RED</span>, Hadoop as a source works with connections to Hadoop on UNIX/Linux from which users can do script based loads. The connection must be set via a Secure Shell (SSH) protocol.</p>
+            <p class="BodyText">To know more about system prerequisites required for setting up a connection within <span class="mc-variable WS_Branding.Product variable">RED</span> using either of these connectors refer to <a href="Hadoop using Oracle's Big Data Connectors.htm">Hadoop using Oracle's Big Data Connectors</a> for details.</p>
+            <p class="SpecialBold"><b>Oracle Wallet for OSCH</b>
+            </p>
+            <p class="MiniTOCItem">An Oracle Wallet must be configured and used for the OSCH connector to work.</p>
+            <p class="MiniTOCItem">The Oracle user + SID used in the <span class="mc-variable WS_Branding.Product variable">RED</span> Connection object must be added to the Oracle Wallet. </p>
+            <p class="MiniTOCItem">If the Oracle user is not added to the wallet (or if it's added against a different SID, even if equivalent to the one used in the <span class="mc-variable WS_Branding.Product variable">RED</span> Connection object) then OSCH will fail with this message: "KUP04076: file name cannot contain a path specification."</p>
+            <p class="SpecialBold"><b>Oracle Wallet for OLH:</b>
+            </p>
+            <p class="MiniTOCItem"><span class="mc-variable WS_Branding.Product variable">RED</span> only supports OLH with the Oracle Wallet, therefore an Oracle Wallet must be used with OLH.</p>
+            <p class="MiniTOCItem">Although OLH does not require the use of the Oracle Wallet (unlike OSCH), the use of OLH without it is discouraged by Oracle. The Oracle user + SID used in the <span class="mc-variable WS_Branding.Product variable">RED</span> Connection object must be added to the Oracle Wallet. </p>
+            <p class="Note">If the <b>UNIX/Linux</b> connection returns a blank screen or an error message in the <b>Results</b> pane after the connection is browsed, take necessary action through the<b> Server (SSH) </b>tab next to the main Builder and Scheduler tabs. <img src="../../Images/UserGuide_Images/Connections/UNIX.png" /> This tab is displayed after browsing the UNIX connection.</p>
+            <p class="BodyText">Sample <b>Hadoop OSCH/OLH connection </b>screen:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Connections/Hadoop OSCH_OLH connection .png" />
+            </p>
+            <h5>General</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name used to label the connection within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> RED.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Connection Type</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Indicates the connection source type or the connection method, such as Database, ODBC, Windows, Unix.
+ Select the <b>Hadoop</b> connection type.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Apache Hadoop</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">UNIX/Linux Host Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">IP address or host name that identifies the Hadoop server.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Script Shell</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Path to the POSIX-compliant UNIX/Linux shell to use for generated scripts. For <b>UNIX</b> hosts, set to<b> /bin/ksh</b>. For <b>Linux</b> hosts set to <b>/bin/sh</b>.
+                        
+        <p>If this field is left blank, a default will be chosen based on the name of the connection and the type of database used for the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata repository.</p></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Work Directory</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Windows directory used by WhereScape RED to create temporary files for minimal logged extracts. The directory must exist and allow write access. There must be a different work directory for each WhereScape RED Scheduler running on the same machine to avoid file conflicts. Typically C:\Temp or a sub-directory of C:\Temp is used.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database Identifier (e.g. Oracle SID or TNS Name, Teradata TDPID) or Database Name (e.g. as in DB2 or SQL Server).
+    <![CDATA[                        ]]></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database Server/Home Directory</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><![CDATA[
+                                                ]]>Optional to specify the Database Home Directory if it is different from the standard home directory.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Protocol</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+       Telnet or Secure Shell (SSH) protocol to use to connect to the UNIX/Linux machine. For SSH, the <b>Secure Shell (SSH) Command</b> property is enabled to specify how to connect.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Secure Shell (SSH) Command</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Command to execute to connect to a Hadoop machine using the Secure Shell (SSH) protocol, such as <b>C:\putty\plink.exe -ssh some_host_name</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Pre-Login Action, Login Prompt, Password Prompt, Post-Login Action, and Command Prompt.</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">These fields are only used to create a Telnet connection to the host machine. WhereScape RED uses the Telnet connection in the drag and drop functionality. <br />They are <b> not used in the actual production running of the Data Warehouse, </b>and is only necessary if you wish to use the drag and drop functionality.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                       Pre-Login Action
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Response or command to send BEFORE logging in to the UNIX/Linux machine. Typically this is NOT necessary but it can be used to indicate that the UNIX/Linux Login Prompt is preceded by a line-feed (\n). However it is preferable that the UNIX/Linux login displays the Login Prompt without anything preceding it. [Optional]
+                                            </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Login Prompt</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        The UNIX login prompt, or the tail end of the login prompt, e.g. <b>ogin as:</b>.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Password Prompt</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+       The UNIX password prompt, or the tail end of the password prompt, e.g. <b>ssword:</b>.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Post-Login Action</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        
+                        Not often used but may be necessary to respond to a login question. It is preferable that the UNIX login goes straight to the command prompt.
+                    
+    <![CDATA[
+                        ]]></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Command Prompt</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        Enter the UNIX/Linux command prompt, or the tail end of that prompt, typically <b>&gt;</b>.
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">To ascertain some of the above fields, you have to log in to the UNIX system.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Big Data Adapter Settings</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">When using Oracle's Big Data Connectors to load data from Hadoop into Hive, it is not required to set the BDA fields..</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Hadoop Connectors</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Connector Type</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        Big Data Connectors that connect Hadoop with the Datawarehouse Database. <b>Oracle SQL Connector for HDFS</b> and <b>Oracle Loader for Hadoop</b> fields are available. Enter the relevant settings for each connector type in the fields displayed.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">To load data using one of these two specific connectors, the relevant connector must be selected from the <b>Hadoop Loader</b> field in the load table's <b>Source</b> screen. Refer to <a href="../Loading Data/Flat File Load Source Screen.htm">Flat File Load - Source Screen</a> for more details.</td></tr></tbody></table></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Oracle Loader for Hadoop
+</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Hadoop Log Path</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                      Hadoop path to the log directory where a sub directory will be created with logs for each load run.
+                        <br />This is the Hadoop path to main log directory. A sub directory is created for each job run and is then passed to OLH – if the directory passed to OLH does not exist or is not empty this will result in a job run failure. <br /><b>Example</b><br />If "/user/oracle/hadoop/output/" is supplied in the connection object and the user then runs the job to load "hundredR.csv" file, the sub directory "/user/oracle/hadoop/output/WSL_hundredR_SEQ_RESTARTCOUNT/" will be created to store the logs, where "SEQ" is <span class="mc-variable WS_Branding.Product variable">RED</span>'s sequence number and "RESTARTCOUNT" is the job's restart count.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Oracle SQL Connector for HDFS</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">'bin' Directory Object</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       Oracle DIRECTORY object that points to the file location where the hdfs_stream exists.
+                        <br />Oracle Directory object for the 'bin' directory of OSCH that must be installed on the Oracle server. This is best to be set up within the home directory of the user that runs Oracle but outside of ORACLE_HOME, e.g. if the Oracle user is 'oracle' then a good choice would be '/home/oracle/osch/&lt;install_dir&gt;/bin'). <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The Hadoop client must be installed on the Oracle server. Oracle user must have read and execute permissions.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        External Tables Directory Object
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Oracle DIRECTORY object that points to the directory where OSCH location files live.
+                        <br />Oracle Directory object for the directory where Oracle is to keep 'location files' (xml files that 'link' external table in Oracle and target file in Hadoop). This directory must be on the Oracle server, and it is best to set up within the home directory of the user that runs Oracle, but outside of ORACLE_HOME. e.g. If the Oracle user is 'oracle' then good choice would be '/home/oracle/osch/exttab'). The Oracle user should have read and write permissions.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Log Directory Object</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Oracle DIRECTORY object that points to the OSCH log directory.<br />It can point to the directory where the 'location files' are (it will point to the loader default directory if it is not specified). Oracle user should have read and write permissions.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Oracle Admin Directory Path</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">OS path to the directory that contains the 'tnsnames.ora' file.<br />This is the full path to 'tnsnames.ora' – "$ORACLE_HOME/network/admin".</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Oracle Wallet Directory Path</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                        OS path to an Oracle wallet directory where the connection credential is stored.
+                        <br />The full path to the Oracle Wallet location. It can be set to anything – e.g. "$ORACLE_HOME/network/admin" or "$ORACLE_HOME/wallets", but if the wallet is created on the Oracle server then it will likely be in Oracle ACFS when available (e.g. "/u02/app/oracle/wallet/").<br /><b>Example</b><br />To create an Oracle directory object named "osch_bin_path", pointing to "/home/oracle/osch/orahdfs-3.1.0/bin" directory and then grant read and execute permissions on that object to Oracle user "oschuser":<br />CREATE DIRECTORY osch_bin_path AS '/home/oracle/osch/orahdfs-3.1.0/bin';<br />GRANT EXECUTE ON DIRECTORY osch_bin_path TO oschuser;<br />GRANT READ ON DIRECTORY osch_bin_path TO oschuser;<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">It is possible to either provide values or provide names of UNIX environment variables in the connection object parameter values.<br />If UNIX environment variables are used instead of actual values, note that UNIX/Linux scheduler must be restarted after any changes to these variables or those changes will not be available to any processes scheduled to run on that scheduler. Since these values should be very stable (they probably never change) this is only an issue during the environment setup—the administrator must remember to add those variables to the environment first before starting the scheduler. If the variables are ever changed then the scheduler needs to be restarted. <br />All environment variables must start with $.</td></tr></tbody></table></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Credentials</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">UNIX/Linux User ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">User Account to login to the UNIX/Linux Host.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">UNIX/Linux User Password</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Password to login to the UNIX/Linux Host.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">DSS User ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database User to connect to the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata repository. Not required. All authentication is handled through Oracle Wallet since Oracle SQL Connector for Hadoop will not work without it.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">DSS User Password</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                       Database Password to connect to the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> metadata repository. Not required. All authentication is handled through Oracle Wallet since Oracle SQL Connector for Hadoop will not work without it.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">To perform loads from <b>Hadoop</b> using multiple schemas, the <span class="mc-variable WS_Branding.Product variable">RED</span> must be granted an extra set of privileges described in section <b>9.3 Creating an Oracle Dss User</b> of the <span class="mc-variable WS_Branding.Product variable">RED</span> Installation Guide. </td></tr></tbody></table></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Other</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Path for Browsing</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+        Optional default Path for browser pane filter. When a path has been selected in this field, it becomes the initial point for browsing and it is also expanded on open in the right hand browser pane.
+    <![CDATA[                     
+                    ]]></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        The default Load type for new tables created using this connection. Select from the Script based load, Native SSH or Externally loaded options.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Script Template</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Script Template</b> to use when a <b>Script based load</b> type is defined for a Load table object that is <b>sourced</b> from this connection.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Type Mapping Set</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+       XML files have been created to store mappings from one set of data types to another. Setting this field to <b>(Default)</b> will cause RED to automatically select the relevant mapping set; otherwise you can choose one of the standard mapping sets from the drop-down list or create a new one.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">To test the drag and drop functionality</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                            <ul>
+                                <li>From the menu strip select <b>Browse</b> <b> &gt; </b> <b>Source Tables</b></li>
+                                <li>Drill down to the area required</li>
+                                <li>Drag an item to the middle pane, (having first selected the object in the left pane).</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Closing the Connection
+        </h5>
+            <p>To close the collection, right-click in the browser pane and select <b>Close UNIX/LINUX session</b>:</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/Closing the Connection_1.png" />
+            </p>
+        </div>
+    </body>
+</html>

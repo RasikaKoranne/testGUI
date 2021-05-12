@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Staging" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Generating the Staging Update Procedure</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Generating the Staging Update Procedure</h2>
+            <p class="BodyText">Once a stage table has been defined in the metadata and created in the database, an update procedure can be generated to handle the joining of any tables and the lookup of the dimension table artificial keys. </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <p style="color: #d7454b;">You can also generate an update procedure via a template, refer to <a href="../Table Properties/Rebuilding Update Procedures.htm">Rebuilding Update Procedures</a> for details.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Generating a Procedure</h3>
+            <ol>
+                <li value="1">To generate a procedure, right-click on the stage table in the left pane and select <b>Properties</b>. </li>
+                <li value="2">From the <b>Update Procedure</b> drop-down list, select <b>(Build Procedure...)</b>. </li>
+                <li value="3">Click <b>OK</b> to update the properties and start the process of generating the new procedure.</li>
+                <li value="4">A series of prompts are displayed during the procedure generation to join the tables and link the dimensions.</li>
+            </ol>
+            <h3 class="Heading3">Procedure Type</h3>
+            <p class="BodyText">The first dialog box asks for the type of procedure that is to be generated. An example of this follows:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Staging/Procedure Type.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                       Default settings for hint and truncate options are set in <b>Tools &gt; Options &gt; Code Generation &gt; Default Update Procedure Options</b>.
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="Heading3">Oracle</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1"><b>
+                       Oracle Only</b>
+                            <ul>
+                                <li style="color: #70abaf;">Select Hint: Enter a database hint to be used in the SELECT statement.</li>
+                                <li style="color: #70abaf;">Insert Hint: Enter a database hint to be used in the INSERT statement. Factory default value is APPEND.</li>
+                                <li style="color: #70abaf;">Update Hint: Enter a database hint to be used in the UPDATE statement.</li>
+                                <li style="color: #70abaf;">Truncate Options: Optional Oracle truncate options such as <b>REUSE STORAGE</b> (default value) or <b>DROP STORAGE</b>.                     </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <img src="../../Images/UserGuide_Images/Staging/SQL Server.png" style="height: 541px;width: 502px;" class="img_1" />
+            </p>
+            <h3 class="Heading3">SQL Server</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1"><b>
+                       SQL&#160;Server Only</b>
+                            <ul>
+                                <li style="color: #70abaf;">Enter a database hint to be used in the INSERT statement. Factory default value is TABLOCK.</li>
+                                <li style="color: #70abaf;">Enter a database hint to be used in the UPDATE statement.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <img src="../../Images/UserGuide_Images/Staging/DB2.png" style="height: 494px;width: 500px;" class="img_1" />
+            </p>
+            <h3 class="Heading3">DB2</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1"><b>
+                       DB2 Only</b>
+                            <p style="color: #70abaf;">Use Minimal Logging (for set insert): The staging procedure uses the <b>LOAD FROM CURSOR</b> option in DB2 to minimize database logging.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <img src="../../Images/UserGuide_Images/Staging/A number of different types_512x499.png" style="width: 512;height: 499;" class="img_1" />
+            </p>
+            <p class="BodyText">A number of different types of procedure generation are available. Each type is discussed below. </p>
+            <p class="BodyText">There is a check-box at the bottom of the dialog box. This check-box is only present if advanced procedure building features are enabled. </p>
+            <p class="BodyText">This check-box allows the editing of the 'Where' clause when no table joining is being performed, and hence the 'Where' clause would not be exposed.</p>
+            <h4>Cursor Based Procedure</h4>
+            <p class="BodyText">This option creates a procedure that loops through each source transaction performing specific tasks on each transaction before writing the transaction to the stage table. The tasks performed include the lookup of each dimension key, and any bespoke value assignments or adjustments.</p>
+            <h4>Sorted Cursor Procedure</h4>
+            <p class="BodyText">This is a variant on the regular cursor procedure. In this case dimension key lookups only occur when there is a change in the business key for a given dimension. This can improve the performance of the procedure particularly when one or more of the dimensions has a low cardinality. Where slowly changing dimensions are used this advantage is lessened as the relative date of the dimension records also comes into play.</p>
+            <h4>Set based procedure</h4>
+            <p class="BodyText">A set based procedure performs one SQL statement to join all the dimensions and source tables together and then insert this data into the stage table. This is normally the fastest method of building the stage table. It is also the least flexible method and is easily prone to incorrect syntax. Caution and experience must be used with this option to ensure that all source transactions are processed and that they are processed correctly. This option is only recommended for the experienced practitioner where performance is the overriding requirement. Particular care must be taken with regards to <b>NULL</b> values in the business keys that are used to make the table joins. The generated code deliberately does not handle such null values.</p>
+            <h4>Set + Cursor Procedure</h4>
+            <p class="BodyText">This option is normally used where a number of dimension keys will fail to join and we wish to automatically add new dimension records. The first phase of the generated code will perform a set based join and insert of the data. The dimensions that failed to join will be assigned the zero key value. The second phase of the procedure will use a cursor to cycle through all the stage records that have a zero key dimension join. By setting the appropriate flags in the dimension joins when building this procedure we can request that any missing dimension records be automatically added.</p>
+            <h4>Set Merge Procedure</h4>
+            <p class="BodyText">This option is to allow the merging of two or more identical tables. The tables to be merged must have exactly the same number of columns and column names. If necessary additional blank columns could be added to one or other of the tables to make them identical. To use this procedure you must simply have the tables to be merged mentioned at least once in the <b>Source Table</b> field of a column's properties. Refer to <a href="Set Merge Procedure.htm">Set Merge Procedure</a> for details.</p>
+            <h4>Set Distinct</h4>
+            <p>Essentially the same as Set, except for the DISTINCT key word being added to the SELECT statement. This option therefore removes duplicate rows.</p>
+            <h4>Set Minus</h4>
+            <p>The Set Minus option can be used to determine change data or for programmatic referential integrity checking. This option works in a similar way to Set Merge. It generates SQL code in this form: <i>SELECT ... FROM source_table1 {where} MINUS SELECT ... FROM source_table2 {where}</i>. It requires exactly two source tables to be specified. All source columns must exist in both source tables.</p>
+            <h4>Bulk Bind Procedure</h4>
+            <p class="Note"> <img src="../../Images/Install_Images/RED_oracleapp.png" /> The bulk bind procedure is only available for Oracle. It uses memory arrays to join all the information before writing it to the table. It can be the fastest method of performing a stage table update when a lot of dimension joins are being used.</p>
+            <p class="Note">There are some other additional options available in this dialog common to SQL Server, Oracle and DB2:</p>
+            <ul>
+                <li><b>Allow modification of the Where clause:</b> the 'Where' clause dialog is displayed automatically if the table has more than one source table, but not for a single source table stage table unless this option is chosen.</li>
+                <li><b>Distinct data select:</b> choosing this option adds the DISTINCT key word to the SELECT statement in the staging procedure.</li>
+            </ul>
+            <h3>Parameters</h3>
+            <p class="BodyText">If <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> parameters exist in the metadata, the following window is displayed. Any parameters selected in this dialog (by moving them to the right pane), are included in the generated update procedure as variables. </p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Staging/Parameters.png" />
+            </p>
+            <p>The variables can also be used in column transformations and in the From/Where clause for the update procedure. </p>
+            <p>Some databases have a 30 character limit for variable names. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> ensures the variables added for any parameters are less than 30 characters long by creating variable names in the form <b>v_</b> followed by the first 28 characters of the parameter name.</p>
+            <p>For example, a parameter called MINIMUM_ORDER_NUMBER_SINCE_LAST_SOURCE_LOAD will be available as the variable v_MINIMUM_ORDER_NUMBER_SINCE_L.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tips</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">
+                            <ul>
+                                <li style="color: #70abaf;"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> parameters should be unique within the first 28 characters to avoid conflicting variables names.</li>
+                                <li style="color: #70abaf;"> If the desired parameter doesn't exist in the metadata yet, a new parameter can be added by clicking on the <b>Add New</b> button on the bottom leftmost corner of the Select Parameters dialog.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">Refer to <a href="../Parameters.htm">Parameters</a> for more information on <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Parameters.</p>
+            <h3>Multiple Source Tables</h3>
+            <p><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> provides a wizard that enables you to graphically generate the join clause for an object with multiple source tables. The <b>Source Join</b> wizard enables you to specify the primary (driving) table and the source tables to join. A graphical representation of the tables and the join criteria is displayed by the wizard which you can manipulate to change the defined joins.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Staging/Source Join Wizard.png" />
+            </p>
+            <p>&#160;</p>
+            <p>The <b>Source&#160;Join</b> wizard guides you in generating the join clause through the following steps:</p>
+            <ol>
+                <li value="1"><b>Choose Primary Table</b>
+                    <br />The first source table encountered is the default primary (driving) table which can be changed before any joins are defined. </li>
+                <li value="2"><b>Choose Tables to Join</b> <br />Once the primary table is set, the remaining source tables are listed in this drop down. Select a table to join and then click <b>Add</b>. The two tables are graphically added in pane 4, which is the basis for the join displayed in pane 3.</li>
+                <li value="3"><b>Defined Joins</b>
+                    <br />The join type defaults to <b>Inner</b> join but this can be changed from the drop down.</li>
+                <li value="4"><b>Join criteria of selected join</b>
+                    <br />The column(s) used to join the two tables can be joined manually by clicking the corresponding  join column connection point from the table on the left and then dragging the line that appears to the connection point of the required column in the table on the right.<br />Alternatively, if a column with a matching or similar name exists in the left hand table(s) then a context menu is provided on the columns on the right-hand table. You can right click the column to display the context menu and then select a column from the list.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0"><col class="TableStyle-tip-Column-Column1" /><thead><tr class="TableStyle-tip-Head-Header1"><th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th></tr></thead><tbody><tr class="TableStyle-tip-Body-Body1"><td class="TableStyle-tip-BodyA-Column1-Body1">
+                       
+ To aid manual column join, you can expand or collapse columns in the tables on the left and toggle between natural and alphabetic column ordering.                    </td></tr></tbody></table></li>
+                <li value="5">Once the join column(s) for the table pair are defined, then any additional source tables can be added from the drop-down list in step 2 and the above column mapping process repeat to join this table.<p>This process is repeated until all source tables are joined.</p></li>
+                <li value="6">Clicking the <b>Next</b> button or the <b>Join Query</b> tab progresses to the join editor window, where custom joins, database functions, etc. can be added.<p><img src="../../Images/UserGuide_Images/Staging/Source Join Wizard_2.png" /></p></li>
+            </ol>
+            <p>
+                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                    <col class="TableStyle-note-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-note-Head-Header1">
+                            <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-note-Body-Body1">
+                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If RED is unable to parse a join statement, the user cannot navigate back to the define join tab and the following warning is displayed:<p><img src="../../Images/UserGuide_Images/Staging/discardchanges.png" /></p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h3>Dimension Joins</h3>
+            <p class="BodyText">For each dimension key, a dialog appears asking for the business key from the stage table that matches the business key for the dimension.</p>
+            <p class="BodyText">In the example below, we are asked for the stage table business key for the customer dimension. The dimension name is shown both on the first prompt line and at the lower left side of the window. </p>
+            <p class="BodyText">The customer dimension has a unique business key named <b>code</b>. </p>
+            <p class="BodyText">We must provide the corresponding business key from the staging table. In the case of our example, this is the customer_code column.</p>
+            <ol>
+                <li value="1">Click <b>OK</b> after the correct business key has been entered. </li>
+                <li value="2">If the business key does not exist and will be derived from another dimension or from some form of lookup, then enter any column and edit the procedure once produced.</li>
+            </ol>
+            <p>
+                <img src="../../Images/UserGuide_Images/Staging/dimensionbusinesskey.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The <b>Add Text</b> button and the associated message and edit box are only shown if the user possess a full license, thus enabling the advanced procedure build options. When the <b>Add Text</b> button is clicked, any data in its edit box is placed in the Stage table column list. In this way, a number or string can be assigned as part or all of a Dimension join.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Slowly Changing Dimension information</h3>
+            <p class="BodyText">If the dimension being joined was defined as a slowly changing dimension, then an additional window appears, as shown below. This window asks for a date field in the Stage table that enables <span class="mc-variable WS_Branding.Product variable">RED</span> to determine which version of the slowly changing dimension (the <b>customer_name</b> field, below) to use based on the specified date range in the Customer Dimension.&#160; </p>
+            <p class="BodyText">Select the appropriate date field for your business needs and click <b>OK</b>. If you wish to take the last (or current) version for the dimension, select <b>No Date</b>. </p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Staging/Slowly Changing Dimension _336x322.png" style="width: 336;height: 322;" class="img_1">
+                </img>
+            </p>
+            <p class="BodyText"><b>For Example:</b>
+            </p>
+            <p class="BodyText">As shown in the screen above, we have defined the <b>customer_name</b> as an item in the dimension that we expect to have versions for over time, e.g. each time the data warehouse processing sees a new <b>customer_name</b> value, the dimension will record the date range for that version's validity even though the business key (customer_code in this example) remains the same. This implies we want to create a new dimensional record whenever a customer name is changed even though the customer_code remains the same.&#160; </p>
+            <p class="BodyText">Let's say a customer changes their name on the 5th of the month. If the <b>Staging Table Dates</b> field is set to <b>order_date</b>, any order received before the 5th of the month is identified under the old customer name and any order received on or after the 5th has the new customer name. </p>
+            <p class="BodyText">Alternatively, by setting the <b>Staging Table Dates</b> to <b>ship_date</b>, we can specify that any order <b>shipped</b> on or after the 5th of the month is shipped with the new name.</p>
+            <h3>Staging Business Key</h3>
+            <p class="BodyText">Once all the dimensional joins have been defined, we will be asked to define the unique business key for the staging table. This is the column or columns that allow us to uniquely identify each record in the staging table. </p>
+            <p class="BodyText">In the example below, the unique business key is a combination of the <b>order_number</b> and the <b>order_line_no</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Staging/Staging Business Key.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ul>
+                                <li style="color: #d7454b;">The order of the columns in the business key list is set to the order that the columns appear in the table. This is done to optimize performance for any indexes.
+</li>
+                                <li style="color: #d7454b;"><b>NULL VALUES:</b> None of the columns chosen as the business key should ever contain a NULL value. See the note in the start of the Dimension chapter.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">The <b>Include Update Statement</b> check-box provides two options in the generated procedure. If selected, then an update/insert combination will be included. If clear, then only an Insert statement will be included in the procedure. If cleared, you must be sure that the business key for the table is unique, otherwise either a duplicate key error will occur or records will be lost, depending on the type of procedure.</p>
+            <h3>Index re-creation</h3>
+            <p class="BodyText">Finally, you are asked if you want to drop and re-create any indexes defined on the table:</p>
+            <ul>
+                <li>Click <b>Yes </b>to drop and re-create.</li>
+                <li><b>No </b>to leave existing indexes in place.</li>
+            </ul>
+            <p>
+                <img src="../../Images/UserGuide_Images/Staging/Index re-creation.png">
+                </img>
+            </p>
+            <h3 class="Heading3">Building and Compiling the Procedure</h3>
+            <ul>
+                <li>Once the above questions are completed, the procedure is built and compiled automatically. </li>
+                <li>If the compile fails, an error is displayed along with the first few lines of error messages. Compilation failures typically occur when the physical creation of the table was not done. </li>
+                <li>If the compile fails for some other reason, the best approach is to use the procedure editor to edit and compile the procedure. The procedure editor highlights all the errors within the context of the procedure.</li>
+                <li>Once the procedure has been successfully compiled, it can either be executed interactively or passed to the scheduler.</li>
+            </ul>
+        </div>
+    </body>
+</html>

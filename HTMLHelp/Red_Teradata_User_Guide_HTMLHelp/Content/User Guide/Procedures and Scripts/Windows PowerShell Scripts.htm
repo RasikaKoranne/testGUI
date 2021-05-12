@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Procedures and Scripts|Script Generation|Script Generation (Windows/Teradata)" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Windows PowerShell Scripts</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4 class="Heading4">Windows PowerShell Scripts</h4>
+            <p class="BodyText">In addition to the conventional Windows scripting and other tools, <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> also supports Windows PowerShell scripts for loading data into a <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> managed Data Warehouse, as well as for exporting data from a <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> managed Data Warehouse.&#160; </p>
+            <p class="BodyText">The Windows PowerShell command line and scripting environment was introduced by Microsoft in Windows 7. For more information about PowerShell, please refer to the Microsoft TechNet website (https://technet.microsoft.com/en-us/library/dd742419.aspx). </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> does not automatically create the PowerShell scripts, you must write them either directly via the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> script editor or via a template that generates a PowerShell script.&#160;Each method is described below.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 class="Heading5">Via the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Script Editor</h5>
+            <p class="BodyText">You can manually write the PowerShell script from scratch, using the Script Editor. You need to create a Host Script object and set the script type to PowerShell script from the Host Script Properties screen.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Windows PowerShell Scripts.png" />
+            </p>
+            <p class="BodyText">You can then open the blank Host Script created of type PowerShell Script to write your own script, or you can use the sample PowerShell scripts in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>, which can be generated by selecting <b>Tools &gt; Create Template Script</b> from the <b>Script Editor</b> screen.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Windows PowerShell Scripts_1.png" />
+            </p>
+            <p class="BodyText">The contents generated is an actual PowerShell script syntax that you can use to load data into a <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> managed Data Warehouse. You can also modify it and use it as a starting point to write your own PowerShell script for Load or Export objects. </p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Windows PowerShell Scripts_2_939x728.png" style="width: 939;height: 728;" />
+            </p>
+            <p><span class="mc-variable WS_Branding.Product variable">RED</span>, now includes the Create Browse Script option. This action adds a sample browse script to the empty script editor window.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Windows PowerShell Scripts_browser.png" />
+            </p>
+            <h5 class="Heading5">Via the Stub Template </h5>
+            <p class="BodyText"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> also provides the Template object <b>wsl_common_powershellscript_stub</b> which is a basic PowerShell script type stub template that serves as guide on the use of a template to generate a PowerShell script. </p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Win PwerShell Scrps_3_285x460.png" style="width: 285;height: 460;" />
+            </p>
+            <p>Additional PowerShell Templates can be downloaded from the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> website (https://www.wherescape.com/support/software-downloads-documentation/templates/). </p>
+            <p class="BodyText">&#160;</p>
+            <p class="BodyText">You can also create your own Template object and select PowerShell Script under the <b>Type</b> drop-down of the <b>Template Properties</b> screen.&#160; </p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Windows PowerShell Scripts_4.png" />
+            </p>
+            <p class="BodyText">Similar to the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Script Editor method described above, you can edit the template created to write your own script or open an existing PowerShell script to copy its contents to your template. </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><![CDATA[
+                       ]]><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> uses the 32-bit version of PowerShell by default. To use the 64-bit version, the following code must be added as the first line of the script. The script is relaunched and will be run in 64-bit version.
+                        <p><img src="../../Images/UserGuide_Images/Procs and Scrps/Windows PowerShell Scripts_5.png" /></p></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">&#160;</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,269 @@
+//=======================================================================
+//================ Lex class support: PowerShell ========================
+//=======================================================================
+
+lexClass:
+    parent:file = <*.ps1>
+    name = c_PowerShell
+    caseSensitive = 0
+    txt:colorFG = 0x000000
+
+lexClass:
+    name = c_CompareSingleLineComment
+    parent = c_PowerShell
+    start:tag = '#<<--', '#>>--'
+    end:tag = @EOL
+    txt:colorFG = 0x0000F0
+
+lexClass:
+    name = c_MultilineComment
+    parent = c_PowerShell
+    children = 0
+    start:Tag = '<#'
+    end:Tag = '#>'
+    Collapsable = 1
+    CollapsedText = '<##>'
+    txt:colorFG = 0x008000
+
+lexClass:
+    name = c_SingleLineComment
+    parent = c_PowerShell
+    caseSensitive = 0
+    start:tag = '#'
+    end:tag = @EOL
+    txt:colorFG = 0x008F00
+
+lexClass:
+    name = c_BracketsRound
+    parent = c_PowerShell, c_BracketsRound
+    RecurrenceDepth = 15
+    start:tag = '('
+    end:tag = ')'
+    txt:colorFG = 0x6400C8
+
+lexClass:
+    name = c_LogicalOperators
+    caseSensitive = 0
+    parent = c_PowerShell, c_BracketsRound
+    Token:Tag = '-eq', '-ne', '-gt', '-ge', '-lt', '-le', '-Like', '-NotLike', '-Match', '-NotMatch'
+    Token:Tag = '-Contains', '-NotContains', '-In', '-NotIn', '-Replace', '-ceq', '-cne', '-cgt'
+    Token:Tag = '-cge', '-clt', '-cle', '-cLike', '-cNotLike', '-cMatch', '-cNotMatch', '-cContains'
+    Token:Tag = '-cNotContains', '-cIn', '-cNotIn', '-cReplace', '-ieq', '-ine', '-igt', '-ige'
+    Token:Tag = '-ilt', '-ile', '-iLike', '-iNotLike', '-iMatch', '-iNotMatch', '-iContains'
+    Token:Tag = '-iNotContains', '-iIn', '-iNotIn', '-iReplace', '-bAnd', '-bOr', '-bXor', '-bNot'
+    Token:Tag = '-shl', '-shr', '-and', '-or', '-xor', '-not', '-is', '-isnot', '-as', '>', '>>', '2>'
+    Token:Tag = '2>', '2>&1', '-f', '-split', '-join', '..', '::'
+    token:start:separators = ' ', '\t'
+    token:end:separators = ' ', '\t', @EOL
+    txt:colorFG = 0x804040
+    txt:Bold = 1
+
+lexClass:
+    name = c_CharacterConstant
+    parent = c_PowerShell, c_BracketsRound
+    children = 0
+    start:Tag = '\''
+    end:Tag = '\''
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_MultilineStringConstantSingleQuote
+    parent = c_PowerShell
+    children = 0
+    start:Tag = '@\''
+    end:Tag = '\'@'
+    Collapsable = 1
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_MultilineStringConstantDblQuote
+    parent = c_PowerShell
+    children = 0
+    start:Tag = '@"'
+    end:Tag = '"@'
+    Collapsable = 1
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_StringConstant
+    parent = c_PowerShell, c_BracketsRound
+    children = 0
+    start:Tag = '"'
+    end:Tag = '"'
+    txt:colorFG = 0xDC009C
+
+lexClass:
+    name = c_BracketsSquare
+    parent = c_PowerShell, c_BracketsRound, c_BracketsSquare
+    RecurrenceDepth = 15
+    start:tag = '['
+    end:tag = ']'
+    txt:colorFG = 0x6400C8
+
+lexClass:
+    name = c_PowerShell_DataTypes
+    caseSensitive = 0
+    parent = c_PowerShell, c_BracketsSquare, c_BracketsRound
+    Token:Tag = 'str', 'char', 'byte', 'bool'
+    Token:Tag = 'int', 'long', 'float', 'complex', 'decimal'
+    Token:Tag = 'single', 'double', 'DateTime'
+    Token:Tag = 'xml', 'array', 'hashtable'
+    Token:end:separators = ' ', '\t', '{', '(', ']', '}', ')', @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_PowerShell_Cmdlet
+    caseSensitive = 0
+    parent = c_PowerShell, c_BracketsRound
+    start:tag = 'Add-', 'Apply-', 'Approve-', 'Backup-', 'Block-', 'Checkpoint-', 'Clear-', 'Close-'
+    start:tag = 'Compare-', 'Complete-', 'Confirm-', 'Connect-', 'ConvertFrom-', 'Convert-', 'ConvertTo-'
+    start:tag = 'Copy-', 'Debug-', 'Decode-', 'Deny-', 'Disable-', 'Disconnect-', 'Dismount-', 'Edit-'
+    start:tag = 'Enable-', 'Encode-', 'Enter-', 'Exit-', 'Expand-', 'Export-', 'Find-', 'Flush-'
+    start:tag = 'ForEach-', 'Format-', 'Get-', 'Grant-', 'Group-', 'Hide-', 'Import-', 'Initialize-'
+    start:tag = 'Install-', 'Invoke-', 'Join-', 'Limit-', 'List-', 'Load-', 'Login-', 'Logout-', 'Measure-'
+    start:tag = 'Merge-', 'Mount-', 'Move-', 'New-', 'Open-', 'Optimize-', 'Out-', 'Pop-', 'Print-'
+    start:tag = 'Protect-', 'Publish-', 'Push-', 'Reactivate-', 'Read-', 'Receive-', 'Redo-', 'Register-'
+    start:tag = 'Remove-', 'Rename-', 'Repair-', 'Replace-', 'Request-', 'Reset-', 'Resize-', 'Resolve-'
+    start:tag = 'Restart-', 'Restore-', 'Resume-', 'Revoke-', 'Run-', 'Save-', 'Search-', 'Select-', 'Send-'
+    start:tag = 'Set-', 'Show-', 'Skip-', 'Sort-', 'Split-', 'Start-', 'Stop-', 'Submit-', 'Suspend-'
+    start:tag = 'Switch-', 'Swap-', 'Sync-', 'Tee-', 'Test-', 'Trace-', 'Unblock-', 'Undo-', 'Uninstall-'
+    start:tag = 'Unprotect-', 'Unpublish-', 'Unlock-', 'Unregister-', 'Update-', 'Use-', 'Validate-'
+    start:tag = 'Wait-', 'Where-', 'Write-'
+    skip:tag = @ALPHA
+    end:separators = ' ', '\t', '{', ')', @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+    // Apply, Decode, Encode, Flush, Hide, Load, List, Login, Logout, Print, Reactivate, Replace, Run, Swap, Validate
+
+lexClass:
+    name = c_PowerShell_Aliases
+    caseSensitive = 0
+    parent = c_PowerShell, c_BracketsRound
+    Token:Tag = '%', '?', 'ac', 'algm', 'asnp', 'blsmba', 'cat', 'cd', 'CFS', 'chdir', 'clc', 'clear'
+    Token:Tag = 'clhy', 'cli', 'clp', 'cls', 'clv', 'cnsn', 'compare', 'copy', 'cp', 'cpi', 'cpp'
+    Token:Tag = 'cssmbo', 'cssmbse', 'curl', 'cvpa', 'dbp', 'del', 'diff', 'dir', 'dlu', 'dnsn', 'dsmbd'
+    Token:Tag = 'ebp', 'echo', 'elu', 'epal', 'epcsv', 'epsn', 'erase', 'esmbd', 'etsn', 'exsn', 'fc'
+    Token:Tag = 'fhx', 'fimo', 'fl', 'foreach', 'ft', 'fw', 'gal', 'gbp', 'gc', 'gcai', 'gcb', 'gcfg'
+    Token:Tag = 'gcfgs', 'gci', 'gcim', 'gcls', 'gcm', 'gcms', 'gcs', 'gdr', 'ghy', 'gi', 'gin', 'gip'
+    Token:Tag = 'gjb', 'gl', 'glcm', 'glg', 'glgm', 'glu', 'gm', 'gmo', 'gp', 'gps', 'gpv', 'group'
+    Token:Tag = 'grsmba', 'gsmba', 'gsmbb', 'gsmbc', 'gsmbcc', 'gsmbcn', 'gsmbd', 'gsmbgm', 'gsmbm'
+    Token:Tag = 'gsmbmc', 'gsmbo', 'gsmbs', 'gsmbsc', 'gsmbse', 'gsmbsn', 'gsmbt', 'gsmbw', 'gsn', 'gsnp'
+    Token:Tag = 'gsv', 'gtz', 'gu', 'gv', 'gvicm', 'gwmi', 'h', 'hd', 'hf', 'history', 'icim', 'icm'
+    Token:Tag = 'iex', 'ihy', 'ii', 'inmo', 'ipal', 'ipcsv', 'ipmo', 'ipsn', 'irm', 'ise', 'iwmi', 'iwr'
+    Token:Tag = 'kill', 'lp', 'ls', 'man', 'md', 'measure', 'mi', 'mount', 'move', 'mp', 'msmbw', 'mv'
+    Token:Tag = 'nal', 'ncim', 'ncms', 'ncso', 'ndr', 'ni', 'nlg', 'nlu', 'nmo', 'npp', 'npssc', 'nsmbgm'
+    Token:Tag = 'nsmbm', 'nsmbs', 'nsmbt', 'nsn', 'nv', 'nwsn', 'ogv', 'oh', 'pbcfg', 'popd', 'ps', 'pse'
+    Token:Tag = 'pumo', 'pushd', 'pwd', 'quickref', 'r', 'rad', 'rbp', 'rcie', 'rcim', 'rcjb', 'rcms'
+    Token:Tag = 'rcsn', 'rd', 'rdp', 'rdr', 'ReleaseHosts', 'ren', 'ren', 'ri', 'rjb', 'rksmba', 'rlg'
+    Token:Tag = 'rlgm', 'rlu', 'rm', 'rmdir', 'rmo', 'rni', 'rnlg', 'rnlu', 'rnp', 'rp', 'rsmbb', 'rsmbgm'
+    Token:Tag = 'rsmbm', 'rsmbs', 'rsmbt', 'rsn', 'rsnp', 'rtcfg', 'rujb', 'rv', 'rvpa', 'rwmi', 'sacfg'
+    Token:Tag = 'sajb', 'sal', 'saps', 'sasv', 'sbp', 'sc', 'scb', 'scim', 'select', 'set', 'shcm', 'si'
+    Token:Tag = 'sl', 'slcm', 'sleep', 'slg', 'sls', 'slu', 'sort', 'sp', 'spjb', 'spps', 'spsv', 'ss'
+    Token:Tag = 'ssmbb', 'ssmbcc', 'ssmbp', 'ssmbs', 'ssmbsc', 'start', 'stz', 'sujb', 'sv', 'swmi'
+    Token:Tag = 'tcfg', 'tee', 'TNC', 'trcm', 'type', 'udsmbmc', 'ulsmba', 'upcfg', 'upmo', 'wget'
+    Token:Tag = 'where', 'wjb', 'write'
+    token:start:separators = ' ', '\t', '(', '|', '{', '[', ';', '@', ',', '<', '>', '/', '?', @EOL
+    token:end:separators = ' ', '\t', '(', ')', '|', '{', '}', ']', ';', ',', '<', '>', '/', '?', @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_PowerShell_Keywords
+    caseSensitive = 0
+    parent = c_PowerShell, c_BracketsRound
+    Token:Tag = 'Begin', 'Break', 'Catch', 'Class', 'Continue', 'Data', 'Define', 'Do', 'DynamicParam'
+    Token:Tag = 'Else', 'ElseIf', 'End', 'Exit', 'Filter', 'Finally', 'For', 'From' // 'ForEach'
+    Token:Tag = 'Function', 'If', 'In', 'InlineScript', 'Parallel', 'Param', 'Process', 'Return'
+    Token:Tag = 'Sequence', 'Switch', 'Throw', 'Trap', 'Try', 'Until', 'Using', 'Var', 'While'
+    Token:Tag = 'Workflow', 'Global', 'Local', 'Script', 'Private'
+    token:start:separators = ' ', '\t', '|', '{', '[', ';', '@', ',', '<', '>', '/', '?', @EOL
+    token:end:separators = ' ', '\t', '|', '}', ']', ';', ',', '<', '>', '/', '?', '(', @EOL
+    txt:colorFG = 0x0000FF
+    txt:Bold = 1
+
+lexClass:
+    name = c_NumericConstant
+    parent = c_PowerShell, c_BracketsSquare, c_BracketsRound
+    children = 0
+    previous:tag = ' ', '\t', '~', '-', '+', '.', '&', '=', ',', '(', @EOL
+    start:Tag = @DIGIT
+    skip:Tag = @DIGIT, '.'
+    end:separators = ' ', ',', '\t', ']', ')', @EOL
+    txt:colorFG = 0x6400C8
+
+lexClass:
+    name = c_PowerShell_Obj
+    parent = c_PowerShell, c_BracketsRound
+    children = 0
+    previous:tag:separators = '::', '.', '['
+    start:Tag = @ALPHA, @DIGIT
+    end:separators = ' ', '\t', '(', ']', ')', '{', '}', @EOL
+    txt:colorFG = 0x007FAE
+
+lexClass:
+    name = c_PowerShell_SpecialVariables
+    caseSensitive = 0
+    parent = c_PowerShell, c_BracketsRound
+    Token:Tag = '$$', '$?', '$^', '$_', '$Args', '$ConsoleFileName', '$Error', '$Event', '$EventArgs'
+    Token:Tag = '$EventSubscriber', '$ExecutionContext', '$False', '$ForEach', '$Home', '$Host', '$Input'
+    Token:Tag = '$LastExitCode', '$Matches', '$MyInvocation', '$NULL', '$NestedPromptLevel', '$PID'
+    Token:Tag = '$PSBoundParameters', '$PSCommandPath', '$PSDebugContext', '$PSItem', '$PSScriptRoot'
+    Token:Tag = '$PSSenderInfo', '$Profile', '$PsCmdlet', '$PsCulture', '$PsHome', '$PsUICulture'
+    Token:Tag = '$PsVersionTable', '$Pwd', '$ReportErrorShowExceptionClass'
+    Token:Tag = '$ReportErrorShowInnerException', '$ReportErrorShowSource', '$ReportErrorShowStackTrace'
+    Token:Tag = '$Sender', '$ShellID', '$SourceArgs', '$SourceEventArgs', '$StackTrace', '$This', '$True'
+    Token:Tag = '$ConfirmPreference', '$DebugPreference', '$ErrorActionPreference', '$ErrorView'
+    Token:Tag = '$FormatEnumerationLimit', '$LogCommandHealthEvent', '$LogCommandLifecycleEvent'
+    Token:Tag = '$LogEngineHealthEvent', '$LogEngineLifecycleEvent', '$LogProviderLifecycleEvent'
+    Token:Tag = '$LogProviderHealthEvent', '$MaximumAliasCount', '$MaximumDriveCount'
+    Token:Tag = '$MaximumErrorCount', '$MaximumFunctionCount', '$MaximumHistoryCount'
+    Token:Tag = '$MaximumVariableCount', '$OFS', '$OutputEncoding', '$ProgressPreference'
+    Token:Tag = '$PSDefaultParameterValues', '$PSEmailServer', '$PSModuleAutoLoadingPreference'
+    Token:Tag = '$PSSessionApplicationName', '$PSSessionConfigurationName', '$PSSessionOption'
+    Token:Tag = '$ShouldProcessPreference', '$ShouldProcessReturnPreference', '$VerbosePreference'
+    Token:Tag = '$WarningPreference', '$WhatIfPreference'
+    token:start:separators = ' ', '\t'
+    token:end:separators = ' ', '\t', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_PowerShell_RiskAndParameters
+    caseSensitive = 0
+    parent = c_PowerShell
+    Token:Tag = '-WhatIf', '-Confirm', '-Verbose', '-Debug', '-WarningAction', '-WarningVariable'
+    Token:Tag = '-ErrorAction', '-ErrorVariable', '-OutVariable', '-OutBuffer', 'SilentlyContinue'
+    Token:Tag = 'Inquire'
+    token:start:separators = ' ', '\t'
+    token:end:separators = ' ', '\t', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = AssignmentOperators
+    parent = c_PowerShell, c_BracketsSquare
+    Token:Tag = '=', '+=', '-=', '*=', '/=', '%=', '++', '--'
+    txt:colorFG = 0x6400C8
+    txt:Bold = 1
+
+lexClass:
+    name = ArithmeticOperators
+    parent = c_PowerShell, c_BracketsSquare
+    Token:Tag = '<', '>', '+', '-', '*', '/', '!'
+    txt:colorFG = 0x6400C8
+    txt:Bold = 1
+
+lexClass:
+    name = c_PowerShell_Variable1
+    parent = c_PowerShell, c_BracketsRound
+    children = 0
+    start:Tag = '${'
+    end:separators = ' ', '\t', '.', ',', '+', '-', ')', '[', ']', '@"', '"', '\'', '=', @EOL
+    txt:colorFG = 0xFF9900
+
+lexClass:
+    name = c_PowerShell_Variable2
+    parent = c_PowerShell, c_BracketsRound
+    children = 0
+    start:Tag = '$'
+    end:separators = ' ', '\t', '.', ',', '+', '-', ')', '[', ']', '}', '@"', '"', '\'', '=', @EOL
+    txt:colorFG = 0xFF9900

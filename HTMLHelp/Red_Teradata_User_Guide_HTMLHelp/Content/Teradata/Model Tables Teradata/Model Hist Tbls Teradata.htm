@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Model Tables" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Model History Tables</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Model History Tables</h2>
+            <p>Model history tables are a special type of model table where new records are created when certain identified columns in the model table change. </p>
+            <p>With any model table we identify a business key that uniquely identifies the model table records. For example, in a product model table, the product code can be deemed to be the business key. The code uniquely identifies each product within the model table. The product may also have a name or description and various other attributes that distinguish it. (e.g. size, shape, color etc.). A common question when handling model tables is what do we do when the name or description changes. Do we want to track transactional records in other model table based only on the product code, or do we also want to track records based on different descriptions.</p>
+            <p>An example:</p>
+            <p>
+                <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                    <col class="TableStyle-tablestyle-Column-Column1" />
+                    <col class="TableStyle-tablestyle-Column-Column2" style="width: 214px;" />
+                    <col class="TableStyle-tablestyle-Column-Column2" style="width: 251px;" />
+                    <col class="TableStyle-tablestyle-Column-Column2" style="width: 190px;" />
+                    <thead>
+                        <tr class="TableStyle-tablestyle-Head-Header1">
+                            <th class="TableStyle-tablestyle-HeadE-Column1-Header1">
+                       code                    </th>
+                            <th class="TableStyle-tablestyle-HeadF-Column2-Header1">description </th>
+                            <th class="TableStyle-tablestyle-HeadF-Column2-Header1">product_group</th>
+                            <th class="TableStyle-tablestyle-HeadD-Column2-Header1">sub_group</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-tablestyle-Body-Body1">
+                            <td class="TableStyle-tablestyle-BodyB-Column1-Body1"> 1235                   </td>
+                            <td class="TableStyle-tablestyle-BodyC-Column2-Body1">
+                                <p>15oz can of brussel sprouts</p>
+                            </td>
+                            <td class="TableStyle-tablestyle-BodyC-Column2-Body1">
+                                <p>canned goods</p>
+                            </td>
+                            <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+                                <p>sprouts</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <p>This product is sold for many years and we consequently have a very good history of sales and the performance of the product in the market. The company does a '20% extra for free' promotion for 3 months during which time it increases the size of the can to 18oz. The description is also changed to be '15 + 3oz can of brussel sprouts'. At the end of the promotion, the product is reverted to its original size and the description changed back to its original name.<br />The question is do we want to track the sales of the product when it had a different description (using a model history table), or should the description of the product simply change to reflect its current name (a standard model table).<br />The decision is not a simple one and the advantages and disadvantages of each of the two choices is discussed below.</p>
+            <h3>Model History Table</h3>
+            <ul>
+                <li>
+                    <p>Allows the most comprehensive analysis capabilities when just using the product model table.</p>
+                </li>
+                <li>
+                    <p>Complicates the analysis. Does not allow a continuous analysis of the product called '15oz can of brussel sprouts' when the description is used. This analysis is however still available through the code which has not changed.</p>
+                </li>
+                <li>
+                    <p>Adds considerable additional processing requirements to the building of any other model tables joined to this model table.</p>
+                </li>
+            </ul>
+            <h3>Model Table</h3>
+            <ul>
+                <li>
+                    <p>Does not allow specific analysis of the product during its size change. Note, however that this analysis will probably be available through the combination of a 'promotion' model table.</p>
+                </li>
+                <li>
+                    <p>Provides a continuous analysis history for the product called '15oz can of brussel sprouts'. An analysis via description and code will produce the same results.</p>
+                </li>
+                <li>
+                    <p>Simplifies analysis from an end user's perspective.</p>
+                </li>
+            </ul>
+            <p>As mentioned above, the choice is never a simple one. Even amongst experienced data warehouse practitioners there will be a variety of opinions. The decision must be based on the business requirements. In many cases keeping the analysis simple is the best choice, at least in the early stages of a data warehouse development. Model history tables do have a place, but there is nearly always an alternate method that provides equal or better results. In the example above a promotion model history table coupled with the product model table could provide the same analysis results whilst still keeping product only analysis simple and easy to understand.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

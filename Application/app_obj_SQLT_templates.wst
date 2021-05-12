@@ -1,0 +1,9 @@
+4;1;wsl_hive_block_insert
+4;2;wsl_hive_utility_dml
+4;3;wsl_pdw_procedure_ctas
+4;4;wsl_pdw_procedure_ctas_with_union
+4;5;wsl_pdw_procedure_update_insert
+4;6;wsl_pdw_utility_dml
+4;7;wsl_common_powershellscript_stub
+4;8;wsl_sqlserver_proc_stage
+4;9;wsl_sqlserver_utility_dml

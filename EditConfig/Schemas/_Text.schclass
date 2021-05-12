@@ -1,0 +1,33 @@
+//=======================================================================
+//================ Lex class support: Block =============================
+//=======================================================================
+
+lexClass:
+    parent:file = <*.txt>
+    name = c_Text
+    caseSensitive = 0
+    txt:colorFG = 0x000000
+
+lexClass:
+    name = MultilineComment
+    parent = c_Text
+    children = 0
+    start:Tag ='/*'
+    end:Tag ='*/'
+    Collapsable = 1
+    CollapsedText = '/**/'
+    txt:colorFG = 0x008000
+
+lexClass:
+    name = CompareSingleLineComment
+    parent = c_Text
+    start:tag ='--<<--', '-->>--'
+    end:tag = @EOL
+    txt:colorFG = 0x0000F0
+
+lexClass:
+    name = SingleLineComment
+    parent = c_Text
+    start:tag ='--', '//'
+    end:tag = @EOL
+    txt:colorFG = 0x008F00

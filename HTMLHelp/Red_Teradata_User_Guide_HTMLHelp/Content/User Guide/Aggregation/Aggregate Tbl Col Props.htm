@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Aggregation" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Aggregate Table Column Properties</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Aggregate Table Column Properties</h2>
+            <p class="BodyText">Each aggregate table column has a set of associated properties. The definition of each property is defined below:</p>
+            <p class="BodyText">If the<b> Column name</b> or <b>Data type</b> is changed for a column, then the metadata will differ from the table as recorded in the database. Use the <b>Validate &gt; Validate Table Create Status</b> menu option to compare the metadata to the table in the database. A right click menu option of <b>Alter Table</b> is available when positioned on the table name after the validate has completed. This option will alter the database table to match the metadata definition.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">If a database table's definition is changed in the metadata then the table will need to be altered in the database. Use the <b>Validate &gt; Validate Table Create Status</b> to compare metadata definitions to physical database tables. The option also provides the ability to alter the database table, through a pop-up menu option from the validated table name.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">A sample <b>Properties</b> screen:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Aggregation/Creating an Aggregate Summary_2.png" class="img_1">
+                </img>
+            </p>
+            <p class="BodyText">The two special update keys allow you to update the column and step either forward or backward to the next column's properties. <b>ALT-Left Arrow</b> and <b>ALT-Right Arrow</b> can also be used instead of the two special update keys.</p>
+            <h3>General</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Table Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database-compliant name of the table that contains the column. [Read-only].
+
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Column Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database-compliant name of the column. Typically column-naming standards exclude the use of spaces etc. A good practice is to only use alphanumerics, and the underscore character. Changing this field alters the table's definition.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+        A case conversion button on the right converts the text between different cases: UPPER CASE, Capitalized Case and lower case. The mode cycles to the next case in the sequence each conversion.
+
+    </td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Business Display Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name that the business uses to refer to the column, which is included in the RED-generated documentation and can be used in the end user layer of other tools. [Does NOT affect the physical database table]. As such it is a free form entry and any characters are valid.
+<br /><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+        A case conversion button on the right converts the text between different cases: UPPER CASE, Capitalized Case and lower case. The mode cycles to the next case in the sequence each conversion.
+
+    </td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Column Description</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">This field contains the description for the column. It may be a description from a business user's point of view. This field might additionally contain information on where and how the column was acquired. For example if the column is sourced from multiple tables or is a composite or derived column then this definition would normally describe the process used to populate the column. This field is used in the documentation and is available via the view <b>ws_admin_v_dim_col . </b>This field is also stored as a comment against the column in the database.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Physical Definition</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Column Order</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Numeric value that controls the relative order of columns in the database create statement. The lowest numbered column will appear first in the table. Although this affects the physical table definition no action will be taken unless the table is re-created in the database. The columns can be re-numbered based on the existing order by choosing the <b>Respace Order Number</b> pop-up menu option when positioned over any column in the table. This action will number the columns in increments of 10 starting at 10. In addition to a simple change of the order field, the column order can be changed by first displaying the columns in the middle pane and then using drag and drop to move the columns around. This drag and drop process will automatically renumber the columns as required.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database-compliant data type that must be valid for the target database. Typical data types for Oracle are integer, number, char(), varchar2() and date. For SQL Server common types are integer, numeric, varchar() and datetime. See the database documentation for a description of the data types available. Changing this field alters the table's definition.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Null Values Allowed</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Determines whether the table column can hold NULL values or whether a value is always mandatory.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Default Value</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Initial value that is assigned to the column when a row is inserted into the table but no value is specified for the column.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Meta Definition</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Format</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional format mask that can be used in end user tools. [Does NOT affect the physical database table]. As such it is a free form entry and any characters are valid. Typically format masks are only used on numeric fields. Example: #,###0.00. It is not worth the effort of populating this field unless it can be utilized by the end user tools in use.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Numeric</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates whether the table column holds values that are numeric. This is normally only relevant for fact tables. It does not affect the physical table definition, but rather provides input to the view <b>ws_admin_v_dim_col </b>which can be used to assist in the population of an end user tool's end user layer. The use of this field is not relevant unless it can be utilized by the end user tools.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Additive</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates whether the table column holds values that are additive. This implies that the column can be summed when performing data grouping in a query. This is normally only relevant for fact tables. It does not affect the physical table definition, but rather provides input to the view <b>ws_admin_v_dim_col </b>which can be used to assist in the population of an end user tool's end user layer. The use of this field is not relevant unless it can be utilized by the end user tools.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Attribute</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates whether the table column holds values that are descriptive, and/or are used for grouping/summing. An attribute is defined as a column that is non factual. For example we may have an order number, or a invoice number stored in the fact table. Such columns are considered attributes, rather than facts. This checkbox is therefore normally only relevant for fact tables. This checkbox does not affect the physical table definition, but rather provides input to the view <b>ws_admin_v_dim_col </b>which can be used to assist in the population of an end user tools end user layer. The use of this field is not relevant unless it can be utilized by the end user tools.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">End User Layer Display</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates whether the table column is available/visible to end users. If set the documentation will include the column in the glossary and in the user documentation. It is also used to decide what columns appear in the view <b>ws_admin_v_dim_col. </b>Typically columns such as the artificial key would not be enabled for end user display.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Key Type</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Key type that is assigned and used when generating the table's update procedure and indexes.&#160; [Normally maintained automatically]. It can be altered here, but this should only be done if the consequences are fully understood and tested. The supported values are:
+                        <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0"><col class="TableStyle-tablestyle-Column-Column1" style="width: 105px;"></col><col class="TableStyle-tablestyle-Column-Column2"></col><thead><tr class="TableStyle-tablestyle-Head-Header1"><th class="TableStyle-tablestyle-HeadE-Column1-Header1">Key type
+                                    </th><th class="TableStyle-tablestyle-HeadD-Column2-Header1">Meaning
+                                    </th></tr></thead><tbody><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                                        0
+                                    </td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">The artificial key. Set when the key is added during drag and drop table generation.
+                                    </td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                                        1
+                                    </td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">Component of all business keys. Indicates that this column is used as part of any business key. For example: By default the dss_source_system_key is added to every dimension table. It is considered part of any lookup on that table and has the key type set to 1. Set when the column is added during drag and drop table generation.
+                                    </td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                                        2
+                                    </td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates that this column is a dimensional join. Used on fact tables to indicate the dimension keys. Results in bitmap indexes being built for the columns. Set during the update procedure generation for a fact table, based on information from the staging table.
+                                    </td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                                        3
+                                    </td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">Slowly changing column indicator. Used on dimension tables to indicate that the column is being managed as a slowly changing column within the context of a slowly changing dimension. Set when a column is identified during the dimension update procedure generation.
+                                    </td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                                        4
+                                    </td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">Previous value column indicator. Used on dimension tables to indicate that the column is being managed as a previous value column. The source column identifies the parent column. Set during the dimension creation.
+                                    </td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                                        A
+                                    </td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates that the column is part of the primary business key. Set whenever a business key is defined as part of an update procedure generation.
+                                    </td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyB-Column1-Body1">
+                                        B-Z
+                                   </td><td class="TableStyle-tablestyle-BodyA-Column2-Body1">Indicates that the column is part of a secondary business key. Only used during index generation and not normally set.
+                                    </td></tr></tbody></table></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Source Details</h3>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Table</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Identifies the source table where the column's data comes from. This source table is normally a fact table or a dimension table within the data warehouse. If the column was sourced from multiple tables, then the normal practice is to record one of the tables in this field and a comment listing all of the other tables in the <b>Source strategy </b>field. This field is used when generating a procedure to update the aggregate table. It is also used in the track back diagrams and in the documentation.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Column</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Identifies the source column where the column's data comes from. Such a column is normally a fact table column or a dimension table column, which in turn may have been a transformation or the combination of multiple columns.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Data Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Identifies the source column's data type. [Read-only]. </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Transformation</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Refer to <a href="Aggregate Tbl Col Transforms.htm">Aggregate Table Column Transformations</a>. [Read-only].</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Join</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates whether the table column is used in a table join. [Normally maintained automatically but can be optionally changed to override the default join logic used in the generated update procedure]. The <b>Source Table</b> and <b>Source Column</b> fields will provide the dimension table's side of the join. The options for this field are: False, True, Manual and Pre Join.
+                        <ul><li>Setting this field to Manual changes the way the dimension table is looked up during the update procedure build. It allows you to join the dimension manually in  the <b>Source Join</b> wizard  (used to build the 'Where' clause). </li><li>Setting this field to Pre Join activates the <b>Pre Join Source Table</b> field and allows you to select a table from the drop-down list.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Pre Join Source Table</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Indicates the table from which the pre joined column was sourced. When the Join option is set to False, this field becomes inactive. When the Join option is set to True or Manual, this field is set to the current table name. When the Join option is set to Pre Join, then you can select the required table from the drop-down list.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <hr width="100%" size="0" align="center" data-mc-conditions="Outputs.Exclude_In_Print" />
+            <p id="spacing" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+        </div>
+    </body>
+</html>

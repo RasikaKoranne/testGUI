@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Callable Routines|Introduction to Callable Routines|Callable Routines Invocation|Alternative Invocation Methods" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Invocation via ODBC</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h5 class="Heading5">Invocation via ODBC</h5>
+            <p class="BodyText">The following examples illustrate how to invoke a <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Callable Routine via an ODBC connection (using a tool, such as <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> SQL Admin), which uses both input and output parameters. The examples work for a SQL Server RED repository but for another RDBMS the routine name may need to be qualified with the appropriate owner/schema. <br />Refer to the detailed description of the <a href="Ws_Connect_Replace.htm">Ws_Connect_Replace</a> routine for an explanation of the parameters/arguments.</p>
+            <p class="BodyText">The following invocations via ODBC are equivalent and the only difference is the formatting as the first command uses a single line while the second command is formatted across multiple lines:</p>
+            <p class="BodyText">-- <b>OBDC Example 1 (single line)</b>.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1">
+                            <p>{ CALL Ws_Connect_Replace( 0,'Test Job Name', 'Test Task Name', 0, 0, 'REPLACE', 'Connection1', 'Connection2', ?, ?, ?) };</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>-- <b>OBDC Example 2 (same command formatted using multiple lines)</b>.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1">
+                            <p>{ CALL Ws_Connect_Replace</p>
+                            <p>( 0</p>
+                            <p>, 'Test Job Name'</p>
+                            <p>, 'Test Task Name'</p>
+                            <p>, 0</p>
+                            <p>, 0</p>
+                            <p>, 'REPLACE'</p>
+                            <p>, 'Connection1'</p>
+                            <p>, 'Connection2'</p>
+                            <p>, ?</p>
+                            <p>, ?</p>
+                            <p>, ?</p>
+                            <p>)</p>
+                            <p>};</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">The result of the Ws_Connect_Replace invocation can be confirmed by checking the target connection. In addition, a log entry is created using the specified job and task names that can be viewed via the Logs—Recent Audit Trail Logs menu item of the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Scheduler.</p>
+            <p class="BodyText">&#160;</p>
+        </div>
+    </body>
+</html>

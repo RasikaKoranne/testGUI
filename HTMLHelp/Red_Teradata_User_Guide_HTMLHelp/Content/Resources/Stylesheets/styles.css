@@ -1,0 +1,1369 @@
+/*<meta />*/
+
+@namespace MadCap url(http://www.madcapsoftware.com/Schemas/MadCap.xsd);
+
+/* WS Branded Print Output */
+
+@media print
+{
+	h1
+	{
+		border-bottom-width: 1pt;
+		margin-top: 8pt;
+		text-transform: none;
+		text-align: left;
+		margin-bottom: 6pt;
+		font-size: 16pt;
+		font-family: 'Roboto Medium';
+		font-weight: normal;
+		font-style: normal;
+		color: #d7454b;
+	}
+
+	h2
+	{
+		font-variant: normal;
+		text-align: left;
+		font-weight: normal;
+		font-style: normal;
+		font-family: 'Roboto Medium';
+		font-size: 14pt;
+		color: #3f4043;
+		margin-bottom: 6pt;
+		margin-top: 10pt;
+	}
+
+	h3
+	{
+		letter-spacing: normal;
+		margin-top: 14pt;
+		margin-bottom: 5.5pt;
+		font-family: 'Roboto Medium';
+		font-weight: normal;
+		font-style: normal;
+		color: #878c8e;
+		font-size: 12pt;
+	}
+
+	h4
+	{
+		font-variant: normal;
+		font-size: 10pt;
+		text-transform: none;
+		margin-top: 8pt;
+		margin-bottom: 8pt;
+		font-weight: bold;
+		font-style: normal;
+		font-family: 'Arial Narrow';
+	}
+
+	h5
+	{
+		margin-bottom: 6pt;
+		margin-top: 6pt;
+		font-size: 10pt;
+		font-weight: bold;
+		font-style: normal;
+		font-family: 'Arial Narrow';
+	}
+
+	p,
+	p.Note,
+	p.Notes,
+	p.Tip,
+	p.Tips,
+	p.Example,
+	p.SingleStep,
+	p.SingleStep_KeepWithNext,
+	li,
+	li p
+	{
+		font-size: 10pt;
+		font-family: Arial;
+		margin-top: 6px;
+		margin-bottom: 6px;
+	}
+
+	p.SingleStep
+	{
+		mc-auto-number-position: inside-head;
+		mc-auto-number-offset: 20px;
+		mc-auto-number-format: '»   ';
+		margin-left: 40px;
+	}
+
+	p.SingleStep_KeepWithNext
+	{
+		mc-auto-number-position: inside-head;
+		mc-auto-number-offset: 20px;
+		mc-auto-number-format: '»   ';
+		margin-left: 40px;
+		page-break-after: avoid;
+	}
+
+	li
+	{
+		font-family: 'Arial';
+		color: #4c4f54;
+	}
+
+	td
+	{
+		vertical-align: top;
+		font-family: Arial;
+		font-size: 10pt;
+		font-weight: normal;
+	}
+
+	p.TOC1
+	{
+		color: #000000;
+		margin-right: -2cm;
+		margin-bottom: 6pt;
+		margin-top: 6pt;
+		mc-leader-offset: -2.22cm;
+		font-weight: bold;
+		font-family: 'Arial';
+	}
+
+	p.TOC2
+	{
+		margin-bottom: 6pt;
+		margin-top: 6pt;
+		mc-leader-offset: -2.22cm;
+		font-family: 'Arial';
+	}
+
+	p.TOC3
+	{
+		margin-bottom: 6pt;
+		margin-top: 6pt;
+		mc-leader-offset: -2.22cm;
+		font-family: 'Arial';
+	}
+
+	h2.PageBreak
+	{
+		page-break-before: always;
+	}
+
+	a
+	{
+		font-weight: bold;
+		text-decoration: none;
+		font-family: 'Arial';
+		color: #4c4f54;
+	}
+
+	a:focus
+	{
+		
+	}
+
+	a:hover
+	{
+		
+	}
+
+	a:link
+	{
+		text-decoration: none;
+		color: #191970;
+	}
+
+	a:visited
+	{
+		
+	}
+
+	p.No_LineSpace
+	{
+		
+	}
+
+	h3.PageBreak
+	{
+		page-break-before: always;
+	}
+
+	th
+	{
+		font-family: 'Arial';
+	}
+
+	MadCap|popupHead
+	{
+		color: #000000;
+		font-family: 'Arial';
+	}
+
+	img
+	{
+		text-align: center;
+	}
+
+	MadCap|popupBody
+	{
+		font-family: Arial;
+		background-color: #ffffff;
+	}
+
+	h2.NoTocEntry
+	{
+		
+	}
+
+	h3.NoTocEntry
+	{
+		
+	}
+
+	hr
+	{
+		display: block;
+		margin-left: 10%;
+		margin-right: 10%;
+		page-break-before: always;
+		border-bottom-width: 0;
+		margin: 0px;
+		margin-bottom: -10px;
+		margin-top: -10px;
+	}
+
+	li.Spacing_After
+	{
+		font-family: 'Arial';
+	}
+
+	li.Level_2
+	{
+		font-family: 'Arial';
+	}
+
+	h1.Major_Section_Heading_Hidden
+	{
+		page-break-before: avoid;
+		border-bottom: none 1pt;
+		border-bottom-color: #ffffff;
+		color: #ffffff;
+	}
+
+	MadCap|dropDownHead.Level2
+	{
+		font-family: Arial;
+		font-style: normal;
+		font-variant: normal;
+		text-align: left;
+		margin-top: 14pt;
+		font-weight: normal;
+		margin-bottom: 6pt;
+		font-size: 14pt;
+		color: #595959;
+		mc-heading-level: 2;
+	}
+
+	MadCap|dropDownHead
+	{
+		letter-spacing: normal;
+		margin-top: 8pt;
+		margin-bottom: 8pt;
+		font-family: Arial;
+		color: #000000;
+		font-size: 12pt;
+		font-weight: bold;
+	}
+
+	MadCap|xref
+	{
+		text-decoration: none;
+		mc-format: 'page {page}';
+		font-weight: normal;
+	}
+
+	MadCap|xref.SeeForDetails
+	{
+		font-weight: normal;
+		mc-format: 'See {quote}{paratext}{quote} (page {page}) for more information.';
+		text-decoration: none;
+		color: #000000;
+	}
+
+	MadCap|xref.SeeForDetailsAbout
+	{
+		font-weight: normal;
+		mc-format: 'See {quote}{paratext}{quote} (page {page}) for information about';
+		text-decoration: none;
+		color: #000000;
+	}
+
+	MadCap|xref.FigureNumber
+	{
+		font-weight: normal;
+		text-decoration: none;
+		color: #000000;
+		mc-format: '{paranumonly} (page {page})';
+	}
+
+	body.Popup
+	{
+		background-color: #ffffff;
+	}
+
+	img.Thumbnail
+	{
+		
+	}
+
+	h1.BannerHeading
+	{
+		border-bottom: none 1pt #191970;
+		font-family: Arial;
+		font-size: 22pt;
+		font-weight: bold;
+		margin-left: 2.4cm;
+		margin-right: 2.4cm;
+		margin-bottom: 0.5cm;
+		margin-top: 1cm;
+		color: #23325a;
+	}
+
+	p.BannerParagraph
+	{
+		margin-left: 2.4cm;
+		margin-right: 2.4cm;
+	}
+
+	li.BannerList
+	{
+		margin-left: 2.4cm;
+		margin-right: 2.4cm;
+	}
+
+	p.TOC9
+	{
+		font-size: 12pt;
+		mc-leader-offset: -2.22cm;
+	}
+
+	p.TOC4
+	{
+		mc-leader-offset: -2.22cm;
+	}
+
+	h2.BannerHeading
+	{
+		margin-left: 2.4cm;
+		margin-right: 2.4cm;
+		font-family: Arial;
+	}
+
+	h4.PageBreak
+	{
+		page-break-before: always;
+	}
+
+	p.NewPage
+	{
+		font-size: 1pt;
+		border-bottom: none 0px;
+		border-bottom-width: 0px;
+		display: block;
+	}
+
+	img.NotPrinted
+	{
+		display: none;
+	}
+
+	table.NotPrinted
+	{
+		display: none;
+	}
+
+	span.TipColor
+	{
+		color: #98c93c;
+	}
+
+	span.WarningColor
+	{
+		font-weight: bold;
+		color: #c52026;
+	}
+
+	span.NoteColor
+	{
+		font-weight: bold;
+		color: #23325a;
+	}
+
+	.NotPrinted
+	{
+		display: none;
+	}
+
+	img.FlowDiagram
+	{
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	p.LeftFooter
+	{
+		color: #000000;
+	}
+
+	p.RightFooter
+	{
+		font-family: Arial;
+		color: #4c4f54;
+	}
+
+	p
+	{
+		font-family: 'Arial';
+		color: #4c4f54;
+	}
+
+	span.Bold
+	{
+		font-family: 'Arial';
+	}
+
+	span
+	{
+		font-family: 'Arial';
+	}
+
+	body
+	{
+		font-family: 'Arial';
+	}
+
+	h1.title
+	{
+		color: #ffffff;
+	}
+
+	ol
+	{
+		font-family: 'Arial';
+	}
+
+	ul
+	{
+		font-family: 'Arial';
+	}
+
+	dl
+	{
+		font-family: 'Arial';
+	}
+
+	dd
+	{
+		font-family: 'Arial';
+	}
+
+	dt
+	{
+		font-family: 'Arial';
+	}
+
+	b
+	{
+		color: #4c4f54;
+	}
+}
+
+/*Defaults  */
+
+table
+{
+	border-collapse: collapse;
+	margin-bottom: 0;
+	margin-top: 0;
+	font-family: 'Arial';
+}
+
+body
+{
+	font-family: 'Arial';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+{
+	page-break-before: avoid;
+	page-break-after: avoid;
+	column-break-after: avoid;
+}
+
+h2.BannerHeading
+{
+	
+}
+
+li,
+p,
+li p
+{
+	
+}
+
+p.Table_Caption
+{
+	mc-auto-number-format: 'T:Table {Gn+}: ';
+	mc-auto-number-class: BoldText;
+}
+
+p.Figure
+{
+	page-break-before: avoid;
+	text-align: center;
+	mc-auto-number-format: 'F:Figure {Gn+}: ';
+	mc-auto-number-class: BoldText;
+}
+
+.KeepWithNext
+{
+	page-break-after: avoid;
+}
+
+.KeepWithPrevious
+{
+	page-break-before: avoid;
+}
+
+.NoMarginTop
+{
+	margin-top: 0;
+}
+
+.NoTocEntry
+{
+	mc-heading-level: 0;
+}
+
+.Message
+{
+	font-style: normal;
+}
+
+span.TipColor
+{
+	
+}
+
+span.WarningColor
+{
+	
+}
+
+span.NoteColor
+{
+	
+}
+
+.BoldText
+{
+	font-weight: bold;
+}
+
+p.SingleStep
+{
+	vertical-align: baseline;
+	mc-auto-number-format: '»  ';
+	mc-auto-number-position: inside-head;
+	margin-left: 23px;
+}
+
+.Instructor
+{
+	margin-left: 20px;
+	border-bottom-color: #cbebf8;
+	border: solid 20px #dcf1fa;
+	background-color: #dcf1fa;
+}
+
+p.Note
+{
+	vertical-align: baseline;
+	mc-auto-number-position: inside-head;
+	mc-auto-number-format: 'Note: ';
+	mc-auto-number-class: NoteColor;
+	margin-left: 0px;
+	mc-next-tag: p;
+}
+
+p.Notes
+{
+	vertical-align: baseline;
+	mc-auto-number-position: inside-head;
+	mc-auto-number-format: 'Notes: ';
+	mc-auto-number-class: NoteColor;
+	margin-left: 0px;
+	page-break-after: avoid;
+	mc-next-tag: p;
+}
+
+p.Tip,
+p.Tips
+{
+	vertical-align: baseline;
+	mc-auto-number-position: inside-head;
+	mc-auto-number-class: TipColor;
+	margin-left: 0px;
+	mc-next-tag: p;
+}
+
+p.Tip
+{
+	mc-auto-number-format: 'Tip: ';
+}
+
+p.Tips
+{
+	mc-auto-number-format: 'Tips: ';
+}
+
+p.Warning
+{
+	vertical-align: baseline;
+	mc-auto-number-position: inside-head;
+	mc-auto-number-format: 'Warning: ';
+	mc-auto-number-class: WarningColor;
+	margin-left: 0px;
+	mc-next-tag: p;
+	font-family: 'Arial';
+}
+
+p.Example
+{
+	vertical-align: baseline;
+	mc-auto-number-position: inside-head;
+	mc-auto-number-format: 'Example: ';
+	mc-auto-number-class: NoteColor;
+	margin-left: 0px;
+}
+
+p.Question
+{
+	vertical-align: baseline;
+	mc-auto-number-position: inside-head;
+	mc-auto-number-format: 'Q:Question {Gn+}: ';
+	margin-left: 0px;
+	mc-auto-number-class: BoldText;
+	page-break-after: avoid;
+}
+
+a.expandspot
+{
+	
+}
+
+a.dropspot
+{
+	
+}
+
+a.glossterm
+{
+	
+}
+
+td ol,
+td ul
+{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ol,
+ul
+{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+li ul
+{
+	list-style-type: disc;
+}
+
+ol ol
+{
+	list-style-type: lower-alpha;
+}
+
+ul ul
+{
+	list-style-type: square;
+}
+
+ul ul ul
+{
+	list-style-type: circle;
+}
+
+a.PopupHotspot
+{
+	
+}
+
+a.popupspot
+{
+	
+}
+
+MadCap|expandingHead.expandspot
+{
+	
+}
+
+MadCap|dropDownHotspot.dropspot
+{
+	
+}
+
+MadCap|expandingBody.expandtext
+{
+	
+}
+
+MadCap|glossaryTerm.glossterm
+{
+	
+}
+
+MadCap|expandingBody.glossterm
+{
+	
+}
+
+textPopup.popupspot
+{
+	
+}
+
+td
+{
+	color: #000000;
+	font-weight: normal;
+	font-size: 10pt;
+	vertical-align: top;
+	padding-left: 6pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 6pt;
+	font-family: 'Arial';
+}
+
+h2.PageBreak
+{
+	
+}
+
+a
+{
+	font-weight: bold;
+	text-decoration: none;
+	font-family: 'Arial';
+}
+
+MadCap|xref
+{
+	text-decoration: none;
+	font-weight: normal;
+	mc-format: 'Also refer to {b}{paratext}{/b}';
+}
+
+MadCap|xref.SeeForDetails
+{
+	mc-format: 'See {color blue}{u}{paratext}{/u}{/color} for more information.';
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+MadCap|xref.SeeForDetailsAbout
+{
+	mc-format: 'See {color blue}{u}{paratext}{/u}{/color} for information about';
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+MadCap|xref.FigureNumber
+{
+	mc-format: '{paranumonly}';
+}
+
+img.NoBlueBorder
+{
+	border: none;
+}
+
+MadCap|dropDownHead
+{
+	font-family: 'Arial';
+}
+
+MadCap|popup
+{
+	
+}
+
+MadCap|popupBody
+{
+	
+}
+
+MadCap|popupHead
+{
+	
+}
+
+p.TOC9
+{
+	margin-left: 0pt;
+	mc-leader-offset: -2cm;
+	font-weight: bold;
+	mc-leader-format: ' ';
+	margin-top: 18pt;
+	font-size: 14pt;
+}
+
+p.TOC1
+{
+	margin-left: 0pt;
+	font-weight: normal;
+	font-family: 'Arial';
+}
+
+p.TOC2
+{
+	margin-left: 20pt;
+	font-family: 'Arial';
+}
+
+p.TOC3
+{
+	mc-leader-offset: -2.0cm;
+	font-size: 8pt;
+	margin-left: 40pt;
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'Arial';
+}
+
+p.TOC4
+{
+	mc-leader-offset: -2.0cm;
+	font-size: 8pt;
+	margin-left: 40pt;
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'Arial';
+}
+
+h3.PageBreak
+{
+	page-break-before: always;
+}
+
+h1.PageBreak
+{
+	page-break-before: always;
+}
+
+th
+{
+	font-weight: bold;
+	font-style: normal;
+	font-family: 'Arial';
+}
+
+h3.NoTocEntry
+{
+	mc-heading-level: 0;
+	text-indent: 1px;
+}
+
+h2.NoTocEntry
+{
+	mc-heading-level: 0;
+	text-indent: 1px;
+}
+
+hr
+{
+	font-family: 'Arial';
+}
+
+li.Spacing_After
+{
+	font-size: 10pt;
+	color: #000000;
+	margin-bottom: 12px;
+}
+
+li.Level_2
+{
+	list-style-type: square;
+}
+
+li.Level_2_Spacing_After
+{
+	list-style-type: square;
+	margin-bottom: 12px;
+}
+
+h1.Major_Section_Heading
+{
+	page-break-before: always;
+	mc-heading-level: 1;
+}
+
+ul
+{
+	font-size: 10pt;
+	font-family: 'Arial';
+}
+
+MadCap|breadcrumbsProxy
+{
+	
+}
+
+p.No_LineSpace
+{
+	margin-top: 0px;
+	margin-bottom: -4px;
+}
+
+img.V_Cent
+{
+	vertical-align: middle;
+}
+
+p.Half_Linespace
+{
+	margin-bottom: 6pt;
+	margin-top: 6pt;
+}
+
+li.Overview
+{
+	list-style-image: url;
+	font-size: 10pt;
+	vertical-align: middle;
+	margin-bottom: 6pt;
+	margin-top: 6pt;
+	font-weight: bold;
+}
+
+li.Overview_Level_2
+{
+	font-size: 10pt;
+	vertical-align: middle;
+	margin-bottom: 0pt;
+	margin-top: 0pt;
+	font-weight: bold;
+	list-style-image: url;
+}
+
+li.Overview_nonbold
+{
+	font-size: 10pt;
+	vertical-align: middle;
+	margin-bottom: 6pt;
+	margin-top: 6pt;
+	list-style-image: none;
+}
+
+li.Overview_Level_2_nonbold
+{
+	font-size: 10pt;
+	vertical-align: middle;
+	margin-bottom: 0pt;
+	margin-top: 0pt;
+	list-style-image: none;
+}
+
+MadCap|xref
+{
+	mc-format: '{paratext}';
+}
+
+body.Popup
+{
+	
+}
+
+img.Thumbnail
+{
+	mc-thumbnail: normal;
+	mc-thumbnail-max-height: 300px;
+}
+
+img
+{
+	text-align: center;
+}
+
+h1.BannerHeading
+{
+	mc-heading-level: 9;
+	page-break-before: always;
+}
+
+li.BannerList
+{
+	list-style-image: url;
+}
+
+img.NoBlueBorder
+{
+	border: none;
+}
+
+img.NoBlueBorder
+{
+	
+}
+
+MadCap|popup
+{
+	
+}
+
+MadCap|popupBody
+{
+	
+}
+
+MadCap|popupHead
+{
+	font-family: 'Arial';
+}
+
+span.mc-variable
+{
+	
+}
+
+span.mc-variable.Bold
+{
+	font-weight: bold;
+}
+
+h5
+{
+	mc-heading-level: 0;
+	font-size: 12pt;
+	font-family: 'Arial';
+}
+
+span.WN_Applies_To
+{
+	
+}
+
+p.PageBreak
+{
+	page-break-before: always;
+}
+
+p.NewPage
+{
+	page-break-before: always;
+	border-bottom: dashed 3px #ff0000;
+	margin: 0;
+	display: none;
+	margin-left: 1px;
+}
+
+h2.NoTocEntryPageBreak
+{
+	mc-heading-level: 0;
+	page-break-before: always;
+}
+
+h3.NoTocEntryPageBreak
+{
+	mc-heading-level: 0;
+	page-break-before: always;
+}
+
+h4.PageBreak
+{
+	
+}
+
+b
+{
+	
+}
+
+img.NotPrinted
+{
+	
+}
+
+MadCap|equation
+{
+	font-weight: bold;
+}
+
+a.expandspot:visited
+{
+	
+}
+
+a.expandspot:hover
+{
+	
+}
+
+a.dropspot:visited
+{
+	
+}
+
+a.dropspot:hover
+{
+	
+}
+
+a.popuphotspot:visited
+{
+	
+}
+
+a.popuphotspot:hover
+{
+	
+}
+
+a.popupspot:visited
+{
+	
+}
+
+a.popupspot:hover
+{
+	
+}
+
+a:link
+{
+	
+}
+
+a:visited
+{
+	
+}
+
+a:focus
+{
+	
+}
+
+a:hover
+{
+	
+}
+
+a:active
+{
+	
+}
+
+div.MoreInfo
+{
+	
+}
+
+fieldset
+{
+	padding-bottom: 14pt;
+}
+
+MadCap|dropDownHead.Level2
+{
+	
+}
+
+MadCap|breadcrumbsProxy
+{
+	mc-breadcrumbs-count: 10;
+	mc-breadcrumbs-divider: ' -> ';
+	text-align: right;
+	mc-breadcrumbs-prefix: ' ';
+	border-bottom: none 1px black;
+	margin-bottom: 0px;
+	color: #000000;
+	font-size: 8pt;
+	margin-top: -3px;
+}
+
+span.Bold
+{
+	font-weight: bold;
+}
+
+p.BannerParagraph
+{
+	
+}
+
+img.resize
+{
+	
+}
+
+.NotPrinted
+{
+	
+}
+
+span.mc-variable.Footer
+{
+	color: red;
+}
+
+p.LeftFooter
+{
+	text-align: left;
+	font-size: 8pt;
+	color: #4c4f54;
+}
+
+p.RightFooter
+{
+	text-align: Right;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #4c4f54;
+}
+
+p.title
+{
+	font-size: 12pt;
+	color: #ffffff;
+	font-family: 'Arial';
+}
+
+li
+{
+	font-size: 10pt;
+	color: #000000;
+	font-family: Roboto;
+	padding-top: 3pt;
+	padding-bottom: 3pt;
+}
+
+MadCap|xref.Refer
+{
+	mc-format: 'Refer to {b}{paratext}{/b}';
+}
+
+MadCap|xref.paratext
+{
+	mc-format: '{b}{paratext}{/b}';
+}
+
+MadCap|xref.AlsoRefer
+{
+	mc-format: 'Also refer to {b}{paratext}{/b}';
+}
+
+h1
+{
+	page-break-before: always;
+	font-weight: bold;
+	font-style: normal;
+	margin-top: 11.67pt;
+	margin-bottom: 5.67pt;
+	font-size: 18pt;
+	font-family: 'Arial Narrow Narrow';
+	color: #4c4f54;
+}
+
+p
+{
+	font-size: 10pt;
+	margin-top: 5.12pt;
+	margin-bottom: 5.12pt;
+	font-family: 'Arial';
+}
+
+h2
+{
+	font-size: 14pt;
+	margin-bottom: 6pt;
+	margin-top: 14pt;
+	font-weight: bold;
+	font-style: normal;
+	font-family: 'Arial';
+	color: #c52026;
+}
+
+h3
+{
+	font-size: 12pt;
+	margin-top: 8pt;
+	margin-bottom: 4pt;
+	font-weight: bold;
+	font-style: normal;
+	font-family: 'Arial';
+	color: #4c4f54;
+}
+
+h4
+{
+	font-size: 12pt;
+	font-weight: bold;
+	font-style: normal;
+	font-family: 'Arial';
+}
+
+span
+{
+	font-family: 'Arial';
+}
+
+MadCap|glossaryTerm
+{
+	color: #4c4f54;
+}
+
+ol
+{
+	font-family: Roboto;
+}
+
+@media only screen and (max-width: 1279px)
+{
+	h1
+	{
+		color: #d7454b;
+	}
+
+	h2
+	{
+		color: #3f4043;
+	}
+}
+
+h6
+{
+	font-size: 11pt;
+	font-family: Arial;
+}
+

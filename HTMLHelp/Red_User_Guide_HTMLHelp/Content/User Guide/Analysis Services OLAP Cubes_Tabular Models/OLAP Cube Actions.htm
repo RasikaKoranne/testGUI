@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes/Tabular Models|OLAP Cubes|OLAP Cube Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Cube Actions</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4 class="Heading4">OLAP Cube Actions</h4>
+            <p class="BodyText">An action provides information to a client application to allow an action to occur based on the property of a clicked dimensional member. Actions can be of different types and they have to be created accordingly. </p>
+            <p class="BodyText">To view the definition of an Action, right-click the <b>Action</b> and select <b>Properties</b>. The <b>OLAP&#160;Cube Action</b> window is displayed:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Cube Actions.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Cube Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A Read Only field that indicates against which OLAP Cube the Calculation is defined.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Action Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       Actions can be of the following types:
+                        <ul><li value="1"><b>Drill through actions</b> which return the set of rows that represents the underlying data of the selected cells of the cube where the action occurs. When this option is chosen an additional tab is enabled that allows drill through columns to be chosen. <br /></li><li value="2"><b>Reporting actions</b> which return a report from Reporting Services that is associated with the selected section of the cube where the action occurs.<br /></li><li value="3"><b>Standard actions</b> (Action), which return the action element (URL, HTML, DataSet, RowSet, and other elements) that is associated with the selected section of the cube where the action occurs.</li></ul>
+                       The action type chosen determines which action specific fields are enabled within the dialog.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Action Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Defines the name of the Action in the Cube.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Update Buttons</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The Update Buttons: <b>Update &lt;-</b> and <b>Update -&gt;</b> are used to move from the current Action to the previous and next Action respectively for the current OLAP Cube. The alternative is to exit the Action and choose the next Action Properties screen.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Target Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Select the object to which the action is attached. Generally, in client applications, the action is displayed when end users select the target object; however, the client application determines which end-user operation displays actions. For Target type, select from the following objects:
+                        <ul><li value="1">Attribute members</li><li value="2">Cells</li><li value="3">Cube</li><li value="4">Dimension members</li><li value="5">Hierarchy</li><li value="6">Hierarchy members</li><li value="7">Level</li><li value="8">Level members</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Target Object</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The cube object of the designated target type against which the action is defined.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Condition</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specify an optional Multidimensional Expressions (MDX) expression that resolves to a Boolean value. If the value is True, the action is performed on the specified target. If the value is False, the action is not performed.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Report Action: Server</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The name of the computer running report server.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Report Action: Report Path</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The path exposed by report server.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Format/Content Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       Select the type of action. The following table summarizes the available types:
+                        <ul><li value="1">Data Set - Retrieves a dataset</li><li value="2">Proprietary - Performs an operation by using an interface other than those listed in this table.</li><li value="3">Row Set - Retrieves a rowset.</li><li value="4">Statement - Runs an OLE DB command.</li><li value="5">URL - Displays a page in an Internet Browser.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Expression</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the parameters that are passed when the action is run. The syntax must evaluate to a string, and you must include an expression written in MDX. MDX expressions are evaluated before the parameters are passed.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">An additional true/false drop-down list is enabled for Drill through actions. This gets or sets the current Drillthrough Action as the default action, when multiple drill through actions are defined. This is important for users of MS&#160;Excel 2007 to browse the Olap Cube because MS Excel only invokes the Drill through Action marked as the default.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Invocation</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Specifies how the action is run. Interactive, the default, specifies that the action is run when a user accesses an object. The possible settings are:
+                        <ul><li value="1">Batch</li><li value="2">Interactive</li><li value="3">On Open</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Application</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Describes the application of the action.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Description</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Describes the action.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Caption</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Provides a caption that is displayed for the action.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Caption is MDX</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If the caption is MDX, specify True, if not specify False.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To View Actions</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">To view the list of Actions, right-click on an OLAP Cube in the left pane and select <b>Display Actions</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To Add an Action</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <ol>
+                                <li value="1">To add an Action, right-click on an OLAP Cube in the left pane and select <b>Add Action</b>. This can also be achieved by displaying Actions in the middle pane, right-clicking and selecting <b>Add Action</b>. Fill out the dialog box with the relevant details.</li>
+                                <li value="2">To create an Action that is similar to an existing Action, display the Actions in the middle pane and select <b>Copy Action</b>. The same dialog box appears as for <b>Add Action </b>with most of the fields filled in. Notice that the Action name has the suffix "- Copy". Change the name in the Action Name field and make any other alterations and click <b>OK</b>.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">To Delete an Action</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Display the Actions in the middle pane, right-click the Action and then select <b>Delete</b>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

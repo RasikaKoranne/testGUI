@@ -1,0 +1,2 @@
+Msg 4860, Level 16, State 1, Server DESKTOP-93CSLII\SQLEXPRESS, Line 2
+Cannot bulk load. The file "wsl_load_employee_434938593.dat" does not exist or you don't have file access rights.

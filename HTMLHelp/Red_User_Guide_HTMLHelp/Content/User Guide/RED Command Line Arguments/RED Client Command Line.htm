@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="RED Command Line Interface" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>RED Client Command Line (med.exe)</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>RED Client Command Line (med.exe)</h2>
+            <p>The <span class="mc-variable WS_Branding.Product variable">RED</span> Client command line interface enables you to execute commands to: </p>
+            <ul>
+                <li>Generate documentation in batch</li>
+                <li>Create and deploy applications in batch</li>
+                <li>Perform start up tasks for a new metadata
+                                    repository </li>
+            </ul>
+            <p>The following is a sample Windows Command Prompt that displays the help for <span class="mc-variable WS_Branding.Product variable">RED</span> Client (<b>med.exe</b>) arguments.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Windows_Panes/Red_cmd_window.png">
+                </img>
+            </p>
+            <p>&#160;</p>
+            <h4>RED Client Command Line Arguments</h4>
+            <p>The following describe the command line arguments that can be used in <span class="mc-variable WS_Branding.Product variable">RED</span> Client (<b>med.exe</b>) arguments.</p>
+            <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 250px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 250px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 250px;" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Description</th>
+                        <th class="TableStyle-tablestyle-HeadF-Column2-Header1">Argument long name</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Argument short name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Display the <span class="mc-variable WS_Branding.Product variable">RED</span> arguments.<br /><br />Note: No other arguments required.</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--help                     </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+-h or /h</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">&#160;</tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">
+                        Batch documentation create.<br /><br /><MadCap:conditionalText data-mc-conditions="Outputs.Only for RED User Guide">Note: Must have other arguments, refer to <a href="Batch Documentation Creation.htm">Batch Documentation Creation</a>.</MadCap:conditionalText><br /></td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--create-docs</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-BD or /BD<br /></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Batch deployment application create.<br /> <br /><MadCap:conditionalText data-mc-conditions="Outputs.Only for RED User Guide">Note: Must have other arguments, refer to  <a href="Batch Deployment Application Creation.htm">Batch Deployment Application Creation</a>. </MadCap:conditionalText><br /></td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--create-deploy-app</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-BA or /BA<br /></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">First start with a new repository.<br /> <br /><MadCap:conditionalText data-mc-conditions="Outputs.Only for RED User Guide">Note: Must have other arguments, refer to <a href="New MD Repo Startup.htm">New Metadata Repository Start up Task Creation</a>. </MadCap:conditionalText><br /></td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--new-meta-repo </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-NEW or /NEW<br /></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Group name<br /><br />Note: All objects included, if group name is not specified.                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--group-name &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-G or /G<br /></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Multiple use: Output directory or Database schema.</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--output-dir &lt;path name&gt; or &lt;db_schema&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-D or /D </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Number of processes/ hops in the source diagrams.</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--num-source-hops &lt;number&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-S or /S</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Disable impact analysis         </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--no-impact-analysis</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-I- or /I-</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">ODBC DSN                                    </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">	--meta-dsn &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-O or /O</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">ODBC user name</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--meta-user-name &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-L or /L</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">ODBC DSN architecture           </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--meta-dsn-arch &lt;32|64&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-A or /A</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">ODBC username</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--meta-user-name &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-U or /U</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">	ODBC password </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">	--meta-password &lt;password&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">	-P or /P</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Connection name </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--meta-dsn &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-C or /C</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Metadata database<br /><br />Note: Only used in Teradata</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--meta-database &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-M or /M</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Session user name               </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--red-user-name &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-N or /N</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Application ID number           </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--app-number &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-I or /I</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Application version number     </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--app-version &lt;number&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-V or /V</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Application ID file name            </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--app-file-name &lt;path name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-AF or /AF</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Remove connections</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--remove-connections</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-RC or /RC</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Remove parameters</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--remove-parameters</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-RP or /RP</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Remove scheduler jobs           </td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--remove-jobs</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-RJ or /RJ</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Group name</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">	--group-name &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-AG or /AG</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1" style="font-weight: normal;">Project name</td>
+                        <td class="TableStyle-tablestyle-BodyI-Column2-Body1">--project-name &lt;name&gt;</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">-AP or /AP</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1" style="font-weight: normal;">All objects</td>
+                        <td class="TableStyle-tablestyle-BodyC-Column2-Body1">--deploy-all</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">-ALL or /ALL</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <p>The succeeding sections outline how the arguments are used.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

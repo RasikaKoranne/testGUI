@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Model Tables" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Generating the Model Table Update Procedure</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Generating the Model Table Update Procedure</h2>
+            <p>Once a model table has been defined in the metadata and created in the data base an update procedure can be generated to handle the joining of any tables and the update of the model table records.</p>
+            <p>
+                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                    <col class="TableStyle-note-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-note-Head-Header1">
+                            <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-note-Body-Body1">
+                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">&#160;You can also generate an update procedure via a template, refer to <a href="../../User Guide/Table Properties/Rebuilding Update Procedures.htm">Rebuilding Update Procedures</a> for details.&#160; </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h3 class="Heading3">Generating a Procedure</h3>
+            <p>To generate a procedure, right-click on the model table in the left pane and select <b>Properties</b>. <br />Click the <b>Rebuild</b> button to start the process of generating the new procedure.<br />A series of questions will be asked during the procedure generation based on the type of load information.</p>
+            <h3 class="Heading3">Business Key definition</h3>
+            <p>A dialog appears asking for the business key that will uniquely identify each model table record. The source table from which the model table is derived would normally have some form of unique constraint applied. In most cases, this will be the business key. In the example below, the customer code is selected as the business key.</p>
+            <p>
+                <img src="../../Resources/images/Model Tables/Generating the Model Table.png" />
+            </p>
+            <p>A business key can be made up of multiple columns, but it must provide a unique identifier. Where multiple columns uniquely and separately identify the model table, choose one to act as the primary business key. For example, a source table may have a unique constraint on both a product code and a product description. Therefore, the description as well as the code must be unique. It is of course possible to combine the two columns, but the normal practice would be to choose the code as the business key.</p>
+            <p>
+                <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                    <col class="TableStyle-note-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-note-Head-Header1">
+                            <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-note-Body-Body1">
+                            <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">None of the columns chosen as the business key should ever contain a NULL value. </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <p>
+                <table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0">
+                    <col class="TableStyle-tablestyle-Column-Column1" />
+                    <col class="TableStyle-tablestyle-Column-Column2" />
+                    <thead>
+                        <tr class="TableStyle-tablestyle-Head-Header1">
+                            <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Option                   </th>
+                            <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description                    </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-tablestyle-Body-Body1">
+                            <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        Include Minus Change Detection                    </td>
+                            <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Detects new rows using a minus sub-query rather than the default where not exists query. Enabling this option can significantly improve performance.                    </td>
+                        </tr>
+                        <tr class="TableStyle-tablestyle-Body-Body1">
+                            <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Use Merge for Update and Insert</td>
+                            <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Generates merge syntax. This option is only available for non-history model tables.</td>
+                        </tr>
+                        <tr class="TableStyle-tablestyle-Body-Body1">
+                            <td class="TableStyle-tablestyle-BodyB-Column1-Body1"> Include Separate Initial Build Insert</td>
+                            <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Adds a second insert to the procedure to separately insert all data if the target model table is empty. This significantly improves performance with a large model table being loaded the first time.&#160;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h3 class="Heading3">Locking Request Modifier</h3>
+            <p><b>Source Table</b>: Specify a locking request modifier to be applied to each source table during generated update procedures. By default, this is set to 'ACCESS' which locks each row being accessed, a blank entry will result in no locking clause in the generated procedure.</p>
+            <p>
+                <img src="../../Resources/images/Model Tables/Generating the Model Table_1.png" />
+            </p>
+            <h3 class="Heading3">Source Table Mapping</h3>
+            <p><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> generates a default update statement with a 'Where' clause to join source and target tables together. The default update statement can be edited via the following dialog.&#160; </p>
+            <p>
+                <img src="../../Resources/images/Model Tables/Generating the Model Table_2.png" />
+            </p>
+            <p>If there is more than one source table, additional joins will also have to be created. Refer to Joining multiple source tables below.</p>
+            <h3>Insert query where clause</h3>
+            <p>If multiple source tables were used to build the model table, then a dialog box appears prompting for the joins. This applies to the insert statement only in the generated procedure. Refer to Joining multiple source tables below.</p>
+            <h3>Joining multiple source tables</h3>
+            <p>The example below shows the joining of the product, prod_line and prod_group tables.</p>
+            <p>
+                <img src="../../Resources/images/Model Tables/Generating the Model Table_3.png" />
+            </p>
+            <p>Select two tables in the left box and then click one of the join buttons. The columns for the two tables then appear at the bottom of the dialog and one column is selected from each drop-down list to effect the join between the selected tables. In the example above, the load_product and load_prod_group tables are joined by two columns namely prod_line and group. In such a case, two joins are actioned for these two tables, so that both columns can be selected. </p>
+            <h4>Simple Join</h4>
+            <p>A simple join joins the two tables via either a 'Where' clause or from clause join (ANSI). A simple join only returns rows where data is matched in both tables. So for example, if table A has 100 rows and table B has a subset of 24 rows. If all the rows in table B can be joined to table A, then 24 rows will be returned. The other 76 rows from table A will not be returned.</p>
+            <h4>Outer Join</h4>
+            <p>An outer join joins the two tables, and returns all rows in the master table, regardless of whether or not they are found in the second table. Therefore,&#160; if the example above was executed with table A as the master table then 100 rows would be returned. 76 of those rows would have null values for the table B columns. When RED builds up a 'Where' clause join, it must place the outer join indicator next to the appropriate column. RED needs to know which table is master and which subordinate. </p>
+            <p>Select the join column from the master table first. In the example screen above, the table 'load_product' has had its column chosen and the column for the table 'load_prod_subgroup' is currently being chosen. This will result in the 'load_product' table being defined as the master, as per the example statement as shown in the 'Where' clause edit window above. </p>
+            <p>The results of this example select are that a row will be added containing product information, regardless of whether or not a corresponding prod_subgroup entry exists.</p>
+            <p>As the join columns are selected, the join statement is built up in the large edit window on the right. Once all joins have been made, the contents of this window can be changed if the join statement is not correct.</p>
+            <p>Once satisfied with the join clause click <b>OK</b> to proceed to the next step. This clause will be a combined from and 'Where' clause. This clause can of course be edited in the procedure that is generated if not correct.</p>
+            <p>Only ANSI Outer Joins are available in Teradata.</p>
+            <p>&#160;</p>
+            <h3 class="Heading3">Building and Compiling the Procedure</h3>
+            <p>Once the above questions are completed, the procedure is built and compiled automatically. If the compile fails an error is displayed along with the first few lines of error messages. Compile fails typically occur when the physical creation of the table was not done. If the compile fails for some other reason, the best approach is to use the procedure editor to edit and compile the procedure. The procedure editor highlights all the errors within the context of the procedure.</p>
+            <p>Once the procedure has been successfully compiled it can either be executed interactively or passed to the scheduler.</p>
+            <h3>Indexes</h3>
+            <p>By default, a number of indexes is created in the RED meta repository to support the model table. The primary index is the only Active index. Secondary indexes can add significant performance cost during updates in Teradata, so these are defined in the RED meta repository but are not active (so are not created on the table). An example of the type of indexes defined is as follows:</p>
+            <p>
+                <img src="../../Resources/images/Model Tables/Generating the Model Table_4.png" />
+            </p>
+            <p>This example shows three indexes being created. They are:</p>
+            <ol>
+                <li value="1">
+                    <p>A primary key constraint placed on the artificial key for the model table.</p>
+                </li>
+                <li value="2">
+                    <p>A unique index placed on the business key for the model table.</p>
+                </li>
+                <li value="3">
+                    <p>The primary index of the model table.</p>
+                </li>
+            </ol>
+            <p>Only the third kind of index is active. To activate one of the other indexes as a secondary index, click the Active check box in the Index Properties window.</p>
+            <p>Additional indexes can be added, or these indexes changed. Refer to Indexes chapter for details.</p>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

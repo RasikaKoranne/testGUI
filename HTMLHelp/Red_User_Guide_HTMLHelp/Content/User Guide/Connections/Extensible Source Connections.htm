@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Connections|Connection Types" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Extensible Source Connections</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading3">Extensible Source Connections</h2>
+            <p class="BodyText">This topic describes how to configure and use Extensible Source Connections. This connection type enables any data source type to be browsed and ingested into your data warehouse, as long as your sources have Windows scriptable APIs or command-line tools available or both. Examples of source types made available by this feature are REST/SOAP Services, JDBC, Cloud-Based Storage, JSON/XML/ARVO, and many more.</p>
+            <h4 class="BodyText"><a name="Prerequi"></a>Prerequisites</h4>
+            <p>Before you can create an Extensible Source Connection you must first have setup:</p>
+            <ol>
+                <li value="1">A matching set of UI Configurations for Connection Properties and Load Table Properties.</li>
+                <li value="2">Browse Script that utilizes these configurations.</li>
+                <li value="3">Windows Connection to run the Browse Script against.           </li>
+            </ol>
+            <p>Additionally you would need a Load Template that works with your Extensible Source Connection and it's configured field metadata to actually load data into your data warehouse from that source. Please see <a href="../UI Configurations/UI Configurations.htm">UI Configurations</a> section for more information on accessing the configured field metadata through Templates and Scripts.</p>
+            <p>For detailed information of the prerequisites involved please review the following sections:</p>
+            <ul>
+                <li><a href="../UI Configurations/UI Configurations.htm">UI Configurations</a>
+                </li>
+                <li><a href="Browse Scripts.htm">Browse Scripts</a>
+                </li>
+            </ul>
+            <p>RED provides examples for each of the prerequisites above that all form a working example of an SQL ODBC connection utilizing these features. Please follow the instructions <a href="#Create">here</a> to create each of the examples to build the set.            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <p role="rowheader"> Optionally you can setup a <b>Column UI Configuration</b> on your target connection properties. Review the <a href="../UI Configurations/UI Configurations.htm#Field">UI Configurations</a> section for more details.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Creating Extensible Source Connections</h4>
+            <p class="BodyText">After you setup the <a href="#">prerequisites</a> described above, add a new Extensible Source Connection by following these steps:</p>
+            <ol>
+                <li value="1">To add a new Extensible Source Connection, right-click <b>Connection</b> located on the left side panel, and select <b>New Object</b>. </li>
+                <li value="2">After adding an object name for the new connection, the <b>Properties</b> dialog displays. Under the Connection Type, all the Connection UI Configurations loaded into your repository are displayed in the drop-down list together with the existing connection types. </li>
+                <li value="3">Selecting a Connection UI Configuration name from the Connection Type list will enable three new required connection properties: <b>Connection Browse Script</b>, <b>Script Connection</b>, and <b>Load Table UI Configuration</b>. </li>
+            </ol>
+            <ul>
+                <li><b>Connection Browse Script</b>: The Windows based Host Script that will be executed by the 'Browse' action for this connection.</li>
+                <li><b>Script Connection</b>: The Windows connection for the Browse script to execute against.</li>
+                <li><b>Load Table UI Configuration</b>: The Load Table UI configuration applied to Load tables sourced from this connection.</li>
+            </ul>
+            <p class="BodyText">The fields presented in the <b>Connection Properties</b> screen below, depends on the connection, see below the available options when selecting an UI Configuration connection:</p>
+            <p class="BodyText">
+                <img src="source connection properties.png" />
+            </p>
+            <p class="BodyText">&#160;</p>
+            <p class="BodyText">The Configure Source Connection Properties window has the following fields:</p>
+            <h5 class="SpecialBold_1">General</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 178px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name used to label the connections within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">All available Connection UI Configurations will appear in this list in addition to the existing connection types.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1"><a name="Connecti"></a>Connection Browse Script</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Lists all the Windows Host Scripts in the metadata.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1"><a name="Script"></a>Script Connection</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Lists all the Windows connections in the metadata.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1"><a name="Load"></a>Load Table UI Configuration</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Lists all the Load UI Configurations in the metadata.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 class="SpecialBold_1">Other</h5>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 175px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" style="width: 825px;" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <p>Only 'Script based load' or 'Externally loaded' are available to Extensible Source Connections.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Script Connection</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Script Connection</b> to use when a <b>Script based load</b> type is defined for a Load table object that is <b>sourced</b> from this connection.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Script Template</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Script Template</b> to use when a <b>Script based load</b> type is defined for a Load table object that is <b>sourced</b> from this connection.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Data Type Mapping Set</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+        Mapping Set to use when converting from a source database data type to a destination database data type. Setting this field to <b>(Default)</b> makes <span class="mc-variable WS_Branding.Product variable">RED</span> automatically select the relevant mapping set, otherwise you can choose one of the standard mapping sets from the drop-down list or create a new set.
+    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <br> </br>
+            </p>
+            <p>The <b>Text Box Fields</b>, <b>List View Fields</b>, and <b>Numeric Fields</b> displayed in the screenshot are field configurations taken from the examples found in <a href="../UI Configurations/UI Configurations.htm#Field">Field Configuration JSON</a>.</p>
+            <p>The Column UI Configuration selection is only available on Target Enabled Connections and not Extensible Source Connections. For more information, review <a href="Connection Target Settings.htm">Connection Target Settings.</a></p>
+            <h4>Loading from Extensible Source Connections</h4>
+            <p>To load Load Tables which were created from an Extensible Source Connection you  need to develop a load template that has logic in it to work with that connection type. </p>
+            <p>WhereScape provided Enablement Packs containing Extensible Source Connections will also have the relevant load templates to match. This section briefly explains how to determine the Connection Type from load templates so that you can generate the correct routine to load the table.</p>
+            <p>The Name of your Connection Properties UI Configuration is used as the Connection Type, so it is important to name your UI Configurations meaningfully.</p>
+            <p>Here is a pebble template macro to output the Connection Type as a string:</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1">
+                            <p>{% macro GetConnectionType(con = table.loadInfo.sourceConnection) %}</p>
+                            <p>{%- fetch con -%}</p>
+                            <p>{%- if con.connectionPropertiesConfig is defined -%}</p>
+                            <p>{{ con.connectionPropertiesConfig }}</p>
+                            <p>{%- else -%}</p>
+                            <p>{{ con.connectionType.name }}</p>
+                            <p>{%- endif -%}</p>
+                            <p>{% endmacro %}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>To use this macro to set a variable in PowerShell syntax:</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1">$sourceConnectionType=’{{ GetConnectionType() }}’</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="width: 100%;">
+                <col />
+                <tbody>
+                    <tr>&#160;</tr>
+                </tbody>
+            </table>
+            <p>To use this macro in a pebble template conditional block:</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1">{% if GetConnectionType() | trim == "ODBC" %}
+# add your ODBC specific code here
+{% endif %}
+</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Note that there are shortcuts to these items in the table.loadinfo node but the macro provided above is generic and suitable for any routine generation context. The equivalent pebble template shortcuts available to Load Table routine generation are:</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1">
+                            <p>{{ table.loadInfo.sourceConnectionType.name }}</p>
+                            <p>{{ table.loadInfo.sourceConnectionPropertiesConfig }}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4><a name="Create"></a>Create an Extensible Source Connection set example</h4>
+            <p>This section steps through creating the example Extensible Source Connection set which provides the <a href="#Prerequi">prerequisites</a> mentioned earlier. The example set was designed to browse an SQL Server ODBC DSN but can be easily adapted to other ODBC based DSN’s also.</p>
+            <p>Follow these steps to  create the example SQL Server ODBC Extensible Source Connection prerequisites:</p>
+            <p>1. Create a new Connection Properties UI configuration from <a href="../UI Configurations/UI Configurations.htm#top">Maintain UI Configuration</a> by selecting <b>Tools&gt;UI Configurations&gt;Maintain UI Configurations</b></p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/UI Config.png" />
+            </p>
+            <p>2. In the UI Configurations Maintenance dialog, click <b>New</b>.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/UI Config new.png" />
+            </p>
+            <p>3. Under the Edit UI Configuration, add a <b>Name</b>, <b>Description</b>, select a <b>Configuration Type</b> from the drop-down list, and click <b>OK</b>.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/edituiconfig.png" />
+            </p>
+            <p>4. Empty the default script completely to enable the examples menu in the editor. Select <b>Tools&gt;Create Example Configuration&gt;Connection Configuration</b></p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/empty default script.png" />
+            </p>
+            <p>5. Repeat step 1 and step 2 to create the matching Load Table UI and Column UI Configurations.</p>
+            <p>6. Create a Connection Browse Script by following these steps:</p>
+            <p style="text-indent: 0.5in;">a. Right-click Host Script and select <b>New Object</b>.</p>
+            <p style="text-indent: 0.5in;">
+                <img src="../../Images/UserGuide_Images/Connections/hostscriptone.png" />
+            </p>
+            <p style="text-indent: 0.5in;">b. In the Add a New Metadata Object window, add an Object Name for the script, and click Add.</p>
+            <p style="text-indent: 0.5in;">
+                <img src="../../Images/UserGuide_Images/Connections/add a new browse script.png" />
+            </p>
+            <p style="text-indent: 0.5in;">c. The Host Script properties window open, edit the options you need, and click <b>OK</b>.</p>
+            <p style="text-indent: 0.5in;">
+                <img src="../../Images/UserGuide_Images/Connections/host script example properties.png" />
+            </p>
+            <p style="text-indent: 0.5in;">d. Open your Host Script in the script editor and select <b>Tools&gt;Create Example Browse Script</b></p>
+            <p style="text-indent: 0.5in;">e. After the Example Browse Script is created, click <b>Save</b>. </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" style="width: 1000px;" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">Review <a href="Browse Scripts.htm">Browse Scripts</a>  for more information on <b>Output JSON mapping</b> and the <b>Scripted Browse Workflow</b>,                 </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br> </br>
+        </div>
+    </body>
+</html>

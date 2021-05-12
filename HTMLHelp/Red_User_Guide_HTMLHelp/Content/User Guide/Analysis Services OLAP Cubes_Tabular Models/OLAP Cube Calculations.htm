@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes/Tabular Models|OLAP Cubes|OLAP Cube Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Cube Calculations</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4 class="Heading4">OLAP Cube Calculations</h4>
+            <p class="BodyText">Calculations provide the ability to define the derivation of a value at query time within a cube. The calculation is most typically a numeric derivation based on measures, but can be defined against any dimension. The calculation is defined in MDX (Multi-Dimensional eXpressions). The definition of a Calculation is shown by right-clicking a <b>Calculation</b> and choosing <b>Properties</b>. The following Cube Calculated Member Definition window is displayed:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Cube Calculations.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Cube Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A Read Only field that indicates against which OLAP Cube the Calculation is defined.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Calculated Member Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the Analysis Services name defined for the Calculation.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Update Buttons</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The Update Buttons: <b>Update &lt;-</b> and <b>Update -&gt;</b> are used to move from the current Calculation to the previous and next Calculation respectively for the current OLAP Cube. The alternative is to exit the Calculation and choose the next Calculation Properties screen.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Description</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A business description of the Calculation that is used to populate <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> documentation.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Expression</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the MDX expression that defines the calculation.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Parent Hierarchy</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies where the calculation is displayed for use. By default and in most cases, this will be 'Measures'. This means that the calculated member is displayed to the end user of the cube as a measure, otherwise known as a calculated measure. Alternatively, you can include the calculated member in a dimension instead of in the measures. <br />Hierarchies are descriptive categories of a dimension by which the measures in a cube can be separated for analysis. A calculated member provides a new label in the parent dimension you select.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Parent Member</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This is not available if you select <b>Measures</b> as your parent hierarchy, or if you select a one-level hierarchy. Hierarchies are divided into levels that contain members. Each member produces a heading in the cube. While browsing a cube, users can drill down to subordinate headings. The heading for the calculated member is added directly below the selected Parent Member.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Associated Measure Group</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Specifies against which Measure Group the Measure is defined. This is related to the fact table of which the Measure is an attribute.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">SSAS 2008+ uses the property <b>Associated Measure Group</b> but previous versions of SSAS do not and can result in errors when creating the cube. It is possible to set this attribute in RED to <b>(Undefined)</b> for previous versions of RED, but this is not necessary for the current version of RED as this attribute will only be used when appropriate.</td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Display Folder</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Cube Calculations can be organized into user-defined folders to view and manage these attributes within the Analysis Services user interface more easily. Enter the display folder name.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">One object can be in multiple display folders, for example:<p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/Display Folder.png" style="height: 36px;width: 559px;" class="img_1" /></p></td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Display Format</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the format used by clients when displaying the measure value.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Visible</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies whether the calculation is visible to client tools.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Non Empty Behavior</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Determines the non-empty behavior associated with the calculation.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Order Number</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The create order of the member in the dimension hierarchy.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To View Calculations</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">To view the list of calculations (sometimes called a calculated measure), right-click the OLAP Cube in the left pane and then select <b>Display Calculations</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To Add a Calculation</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <ol>
+                                <li value="1">To add a calculation, right-click the OLAP Cube in the left pane, select <b>Add Calculation</b> and then choose between:<ul><li value="1">Add Calculated Member</li><li value="2">Add Named Set</li><li value="3">Add Script</li></ul><p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/To View Calculations.png" /></p>This can also be achieved by displaying calculations in the middle pane, right-clicking and selecting <b>Add Calculated Member</b>, <b>Add Named Set </b>or<b> Add Script</b>. Fill out the dialog box with the relevant details.</li>
+                                <li value="2">To create a calculation that is similar to an existing calculation, display the calculations in the middle pane and select <b>Copy Calculation</b>. The same dialog box appears as for <b>Add Calculation</b> with most of the fields filled in. <br />Notice that the calculated member name has the suffix "- Copy". Change the name in the Measure Name field and make any other alterations and then click <b>OK</b>.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">To Delete a calculation</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Display the calculations in the middle pane, select the calculation to delete, right-click and select <b>Delete</b>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

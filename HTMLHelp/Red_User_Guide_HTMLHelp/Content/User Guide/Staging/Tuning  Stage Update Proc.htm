@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Staging" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Tuning the Staging Update Process</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Tuning the Staging Update Process</h2>
+            <p class="BodyText">This section is for <span class="SpecialBold">Cursor</span> based procedures only. It is not relevant for Set based or other types.</p>
+            <p class="BodyText">When generating the cursor based procedures to update the staging table, <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>includes an Update/Insert logic. This logic first attempts to update an existing staging record and then inserts a new record, if the record does not exist. </p>
+            <p class="BodyText">This build option should be altered once an understanding of the data you are dealing with is acquired. </p>
+            <p class="BodyText">For the initial prototype and testing phases of a data warehouse analysis area we need to find out if our business keys for the fact table are genuinely unique. The update/insert logic in the staging procedure will only perform an 'Update' if our business key is not unique. </p>
+            <p class="BodyText">In this case, we need to decide if this is a failure in the business key, or some form of additive record situation we need to handle and code accordingly.</p>
+            <h3 class="SpecialBold_1">Removing the Update Component</h3>
+            <p class="BodyText">Once we have resolved any data issues, we would normally remove the update component to speed up the processing of the stage data. There are two ways of doing this. First, we can clear the <span class="SpecialBold" style="font-weight: bold;">Include Update Statement</span> check-box when defining the table business key. This will result in a procedure with only an insert statement. The other option is to do it manually as follows:</p>
+            <p class="BodyText">There are normally three steps to removing the update component. These being:</p>
+            <ol>
+                <li value="1">The update makes use of an index that can also be deleted in most situations.</li>
+                <li value="2">The actual <span class="SpecialBold">Update</span> statement can be removed from the code such that the insert is always executed.</li>
+                <li value="3">The procedure also includes an analyze of the table after 1000 rows have been inserted. This code is present to ensure that the index is used in the update. We can now remove this code. It would normally look like the following (Oracle version):<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0"><col /><tbody><tr class="TableStyle-code-Body-Body1"><td class="TableStyle-code-BodyA--Body1"><p class="List">--=======================================</p><p class="ListContinue">-- If 1000 or more rows inserted then perform an analyze</p><p class="ListContinue">--=======================================</p><p class="ListContinue">IF v_insert_count &gt;= 1000 And v_analyze_flag = 0 THEN</p><p class="ListContinue">&#160;&#160;&#160; v_analyze_flag := 1;</p><p class="ListContinue">&#160;&#160;&#160; v_Sql := 'analyze table <span class="Emphasis_1">stage</span> estimate statistics sample 5 percent for all indexed columns';</p><p class="ListContinue">&#160;&#160;&#160; execute immediate v_Sql;</p><p class="ListContinue">END IF;</p></td></tr></tbody></table></li>
+            </ol>
+        </div>
+    </body>
+</html>

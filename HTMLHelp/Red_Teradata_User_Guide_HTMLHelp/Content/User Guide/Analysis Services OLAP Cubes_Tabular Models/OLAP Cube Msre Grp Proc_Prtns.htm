@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes|OLAP Cube Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Cube Measure Group Processing/Partitions</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>OLAP Cube Measure Group Processing/Partitions</h3>
+            <p class="BodyText">Partitions define separately manageable data slices of the measure group data. Partitions can be created, processed and deleted independently within a Measure Group. Each Measure Group needs at least one partition to be defined to enable the Measure Group to be processed.</p>
+            <p class="BodyText">Partitions are managed through the <b>Processing/Partitions</b> tab of the Measure Group's Properties within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Cube Measure Group Processing.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Field</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Process Method</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        The processing or updating method of a Measure Group is an area that requires careful consideration. The default option is <b>Full process</b> which results in the Measure Group being rebuilt. This is in many ways the safest option, but processing time may mean other options must be chosen. 
+                        <p class="BodyText">The following describes the processing methods that are available in Analysis Services for Measure Groups: </p><ul><li><b>Default Process</b> - Detects the process state of the measure group, and performs processing necessary to deliver a fully processed state.</li><li><b>Full Process</b> - Processes an Analysis Services Measure Group regardless of state. When Process Full is executed against a Measure Group that has already been processed, Analysis Services drops all data, and then processes it.</li><li><b>Incremental Process</b> - Adds newly available fact data and process only to the relevant partitions.  To use this option you must set the 'incremental filter' field with a statement that results in only new data being selected. Failure to do so , results in duplicated data in the cube. <br />In many data warehouses a fact table undergoes changes to the data, as well as the addition of new data, and so the incremental update option is not possible. A validation regime must be put in place to compare cube data to the fact data if incremental is used. This validation regime must be used to notify the administrator in the event that duplicate data is inserted into the cube.</li><li><b>Update Data</b> - Processes data only without building aggregations or indexes. If there is data in the partitions, it is be dropped before re-populating the partition with source data. This processing option is supported for dimensions, cubes, measure groups, and partitions.</li><li><b>Build Structure</b> - If the cube is unprocessed, Analysis Services processes, if it is necessary, all the cube's dimensions. After that, Analysis Services creates only cube definitions. The build structure option just builds the cube structure without populating it. This can be useful if you have a very large cube and want to validate the design.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Increment Filter</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If an incremental processing option is chosen, then a filter statement must be selected to only return those rows that are to be added to the Measure Group. As mentioned above, caution must be taken when using incremental updates. For example, if the Measure Group is accidentally processed twice and the filter is based on date, then duplicate data is inserted into the Measure Group without any warning.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Partitioning</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Partitioning is useful for handling large datasets where it is impractical to reprocess the entire Measure Group. In such a case, the full process option would probably be chosen but only selected partitions would be processed. See the section on partitioning for more information. The default process performs a full process on the first pass followed by incremental updates on subsequent processing runs. Caution must be taken when choosing default for the cube.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Partitioning Method</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       Three options are provided for handling Measure Group partitions. They are:
+                        <ol><li value="1"><b>One partition only</b> - When this option is selected the partition information for the Measure Group is ignored and one partition is created and processed for the Measure Group. This would be the normal situation unless performance issues require an alternate strategy.</li><li value="2"><b>Manually managed multiple partitions</b> - With this option the partition information stored for the Measure Group is used in the creation and processing of the Measure Group.</li><li value="3"><b>Automatic partition handling</b> - This option is available if the Measure Group is to be partitioned by one numeric value. The partitioning should preferably be on something like day, month or year. (i.e. YYYY, YYYYMM or YYYYDDD). If this option is chosen together with one of the date formats described above, then <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> automatically creates partitions as required, and process only those partitions that are marked for processing.</li></ol></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Partition by Dimension</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field is only available if automatic partition handling is chosen. Select the dimension in the Measure Group that we will partition by. This would normally be a date dimension.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Partition by Attribute</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field is only available if automatic partition handling is chosen. Select the attribute that we are to partition by. This would normally be a year or maybe a month level. (e.g. cal_year, fin_year from the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> date dimension).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Partition by Value Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field is only available if automatic partition handling is chosen. Select the type of level we are dealing with. Choose YYYY for a year partition and YYYYMM for a month partition. This format must correspond with the column in the date dimension. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> only supports partitioning by Year, Quarter, month or day.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Fact Partition Lookup Clause</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field is only available if automatic partition handling is chosen. In order to know when to create a new partition <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> executes a query against the fact table and the date dimension to acquire each unique period. When dealing with a large fact table, such a query may take a long time to complete. <br />This field can be used to include the components of the 'Where' clause to restrict the amount of data examined. For example, we may enter 'dss_update_time &lt; GETDATE()-14' to only look at fact table records that have been inserted or updated in the last 14 days. This still enables you to catch any new partitions and add them. <br />The first time a cube is converted to auto partitioning handling, a full pass of the Fact table should occur to allow inclusion of every partition. This field must therefore only be populated once the cube has been initially built with all partitions intact.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Max Number of Auto Created Partitions</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field is only available if automatic partition handling is chosen. You can specify an upper limit for automatically created partitions. The default is zero, or no limit. This limit may be useful if your source system can get erroneous data. If set, then the processing of the Measure Group will fail if a new partition will exceed the counter.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Number of Historic Partitions Updated</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field is only available if automatic partition handling is chosen. This field enables you to restrict the partition updating to the latest nnn partitions. If for example, you were partitioning by year and set this value to 2, you would process the current and previous years only. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> turns OFF partition processing, after it does a partition update, so the first pass still updates all partitions.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To Display Measure Groups</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">To display a list of measure groups defined against a cube, right-click on a cube and select <b>Display Measure Groups</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To Add a Measure Group</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">To add a measure group, display the measure groups in the middle pane and either:<ul><li>Drag over a new fact table into the target pane - this automatically creates a new measure group in the cube. Any additional dimensions required to support analysis of the Measure Group is added to the cube.</li><li>Right-click the cube in the Objects list pane and then select <b>Add Measure Group</b> and fill in the Measure Group properties.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To Delete a Measure Group</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">To delete a measure group, display the measure groups in the middle pane and then right-click to select delete measure group.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Displaying Measures</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Measures can be displayed or added while viewing measure groups in the middle pane. Right-click a measure group and select the appropriate option.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Displaying Partitions</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Partitions can be displayed or added while viewing measure groups in the middle pane. Right-click a measure group and select the appropriate option.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

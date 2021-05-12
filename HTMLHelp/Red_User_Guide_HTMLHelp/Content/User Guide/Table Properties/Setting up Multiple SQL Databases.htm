@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Table Properties|Distributing Tables across Multiple SQL Server Databases" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Setting up Multiple SQL Databases</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Setting up Multiple SQL Databases</h3>
+            <p class="BodyText">The following example illustrates the concepts and UI features that enable tables to be distributed across multiple databases.</p>
+            <p class="BodyText">The order presented below is the recommended procedural sequence.</p>
+            <p class="BodyText">In <b>Microsoft SQL Server Management Studio:</b></p>
+            <h4 class="Heading4">Step 1: Create Databases and Schema</h4>
+            <ol>
+                <li value="1">Create the required databases and schema and then for each database create a 32-bit ODBC DSN. The table below illustrates a basic example of multiple databases.<table class="TableStyle-tablestyle" style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" cellspacing="0"><col class="TableStyle-tablestyle-Column-Column1" /><col class="TableStyle-tablestyle-Column-Column2" /><col class="TableStyle-tablestyle-Column-Column2" /><col class="TableStyle-tablestyle-Column-Column2" /><thead><tr class="TableStyle-tablestyle-Head-Header1"><th class="TableStyle-tablestyle-HeadE-Column1-Header1">Database</th><th class="TableStyle-tablestyle-HeadF-Column2-Header1">Schema</th><th class="TableStyle-tablestyle-HeadF-Column2-Header1">ODBC DSN</th><th class="TableStyle-tablestyle-HeadD-Column2-Header1">Notes</th></tr></thead><tbody><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">WHERESCAPE</td><td class="TableStyle-tablestyle-BodyI-Column2-Body1">dbo</td><td rowspan="4" class="TableStyle-tablestyle-BodyI-Column2-Body1"><p rowspan="4">&#160;</p><p rowspan="4">&#160;SQL Server Native Client…</p><p rowspan="4">One DSN for each Database</p></td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">RED Metadata Repository</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">LOAD</td><td class="TableStyle-tablestyle-BodyI-Column2-Body1">loads</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">For Load tables</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyH-Column1-Body1">STAGE</td><td class="TableStyle-tablestyle-BodyI-Column2-Body1">stages</td><td class="TableStyle-tablestyle-BodyG-Column2-Body1">For Stage tables</td></tr><tr class="TableStyle-tablestyle-Body-Body1"><td class="TableStyle-tablestyle-BodyB-Column1-Body1">STARSCHEMA</td><td class="TableStyle-tablestyle-BodyC-Column2-Body1">dims<br />facts</td><td class="TableStyle-tablestyle-BodyA-Column2-Body1">Two schema:<ul><li>one for dimension tables</li><li>one for fact tables</li></ul></td></tr></tbody></table></li>
+            </ol>
+            <p class="BodyText">In <b>WhereScape RED</b>:</p>
+            <h4 class="Heading4">Step 2: Create Connections and Targets</h4>
+            <ol>
+                <li value="1">Create a connection for each of the above databases and set the properties in the usual manner.<ul><li><b>Connection Type</b>: Database or ODBC</li><li><b>Database Type</b>: SQL Server – the multi-database targets feature only applies to SQL Server</li><li><b>ODBC DSN</b>: Specify the DSN that applies to the selected Connection</li><li><b>Database ID</b>: Database Name - use the same name specified as the default database within the ODBC DSN. This database ID is used to auto-populate the database field in the target.</li></ul><p><img src="../../Images/UserGuide_Images/Table Properties/Setting up Multiple SQL Databases.png" /></p></li>
+                <li value="2">The <b>Add new Target Table Location</b> in the <b>Target Settings</b> tab is used to specify the target for each schema within the target database connection.<p><img src="../../Images/UserGuide_Images/Table Properties/Setting up Multiple SQL Databases_1.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The <b>Create procedures in same database as table </b>option enables you to specify if the procedures associated with new Tables created in Targets of the connection is created in the same database as the Table objects, or in the <span class="mc-variable WS_Branding.Product variable">RED</span> repository meta database.<br />This option is not selected (OFF) by default, e.g. the Table's stored procedures are created in the <span class="mc-variable WS_Branding.Product variable">RED</span> repository meta database. <br />If the Table is created in a different Target location (e.g. distinct schema/database in the same SQL Server instance), you can turn ON this option, if you want the stored procedures to also be located in the same Target database. <br />The location of stored procedures can be changed and locked via the <a href="../Procedures and Scripts/Procedure Properties.htm">Procedure Properties</a> window. </td></tr></tbody></table><p><br />Add one or more targets for the connection, specifying a <b>Target Name</b> and the <b>schema</b> to use.<br /></p><p><img src="../../Images/UserGuide_Images/Table Properties/Setting up Multiple SQL Databases_2.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The Target Database is auto-populated, using the database ID specified in the connection.</td></tr></tbody></table><p>The list color can be optionally changed as required after the target table has been created.</p><p><img src="../../Images/UserGuide_Images/Table Properties/Setting up Multiple SQL Databases_3.png" /></p></li>
+                <li value="3">Repeat actions 1 and 2 of Step 2 for each database and its schema.</li>
+            </ol>
+            <h4 class="Heading4">Step 3: Create New Objects</h4>
+            <ol>
+                <li value="1">Once the connections and targets have been created, <b>Add </b>new objects in the usual manner. However, when using multiple databases it is important to select the correct database in which to store the object.<p><img src="../../Images/UserGuide_Images/Table Properties/Step 3 Create New Objects.png" /></p><p>The <b>Storage Properties</b> screen shows the storage location details for the selected table.</p><p><img src="../../Images/UserGuide_Images/Table Properties/Step 3 Create New Objects_1.png" /></p></li>
+            </ol>
+            <h4 class="Heading4">Step 4: Optional Default Target</h4>
+            <p class="BodyText">Default Target Locations can be optionally specified in <b>Options &gt; Storage &gt; Target Location</b>, e.g. all new Load tables are created in a specific target database/schema you defined. This saves time when creating new tables.</p>
+            <ol>
+                <li value="1">Open the drop down list for the required target and select <b>Set Target</b>.</li>
+                <li value="2">Open the drop down list and select the required <b>database target</b> to be used as the default.</li>
+                <li value="3">Click <b>OK</b> when all the changes are complete.<p><img src="../../Images/UserGuide_Images/Table Properties/Step 3 Create New Objects_2.png" /></p></li>
+            </ol>
+        </div>
+    </body>
+</html>

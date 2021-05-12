@@ -1,0 +1,131 @@
+WS_SET_PREDICATE,FUNCTION,1,FUNCTION Ws_Set_Predicate (
+WS_SET_PREDICATE,FUNCTION,2,    p_object_schema        all_objects.owner%TYPE
+WS_SET_PREDICATE,FUNCTION,3,  , p_object_name          all_objects.object_name%TYPE )
+WS_SET_PREDICATE,FUNCTION,4,  RETURN varchar2
+WS_SET_PREDICATE,FUNCTION,5,  IS
+WS_SET_PREDICATE,FUNCTION,6,
+WS_SET_PREDICATE,FUNCTION,7,    --====================================================
+WS_SET_PREDICATE,FUNCTION,8,    -- Variables
+WS_SET_PREDICATE,FUNCTION,9,    --====================================================
+WS_SET_PREDICATE,FUNCTION,10,    v_predicate       varchar2(2000);
+WS_SET_PREDICATE,FUNCTION,11,    v_user            varchar2(64);
+WS_SET_PREDICATE,FUNCTION,12,    v_owner           varchar2(64);
+WS_SET_PREDICATE,FUNCTION,13,    v_access          varchar2(1);
+WS_SET_PREDICATE,FUNCTION,14,    v_pol_key         integer;
+WS_SET_PREDICATE,FUNCTION,15,    v_row_count       integer;
+WS_SET_PREDICATE,FUNCTION,16,    v_stmt_count      integer;
+WS_SET_PREDICATE,FUNCTION,17,
+WS_SET_PREDICATE,FUNCTION,18,    --====================================================
+WS_SET_PREDICATE,FUNCTION,19,    -- cursor to fetch statements
+WS_SET_PREDICATE,FUNCTION,20,    -- Get all spt_statement from ws_sec_pol_table
+WS_SET_PREDICATE,FUNCTION,21,    -- for the table where the user is
+WS_SET_PREDICATE,FUNCTION,22,    -- active for the same policy
+WS_SET_PREDICATE,FUNCTION,23,    --====================================================
+WS_SET_PREDICATE,FUNCTION,24,    CURSOR c_get_pol_line IS
+WS_SET_PREDICATE,FUNCTION,25,    SELECT ws_sec_pol_table.spt_statement st
+WS_SET_PREDICATE,FUNCTION,26,    FROM ws_sec_pol_table, ws_sec_pol_user
+WS_SET_PREDICATE,FUNCTION,27,    WHERE UPPER(spt_table) = p_object_name
+WS_SET_PREDICATE,FUNCTION,28,    AND spt_pol_key = spu_pol_key
+WS_SET_PREDICATE,FUNCTION,29,    AND UPPER(spu_user) = v_user;
+WS_SET_PREDICATE,FUNCTION,30,
+WS_SET_PREDICATE,FUNCTION,31,
+WS_SET_PREDICATE,FUNCTION,32,BEGIN
+WS_SET_PREDICATE,FUNCTION,33,    --====================================================
+WS_SET_PREDICATE,FUNCTION,34,    -- Define the Function owner.
+WS_SET_PREDICATE,FUNCTION,35,    -- Note: the line below is replaced with the owner
+WS_SET_PREDICATE,FUNCTION,36,    --       name when the function is compiled
+WS_SET_PREDICATE,FUNCTION,37,    --====================================================
+WS_SET_PREDICATE,FUNCTION,38,    v_owner := 'XXXX';
+WS_SET_PREDICATE,FUNCTION,39,
+WS_SET_PREDICATE,FUNCTION,40,
+WS_SET_PREDICATE,FUNCTION,41,    --================================================
+WS_SET_PREDICATE,FUNCTION,42,    -- Get the user name
+WS_SET_PREDICATE,FUNCTION,43,    -- If owner of function provide full access
+WS_SET_PREDICATE,FUNCTION,44,    --================================================
+WS_SET_PREDICATE,FUNCTION,45,    v_user := SYS_CONTEXT('userenv','session_user');
+WS_SET_PREDICATE,FUNCTION,46,	  IF upper(v_user) = upper(v_owner) THEN
+WS_SET_PREDICATE,FUNCTION,47,       v_predicate := NULL;
+WS_SET_PREDICATE,FUNCTION,48,       return v_predicate;
+WS_SET_PREDICATE,FUNCTION,49,    END IF;
+WS_SET_PREDICATE,FUNCTION,50,
+WS_SET_PREDICATE,FUNCTION,51,    v_predicate := NULL;
+WS_SET_PREDICATE,FUNCTION,52,    v_row_count := 0;
+WS_SET_PREDICATE,FUNCTION,53,    v_stmt_count := 0;
+WS_SET_PREDICATE,FUNCTION,54,
+WS_SET_PREDICATE,FUNCTION,55,    --================================================
+WS_SET_PREDICATE,FUNCTION,56,    -- Loop through all the policies for this
+WS_SET_PREDICATE,FUNCTION,57,    -- user on this table and AND them in
+WS_SET_PREDICATE,FUNCTION,58,    --================================================
+WS_SET_PREDICATE,FUNCTION,59,    FOR v_Pol IN c_get_pol_line LOOP
+WS_SET_PREDICATE,FUNCTION,60,
+WS_SET_PREDICATE,FUNCTION,61,      v_row_count := v_row_count + 1;
+WS_SET_PREDICATE,FUNCTION,62,
+WS_SET_PREDICATE,FUNCTION,63,      IF v_Pol.st is NOT NULL THEN
+WS_SET_PREDICATE,FUNCTION,64,          v_stmt_count := v_stmt_count + 1;
+WS_SET_PREDICATE,FUNCTION,65,          IF v_stmt_count > 1
+WS_SET_PREDICATE,FUNCTION,66,          THEN
+WS_SET_PREDICATE,FUNCTION,67,              IF length(v_predicate || ' AND ' || v_Pol.st) < 2000 THEN
+WS_SET_PREDICATE,FUNCTION,68,                  v_predicate := v_predicate || ' AND ' || v_Pol.st;
+WS_SET_PREDICATE,FUNCTION,69,              END IF;
+WS_SET_PREDICATE,FUNCTION,70,          ELSE
+WS_SET_PREDICATE,FUNCTION,71,              v_predicate := v_Pol.st;
+WS_SET_PREDICATE,FUNCTION,72,          END IF;
+WS_SET_PREDICATE,FUNCTION,73,
+WS_SET_PREDICATE,FUNCTION,74,      END IF;
+WS_SET_PREDICATE,FUNCTION,75,
+WS_SET_PREDICATE,FUNCTION,76,    END LOOP;
+WS_SET_PREDICATE,FUNCTION,77,
+WS_SET_PREDICATE,FUNCTION,78,    --================================================
+WS_SET_PREDICATE,FUNCTION,79,    -- If no match the use the default action
+WS_SET_PREDICATE,FUNCTION,80,    -- They may not have a blank predicate if a
+WS_SET_PREDICATE,FUNCTION,81,    -- table had no constraining clause
+WS_SET_PREDICATE,FUNCTION,82,    --================================================
+WS_SET_PREDICATE,FUNCTION,83,    IF v_stmt_count = 0
+WS_SET_PREDICATE,FUNCTION,84,    THEN
+WS_SET_PREDICATE,FUNCTION,85,        BEGIN
+WS_SET_PREDICATE,FUNCTION,86,            --================================================
+WS_SET_PREDICATE,FUNCTION,87,            -- Get default access for this table
+WS_SET_PREDICATE,FUNCTION,88,            --================================================
+WS_SET_PREDICATE,FUNCTION,89,            SELECT NVL(MAX(spt_default_access_ind),'N')
+WS_SET_PREDICATE,FUNCTION,90,            INTO v_access
+WS_SET_PREDICATE,FUNCTION,91,            FROM ws_sec_pol_table
+WS_SET_PREDICATE,FUNCTION,92,            WHERE UPPER(spt_table) = p_object_name;
+WS_SET_PREDICATE,FUNCTION,93,
+WS_SET_PREDICATE,FUNCTION,94,        EXCEPTION
+WS_SET_PREDICATE,FUNCTION,95,            --================================================
+WS_SET_PREDICATE,FUNCTION,96,            -- Any error (i.e. no security table then default
+WS_SET_PREDICATE,FUNCTION,97,            -- to no access )
+WS_SET_PREDICATE,FUNCTION,98,            --================================================
+WS_SET_PREDICATE,FUNCTION,99,            WHEN OTHERS THEN
+WS_SET_PREDICATE,FUNCTION,100,                v_predicate := '1 = 3';
+WS_SET_PREDICATE,FUNCTION,101,                return v_predicate;
+WS_SET_PREDICATE,FUNCTION,102,        END;
+WS_SET_PREDICATE,FUNCTION,103,
+WS_SET_PREDICATE,FUNCTION,104,        --================================================
+WS_SET_PREDICATE,FUNCTION,105,        -- If Full access then no predicate else a lockout
+WS_SET_PREDICATE,FUNCTION,106,        --================================================
+WS_SET_PREDICATE,FUNCTION,107,        IF v_access = 'F'
+WS_SET_PREDICATE,FUNCTION,108,        THEN v_predicate := NULL;
+WS_SET_PREDICATE,FUNCTION,109,        ELSE v_predicate := '1 = 2';
+WS_SET_PREDICATE,FUNCTION,110,        END IF;
+WS_SET_PREDICATE,FUNCTION,111,    ELSE
+WS_SET_PREDICATE,FUNCTION,112,        --================================================
+WS_SET_PREDICATE,FUNCTION,113,        -- Check to see if a full access predicate (1=1)
+WS_SET_PREDICATE,FUNCTION,114,        --================================================
+WS_SET_PREDICATE,FUNCTION,115,        IF rtrim(v_predicate) = '1=1' THEN
+WS_SET_PREDICATE,FUNCTION,116,            v_predicate := NULL;
+WS_SET_PREDICATE,FUNCTION,117,        END IF;
+WS_SET_PREDICATE,FUNCTION,118,    END IF;
+WS_SET_PREDICATE,FUNCTION,119,
+WS_SET_PREDICATE,FUNCTION,120,    RETURN v_predicate;
+WS_SET_PREDICATE,FUNCTION,121,
+WS_SET_PREDICATE,FUNCTION,122,--================================================
+WS_SET_PREDICATE,FUNCTION,123,-- On Unhandled exception lock the table out
+WS_SET_PREDICATE,FUNCTION,124,--================================================
+WS_SET_PREDICATE,FUNCTION,125,EXCEPTION
+WS_SET_PREDICATE,FUNCTION,126,    WHEN OTHERS THEN
+WS_SET_PREDICATE,FUNCTION,127,        v_predicate := '1 = 4';
+WS_SET_PREDICATE,FUNCTION,128,        RETURN v_predicate;
+WS_SET_PREDICATE,FUNCTION,129,END ws_set_predicate;
+WS_SET_PREDICATE,FUNCTION,130,
+WS_SET_PREDICATE,FUNCTION,131,

@@ -1,0 +1,118 @@
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_continent
+( continent_code       VARCHAR(2)     TITLE 'continent code'
+, continent            VARCHAR(256)   TITLE 'continent')
+PRIMARY INDEX continent_idx_PR ( continent_code )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_country
+( country_code         VARCHAR(2)     TITLE 'country code'
+, country              VARCHAR(256)   TITLE 'country'
+, continent_code       VARCHAR(2)     TITLE 'continent code')
+PRIMARY INDEX country_idx_PR ( country_code )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_customer
+( code                 DECIMAL(6,0)   TITLE 'code'
+, name                 VARCHAR(45)    TITLE 'name'
+, address              VARCHAR(40)    TITLE 'address'
+, city                 VARCHAR(30)    TITLE 'city'
+, state                VARCHAR(2)     TITLE 'state')
+PRIMARY INDEX customer_idx_PR ( city )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_order_header
+( order_number         DECIMAL(12,0)  TITLE 'order number'
+, order_date           TIMESTAMP      TITLE 'order date'
+, customer_code        DECIMAL(6,0)   TITLE 'customer code'
+, ship_date            DATE           TITLE 'ship date')
+PRIMARY INDEX order_header_idx_PR ( customer_code )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_order_line
+( order_number         DECIMAL(12,0)  TITLE 'order number'
+, order_line_no        DECIMAL(4,0)   TITLE 'order line no'
+, product_code         DECIMAL(6,0)   TITLE 'product code'
+, unit_sale_price      DECIMAL(9,3)   TITLE 'unit sale price'
+, quantity             DECIMAL(8,0)   TITLE 'quantity'
+, sales_value          DECIMAL(13,2)  TITLE 'sales value'
+, tax                  DECIMAL(9,2)   TITLE 'tax')
+PRIMARY INDEX order_line_idx_PR ( order_line_no )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_product
+( code                 DECIMAL(6,0)   TITLE 'code'
+, description          VARCHAR(64)    TITLE 'description'
+, prod_line            VARCHAR(24)    TITLE 'prod line'
+, prod_group           VARCHAR(24)    TITLE 'prod group'
+, subgroup             VARCHAR(24)    TITLE 'subgroup')
+PRIMARY INDEX product_idx_PR ( subgroup )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_prod_group
+( prod_group           VARCHAR(24)    TITLE 'prod group'
+, group_description    VARCHAR(64)    TITLE 'group description')
+PRIMARY INDEX prod_group_idx_PR ( prod_group )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_prod_line
+( prod_line            VARCHAR(24)    TITLE 'prod line'
+, line_description     VARCHAR(64)    TITLE 'line description')
+PRIMARY INDEX prod_line_idx_PR ( prod_line )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_prod_subgroup
+( prod_group           VARCHAR(24)    TITLE 'prod group'
+, subgroup             VARCHAR(24)    TITLE 'subgroup'
+, subgroup_description VARCHAR(64)    TITLE 'subgroup description')
+PRIMARY INDEX prod_subgroup_idx_PR ( prod_group )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_state
+( state_code           VARCHAR(2)     TITLE 'state code'
+, state_name           VARCHAR(256)   TITLE 'state name'
+, country_code         VARCHAR(2)     TITLE 'country code')
+PRIMARY INDEX state_idx_PR ( state_code )
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_model_forecast
+( product_code CHAR(20) TITLE 'product code'
+, customer_code INTEGER TITLE 'customer code'
+, forecast_quantity INTEGER TITLE 'forecast quantity'
+, forecast_sales_value DECIMAL(13,2) TITLE 'forecast sales value'
+, forecast_date TIMESTAMP TITLE 'forecast date')
+PRIMARY INDEX model_forecast_idx_PR (customer_code)
+;
+
+_TABLE_
+
+CREATE MULTISET TABLE _DATABASE_model_customer
+( customer_code DECIMAL(6) TITLE 'customer code'
+, customer_name VARCHAR(45) TITLE 'customer name'
+, customer_address VARCHAR(40) TITLE 'customer address'
+, customer_city VARCHAR(30) TITLE 'customer city'
+, customer_state VARCHAR(2) TITLE 'customer state')
+PRIMARY INDEX model_customer_idx_PR (customer_code)
+;
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes|OLAP Cube Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Cube Key Performance Indicators</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3>OLAP Cube Key Performance Indicators</h3>
+            <p class="BodyText">In Analysis Services, a KPI is a collection of calculations that are associated with a measure group in a cube that are used to evaluate business success. Typically, these calculations are a combination of Multidimensional Expressions (MDX) expressions or calculated members. </p>
+            <p class="BodyText">KPIs also have additional metadata that provides information about how client applications display the results of the KPI's calculations. The definition of a Calculation is shown by right-clicking a Calculation and choosing <b>Properties</b>. </p>
+            <p class="BodyText">The following Cube KPI Definition window is shown below:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Cube Key Performance.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Cube Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A Read Only field that indicates against which OLAP Cube the KPI is defined.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">KPI Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the name of the KPI defined in Analysis Services.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Description</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A business description of the KPI that is used to populate <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> documentation.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Update Buttons</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The Update Buttons: <b>Update &lt;-</b> and <b>Update -&gt;</b> are used to move from the current KPI to the previous and next KPI respectively for the current OLAP Cube. The alternative is to exit the KPI and choose the next KPI Properties screen.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Display Folder</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">KPIs can be organized into user-defined folders to view and manage these attributes within the Analysis Services user interface more easily. Enter the display folder name.
+                        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">One object can be in multiple display folders, for example:<p><img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/Display Folder.png" /></p></td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Associated Measure Group</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the Measure Group against which the KPI is defined.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Value Expression</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">An MDX numeric expression that returns the actual value of the KPI.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Goal Expression</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">An MDX numeric expression or a calculation that returns the target value of the KPI.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Status Indicator </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A visual element that provides a quick indication of the status of a KPI. The display of the element is determined by the value of the MDX expression that evaluates status.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Status Expression</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       An MDX expression that represents the state of the KPI at a specified point in time.
+                        <ul><li>The status MDX expression should return a normalized value between -1 and 1. Values equal to or less than -1 is interpreted as "bad" or "low." A value of zero (0) is interpreted as "acceptable" or "medium." Values equal to or greater than 1 is interpreted as "good" or "high."</li><li>An unlimited number of intermediate values can optionally be returned and can be used to display any number of additional states, if supported by the client application.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trend Indicator</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A visual element that provides a quick indication of the trend for a KPI. The display of the element is determined by the value of the MDX expression that evaluates trend.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Trend Expression</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">An MDX expression that evaluates the value of the KPI over time. The trend can be any time-based criterion that is useful in a specific business context. The trend MDX expression enables a business user to determine whether the KPI is improving over time or degrading over time.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Parent KPI </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A reference to an existing KPI that uses the value of the child KPI as part of computation of the parent KPI.&#160;Sometimes, a single KPI is a computation that consists of the values for other KPIs. This property facilitates the correct display of the child KPIs underneath the parent KPI in client applications.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Weight</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">An MDX numeric expression that assigns a relative importance to a KPI. If the KPI is assigned to a parent KPI, the weight is used to proportionally adjust the results of the child KPI value when calculating the value of the parent KPI.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To View KPIs</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">To view the list of KPIs, right-click the OLAP Cube in the left pane and select <b>Display KPIs</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">To Add a KPI</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <ol>
+                                <li value="1">To add a calculation, right-click the OLAP Cube in the left pane and select <b>Add KPI</b>. This can also be achieved by displaying KPIs in the middle pane, right-clicking and selecting <b>Add KPI</b>. Fill out the dialog box with the relevant details.</li>
+                                <li value="2">To create a KPI that is similar to an existing KPI, display the KPIs in the middle pane and select <b>Copy KPI</b>. The same dialog box appears as for <b>Add KPI</b> with most of the fields filled in. Notice that the KPI name has the suffix "- Copy". Change the name in the <b>KPI Name</b> field and make any other alterations and then click <b>OK</b>.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">To Delete a KPI</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Display the KPIs in the middle pane, right-click the KPI&#160;and then select <b>Delete</b>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

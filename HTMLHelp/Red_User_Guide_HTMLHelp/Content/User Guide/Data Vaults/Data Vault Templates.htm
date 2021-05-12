@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Data Vaults|Data Vault Functions and Features" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Data Vault Templates</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Data Vault Templates</h3>
+            <p class="BodyText">Templates are used to generate update procedures for <b>Data Vault </b>objects. Users must select a template to use when generating the update procedure for <b>Data Vault </b>objects created in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>. </p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Data Vaults/Data Vault Templates.png" />
+            </p>
+            <p class="BodyText">The <b>SQL Server Data Vault </b>templates are described below:</p>
+            <ul>
+                <li><b>wsl_sqlserver_proc_dv_stage</b> – this template creates an SQL Server procedure for updating <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> <b>Data Vault Stage</b> tables.</li>
+                <li><b>wsl_sqlserver_proc_dv_perm</b> – this template creates an SQL Server procedure for updating <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> <b>Data Vault</b> objects (<b>Hub</b>, <b>Link</b> and <b>Satellite</b> tables).</li>
+                <li><b>wsl_sqlserver_utility_dv</b> – this utility template contains generic SQL Server macros that are used by the other two templates above. </li>
+            </ul>
+            <p class="BodyText">The above templates are available in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> version 6.9.1.0 and above.&#160; If the templates are not visible in the <b>Template</b> objects list after installing/upgrading <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>, use the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Setup Administrator to Validate the MetaData Repository. </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ul>
+                                <li style="color: #d7454b;">Templates for Oracle and Teradata are also supplied by <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span>. For other database types, users need to create/provide their own templates. </li>
+                                <li style="color: #d7454b;"><b>Important:</b> The above templates have changed in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> version 8.0.1.0. The Data Vault hash key functions for Teradata and Oracle repositories have been changed in the templates (wsl_teradata_utility_dv and wsl_oracle_utility_dv). Data Vault customers running on Teradata or Oracle who were using these templates from the RED 6.9.1.0 release are advised to retain that version of the template, unless they migrate any key generated using the previous hash key function.<br />Refer to <a href="Changing the Data Vault Hash.htm">Changing the Data Vault Hash Key Function in WhereScape RED 6.9.1.0 and above</a>, if you need to amend the Hash key function in the shipped <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Data Vault Templates.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">A Wizard to generate update procedures via templates is used to populate <b>Data Vault</b> tables.&#160;The detailed steps for using this Wizard is described in <a href="Generating Update Procedures for Hub, Link and Satellite Tables.htm">Generating Update Procedures for Hub, Link and Satellite Tables</a>.</p>
+        </div>
+    </body>
+</html>

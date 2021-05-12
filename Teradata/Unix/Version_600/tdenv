@@ -1,0 +1,46 @@
+DSS_DBTYPE="TERADATA"; export DSS_DBTYPE
+DSS_TDPID=_TDPID_; export DSS_TDPID
+DSS_BTEQDB=_BTEQDB_; export DSS_BTEQDB
+DSS_USER=_USER_; export DSS_USER
+DSS_PWD=_PASSWORD_; export DSS_PWD
+#DSS_PWD=\$tdwallet\(_WALLETSTRING_\); export DSS_PWD
+DSS_METABASE=_METABASE_; export DSS_METABASE
+DSS_WORKDIR=_WORKDIR_; export DSS_WORKDIR
+#
+# Note: If multiple schedulers are being run on
+#       the same computer then each meta data 
+#       repository must have a different work
+#       directory defined for each Unix connection
+#
+# Scheduler name. Must be unique and <= 8 characters
+WSL_SCHEDULER_NAME=LINUX001; export WSL_SCHEDULER_NAME
+# Name of the server the scheduler is running on   
+WSL_SCHEDULER_HOST=localhost; export WSL_SCHEDULER_HOST
+# The time between checks for jobs (in seconds) (def:30)
+WSL_JOB_WAIT_INTERVAL=30; export WSL_JOB_WAIT_INTERVAL
+# The time between checks of running jobs(in seconds) (def:1200)  
+WSL_JOB_CHECK_INTERVAL=1200; export WSL_JOB_CHECK_INTERVAL
+#
+#
+# Note: If multiple schedulers are being run then
+#       different job and job log directories will
+#       be required. cleanup_600.sh will also need
+#       to include any additional directories
+#
+JOB_EXE_DIR=_HOME_/wsl/sched/job; export JOB_EXE_DIR
+JOB_LOG_DIR=_HOME_/wsl/sched/joblog; export JOB_LOG_DIR
+#
+# Note: If multiple versions are being used then
+#       a different bin directory will be required.
+#
+WSL_BIN_DIR=_HOME_/wsl/bin; export WSL_BIN_DIR
+WSL_LOG_DIR=_HOME_/wsl/sched/log; export WSL_LOG_DIR
+#
+# Note: If multiple monitors are being run then
+#       different job and log directories will
+#       be required. cleanup_600.sh will also need
+#       to include any additional directories
+#
+MON_JOB_DIR=_HOME_/wsl/mon/job; export MON_JOB_DIR
+MON_DB_DIR=_HOME_/wsl/mon/db; export MON_DB_DIR
+MON_LOG_DIR=_HOME_/wsl/mon/log; export MON_LOG_DIR

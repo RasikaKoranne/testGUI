@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Retrofitting" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Migrating the Data Warehouse Database Platform</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Migrating the Data Warehouse Database Platform</h2>
+            <p><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> has an advanced retrofitting wizard for migrating an existing data warehouse from one relational database to another.</p>
+            <p>The process to migrate an existing data warehouse includes:</p>
+            <ol>
+                <li value="1">Creating a connection object to the existing warehouse database.</li>
+                <li value="2">Creating Retro objects based on the source tables in the existing warehouse database.</li>
+                <li value="3">Setting the Retro objects as Retro Copy type objects.</li>
+                <li value="4">Running a Scheduler task to build the Retro Copy objects from the source tables.</li>
+                <li value="5">Setting the Retro objects back to Retro (Retro Definition) type objects.</li>
+                <li value="6">Converting the Retro objects to the Target Object types.</li>
+            </ol>
+            <p>The steps to use this wizard are as follows:</p>
+            <ol>
+                <li value="1">Create a connection object for the old data warehouse database, populating the following fields:<ul><li>Connection Name</li><li>Connection Type =&gt; <b>ODBC</b></li><li>ODBC Source</li><li>Work Directory</li><li>Extract user name</li><li>Extract password<p data-mc-conditions="Outputs.Only Teradata User Manual">OR</p></li><li data-mc-conditions="Outputs.Only Teradata User Manual">Teradata Wallet User ID / Teradata Wallet String</li></ul><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The extract user<MadCap:conditionalText data-mc-conditions="Outputs.Only Teradata User Manual">/ Teradata Wallet user</MadCap:conditionalText> must be able to select from all tables to be migrated.  </td></tr></tbody></table></li>
+                <li value="2">Ensure all naming standards in <b>Tools &gt; Options</b> are set to match the objects being retrofitted. This saves work later.</li>
+                <li value="3">Ensure <b>Enable Retro</b> is selected in the <b>Tools &gt; Options &gt; Object Types</b> menu.</li>
+                <li value="4">Right-click the <b>Retro object group</b> in the object tree in the left pane and select <b>Select Source Tables</b>.<p><img src="../../Images/UserGuide_Images/Retrofitting/import_data_model1.png" /></p></li>
+                <li value="5">The <b>Retrofit Tables</b> window appears. In the <b>Source Connection</b> drop-down list choose the connection set up in step 1. A list of <b>databases </b>appears in the left pane.<p><img src="../../Images/UserGuide_Images/Retrofitting/migrate_dw2.png" /></p></li>
+                <li value="6">Double-click the database/user/schema in the left pane list. A list of <b>tables</b> in the database is displayed in the middle pane.<p><img src="../../Images/UserGuide_Images/Retrofitting/migrate_dw3.png" /></p></li>
+                <li value="7">Select all the required tables from the middle pane list and click &gt; to move them to the right pane. Then click the <b>Add Ancillary Columns (e.g. dss_update_time)</b> check-box and click <b>OK</b>.<p><img src="../../Images/UserGuide_Images/Retrofitting/migrate_dw4.png" /></p></li>
+                <li value="8"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> acquires the metadata for the tables being migrated and creates a new <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Retro object for each.</li>
+                <li value="9">Double-click the <b>Retro object group</b> in the left pane. Select all Retros in the middle pane. Right-click and select <b>Set Table Type to Copy</b>. This enables the data in the legacy data warehouse to be copied across to the new data warehouse.<p><img src="../../Images/UserGuide_Images/Retrofitting/migrate_dw5.png" /></p></li>
+                <li value="10">Click the <b>Scheduler</b> button from the toolbar. <img src="../../Images/UserGuide_Images/Retrofitting/schedule_a_job_1.png" /></li>
+                <li value="11">Create a new job to run straight away and click <b>OK</b>.&#160; <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/note.css');margin-left: 0;margin-right: auto;" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">A scheduler must be running on the data warehouse connection for this job to complete, refer to the Scheduler Installation and Configuration section of the <span class="mc-variable WS_Branding.Product variable">RED</span> Installation Guide.</td></tr></tbody></table><p> <img src="../../Images/UserGuide_Images/Retrofitting/migrate_dw6.png" /></p></li>
+                <li value="12">Add all Retro objects created in steps (3) to (9) and then click <b>Group Object Types</b>.<p><img src="../../Images/UserGuide_Images/Retrofitting/migrate_dw7.png" /></p></li>
+                <li value="13">Once the job is completed, return to the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Builder window. Double-click the <b>Retro object group</b>. Select all objects in the middle pane and then from the right-click context menu select <b>Set Table Type to Definition</b>.&#160;This indicates the data has been copied into the Retro objects and the Retros can then be converted to the target objects.<p><img src="../../Images/UserGuide_Images/Retrofitting/migrate_dw10.png" /></p></li>
+                <li value="14">In the middle pane, select all objects. Right-click and select <b>Convert to Target Object</b>. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> converts the <b>Retro</b> objects to the appropriate object types.<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"> If the appropriate Target Object Type has not been set for one or more Retro objects; from the right click context menu select <b>Change Target Object Type</b> and select the correct Object Type.</td></tr></tbody></table><p><img src="../../Images/UserGuide_Images/Retrofitting/migrate_dw8.png" /></p></li>
+                <li value="15">There are no longer any Retro objects. They have been converted to Load, Stage, Dimension or Fact objects.<p><img src="../../Images/UserGuide_Images/Retrofitting/migrate_dw9.png" /></p></li>
+                <li value="16">Change the source table and source column values on all of the retrofitted objects using either the Re-target source table window, or by editing column properties. Refer to <a href="Re Targeting Source Tables.htm">Re-Targeting Source Tables</a> for details.</li>
+                <li value="17">Convert the old data warehouses code to <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> procedure in the new data warehouse database. Refer to <a href="../Integrating into existing Warehouse/Integrating Procedures.htm">Integrate Procedures</a> for details.</li>
+                <li value="18">If necessary, create new connections to be used with any migrated Lad tables. Attach a connection to each Load table. Refer to <a href="../Loading Data/Loading Data.htm">Loading Data</a> for details.</li>
+            </ol>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

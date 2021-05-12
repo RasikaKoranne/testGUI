@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Templates|Template Editor|Pebble Syntax" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Pebble Template Tags</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/syntax.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4>Pebble Template Tags</h4>
+            <h5>autoescape</h5>
+            <p>The autoescape tag can be used to temporarily disable/re-enable the autoescaper as well as change the escaping strategy for a portion of the template.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/syntax.css');" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">autoescape</span> <span style="color: #dc009c;">"js"</span> <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endautoescape</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>block</h5>
+            <p>A section that can be overridden by a child template.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/syntax.css');" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">block</span> <span style="color: #dc009c;">"${blockName}"</span> <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endblock</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>extends</h5>
+            <p>The extends tag is used to declare a parent template. It should be the very first tag used in a child template and a child template can only extend up to one parent template.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">extends</span> <span style="color: #dc009c;">"${templateName}"</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>filter</h5>
+            <p>The filter tag allows you to apply a filter to a large chunk of template.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">filter</span> ${filter} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfilter</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template 2</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">filter</span> ${filter1} | ${filter2} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfilter </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>for</h5>
+            <p>The for tag is used to iterate through a collection or map.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">for </span>${i} <span style="color: #0000ff;">in </span>${collection} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfor </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>for else</h5>
+            <p>The for tag is used to iterate through a collection or map with a convenient way to check for emptiness.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">for </span>${i} <span style="color: #0000ff;">in </span>${collection} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">else </span><span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfor </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>if</h5>
+            <p>The if tag allows you to designate a chunk of content as conditional depending on the result of an expression.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">if </span>${condition} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endif </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>if else</h5>
+            <p>The if tag allows you to designate a chunk of content as conditional depending on the result of an expression.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">if </span>${condition} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">else </span><span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endif </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>if elseif</h5>
+            <p>The if tag allows you to designate a chunk of content as conditional depending on the result of an expression.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">if </span>${condition} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">elseif </span><span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">else </span><span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endif </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>import</h5>
+            <p>The import tag allows you to use macros defined in another template.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">import </span><span style="color: #dc009c;">"${templateName}"</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>include</h5>
+            <p>The include tag allows you to insert the rendered output of another template directly into the current template. The included template will have access to the same variables that the current template does.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">include </span><span style="color: #dc009c;">"${templateName}"</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>include with</h5>
+            <p>The include tag allows you to insert the rendered output of another template directly into the current template. The included template will have access to the same variables that the current template does with additional variables.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">include</span> <span style="color: #dc009c;">"${templateName}"</span> <span style="color: #0000ff;">with</span> { ${mapOfVariables} } <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>macro</h5>
+            <p>The macro tag allows you to create a chunk of reusable and dynamic content. The macro can be called multiple times in the current template or even from another template with the help of the import tag.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">macro </span>concat(left, right) <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;"><span style="color: #ff0000;">{{</span></span> left <span style="color: #ff0000;"><span style="color: #ff0000;">}}</span></span> <span style="color: #ff0000;"><span style="color: #ff0000;">{{</span></span> right <span style="color: #ff0000;"><span style="color: #ff0000;">}}</span></span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endmacro </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>parallel</h5>
+            <p>The parallel tag allows you to designate a chunk of content to be rendered using a new thread.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">parallel </span><span style="color: #ff0000;">%}</span></p>
+                            <p>${content}
+</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endparallel </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>set</h5>
+            <p>The set tag allows you to define a variable in the current context, whether it currently exists or not.</p>
+            <p>Will initialize the variable or override the current value in the variable.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>${variable} <span style="color: #804040;">=</span> ${value} <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>verbatim</h5>
+            <p>The verbatim tag allows you to write Pebble syntax that won't be parsed.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">verbatim </span><span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">if not</span> varA <span style="color: #0000ff;">is defined</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>varA <span style="color: #804040;">=</span> <span style="color: #dc009c;">"Abc"</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endif </span><span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endverbatim </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>br</h5>
+            <p>The br tag adds a line break token at the current position.</p>
+            <p>Use an additional parameter to change the type of line break: lf (Default), crlf, other "token".</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">br</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">br </span>lf <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">br </span>crlf <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">br </span>other <span style="color: #dc009c;">"|"</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>counter</h5>
+            <p>The counter tag outputs an integer value that is incremented by one for each use.</p>
+            <p>Use the parameter local to make the counter increments per used template.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">counter </span><span style="color: #ff0000;">%}</span> pencil</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">counter </span><span style="color: #ff0000;">%}</span> pens</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>1 pencil</p>
+                            <p>2 pens</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p> </p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example 2</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p>Template "Other": <span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">counter </span>local <span style="color: #ff0000;">%}</span></p>
+                            <p>Main template: <span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">counter </span>local <span style="color: #ff0000;">%}{%</span> <span style="color: #0000ff;">include </span><span style="color: #dc009c;">"Other"</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Outputs</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>11</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>declare</h5>
+            <p>The declare tag allows you to define a variable in the current context if it does not exist. If the variable does exist it will not be changed.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The following are the same:<table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0"><col /><tbody><tr class="TableStyle-code-Body-Body1"><td class="TableStyle-code-BodyA--Body1" style="color: #0000ff;"><span style="color: #4c4f54;"><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">declare</span> encapsulation <span style="color: #804040;">=</span> <span style="color: #6400c8;">true </span><span style="color: #ff0000;">%}</span></span><p class="tabletext" style="color: #4c4f54;"><span style="font-family: 'Courier New';"><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set</span> encapsulation <span style="color: #804040;">=</span> encapsulation | <span style="color: #007fae;">default</span><span style="color: #804040;">(</span><span style="color: #6400c8;">true</span><span style="color: #804040;">)</span> <span style="color: #ff0000;">%}</span></span></p></td></tr></tbody></table></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p> </p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>varA <span style="color: #804040;">=</span> <span style="color: #dc009c;">"aa"</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">declare </span>varA <span style="color: #804040;">=</span> <span style="color: #dc009c;">"bb"</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">declare </span>varB <span style="color: #804040;">=</span> <span style="color: #dc009c;">"cc"</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> varA <span style="color: #ff0000;"><span style="color: #ff0000;">}}</span></span> <span style="color: #ff0000;">{{</span> varB <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Outputs</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>aa cc</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>error</h5>
+            <p>The error tag allows you to fail generating the template with an error message, e.g. if something unexpected occurs.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">if not</span> requiredVar <span style="color: #0000ff;">is defined</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">error </span><span style="color: #dc009c;">"Something terrible has occurred"</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>indent</h5>
+            <p>The indent tag adds one or more 4-space indents at the current position.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2"><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">indent </span><span style="color: #ff0000;">%}</span></td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example 2</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">indent </span><span style="color: #6400c8;">3</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>from</h5>
+            <p>The from tag is used to iterate a subset of a collection defined by the where condition.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">from </span>${collection} <span style="color: #0000ff;">as</span> ${var} <span style="color: #0000ff;">where </span>${test} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfrom </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p> </p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">from </span>range<span style="color: #804040;">(</span><span style="color: #6400c8;">1</span><span style="color: #804040;">,</span><span style="color: #6400c8;">10</span><span style="color: #804040;">)</span> <span style="color: #0000ff;">as </span>num <span style="color: #0000ff;">where </span>num <span style="color: #0000ff;">is even</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span>- num <span style="color: #ff0000;">}}{%</span> <span style="color: #0000ff;">br</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfrom </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>2</p>
+                            <p>4</p>
+                            <p>6</p>
+                            <p>8</p>
+                            <p>10</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>from else</h5>
+            <p>The from tag is used to iterate a subset of a collection defined by the where condition with a convenient way to check for emptiness.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">from </span>${collection} <span style="color: #0000ff;">as</span> ${var} <span style="color: #0000ff;">where </span>${test} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">else </span><span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfrom</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p> </p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">from </span><span style="color: #804040;">[]</span> <span style="color: #0000ff;">as</span> num <span style="color: #0000ff;">where</span> num <span style="color: #0000ff;">is even</span> <span style="color: #ff0000;">-%}</span></p>
+                            <p>Even numbers<span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">br</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">else</span> <span style="color: #ff0000;">-%}</span></p>
+                            <p>Empty collection<span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfrom</span> <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>Empty collection</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>list add</h5>
+            <p>The list with add tag is used to append a value to a list.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>alphabet <span style="color: #804040;">=</span> [<span style="color: #dc009c;">"a"</span><span style="color: #804040;">,</span> <span style="color: #dc009c;">"b"</span><span style="color: #804040;">,</span> <span style="color: #dc009c;">"c"</span>] <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> alphabet <span style="color: #ff0000;">}}{%</span> <span style="color: #0000ff;">br </span><span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">list </span>alphabet <span style="color: #0000ff;">add </span><span style="color: #dc009c;">"d"</span> <span style="color: #ff0000;">-%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> alphabet <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Outputs</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>[a, b, c]</p>
+                            <p>[a, b, c, d]</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>list adds</h5>
+            <p>The list with add tag is used to append one or more values to a list.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>alphabet <span style="color: #804040;">=</span> [<span style="color: #dc009c;">"a"</span><span style="color: #804040;">,</span> <span style="color: #dc009c;">"b"</span><span style="color: #804040;">,</span> <span style="color: #dc009c;">"c"</span>] <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> alphabet <span style="color: #ff0000;">}}{%</span> <span style="color: #0000ff;">br </span><span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">list </span>alphabet <span style="color: #0000ff;">add </span><span style="color: #dc009c;">"d"</span><span style="color: #804040;">,</span> <span style="color: #dc009c;">"e"</span><span style="color: #804040;">,</span> <span style="color: #dc009c;">"f"</span> <span style="color: #ff0000;">-%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> alphabet <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Outputs</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>[a, b, c]</p>
+                            <p>[a, b, c, d, e, f]</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>list remove</h5>
+            <p>The list with remove tag is used to remove a value from a list.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>alphabet <span style="color: #804040;">=</span> [<span style="color: #dc009c;">"a"</span>, <span style="color: #dc009c;">"b"</span>, <span style="color: #dc009c;">"c"</span>, <span style="color: #dc009c;">"d"</span>, <span style="color: #dc009c;">"e"</span>, <span style="color: #dc009c;">"f"</span>] <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> alphabet <span style="color: #ff0000;">}}{%</span> <span style="color: #0000ff;">br </span><span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">list </span>alphabet <span style="color: #0000ff;">remove </span><span style="color: #dc009c;">"d"</span> <span style="color: #ff0000;">-%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> alphabet <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Outputs</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>[a, b, c, d, e, f]</p>
+                            <p>[a, b, c, e, f]</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>list removes</h5>
+            <p>The list with remove tag is used to remove one or more values from a list.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>alphabet <span style="color: #804040;">=</span> [<span style="color: #dc009c;">"a"</span>, <span style="color: #dc009c;">"b"</span>, <span style="color: #dc009c;">"c"</span>, <span style="color: #dc009c;">"d"</span>, <span style="color: #dc009c;">"e"</span>, <span style="color: #dc009c;">"f"</span>] <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> alphabet <span style="color: #ff0000;">}}{%</span> <span style="color: #0000ff;">br </span><span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">list </span>alphabet <span style="color: #0000ff;">remove </span><span style="color: #dc009c;">"d"</span>, <span style="color: #dc009c;">"e"</span>, <span style="color: #dc009c;">"f"</span> <span style="color: #ff0000;">-%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> alphabet <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Outputs</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>[a, b, c, d, e, f]</p>
+                            <p>[a, b, c]</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>map put</h5>
+            <p>The map put tag is used to set a key-value pair into a map, whether it currently exists or not.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">map </span>${mapVar} <span style="color: #0000ff;">put </span>${key} = ${value} <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>map remove</h5>
+            <p>The map remove tag is used to remove a key from a map.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">map </span>${mapVar} <span style="color: #0000ff;">remove </span>${key} <span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>placebottom</h5>
+            <p>The placebottom tag allows defining a block in the template that will be placed at the end of the output. The priority argument defines the order of multiple place bottom blocks.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Template</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">placebottom </span>${priority} <span style="color: #ff0000;">%}</span></p>
+                            <p>${content}</p>
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endplacebottom </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>get</h5>
+            <p>The get tag defines a variable as a subset of a collection based on the given condition.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyD--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">get </span>evenNums <span style="color: #0000ff;">from </span><span style="color: #007fae;">range</span><span style="color: #804040;">(</span><span style="color: #6400c8;">1</span><span style="color: #804040;">,</span><span style="color: #6400c8;">10</span><span style="color: #804040;">)</span> <span style="color: #0000ff;">as</span> num <span style="color: #0000ff;">where </span>num <span style="color: #0000ff;">is even</span> <span style="color: #ff0000;">%}</span></p>
+                            <p><span style="color: #ff0000;">{{</span> evenNums <span style="color: #ff0000;">}}</span></p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Output</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p>[2, 4, 6, 8, 10]</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h6 data-mc-conditions="Outputs.WhereScape_RED_Docs"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Specific Tag</h6>
+            <h5 data-mc-conditions="Outputs.WhereScape_RED_Docs">fetch</h5>
+            <p data-mc-conditions="Outputs.WhereScape_RED_Docs">The fetch tag is used to manually load attributes of objects that which aren’t loaded automatically, eg. for an alternate table.</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/tablestyles/syntax.css');margin-left: 0;margin-right: auto;" class="TableStyle-syntax" cellspacing="0" data-mc-conditions="Outputs.WhereScape_RED_Docs">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-syntax-Body-Body1">
+                        <td class="TableStyle-syntax-BodyD--Body1">Example</td>
+                    </tr>
+                    <tr class="TableStyle-syntax-Body-Body2">
+                        <td class="TableStyle-syntax-BodyA--Body2">
+                            <p><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">for </span>col <span style="color: #0000ff;">in </span>table.columns <span style="color: #ff0000;">%}</span></p>
+                            <p style="font-family: 'Courier New';"> <span style="color: #ff0000;">{% </span>fetch col<span style="color: #804040;">.</span>sourceTable <span style="color: #ff0000;">%}</span></p>
+                            <p style="font-family: 'Courier New';"> <span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">set </span>srcTab <span style="color: #804040;">=</span> col<span style="color: #804040;">.</span>sourceTable <span style="color: #ff0000;">%}</span></p>
+                            <p style="font-family: 'Courier New';"> <span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">for </span>srcCol <span style="color: #0000ff;">in </span>srcTab<span style="color: #804040;">.</span>columns <span style="color: #ff0000;"> %}</span></p>
+                            <p style="font-family: 'Courier New';"><span style="color: #ff0000;">{{ </span>srcCol<span style="color: #804040;">.</span>source <span style="color: #ff0000;">}}{%</span><span style="color: #0000ff;"> br </span><span style="color: #ff0000;">%}</span></p>
+                            <p style="font-family: 'Courier New';"> <span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfor </span><span style="color: #ff0000;">%}</span></p>
+                            <p style="font-family: 'Courier New';"><span style="color: #ff0000;">{%</span> <span style="color: #0000ff;">endfor </span><span style="color: #ff0000;">%}</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p data-mc-conditions="Outputs.Exclude_In_Print"> </p>
+            <hr width="100%" size="0" align="center" data-mc-conditions="Outputs.Exclude_In_Print" />
+        </div>
+    </body>
+</html>

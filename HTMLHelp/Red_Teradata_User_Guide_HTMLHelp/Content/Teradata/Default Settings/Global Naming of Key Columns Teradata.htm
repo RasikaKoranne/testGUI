@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Default Settings|Settings - Options|Global Naming Conventions" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Global Naming of Key Columns</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4 class="Heading4">Global Naming of Key Columns</h4>
+            <p class="BodyText">This option enables you to set the <b>Global Naming of Key Columns.</b></p>
+            <p>
+                <img src="../../Images/Teradata_images/Default Settings/Global Naming of Key Columns.png" />
+            </p>
+            <p class="BodyText">During the drag and drop generation of new dimension and fact tables, <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span><span class="mc-variable WS_Branding.Product variable">RED</span> builds an artificial (surrogate) key for the table. </p>
+            <p class="BodyText">The naming convention for that key can be set through the same menu option as above. As well as potential pre-fix and suffix values, we also need to choose between the inclusion of the full table name, or the short name assigned to each table.</p>
+            <p class="BodyText">In the example screen above, which is the default, a dimension table key would use the table <b>short name</b> and have a suffix of "<b>_key</b>".&#160; Therefore, a Load_customer table example would generate a key called <b>dim_customer_key</b>, if it was dragged into a dimension drop target.</p>
+            <p>To have a table with non identity columns as surrogate keys, you can set the table's <b>Data Type</b> to <b>integer</b>. During the procedure generation this will create a logic that associates a sequential number to the artificial key of the dimension when a new row is inserted into the table.</p>
+            <p>The example above displays the defaults for Dimension options, to set these fields on Fact, Data Store and EDW 3NF tables, etc. expand the fields below Dimension to view and set your required options.</p>
+            <p>For more details on Artificial Keys, refer to Dimension Artificial Keys, Data Store Artificial Keys and EDW 3NF Artificial Keys.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" style="width: 157px;" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Dimension have a Surrogate Key auto added
+
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Set this field if a Surrogate key column is to be added automatically to a table. Default for Dimension is set. Default for Fact, Data Store and EDW 3NF is not set.
+
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Dimension Key Prefix
+
+</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Key prefix that can be added to a new Dimension Key.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Dimension Key Name Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Key name type for new Dimension keys. Select between Short name, Full table name and Base name.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Dimension Key Suffix</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Key suffix that can be added to a new Dimension key.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Dimension Data Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+
+Default data type for the Dimension surrogate column definition. Set to Integer if you want a non identity column to be used as the surrogate key.
+</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Dimension Transformation</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+
+Transformation where a database compliant SQL statement can be used for the surrogate key on new Dimension entries.
+</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

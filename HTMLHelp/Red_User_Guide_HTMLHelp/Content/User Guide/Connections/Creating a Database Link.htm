@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Connections" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Creating a Database Link</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Creating a Database Link</h2>
+            <p class="BodyText">To create a database link connection, the database link must be established by clicking the <b>Create Database Link </b>option from the context menu, after the relevant connection has been created in <span class="mc-variable WS_Branding.Product variable">RED</span>. <br />Any existing connections can be used as a database link connection if:</p>
+            <ul>
+                <li>the connection type is <b>Database</b>;</li>
+                <li>the <b>Database Link Name</b> field is populated with <b>a name</b> for the database link;</li>
+                <li>the <b>Create Database Link</b> option has been selected from the connection's right click context menu. A confirmation message is displayed when the database link has been created.</li>
+            </ul>
+            <p class="BodyText">
+                <br />To create a <b>new</b> Database Link type connection you need to do the following:</p>
+            <ol>
+                <li value="1">Enter a <b>name</b> for the new Connection.</li>
+                <li value="2">Set the Connection Type to <b>Database.</b></li>
+                <li value="3">Select an <b>ODBC Source (DSN)</b> to extract the source data.</li>
+                <li value="4">Populate the <b>Database ID</b> field with a valid Oracle SID or TNS Name for <b>Oracle</b> Databases.</li>
+                <li value="5">Enter a <b>Database Link Name </b>for the database link. This is a required field for establishing the <b>Database Link</b> connection.</li>
+                <li value="6">Enter the<b> Extract User ID</b> and <b>Extract User Password</b> for the user that has access to the source database when not using Windows Authentication.<p><img src="../../Images/UserGuide_Images/Connections/Creating a Database Link.png" /></p></li>
+                <li value="7">Once a connection has been set up, you can right-click the connection name to see the following menu:<p><img src="../../Images/UserGuide_Images/Objects_Window/connections.png" /></p></li>
+                <li value="8">Once the <b>Create Database Link </b>option is selected, <span class="mc-variable WS_Branding.Product variable">RED</span> attempts to create a user database link to the source database. If the link already exists, a prompt appears to confirm if you want to overwrite the existing link. </li>
+            </ol>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tips:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">
+                       A number of problems can occur during this action, and your database administrator should be consulted:
+                        <p><img src="../../Images/UserGuide_Images/Connections/Connection Types.png"></img></p>                     For <b>SQL Server</b> a trusted link will be created if the extract user in the connection is set to <b>dbo</b>. In all other cases the extract user/password will be used as the log on for the remote server.
+                        <p><img src="../../Images/UserGuide_Images/Connections/Connection Types_1.png"></img></p>For <b>Oracle </b>data warehouses the more common problems are:<ul><li style="color: #70abaf;">Insufficient privileges to create the link. You need the <b>Create Database Link</b> privilege in order to create a new link.</li><li style="color: #70abaf;">TNS could not resolve the connection to the remote database. The database link uses the value entered in the <b>SID</b> field of the connection to identify the remote database. This value must be a valid entry in the Tnsnames table for the source database.</li></ul></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

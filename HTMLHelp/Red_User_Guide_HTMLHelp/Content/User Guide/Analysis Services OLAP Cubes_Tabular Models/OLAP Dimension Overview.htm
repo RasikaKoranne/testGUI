@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Analysis Services OLAP Cubes/Tabular Models|OLAP Cubes|OLAP Dimension Objects" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>OLAP Dimension Overview</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h4>OLAP Dimension Overview</h4>
+            <p><b>OLAP Dimensions</b> are dimensions that get created in an Analysis Services database.</p>
+            <p class="BodyText">An OLAP Dimension is a collection of related attributes which can be used to provide information about fact data in one or more cubes. By default, attributes are visible as attribute hierarchies and can be used to understand the fact data in a cube. Attributes can be organized into user-defined hierarchies that provide navigational paths to assist users when browsing the data in a cube.</p>
+            <p class="BodyText">They are typically created and populated from a relational dimension.</p>
+            <p class="BodyText">One or more OLAP Dimensions are defined automatically by <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> when a Fact table is dragged over to create a cube or measure group. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> takes the relational dimension tables and related metadata (including hierarchies) defined in the star schemas and create OLAP Dimensions automatically. They can also be defined manually in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>.</p>
+            <p class="BodyText">The properties of an OLAP Cube dimension are shown by right-clicking the <b>OLAP Dimension</b> and choosing <b>Properties</b>. The following window is shown:</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/OLAP Dimension Objects.png" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Fields</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Internal Dimension Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the name of the dimension in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Dimension Publish Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the name of the dimension as created in Analysis Services.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Dimension Description</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">A business description of the OLAP Dimension for use in documentation— this description also gets created in the analysis services metadata.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Database Connection and OLAP Database Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> connection that is an OLAP connection to an analysis services server. These fields only need to be populated when the OLAP Dimension needs to be created in Analysis Services separately from a cube. If these fields are blank this dimension can only be created in the same Analysis Services server and database as the related cubes when the cubes get created.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Data Source Connection</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                        Defines the <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> connection that points to the relational dimensional table(s) used to populate the OLAP Dimension - typically the Data Warehouse connection. When the connection is defined, the following Read-Only fields are populated with the connection information:
+                        <ul><li value="1">Data Source Provider Type</li><li value="2">Data Source Server</li><li value="3">Data Source Database</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Post Create XML/A Script</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies XML/A script that is executed after the object is created.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Table Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the type of table from which the OLAP Dimension was created.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Table</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the name of the table from which the OLAP Dimension was created.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Source Table Key</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the key (typically the primary key) that relates the dimension to the fact in the underlying star schema.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Processing Group</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the processing group for processing the dimension. This determines how much data is read into memory during dimension processing at any one time.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Processing Mode</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates whether processed data is available after all aggregations have been computed (Regular) or immediately after the data has been loaded (Lazy aggregations).</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Processing Method</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                       Indicates which processing method should be used for populating the dimension:
+                        <ul><li value="1">Process Default - Detects the process state of an object, and performs processing necessary to deliver unprocessed or partially processed objects to a fully processed state.</li><li value="2">Process Full - Processes an Analysis Services object and all the objects that it contains. When Process Full is executed against an object that has already been processed, Analysis Services drops all data in the object, and then processes the object. This kind of processing is required when a structural change has been made.</li><li value="3">Rebuild Data - Processes data only without building aggregations or indexes.</li></ul></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Storage Mode</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">This field provides two options; MOLAP (Multidimensional OLAP) or ROLAP.(Relational OLAP). This determines how the OLAP cube is processed.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">All Caption</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the name of the (All) member. This applies to all hierarchies in the dimension that have an (All) member.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">OLAP Dimension Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the type of information contained by the dimension. Some client tools can treat the dimension differently based on this information.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Unknown Member Action</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Specifies the existence of an Unknown member and whether that member is visible or hidden. Fact data not associated with a member can be associated with the unknown member.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Unknown Member Name</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Specifies the caption for the unknown member.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Language Mapping</h5>
+            <p class="BodyText">The OLAP Dimension Properties screen has a tab called <b>Language Mapping</b>. </p>
+            <p class="BodyText">Select the language from the drop-down list and then enter the translations for the <b>Dimension Publish Name</b>,<b> All Caption</b>,<b> Dimension Description </b>and the<b> Unknown Member Name</b>.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Analysis Services OLAP Cubes/Language Mapping_1.png" />
+            </p>
+            <p class="BodyText">Refer to <a href="../Default Settings/Language Options.htm">Language Options</a> for more details on how to add languages for translation.</p>
+            <p id="linespace" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+            <hr width="100%" size="0" align="center" data-mc-conditions="Outputs.Exclude_In_Print" />
+            <p id="spacing" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+        </div>
+    </body>
+</html>

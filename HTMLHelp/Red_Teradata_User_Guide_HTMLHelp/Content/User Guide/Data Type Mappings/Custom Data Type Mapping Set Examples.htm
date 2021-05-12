@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Data Type Mappings" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Custom Data Type Mapping Set Examples</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2 class="Heading2">Custom Data Type Mapping Set Examples</h2>
+            <p class="BodyText"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> enables you to create <b>Custom</b> Data Type Mapping Sets. This gives you the ability to automatically change the data type of any column or to add column transformations, when dragging and dropping new Load tables.</p>
+            <p class="BodyText">The examples in this topic demonstrate how <b>Custom</b> Data Type Mapping Sets can be configured, using the following variables:</p>
+            <ul>
+                <li>%length</li>
+                <li>%scale</li>
+                <li>%precision</li>
+                <li>%table_name</li>
+                <li>%column_name</li>
+                <li>%format</li>
+                <li>%prompt</li>
+            </ul>
+            <h3>%length
+        </h3>
+            <p class="BodyText">In the example below, when converting a varchar in a standard file to SQL Server format, we follow the following steps in the given order:</p>
+            <ul>
+                <li>If the varchar is of a length less than or equal to 63, the <b>data type</b> will become varchar(64).</li>
+                <li>If the first step was NOT applied, i.e. the varchar is of a length greater than 63, then the <b>data type</b> will become varchar(%length); where we substitute the length for the variable '%length'. Thus if the varchar is of length 64 then the resulting data type will be varchar(64), but if the varchar is of length 123 then the resulting data type will be varchar(123). <p><img src="../../Images/UserGuide_Images/Data Type Mappings/Custom Data Type Mapping Set.png" /></p></li>
+            </ul>
+            <h3>%scale
+        </h3>
+            <p class="BodyText">In the example below, when converting a decimal in SQL Server to SQL Server format,&#160; the following steps are done in the given order:</p>
+            <ul>
+                <li>If the decimal has a scale of zero, the <b>data type</b> will become numeric(%precision); where we substitute the number of digits in the number for the variable '%precision'. Thus if the decimal has 8 digits then the resulting data type will be numeric(8).</li>
+                <li>If the first step was NOT applied, i.e. the decimal has a scale of 1 or greater, then the <b>data type</b> will become numeric(%precision,%scale); where we not only substitute the number of digits in the number for the variable '%precision', but we also substitute the scale for the variable '%scale'. Thus, if the decimal is made up of 8 digits and has 3 digits after the decimal point (example 12345,678), the resulting data type will be numeric(8,3). <p><img src="../../Images/UserGuide_Images/Data Type Mappings/Custom Data Type Mapping Set_1.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The <b>Scale&gt;</b> is the number of digits to the right of the decimal point in a number.</td></tr></tbody></table></li>
+            </ul>
+            <h3>%precision        </h3>
+            <p class="BodyText">In the example below, when converting a number in Oracle to SQL Server format, the following steps are done in the given order:</p>
+            <ul>
+                <li data-mc-conditions="Outputs.Only Teradata User Manual">If the varchar has a length of 1 or greater, the data type will become varchar(%precision); where we substitute the number of digits in the varchar for the variable '%precision'. Thus if the varchar has a length of 14, the resulting data type will be varchar(14).</li>
+                <li data-mc-conditions="Outputs.Only Teradata User Manual">If the varchar has a length of 0, the data type will be become varchar(9000) where the transformation will ensure that the correct length of the source string.</li>
+            </ul>
+            <p>
+                <img src="../../Images/UserGuide_Images/Data Type Mappings/Custom Data Type Mapping Set_teradata.png" data-mc-conditions="Outputs.Only Teradata User Manual" />
+            </p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The <b>Precision</b> is the total number of digits in a number.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>%table_name and %column_name</h3>
+            <p>In the example below, the following transformations are used to handle NULL for different lengths of varchars:</p>
+            <ul>
+                <li>If the varchar is 1 or 2 digits/chars long, the <b>data type</b> will become varchar(%precision); where we substitute the number of digits/chars in the varchar for the variable '%precision'. Secondly, the <b>value</b> of the column will become the column value (if it is not null), else it will become 'U'. </li>
+                <li>If the varchar is 3-6 digits/chars long, the <b>data type</b> will become varchar(%precision); where we substitute the number of digits/chars in the varchar for the variable '%precision'. Secondly, the <b>value</b> of the column will become the column value (if it is not null), else it will become 'UNK'. </li>
+                <li>If the varchar is 7 or more digits/chars long, the <b>data type</b> will become varchar(%precision); where we substitute the number of digits/chars in the varchar for the variable '%precision'. Secondly, the <b>value</b> of the column will become the column value (if it is not null), else it will become 'UNKNOWN'.<p><img src="../../Images/UserGuide_Images/Data Type Mappings/Custom Data Type Mapping Set_3.png" /></p></li>
+            </ul>
+            <h3>%format</h3>
+            <p class="BodyText">In the example below, the following transformations are used to convert a certain character field to a date:</p>
+            <ul>
+                <li>If the varchar has a length of 1-10, the <b>data type</b> will become date and the <b>value</b> of the column will become the date 20131212 (a chosen date in the future).</li>
+                <li>If the varchar has a length of 11, the <b>data type</b> will become date and the <b>value</b> of the column will use the transformation TO_DATE(%table_name.%column_name,%format); where we substitute 'YYYYMMDD' for the variable '%format'. Thus the value of the column will be converted to a date of format 'YYYYMMDD'.</li>
+                <li>If the varchar has a length of 12 or greater, the <b>data type</b> will become date and the <b>value</b> of the column will become the date 20181212 (a chosen date in the future).<img src="../../Images/UserGuide_Images/Data Type Mappings/Custom Data Type Mapping Set_4_Teradata.png" data-mc-conditions="Outputs.Only Teradata User Manual" /></li>
+            </ul>
+            <h3>%prompt</h3>
+            <p class="BodyText">In the example below,&#160;%prompt is used to help the user define a mapping for an unknown data type that is not already mapped in the previous mapping rules.<br />This variable must be used with a <b>custom</b> Data Type mapping set, as described in the following steps:</p>
+            <ul>
+                <li>Create a new custom set or copy from an existing set.</li>
+                <li>Create a new Data Type mapping with a <b>From Data Type</b> of star (<b>*</b>) and a <b>To Data Type</b> of <b>%prompt</b>.&#160; Click <b>OK</b> to save the New Data Type Mapping to the Custom set.<p><img src="../../Images/UserGuide_Images/Data Type Mappings/Custom Data Type Mapping Set_5.png" /></p></li>
+                <li>When browsing a connection to Load a table, set the <b>Data Type Mapping Set</b> to the new <b>Custom SQL Server to Teradata</b> mapping set. This can be set in the <b>List Source Tables Connection</b> window or in the connection <b>Properties</b> window. Refer to <a href="../Connections/Browsing a Connection.htm">Browsing a Connection</a> for details.</li>
+                <li>As the table is dragged and dropped to the middle pane, <span class="mc-variable WS_Branding.Product variable">RED</span> prompts to have the new data type mapping defined.</li>
+                <li>In the example below, just before loading the table, users can map the unknown <b>geography</b> SQL Server data type mapping to a <b>varchar(30)</b> in Teradata.<p><img src="../../Images/UserGuide_Images/Data Type Mappings/Custom Data Type Mapping Set_6.png" /></p></li>
+                <li>Clicking <b>OK</b> or <b>Apply</b> in the <b>Data Type Mapping Set</b> window, saves the parameter to the custom set that was used for loading the table.<img src="../../Images/UserGuide_Images/Data Type Mappings/Custom Data Type Mapping Set_7.png" /><p>&#160;</p></li>
+            </ul>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Loading Data" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Flat File Load</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/code.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Flat File Loads</h2>
+            <p>Flat file loads can be performed from either a <b>Windows</b>, <b>UNIX/Linux</b> or<b> Hadoop</b> connection. As with all other load types it is easier to use the drag and drop functionality to create load tables. </p>
+            <p>Flat files can also be loaded using SQL Server Integration Services (SSIS). For Flat File load instructions using SSIS, refer to the next section Loading Data from a Flat File using SSIS.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><b>Greenplum</b> - To process Greenplum file loads via the Windows Scheduler, please ensure that the Windows Scheduler user has the all the necessary permissions including having the ssh host key saved.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="BodyText">The <b>drag and drop</b> process for flat files is as follows:</p>
+            <ol>
+                <li value="1"><b>Browse</b> to the directory and file via the appropriate <a href="../Connections/Connections.htm">Connections</a>.</li>
+                <li value="2">Double-click on the <b>Load Table</b> object in the left pane to create a drop target.</li>
+                <li value="3"><b>Drag</b> the file from the right pane and <b>drop </b>it into the middle pane.&#160; </li>
+                <li value="4">The dialog below appears. Rename the file if necessary and then click the <b>ADD</b> button.<br /><p><img src="../../Images/UserGuide_Images/Loading Data/Sample delete all files file_1.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The option <b>Add meta data columns to table</b> is used for creating Load tables that are used in creating Data Vault objects. If this option is selected, two DSS columns (<b>dss_record_source</b> and d<b>ss_load_date</b>) are included in the meta data for the table and are populated by transformations. These two DSS columns could equally be applied to other Load tables not used in a Data Vault system but are particularly important to comply with the Data Vault standards. Refer to <a href="../Data Vaults/Data Vaults.htm">Data Vaults</a> for details.</td></tr></tbody></table></li>
+                <li value="5">The following dialog displays for file loads from <b>Windows, UNIX/Linux</b> and <b>Hadoop </b>connections.<br /><p><img src="../../Images/UserGuide_Images/Loading Data/Sample delete all files file_2.png" /></p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><ul><li style="color: #d7454b;"><b>First Row is a Header</b>- To make changes in relational database tables after a table has been defined, users can edit the <b>First Row is a Header</b> option in the <b>Source</b> tab of the relevant table.</li><li style="color: #d7454b;"><b>Hive</b> - For File loads into Hive tables, the <b>First Row is a Header</b> option is a table option. Please ensure this option is selected in the file load wizard if you want to load files with header rows. <br />To make any changes after Hive tables have been defined, the <b>First Row is a Header</b> option can be found in the <b>Storage</b> tab of the relevant Hive table.&#160; </li></ul></td></tr></tbody></table></li>
+                <li value="6">The load type selected in the<b> New Table Default Load Type</b> field in the connection Properties screen is the pre-selected option in the <b>Load type</b> drop-down list.<ul><li>To change the desired load type and file parsing, use the <b>Load type</b> and <b>File parsing</b> drop-down list options.</li></ul><p><img src="../../Images/UserGuide_Images/Loading Data/Sample delete all files file_4.png" /></p><p><b>Load type options</b></p><ul><li>The <b>File based load</b> options results in a load where the bulk of the load management is handled by the scheduler.&#160; </li><li>The<b> Script based load</b> option will make <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> generate a host script and the load table will be a <b>Script based load</b>. This host script is executed by the scheduler to perform the load. For further details about Script based loads, refer to <a href="Script based load.htm">Script based load</a>.</li><li>The<b> XML file load</b> option will only be an available load option from a Windows connection. To see more details about specific XML loads, refer to <a href="XML File load.htm">XML File load</a>.</li><li>The <b>Integration Services load</b> option will load the file via an Integration Services Package that is generated and executed dynamically at run time. This option is only available from a Windows connection. For specific details about this load option, refer to Loading Data from a Flat File using SSIS.</li><li>The<b> Externally loaded</b> option will not execute an actual load into the table but will process the actions specified in the Post Load procedure property. Any <b>After</b> transformations recorded against any of the columns in an Externally loaded table will also be processed.</li></ul><p>Post load procedures can either be manually generated from a <span class="mc-variable WS_Branding.Product variable">RED</span> provided procedure outline or generated leveraging a <span class="mc-variable WS_Branding.Product variable">RED</span> template—refer to <a href="../Table Properties/Rebuilding Update Procedures.htm">Rebuilding Update Procedures</a> for details.</p><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"> For custom database targets, the option to use Post Load Scripts is provided as an alternative to post load procedure. Post load scripts can  be generated using a RED template—refer to <a href="../Table Properties/Rebuilding Update Procedures.htm">Rebuilding Update Procedures</a> for details</td></tr></tbody></table><p>&#160;</p><p><b>File parsing options</b></p><ul><li><b>Single data column</b> - with this option, the majority of the work in terms of parsing the file must occur in a subsequent procedure within the data warehouse. The data is dumped into a single column. The task of coding a procedure to parse the data must then be undertaken. Three columns are created under Oracle. These include the data column, a sequence column (row_sequence) and the file name column (row_file_name). The file name and sequence columns can be deleted if they are not required for a File based load.</li><li><b>Columns parsed</b> - with this option, <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> will attempt to parse the columns. You will be asked for details and for the column delimiter. You then step through the columns providing names and data types. <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> attempts to guess the data type, but it needs to be checked and the field length will probably need to be adjusted. <p><br /><img src="../../Images/UserGuide_Images/Loading Data/flat File.png" /></p></li></ul><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><ul><li style="color: #d7454b;" data-mc-conditions="Outputs.Only for RED User Guide"><b>DB2</b> - DB2 databases do not support data import from files with header row.</li><li style="color: #d7454b;">The <b>Decimal Code </b>button will show the decimal value of each character in the lines retrieved from the source file. These decimal codes will be shown below each line and are green. </li></ul></td></tr></tbody></table></li>
+                <li value="7">Once the selection on the screen above is completed, a screen displays which enable the breakdown of the source data into columns. <br />If no delimiter is entered, then width based parsing is assumed and an addition width size is prompted for. <br /><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><ul><li style="color: #d7454b;">If no delimiter is entered, then <b>width based parsing</b> is assumed and an addition width size is prompted. </li><li style="color: #d7454b;">Teradata - If this is a <b>Fixed Width</b> file loaded via TPT, the source file format can be specified later in the <a href="../../Teradata/Loading Data Teradata/Flat File Load - Source Screen Teradata.htm">File Load Source Screen</a> of the Load table's <b>Properties</b> window. </li></ul></td></tr></tbody></table><br /><p>The following screen is an example of the file parsing technique.</p><p>Use the <b>Back</b> button to revert to the previous column if an incorrect width or delimiter is entered. </p><p><img src="../../Images/UserGuide_Images/Loading Data/Sample delete all files file_6.png" /></p></li>
+            </ol>
+            <h3>Conversion
+        </h3>
+            <h4 data-mc-conditions="Outputs.Only for RED User Guide">Oracle</h4>
+            <p class="MiniTOCItem" data-mc-conditions="Outputs.Only for RED User Guide">During the parsing of the columns an Oracle SQL*Loader conversion string can be used and is required in the case of dates for Oracle. Refer to the Oracle Sql loader manual for syntax. </p>
+            <p class="MiniTOCItem" data-mc-conditions="Outputs.Only for RED User Guide">Any Oracle function can be used if enclosed in quotes and with the column name prefixed by a colon. For example: when loading a column called 'product_name', use the following syntax to bring over only the first 30 characters:</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1" data-mc-conditions="Outputs.Only for RED User Guide">product_name "substr(:product_name,1,30)"</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="MiniTOCItem" data-mc-conditions="Outputs.Only for RED User Guide">A special variable %FILE_NAME% can be used in an Oracle File based load. This will be substituted with the actual source file name.</p>
+            <p class="MiniTOCItem" data-mc-conditions="Outputs.Only for RED User Guide">To load the full file name (including the path) into a field, enter this transformation:</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1" data-mc-conditions="Outputs.Only for RED User Guide">"RTRIM('%FILE_NAME%')"</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="MiniTOCItem" data-mc-conditions="Outputs.Only for RED User Guide">To remove the path from the full file name on a UNIX or Linux system, enter this transformation:</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/code.css');" class="TableStyle-code" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col />
+                <tbody>
+                    <tr class="TableStyle-code-Body-Body1">
+                        <td class="TableStyle-code-BodyA--Body1" data-mc-conditions="Outputs.Only for RED User Guide">"SUBSTR('%FILE_NAME%',INSTR('%FILE_NAME%','/',-1,1)+1)" </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>
+                <MadCap:conditionalText data-mc-conditions="Outputs.Only for RED User Guide">SQL</MadCap:conditionalText>
+            </h4>
+            <p class="MiniTOCItem"> <b>After Load transformations </b>can be processed. The conversion string can be entered in the relevant column conversion field during the parsing of the columns, however, to process the column conversion, users will need to do the following after the table is created and loaded:</p>
+            <ol>
+                <li value="1">Go into the<b> Properties</b> of the loaded table's relevant column(s) by double-clicking on the column(s) in the middle pane.</li>
+                <li value="2">Click the <b>Transformation </b>tab.</li>
+                <li value="3">Select the <b>After load </b>option in the <b>Transformation Stage</b> drop-down list.</li>
+                <li value="4"><b>Recreate</b> the load table.</li>
+            </ol>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0" data-mc-conditions="Outputs.Only for RED User Guide">
+                <col class="TableStyle-note-Column-Column1" style="width: 911px;" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">If running from the Windows scheduler, then a wildcard must be used in the file name if you wish to use the %FILE_NAME% variable. If a wild card is not used, then the literal file name appears enclosed in double quotes. When a wild card is used, Windows looks up the file and returns the actual file name with no enclosing double quotes.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 data-mc-conditions="Outputs.Only for RED User Guide">Understanding SQL*Loader</h5>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">When using either type of loading method<b> SQL*Loader</b> is called to perform the actual load. There is therefore a requirement that the executable called <b>'sqlldr'</b> be in the path.</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">Under <b>UNIX</b> this means that the UNIX user must be able to execute 'sqlldr' from the command prompt under a normal log on.</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">Under <b>Windows </b>'sqlldr' must execute when the command is issued from a DOS prompt.</p>
+            <p class="BodyText" data-mc-conditions="Outputs.Only for RED User Guide">In both the Windows and UNIX environments sqlldr returns a result code indicating if the load worked fully, partially or failed. WhereScape RED makes use of this returned code to report on the results of the load.</p>
+            <p id="linespace" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+            <hr width="100%" size="0" align="center" data-mc-conditions="Outputs.Exclude_In_Print" />
+            <p id="spacing" data-mc-conditions="Outputs.Exclude_In_Print">&#160;</p>
+        </div>
+    </body>
+</html>

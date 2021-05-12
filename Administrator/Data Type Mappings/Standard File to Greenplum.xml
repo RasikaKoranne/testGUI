@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data_type_mapping_set name="Standard File to Greenplum" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd">
+
+  <mapping_set_description>Standard File to Greenplum data type mapping.
+Please do not edit this standard mapping file as any changes will be overwritten on upgrades.
+See the user guide for information on how to create custom mapping files.</mapping_set_description>
+
+  <mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+
+  <data_type_mapping match_data_type="boolean" output_data_type="boolean"/>
+
+  <data_type_mapping match_data_type="int" output_data_type="integer"/>
+
+  <data_type_mapping match_data_type="long" output_data_type="bigint"/>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="numeric(13)">
+    <match_parameters>
+      <match_precision>*-12</match_precision>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="numeric(%precision)">
+    <match_parameters>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="numeric(13,%scale)">
+    <match_parameters>
+      <match_precision>*-12</match_precision>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="decimal" output_data_type="numeric(%precision,%scale)"/>
+
+  <data_type_mapping match_data_type="char" output_data_type="varchar(64)">
+    <match_parameters>
+      <match_length>2-63</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="char" output_data_type="char(%length)"/>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="varchar(64)">
+    <match_parameters>
+      <match_length>2-63</match_length>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="varchar" output_data_type="varchar(%length)"/>
+
+  <data_type_mapping match_data_type="date" output_data_type="date"/>
+
+  <data_type_mapping match_data_type="time" output_data_type="time"/>
+
+  <data_type_mapping match_data_type="datetime" output_data_type="timestamp"/>
+
+</data_type_mapping_set>

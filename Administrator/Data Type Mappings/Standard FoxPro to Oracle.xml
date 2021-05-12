@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data_type_mapping_set name="Standard FoxPro to Oracle" xmlns="http://www.wherescape.com/xml/red" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/red ./Data%20Type%20Mapping.xsd">
+
+  <mapping_set_description>Standard FoxPro to Oracle data type mapping.
+Please do not edit this standard mapping file as any changes will be overwritten on upgrades.
+See the user guide for information on how to create custom mapping files.</mapping_set_description>
+
+  <mapping_set_null_policy>AllowNulls</mapping_set_null_policy>
+
+  <data_type_mapping match_data_type="c" output_data_type="varchar2(%precision)"/>
+
+  <data_type_mapping match_data_type="g" output_data_type="varchar2(%precision)"/>
+
+  <data_type_mapping match_data_type="t" output_data_type="date"/>
+
+  <data_type_mapping match_data_type="d" output_data_type="date"/>
+
+  <data_type_mapping match_data_type="b" output_data_type="real"/>
+
+  <data_type_mapping match_data_type="y" output_data_type="number(%precision)">
+    <match_parameters>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="y" output_data_type="number(%precision, %scale)"/>
+
+  <data_type_mapping match_data_type="n" output_data_type="number(%precision)">
+    <match_parameters>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="n" output_data_type="number(%precision, %scale)"/>
+
+  <data_type_mapping match_data_type="f" output_data_type="number(%precision)">
+    <match_parameters>
+      <match_scale>0</match_scale>
+    </match_parameters>
+  </data_type_mapping>
+
+  <data_type_mapping match_data_type="f" output_data_type="number(%precision, %scale)"/>
+
+  <data_type_mapping match_data_type="m" output_data_type="long"/>
+
+  <data_type_mapping match_data_type="i" output_data_type="integer"/>
+
+  <data_type_mapping match_data_type="l" output_data_type="integer"/>
+
+</data_type_mapping_set>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Procedures and Scripts" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Procedure Migration</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h2>Procedure Migration</h2>
+            <p><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> provides the <b>Multiple SQL database</b> feature to enable tables to be distributed across multiple databases, instead of only a single database—refer to <a href="../Table Properties/Distributing Tables across Multiple SQL Server Databases.htm">Distributing Tables across Multiple SQL Server Databases</a> for details.</p>
+            <p>Update procedures for Table objects are stored in the <span class="mc-variable WS_Branding.Product variable">RED</span> repository meta database. However if required, the location of stored procedures can be changed and also be distributed across different Targets. </p>
+            <p>The following features in <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> are used for setting the location of stored procedures associated to a Table object in <span class="mc-variable WS_Branding.Product variable">RED</span>.</p>
+            <h4>Connection Target Settings</h4>
+            <p>The <b>Create procedures in same database as table</b> option in the <b>Target Settings</b> tab of the <a href="../Connections/Connection Target Settings.htm">Connection Properties</a> window, enables you to specify if the procedures associated with new Table objects are created in the same Target location as the Tables.</p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Procs and Scrps/Conn Target Settings CreateProcs.png" />
+                <br />This option is not selected (OFF) by default, e.g. the table's stored procedures are created in the <span class="mc-variable WS_Branding.Product variable">RED</span> repository meta database. <br />If the Table is created in a different Target location (e.g. distinct schema/database in the same SQL Server instance), you can turn ON this option, if you want the stored procedures to also be located in the same Target.</p>
+            <p>Once this option is set, all new Table objects (created in the defined Target locations) will also have their generated procedures stored in the same Target as the Table objects.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ul>
+                                <li>This setting only applies for SQL server Target databases. For new <span class="mc-variable WS_Branding.Product variable">RED</span> repositories, this option is ON by default (e.g. procedures are created in the same location as the Table object). New or regenerated procedures are created in the specified location.</li>
+                                <li>Changing this setting has no impact on existing stored procedures. You must <b>Rebuild</b> or <b>Regenerate</b> the stored procedures for the changes to take effect.</li>
+                                <li>If the Target location of a Table object is changed, then both the <b>Re-creation</b> of the Table object (as in previous versions of RED) and the <b>Regeneration</b> of the Procedure object is required for both objects to be moved.<br /></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <br />
+            </p>
+            <h4>Procedure Properties</h4>
+            <p>The <b>Connection Name</b> and <b>Target Name</b> fields in the <a href="Procedure Properties.htm">Procedure Properties</a> window, enables you to change  the connection against which the Procedure or Function is executed and the Target where the update Procedure or Function is stored. </p>
+            <li> <img src="../../Images/UserGuide_Images/Procs and Scrps/Proc Props Conn and Trgt.png" /></li>
+            <p>An option to <b>Lock the Storage Location</b> can also be set, if you want to retain  the current location of the procedure, e.g. no changes will occur if the Target location of the procedure is manually changed and a <b>Rebuild</b> or <b>Regenerate</b> operation is performed via the Table's <b>Properties</b> window or from the Table's right click <b>Code</b> context menu.</p>
+            <p>&#160;</p>
+            <h4>Procedure Placeholders</h4>
+            <p>The following procedure placeholders are used for moving procedures to the required target database location(s):</p>
+            <ol>
+                <li value="1"><b>[SCHEMA.procedure_name].procedure_name</b> = resolves to <b>schema.procedure_name</b> during the compilation process of the procedure.<p>This placeholder is used in the CREATE PROCEDURE statement to resolve the schema location for the procedure.</p></li>
+                <li value="2">[<b>PROCEDUREOWNER].[procedure_name]</b>  =  resolves to <b>database.schema.procedure_name</b> during the compilation process of the procedure.<p>This placeholder is used to fully qualify procedures, such as GET_KEY_procedure from other databases.</p></li>
+                <li value="3"><b>[METABASE].wsl_callable_routine</b> =  resolves to <b>database.schema.wsl_callable_routine</b> during the compilation process of the procedure.<p>This placeholder is used for each callable routine to always fully qualify to the metadata database and schema.</p><p>&#160;</p></li>
+            </ol>
+            <h3>Moving Existing Procedures </h3>
+            <p>The steps for moving modified and non modified procedures are outlined below:</p>
+            <h4>Non-modified</h4>
+            <p>In this case, an existing procedure generated by <span class="mc-variable WS_Branding.Product variable">RED</span> is being moved to another Target location. </p>
+            <ol>
+                <li value="1">After changing the Target location of the stored procedure, you must regenerate the procedure using the <b>Code &gt; Regenerate update_procedure</b> option from the Table object's right click context menu.</li>
+                <li value="2">Check the definition of the regenerated procedure to ensure that it is updated to include the required procedure placeholders and Table mark-ups.</li>
+            </ol>
+            <h4>Modified</h4>
+            <p>In this case, a user created procedure or a modified <span class="mc-variable WS_Branding.Product variable">RED</span> procedure is being moved to another Target location. </p>
+            <h5>Applying the procedure and table mark-ups in the procedure</h5>
+            <ol>
+                <li value="1">Open the modified procedure via the procedure editor window.</li>
+                <li value="2">Edit the procedure as follows:<ul><li>Change the CREATE PROCEDURE syntax:<p>CREATE PROCEDURE <b>[SCHEMA.procedure_name].procedure_name</b></p></li><li>Ensure that all referenced procedures have the procedure owner mark-up:<p><b>[PROCEDUREOWNER].[referenced_procedure_name]</b></p></li><li>Ensure that all source table references have the table owner mark-up:<p><b>[TABLEOWNER].[table name]</b></p></li><li>Ensure all calls to metadata procedures and functions have the metadata database mark-up:<p>Exec <b>[METABASE]</b>.WsWrkAudit</p></li></ul></li>
+                <li value="3">Save and compile any updates to the procedure.</li>
+            </ol>
+            <h5> Moving the procedure to the new database</h5>
+            <ol>
+                <li value="1">Open the <b>Procedure Properties</b> of the modified procedure and set the <b>Connection Name</b> and <b>Target Name</b> fields to the appropriate connection and Target location for the stored procedure, and then click <b>OK</b>.</li>
+                <li value="2"><span class="mc-variable WS_Branding.Product variable">RED</span> prompts if you want to <b>proceed with the change in storage location</b>, click <b>Yes</b> to proceed. <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"><span class="mc-variable WS_Branding.Product variable">RED</span> drops the procedure from the original database and creates it in the new Target location. </td></tr></tbody></table></li>
+            </ol>
+            <p>Repeat the same steps to move other modified procedures to another Target location.</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                <col class="TableStyle-note-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-note-Head-Header1">
+                        <th class="TableStyle-note-HeadD-Column1-Header1">Notes:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-note-Body-Body1">
+                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+                            <ul>
+                                <li style="color: #d7454b;">When upgrading to version 8.3.1.0, the default connection and default target attributes for SQL Server procedure objects are cleared, to reflect that procedures are currently stored in the <span class="mc-variable WS_Branding.Product variable">RED</span> repository meta database.</li>
+                                <li style="color: #d7454b;">If the Target location of a Procedure is manually changed in the <b>Procedure Properties</b>, then regenerating or rebuilding the Procedure reverts its location back to the <span class="mc-variable WS_Branding.Product variable">RED</span> repository meta database or to the Table object’s storage location (depending on whether the Target storage option is set in the <b>Connection Properties</b>).</li>
+                                <li style="color: #d7454b;">	If you want to set the storage location of a Procedure to something other than your connection default Target, then set the <b>Lock Storage Location</b> option in the <b>Procedure Properties</b> to override the connection default Target.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

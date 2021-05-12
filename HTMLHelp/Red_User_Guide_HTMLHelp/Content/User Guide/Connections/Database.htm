@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-toc-path="Connections|Connection Types" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Database</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Resources/Stylesheets/wmd-onlinehelp-style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Resources/tablestyles/tip.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/tablestyle.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../../Resources/tablestyles/note.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <div class="nocontent">
+            <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">You are here: </span>
+            </div>
+        </div>
+        <div role="main" id="mc-main-content">
+            <h3 class="Heading3">Database</h3>
+            <p class="BodyText">This topic describes the details of the connection Properties as they apply to the Database type connections. </p>
+            <p class="BodyText">When coming to the Data Warehouse from an OLTP source system, the connection defines the path to get to those source tables. A connection object must be defined for each source system. </p>
+            <p class="BodyText">The fields presented in the <b>Connection Properties</b> screen below, depends on the connection and database types selected.&#160; See below for a description of all possible fields.</p>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Connections/Database.png" />
+            </p>
+            <p>
+                <img src="../../Images/UserGuide_Images/Connections/Connection Types.png">
+                </img> <b> SQL Server: </b>when running a SQL Server data warehouse it is possible to create database links (linked server) to other SQL Server instances and most of the other major databases, such as Oracle, DB2, etc. </p>
+            <ul>
+                <li>Database link load - from a table in the current SQL Server database.</li>
+                <li>Database link load - from a table in another database on the same SQL Server instance - the OBDC Data Source Name must be defined in the Windows 32-bit <b>ODBC Data Source Administrator</b> and selected on the ODBC DSN field, as well as the Database ID that also needs to be populated in the Database ID field in the connection properties.</li>
+                <li>Database link load - through a linked server.</li>
+                <li>Integration Services load.</li>
+            </ul>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Connections/Connection Types_1.png" /><b> Oracle: </b>using the Oracle database it is possible to create a database link to another Oracle database as standard, or to any other database by using Oracles Heterogeneous Services. Refer to Oracle Examples.</p>
+            <ul>
+                <li>Database link load - from a table in the current Oracle database server (includes Oracle gateways and Oracle heterogeneous services).</li>
+                <li>Database link load - through a database link to another Oracle server.</li>
+            </ul>
+            <p class="BodyText">
+                <img src="../../Images/UserGuide_Images/Connections/Connection Types_2.png" /><b> DB2: </b>using the DB2 database it is possible to create a database link load to another table in the same DB2 system or to another system via CLI. Refer to DB2 Examples.</p>
+            <ul>
+                <li>Database link load - from another table in the same DB2 system (includes federation).</li>
+                <li>Database link load - via CLI from a DB2 table in another system. </li>
+            </ul>
+            <p class="BodyText">
+                <br />Examples for each of <span class="mc-variable WS_Branding.Product variable">RED</span>'s database type connection screens for SQL Server, Oracle, DB2 Greenplum, Netezza and PDW are provided below the connection properties description.</p>
+            <p class="BodyText">A Database Link Load through a <b>linked server&#160;</b>can have a number of source databases:</p>
+            <ul>
+                <li>SQL Server</li>
+                <li>Oracle</li>
+                <li>DB2 for Linux, UNIX and Windows (the DB2 that RED can build a warehouse)</li>
+                <li>Teradata</li>
+                <li>Greenplum</li>
+                <li>Netezza</li>
+                <li>PDW</li>
+                <li>Hive</li>
+                <li>Custom</li>
+                <li>Sybase</li>
+                <li>DB2/400 (the DB2 that runs on AS/400 machines - quite different to above)</li>
+                <li>MS Access</li>
+                <li>Excel</li>
+            </ul>
+            <p class="BodyText">The connection Properties window has the following fields:</p>
+            <h4 class="SpecialBold_1">General</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name used to label the connection within <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span>.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Connection Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Indicates the connection source type or the connection method, such as Database, ODBC, Windows, Unix.
+ Select the <b>Database</b> connection type.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><![CDATA[
+                        ]]>Type of database such as DB2, Greenplum, Hive, Netezza, Oracle, SQL Server, Teradata. Default is <b>(local)</b>.
+    <![CDATA[                        ]]></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">
+                        ODBC Data Source Name (DSN)
+                    </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1"><![CDATA[
+                       ]]>ODBC Data Source Name (DSN) as defined in the Windows 32-bit <b>ODBC Data Source Administrator</b>. 
+    <![CDATA[ 
+                        ]]><table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">The ODBC Source Name defined in <span class="mc-variable WS_Branding.Product variable">RED</span> must be the same on all machines that use the corresponding connection. 
+    </td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1"><span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> <span class="mc-variable WS_Branding.Product variable">RED</span> Metadata Connection Indicator</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Only required for the Data Warehouse/metadata repository connection. Leave this check box unselected.
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="SpecialBold_1">Source System</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Provider Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name of the connection provider/driver used to connect to the database.
+                    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database Identifier (e.g. Oracle SID or TNS Name, Teradata TDPID) or Database Name (e.g. as in DB2 or SQL Server).
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database Host/Server </td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <table style="width: 100%;">
+                                <col style="width: 120px;" />
+                                <col />
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/UserGuide_Images/Connections/Connection Types_5.png" />
+                                        </td>
+                                        <td><b>PDW Database type connections only:</b> Used for sqlcmd specification.
+                    </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database Port</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <table style="width: 100%;">
+                                <col style="width: 120px;" />
+                                <col />
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/UserGuide_Images/Connections/Connection Types_5.png" />
+                                        </td>
+                                        <td><b>PDW Database type connections only:</b> Used for sqlcmd specification.
+                    </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Database Link Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional name of a Database Link that is used to access the database. <table style="width: 100%;margin-left: 0;margin-right: auto;"><col style="width: 120px;" /><col /><tbody><tr><td><img src="../../Images/UserGuide_Images/Connections/Connection Types.png" /></td><td>If SQL Server and the database are on the same server as the data warehouse then no link needs to be defined and this field can be left blank.<br /></td></tr><tr><td><img src="../../Images/UserGuide_Images/Connections/Connection Types_1.png" /></td><td>If a database link already exists to this source database then enter that link name in this field. If no link exists then enter a link name. Under some circumstances Oracle insists that this link name is the same as the tnsnames entry for the database, so it may be good practice to use the source SID as the database link name. If this is a new link then see the notes later in this section on <a href="Creating a Database Link.htm">Creating a Database Link</a>.<br />Enter the defined SQL LINK name that points to the correct server, the link name does not need to be the same name as the server name.<br /></td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Provider Name</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Name of the connection provider/driver used to connect to the database.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Full Database Path Name</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">This field is used when you enter <b>Microsoft.Jet.OLEDB.4.0</b> as the Provider Name, e.g. when the source database is from MS Access or Excel. Enter the full database path name.
+    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="SpecialBold_1">Database Credentials</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Extract User ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database User that has access to SELECT from the source system tables to extract data.
+    
+For more information, refer to <a href="../Loading Data/Remote View Extract - Oracle Databases Only.htm">Remote View Extract - Oracle Databases only</a>.                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Extract User Password</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The password of the data warehouse user.
+    
+                        For SQL Server blank if a trusted login, or the server login password.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Teradata Wallet User ID/Teradata Wallet String</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">If connecting to a <b>Teradata</b> server, the Teradata Wallet log on method can be selected from the ODBC User Default drop-down menu and the Teradata Wallet User ID and String can be entered, instead of User/Password.</td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Administrator User ID</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Database User ID to login, when using <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> SQL Admin via the 'Connect using SQL Admin (as SQL Admin User)' context menu item (optional).
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Administrator User Password</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">Optional Database User Password to login, when using <span class="mc-variable WS_Branding.CompanyShortName variable">WhereScape</span> SQL Admin via the 'Connect using SQL Admin (as SQL Admin User)' context menu item.
+    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="SpecialBold_1">Other</h4>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tablestyle.css');" class="TableStyle-tablestyle" cellspacing="0">
+                <col class="TableStyle-tablestyle-Column-Column1" />
+                <col class="TableStyle-tablestyle-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-tablestyle-Head-Header1">
+                        <th class="TableStyle-tablestyle-HeadE-Column1-Header1">Options</th>
+                        <th class="TableStyle-tablestyle-HeadD-Column2-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Database for Browsing</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <img src="../../Images/UserGuide_Images/Connections/Connection Types_7.png" />&#160;Optional comma-delimited list of databases for the browser pane filter. Enter the database(s) you want the connection to browse by default on the right browser pane.
+
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Default Schema for Browsing</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Optional comma-delimited list of schemas for the browser pane filter. Enter the schema(s) you want the connection to browse by default on the right browser pane.
+
+    <![CDATA[                    ]]></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Type</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Load Type</b> for new Load tables created using this connection as a source. Select the desired default load type from the list, e.g. <b> Database Link Load, Script based load, Integration Services Load</b> or <b>Externally Loaded</b>.
+                        
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader"> 
+        The available options in this drop-down list is configured from Tools &gt; Options &gt; <a href="../Default Settings/Available Load Types.htm">Available Load Types</a>.
+    </td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Script Connection</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Script Connection</b> to use when a <b>Script based load</b> type is defined for a Load table object that is <b>sourced</b> from this connection.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">New Table Default Load Script Template</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">The default <b>Script Template</b> to use when a <b>Script based load</b> type is defined for a Load table object that is <b>sourced</b> from this connection.
+    </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">SSIS Connection String (OLEDB)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">Connection string to be used by Microsoft SQL Server Integration Services (SSIS) to connect to the data source or destination. For details on how to use the wizard to build an SSIS Connection String, refer to <a href="../../Teradata/Loading Data Teradata/Loading Data into RED Load Tables using SSIS Teradata.htm">Loading Data into RED Load Tables using SSIS</a>.
+                       
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0"><col class="TableStyle-note-Column-Column1" /><thead><tr class="TableStyle-note-Head-Header1"><th class="TableStyle-note-HeadD-Column1-Header1">Note:</th></tr></thead><tbody><tr class="TableStyle-note-Body-Body1"><td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">
+        A connection string is typically composed of multiple property name/value pairs that are semi-colon delimited.
+    </td></tr></tbody></table></td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">SSIS Connection String (SQLPDW)</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <table style="width: 100%;">
+                                <col style="width: 120px;" />
+                                <col />
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/UserGuide_Images/Connections/Connection Types_5.png" />
+                                        </td>
+                                        <td><b>PDW Database type connections only:</b> Connection string to be used by Microsoft SQL Integration Services (SSIS) to connect to the data source or destination using the SQL Server Parallel Data Warehouse Connection Manager.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/note.css');" class="TableStyle-note" cellspacing="0">
+                                <col class="TableStyle-note-Column-Column1" />
+                                <thead>
+                                    <tr class="TableStyle-note-Head-Header1">
+                                        <th class="TableStyle-note-HeadD-Column1-Header1">Note:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-note-Body-Body1">
+                                        <td class="TableStyle-note-BodyA-Column1-Body1" role="rowheader">A connection string is typically composed of multiple property name/value pairs that are semi-colon delimited.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyH-Column1-Body1">Staging database</td>
+                        <td class="TableStyle-tablestyle-BodyG-Column2-Body1">
+                            <table style="width: 100%;">
+                                <col style="width: 120px;" />
+                                <col />
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../../Images/UserGuide_Images/Connections/Connection Types_5.png" />
+                                        </td>
+                                        <td><b>PDW Database type connections only:</b> The staging database to be used by Microsoft SQL Server Integration Services (SSIS) for loading to PDW, if this option is enabled in the <a href="../Loading Data/Flat File Load Source Screen.htm">Flat File Load - Source screen</a>'s Properties.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-tablestyle-Body-Body1">
+                        <td class="TableStyle-tablestyle-BodyB-Column1-Body1">Data Type Mapping Set</td>
+                        <td class="TableStyle-tablestyle-BodyA-Column2-Body1">
+        Mapping Set to use when converting from a source database data type to a destination database data type. Setting this field to <b>(Default)</b> makes <span class="mc-variable WS_Branding.Product variable">RED</span> automatically select the relevant mapping set, otherwise you can choose one of the standard mapping sets from the drop-down list or create a new set.
+    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+            <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/tablestyles/tip.css');" class="TableStyle-tip" cellspacing="0">
+                <col class="TableStyle-tip-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-tip-Head-Header1">
+                        <th class="TableStyle-tip-HeadD-Column1-Header1">Tip:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-tip-Body-Body1">
+                        <td class="TableStyle-tip-BodyA-Column1-Body1">Once the connection has been set up, you can right-click the connection in the middle pane or double click the connection name from the left pane to view or edit the connection's <b>Properties</b>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>
